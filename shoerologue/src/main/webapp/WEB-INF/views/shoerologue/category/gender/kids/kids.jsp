@@ -365,7 +365,7 @@
 		 <div class="col-10 col-sm-8 col-md-6 col-lg-5">
 			 <ul class="nav navMenu">
 			 	<li class="nav-item">
-				<a class="nav-link fw-bolder text-white nav-fs" href="#">BRAND</a>
+				<a class="nav-link fw-bolder text-white nav-fs" href="/Shoerologue/category/brand/brand.do">BRAND</a>
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/Shoerologue/category/gender/men/men.do" role="button" aria-expanded="false">MEN</a>

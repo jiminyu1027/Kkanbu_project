@@ -82,6 +82,19 @@
 			margin-bottom:45px;
 		}
 		
+		.brandList>ul>li{
+			display:inline;
+		}
+		
+		.brandList>ul{
+			margin-left:-10px;
+		}
+		
+		.brandList>ul>li>a{
+			width:30px;
+			height:30px;
+			border:1px solid #D5D5D5;
+		}
 	</style>
 </head>
 <body>
@@ -144,7 +157,7 @@
 		 <div class="col-10 col-sm-8 col-md-6 col-lg-5">
 			 <ul class="nav navMenu">
 			 	<li class="nav-item">
-				<a class="nav-link fw-bolder text-white nav-fs" href="#">BRAND</a>
+				<a class="nav-link fw-bolder text-white nav-fs" href="/Shoerologue/category/brand/brand.do">BRAND</a>
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/Shoerologue/category/gender/men/men.do" role="button" aria-expanded="false">MEN</a>
@@ -236,7 +249,55 @@
 				</ul>
 			</div>
 		</div>
+		<div class="brandList">
+			<ul>
+				<li><a href="#" class="brandinit">A</a></li>
+				<li><a href="#" class="brandinit">B</a></li>
+				<li><a href="#" class="brandinit">C</a></li>
+				<li><a href="#" class="brandinit">D</a></li>
+				<li><a href="#" class="brandinit">E</a></li>
+				<li><a href="#" class="brandinit">F</a></li>
+				<li><a href="#" class="brandinit">G</a></li>
+				<li><a href="#" class="brandinit">H</a></li>
+				<li><a href="#" class="brandinit">I</a></li>
+				<li><a href="#" class="brandinit">J</a></li>
+				<li><a href="#" class="brandinit">K</a></li>
+				<li><a href="#" class="brandinit">L</a></li>
+				<li><a href="#" class="brandinit">M</a></li>
+				<li><a href="#" class="brandinit">N</a></li>
+				<li><a href="#" class="brandinit">O</a></li>
+				<li><a href="#" class="brandinit">P</a></li>
+				<li><a href="#" class="brandinit">Q</a></li>
+				<li><a href="#" class="brandinit">R</a></li>
+				<li><a href="#" class="brandinit">S</a></li>
+				<li><a href="#" class="brandinit">T</a></li>
+				<li><a href="#" class="brandinit">U</a></li>
+				<li><a href="#" class="brandinit">V</a></li>
+				<li><a href="#" class="brandinit">W</a></li>
+				<li><a href="#" class="brandinit">X</a></li>
+				<li><a href="#" class="brandinit">Y</a></li>
+				<li><a href="#" class="brandinit">Z</a></li>
+				<li><a href="#" class="brandinit">ㄱ</a></li>
+				<li><a href="#" class="brandinit">ㄴ</a></li>
+				<li><a href="#" class="brandinit">ㄷ</a></li>
+				<li><a href="#" class="brandinit">ㄹ</a></li>
+				<li><a href="#" class="brandinit">ㅁ</a></li>
+				<li><a href="#" class="brandinit">ㅂ</a></li>
+				<li><a href="#" class="brandinit">ㅅ</a></li>
+				<li><a href="#" class="brandinit">ㅇ</a></li>
+				<li><a href="#" class="brandinit">ㅈ</a></li>
+				<li><a href="#" class="brandinit">ㅊ</a></li>
+				<li><a href="#" class="brandinit">ㅋ</a></li>
+				<li><a href="#" class="brandinit">ㅌ</a></li>
+				<li><a href="#" class="brandinit">ㅍ</a></li>
+				<li><a href="#" class="brandinit">ㅎ</a></li>
+				
+			</ul>
 		
+		</div>
+
+
+
 
 	</div>
 

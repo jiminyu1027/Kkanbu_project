@@ -56,7 +56,7 @@
 			color:#999999;
 		}
 		
-		.shoes{
+		.shoesGender{
 			margin:auto;
 			margin-top:30px;
 			font-weight:700;
@@ -72,6 +72,10 @@
 			font-weight:400;
 		}
 		
+		.shoesList>ul>li>a:hover{
+			color:gray;
+		}
+		
 		.shoesList{
 			margin:auto;
 			margin-top:30px;
@@ -82,6 +86,13 @@
 		.redBold{
 			color:red;
 			font-weight:500;
+		}
+		
+		.redBold2{
+			color:red;
+			font-weight:500;
+			text-decoration:underline;
+			text-underline-position:under;
 		}
 		
 		.totalPd{
@@ -361,7 +372,7 @@
 		 <div class="col-10 col-sm-8 col-md-6 col-lg-5">
 			 <ul class="nav navMenu">
 			 	<li class="nav-item">
-				<a class="nav-link fw-bolder text-white nav-fs" href="#">BRAND</a>
+				<a class="nav-link fw-bolder text-white nav-fs" href="/Shoerologue/category/brand/brand.do">BRAND</a>
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/Shoerologue/category/gender/men/men.do" role="button" aria-expanded="false">MEN</a>
@@ -499,7 +510,17 @@
 			</ul>
 		</div>
 		<div class="shoesBox">
-			<div class="shoes">구두</div>
+			<div class="shoesGender">WOMEN</div>
+			<div class="shoesList">
+				<ul>
+					<li><a href="/Shoerologue/category/gender/women/womenSneakers.do">운동화</a></li>
+				 	<li><a href="/Shoerologue/category/gender/women/womenSports.do">스포츠</a></li>
+				    <li><a href="/Shoerologue/category/gender/women/womenDressShoes.do" class="redBold2">구두</a></li>
+				    <li><a href="/Shoerologue/category/gender/women/womenSandle.do">샌들</a></li>
+				    <li><a href="/Shoerologue/category/gender/women/womenCasual.do">캐주얼</a></li>
+				    <li><a href="/Shoerologue/category/gender/women/womenBoots.do">부츠</a></li>
+				</ul>
+			</div>
 			<div class="totalPdSel">
 				<div  class="totalPd">
 					<span>총 <span class="redBold">0</span>개의 상품이 있습니다.</span>

@@ -56,7 +56,7 @@
 			color:#999999;
 		}
 		
-		.shoes{
+		.shoesGender{
 			margin:auto;
 			margin-top:30px;
 			font-weight:700;
@@ -70,6 +70,10 @@
 			margin-right:45px;
 			font-size:13pt;
 			font-weight:400;
+		}
+		
+		.shoesList>ul>li>a:hover{
+			color:gray;
 		}
 		
 		.shoesList{
@@ -361,7 +365,7 @@
 		 <div class="col-10 col-sm-8 col-md-6 col-lg-5">
 			 <ul class="nav navMenu">
 			 	<li class="nav-item">
-				<a class="nav-link fw-bolder text-white nav-fs" href="#">BRAND</a>
+				<a class="nav-link fw-bolder text-white nav-fs" href="/Shoerologue/category/brand/brand.do">BRAND</a>
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/Shoerologue/category/gender/men/men.do" role="button" aria-expanded="false">MEN</a>
@@ -498,7 +502,7 @@
 			</ul>
 		</div>
 		<div class="shoesBox">
-			<div class="shoes">신발</div>
+			<div class="shoesGender">MEN</div>
 			<div class="shoesList">
 				<ul>
 					<li><a href="/Shoerologue/category/gender/men/menSneakers.do">운동화</a></li>
