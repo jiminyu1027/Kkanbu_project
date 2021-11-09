@@ -84,6 +84,7 @@
 		
 		.brandList>ul>li{
 			display:inline;
+			
 		}
 		
 		.brandList>ul{
@@ -91,9 +92,13 @@
 		}
 		
 		.brandList>ul>li>a{
+			border:1px solid #D5D5D5;
+			color:#747774;
 			width:30px;
 			height:30px;
-			border:1px solid #D5D5D5;
+		}
+		.hr1{
+			border:1px solid black;
 		}
 	</style>
 </head>
@@ -251,51 +256,364 @@
 		</div>
 		<div class="brandList">
 			<ul>
-				<li><a href="#" class="brandinit">A</a></li>
-				<li><a href="#" class="brandinit">B</a></li>
-				<li><a href="#" class="brandinit">C</a></li>
-				<li><a href="#" class="brandinit">D</a></li>
-				<li><a href="#" class="brandinit">E</a></li>
-				<li><a href="#" class="brandinit">F</a></li>
-				<li><a href="#" class="brandinit">G</a></li>
-				<li><a href="#" class="brandinit">H</a></li>
-				<li><a href="#" class="brandinit">I</a></li>
-				<li><a href="#" class="brandinit">J</a></li>
-				<li><a href="#" class="brandinit">K</a></li>
-				<li><a href="#" class="brandinit">L</a></li>
-				<li><a href="#" class="brandinit">M</a></li>
-				<li><a href="#" class="brandinit">N</a></li>
-				<li><a href="#" class="brandinit">O</a></li>
-				<li><a href="#" class="brandinit">P</a></li>
-				<li><a href="#" class="brandinit">Q</a></li>
-				<li><a href="#" class="brandinit">R</a></li>
-				<li><a href="#" class="brandinit">S</a></li>
-				<li><a href="#" class="brandinit">T</a></li>
-				<li><a href="#" class="brandinit">U</a></li>
-				<li><a href="#" class="brandinit">V</a></li>
-				<li><a href="#" class="brandinit">W</a></li>
-				<li><a href="#" class="brandinit">X</a></li>
-				<li><a href="#" class="brandinit">Y</a></li>
-				<li><a href="#" class="brandinit">Z</a></li>
-				<li><a href="#" class="brandinit">ㄱ</a></li>
-				<li><a href="#" class="brandinit">ㄴ</a></li>
-				<li><a href="#" class="brandinit">ㄷ</a></li>
-				<li><a href="#" class="brandinit">ㄹ</a></li>
-				<li><a href="#" class="brandinit">ㅁ</a></li>
-				<li><a href="#" class="brandinit">ㅂ</a></li>
-				<li><a href="#" class="brandinit">ㅅ</a></li>
-				<li><a href="#" class="brandinit">ㅇ</a></li>
-				<li><a href="#" class="brandinit">ㅈ</a></li>
-				<li><a href="#" class="brandinit">ㅊ</a></li>
-				<li><a href="#" class="brandinit">ㅋ</a></li>
-				<li><a href="#" class="brandinit">ㅌ</a></li>
-				<li><a href="#" class="brandinit">ㅍ</a></li>
-				<li><a href="#" class="brandinit">ㅎ</a></li>
-				
+				<li><a href="#" class="brandInit">A</a></li>
+				<li><a href="#" class="brandInit">B</a></li>
+				<li><a href="#" class="brandInit">C</a></li>
+				<li><a href="#" class="brandInit">D</a></li>
+				<li><a href="#" class="brandInit">E</a></li>
+				<li><a href="#" class="brandInit">F</a></li>
+				<li><a href="#" class="brandInit">G</a></li>
+				<li><a href="#" class="brandInit">H</a></li>
+				<li><a href="#" class="brandInit">I</a></li>
+				<li><a href="#" class="brandInit">J</a></li>
+				<li><a href="#" class="brandInit">K</a></li>
+				<li><a href="#" class="brandInit">L</a></li>
+				<li><a href="#" class="brandInit">M</a></li>
+				<li><a href="#" class="brandInit">N</a></li>
+				<li><a href="#" class="brandInit">O</a></li>
+				<li><a href="#" class="brandInit">P</a></li>
+				<li><a href="#" class="brandInit">Q</a></li>
+				<li><a href="#" class="brandInit">R</a></li>
+				<li><a href="#" class="brandInit">S</a></li>
+				<li><a href="#" class="brandInit">T</a></li>
+				<li><a href="#" class="brandInit">U</a></li>
+				<li><a href="#" class="brandInit">V</a></li>
+				<li><a href="#" class="brandInit">W</a></li>
+				<li><a href="#" class="brandInit">X</a></li>
+				<li><a href="#" class="brandInit">Y</a></li>
+				<li><a href="#" class="brandInit">Z</a></li>
+				<li><a href="#" class="brandInit">123</a></li>
+				<li><a href="#" class="brandInit">ㄱ</a></li>
+				<li><a href="#" class="brandInit">ㄴ</a></li>
+				<li><a href="#" class="brandInit">ㄷ</a></li>
+				<li><a href="#" class="brandInit">ㄹ</a></li>
+				<li><a href="#" class="brandInit">ㅁ</a></li>
+				<li><a href="#" class="brandInit">ㅂ</a></li>
+				<li><a href="#" class="brandInit">ㅅ</a></li>
+				<li><a href="#" class="brandInit">ㅇ</a></li>
+				<li><a href="#" class="brandInit">ㅈ</a></li>
+				<li><a href="#" class="brandInit">ㅊ</a></li>
+				<li><a href="#" class="brandInit">ㅋ</a></li>
+				<li><a href="#" class="brandInit">ㅌ</a></li>
+				<li><a href="#" class="brandInit">ㅍ</a></li>
+				<li><a href="#" class="brandInit">ㅎ</a></li>
 			</ul>
-		
 		</div>
-
+		<div class="hr1"></div>
+		<div class="brandinitBox">
+			<div>
+				<div class="brandFirstInit">A</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">ADIDAS</a></li>
+						<li><a href="#">AKIII CLASSIC</a></li>
+						<li><a href="#">ASICS</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">B</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">BEARPAW</a></li>
+						<li><a href="#">BIRKENSTOCK</a></li>
+						<li><a href="#">BSQTBYCLASSY</a></li>
+						<li><a href="#">Box&amp;Cox</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">C</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">CATCHBALL</a></li>
+						<li><a href="#">COCOMODS</a></li>
+						<li><a href="#">CONVERSE</a></li>
+						<li><a href="#">CROCS</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">D</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">D.LAVAN</a></li>
+						<li><a href="#">DANNER</a></li>
+						<li><a href="#">DINOSOLES</a></li>
+						<li><a href="#">DISCOVERY</a></li>
+						<li><a href="#">DR.MARTENS</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">E</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">EARTHUS</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">F</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">FEIYUE</a></li>
+						<li><a href="#">FILA</a></li>
+						<li><a href="#">FIRENZE ATELIER</a></li>
+						<li><a href="#">FLORIDA STUDIO</a></li>
+						<li><a href="#">FRED PERRY</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">G</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">GGOMOOSIN</a></li>
+						<li><a href="#">GIANCARIO MORELLI</a></li>
+						<li><a href="#">GRENDENE</a></li>
+						<li><a href="#">gravis</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">H</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">HAWKINS</a></li>
+						<li><a href="#">HUNTER</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">I</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">IPANEMA</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">J</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">J.DAUL</a></li>
+						<li><a href="#">JORDAN</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">K</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">KKOMOMSHOE</a></li>
+						<li><a href="#">KOLCA</a></li>
+						<li><a href="#">KOMUELLO</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">L</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">LACOSTE</a></li>
+						<li><a href="#">Little Diana</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">M</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">MACMOC</a></li>
+						<li><a href="#">MALIBU SANDALS</a></li>
+						<li><a href="#">MELISSA</a></li>
+						<li><a href="#">MERCY CROWN</a></li>
+						<li><a href="#">MIAMI PROJECT</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">N</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">NEW BALANCE</a></li>
+						<li><a href="#">NIKE</a></li>
+						<li><a href="#">NUOVO</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">P</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">POLO</a></li>
+						<li><a href="#">POPSOCKETS</a></li>
+						<li><a href="#">POSE GANCH</a></li>
+						<li><a href="#">PRO-SPECS</a></li>
+						<li><a href="#">PUMA</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">R</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">RARAGO</a></li>
+						<li><a href="#">RED WING</a></li>
+						<li><a href="#">REEBOK</a></li>
+						<li><a href="#">REVE</a></li>
+						<li><a href="#">ROCKFISH</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">S</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">2ND ATELIER</a></li>
+						<li><a href="#">SAUCONY</a></li>
+						<li><a href="#">SKA</a></li>
+						<li><a href="#">SKECHERS</a></li>
+						<li><a href="#">STARTAS</a></li>
+						<li><a href="#">STEFANOROSSI</a></li>
+						<li><a href="#">SUPERGA</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">T</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">TIMBERLAND</a></li>
+						<li><a href="#">TOTETOTE</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">U</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">UGG</a></li>
+						<li><a href="#">UNPUBLIC</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">V</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">VANS</a></li>
+						<li><a href="#">VEJA</a></li>
+						<li><a href="#">VERBENAS</a></li>
+						<li><a href="#">VLADO</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">X</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">XEXYMIX</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">123</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">2ND ATELIER</a></li>
+						<li><a href="#">4T2ND</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">ㄱ</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">그라비스</a></li>
+						<li><a href="#">그랜대네</a></li>
+						<li><a href="#">꼬무신</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">ㄴ</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">나이키</a></li>
+						<li><a href="#">누오보</a></li>
+						<li><a href="#">뉴발란스</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">ㄷ</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">다이노솔즈</a></li>
+						<li><a href="#">닥터마틴</a></li>
+						<li><a href="#">대너</a></li>
+						<li><a href="#">드라반</a></li>
+						<li><a href="#">디스커버리</a></li>
+						<li><a href="#">또떼또떼</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">ㄹ</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">라라고</a></li>
+						<li><a href="#">라코스테</a></li>
+						<li><a href="#">락피쉬</a></li>
+						<li><a href="#">레드윙</a></li>
+						<li><a href="#">레브</a></li>
+						<li><a href="#">리복</a></li>
+						<li><a href="#">리틀다이애나</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">ㅁ</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">마이애미프로젝트</a></li>
+						<li><a href="#">마크모크</a></li>
+						<li><a href="#">말리부 샌들</a></li>
+						<li><a href="#">머씨 크라운</a></li>
+						<li><a href="#">멜리사</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">ㅂ</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">박스앤콕스</a></li>
+						<li><a href="#">반스</a></li>
+						<li><a href="#">버켄스탁</a></li>
+						<li><a href="#">베르베나스</a></li>
+						<li><a href="#">베어파우</a></li>
+						<li><a href="#">베자</a></li>
+						<li><a href="#">블라도</a></li>
+						<li><a href="#">비에스큐티바이클래시</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">ㅅ</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">세컨드아뜨리에</a></li>
+						<li><a href="#">수페르가</a></li>
+						<li><a href="#">스카</a></li>
+						<li><a href="#">스케쳐스</a></li>
+						<li><a href="#">스타타스</a></li>
+						<li><a href="#">스테파노로시</a></li>
+						<li><a href="#">써코니</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">ㅇ</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">아디다스</a></li>
+						<li><a href="#">아식스</a></li>
+						<li><a href="#">아키클래식</a></li>
+						<li><a href="#">어그</a></li>
+						<li><a href="#">어더스</a></li>
+						<li><a href="#">언퍼블릭</a></li>
+						<li><a href="#">이파네마</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">ㅈ</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">장까를로 모렐리</a></li>
+						<li><a href="#">제이다울</a></li>
+						<li><a href="#">젝시믹스</a></li>
+						<li><a href="#">조던</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">ㅋ</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">캐치볼</a></li>
+						<li><a href="#">컨버스</a></li>
+						<li><a href="#">코뮤엘로</a></li>
+						<li><a href="#">코코모즈</a></li>
+						<li><a href="#">콜카</a></li>
+						<li><a href="#">크록스</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">ㅌ</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">팀버랜드</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">ㅍ</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">나이키</a></li>
+						<li><a href="#">누오보</a></li>
+						<li><a href="#">뉴발란스</a></li>
+					</ul>
+				</div>
+				<div class="brandFirstInit">ㅎ</div>
+				<div class="brandName">
+					<ul>
+						<li><a href="#">헌터</a></li>
+						<li><a href="#">호킨스</a></li>
+						<li><a href="#">휠라</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 
 
 
