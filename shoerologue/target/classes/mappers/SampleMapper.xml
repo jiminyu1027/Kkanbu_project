@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="edu.study.mapper.sampleMapper">
+
+	 <select id="list" resultType="sampleVO">
+         SELECT sidx
+         			, stitle
+         			, scontents
+         			, swriter
+         			, sdate
+          FROM springtest
+    </select>
+    
+    <insert id="insert" parameterType="sampleVO">
+    	<![CDATA[
+		    INSERT INTO springtest VALUES(
+		    	 springSEQ.nextval			
+		    	,#{stitle}		
+		    	,#{scontents}
+		    	,#{swriter}
+		    	,sysdate
+		    )
+		    ]]>
+		    <!-- springSEQ.nextval 화면으로부터 가져온다 -->
+		    <!-- ,#{stitle}		#{} vo의 필드명 -->
+		    <selectKey resultType="int" keyProperty="sidx" order="AFTER">
+		    	SELECT MAX(sidx) FROM springtest
+		    </selectKey>
+    </insert>
+    
+    <!-- 상세화면 -->
+    <select id="detail" resultType="sampleVO" parameterType="int">	<!-- sidx를 가져오기 때문에 int -->
+    	  SELECT sidx
+         	   , stitle
+         	   , scontents
+         	   , swriter
+         			, sdate
+          FROM springtest
+        WHERE sidx = #{sidx}
+    </select>
+
+	<update id="modify" parameterType="sampleVO">
+		UPDATE springtest
+		   SET stitle=#{stitle}
+			 , scontents=#{scontents}
+			 , swriter=#{swriter}
+		WHERE sidx = #{sidx}
+	</update>
+	
+	<delete id="del" parameterType="int">
+		DELETE FROM springtest
+		WHERE sidx=#{sidx}
+	</delete>
+	
+</mapper>

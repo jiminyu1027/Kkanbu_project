@@ -1,0 +1,66 @@
+@media only screen and (max-width: 1399px) {
+    .content-subject {font-size: 38px;}
+}
+
+@media only screen and (max-width: 1200px) {
+	.content-subject {font-size: 36px;}
+	#HourCountdown {margin-top: 10px;}
+	.total_goods_price > .cell {padding: 28px 0;}
+	.total_goods_price > .cell1 {font-size: 19px;}
+	.total_goods_price > .cell2 .no {font-size: 23px;}
+	.content .item_name {padding-top: 14px; font-size: 18px;}
+}
+
+@media only screen and (max-width: 991px) {
+	.content-subject {font-size: 34px;}
+	#HourCountdown {margin-top: 9px;}
+	.total_goods_price > .cell {padding: 24px 0;}
+	.total_goods_price > .cell1 {font-size: 17px;}
+	.total_goods_price > .cell2 .no {font-size: 21px;}
+	.content .item_name {padding-top: 13px; font-size: 17px;}
+	.content1-1 .consumer {position: absolute; top: -25px; left: 97px;}
+}
+
+@media only screen and (max-width: 767px) {
+	.content-subject {font-size: 32px;}
+	#HourCountdown {margin-top: 7px;}
+	.total_goods_price > .cell {padding: 20px 0;}
+	.total_goods_price > .cell1 {font-size: 15px;}
+	.total_goods_price > .cell2 .no {font-size: 19px;}
+	.content .item_name {padding-top: 10px; font-size: 16px;}
+	.money_box {margin-bottom: 25px;}
+	.tab-hd p {font-size: 15px; padding: 0 13px; height: 40px; line-height: 40px;}
+	.tab-hd-box {height: 42px;}
+	.tab-hd-box .md-tab-prev {left: 15px;}
+	.tab-hd-box .md-tab-next {right: 15px;}
+	.md-list {display: block;}
+}
+
+@media only screen and (max-width: 575px) {
+	.content-subject {font-size: 23px;}
+    #HourCountdown {height: 32px; line-height: 31px; width: 150px; font-size: 16px; margin-top: 0px;}
+    .carousel-indicators {display: none;}
+	.content1-1 .item_name {padding-top: 11px; font-size: 15px;}
+	.icon1 {min-width: 60px;}
+	.money_box {font-size: 80%;}
+	.discount-rate2, .price {font-size: 20px;}
+	.consumer {font-size: 18px;}
+	.ico_item_cart { width: 45px; height: 44px; padding-top: 8px;}
+	.ico_item_cart img { width: 19px; }
+	.content1-1 .consumer {left: 80px;}
+	.money_box .discount-rate {margin-right: 5px;}
+	.tab-hd-box-outer {display: none;}
+	.mb-category {display: block;}
+}
+
+@media only screen and (max-width: 410px) {
+	.ico_item_cart {display: none;}
+	.content2-1 .consumer {display: none;}
+	.money_box {margin-bottom: 15px;}
+}
+
+@media only screen and (max-width: 350px) {
+	.mb-category-area {display: block;}
+	.mb-category {top: 50px;}
+	.content1-1 .consumer {left: 65px;}
+}
