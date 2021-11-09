@@ -56,7 +56,7 @@
 			color:#999999;
 		}
 		
-		.shoes{
+		.shoesGender{
 			margin:auto;
 			margin-top:30px;
 			font-weight:700;
@@ -70,6 +70,10 @@
 			margin-right:45px;
 			font-size:13pt;
 			font-weight:400;
+		}
+		
+		.shoesList>ul>li>a:hover{
+			color:gray;
 		}
 		
 		.shoesList{
@@ -494,11 +498,11 @@
 				  <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
 				</svg>
 				<a href="/main.do">HOME</a></li>&nbsp;&nbsp;>&nbsp;&nbsp;
-				<li><a href="Shoerologue/category/gender/kids/kids.do">KIDS</a></li>
+				<li><a href="/Shoerologue/category/gender/kids/kids.do">KIDS</a></li>
 			</ul>
 		</div>
 		<div class="shoesBox">
-			<div class="shoes">신발</div>
+			<div class="shoesGender">KIDS</div>
 			<div class="shoesList">
 				<ul>
 					<li><a href="/Shoerologue/category/gender/kids/kidsSneakers.do">운동화</a></li>

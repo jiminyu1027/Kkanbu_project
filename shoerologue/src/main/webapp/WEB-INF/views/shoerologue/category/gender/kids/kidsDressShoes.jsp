@@ -56,7 +56,7 @@
 			color:#999999;
 		}
 		
-		.shoes{
+		.shoesGender{
 			margin:auto;
 			margin-top:30px;
 			font-weight:700;
@@ -83,6 +83,17 @@
 			color:red;
 			font-weight:500;
 		}
+		
+		.redBold2{
+			color:red;
+			font-weight:500;
+			text-decoration:underline;
+			text-underline-position:under;
+		}
+		
+		.shoesList>ul>li>a:hover{
+			color:gray;
+		}		
 		
 		.totalPd{
 			text-align:left;
@@ -499,7 +510,17 @@
 			</ul>
 		</div>
 		<div class="shoesBox">
-			<div class="shoes">구두</div>
+			<div class="shoesGender">KIDS</div>
+			<div class="shoesList">
+				<ul>
+					<li><a href="/Shoerologue/category/gender/kids/kidsSneakers.do">운동화</a></li>
+				 	<li><a href="/Shoerologue/category/gender/kids/kidsSports.do">스포츠</a></li>
+				    <li><a href="/Shoerologue/category/gender/kids/kidsDressShoes.do" class="redBold2">구두</a></li>
+				    <li><a href="/Shoerologue/category/gender/kids/kidsSandle.do">샌들</a></li>
+				    <li><a href="/Shoerologue/category/gender/kids/kidsCasual.do">캐주얼</a></li>
+				    <li><a href="/Shoerologue/category/gender/kids/kidsBoots.do">부츠</a></li>
+				</ul>
+			</div>
 			<div class="totalPdSel">
 				<div  class="totalPd">
 					<span>총 <span class="redBold">0</span>개의 상품이 있습니다.</span>
