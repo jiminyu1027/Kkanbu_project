@@ -56,7 +56,7 @@ public class ShoerologueGenderController {
 	@RequestMapping(value="/women/sneakers.do")
 	public String womenSneakers(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/sneakers";
+		return "shoerologue/category/gender/women/sneakers";
 	}
 	@RequestMapping(value="/women/dressShoes.do")
 	public String womenDressShoes(Locale locale, Model model)throws Exception {
