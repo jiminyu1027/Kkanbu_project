@@ -56,7 +56,7 @@
 			color:#999999;
 		}
 		
-		.brandTitle{
+		.brandName{
 			margin:auto;
 			margin-top:30px;
 			font-weight:700;
@@ -64,82 +64,110 @@
 			font-size:29pt;
 		}
 		
-		.bestBrandList>ul>li{
+		.shoesList>ul>li{
 			display:inline;
-			margin-left:-40px;
+			text-align:center;
+			margin-right:45px;
+			font-size:13pt;
+			font-weight:400;
 		}
 		
-		.bestBrandList>ul>li>a>img{
-			border:1px solid #D5D5D5;
-			width:220px;
-			height:92px;
-			margin:10px 25px;
+		.shoesList>ul>li>a:hover{
+			color:gray;
 		}
 		
-		.bestBrandList{
+		.shoesList{
 			margin:auto;
 			margin-top:30px;
 			margin-bottom:45px;
+			text-align:center;
 		}
 		
-		.brandList>ul>li{
-			display:inline;
-			
+		.redBold{
+			color:red;
+			font-weight:500;
 		}
 		
-		.brandList>ul{
-			margin-left:-10px;
+		.totalPd{
+			text-align:left;
+			margin-left:5px;
+			margin-top:10px;
+			float:left;
 		}
 		
-		.brandList>ul>li>a{
-			border:1px solid #D5D5D5;
-			color:#747774;
-			margin:2px;
+		.selection{
+			text-align:right;
+		}
+		.selection>select{
+			border:0px;
+			width:150px;
+			height:40px;
+			margin-right:10px;
+		}
+		
+		.selection>select:focus{
+			border:0px;
+			outline:none;
 		}
 		
 		.hr1{
 			border:1px solid black;
 		}
 		
-		.hr1Gray{
-			border:1px solid gray;
-		}
-		
-		.brandFirstInit{
-			font-size:24pt;
-			font-weight:600;
-			height:60px;
-			padding-left:10px;
-			margin-top:20px;
-		}
-		
-		.brandNameBox{
+		.productList1{
+			margin-top:30px;
+			margin-bottom:60px;
 			width:100%;
+			height:420px;
 		}
 		
-		.brandName{
-			height:75px;
-		}
-		
-		.brandName>ul>li{
-			display:inline;
-			width:20%; 
+		.card{
+			width:290px;
 			float:left;
-			margin-bottom:23px;
+			margin-left:7px;
 		}
 		
-		.brandName>ul{
-			margin-left:-23px;
+		.card:hover{
+			width:290px;
+			border:2px solid black;
+			border-radius:0px;
 		}
 		
-		.brandName>ul>li>a{
-			color:gray;
-			font-size:11pt;
-			font-weight:300;
+		.cardImage{
+			margin:auto;
+			width:280px;
+			height:280px;
 		}
 		
-		
-		
+		.cardText{
+			margin:auto;
+			margin-top:20px;
+			width:280px;
+			height:110px;
+		}
+		.page{
+			text-align:center;
+			margin-top:40px;
+			height:150px;
+		}
+		.brandBanner>img{
+			width:100%;
+			margin:35px 0px;
+		}
+	
+	
+	
+	
+	
+	
+	
+		input[type=checkbox]{
+			display:none;
+		}
+		input[type=range]:focus{
+			border:1px solid red;
+		}
+
 	</style>
 </head>
 <body>
@@ -266,7 +294,6 @@
 	</div>
 <!-- body  -->
 
-
 	<div class="bigBox">
 		<div class="channel">
 			<ul>
@@ -274,435 +301,299 @@
 				  <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
 				</svg>
 				<a href="/main.do">HOME</a></li>&nbsp;&nbsp;>&nbsp;&nbsp;
-				<li><a href="/Shoerologue/category/brand/brand.do">BRAND</a></li>
+				<li><a href="/Shoerologue/category/brand/brand.do">BRAND</a></li>&nbsp;&nbsp;>&nbsp;&nbsp;
+				<li>NIKE</li>
 			</ul>
 		</div>
+	</div>
+	<div class="bigBox">
 		<div class="brandBox">
-			<div class="brandTitle">BRAND</div>
-			<div class="bestBrandList">
-				<ul>
-					<li><a href="/Shoerologue/category/brand/brandNike.do"><img src="/resources/image/brandlogo/nike.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/nike.do"><img src="/resources/image/brandlogo/adidas.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/nike.do"><img src="/resources/image/brandlogo/newbalance.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/nike.do"><img src="/resources/image/brandlogo/converse.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/nike.do"><img src="/resources/image/brandlogo/vans.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/nike.do"><img src="/resources/image/brandlogo/reebok.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/nike.do"><img src="/resources/image/brandlogo/nuovo.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/nike.do"><img src="/resources/image/brandlogo/jordan.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/nike.do"><img src="/resources/image/brandlogo/puma.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/nike.do"><img src="/resources/image/brandlogo/hawkins.png"></a></li>
-				</ul>
-			</div>
+			<div class="brandName">NIKE&nbsp;&nbsp;|&nbsp;&nbsp;나이키</div>
 		</div>
-		<div class="brandList">
-			<ul>
-				<li width=10><a href="#" class="brandInit">A</a></li>
-				<li><a href="#" class="brandInit">B</a></li>
-				<li><a href="#" class="brandInit">C</a></li>
-				<li><a href="#" class="brandInit">D</a></li>
-				<li><a href="#" class="brandInit">E</a></li>
-				<li><a href="#" class="brandInit">F</a></li>
-				<li><a href="#" class="brandInit">G</a></li>
-				<li><a href="#" class="brandInit">H</a></li>
-				<li><a href="#" class="brandInit">I</a></li>
-				<li><a href="#" class="brandInit">J</a></li>
-				<li><a href="#" class="brandInit">K</a></li>
-				<li><a href="#" class="brandInit">L</a></li>
-				<li><a href="#" class="brandInit">M</a></li>
-				<li><a href="#" class="brandInit">N</a></li>
-				<li><a href="#" class="brandInit">O</a></li>
-				<li><a href="#" class="brandInit">P</a></li>
-				<li><a href="#" class="brandInit">Q</a></li>
-				<li><a href="#" class="brandInit">R</a></li>
-				<li><a href="#" class="brandInit">S</a></li>
-				<li><a href="#" class="brandInit">T</a></li>
-				<li><a href="#" class="brandInit">U</a></li>
-				<li><a href="#" class="brandInit">V</a></li>
-				<li><a href="#" class="brandInit">W</a></li>
-				<li><a href="#" class="brandInit">X</a></li>
-				<li><a href="#" class="brandInit">Y</a></li>
-				<li><a href="#" class="brandInit">Z</a></li>
-				<li><a href="#" class="brandInit">123</a></li>
-				<li><a href="#" class="brandInit">ㄱ</a></li>
-				<li><a href="#" class="brandInit">ㄴ</a></li>
-				<li><a href="#" class="brandInit">ㄷ</a></li>
-				<li><a href="#" class="brandInit">ㄹ</a></li>
-				<li><a href="#" class="brandInit">ㅁ</a></li>
-				<li><a href="#" class="brandInit">ㅂ</a></li>
-				<li><a href="#" class="brandInit">ㅅ</a></li>
-				<li><a href="#" class="brandInit">ㅇ</a></li>
-				<li><a href="#" class="brandInit">ㅈ</a></li>
-				<li><a href="#" class="brandInit">ㅊ</a></li>
-				<li><a href="#" class="brandInit">ㅋ</a></li>
-				<li><a href="#" class="brandInit">ㅌ</a></li>
-				<li><a href="#" class="brandInit">ㅍ</a></li>
-				<li><a href="#" class="brandInit">ㅎ</a></li>
-			</ul>
+	</div>
+	<div class="brandBanner">
+		<img src="/resources/image/brandbanner/N/NIKE.png">
+	</div>
+	<div class="bigBox">
+		<div class="brandBox">
+			<div class="totalPdSel">
+				<div  class="totalPd">
+					<span>총 <span class="redBold">0</span>개의 상품이 있습니다.</span>
+				</div>
+				<div class="selection">
+					<select class="">
+					  <option value="1" selected>신상품순</option>
+					  <option value="2">베스트상품순</option>
+					  <option value="3">상품평순</option>
+					  <option value="4">낮은가격순</option>
+					  <option value="5">높은가격순</option>
+					</select>
+					<select class="">
+					  <option value="20" selected>20개씩 보기</option>
+					  <option value="40">40개씩 보기</option>
+					  <option value="60">60개씩 보기</option>
+					</select>
+				</div>
+			</div>
 		</div>
 		<div class="hr1"></div>
-		<div class="brandinitBox">
-			<div class="brandNameBox">
-				<div class="brandFirstInit">A</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">ADIDAS</a></li>
-						<li><a href="#">AKIII CLASSIC</a></li>
-						<li><a href="#">ASICS</a></li>
-					</ul>
+		
+		<div class="productList">
+		<!-- 상품 첫번째줄 -->
+			<div class="productList1">
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
 				</div>
-				<hr>
-				<div class="brandFirstInit">B</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">BEARPAW</a></li>
-						<li><a href="#">BIRKENSTOCK</a></li>
-						<li><a href="#">BSQTBYCLASSY</a></li>
-						<li><a href="#">Box&amp;Cox</a></li>
-					</ul>
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
 				</div>
-				<hr>
-				<div class="brandFirstInit">C</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">CATCHBALL</a></li>
-						<li><a href="#">COCOMODS</a></li>
-						<li><a href="#">CONVERSE</a></li>
-						<li><a href="#">CROCS</a></li>
-					</ul>
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
 				</div>
-				<hr>
-				<div class="brandFirstInit">D</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">D.LAVAN</a></li>
-						<li><a href="#">DANNER</a></li>
-						<li><a href="#">DINOSOLES</a></li>
-						<li><a href="#">DISCOVERY</a></li>
-						<li><a href="#">DR.MARTENS</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">E</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">EARTHUS</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">F</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">FEIYUE</a></li>
-						<li><a href="#">FILA</a></li>
-						<li><a href="#">FIRENZE ATELIER</a></li>
-						<li><a href="#">FLORIDA STUDIO</a></li>
-						<li><a href="#">FRED PERRY</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">G</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">GGOMOOSIN</a></li>
-						<li><a href="#">GIANCARIO MORELLI</a></li>
-						<li><a href="#">GRENDENE</a></li>
-						<li><a href="#">gravis</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">H</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">HAWKINS</a></li>
-						<li><a href="#">HUNTER</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">I</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">IPANEMA</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">J</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">J.DAUL</a></li>
-						<li><a href="#">JORDAN</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">K</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">KKOMOMSHOE</a></li>
-						<li><a href="#">KOLCA</a></li>
-						<li><a href="#">KOMUELLO</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">L</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">LACOSTE</a></li>
-						<li><a href="#">Little Diana</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">M</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">MACMOC</a></li>
-						<li><a href="#">MALIBU SANDALS</a></li>
-						<li><a href="#">MELISSA</a></li>
-						<li><a href="#">MERCY CROWN</a></li>
-						<li><a href="#">MIAMI PROJECT</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">N</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">NEW BALANCE</a></li>
-						<li><a href="/Shoerologue/category/brand/brandNike.do">NIKE</a></li>
-						<li><a href="#">NUOVO</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">P</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">POLO</a></li>
-						<li><a href="#">POPSOCKETS</a></li>
-						<li><a href="#">POSE GANCH</a></li>
-						<li><a href="#">PRO-SPECS</a></li>
-						<li><a href="#">PUMA</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">R</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">RARAGO</a></li>
-						<li><a href="#">RED WING</a></li>
-						<li><a href="#">REEBOK</a></li>
-						<li><a href="#">REVE</a></li>
-						<li><a href="#">ROCKFISH</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">S</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">2ND ATELIER</a></li>
-						<li><a href="#">SAUCONY</a></li>
-						<li><a href="#">SKA</a></li>
-						<li><a href="#">SKECHERS</a></li>
-						<li><a href="#">SPERRY</a></li>
-						<li><a href="#">STARTAS</a></li>
-						<li><a href="#">STEFANOROSSI</a></li>
-						<li><a href="#">STRAYE</a></li>
-						<li><a href="#">SUPERGA</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">T</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">TIMBERLAND</a></li>
-						<li><a href="#">TOTETOTE</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">U</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">UGG</a></li>
-						<li><a href="#">UNPUBLIC</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">V</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">VANS</a></li>
-						<li><a href="#">VEJA</a></li>
-						<li><a href="#">VERBENAS</a></li>
-						<li><a href="#">VLADO</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">X</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">XEXYMIX</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">123</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">2ND ATELIER</a></li>
-						<li><a href="#">4T2ND</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">ㄱ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">그라비스</a></li>
-						<li><a href="#">그랜대네</a></li>
-						<li><a href="#">꼬무신</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">ㄴ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="/Shoerologue/category/brand/brandNike.do">나이키</a></li>
-						<li><a href="#">누오보</a></li>
-						<li><a href="#">뉴발란스</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">ㄷ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">다이노솔즈</a></li>
-						<li><a href="#">닥터마틴</a></li>
-						<li><a href="#">대너</a></li>
-						<li><a href="#">드라반</a></li>
-						<li><a href="#">디스커버리</a></li>
-						<li><a href="#">또떼또떼</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">ㄹ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">라라고</a></li>
-						<li><a href="#">라코스테</a></li>
-						<li><a href="#">락피쉬</a></li>
-						<li><a href="#">레드윙</a></li>
-						<li><a href="#">레브</a></li>
-						<li><a href="#">리복</a></li>
-						<li><a href="#">리틀다이애나</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">ㅁ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">마이애미프로젝트</a></li>
-						<li><a href="#">마크모크</a></li>
-						<li><a href="#">말리부 샌들</a></li>
-						<li><a href="#">머씨 크라운</a></li>
-						<li><a href="#">멜리사</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">ㅂ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">박스앤콕스</a></li>
-						<li><a href="#">반스</a></li>
-						<li><a href="#">버켄스탁</a></li>
-						<li><a href="#">베르베나스</a></li>
-						<li><a href="#">베어파우</a></li>
-						<li><a href="#">베자</a></li>
-						<li><a href="#">블라도</a></li>
-						<li><a href="#">비에스큐티바이클래시</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">ㅅ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">세컨드아뜨리에</a></li>
-						<li><a href="#">수페르가</a></li>
-						<li><a href="#">스카</a></li>
-						<li><a href="#">스케쳐스</a></li>
-						<li><a href="#">스타타스</a></li>
-						<li><a href="#">스테파노로시</a></li>
-						<li><a href="#">스트레이</a></li>
-						<li><a href="#">스페리</a></li>
-						<li><a href="#">써코니</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">ㅇ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">아디다스</a></li>
-						<li><a href="#">아식스</a></li>
-						<li><a href="#">아키클래식</a></li>
-						<li><a href="#">어그</a></li>
-						<li><a href="#">어더스</a></li>
-						<li><a href="#">언퍼블릭</a></li>
-						<li><a href="#">이파네마</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">ㅈ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">장까를로 모렐리</a></li>
-						<li><a href="#">제이다울</a></li>
-						<li><a href="#">젝시믹스</a></li>
-						<li><a href="#">조던</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">ㅋ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">캐치볼</a></li>
-						<li><a href="#">컨버스</a></li>
-						<li><a href="#">코뮤엘로</a></li>
-						<li><a href="#">코코모즈</a></li>
-						<li><a href="#">콜카</a></li>
-						<li><a href="#">크록스</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">ㅌ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">팀버랜드</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">ㅍ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">페이유에</a></li>
-						<li><a href="#">포즈간츠</a></li>
-						<li><a href="#">포티세컨드</a></li>
-						<li><a href="#">폴로</a></li>
-						<li><a href="#">푸마</a></li>
-						<li><a href="#">프레드 페리</a></li>
-						<li><a href="#">프로스펙스</a></li>
-						<li><a href="#">플로리다 스튜디오</a></li>
-						<li><a href="#">피렌체아뜨리에</a></li>
-						
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit">ㅎ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">헌터</a></li>
-						<li><a href="#">호킨스</a></li>
-						<li><a href="#">휠라</a></li>
-					</ul>
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
 				</div>
 			</div>
+			<!-- 상품 두번째줄 -->
+			<div class="productList1">
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
+				</div>
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
+				</div>
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
+				</div>
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
+				</div>
+			</div>
+			<div class="productList1">
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
+				</div>
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
+				</div>
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
+				</div>
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
+				</div>
+			</div>
+			<div class="productList1">
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
+				</div>
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
+				</div>
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
+				</div>
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
+				</div>
+			</div>
+			<div class="productList1">
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
+				</div>
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
+				</div>
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
+				</div>
+				<div class="card">
+					<div class="cardImage">
+						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+					</div>
+					<div class="cardText">
+						<h5 class="card-title brandtitle">컨버스</h5>
+					    <p class="card-text">척 70 하이</p>
+					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+					    <span class="card-text HotPrice">42,000</span>
+					    <span class="card-text HotPer">원 [57%]</span>
+					</div>
+				</div>
+			</div>
+			<div class="hr1"></div>
+			<div class="page">페이징 처리</div>
 		</div>
-		<div class="hr1Gray"></div>
-
-
-
 	</div>
 
 <!-- 우측하단 TOP 이동 배너 -->
@@ -775,6 +666,44 @@
 	  </footer>
 	 </div>
 	</div>
+	<script type="text/javascript">
+	//<![CDATA[
+	(function($, undefined){
+		$.fn.multiOpenMenu = function(options) {
+			// 메뉴가 될 엘리먼트가 없는지 체크합니다.
+			if(this.length === 0) {
+				return this;
+			}
+			// 기본값 설정 : active는 처음에 열려 있을 메뉴 입니다.
+			var settings = $.extend({
+				active: 0
+			}, options);
+			// 초기 메뉴를 생성합니다.
+			var headers = this.find(">h6");
+			$.each(headers, function(i, opt) {
+				if(i != settings.active) {
+					$(this).next().hide();
+				}
+			});
+			// 메뉴를 클릭했을때 서브 메뉴를 보여주는 이벤트를 만듭니다.
+			headers.on('click', function() {
+				var menuArea = $(this).next();
+				var isOpen = menuArea.is(":visible");
+				// 열린 상태에 따라 이벤트를 반전해서 발생시킨다.
+				menuArea[isOpen ? 'slideUp' : 'slideDown']().trigger(isOpen ? 'hide' : 'show');
+				// 이벤트 버블링을 멈춘다.
+				return false;
+			});
+			return this;
+		};
+	}(jQuery));
+	// 메뉴를 생성합니다.
+	$(function(){
+		$("#menu").multiOpenMenu();
+	});
+	//]]>
+	</script>
+
 	
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	

@@ -15,6 +15,12 @@ public class ShoerologueBrandController {
 		
 		return "shoerologue/category/brand/brand";
 	}
+	@RequestMapping(value="/brandNike.do")
+	public String brandNo043(Locale locale, Model model)throws Exception {
+		
+		return "shoerologue/category/brand/brandNike";
+	}
+	
 	
 }
 
