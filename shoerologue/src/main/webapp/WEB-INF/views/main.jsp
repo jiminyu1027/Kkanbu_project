@@ -44,6 +44,10 @@
 		*{
 		font-family: 'Montserrat', "Noto Sans KR", sans-serif;
 		}
+		
+		.img-fluid{
+			width:100%;
+		}
 		</style>
 	
 	</head>

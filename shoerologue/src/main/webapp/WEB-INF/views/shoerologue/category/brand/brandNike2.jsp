@@ -120,8 +120,6 @@
 			text-align:center;
 			margin-top:40px;
 			height:150px;
-			clear:left;
-			clear:right;
 		}
 		
 		.brandBanner>img{
@@ -130,7 +128,7 @@
 		}
 		
 		.bestBox{
-			height:460px;
+			height:480px;
 		}
 		
 		.bestTitle{
@@ -215,9 +213,9 @@
 		
 		.filterBox{
 			background-color:white;
-			width:290px;
+			width:300px;
 			padding:30px;
-			border:1px solid red;
+			float: left;
 		}
 		.filterTitle{
 			font-weight:700;
@@ -307,9 +305,49 @@
 			background-image:url(/resources/image/color/rainbow.png);
 		}
 		
+		.filterBtn>input[type=reset]{
+			background-color:white;
+			border:1px solid black;
+			color:black;
+			border-radius:0px;
+			width:110px;
+			height:45px;
+			margin-top:10px;
+			margin-bottom:-40px;
+		}
+		.filterBtn>input[type=reset]:hover{
+			background-color:#EEEEEE;
+		}
+		
+		.filterBtn>input[type=reset]:focus{
+			border:none;
+			outline:none;
+			background-color:#EEEEEE;
+		}
+		
+		.filterBtn>input[type=button]{
+			background-color:black;
+			color:white;
+			border-radius:0px;
+			width:110px;
+			height:45px;
+			margin-top:10px;
+			margin-bottom:-40px;
+		}
+		
+		.filterBtn>input[type=button]:focus{
+			border:none;
+			outline:none;
+		}
+		
 		.brandBox{
 			border:1px solid red;
-			float:right;
+			width:100%;
+		}
+		
+		.brandPdBox{
+			height:500px;
+			border:1px solid orange;
 		}
 		
 		.brandPd{
@@ -332,11 +370,20 @@
 			border:1px solid blue;
 			height:430px;
 		}
-		.bg-light{
-			clear:left;
-			clear:right;
+		
+		.box1{
+			border:1px solid red;
+			width:200px;
+			height:200px;
+			display: inline-block
 		}
 		
+		.box2{
+			border:1px solid blue;
+			width:200px;
+			height:200px;
+			display: inline-block
+		}
 	</style>
 </head>
 <body>
@@ -534,131 +581,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="filterBox">
-			<div class="filterTitle">FILTER</div>
-			<div class="hr1"></div>
-			<div id="menu">
-				<h6><a>성별</a></h6>
-				<div class="filterGender">
-					<input type="checkbox" id="genderMen"><label for="genderMen">MEN</label>
-					<input type="checkbox" id="genderWomen"><label for="genderWomen">WOMEN</label>
-					<input type="checkbox" id="genderKids"><label for="genderKids">KIDS</label>
-				</div>
-				<h6><a>사이즈</a></h6>
-				<div class="filterSize">
-					<input type="checkbox" id="size_180"><label for="size_180">180</label>
-					<input type="checkbox" id="size_190"><label for="size_190">190</label>
-					<input type="checkbox" id="size_200"><label for="size_200">200</label>
-					<input type="checkbox" id="size_210"><label for="size_210">210</label>
-					<input type="checkbox" id="size_220"><label for="size_220">220</label>
-					<input type="checkbox" id="size_230"><label for="size_230">230</label>
-					<input type="checkbox" id="size_240"><label for="size_240">240</label>
-					<input type="checkbox" id="size_250"><label for="size_250">250</label>
-					<input type="checkbox" id="size_260"><label for="size_260">260</label>
-					<input type="checkbox" id="size_270"><label for="size_270">270</label>
-					<input type="checkbox" id="size_280"><label for="size_280">280</label>
-					<input type="checkbox" id="size_290"><label for="size_290">290</label>
-					<input type="checkbox" id="size_300"><label for="size_300">300</label>
-				</div>
-				<h6><a>색상</a></h6>
-				<div class="filterColor">
-					<ul>
-						<li><input type="checkbox" id="color_beige"><label for="color_beige"></label></li>
-						<li><input type="checkbox" id="color_black"><label for="color_black"></label></li>
-						<li><input type="checkbox" id="color_blue"><label for="color_blue"></label></li>
-						<li><input type="checkbox" id="color_brown"><label for="color_brown"></label></li>
-						<li><input type="checkbox" id="color_yellow"><label for="color_yellow"></label></li>
-						<li><input type="checkbox" id="color_gray"><label for="color_gray"></label></li>
-						<li><input type="checkbox" id="color_green"><label for="color_green"></label></li>
-						<li><input type="checkbox" id="color_navy"><label for="color_navy"></label></li>
-						<li><input type="checkbox" id="color_orange"><label for="color_orange"></label></li>
-						<li><input type="checkbox" id="color_pink"><label for="color_pink"></label></li>
-						<li><input type="checkbox" id="color_purple"><label for="color_purple"></label></li>
-						<li><input type="checkbox" id="color_red"><label for="color_red"></label></li>
-						<li><input type="checkbox" id="color_white"><label for="color_white"></label></li>
-						<li><input type="checkbox" id="color_rainbow"><label for="color_rainbow"></label></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="brandBox">
-			<div class="totalPdSel">
-				<div  class="totalPd">
-					<span>총 <span class="redBold">0</span>개의 상품이 있습니다.</span>
-				</div>
-				<div class="selection">
-					<select class="">
-					  <option value="1" selected>신상품순</option>
-					  <option value="2">베스트상품순</option>
-					  <option value="3">상품평순</option>
-					  <option value="4">낮은가격순</option>
-					  <option value="5">높은가격순</option>
-					</select>
-					<select class="">
-					  <option value="15" selected>15개씩 보기</option>
-					  <option value="30">30개씩 보기</option>
-					  <option value="60">60개씩 보기</option>
-					</select>
-				</div>
-				<div class="hr1"></div>
-			</div>
-			<!-- 상품 -->
-			<div class="brandPdBox">
-			<!-- 브랜드별 상품 첫번째줄 -->
-				<div class="brandPdSmBox">
-					<div class="brandPd">
-						<a href="#">
-							<img src="/resources/image/shoesimage/nike/nike_01.png">
-							<div class="shoesBrand">나이키</div>
-							<div class="shoesName">나이키 에어 맥스 SC</div>
-							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-						</a>
-					</div>
-					<div class="brandPd">
-						<a href="#">
-							<img src="/resources/image/shoesimage/nike/nike_01.png">
-							<div class="shoesBrand">나이키</div>
-							<div class="shoesName">나이키 에어 맥스 SC</div>
-							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-						</a>
-					</div>
-					<div class="brandPd">
-						<a href="#">
-							<img src="/resources/image/shoesimage/nike/nike_01.png">
-							<div class="shoesBrand">나이키</div>
-							<div class="shoesName">나이키 에어 맥스 SC</div>
-							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-						</a>
-					</div>
-				</div>
-			<!-- 브랜드별 상품 두번째줄 -->
-				<div class="brandPd">
-					<a href="#">
-						<img src="/resources/image/shoesimage/nike/nike_01.png">
-						<div class="shoesBrand">나이키</div>
-						<div class="shoesName">나이키 에어 맥스 SC</div>
-						<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-					</a>
-				</div>
-				<div class="brandPd">
-					<a href="#">
-						<img src="/resources/image/shoesimage/nike/nike_01.png">
-						<div class="shoesBrand">나이키</div>
-						<div class="shoesName">나이키 에어 맥스 SC</div>
-						<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-					</a>
-				</div>
-				<div class="brandPd">
-					<a href="#">
-						<img src="/resources/image/shoesimage/nike/nike_01.png">
-						<div class="shoesBrand">나이키</div>
-						<div class="shoesName">나이키 에어 맥스 SC</div>
-						<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="page">페이징 처리</div>
+		<div class="box1"></div>
+		<div class="box2"></div>
 	</div>
 
 <!-- 우측하단 TOP 이동 배너 -->

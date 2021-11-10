@@ -282,7 +282,7 @@
 			<div class="bestBrandList">
 				<ul>
 					<li><a href="/Shoerologue/category/brand/brandNike.do"><img src="/resources/image/brandlogo/nike.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/nike.do"><img src="/resources/image/brandlogo/adidas.png"></a></li>
+					<li><a href="/Shoerologue/category/brand/brandNike2.do"><img src="/resources/image/brandlogo/adidas.png"></a></li>
 					<li><a href="/Shoerologue/category/brand/nike.do"><img src="/resources/image/brandlogo/newbalance.png"></a></li>
 					<li><a href="/Shoerologue/category/brand/nike.do"><img src="/resources/image/brandlogo/converse.png"></a></li>
 					<li><a href="/Shoerologue/category/brand/nike.do"><img src="/resources/image/brandlogo/vans.png"></a></li>
