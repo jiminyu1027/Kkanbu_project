@@ -120,6 +120,8 @@
 			text-align:center;
 			margin-top:40px;
 			height:150px;
+			clear:left;
+			clear:right;
 		}
 		
 		.brandBanner>img{
@@ -128,7 +130,7 @@
 		}
 		
 		.bestBox{
-			height:480px;
+			height:460px;
 		}
 		
 		.bestTitle{
@@ -138,6 +140,7 @@
 		}
 		
 		.bestPd{
+			width:224px;
 			float:left;
 			margin:6.7px;
 			position:relative;
@@ -149,8 +152,8 @@
 		}
 		
 		.bestPd>a>img{
-			width:224px;
-			height:224px;
+			width:222px;
+			height:222px;
 			margin-bottom:10px;
 		}
 		
@@ -213,9 +216,9 @@
 		
 		.filterBox{
 			background-color:white;
-			width:300px;
-			padding:30px;
-			float: left;
+			width:290px;
+			padding:20px;
+			display:inline-block;
 		}
 		.filterTitle{
 			font-weight:700;
@@ -305,85 +308,37 @@
 			background-image:url(/resources/image/color/rainbow.png);
 		}
 		
-		.filterBtn>input[type=reset]{
-			background-color:white;
-			border:1px solid black;
-			color:black;
-			border-radius:0px;
-			width:110px;
-			height:45px;
-			margin-top:10px;
-			margin-bottom:-40px;
-		}
-		.filterBtn>input[type=reset]:hover{
-			background-color:#EEEEEE;
-		}
-		
-		.filterBtn>input[type=reset]:focus{
-			border:none;
-			outline:none;
-			background-color:#EEEEEE;
-		}
-		
-		.filterBtn>input[type=button]{
-			background-color:black;
-			color:white;
-			border-radius:0px;
-			width:110px;
-			height:45px;
-			margin-top:10px;
-			margin-bottom:-40px;
-		}
-		
-		.filterBtn>input[type=button]:focus{
-			border:none;
-			outline:none;
-		}
-		
 		.brandBox{
-			border:1px solid red;
-			width:100%;
-		}
-		
-		.brandPdBox{
-			height:500px;
-			border:1px solid orange;
+			float:right;
 		}
 		
 		.brandPd{
+			width:282px;
 			float:left;
-			margin:6.7px;
+			margin:9px;
 		}
 		
 		.brandPd:hover{
 			border:1px solid black;
-			position:relative;
 		}
 		
 		.brandPd>a>img{
-			width:285px;
-			height:285px;
+			width:280px;
+			height:280px;
 			margin-bottom:10px;
 		}
 		
 		.brandPdSmBox{
-			border:1px solid blue;
-			height:430px;
+			width:900px;
+			height:440px;
+		}
+		.bg-light{
+			clear:left;
+			clear:right;
 		}
 		
-		.box1{
-			border:1px solid red;
-			width:200px;
-			height:200px;
-			display: inline-block
-		}
 		
-		.box2{
-			border:1px solid blue;
-			width:200px;
-			height:200px;
-			display: inline-block
-		}
+		
 	</style>
 </head>
 <body>
@@ -446,45 +401,45 @@
 		 <div class="col-10 col-sm-8 col-md-6 col-lg-5">
 			 <ul class="nav navMenu">
 			 	<li class="nav-item">
-				<a class="nav-link fw-bolder text-white nav-fs" href="/Shoerologue/category/brand/brand.do">BRAND</a>
+				<a class="nav-link fw-bolder text-white nav-fs" href="/Shoerologue/category/brand.do">BRAND</a>
 				</li>
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/Shoerologue/category/gender/men/men.do" role="button" aria-expanded="false">MEN</a>
+				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/Shoerologue/category/gender/men.do" role="button" aria-expanded="false">MEN</a>
 				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
-				    	<li><a class="dropdown-item fw-bolder" href="/Shoerologue/category/gender/men/men.do">MEN</a></li>
+				    	<li><a class="dropdown-item fw-bolder" href="/Shoerologue/category/gender/men.do">MEN</a></li>
 				   		<li><hr class="dropdown-divider "></li>
-					 	<li><a class="dropdown-item" href="/Shoerologue/category/gender/men/menSneakers.do">운동화</a></li>
-					 	<li><a class="dropdown-item" href="/Shoerologue/category/gender/men/menSports.do">스포츠</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/men/menDressShoes.do">구두</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/men/menSandle.do">샌들</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/men/menCasual.do">캐주얼</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/men/menBoots.do">부츠</a></li>
+					 	<li><a class="dropdown-item" href="/Shoerologue/category/gender/men/sneakers.do">운동화</a></li>
+					 	<li><a class="dropdown-item" href="/Shoerologue/category/gender/men/sports.do">스포츠</a></li>
+					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/men/dressShoes.do">구두</a></li>
+					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/men/sandle.do">샌들</a></li>
+					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/men/casual.do">캐주얼</a></li>
+					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/men/boots.do">부츠</a></li>
 				    </ul>
 				</li>
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/Shoerologue/category/gender/women/women.do" role="button" aria-expanded="false">WOMEN</a>
+				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/Shoerologue/category/gender/women.do" role="button" aria-expanded="false">WOMEN</a>
 				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
-				    	<li><a class="dropdown-item fw-bolder" href="/Shoerologue/category/gender/women/women.do">WOMEN</a></li>
+				    	<li><a class="dropdown-item fw-bolder" href="/Shoerologue/category/gender/women.do">WOMEN</a></li>
 				   		<li><hr class="dropdown-divider"></li>
-					 	<li><a class="dropdown-item" href="/Shoerologue/category/gender/women/womenSneakers.do">운동화</a></li>
-					 	<li><a class="dropdown-item" href="/Shoerologue/category/gender/women/womenSports.do">스포츠</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/women/womenDressShoes.do">구두</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/women/womenSandle.do">샌들</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/women/womenCasual.do">캐주얼</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/women/womenBoots.do">부츠</a></li>
+					 	<li><a class="dropdown-item" href="/Shoerologue/category/gender/women/sneakers.do">운동화</a></li>
+					 	<li><a class="dropdown-item" href="/Shoerologue/category/gender/women/sports.do">스포츠</a></li>
+					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/women/dressShoes.do">구두</a></li>
+					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/women/sandle.do">샌들</a></li>
+					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/women/casual.do">캐주얼</a></li>
+					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/women/boots.do">부츠</a></li>
 				    </ul>
 				</li>
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/Shoerologue/category/gender/kids/kids.do" role="button" aria-expanded="false">KIDS</a>
+				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/Shoerologue/category/gender/kids.do" role="button" aria-expanded="false">KIDS</a>
 				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
-				    	<li><a class="dropdown-item fw-bolder" href="/Shoerologue/category/gender/kids/kids.do">KIDS</a></li>
+				    	<li><a class="dropdown-item fw-bolder" href="/Shoerologue/category/gender/kids.do">KIDS</a></li>
 				   		<li><hr class="dropdown-divider"></li>
-					 	<li><a class="dropdown-item" href="/Shoerologue/category/gender/kids/kidsSneakers.do">운동화</a></li>
-					 	<li><a class="dropdown-item" href="/Shoerologue/category/gender/kids/kidsSports.do">스포츠</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/kids/kidsDressShoes.do">구두</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/kids/kidsSandle.do">샌들</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/kids/kidsCasual.do">캐주얼</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/kids/kidsBoots.do">부츠</a></li>
+					 	<li><a class="dropdown-item" href="/Shoerologue/category/gender/kids/sneakers.do">운동화</a></li>
+					 	<li><a class="dropdown-item" href="/Shoerologue/category/gender/kids/sports.do">스포츠</a></li>
+					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/kids/dressShoes.do">구두</a></li>
+					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/kids/sandle.do">샌들</a></li>
+					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/kids/casual.do">캐주얼</a></li>
+					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/kids/boots.do">부츠</a></li>
 				    </ul>
 				</li>
 			</ul>
@@ -517,7 +472,7 @@
 				  <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
 				</svg>
 				<a href="/main.do">HOME</a></li>&nbsp;&nbsp;>&nbsp;&nbsp;
-				<li><a href="/Shoerologue/category/brand/brand.do">BRAND</a></li>&nbsp;&nbsp;>&nbsp;&nbsp;
+				<li><a href="/Shoerologue/category/brand.do">BRAND</a></li>&nbsp;&nbsp;>&nbsp;&nbsp;
 				<li>NIKE</li>
 			</ul>
 		</div>
@@ -528,7 +483,7 @@
 		</div>
 	</div>
 	<div class="brandBanner">
-		<img src="/resources/image/brandbanner/N/NIKE.png">
+		<img src="/resources/image/brandbanner/N/NIKEbanner.png">
 	</div>
 	<div class="bigBox">
 		<div class="bestBox">
@@ -581,8 +536,134 @@
 				</div>
 			</div>
 		</div>
-		<div class="box1"></div>
-		<div class="box2"></div>
+		<div class="filterBox">
+			<div class="filterTitle">FILTER</div>
+			<div class="hr1"></div>
+			<div id="menu">
+				<h6><a>성별</a></h6>
+				<div class="filterGender">
+					<input type="checkbox" id="genderMen"><label for="genderMen">MEN</label>
+					<input type="checkbox" id="genderWomen"><label for="genderWomen">WOMEN</label>
+					<input type="checkbox" id="genderKids"><label for="genderKids">KIDS</label>
+				</div>
+				<h6><a>사이즈</a></h6>
+				<div class="filterSize">
+					<input type="checkbox" id="size_180"><label for="size_180">180</label>
+					<input type="checkbox" id="size_190"><label for="size_190">190</label>
+					<input type="checkbox" id="size_200"><label for="size_200">200</label>
+					<input type="checkbox" id="size_210"><label for="size_210">210</label>
+					<input type="checkbox" id="size_220"><label for="size_220">220</label>
+					<input type="checkbox" id="size_230"><label for="size_230">230</label>
+					<input type="checkbox" id="size_240"><label for="size_240">240</label>
+					<input type="checkbox" id="size_250"><label for="size_250">250</label>
+					<input type="checkbox" id="size_260"><label for="size_260">260</label>
+					<input type="checkbox" id="size_270"><label for="size_270">270</label>
+					<input type="checkbox" id="size_280"><label for="size_280">280</label>
+					<input type="checkbox" id="size_290"><label for="size_290">290</label>
+					<input type="checkbox" id="size_300"><label for="size_300">300</label>
+				</div>
+				<h6><a>색상</a></h6>
+				<div class="filterColor">
+					<ul>
+						<li><input type="checkbox" id="color_beige"><label for="color_beige"></label></li>
+						<li><input type="checkbox" id="color_black"><label for="color_black"></label></li>
+						<li><input type="checkbox" id="color_blue"><label for="color_blue"></label></li>
+						<li><input type="checkbox" id="color_brown"><label for="color_brown"></label></li>
+						<li><input type="checkbox" id="color_yellow"><label for="color_yellow"></label></li>
+						<li><input type="checkbox" id="color_gray"><label for="color_gray"></label></li>
+						<li><input type="checkbox" id="color_green"><label for="color_green"></label></li>
+						<li><input type="checkbox" id="color_navy"><label for="color_navy"></label></li>
+						<li><input type="checkbox" id="color_orange"><label for="color_orange"></label></li>
+						<li><input type="checkbox" id="color_pink"><label for="color_pink"></label></li>
+						<li><input type="checkbox" id="color_purple"><label for="color_purple"></label></li>
+						<li><input type="checkbox" id="color_red"><label for="color_red"></label></li>
+						<li><input type="checkbox" id="color_white"><label for="color_white"></label></li>
+						<li><input type="checkbox" id="color_rainbow"><label for="color_rainbow"></label></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="brandBox">
+			<div class="totalPdSel">
+				<div  class="totalPd">
+					<span>총 <span class="redBold">0</span>개의 상품이 있습니다.</span>
+				</div>
+				<div class="selection">
+					<select class="">
+					  <option value="1" selected>신상품순</option>
+					  <option value="2">베스트상품순</option>
+					  <option value="3">상품평순</option>
+					  <option value="4">낮은가격순</option>
+					  <option value="5">높은가격순</option>
+					</select>
+					<select class="">
+					  <option value="15" selected>15개씩 보기</option>
+					  <option value="30">30개씩 보기</option>
+					  <option value="60">60개씩 보기</option>
+					</select>
+				</div>
+				<div class="hr1"></div>
+			</div>
+			<!-- 상품 -->
+			<div class="brandPdBox">
+			<!-- 브랜드별 상품 첫번째줄 -->
+				<div class="brandPdSmBox">
+					<div class="brandPd">
+						<a href="#">
+							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<div class="shoesBrand">나이키</div>
+							<div class="shoesName">나이키 에어 맥스 SC</div>
+							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+						</a>
+					</div>
+					<div class="brandPd">
+						<a href="#">
+							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<div class="shoesBrand">나이키</div>
+							<div class="shoesName">나이키 에어 맥스 SC</div>
+							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+						</a>
+					</div>
+					<div class="brandPd">
+						<a href="#">
+							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<div class="shoesBrand">나이키</div>
+							<div class="shoesName">나이키 에어 맥스 SC</div>
+							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+						</a>
+					</div>
+				</div>
+			<!-- 브랜드별 상품 두번째줄 -->
+				<div class="brandPdSmBox">
+					<div class="brandPd">
+						<a href="#">
+							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<div class="shoesBrand">나이키</div>
+							<div class="shoesName">나이키 에어 맥스 SC</div>
+							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+						</a>
+					</div>
+					<div class="brandPd">
+						<a href="#">
+							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<div class="shoesBrand">나이키</div>
+							<div class="shoesName">나이키 에어 맥스 SC</div>
+							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+						</a>
+					</div>
+					<div class="brandPd">
+						<a href="#">
+							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<div class="shoesBrand">나이키</div>
+							<div class="shoesName">나이키 에어 맥스 SC</div>
+							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+						</a>
+					</div>
+				</div>
+				<hr>
+				<div class="page">페이징 처리</div>
+			</div>
+		</div>
 	</div>
 
 <!-- 우측하단 TOP 이동 배너 -->
