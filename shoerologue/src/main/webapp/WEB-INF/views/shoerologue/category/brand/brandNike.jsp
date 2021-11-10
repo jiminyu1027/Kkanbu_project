@@ -140,6 +140,7 @@
 		}
 		
 		.bestPd{
+			width:224px;
 			float:left;
 			margin:6.7px;
 			position:relative;
@@ -151,8 +152,8 @@
 		}
 		
 		.bestPd>a>img{
-			width:224px;
-			height:224px;
+			width:222px;
+			height:222px;
 			margin-bottom:10px;
 		}
 		
@@ -216,8 +217,8 @@
 		.filterBox{
 			background-color:white;
 			width:290px;
-			padding:30px;
-			border:1px solid red;
+			padding:20px;
+			display:inline-block;
 		}
 		.filterTitle{
 			font-weight:700;
@@ -308,34 +309,35 @@
 		}
 		
 		.brandBox{
-			border:1px solid red;
 			float:right;
 		}
 		
 		.brandPd{
+			width:282px;
 			float:left;
-			margin:6.7px;
+			margin:9px;
 		}
 		
 		.brandPd:hover{
 			border:1px solid black;
-			position:relative;
 		}
 		
 		.brandPd>a>img{
-			width:285px;
-			height:285px;
+			width:280px;
+			height:280px;
 			margin-bottom:10px;
 		}
 		
 		.brandPdSmBox{
-			border:1px solid blue;
-			height:430px;
+			width:900px;
+			height:440px;
 		}
 		.bg-light{
 			clear:left;
 			clear:right;
 		}
+		
+		
 		
 	</style>
 </head>
@@ -632,33 +634,36 @@
 					</div>
 				</div>
 			<!-- 브랜드별 상품 두번째줄 -->
-				<div class="brandPd">
-					<a href="#">
-						<img src="/resources/image/shoesimage/nike/nike_01.png">
-						<div class="shoesBrand">나이키</div>
-						<div class="shoesName">나이키 에어 맥스 SC</div>
-						<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-					</a>
+				<div class="brandPdSmBox">
+					<div class="brandPd">
+						<a href="#">
+							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<div class="shoesBrand">나이키</div>
+							<div class="shoesName">나이키 에어 맥스 SC</div>
+							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+						</a>
+					</div>
+					<div class="brandPd">
+						<a href="#">
+							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<div class="shoesBrand">나이키</div>
+							<div class="shoesName">나이키 에어 맥스 SC</div>
+							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+						</a>
+					</div>
+					<div class="brandPd">
+						<a href="#">
+							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<div class="shoesBrand">나이키</div>
+							<div class="shoesName">나이키 에어 맥스 SC</div>
+							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+						</a>
+					</div>
 				</div>
-				<div class="brandPd">
-					<a href="#">
-						<img src="/resources/image/shoesimage/nike/nike_01.png">
-						<div class="shoesBrand">나이키</div>
-						<div class="shoesName">나이키 에어 맥스 SC</div>
-						<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-					</a>
-				</div>
-				<div class="brandPd">
-					<a href="#">
-						<img src="/resources/image/shoesimage/nike/nike_01.png">
-						<div class="shoesBrand">나이키</div>
-						<div class="shoesName">나이키 에어 맥스 SC</div>
-						<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-					</a>
-				</div>
+				<hr>
+				<div class="page">페이징 처리</div>
 			</div>
 		</div>
-		<div class="page">페이징 처리</div>
 	</div>
 
 <!-- 우측하단 TOP 이동 배너 -->
