@@ -10,116 +10,116 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ShoerologueGenderController {
 	
-	@RequestMapping(value="/men/men.do")
+	@RequestMapping(value="/men.do")
 	public String men(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/men/men";
+		return "shoerologue/category/gender/men";
 	}
-	@RequestMapping(value="/men/menSneakers.do")
+	@RequestMapping(value="/men/sneakers.do")
 	public String menSneakers(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/men/menSneakers";
+		return "shoerologue/category/gender/men/sneakers";
 	}
-	@RequestMapping(value="/men/menDressShoes.do")
+	@RequestMapping(value="/men/dressShoes.do")
 	public String menDressShoes(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/men/menDressShoes";
+		return "shoerologue/category/gender/men/dressShoes";
 	}
-	@RequestMapping(value="/men/menCasual.do")
+	@RequestMapping(value="/men/casual.do")
 	public String menCasual(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/men/menCasual";
+		return "shoerologue/category/gender/men/casual";
 	}
-	@RequestMapping(value="/men/menSports.do")
+	@RequestMapping(value="/men/sports.do")
 	public String menSports(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/men/menSports";
+		return "shoerologue/category/gender/men/sports";
 	}
-	@RequestMapping(value="/men/menSandle.do")
+	@RequestMapping(value="/men/sandle.do")
 	public String menSandle(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/men/menSandle";
+		return "shoerologue/category/gender/men/sandle";
 	}
-	@RequestMapping(value="/men/menBoots.do")
+	@RequestMapping(value="/men/boots.do")
 	public String menBoots(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/men/menBoots";
+		return "shoerologue/category/gender/men/boots";
 	}
 	
 	
 	
-	@RequestMapping(value="/women/women.do")
+	@RequestMapping(value="/women.do")
 	public String women(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/women/women";
+		return "shoerologue/category/gender/women";
 	}
-	@RequestMapping(value="/women/womenSneakers.do")
+	@RequestMapping(value="/women/sneakers.do")
 	public String womenSneakers(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/women/womenSneakers";
+		return "shoerologue/category/gender/sneakers";
 	}
-	@RequestMapping(value="/women/womenDressShoes.do")
+	@RequestMapping(value="/women/dressShoes.do")
 	public String womenDressShoes(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/women/womenDressShoes";
+		return "shoerologue/category/gender/women/dressShoes";
 	}
-	@RequestMapping(value="/women/womenCasual.do")
+	@RequestMapping(value="/women/casual.do")
 	public String womenCasual(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/women/womenCasual";
+		return "shoerologue/category/gender/women/casual";
 	}
-	@RequestMapping(value="/women/womenSports.do")
+	@RequestMapping(value="/women/sports.do")
 	public String womenSports(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/women/womenSports";
+		return "shoerologue/category/gender/women/sports";
 	}
-	@RequestMapping(value="/women/womenSandle.do")
+	@RequestMapping(value="/women/sandle.do")
 	public String womenSandle(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/women/womenSandle";
+		return "shoerologue/category/gender/women/sandle";
 	}
-	@RequestMapping(value="/women/womenBoots.do")
+	@RequestMapping(value="/women/boots.do")
 	public String womenBoots(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/women/womenBoots";
+		return "shoerologue/category/gender/women/boots";
 	}
 	
 	
 	
-	@RequestMapping(value="/kids/kids.do")
+	@RequestMapping(value="/kids.do")
 	public String kids(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/kids/kids";
+		return "shoerologue/category/gender/kids";
 	}
-	@RequestMapping(value="/kids/kidsSneakers.do")
+	@RequestMapping(value="/kids/sneakers.do")
 	public String kidsSneakers(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/kids/kidsSneakers";
+		return "shoerologue/category/gender/kids/sneakers";
 	}
-	@RequestMapping(value="/kids/kidsDressShoes.do")
+	@RequestMapping(value="/kids/dressShoes.do")
 	public String kidsDressShoes(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/kids/kidsDressShoes";
+		return "shoerologue/category/gender/kids/dressShoes";
 	}
-	@RequestMapping(value="/kids/kidsCasual.do")
+	@RequestMapping(value="/kids/casual.do")
 	public String kidsCasual(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/kids/kidsCasual";
+		return "shoerologue/category/gender/kids/casual";
 	}
-	@RequestMapping(value="/kids/kidsSports.do")
+	@RequestMapping(value="/kids/sports.do")
 	public String kidsSports(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/kids/kidsSports";
+		return "shoerologue/category/gender/kids/sports";
 	}
-	@RequestMapping(value="/kids/kidsSandle.do")
+	@RequestMapping(value="/kids/sandle.do")
 	public String kidsSandle(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/kids/kidsSandle";
+		return "shoerologue/category/gender/kids/sandle";
 	}
-	@RequestMapping(value="/kids/kidsBoots.do")
+	@RequestMapping(value="/kids/boots.do")
 	public String kidsBoots(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/category/gender/kids/kidsBoots";
+		return "shoerologue/category/gender/kids/boots";
 	}
 	
 	
