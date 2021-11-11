@@ -76,26 +76,16 @@
 			margin:10px 25px;
 		}
 		
+		.bestBrandList>ul>li>a>img:hover{
+			border:2px solid black;
+		}
+		
 		.bestBrandList{
 			margin:auto;
 			margin-top:30px;
 			margin-bottom:45px;
 		}
 		
-		.brandList>ul>li{
-			display:inline;
-			
-		}
-		
-		.brandList>ul{
-			margin-left:-10px;
-		}
-		
-		.brandList>ul>li>a{
-			border:1px solid #D5D5D5;
-			color:#747774;
-			margin:2px;
-		}
 		
 		.hr1{
 			border:1px solid black;
@@ -138,6 +128,27 @@
 			font-weight:300;
 		}
 		
+		.brandList>a>div{
+			width:40px;
+			height:40px;
+			display:inline-block;
+			border:1px solid #D5D5D5;
+			color:#747774;
+			margin:2px;
+			text-align:center;
+			padding-top:10px;
+			font-size:10pt;
+		}
+		
+		.brandList>a>div:hover{
+			background-color:black;
+			color:white;
+		}
+		
+		
+		.brandList{
+			margin:20px 0;
+		}
 		
 		
 	</style>
@@ -295,47 +306,47 @@
 			</div>
 		</div>
 		<div class="brandList">
-			<div><a href="#initA" class="brandInit">A</a></div>
-			<div><a href="#initB" class="brandInit">B</a></div>
-			<div><a href="#initC" class="brandInit">C</a></div>
-			<div><a href="#initD" class="brandInit">D</a></div>
-			<div><a href="#initE" class="brandInit">E</a></div>
-			<div><a href="#initF" class="brandInit">F</a></div>
-			<div><a href="#initG" class="brandInit">G</a></div>
-			<div><a href="#initH" class="brandInit">H</a></div>
-			<div><a href="#initI" class="brandInit">I</a></div>
-			<div><a href="#initJ" class="brandInit">J</a></div>
-			<div><a href="#initK" class="brandInit">K</a></div>
-			<div><a href="#initL" class="brandInit">L</a></div>
-			<div><a href="#initM" class="brandInit">M</a></div>
-			<div><a href="#initN" class="brandInit">N</a></div>
-			<div><a href="#initO" class="brandInit">O</a></div>
-			<div><a href="#initP" class="brandInit">P</a></div>
-			<div><a href="#initQ" class="brandInit">Q</a></div>
-			<div><a href="#initR" class="brandInit">R</a></div>
-			<div><a href="#initS" class="brandInit">S</a></div>
-			<div><a href="#initT" class="brandInit">T</a></div>
-			<div><a href="#initU" class="brandInit">U</a></div>
-			<div><a href="#initV" class="brandInit">V</a></div>
-			<div><a href="#initW" class="brandInit">W</a></div>
-			<div><a href="#initX" class="brandInit">X</a></div>
-			<div><a href="#initY" class="brandInit">Y</a></div>
-			<div><a href="#initZ" class="brandInit">Z</a></div>
-			<div><a href="#init123" class="brandInit">123</a></div>
-			<div><a href="#initHanA" class="brandInit">ㄴ</a></div>
-			<div><a href="#initHanB" class="brandInit">ㄱ</a></div>
-			<div><a href="#initHanC" class="brandInit">ㄷ</a></div>
-			<div><a href="#initHanD" class="brandInit">ㄹ</a></div>
-			<div><a href="#initHanE" class="brandInit">ㅁ</a></div>
-			<div><a href="#initHanF" class="brandInit">ㅂ</a></div>
-			<div><a href="#initHanG" class="brandInit">ㅅ</a></div>
-			<div><a href="#initHanH" class="brandInit">ㅇ</a></div>
-			<div><a href="#initHanI" class="brandInit">ㅈ</a></div>
-			<div><a href="#initHanJ" class="brandInit">ㅊ</a></div>
-			<div><a href="#initHanK" class="brandInit">ㅋ</a></div>
-			<div><a href="#initHanL" class="brandInit">ㅌ</a></div>
-			<div><a href="#initHanM" class="brandInit">ㅍ</a></div>
-			<div><a href="#initHanN" class="brandInit">ㅎ</a></div>
+			<a href="#initA" class="brandInit"><div>A</div></a>
+			<a href="#initB" class="brandInit"><div>B</div></a>
+			<a href="#initC" class="brandInit"><div>C</div></a>
+			<a href="#initD" class="brandInit"><div>D</div></a>
+			<a href="#initE" class="brandInit"><div>E</div></a>
+			<a href="#initF" class="brandInit"><div>F</div></a>
+			<a href="#initG" class="brandInit"><div>G</div></a>
+			<a href="#initH" class="brandInit"><div>H</div></a>
+			<a href="#initI" class="brandInit"><div>I</div></a>
+			<a href="#initJ" class="brandInit"><div>J</div></a>
+			<a href="#initK" class="brandInit"><div>K</div></a>
+			<a href="#initL" class="brandInit"><div>L</div></a>
+			<a href="#initM" class="brandInit"><div>M</div></a>
+			<a href="#initN" class="brandInit"><div>N</div></a>
+			<a href="#initO" class="brandInit"><div>O</div></a>
+			<a href="#initP" class="brandInit"><div>P</div></a>
+			<a href="#initQ" class="brandInit"><div>Q</div></a>
+			<a href="#initR" class="brandInit"><div>R</div></a>
+			<a href="#initS" class="brandInit"><div>S</div></a>
+			<a href="#initT" class="brandInit"><div>T</div></a>
+			<a href="#initU" class="brandInit"><div>U</div></a>
+			<a href="#initV" class="brandInit"><div>V</div></a>
+			<a href="#initW" class="brandInit"><div>W</div></a>
+			<a href="#initX" class="brandInit"><div>X</div></a>
+			<a href="#initY" class="brandInit"><div>Y</div></a>
+			<a href="#initZ" class="brandInit"><div>Z</div></a>
+			<a href="#init123" class="brandInit"><div>123</div></a>
+			<a href="#initHanB" class="brandInit"><div>ㄱ</div></a>
+			<a href="#initHanA" class="brandInit"><div>ㄴ</div></a>
+			<a href="#initHanC" class="brandInit"><div>ㄷ</div></a>
+			<a href="#initHanD" class="brandInit"><div>ㄹ</div></a>
+			<a href="#initHanE" class="brandInit"><div>ㅁ</div></a>
+			<a href="#initHanF" class="brandInit"><div>ㅂ</div></a>
+			<a href="#initHanG" class="brandInit"><div>ㅅ</div></a>
+			<a href="#initHanH" class="brandInit"><div>ㅇ</div></a>
+			<a href="#initHanI" class="brandInit"><div>ㅈ</div></a>
+			<a href="#initHanJ" class="brandInit"><div>ㅊ</div></a>
+			<a href="#initHanK" class="brandInit"><div>ㅋ</div></a>
+			<a href="#initHanL" class="brandInit"><div>ㅌ</div></a>
+			<a href="#initHanM" class="brandInit"><div>ㅍ</div></a>
+			<a href="#initHanN" class="brandInit"><div>ㅎ</div></a>
 		</div>
 		<div class="hr1"></div>
 		<div class="brandinitBox">
@@ -546,7 +557,7 @@
 					</ul>
 				</div>
 				<hr>
-				<div class="brandFirstInit">ㄱ</div>
+				<div class="brandFirstInit" id="initHanA">ㄱ</div>
 				<div class="brandName">
 					<ul>
 						<li><a href="#">그라비스</a></li>
@@ -555,7 +566,7 @@
 					</ul>
 				</div>
 				<hr>
-				<div class="brandFirstInit">ㄴ</div>
+				<div class="brandFirstInit" id="initHanB">ㄴ</div>
 				<div class="brandName">
 					<ul>
 						<li><a href="/Shoerologue/category/brand/brandNike.do">나이키</a></li>
@@ -564,7 +575,7 @@
 					</ul>
 				</div>
 				<hr>
-				<div class="brandFirstInit">ㄷ</div>
+				<div class="brandFirstInit" id="initHanC">ㄷ</div>
 				<div class="brandName">
 					<ul>
 						<li><a href="#">다이노솔즈</a></li>
@@ -576,7 +587,7 @@
 					</ul>
 				</div>
 				<hr>
-				<div class="brandFirstInit">ㄹ</div>
+				<div class="brandFirstInit" id="initHanD">ㄹ</div>
 				<div class="brandName">
 					<ul>
 						<li><a href="#">라라고</a></li>
@@ -589,7 +600,7 @@
 					</ul>
 				</div>
 				<hr>
-				<div class="brandFirstInit">ㅁ</div>
+				<div class="brandFirstInit" id="initHanE">ㅁ</div>
 				<div class="brandName">
 					<ul>
 						<li><a href="#">마이애미프로젝트</a></li>
@@ -600,7 +611,7 @@
 					</ul>
 				</div>
 				<hr>
-				<div class="brandFirstInit">ㅂ</div>
+				<div class="brandFirstInit" id="initHanF">ㅂ</div>
 				<div class="brandName">
 					<ul>
 						<li><a href="#">박스앤콕스</a></li>
@@ -614,7 +625,7 @@
 					</ul>
 				</div>
 				<hr>
-				<div class="brandFirstInit">ㅅ</div>
+				<div class="brandFirstInit" id="initHanG">ㅅ</div>
 				<div class="brandName">
 					<ul>
 						<li><a href="#">세컨드아뜨리에</a></li>
@@ -629,7 +640,7 @@
 					</ul>
 				</div>
 				<hr>
-				<div class="brandFirstInit">ㅇ</div>
+				<div class="brandFirstInit" id="initHanH">ㅇ</div>
 				<div class="brandName">
 					<ul>
 						<li><a href="/Shoerologue/category/brand/adidas.do">아디다스</a></li>
@@ -642,7 +653,7 @@
 					</ul>
 				</div>
 				<hr>
-				<div class="brandFirstInit">ㅈ</div>
+				<div class="brandFirstInit" id="initHanI">ㅈ</div>
 				<div class="brandName">
 					<ul>
 						<li><a href="#">장까를로 모렐리</a></li>
@@ -652,7 +663,7 @@
 					</ul>
 				</div>
 				<hr>
-				<div class="brandFirstInit">ㅋ</div>
+				<div class="brandFirstInit" id="initHanK">ㅋ</div>
 				<div class="brandName">
 					<ul>
 						<li><a href="#">캐치볼</a></li>
@@ -664,14 +675,14 @@
 					</ul>
 				</div>
 				<hr>
-				<div class="brandFirstInit">ㅌ</div>
+				<div class="brandFirstInit" id="initHanL">ㅌ</div>
 				<div class="brandName">
 					<ul>
 						<li><a href="#">팀버랜드</a></li>
 					</ul>
 				</div>
 				<hr>
-				<div class="brandFirstInit">ㅍ</div>
+				<div class="brandFirstInit" id="initHanM">ㅍ</div>
 				<div class="brandName">
 					<ul>
 						<li><a href="#">페이유에</a></li>
@@ -687,7 +698,7 @@
 					</ul>
 				</div>
 				<hr>
-				<div class="brandFirstInit">ㅎ</div>
+				<div class="brandFirstInit" id="initHanN">ㅎ</div>
 				<div class="brandName">
 					<ul>
 						<li><a href="#">헌터</a></li>
