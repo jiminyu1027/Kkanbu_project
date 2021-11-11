@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,14 +12,18 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-
+		
+		<!-- 글꼴 --> 
+	    <link rel="preconnect" href="https://fonts.googleapis.com">
+	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		
 		<!-- Bootstrap Font Icon CSS 아이콘 -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/resources/css/style.css">
 		
-		<link rel="stylesheet" href="/resources/css/headerFooter.css">
 		
+		<link rel="stylesheet" href="/resources/css/headerFooter.css">
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
@@ -34,7 +36,7 @@
 		}
 		.myPageMainBox{
 			width:1500px;
-			height:1500px;
+			height:1200px;
 			padding-left:50px;
 			padding-right:50px;
 			margin:auto;
@@ -54,7 +56,6 @@
 			text-align:center;
 			font-size:20px;
 			font-weight:bold;
-			display:inline-block;
 		}
 		.ft-weight{
 			font-weight: bold;
@@ -68,7 +69,6 @@
 			text-align:left;
 			font-size:20px;
 			margin-left:240px;
-			display:inline-block;
 		}
 		.myPageMenu{
 			border:0px solid #616161;
@@ -94,7 +94,6 @@
 			font-size:14px;
 			margin-top:10px;
 		}
-		
 		.myPageListBox{
 			margin-top:33px;
 			width:1120px;
@@ -115,6 +114,37 @@
 		.red:hover{
 			color:red;
 		}
+		h2, h3{
+			font-weight: bold;
+		}
+		.secessionReason{
+			padding-left:30px;
+		}
+		input[type=checkbox]{
+			width:15px;
+			height:15px;
+		}
+		textarea{
+			width:100%; 
+			height:150px; 
+		    resize:none;
+		}
+		.secessionbtn{
+			float:right;
+			margin-right:10px;
+			margin-bottom:10px;
+			width:150px;
+			height:60px;
+		}
+		.resetbtn{
+			float:right;
+			margin-right:10px;
+			margin-bottom:10px;
+			width:150px;
+			height:60px;
+			background-color: gray !important;
+			color:white;
+		}
 		.myPageLine{
 			border-bottom:2px solid black;
 			height:60px;
@@ -125,26 +155,6 @@
 			height:30px;
 			margin-top:35px;
 		}
-		.wishNoItem {
-		      margin-top:30px;
-		      height:500px;
-		}
-		.wishNoItem2 {
-		    padding-top:150px;
-		    font-size:17pt;
-		    letter-spacing: -1px;
-		    font-weight:500;
-		}
-		.exclamation{
-		    font-size:90px;
-		    color:#BDBDBD;
-		}
-		.flex-box{
-		      height:100%;
-		      text-align: center;
-		      border-bottom:2px solid lightgray;
-		}
-		
 	</style>
 
 </head>
@@ -261,7 +271,6 @@
 	<!-- 상단 마이페이지 배너 -->
 	<section>
 	<div class="myPageBox">
-		<div class="myPageBoxTie">
 		 <div class="myPageBoxs1">
 		 	<div style=" float: left; width: 16%;">
 			 	<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -315,11 +324,10 @@
         		0
         	</span>개
         </div>
-        </div>
+        
 	</div>
-	</section>
 	
-	<!-- 마이페이지 메인박스 -->
+	</section>
 	<div class="myPageMainBox">
 		<!-- 페이지 이동경로 -->
 		<div style=" float: left; width: 0%;">&nbsp;</div>
@@ -331,10 +339,9 @@
 				  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
 				</svg>
 				HOME</a> 
-			> 마이페이지 > 나의 주문 관리 > 주문/배송 조회
+			> 마이페이지 > 내 정보 관리 > 회원 탈퇴
 			</span>
 		</div>
-		
 		<!-- 좌측 마이페이지 메뉴-->
 		<div style=" float: left; width: 20%;">
 		<div class="myPageMenu">
@@ -346,7 +353,7 @@
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="myPage.do" class="red">주문/배송 조회*</a><br>
+					<a href="myPage.do" class="gray">주문/배송 조회</a><br>
 					<a href="orderCancel.do" class="gray">취소/교환/반품</a><br>
 					<a href="insertCard.do" class="gray">카드 등록 관리</a>
 				</div><br>
@@ -370,7 +377,7 @@
 				<div class="myPageMenu3">
 					<a href="receiveAddr.do" class="gray">배송지 관리</a><br>
 					<a href="myInfo.do" class="gray">개인 정보 수정</a><br>
-					<a href="leave.do" class="gray">회원 탈퇴</a>
+					<a href="leave.do" class="red">회원 탈퇴*</a>
 				</div>
 			</div>
 		</div>
@@ -380,90 +387,44 @@
 		<!-- 마이페이지 메인 -->
 		<div style="float: left; width: 80%;">
 		<div class="myPageListBox">
-			<div style="float: left; width: 100%;" class="myPageLine"><h2>주문/배송 조회</h2></div>
-			<!-- 상품 혹은 목록이 없는 경우 -->
-			   <div class="wishNoItem">
-			      <div class="flex-box">
-			         <div class="wishNoItem2">
-			         <i class="bi bi-exclamation-circle exclamation"></i><br>
-			       		  주문하신 내역이 없습니다.</div>
-			      </div>
-			   </div>
-			<br><br>
-			
-			<table class="table table-hover">
-			  <thead>
-			    <tr>
-			      <th scope="col">주문번호</th>
-			      <th scope="col">주문날짜</th>
-			      <th scope="col">상품명/옵션</th>
-			      <th scope="col">상품금액/수량</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			      <th scope="row">1</th>
-			      <td></td>
-			      <td></td>
-			      <td></td>
-			    </tr>
-			    <tr>
-			      <th scope="row">2</th>
-			      <td></td>
-			      <td></td>
-			      <td></td>
-			    </tr>
-			    <tr>
-			      <th scope="row">3</th>
-			      <td colspan="2"></td>
-			      <td></td>
-			    </tr>
-			  </tbody>
-			</table>
-			<div class="myPageEndLine"></div>
-			<br><br>
-			
-			<!-- 마이페이지 회색 박스 -->
-			<div style="float: left; width: 100%;">
-				<div class="gray-box">
-						<span style="font-size:1.5em; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-						</svg> 꼭 읽어 주세요!</span>
-						<ul class="bullet-text-list">
-							<li class="bullet-text">ShoeRologue 온라인 물류센터에서 발송되는 상품은 평일 4시 이전 결제완료 시 당일 출고됩니다.</li>
-							<li class="bullet-text">ShoeRologue 및 On the spot 매장에서 발송되는 상품은 결제완료 후 2~3일 정도 준비 기간이 소요될 수 있습니다. (주말 및 공휴일 제외)</li>
-							<li class="bullet-text">업체 상품은 입점사 자체 배송으로 결제완료 후 1~2일 정도 준비 기간이 소요될 수 있습니다. (주말 및 공휴일 제외)</li>
-							<li class="bullet-text">주문 취소 및 배송지 변경은 [결제완료] 단계까지만 가능합니다.</li>
-							<li class="bullet-text">[상품준비중] 단계부터는 취소를 원하실 경우 상품을 받으신 후 반품접수 해주시기 바랍니다.</li>
-							<li class="bullet-text">구매 포인트는 구매확정 후 다음 날 적립됩니다.</li>
-							<li class="bullet-text">선물하신 주문의 수락 상태 및 자세한 주문 정보는 마이페이지 > 쇼핑내역 > 선물함에서 확인해주시기 바랍니다.</li>
-						</ul>
-						<span style="font-size:1.5em; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-						</svg> 매장 픽업 주문 안내</span>
-						<ul class="bullet-text-list">
-							<li class="bullet-text">매장 재고에 따라 상품 준비 기간이 소요될 수 있습니다.</li>
-							<li class="bullet-text">여러 개의 상품을 주문하실 경우 상품별로 준비기간이 다를 수 있습니다.</li>
-							<li class="bullet-text">상품이 준비되면 각 상품별로 알림톡 또는 SMS로 안내드립니다.</li>
-						</ul>
-						<span style="font-size:1.5em; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-						</svg> 슈롤로그배송 서비스 주문 안내</span>
-						<ul class="bullet-text-list">
-							<li class="bullet-text">월요일~금요일은 오후 1시 이전 주문 시 당일 도착, 1시 이후 주문 시 다음날 도착합니다. (연휴 및 공휴일은 발송 불가)<br>금요일 오후 1시 이후 또는 주말에 주문하실 경우 차주 월요일에 도착합니다.</li>
-							<li class="bullet-text">아트배송이 가능한 주문 수량이 마감되는 경우 발송이 지연되거나 불가할 수 있습니다.</li>
-							<li class="bullet-text">당사 사정에 따라 아트배송이 불가능한 날이 있을 수 있으며, 사전에 공지 드립니다.</li>
-							<li class="bullet-text">아트배송은 주문 후 상품 옵션 및 배송지 정보 변경이 불가합니다.</li>
-							<li class="bullet-text">상품을 보관하기 어려운 배송지의 경우 자동 반송 처리될 수 있으며, 반송 시 배송비는 고객 부담입니다.</li>
-							<li class="bullet-text">기상 상태에 따라 배송이 지연되거나 취소될 수 있습니다.</li>
-							<li class="bullet-text">배송완료 후 교환/반품은 일반배송과 동일한 방식으로 진행됩니다.</li>
-						</ul>
-					</div>
+			<div style="float: left; width: 100%;" class="myPageLine"><h2>회원 탈퇴</h2></div><br><br><br><br><br>
+			<div class="gray-box">
+				<span style="font-size:1.5em; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+				  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+				</svg> ShoeRologue 탈퇴 안내</span>
+				<ul>
+					<li>서비스 이용에 불편을 끼쳐드려 죄송합니다.</li>
+					<li>항상 고객만족을 위해 최선을 다하는 ShoeRologue가 되겠습니다.</li>
+					<li>배송중인 주문 건이 있는 경우에도 탈퇴가 가능하며, 배송중인 주문은 취소되지 않습니다.</li>
+					<li>탈퇴 시 보유중인 포인트와 쿠폰, 거래정보 등이 모두 삭제됩니다.</li>
+					<li>회원 탈퇴 후 철회가 불가능합니다.</li>
+					<li>탈퇴 후 재가입은 탈퇴일로부터 14일 이후에 가능합니다. 단, 재가입 시 회원가입 포인트 및 쿠폰은 재발급되지 않습니다.</li>
+				</ul>
 			</div>
-		</div>
+			<br>
+			<div class="myPageEndLine"></div>
+			<form name="frm" id="frm" method="post" action="/burning/shipping/shippingAction.do" onsubmit="return loginChk()">
+			<h3>탈퇴 사유</h3><br>
+				<div class="secessionReason">
+					<p><input type="checkbox" id="ReasonCheck1"> 방문 빈도가 낮아서</p>
+					<p><input type="checkbox" id="ReasonCheck2"> 상품 가격이 비싸서</p>
+					<p><input type="checkbox" id="ReasonCheck3"> 개인 정보 유출이 우려되어서</p>
+					<p><input type="checkbox" id="ReasonCheck4"> 사이트 쇼핑기능이 불편해서</p>
+					<p><input type="checkbox" id="ReasonCheck5"> 고객서비스가 만족스럽지 않아서</p>
+					<p><input type="checkbox" id="ReasonCheck6"> 교환/환불/반품이 불편해서</p>
+					<p><input type="checkbox" id="ReasonCheck7"> 기타</p>
+				</div><br>
+				<div>
+					<h3>남기실 말씀</h3>
+					<textarea placeholder="내용을 입력해 주세요."></textarea>
+				</div>
+				<br>
+					<button type="submit" class="btn btn-secondary secessionbtn" onsubmit="return loginChk()">회원 탈퇴</button>
+					<button type="button" class="btn btn-light resetbtn" onclick="frm_reset()">초기화</button>
+				<br><br>
+				<div class="myPageEndLine"></div>
+			</form>
+		  </div>
 		</div>
 	</div><br>
 	
@@ -536,6 +497,12 @@
 	  </footer>
 	 </div>
 	</div>
+	<script>
+		<!-- 초기화 버튼  함수-->
+		function frm_reset() {
+		    document.getElementById("frm").reset();
+		}
+	</script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	
 </body>

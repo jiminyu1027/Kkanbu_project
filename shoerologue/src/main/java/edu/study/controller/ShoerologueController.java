@@ -31,6 +31,9 @@ public class ShoerologueController {
 		
 		return "shoerologue/ff";
 	}
+	
+	
+	/*--------------------------¥Ÿ¿±----------------------------------------------*/
 	@RequestMapping(value="/cart.do")
 	public String cart(Locale locale, Model model)throws Exception{
 		
@@ -42,7 +45,54 @@ public class ShoerologueController {
 		
 		return "shoerologue/wishlist";
 	}
+	/*------------------------¥Ÿ¿±------------------------------------------------*/
+	
+	
+	
+	/*--------------------------------------------------------------ªÛ»∆--------*/
+	
+	@RequestMapping(value="/findId.do")
+	public String findId(Locale locale, Model model)throws Exception {
 		
+		return "shoerologue/findId";
+	}
+	@RequestMapping(value="/findPwd.do")
+	public String findPwd(Locale locale, Model model)throws Exception {
+		
+		return "shoerologue/findPwd";
+	}
+	@RequestMapping(value="/insertCard.do")
+	public String insertCard(Locale locale, Model model)throws Exception {
+		
+		return "shoerologue/insertCard";
+	}
+	@RequestMapping(value="/refund.do")
+	public String refund(Locale locale, Model model)throws Exception {
+		
+		return "shoerologue/refund";
+	}
+	@RequestMapping(value="/orderCancel.do")
+	public String orderCancel(Locale locale, Model model)throws Exception {
+		
+		return "shoerologue/orderCancel";
+	}
+	@RequestMapping(value="/receiveAddr.do")
+	public String receiveAddr(Locale locale, Model model)throws Exception {
+		
+		return "shoerologue/receiveAddr";
+	}
+	@RequestMapping(value="/myInfo.do")
+	public String myInfo(Locale locale, Model model)throws Exception {
+		
+		return "shoerologue/myInfo";
+	}
+	@RequestMapping(value="/leave.do")
+	public String leave(Locale locale, Model model)throws Exception {
+		
+		return "shoerologue/leave";
+	}
+	/*--------------------------------------------------------------ªÛ»∆--------*/
+	
 	
 }
 

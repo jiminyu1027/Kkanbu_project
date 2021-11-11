@@ -21,7 +21,7 @@
 		  <!-- Bootstrap Font Icon CSS 아이콘 -->
 	    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 	    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-	    	<link rel="stylesheet" href="/resources/css/media_query.css">
+	    	<link rel="stylesheet" href="/resources/css/style.css">
 		    <link rel="stylesheet" href="/resources/css/headerFooter.css">
 	
 	<style>
@@ -31,7 +31,6 @@
 		*{
 		font-family: 'Montserrat', "Noto Sans KR", sans-serif;
 		}
-		
 		section{
 			width:1000px;
 			background:white;
@@ -86,10 +85,12 @@
 		}
 		.red{
 			color:red;
+			font-weight:500;
 		}
 		
 		.black{
 			color:black;
+			font-weight:500;
 		}
 		
 		.check{
@@ -137,6 +138,7 @@
 			border-radius:5px;
 		}
 		input[type=checkbox]{
+		
 			width:15px;
 			height:15px;
 		}
@@ -195,7 +197,7 @@
 	    <!-- 마이페이지 찜목록 장바구니 -->
 		     <div class="col-0 col-sm-0 col-md-2 col-lg-3 d-flex justify-content-center align-items-center">
 				<ul class="iconul d-flex align-items-center icon-absolute">
-					<li class="iconli"><a href="/Shoerologue/ll.do">
+					<li class="iconli"><a href="/Shoerologue/login.do">
 						<i class="bi bi-person icon"></i>
 						</a>
 					</li>
@@ -226,7 +228,7 @@
 	        <li class="nav-item dropdown">
 	          <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button"
 	            aria-expanded="false">MEN</a>
-	          <ul class="dropdown-menu bg-black dropDownMenu mt-2">
+	          <ul class="dropdown-menu  dropDownMenu mt-2">
 	            <li><a class="dropdown-item fw-bolder" href="#">MEN</a></li>
 	            <li>
 	              <hr class="dropdown-divider ">
@@ -242,7 +244,7 @@
 	        <li class="nav-item dropdown">
 	          <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button"
 	            aria-expanded="false">WOMEN</a>
-	          <ul class="dropdown-menu bg-black dropDownMenu mt-2">
+	          <ul class="dropdown-menu  dropDownMenu mt-2">
 	            <li><a class="dropdown-item fw-bolder" href="#">WOMEN</a></li>
 	            <li>
 	              <hr class="dropdown-divider">
@@ -258,7 +260,7 @@
 	        <li class="nav-item dropdown">
 	          <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button"
 	            aria-expanded="false">KIDS</a>
-	          <ul class="dropdown-menu bg-black dropDownMenu mt-2">
+	          <ul class="dropdown-menu  dropDownMenu mt-2">
 	            <li><a class="dropdown-item fw-bolder" href="#">KIDS</a></li>
 	            <li>
 	              <hr class="dropdown-divider">
@@ -274,19 +276,6 @@
 	      </ul>
 	    </div>
 	    <div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
-	      <ul class="navbar-nav me-auto mb-6 mb-lg-0">
-	      </ul>
-	      <ul class="nav justify-content-end">
-	        <li class="nav-item nav-fs">
-	          <a class="nav-link text-white fw-bolder" href="#hotdeal">#핫딜</a>
-	        </li>
-	        <li class="nav-item nav-fs">
-	          <a class="nav-link text-white fw-bolder" href="#best">#베스트</a>
-	        </li>
-	        <li class="nav-item nav-fs">
-	          <a class="nav-link text-white fw-bolder" href="#codi">#코디</a>
-	        </li>
-	      </ul>
 	    </div>
 	    <div class="col-0 col-sm-0 col-md-0 col-lg-2"></div>
 	  </nav>
@@ -335,7 +324,7 @@
 				<div class="rows phone">
 					<label for="phone">연락처<span class="red">*</span></label>
 					<div class="formalign">
-						<input type="text" class="impor" name="phone" id="phone" placeholder="핸드폰 번호를 입력하세요. ex)01011112222" onblur="checkFn('phone')">
+						<input type="text" class="impor" name="phone" id="phone" placeholder="휴대폰 번호를 '-' 없이 입력하세요." onblur="checkFn('phone')">
 						<span class="check"></span>
 					</div>
 				</div>

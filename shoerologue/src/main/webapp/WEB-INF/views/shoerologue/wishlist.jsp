@@ -110,7 +110,7 @@
 					</li>
 					<li class="nav-item dropdown">
 					    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="http://localhost:8090/Shoerologue/wishList.do#" role="button" aria-expanded="false">MEN</a>
-					    <ul class="dropdown-menu bg-black dropDownMenu mt-2">
+					    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
 					    	<li><a class="dropdown-item fw-bolder" href="http://localhost:8090/Shoerologue/wishList.do#">MEN</a></li>
 					   		<li><hr class="dropdown-divider "></li>
 						 	<li><a class="dropdown-item" href="http://localhost:8090/Shoerologue/wishList.do#">운동화</a></li>
@@ -123,7 +123,7 @@
 					</li>
 					<li class="nav-item dropdown">
 					    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="http://localhost:8090/Shoerologue/wishList.do#" role="button" aria-expanded="false">WOMEN</a>
-					    <ul class="dropdown-menu bg-black dropDownMenu mt-2">
+					    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
 					    	<li><a class="dropdown-item fw-bolder" href="http://localhost:8090/Shoerologue/wishList.do#">WOMEN</a></li>
 					   		<li><hr class="dropdown-divider"></li>
 						 	<li><a class="dropdown-item" href="http://localhost:8090/Shoerologue/wishList.do#">운동화</a></li>
@@ -136,7 +136,7 @@
 					</li>
 					<li class="nav-item dropdown">
 					    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="http://localhost:8090/Shoerologue/wishList.do#" role="button" aria-expanded="false">KIDS</a>
-					    <ul class="dropdown-menu bg-black dropDownMenu mt-2">
+					    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
 					    	<li><a class="dropdown-item fw-bolder" href="http://localhost:8090/Shoerologue/wishList.do#">KIDS</a></li>
 					   		<li><hr class="dropdown-divider"></li>
 						 	<li><a class="dropdown-item" href="http://localhost:8090/Shoerologue/wishList.do#">운동화</a></li>

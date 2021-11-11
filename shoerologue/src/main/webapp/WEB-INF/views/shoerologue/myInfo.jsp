@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,14 +12,14 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-
+		
 		<!-- Bootstrap Font Icon CSS 아이콘 -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/resources/css/style.css">
 		
-		<link rel="stylesheet" href="/resources/css/headerFooter.css">
 		
+		<link rel="stylesheet" href="/resources/css/headerFooter.css">
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
@@ -30,7 +28,12 @@
      	 }
 		section{
 			background:rgb(247, 247, 247);
-			text-align:center;
+			text-align:left;
+		}
+		.section1{
+			width:1000px;
+			background:white;
+			margin-bottom: 5vh;
 		}
 		.myPageMainBox{
 			width:1500px;
@@ -54,7 +57,6 @@
 			text-align:center;
 			font-size:20px;
 			font-weight:bold;
-			display:inline-block;
 		}
 		.ft-weight{
 			font-weight: bold;
@@ -68,7 +70,6 @@
 			text-align:left;
 			font-size:20px;
 			margin-left:240px;
-			display:inline-block;
 		}
 		.myPageMenu{
 			border:0px solid #616161;
@@ -94,9 +95,8 @@
 			font-size:14px;
 			margin-top:10px;
 		}
-		
 		.myPageListBox{
-			margin-top:33px;
+			margin-top:43px;
 			width:1120px;
 		}
 		.gray-box{
@@ -104,6 +104,7 @@
 			padding-left:20px;
 			padding-top:10px;
 			border:1px solid #BDBDBD;
+			height:700px;
 		}
 		.gray{
 			color:gray;
@@ -115,6 +116,128 @@
 		.red:hover{
 			color:red;
 		}
+		.infoSection{
+			font-size:13px;
+		}
+		h6{
+			font-weight: bold;
+			color:green;
+			margin-top:4px;
+		}
+		h2, h3, h4{
+			font-weight: bold;
+		}
+		.joinbox{
+			width:55%;
+			height:100%;
+			margin:auto;
+		}
+		.infoBox{
+			padding-bottom:30px;
+			padding-top:20px;
+			border-top:2px solid black;
+			border-bottom:2px solid lightgray;
+		}
+		.header{
+			font-size:38px;
+			padding:10px 0px;
+			font-weight:bold;
+		}
+		
+		.rows{
+			width:100%;
+			height:60px;
+			text-align:left;
+		}
+		input[type=text].id{
+			width:100%;
+		}
+		input{
+			height:37px;
+			width:100%;
+			background-color:white;
+			border-left:0;
+			border-right:0;
+			border-top:0;
+			border-bottom:3;
+			border-color:#9EA4AA;
+		}
+		input[type=button].id{
+			width:100%;
+			height:36px;
+			maign-top:2px;
+			margin-bottom:0px;
+			background-color: white;
+			border:1px solid black;
+			color:black;
+		}
+		input[type=submit]{
+			width:370px;
+			height:40px;
+			padding:0px;
+			color:white;
+			background-color:black;
+			border:solid 2px black;
+		}
+		.red{
+			color:red;
+		}
+		
+		.black{
+			color:black;
+		}
+		
+		.check{
+			display:none;
+			margin:10px;
+			position:absolute;
+			height:30px;
+			font-size:9pt;
+		}
+		#updatebtn{
+			width:150px;
+			height:50px;
+		}
+		#resetbtn{
+			width:150px;
+			height:50px;
+			background-color:gray;
+			color:white;
+			border:0px;
+		}
+		#resetbtn:hover{
+			background-color:#BDBDBD;
+			color:white;
+			border:0px;
+		}
+	
+		.btnalign{
+			margin-top:30px;
+			margin-left:120px;
+		}
+		label{
+			margin-top:10px;
+			font-weight:bold;
+			font-size:15px;
+			
+		}
+		.formalign{
+			float:right;
+			width:370px;
+			height:40px;
+		}
+		.agreelabel{
+			width:30px;
+			height:30px;
+			border-radius:5px;
+		}
+		input[type=checkbox]{
+			width:15px;
+			height:15px;
+		}
+		input[type=checkbox]:focus{
+			outline:0px !important;
+		}
 		.myPageLine{
 			border-bottom:2px solid black;
 			height:60px;
@@ -125,26 +248,10 @@
 			height:30px;
 			margin-top:35px;
 		}
-		.wishNoItem {
-		      margin-top:30px;
-		      height:500px;
+		.myInfoReadonly{
+			background-color: lightgray;
+			border-radius:5px;
 		}
-		.wishNoItem2 {
-		    padding-top:150px;
-		    font-size:17pt;
-		    letter-spacing: -1px;
-		    font-weight:500;
-		}
-		.exclamation{
-		    font-size:90px;
-		    color:#BDBDBD;
-		}
-		.flex-box{
-		      height:100%;
-		      text-align: center;
-		      border-bottom:2px solid lightgray;
-		}
-		
 	</style>
 
 </head>
@@ -212,7 +319,7 @@
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">MEN</a>
-				    <ul class="dropdown-menu  dropDownMenu mt-2">
+				    <ul class="dropdown-menu dropDownMenu mt-2">
 				    	<li><a class="dropdown-item fw-bolder" href="#">MEN</a></li>
 				   		<li><hr class="dropdown-divider "></li>
 					 	<li><a class="dropdown-item" href="#">운동화</a></li>
@@ -261,7 +368,6 @@
 	<!-- 상단 마이페이지 배너 -->
 	<section>
 	<div class="myPageBox">
-		<div class="myPageBoxTie">
 		 <div class="myPageBoxs1">
 		 	<div style=" float: left; width: 16%;">
 			 	<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -315,11 +421,8 @@
         		0
         	</span>개
         </div>
-        </div>
 	</div>
 	</section>
-	
-	<!-- 마이페이지 메인박스 -->
 	<div class="myPageMainBox">
 		<!-- 페이지 이동경로 -->
 		<div style=" float: left; width: 0%;">&nbsp;</div>
@@ -331,10 +434,9 @@
 				  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
 				</svg>
 				HOME</a> 
-			> 마이페이지 > 나의 주문 관리 > 주문/배송 조회
+			> 마이페이지 > 내 정보 관리 > 개인 정보 수정
 			</span>
 		</div>
-		
 		<!-- 좌측 마이페이지 메뉴-->
 		<div style=" float: left; width: 20%;">
 		<div class="myPageMenu">
@@ -346,7 +448,7 @@
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="myPage.do" class="red">주문/배송 조회*</a><br>
+					<a href="myPage.do" class="gray">주문/배송 조회</a><br>
 					<a href="orderCancel.do" class="gray">취소/교환/반품</a><br>
 					<a href="insertCard.do" class="gray">카드 등록 관리</a>
 				</div><br>
@@ -369,7 +471,7 @@
 				</svg></span>
 				<div class="myPageMenu3">
 					<a href="receiveAddr.do" class="gray">배송지 관리</a><br>
-					<a href="myInfo.do" class="gray">개인 정보 수정</a><br>
+					<a href="myInfo.do" class="red">개인 정보 수정*</a><br>
 					<a href="leave.do" class="gray">회원 탈퇴</a>
 				</div>
 			</div>
@@ -380,88 +482,118 @@
 		<!-- 마이페이지 메인 -->
 		<div style="float: left; width: 80%;">
 		<div class="myPageListBox">
-			<div style="float: left; width: 100%;" class="myPageLine"><h2>주문/배송 조회</h2></div>
-			<!-- 상품 혹은 목록이 없는 경우 -->
-			   <div class="wishNoItem">
-			      <div class="flex-box">
-			         <div class="wishNoItem2">
-			         <i class="bi bi-exclamation-circle exclamation"></i><br>
-			       		  주문하신 내역이 없습니다.</div>
-			      </div>
-			   </div>
-			<br><br>
-			
-			<table class="table table-hover">
-			  <thead>
-			    <tr>
-			      <th scope="col">주문번호</th>
-			      <th scope="col">주문날짜</th>
-			      <th scope="col">상품명/옵션</th>
-			      <th scope="col">상품금액/수량</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			      <th scope="row">1</th>
-			      <td></td>
-			      <td></td>
-			      <td></td>
-			    </tr>
-			    <tr>
-			      <th scope="row">2</th>
-			      <td></td>
-			      <td></td>
-			      <td></td>
-			    </tr>
-			    <tr>
-			      <th scope="row">3</th>
-			      <td colspan="2"></td>
-			      <td></td>
-			    </tr>
-			  </tbody>
-			</table>
-			<div class="myPageEndLine"></div>
-			<br><br>
-			
-			<!-- 마이페이지 회색 박스 -->
+		<h2>개인 정보 수정</h2>
+			<div class="section1">
+			<form name="frm" id="frm" action="#" method="post" class="infoBox">
+			<div class="joinbox">
+				<div class="rows name mt-5">
+					<label for="name">이름<span class="red"></span></label>
+					<div class="formalign">
+						<input type="text" class="impor myInfoReadonly" name="name" id="name" placeholder="이름" onblur="checkFn('name')" readonly>
+						<span class="check"></span>
+					</div>
+				</div>
+				<div class="rows id">
+					<label for="id">아이디<span class="red"></span></label>
+					<div class="formalign">
+						<input type="text" class="id impor myInfoReadonly" name="id" id="id" placeholder="아이디" onblur="checkFn('id')" readonly> 
+					</div>
+					<span class="check"></span>
+				</div>
+				<div class="rows password">
+					<label for="password">비밀번호<span class="red">*</span></label>
+					<div class="formalign">
+						<input type="password" class="impor" name="password" id="password" placeholder="비밀번호를 입력하세요. (영문 숫자 조합 4글자 이상)" onblur="checkFn('pass')">
+						<span class="check"></span>
+					</div>
+				</div>
+				<div class="rows passwordre">
+					<label for="passwordre">비밀번호 확인<span class="red">*</span></label>
+					<div class="formalign">
+						<input type="password" class="impor" name="passwordre" id="passwordre" placeholder="비밀번호를 다시 입력하세요." onblur="checkFn('passre')">
+						<span class="check"></span>
+					</div>
+				</div>
+				
+				<div class="rows email">
+					<label for="email">이메일<span class="red">*</span></label>
+					<div class="formalign">
+						<input type="email" class="impor" name="email" id="email" placeholder="이메일을 입력하세요." onblur="checkFn('email')">
+						<span class="check"></span>
+					</div>
+				</div>
+				<div class="rows phone">
+					<label for="phone">연락처<span class="red">*</span></label>
+					<div class="formalign">
+						<input type="text" class="impor" name="phone" id="phone" placeholder="핸드폰 번호를 '-' 없이 입력하세요." onblur="checkFn('phone')">
+						<span class="check"></span>
+					</div>
+				</div>
+				<div class="rows btnalign">
+					<label>
+						<input type="reset" value="초기화" id="resetbtn" onclick="frm_reset(); return false;">
+					</label>
+					<label>
+						<input type="submit" value="변경" id="updatebtn" onclick="sumbitFn(); return false;">
+					</label>
+				</div>
+				</div>
+			</form>
+		</div>
 			<div style="float: left; width: 100%;">
 				<div class="gray-box">
-						<span style="font-size:1.5em; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+					<span style="font-size:1.5em; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
 						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-						</svg> 꼭 읽어 주세요!</span>
-						<ul class="bullet-text-list">
-							<li class="bullet-text">ShoeRologue 온라인 물류센터에서 발송되는 상품은 평일 4시 이전 결제완료 시 당일 출고됩니다.</li>
-							<li class="bullet-text">ShoeRologue 및 On the spot 매장에서 발송되는 상품은 결제완료 후 2~3일 정도 준비 기간이 소요될 수 있습니다. (주말 및 공휴일 제외)</li>
-							<li class="bullet-text">업체 상품은 입점사 자체 배송으로 결제완료 후 1~2일 정도 준비 기간이 소요될 수 있습니다. (주말 및 공휴일 제외)</li>
-							<li class="bullet-text">주문 취소 및 배송지 변경은 [결제완료] 단계까지만 가능합니다.</li>
-							<li class="bullet-text">[상품준비중] 단계부터는 취소를 원하실 경우 상품을 받으신 후 반품접수 해주시기 바랍니다.</li>
-							<li class="bullet-text">구매 포인트는 구매확정 후 다음 날 적립됩니다.</li>
-							<li class="bullet-text">선물하신 주문의 수락 상태 및 자세한 주문 정보는 마이페이지 > 쇼핑내역 > 선물함에서 확인해주시기 바랍니다.</li>
-						</ul>
-						<span style="font-size:1.5em; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-						</svg> 매장 픽업 주문 안내</span>
-						<ul class="bullet-text-list">
-							<li class="bullet-text">매장 재고에 따라 상품 준비 기간이 소요될 수 있습니다.</li>
-							<li class="bullet-text">여러 개의 상품을 주문하실 경우 상품별로 준비기간이 다를 수 있습니다.</li>
-							<li class="bullet-text">상품이 준비되면 각 상품별로 알림톡 또는 SMS로 안내드립니다.</li>
-						</ul>
-						<span style="font-size:1.5em; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-						</svg> 슈롤로그배송 서비스 주문 안내</span>
-						<ul class="bullet-text-list">
-							<li class="bullet-text">월요일~금요일은 오후 1시 이전 주문 시 당일 도착, 1시 이후 주문 시 다음날 도착합니다. (연휴 및 공휴일은 발송 불가)<br>금요일 오후 1시 이후 또는 주말에 주문하실 경우 차주 월요일에 도착합니다.</li>
-							<li class="bullet-text">아트배송이 가능한 주문 수량이 마감되는 경우 발송이 지연되거나 불가할 수 있습니다.</li>
-							<li class="bullet-text">당사 사정에 따라 아트배송이 불가능한 날이 있을 수 있으며, 사전에 공지 드립니다.</li>
-							<li class="bullet-text">아트배송은 주문 후 상품 옵션 및 배송지 정보 변경이 불가합니다.</li>
-							<li class="bullet-text">상품을 보관하기 어려운 배송지의 경우 자동 반송 처리될 수 있으며, 반송 시 배송비는 고객 부담입니다.</li>
-							<li class="bullet-text">기상 상태에 따라 배송이 지연되거나 취소될 수 있습니다.</li>
-							<li class="bullet-text">배송완료 후 교환/반품은 일반배송과 동일한 방식으로 진행됩니다.</li>
-						</ul>
+						</svg> 정보 보호 인증 소개</span>
+					<p>슈롤로그(주)는 서비스 이용자의 정보를 안전하게 보호하기 위하여 아래와 같은 정보보호 인증을 취득하여 유지해오고 있습니다.</p>
+					
+					<div class="infoSection">
+						<div style="float: left; width: 23%; padding:10px;">
+							<img src="https://s.pstatic.net/static/www/u/2015/0128/nmms_143850321.gif" width="213" height="114" alt="SOC 로고">
+						</div>
+						<div style="float: left; width: 75%; padding:10px;">
+							<h6>SOC(Service Organization Control)</h6>
+							SOC 인증은 국제감사인증 기준위원회 (IAASB)가 제정한 국제인증업무기준(ISAE) 에 따라 서비스의 안전성 및 관련 내부통제 수준을 평가하는 제도입니다. 슈롤로그(주)는 2013년 3월 국내 최초로 SOC2, SOC3 (SysTrust)인증을 동시에 취득하였으며, 특히 이용자 프라이버시 보호에 초점을 맞추어 인증을 진행함으로써 ‘견고한 개인정보보호체계’를 다시 한번 검증 받았습니다.
+						</div>
 					</div>
+					
+						<div style="float: left; width: 98%; padding:10px;"></div>
+					
+					<div class="infoSection">
+						<div style="float: left; width: 23%; padding:10px;">
+							<img src="https://s.pstatic.net/static/www/u/2015/0810/nmms_172911673.png" alt="ISO/IEC 27001 로고" height="114" width="213">
+						</div>
+						<div style="float: left; width: 75%; padding:10px;">
+							<h6>ISO/IEC 27001, 27017, 27018, 27701</h6>
+							ISO/IEC 27001은 국제표준화 기구(ISO) 및 국제 전기기술위원회(IEC)에서 제정한 정보보호 관리체계 국제규격 인증입니다. 슈롤로그는 메일, 클라우드와 같은 개인화 서비스, 카페, 블로그  및 슈롤로그페이 등 전사 서비스를 대상으로 인증을 유지해오고 있습니다. 2007년 3월 세계 최초로 ‘개인정보 부문’에 특화된 ISO 27001 인증을 취득하였고, 2016년 6월에는 ‘클라우드 서비스’의 정보보호 및 개인정보 보호를 강화하기 위해 ISO 27017 및 ISO 27018 인증을 취득하여 고객 여러분의 소중한 개인정보를 보호하고 있습니다.
+						</div>
+					</div>
+					
+						<div style="float: left; width: 98%; padding:10px;"></div>
+						
+					<div class="infoSection">	
+						<div style="float: left; width: 23%; padding:10px;">
+							<img src="https://s.pstatic.net/static/www/rules/img2/img_isms_p.png" alt="정보보호 및 개인정보보호 관리체계인증(ISMS-P) 로고" height="114" width="213">
+						</div>
+						<div style="float: left; width: 75%; padding:10px;">
+							<h6>정보보호 및 개인정보보호 관리체계인증 (ISMS-P)</h6>
+							정보보호 및 개인정보보호 관리체계(ISMS-P) 인증은 정보보호 및 개인정보보호를 위한 일련의 조치와 활동이 인증기준에 적합함을  인증기관이 증명하는 제도입니다. 슈롤로그(주)는 정보통신망의 안전성 확보 및 개인정보 보호를 위해 조직이 수립한 일련의 조치와 활동이 인증기준에 적합함을 인정받아 인증을 획득하였습니다.
+						</div>
+					</div>
+					
+						<div style="float: left; width: 98%; padding:10px;"></div>
+					
+					<div class="infoSection">
+						<div style="float: left; width: 23%; padding:10px;">
+							<img src="https://s.pstatic.net/static/www/rules/img2/img_isms.png" alt="정보보호관리체계 (ISMS) 로고" height="114" width="213">
+						</div>
+						<div style="float: left; width: 75%; padding:10px;">
+							<h6>정보보호관리체계 (ISMS)</h6>
+							정보보호관리체계(SMS) 인증은 미래창조과학부에서 기업이 전사 정보보호 활동에 대해 지속적인 보호 활동을 수행하고 있는지, 적절한 정보보호 수준을 유지하고 있는지 점검하여 일정 수준 이상의 기업에 인증을 부여하는 제도입니다. 슈롤로그(주)는 2010년 전사로 범위를 확대하여 해당 인증을 취득하였습니다.
+						</div>
+					</div>
+			    </div>
 			</div>
 		</div>
 		</div>
@@ -471,7 +603,7 @@
 	<a href="#top">
 	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill top fixed" viewBox="0 0 16 16">
 	  <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
-	</svg></a>
+	</svg></a><br><br>
 	
 	<!-- footer -->
 	<div class="bg-light">
@@ -522,7 +654,7 @@
 				  <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
 				</svg> &nbsp; 트위터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-				  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+				  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05h4.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
 				</svg> &nbsp; 페이스북</a></li>
 	        </ul>
 	      </div>
@@ -536,6 +668,176 @@
 	  </footer>
 	 </div>
 	</div>
+	
+	<!-- 유효성 검사 -->
+	<script src="../jquery-3.6.0.min.js"></script>
+	<script>
+	function checkFn(type){
+		if(type == 'pass'){
+			var checkId = /^.*(?=^.{4,20}$)(?=.*\d)(?=.*[a-zA-Z]).*$/;
+			var value = document.frm.password.value;
+			var span = document.getElementsByClassName("password")[0].getElementsByTagName("span")[0];
+			if(value == ""){
+				span.textContent = "*필수";
+				span.style.color = "red";
+				span.style.display = "inline";
+			}else if(!checkId.test(value)){
+				span.textContent = "*형식오류";
+				span.style.color = "red";
+				span.style.display = "inline";
+			}else{
+				span.textContent = "";
+				span.style.display = "none";
+			}
+		}else if(type == 'passre'){
+			var value = document.frm.password.value;
+			var value2 = document.frm.passwordre.value;
+			var span = document.getElementsByClassName("passwordre")[0].getElementsByTagName("span")[0];
+			if(value2 == ""){
+				span.textContent = "*필수";
+				span.style.color = "red";
+				span.style.display = "inline";
+			}else if(value != value2){
+				span.textContent = "*불일치";
+				span.style.color = "red";
+				span.style.display = "inline";
+			}else{
+				span.textContent = "";
+				span.style.display = "none";
+			}
+		}else if(type == 'email'){
+			var checkEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/g;
+			var value = document.frm.email.value;
+			var span = document.getElementsByClassName("email")[0].getElementsByTagName("span")[0];
+			if(value == ""){
+				span.textContent = "*필수";
+				span.style.color = "red";
+				span.style.display = "inline";
+			}else if(!checkEmail.test(value)){
+				span.textContent = "*형식오류";
+				span.style.color = "red";
+				span.style.display = "inline";
+			}else{
+				span.textContent = "";
+				span.style.display = "none";
+			}
+		}else if(type == 'phone'){
+			var checkPhone = /^[0-9]{10,12}/g;
+			var value = document.frm.phone.value;
+			var span = document.getElementsByClassName("phone")[0].getElementsByTagName("span")[0];
+			if(value == ""){
+				span.textContent = "*필수";
+				span.style.color = "red";
+				span.style.display = "inline";
+			}else if(!checkPhone.test(value)){
+				span.textContent = "*형식오류";
+				span.style.color = "red";
+				span.style.display = "inline";
+			}else{
+				span.textContent = "";
+				span.style.display = "none";
+			}
+		}
+	}
+	/*---------------------------------서브밋---------------------------------*/
+	function sumbitFn(){
+		var result = true;
+		
+		var checkPass = /^.*(?=^.{4,20}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
+		value = document.frm.password.value;
+		span = document.getElementsByClassName("password")[0].getElementsByTagName("span")[0];
+		if(value == ""){
+			span.textContent = "*필수";
+			span.style.color = "red";
+			span.style.display = "inline";
+			result = false;
+		}else if(!checkPass.test(value)){
+			span.textContent = "*형식오류";
+			span.style.color = "red";
+			span.style.display = "inline";
+			result = false;
+		}else{
+			span.textContent = "";
+			span.style.display = "none";
+		}
+		
+		
+		value = document.frm.password.value;
+		var value2 = document.frm.passwordre.value;
+		span = document.getElementsByClassName("passwordre")[0].getElementsByTagName("span")[0];
+		if(value2 == ""){
+			span.textContent = "*필수";
+			span.style.color = "red";
+			span.style.display = "inline";
+			result = false;
+		}else if(value != value2){
+			span.textContent = "*불일치";
+			span.style.color = "red";
+			span.style.display = "inline";
+			result = false;
+		}else{
+			span.textContent = "";
+			span.style.display = "none";
+		}
+		
+		
+		
+		var checkEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/g;
+		value = document.frm.email.value;
+		span = document.getElementsByClassName("email")[0].getElementsByTagName("span")[0];
+		if(value == ""){
+			span.textContent = "*필수";
+			span.style.color = "red";
+			span.style.display = "inline";
+			result = false;
+		}else if(!checkEmail.test(value)){
+			span.textContent = "*형식오류";
+			span.style.color = "red";
+			span.style.display = "inline";
+			result = false;
+		}else{
+			span.textContent = "";
+			span.style.display = "none";
+		}
+		
+		
+		var checkPhone = /^[0-9]{10,12}/g;
+		var value = document.frm.phone.value;
+		var span = document.getElementsByClassName("phone")[0].getElementsByTagName("span")[0];
+		if(value == ""){
+			span.textContent = "*필수";
+			span.style.color = "red";
+			span.style.display = "inline";
+		}else if(!checkPhone.test(value)){
+			span.textContent = "*형식오류";
+			span.style.color = "red";
+			span.style.display = "inline";
+		}else{
+			span.textContent = "";
+			span.style.display = "none";
+		}
+		
+		if(result){
+			document.frm.submit();
+		}
+	}
+	
+	<!-- 초기화 버튼  함수-->
+	function frm_reset() {
+	    document.getElementById("frm").reset();
+	}
+	
+	
+	// 동의 모두선택 / 해제
+	const agreeChkAll = document.querySelector('input[name=agree_all]');
+	    agreeChkAll.addEventListener('change', (e) => {
+	    let agreeChk = document.querySelectorAll('input[name=agree]');
+	    for(let i = 0; i < agreeChk.length; i++){
+	      agreeChk[i].checked = e.target.checked;
+	    }
+	});
+	</script>
+	
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	
 </body>

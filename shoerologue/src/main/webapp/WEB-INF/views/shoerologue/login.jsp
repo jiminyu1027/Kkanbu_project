@@ -11,22 +11,15 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-		
-		<!-- 글꼴 -->
-	    <link rel="preconnect" href="https://fonts.googleapis.com">
-	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	    
-	    
+
 	    <!-- Bootstrap Font Icon CSS 아이콘 -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-    	<link rel="stylesheet" href="/resources/css/media_query.css">
+    	<link rel="stylesheet" href="/resources/css/style.css">
 	    <link rel="stylesheet" href="/resources/css/headerFooter.css">
 	  
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-	
 	*{
 	font-family: 'Montserrat', "Noto Sans KR", sans-serif;
 	}
@@ -169,7 +162,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button"
             aria-expanded="false">MEN</a>
-          <ul class="dropdown-menu bg-black dropDownMenu mt-2">
+          <ul class="dropdown-menu  dropDownMenu mt-2">
             <li><a class="dropdown-item fw-bolder" href="#">MEN</a></li>
             <li>
               <hr class="dropdown-divider ">
@@ -185,7 +178,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button"
             aria-expanded="false">WOMEN</a>
-          <ul class="dropdown-menu bg-black dropDownMenu mt-2">
+          <ul class="dropdown-menu  dropDownMenu mt-2">
             <li><a class="dropdown-item fw-bolder" href="#">WOMEN</a></li>
             <li>
               <hr class="dropdown-divider">
@@ -201,7 +194,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button"
             aria-expanded="false">KIDS</a>
-          <ul class="dropdown-menu bg-black dropDownMenu mt-2">
+          <ul class="dropdown-menu  dropDownMenu mt-2">
             <li><a class="dropdown-item fw-bolder" href="#">KIDS</a></li>
             <li>
               <hr class="dropdown-divider">
@@ -217,19 +210,6 @@
       </ul>
     </div>
     <div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
-      <ul class="navbar-nav me-auto mb-6 mb-lg-0">
-      </ul>
-      <ul class="nav justify-content-end">
-        <li class="nav-item nav-fs">
-          <a class="nav-link text-white fw-bolder" href="#hotdeal">#핫딜</a>
-        </li>
-        <li class="nav-item nav-fs">
-          <a class="nav-link text-white fw-bolder" href="#best">#베스트</a>
-        </li>
-        <li class="nav-item nav-fs">
-          <a class="nav-link text-white fw-bolder" href="#codi">#코디</a>
-        </li>
-      </ul>
     </div>
     <div class="col-0 col-sm-0 col-md-0 col-lg-2"></div>
   </nav>
@@ -268,7 +248,7 @@
 					</label>
 				</div>
 				<div class="mt-3">
-					<a href="#">아이디 찾기 </a> | <a href="#">비밀번호 찾기</a>
+					<a href="/Shoerologue/findId.do">아이디 찾기 </a> | <a href="/Shoerologue/findPwd.do">비밀번호 찾기</a>
 				</div>
 				
 			</div>
