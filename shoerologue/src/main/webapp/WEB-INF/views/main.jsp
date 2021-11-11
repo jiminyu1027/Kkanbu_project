@@ -5,7 +5,7 @@
 
 <html>
 	<head>
-		<title>신발의 시작, ShoeRologue test</title>
+		<title>신발의 시작, ShoeRologue</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 		
@@ -18,7 +18,7 @@
 		<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 		
 		<!-- 아이콘 크기 -->
-		<link rel="stylesheet" href="resources/css/media_query.css">
+		<link rel="stylesheet" href="resources/css/style.css">
 		<!-- Bootstrap Font Icon CSS -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
@@ -38,7 +38,6 @@
 		
 				
 		<style>
-		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 		
 		*{
@@ -48,6 +47,11 @@
 		.img-fluid{
 			width:100%;
 		}
+		
+		.dropdown:hover .dropdown-menu {
+   		display: block;
+		}
+		
 		</style>
 	
 	</head>
@@ -87,15 +91,15 @@
 	     <!-- 마이페이지, 찜목록, 장바구니 -->
 	     <div class="col-0 col-sm-0 col-md-2 col-lg-3 d-flex justify-content-center align-items-center">
 			<ul class="iconul d-flex align-items-center icon-absolute">
-				<li class="iconli"><a href="Shoerologue/myPage.do">
+				<li class="iconli"><a href="Shoerologue/ll.do">
 					<i class="bi bi-person icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="#">
+				<li class="iconli"><a href="Shoerologue/wishlist.do">
 					<i class="bi bi-heart icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="#">
+				<li class="iconli"><a href="Shoerologue/cart.do">
 					<i class="bi bi-bag icon"></i>
 					</a>
 				</li>

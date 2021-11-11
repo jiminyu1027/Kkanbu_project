@@ -31,6 +31,17 @@ public class ShoerologueController {
 		
 		return "shoerologue/ff";
 	}
+	@RequestMapping(value="/cart.do")
+	public String cart(Locale locale, Model model)throws Exception{
+		
+		return "shoerologue/cart";
+	}
+	
+	@RequestMapping(value="/wishlist.do")
+	public String wishlist(Locale locale, Model model)throws Exception{
+		
+		return "shoerologue/wishlist";
+	}
 		
 	
 }
