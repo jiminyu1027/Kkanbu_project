@@ -13,7 +13,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 	
 		<!-- 아이콘 크기 -->
-		<link rel="stylesheet" href="/resources/css/media_query.css">
+		<link rel="stylesheet" href="/resources/css/style.css">
 		<!-- Bootstrap Font Icon CSS -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
@@ -260,7 +260,7 @@
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">MEN</a>
-				    <ul class="dropdown-menu bg-black dropDownMenu mt-2">
+				    <ul class="dropdown-menu  dropDownMenu mt-2">
 				    	<li><a class="dropdown-item fw-bolder" href="#">MEN</a></li>
 				   		<li><hr class="dropdown-divider "></li>
 					 	<li><a class="dropdown-item" href="#">운동화</a></li>
@@ -273,7 +273,7 @@
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">WOMEN</a>
-				    <ul class="dropdown-menu bg-black dropDownMenu mt-2">
+				    <ul class="dropdown-menu  dropDownMenu mt-2">
 				    	<li><a class="dropdown-item fw-bolder" href="#">WOMEN</a></li>
 				   		<li><hr class="dropdown-divider"></li>
 					 	<li><a class="dropdown-item" href="#">운동화</a></li>
@@ -286,7 +286,7 @@
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">KIDS</a>
-				    <ul class="dropdown-menu bg-black dropDownMenu mt-2">
+				    <ul class="dropdown-menu  dropDownMenu mt-2">
 				    	<li><a class="dropdown-item fw-bolder" href="#">KIDS</a></li>
 				   		<li><hr class="dropdown-divider"></li>
 					 	<li><a class="dropdown-item" href="#">운동화</a></li>
@@ -299,22 +299,6 @@
 				</li>
 			</ul>
 		</div>
-		<!-- 핫딜,베스트,코디 nav menu -->
-	    <div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
-	      <ul class="navbar-nav me-auto mb-6 mb-lg-0">
-	      </ul>
-	      <ul class="nav justify-content-end">
-	        <li class="nav-item nav-fs">
-	          <a class="nav-link text-white fw-bolder" href="#hotdeal">#핫딜</a>
-	        </li>
-	        <li class="nav-item nav-fs">
-	          <a class="nav-link text-white fw-bolder" href="#best">#베스트</a>
-	        </li>
-	        <li class="nav-item nav-fs">
-	          <a class="nav-link text-white fw-bolder" href="#codi">#코디</a>
-	        </li>
-	      </ul>
-	    </div>
 	    <div class="col-0 col-sm-0 col-md-0 col-lg-2"></div>
 	  </nav>
 	</div>
@@ -551,7 +535,7 @@
 				 </div>
 			</div>
 			<div class="bottom-button-wrap">
-				<input type="button" id="gotomain" name="gotomain" class="gotomain" onclick="gotomainbtn()" value="돌아가기">
+				<input type="button" id="gotomain" name="gotomain" class="gotomain" value="돌아가기">
 				<input type="button" id="goOrder2" name="goOrderbt2" class="orderb2" onclick="goOrderbtn(); return false;" value="주문하기">
 			</div>
 		</div>
@@ -645,14 +629,29 @@
 	        }
 	    }).open();
 	}
-
+	
+	<!--돌아가기 버튼-->
+	$(document).ready(function(){
+		$('#gotomain').click(function(){
+			var result = confirm('메인페이지로 이동하시겠습니까?');
+			
+			if(result){
+				location.replace('/main.do');
+			}else{
+				//취소 누르면 변화 없음
+			}
+		});
+	});
+	
+	
+	<!--필수항목 아코디언-->
 	$(".que").click(function() {
 		   $(this).next(".anw").stop().slideToggle(300);
 		  $(this).toggleClass('on').siblings().removeClass('on');
 		  $(this).next(".anw").siblings(".anw").slideUp(300); // 1개씩 펼치기
 		});
 	
-
+	
 </script>
 <!-- footer -->
 	<div class="bg-light">

@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,14 +12,14 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-
+		
 		<!-- Bootstrap Font Icon CSS 아이콘 -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/resources/css/style.css">
 		
-		<link rel="stylesheet" href="/resources/css/headerFooter.css">
 		
+		<link rel="stylesheet" href="/resources/css/headerFooter.css">
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
@@ -34,7 +32,7 @@
 		}
 		.myPageMainBox{
 			width:1500px;
-			height:1500px;
+			height:1300px;
 			padding-left:50px;
 			padding-right:50px;
 			margin:auto;
@@ -54,7 +52,6 @@
 			text-align:center;
 			font-size:20px;
 			font-weight:bold;
-			display:inline-block;
 		}
 		.ft-weight{
 			font-weight: bold;
@@ -68,7 +65,6 @@
 			text-align:left;
 			font-size:20px;
 			margin-left:240px;
-			display:inline-block;
 		}
 		.myPageMenu{
 			border:0px solid #616161;
@@ -115,10 +111,25 @@
 		.red:hover{
 			color:red;
 		}
-		.myPageLine{
-			border-bottom:2px solid black;
+		.myPageLine1{
+			border-bottom:3px solid black;
+			border-top:1px solid lightgray;
+			border-left:1px solid lightgray;
 			height:60px;
-			padding-top:10px;
+			padding-top:15px;
+			color:blue;
+			font-size:15px;
+			font-weight:bold;
+		}
+		.myPageLine2{
+			border-left :3px solid black;
+			border-top :3px solid black;
+			border-right :3px solid black;
+			height:60px;
+			padding-top:15px;
+			color:blue;
+			font-size:15px;
+			font-weight:bold;
 		}
 		.myPageEndLine{
 			border-top:2px solid gray;
@@ -128,23 +139,25 @@
 		.wishNoItem {
 		      margin-top:30px;
 		      height:500px;
+		      border-top:2px solid #111;
 		}
+		
 		.wishNoItem2 {
-		    padding-top:150px;
-		    font-size:17pt;
-		    letter-spacing: -1px;
-		    font-weight:500;
+		      padding-top:150px;
+		      font-size:17pt;
+		      letter-spacing: -1px;
+		      font-weight:500;
 		}
 		.exclamation{
-		    font-size:90px;
-		    color:#BDBDBD;
+		     font-size:90px;
+		     color:#BDBDBD;
 		}
+		
 		.flex-box{
 		      height:100%;
 		      text-align: center;
 		      border-bottom:2px solid lightgray;
 		}
-		
 	</style>
 
 </head>
@@ -212,7 +225,7 @@
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">MEN</a>
-				    <ul class="dropdown-menu  dropDownMenu mt-2">
+				    <ul class="dropdown-menu dropDownMenu mt-2">
 				    	<li><a class="dropdown-item fw-bolder" href="#">MEN</a></li>
 				   		<li><hr class="dropdown-divider "></li>
 					 	<li><a class="dropdown-item" href="#">운동화</a></li>
@@ -261,7 +274,6 @@
 	<!-- 상단 마이페이지 배너 -->
 	<section>
 	<div class="myPageBox">
-		<div class="myPageBoxTie">
 		 <div class="myPageBoxs1">
 		 	<div style=" float: left; width: 16%;">
 			 	<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -315,11 +327,8 @@
         		0
         	</span>개
         </div>
-        </div>
 	</div>
 	</section>
-	
-	<!-- 마이페이지 메인박스 -->
 	<div class="myPageMainBox">
 		<!-- 페이지 이동경로 -->
 		<div style=" float: left; width: 0%;">&nbsp;</div>
@@ -331,10 +340,9 @@
 				  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
 				</svg>
 				HOME</a> 
-			> 마이페이지 > 나의 주문 관리 > 주문/배송 조회
+			> 마이페이지 > 나의 주문 관리 > 취소/교환/반품
 			</span>
 		</div>
-		
 		<!-- 좌측 마이페이지 메뉴-->
 		<div style=" float: left; width: 20%;">
 		<div class="myPageMenu">
@@ -346,8 +354,8 @@
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="myPage.do" class="red">주문/배송 조회*</a><br>
-					<a href="orderCancel.do" class="gray">취소/교환/반품</a><br>
+					<a href="myPage.do" class="gray">주문/배송 조회</a><br>
+					<a href="orderCancel.do" class="red">취소/교환/반품*</a><br>
 					<a href="insertCard.do" class="gray">카드 등록 관리</a>
 				</div><br>
 			</div>
@@ -380,90 +388,47 @@
 		<!-- 마이페이지 메인 -->
 		<div style="float: left; width: 80%;">
 		<div class="myPageListBox">
-			<div style="float: left; width: 100%;" class="myPageLine"><h2>주문/배송 조회</h2></div>
-			<!-- 상품 혹은 목록이 없는 경우 -->
-			   <div class="wishNoItem">
-			      <div class="flex-box">
-			         <div class="wishNoItem2">
-			         <i class="bi bi-exclamation-circle exclamation"></i><br>
-			       		  주문하신 내역이 없습니다.</div>
-			      </div>
+			<h2 class="mt-5">교환/반품 신청</h2><br>
+			<div =class="myPageEndLine"></div>
+			<div style="float: left; width: 50%;" class="myPageLine1"><a href="orderCancel.do" class="gray"><center>주문 취소</center></a></div>
+			<div style="float: left; width: 50%;" class="myPageLine2"><a href="refund.do"><center>교환/반품</center></a></div>
+			<br><br><br><br>
+		
+			<!-- 회색 안내 박스 -->
+				<div style="float: left; width: 100%;">
+				<span style="font-size:1.5em; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-exclamation-circle mb-1" viewBox="0 0 16 16">
+				  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+				  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+				</svg><a class="grayBoxTitle"> 교환/반품 안내<a></span>
+					<div class="gray-box">
+						
+						<ul class="bullet-text-list">
+							<li class="bullet-text">교환, 반품은 <font style="color: red; font-weight: bold; font-size: 14px;">제품을 받으신 날로부터 7일 이내에만 신청 가능</font> 합니다. <br/>상품이 불량인 경우에는 30일 이내로 신청 가능하며, 7일이 지난 후에는 사이트에서 신청이 불가능하므로 고객센터로 접수해주시기 바랍니다.</li>
+							<li class="bullet-text">상품 교환 시 해당 상품의 모든 옵션이 품절 또는 판매중지 상태인 경우 교환 신청이 불가합니다.<br />
+								(동일상품, 동일가격 옵션만 교환만 가능하며, 타상품으로의 교환은 불가합니다.)</li>
+							<li class="bullet-text">접수 시 택배 기사님이 상품 회수를 위해 방문하며, 택배비가 부과됩니다.<br />
+								- 왕복 택배비 : 최초 배송비 (2,500원) + 반품/교환 배송비(2,500원) = 총 5,000원 이 부과됩니다. (선결제 또는 환불금액에서 차감 선택)<br />
+								- 아트배송의 경우 최초 배송비 (3,500원) + 반품/교환 배송비 (2,500원) = 6,000원이 부과됩니다. (선결제 또는 환불금액에서 차감 선택)<br /> 
+								※ 한 주문서에 여러 개의 상품을 구매하신 경우 반품/교환 시 반송되는 택배 건수만큼 배송비 2,500원이 추가로 부과됩니다.<br />
+								- 단, 보내주신 상품이 불량 또는 오배송으로 확인될 경우 택배비를 환불해드립니다. (선택하신 결제수단으로 택배비 환불)<br />
+								- 지정택배 외 타택배 이용 시 추가로 발생되는 금액은 고객님께서 부담해주셔야 합니다. (제주/도서산간 지역은 추가 운임이 발생할 수 있습니다.)</li>
+							<li class="bullet-text">접수 후 14일 이내에 상품이 반품지로 도착하지 않을 경우 접수가 취소됩니다. (배송 지연 제외)</li>
+							<li class="bullet-text">슈롤로그배송 상품은 ShoeRologue 오프라인 매장에서 택배비 없이 무료로 교환, 반품 접수 가능합니다. (단, 구매 시 선결제하신 배송비는 환불되지 않습니다.)</li> 
+							<li class="bullet-text">On the spot배송 상품은 On the spot 오프라인 매장에서 택배비 없이 무료로 교환, 반품 접수 가능합니다. <br />
+								(단품 기준 10개 미만 상품만 접수 가능. 대량 교환, 반품은 온라인 접수만 가능합니다.)</li>
+							<li class="bullet-text"><font style="color: red; font-weight: bold; font-size: 14px;">입점사 상품은 ShoeRologue 온라인 물류센터 및 오프라인 매장에서 교환/반품 불가능합니다. 해당 업체의 회수지로 발송해주시기 바랍니다.</font></li>
+							<li class="bullet-text">자세한 사항은 고객센터로 문의주시기 바랍니다.</li>
+						</ul>
+					</div><br>
+					<div class="wishNoItem">
+			     	  <div class="flex-box">
+				         <div class="wishNoItem2">
+				         <i class="bi bi-exclamation-circle exclamation"></i><br>
+				       		  주문하신 내역이 없습니다.</div>
+				      </div>
+			    	</div>
 			   </div>
-			<br><br>
-			
-			<table class="table table-hover">
-			  <thead>
-			    <tr>
-			      <th scope="col">주문번호</th>
-			      <th scope="col">주문날짜</th>
-			      <th scope="col">상품명/옵션</th>
-			      <th scope="col">상품금액/수량</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			      <th scope="row">1</th>
-			      <td></td>
-			      <td></td>
-			      <td></td>
-			    </tr>
-			    <tr>
-			      <th scope="row">2</th>
-			      <td></td>
-			      <td></td>
-			      <td></td>
-			    </tr>
-			    <tr>
-			      <th scope="row">3</th>
-			      <td colspan="2"></td>
-			      <td></td>
-			    </tr>
-			  </tbody>
-			</table>
-			<div class="myPageEndLine"></div>
-			<br><br>
-			
-			<!-- 마이페이지 회색 박스 -->
-			<div style="float: left; width: 100%;">
-				<div class="gray-box">
-						<span style="font-size:1.5em; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-						</svg> 꼭 읽어 주세요!</span>
-						<ul class="bullet-text-list">
-							<li class="bullet-text">ShoeRologue 온라인 물류센터에서 발송되는 상품은 평일 4시 이전 결제완료 시 당일 출고됩니다.</li>
-							<li class="bullet-text">ShoeRologue 및 On the spot 매장에서 발송되는 상품은 결제완료 후 2~3일 정도 준비 기간이 소요될 수 있습니다. (주말 및 공휴일 제외)</li>
-							<li class="bullet-text">업체 상품은 입점사 자체 배송으로 결제완료 후 1~2일 정도 준비 기간이 소요될 수 있습니다. (주말 및 공휴일 제외)</li>
-							<li class="bullet-text">주문 취소 및 배송지 변경은 [결제완료] 단계까지만 가능합니다.</li>
-							<li class="bullet-text">[상품준비중] 단계부터는 취소를 원하실 경우 상품을 받으신 후 반품접수 해주시기 바랍니다.</li>
-							<li class="bullet-text">구매 포인트는 구매확정 후 다음 날 적립됩니다.</li>
-							<li class="bullet-text">선물하신 주문의 수락 상태 및 자세한 주문 정보는 마이페이지 > 쇼핑내역 > 선물함에서 확인해주시기 바랍니다.</li>
-						</ul>
-						<span style="font-size:1.5em; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-						</svg> 매장 픽업 주문 안내</span>
-						<ul class="bullet-text-list">
-							<li class="bullet-text">매장 재고에 따라 상품 준비 기간이 소요될 수 있습니다.</li>
-							<li class="bullet-text">여러 개의 상품을 주문하실 경우 상품별로 준비기간이 다를 수 있습니다.</li>
-							<li class="bullet-text">상품이 준비되면 각 상품별로 알림톡 또는 SMS로 안내드립니다.</li>
-						</ul>
-						<span style="font-size:1.5em; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-						</svg> 슈롤로그배송 서비스 주문 안내</span>
-						<ul class="bullet-text-list">
-							<li class="bullet-text">월요일~금요일은 오후 1시 이전 주문 시 당일 도착, 1시 이후 주문 시 다음날 도착합니다. (연휴 및 공휴일은 발송 불가)<br>금요일 오후 1시 이후 또는 주말에 주문하실 경우 차주 월요일에 도착합니다.</li>
-							<li class="bullet-text">아트배송이 가능한 주문 수량이 마감되는 경우 발송이 지연되거나 불가할 수 있습니다.</li>
-							<li class="bullet-text">당사 사정에 따라 아트배송이 불가능한 날이 있을 수 있으며, 사전에 공지 드립니다.</li>
-							<li class="bullet-text">아트배송은 주문 후 상품 옵션 및 배송지 정보 변경이 불가합니다.</li>
-							<li class="bullet-text">상품을 보관하기 어려운 배송지의 경우 자동 반송 처리될 수 있으며, 반송 시 배송비는 고객 부담입니다.</li>
-							<li class="bullet-text">기상 상태에 따라 배송이 지연되거나 취소될 수 있습니다.</li>
-							<li class="bullet-text">배송완료 후 교환/반품은 일반배송과 동일한 방식으로 진행됩니다.</li>
-						</ul>
-					</div>
-			</div>
-		</div>
+		   </div>
 		</div>
 	</div><br>
 	

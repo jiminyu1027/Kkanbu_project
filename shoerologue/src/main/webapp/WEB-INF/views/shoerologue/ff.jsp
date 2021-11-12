@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 		
 		<!-- 아이콘 크기 -->
-		<link rel="stylesheet" href="resources/css/media_query.css">
+		<link rel="stylesheet" href="resources/css/style.css">
 		<!-- Bootstrap Font Icon CSS -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
@@ -137,20 +137,6 @@
 			</ul>
 		</div>
 		 <div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
-		      <ul class="navbar-nav me-auto mb-6 mb-lg-0">
-		      </ul>
-		      <ul class="nav justify-content-end"> 
-				  <li class="nav-item nav-fs">
-				    <a class="nav-link text-white fw-bolder" href="#hotdeal">#핫딜</a>
-				  </li>
-				  <li class="nav-item nav-fs">
-				    <a class="nav-link text-white fw-bolder" href="#best">#베스트</a>
-				  </li>
-				   <li class="nav-item nav-fs">
-				    <a class="nav-link text-white fw-bolder" href="#codi">#코디</a>
-				  </li>
-				</ul>
-				
 		    </div>
 		    <div class="col-0 col-sm-0 col-md-0 col-lg-2"></div>
 		</nav>

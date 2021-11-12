@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,14 +12,12 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-
+	
 		<!-- Bootstrap Font Icon CSS 아이콘 -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/resources/css/style.css">
-		
 		<link rel="stylesheet" href="/resources/css/headerFooter.css">
-		
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
@@ -34,7 +30,7 @@
 		}
 		.myPageMainBox{
 			width:1500px;
-			height:1500px;
+			height:1400px;
 			padding-left:50px;
 			padding-right:50px;
 			margin:auto;
@@ -54,7 +50,6 @@
 			text-align:center;
 			font-size:20px;
 			font-weight:bold;
-			display:inline-block;
 		}
 		.ft-weight{
 			font-weight: bold;
@@ -68,7 +63,6 @@
 			text-align:left;
 			font-size:20px;
 			margin-left:240px;
-			display:inline-block;
 		}
 		.myPageMenu{
 			border:0px solid #616161;
@@ -94,7 +88,6 @@
 			font-size:14px;
 			margin-top:10px;
 		}
-		
 		.myPageListBox{
 			margin-top:33px;
 			width:1120px;
@@ -115,6 +108,19 @@
 		.red:hover{
 			color:red;
 		}
+		.addrInsertbtn{
+			float:right;
+			margin-bottom:50px;
+			width:130px;
+			height:50px;
+			border:2px solid black;
+		}
+		form li {
+			list-style: none;
+		}
+		form input[type="text"]{
+			width:400px;
+		}
 		.myPageLine{
 			border-bottom:2px solid black;
 			height:60px;
@@ -129,22 +135,52 @@
 		      margin-top:30px;
 		      height:500px;
 		}
+		
 		.wishNoItem2 {
-		    padding-top:150px;
-		    font-size:17pt;
-		    letter-spacing: -1px;
-		    font-weight:500;
+		      padding-top:150px;
+		      font-size:17pt;
+		      letter-spacing: -1px;
+		      font-weight:500;
 		}
 		.exclamation{
-		    font-size:90px;
-		    color:#BDBDBD;
+		     font-size:90px;
+		     color:#BDBDBD;
 		}
+		
 		.flex-box{
 		      height:100%;
 		      text-align: center;
-		      border-bottom:2px solid lightgray;
+		      border-bottom:3px solid lightgray;
 		}
-		
+		.bg-gray1{
+			background-color: lightgray;
+			border:1px solid black;
+			width:200px !important;
+		}
+		.bg-gray2{
+			background-color:lightgray;
+			border:1px solid black;
+			width:350px !important;
+			margin-left:50px;
+		}
+		.bg-gray3{
+			background-color:white;
+			border:1px solid black;
+			width:145px;
+		}
+		.bg-gray4{
+			background-color:white;
+			border:1px solid black;
+			width:350px !important;
+			margin-left:50px;
+		}
+		form input{
+			margin-top:10px;
+			height:40px;
+		}
+		.modalFs{
+			font-size:20px;
+		}
 	</style>
 
 </head>
@@ -212,7 +248,7 @@
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">MEN</a>
-				    <ul class="dropdown-menu  dropDownMenu mt-2">
+				    <ul class="dropdown-menu dropDownMenu mt-2">
 				    	<li><a class="dropdown-item fw-bolder" href="#">MEN</a></li>
 				   		<li><hr class="dropdown-divider "></li>
 					 	<li><a class="dropdown-item" href="#">운동화</a></li>
@@ -261,7 +297,6 @@
 	<!-- 상단 마이페이지 배너 -->
 	<section>
 	<div class="myPageBox">
-		<div class="myPageBoxTie">
 		 <div class="myPageBoxs1">
 		 	<div style=" float: left; width: 16%;">
 			 	<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -315,11 +350,8 @@
         		0
         	</span>개
         </div>
-        </div>
 	</div>
 	</section>
-	
-	<!-- 마이페이지 메인박스 -->
 	<div class="myPageMainBox">
 		<!-- 페이지 이동경로 -->
 		<div style=" float: left; width: 0%;">&nbsp;</div>
@@ -331,10 +363,9 @@
 				  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
 				</svg>
 				HOME</a> 
-			> 마이페이지 > 나의 주문 관리 > 주문/배송 조회
+			> 마이페이지 > 내 정보 관리 > 배송지 관리
 			</span>
 		</div>
-		
 		<!-- 좌측 마이페이지 메뉴-->
 		<div style=" float: left; width: 20%;">
 		<div class="myPageMenu">
@@ -346,7 +377,7 @@
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="myPage.do" class="red">주문/배송 조회*</a><br>
+					<a href="myPage.do" class="gray">주문/배송 조회</a><br>
 					<a href="orderCancel.do" class="gray">취소/교환/반품</a><br>
 					<a href="insertCard.do" class="gray">카드 등록 관리</a>
 				</div><br>
@@ -368,7 +399,7 @@
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="receiveAddr.do" class="gray">배송지 관리</a><br>
+					<a href="receiveAddr.do" class="red">배송지 관리*</a><br>
 					<a href="myInfo.do" class="gray">개인 정보 수정</a><br>
 					<a href="leave.do" class="gray">회원 탈퇴</a>
 				</div>
@@ -380,24 +411,130 @@
 		<!-- 마이페이지 메인 -->
 		<div style="float: left; width: 80%;">
 		<div class="myPageListBox">
-			<div style="float: left; width: 100%;" class="myPageLine"><h2>주문/배송 조회</h2></div>
+			<div style="float: left; width: 70%;" class="myPageLine"><h2>배송지 관리</h2></div>
+		<!-- 배송지 버튼 트리거 모달 -->
+		<div style="float: left; width: 30%;" class="myPageLine">
+			<button type="button" class="btn btn-secondary addrInsertbtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+			  	배송지 등록
+			</button>
+		</div>
+		
+		<!-- 배송지 등록 화면 모달 -->
+		<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" id="staticBackdropLabel">ShoeRologue 배송지 등록</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">
+		        
+		        <form name="frm" id="frm" method="post" action="/burning/shipping/shippingAction.do" onsubmit="return loginChk()">
+                
+                <h3>배송지 등록하기</h3><br>
+                
+               	<a class="modalFs">받으실분</a> :  <input type="text" id="receiver" name="receiver" placeholder=" 이름을 입력해 주세요."><br>
+               	<br>
+               	<a class="modalFs">핸드폰 번호</a> :  <input type="text" id="phone" name="phone" placeholder=" 핸드폰 번호를 '-' 없이 입력해 주세요."><br>
+	           	<br>
+	           	<a class="modalFs">주소</a> :     &nbsp;<input type="text" id="sample4_postcode" placeholder=" 우편번호" readonly class="bg-gray1">
+						 <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="bg-gray3"><br>
+						 <input type="text" id="sample4_roadAddress" placeholder=" 도로명주소" readonly class="bg-gray2"><br>
+						 <input type="text" id="sample4_jibunAddress" placeholder=" 지번주소" readonly class="bg-gray2"><br>
+						 <span id="guide" style="color:#999;display:none"></span>
+						 <input type="text" id="sample4_extraAddress" placeholder=" 주소 참고항목" readonly class="bg-gray2"><br>
+						 <input type="text" id="sample4_detailAddress" placeholder=" 상세주소를 입력해 주세요." class="bg-gray4">
+				
+				
+				<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+				<script>
+					<!-- 초기화 버튼  함수-->
+					function frm_reset() {
+					    document.getElementById("frm").reset();
+					}
+					
+					<!-- 주소 API -->
+				    // 본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+				    function sample4_execDaumPostcode() {
+				        new daum.Postcode({
+				            oncomplete: function(data) {
+				                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+				
+				                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+				                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+				                var roadAddr = data.roadAddress; // 도로명 주소 변수
+				                var extraRoadAddr = ''; // 참고 항목 변수
+				
+				                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+				                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+				                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+				                    extraRoadAddr += data.bname;
+				                }
+				                // 건물명이 있고, 공동주택일 경우 추가한다.
+				                if(data.buildingName !== '' && data.apartment === 'Y'){
+				                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+				                }
+				                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+				                if(extraRoadAddr !== ''){
+				                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+				                }
+				
+				                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+				                document.getElementById('sample4_postcode').value = data.zonecode;
+				                document.getElementById("sample4_roadAddress").value = roadAddr;
+				                document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+				                
+				                // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+				                if(roadAddr !== ''){
+				                    document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+				                } else {
+				                    document.getElementById("sample4_extraAddress").value = '';
+				                }
+				
+				                var guideTextBox = document.getElementById("guide");
+				                // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+				                if(data.autoRoadAddress) {
+				                    var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+				                    guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
+				                    guideTextBox.style.display = 'block';
+				
+				                } else if(data.autoJibunAddress) {
+				                    var expJibunAddr = data.autoJibunAddress;
+				                    guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
+				                    guideTextBox.style.display = 'block';
+				                } else {
+				                    guideTextBox.innerHTML = '';
+				                    guideTextBox.style.display = 'none';
+				                }
+				            }
+				        }).open();
+				    }
+				</script>
+		      </div>
+		      <div class="modal-footer">
+		      	<button type="button" class="btn btn-secondary " onclick="frm_reset()" data-bs-dismiss="modal">닫기</button>
+		      	<button type="button" class="btn btn-secondary " onclick="frm_reset()">초기화</button>
+		        <button type="submit" class="btn btn-primary submitco" onsubmit="return loginChk()">배송지 등록</button>
+		      </div>
+		      </form>
+		    </div>
+		  </div>
+		</div>
 			<!-- 상품 혹은 목록이 없는 경우 -->
 			   <div class="wishNoItem">
 			      <div class="flex-box">
 			         <div class="wishNoItem2">
 			         <i class="bi bi-exclamation-circle exclamation"></i><br>
-			       		  주문하신 내역이 없습니다.</div>
+			       		  등록된 배송지가 없습니다.</div>
 			      </div>
-			   </div>
-			<br><br>
-			
+			   </div><br>
 			<table class="table table-hover">
 			  <thead>
 			    <tr>
-			      <th scope="col">주문번호</th>
-			      <th scope="col">주문날짜</th>
-			      <th scope="col">상품명/옵션</th>
-			      <th scope="col">상품금액/수량</th>
+			      <th scope="col">번호</th>
+			      <th scope="col">받으실 분</th>
+			      <th scope="col">핸드폰 번호</th>
+			      <th scope="col">배송지 주소</th>
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -420,13 +557,10 @@
 			    </tr>
 			  </tbody>
 			</table>
-			<div class="myPageEndLine"></div>
 			<br><br>
-			
-			<!-- 마이페이지 회색 박스 -->
 			<div style="float: left; width: 100%;">
-				<div class="gray-box">
-						<span style="font-size:1.5em; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+				<div class="gray-box notice-box">
+						<span style="font-size:1.5em; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
 						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
 						</svg> 꼭 읽어 주세요!</span>
@@ -439,7 +573,7 @@
 							<li class="bullet-text">구매 포인트는 구매확정 후 다음 날 적립됩니다.</li>
 							<li class="bullet-text">선물하신 주문의 수락 상태 및 자세한 주문 정보는 마이페이지 > 쇼핑내역 > 선물함에서 확인해주시기 바랍니다.</li>
 						</ul>
-						<span style="font-size:1.5em; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+						<span style="font-size:1.5em; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
 						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
 						</svg> 매장 픽업 주문 안내</span>
@@ -448,7 +582,7 @@
 							<li class="bullet-text">여러 개의 상품을 주문하실 경우 상품별로 준비기간이 다를 수 있습니다.</li>
 							<li class="bullet-text">상품이 준비되면 각 상품별로 알림톡 또는 SMS로 안내드립니다.</li>
 						</ul>
-						<span style="font-size:1.5em; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+						<span style="font-size:1.5em; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
 						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
 						</svg> 슈롤로그배송 서비스 주문 안내</span>

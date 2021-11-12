@@ -100,7 +100,7 @@
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">MEN</a>
-				    <ul class="dropdown-menu bg-black dropDownMenu mt-2">
+				    <ul class="dropdown-menu  dropDownMenu mt-2">
 				    	<li><a class="dropdown-item fw-bolder" href="#">MEN</a></li>
 				   		<li><hr class="dropdown-divider "></li>
 					 	<li><a class="dropdown-item" href="#">운동화</a></li>
@@ -113,7 +113,7 @@
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">WOMEN</a>
-				    <ul class="dropdown-menu bg-black dropDownMenu mt-2">
+				    <ul class="dropdown-menu  dropDownMenu mt-2">
 				    	<li><a class="dropdown-item fw-bolder" href="#">WOMEN</a></li>
 				   		<li><hr class="dropdown-divider"></li>
 					 	<li><a class="dropdown-item" href="#">운동화</a></li>
@@ -126,7 +126,7 @@
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">KIDS</a>
-				    <ul class="dropdown-menu bg-black dropDownMenu mt-2">
+				    <ul class="dropdown-menu  dropDownMenu mt-2">
 				    	<li><a class="dropdown-item fw-bolder" href="#">KIDS</a></li>
 				   		<li><hr class="dropdown-divider"></li>
 					 	<li><a class="dropdown-item" href="#">운동화</a></li>
@@ -143,12 +143,12 @@
 <!-- 장바구니 section -->
 <section>
 	<div class="sectionBox">
-		<form name="orderFrm" id="orderFrm" action="orderpayment.do">
+		<form name="Frm" action="orderpayment.do" method="POST">
 			<span  class="text-left">장바구니
 			<span id="insertCount">(0)</span>
 			</span>	
 			<!--cart nav -->
-			<div class="cartBox1 my-5">
+			<div class="cartBox1 mt-5">
 				<div class="check-box my-3">
 					<div class="allThingBox">
 					<input type="checkbox" id="allThing" class="mx-1" name="전체선택">
@@ -201,7 +201,7 @@
 						</td>
 						<td>
 						<div>
-							<a href="/Shoerologue/orderpayment.do"> <input type="button" value="바로구매" class="orderbtn" onclick="goOrder();"> </a>
+							<a href="/Shoerologue/orderpayment.do"> <input type="button" name="rightOrder" value="바로구매" id="rightOrder" class="orderbtn" onclick="goOrder(); return false;"> </a>
 						</div>
 						<div>
 							<a href=""><input type="button" value="삭제" id="delbtn" class="delbtn" onclick=""></a>
@@ -245,10 +245,11 @@
 		<!-- 계속 쇼핑, 주문버튼 -->
 		<div class="rows btnGroup">
 			<label>
-				<input type="button" value="계속 쇼핑하기" class="keepShop" onclick="">
+				<a href="/main.do">
+				<input type="button" value="계속 쇼핑하기" class="keepShop"></a>
 			</label>
 			<label>
-				<input type="button" value="주문하기" id="orderbtn" class="orderShop" onclick="goOrder();">
+				<input type="button" value="주문하기" id="orderbtn" name="gotoOrder" class="orderShop" onclick="goOrder(); return false;">
 			</label>
 		</div>
 		<!-- 결제 전 주의사항 -->
@@ -283,7 +284,26 @@
 			else $("#allThing").prop("checked", true);
 		});
 	});
-</script>
+	
+	//수량변경 21-11-12ajax 해야함
+	$(".bt_up").click(function(e){
+		var target = $(e.target);
+		var num = parseInt(target.prev().val());
+		if( num < 9 ) {
+			var num = num+1;
+			target.prev().val(num);
+		};
+	});
+	
+	$(".bt_down").click(function(e){
+		var target = $(e.target);
+		var num = parseInt(target.next().val());
+		if( num > 1 ) {
+			var num = num-1;
+			target.next().val(num);
+		};
+	});
+	</script>
 
 <!-- footer -->
 	<div class="bg-light">
