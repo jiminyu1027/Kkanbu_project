@@ -111,8 +111,9 @@
  		} 
  		textarea{  
     		resize:none; 
- 			width:550px; 
- 			height:200px; 
+ 			width:100%; 
+ 			height:300px; 
+ 			border:1px solid #d5d5d5;
  		} 
  		.cancel{
  			position:relative;
@@ -134,6 +135,35 @@
  			background-color:black;
  			color:white;
  		}
+ 		.subject{
+ 			width:100%;
+ 			height:40px;
+ 			border:1px solid #d5d5d5;
+ 		}
+ 		.radioBtn{
+ 			margin-left:38%;
+ 		}
+ 		.box-radio-input input[type="radio"]{
+		  	display:none;
+		}
+		.box-radio-input input[type="radio"] + span{
+			display:inline-block;
+		    background:none;
+			border:1px solid black;  
+			padding:0px 10px;
+			text-align:center;
+			width:100px;
+			height:35px;
+			line-height:33px;
+			font-weight:500;
+			cursor:pointer;
+		}
+		
+		.box-radio-input input[type="radio"]:checked + span{
+		    border:1px solid #23a3a7;
+		    background:gray;
+		    color:#fff;
+		}
 		</style>
 		<script src="../js/jquery-3.6.0.min.js"></script>		
 		<script>
@@ -306,10 +336,14 @@
 			<center><div class="smft">농협 210-120-2151</div></center>
 			<center><div class="tsft">예금주:㈜깐부 글로벌</div></center>
 		</div>
-		<div><span class="mainTitle">QA내용</span></div>
+		<div><span class="mainTitle">상품QA</span></div>
 		<form action="/CustomerService/qa.do" method="post" class="frm" id="frm" name="frm">
 			<table class="ask-box">
-				<tr>	
+				<colgroup>
+					<col width="10%">
+					<col width="90%">
+				</colgroup>
+				<tr style="height:15%">	
 					<td>
 						<label class="ask-box-detail">제목<label class="red-label">*</label></label>
 					</td>
@@ -317,7 +351,7 @@
 						<input type="text" placeholder="제목을 입력해주세요" class="subject" id="subject" name="subject">
 					</td>
 				</tr>
-				<tr>	
+				<tr style="height:70%">	
 					<td>
 						<label class="ask-box-detail">내용<label class="red-label">*</label></label>
 					</td>
@@ -325,12 +359,16 @@
 						<textarea placeholder="내용을 입력해주세요" id="contents"></textarea>
 					</td>
 				</tr>
-				<tr>
-					<td>
-						<input type="radio" name="check" id="open"> 공개
-					</td>
-					<td>
-						<input type="radio" name="check" id="close"> 비공개
+				<tr style="height:15%">
+					<td colspan="2">
+						<label class="box-radio-input radioBtn">
+							<input type="radio" name="cp_item" value="공개" id="open">
+								<span>공개</span>
+						</label>
+						<label class="box-radio-input" style="margin-left:25px;" >
+							<input type="radio" name="cp_item" value="비공개"id="close">
+								<span>비공개</span>
+						</label>
 					</td>
 				</tr>	
 			</table>

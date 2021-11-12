@@ -98,20 +98,11 @@ public class ShoerologueController {
 		
 		return "shoerologue/myInfoPwd";
 	}
-<<<<<<< HEAD
-	@RequestMapping(value="/myInfoPwd.do")
-	public String myInfoPwd(Locale locale, Model model)throws Exception {
+	@RequestMapping(value="/cs.do")
+	public String cs(Locale locale,Model model)throws Exception{
 		
-		return "shoerologue/myInfoPwd";
+		return "shoerologue/cs";
 	}
-	@RequestMapping(value="/myInfoPwd.do")
-	public String myInfoPwd(Locale locale, Model model)throws Exception {
-		
-		return "shoerologue/myInfoPwd";
-	}
-=======
-	
->>>>>>> branch 'master' of https://github.com/jiminyu1027/Kkanbu_project.git
 }
 
 	
