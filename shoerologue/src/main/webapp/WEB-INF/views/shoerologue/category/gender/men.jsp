@@ -172,18 +172,6 @@
 			border-bottom:1px solid gray;
 		}
 		
-		.filterGender>input[type=checkbox]+label{
-			display: inline-block; 
-			cursor: pointer; 
-			padding:4px;
-			background-color:white;
-			border:1px solid gray;
-			font-size:13px;
-			width:80px;
-			height:30px;
-			text-align:center;
-		}
-		
 		.filterSize>input[type=checkbox]+label{
 			display: inline-block; 
 			cursor: pointer;
@@ -196,50 +184,27 @@
 			text-align:center;
 		}
 		
+		.filterSize>input[type=checkbox]:checked+label{
+			border:1px solid #EE1C25;
+			color:#EE1C25;
+		}
+		
 		.filterColor>input[type=checkbox]+label{
 			display: inline-block; 
 			cursor: pointer;
-			margin:2px 0;
+			margin:3px 2px;
+			width:25px;
+			height:25px;
 		}
 		
 		.filterColor>input[type=checkbox]+label>img{
-			width:28px;
-			height:28px;
+			width:25px;
+			height:25px;
+			margin:1px
 		}
 		
-		.filterBtn>input[type=reset]{
-			background-color:white;
-			border:1px solid black;
-			color:black;
-			border-radius:0px;
-			width:110px;
-			height:45px;
-			margin-top:10px;
-			margin-bottom:-40px;
-		}
-		.filterBtn>input[type=reset]:hover{
-			background-color:#EEEEEE;
-		}
-		
-		.filterBtn>input[type=reset]:focus{
-			border:none;
-			outline:none;
-			background-color:#EEEEEE;
-		}
-		
-		.filterBtn>input[type=button]{
-			background-color:black;
-			color:white;
-			border-radius:0px;
-			width:110px;
-			height:45px;
-			margin-top:10px;
-			margin-bottom:-40px;
-		}
-		
-		.filterBtn>input[type=button]:focus{
-			border:none;
-			outline:none;
+		.filterColor>input[type=checkbox]:checked+label>img{
+			border:3px double black;
 		}
 		
 		.filterPrice{
@@ -255,7 +220,7 @@
 		
 		.filterSearh:focus{
 			border-radius:0px;
-			border:1px solid red;
+			outline:1px solid red;
 		}
 		
 		.filterSearchBtn{
@@ -277,7 +242,6 @@
 		input[type=range]:focus{
 			border:1px solid red;
 		}
-
 	</style>
 </head>
 <body>
@@ -411,31 +375,34 @@
 			<h6><a>브랜드</a></h6>
 			<div>
 				<div class="filterSearchBox">
-					<form action="#" method="get">
+					<form action="#" method="get" name="brandSearchFrm">
 						<input type="search" name="brandSearch" placeholder="브랜드검색" class="filterSearh">
-						 <button class="filterSearchBtn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" >
+						 <button class="filterSearchBtn" onclick="filterSearchBtn()" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" >
 						<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
 						</svg></button>
 					</form>
 				</div>
 			</div>
 			<h6><a>사이즈</a></h6>
-			<div class="filterSize">
-				<input type="checkbox" id="size180"><label for="size180">180</label>
-				<input type="checkbox" id="size190"><label for="size190">190</label>
-				<input type="checkbox" id="size200"><label for="size200">200</label>
-				<input type="checkbox" id="size210"><label for="size210">210</label>
-				<input type="checkbox" id="size220"><label for="size220">220</label>
-				<input type="checkbox" id="size230"><label for="size230">230</label>
-				<input type="checkbox" id="size240"><label for="size240">240</label>
-				<input type="checkbox" id="size250"><label for="size250">250</label>
-				<input type="checkbox" id="size260"><label for="size260">260</label>
-				<input type="checkbox" id="size270"><label for="size270">270</label>
-				<input type="checkbox" id="size280"><label for="size280">280</label>
-				<input type="checkbox" id="size290"><label for="size290">290</label>
-				<input type="checkbox" id="size300"><label for="size300">300</label>
-			</div>
+			<form action="#" method="get" name="filterSizeFrm">
+				<div class="filterSize">
+					<input type="checkbox" id="size180"><label for="size180">180</label>
+					<input type="checkbox" id="size190"><label for="size190">190</label>
+					<input type="checkbox" id="size200"><label for="size200">200</label>
+					<input type="checkbox" id="size210"><label for="size210">210</label>
+					<input type="checkbox" id="size220"><label for="size220">220</label>
+					<input type="checkbox" id="size230"><label for="size230">230</label>
+					<input type="checkbox" id="size240"><label for="size240">240</label>
+					<input type="checkbox" id="size250"><label for="size250">250</label>
+					<input type="checkbox" id="size260"><label for="size260">260</label>
+					<input type="checkbox" id="size270"><label for="size270">270</label>
+					<input type="checkbox" id="size280"><label for="size280">280</label>
+					<input type="checkbox" id="size290"><label for="size290">290</label>
+					<input type="checkbox" id="size300"><label for="size300">300</label>
+				</div>
+			</form>
 			<h6><a>색상</a></h6>
+			<form action="#" method="get" name="filterColorFrm">
 			<div class="filterColor">
 				<input type="checkbox" id="color_white"><label for="color_white"><img src="/resources/image/color/white.png"></label>
 				<input type="checkbox" id="color_beige"><label for="color_beige"><img src="/resources/image/color/beige.png"></label>
@@ -452,6 +419,7 @@
 				<input type="checkbox" id="color_black"><label for="color_black"><img src="/resources/image/color/black.png"></label>
 				<input type="checkbox" id="color_rainbow"><label for="color_rainbow"><img src="/resources/image/color/rainbow.png"></label>
 			</div>
+			</form>
 			<h6><a>가격</a></h6>
 			<div class="filterPrice">
 				<form>
@@ -461,10 +429,6 @@
 					</div>
 				</form>
 			</div>
-		</div>
-		<div class="filterBtn">
-			<input type="reset" value="초기화">
-			<input type="button" value="검색">
 		</div>
 	</div>
 
@@ -877,8 +841,18 @@
 	});
 	//]]>
 	</script>
-
-	
+	<script type="text/javascript">
+		function filterSearchBtn() {
+			
+			var fm = document.brandSearchFrm;
+			if(fm.brandSearch.value == ""){
+				alert("브랜드명을 입력하세요");
+				fm.brandSearch.focus();
+				return false;
+			}
+		
+		}
+	</script>	
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	
 </body>
