@@ -11,15 +11,13 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-	
+		<script src="https://cdn.bootpay.co.kr/js/bootpay-3.3.1.min.js" type="application/javascript"></script>
 		<!-- 아이콘 크기 -->
 		<link rel="stylesheet" href="/resources/css/style.css">
 		<!-- Bootstrap Font Icon CSS -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-    	 
 		
-		<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>	
 		<link rel="stylesheet" href="/resources/css/headerFooter.css">	
 		<link rel="stylesheet" href="/resources/css/orderpayment.css">	
 	
@@ -651,7 +649,42 @@
 		  $(this).next(".anw").siblings(".anw").slideUp(300); // 1개씩 펼치기
 		});
 	
-	
+	<!--bootpay-->
+	function goOrderbtn(){
+	  BootPay.request({
+	      price: '1000', //실제 결제되는 가격
+	 
+	      // 관리자로그인 -> 결제설치 -> 인증키 및 보안 -> WEB Application ID
+	      application_id: "618de2be7b5ba4002352db8d",
+	 
+	      name: 'VANS', //결제창에서 보여질 이름
+	      pg: 'nicepay',
+	      method: 'card', //결제수단, 입력하지 않으면 결제수단 선택부터 화면이 시작합니다.
+	      show_agree_window: 0, // 부트페이 정보 동의 창 보이기 여부
+	      items: [
+	          {
+	              item_name: '나는 아이템', //상품명
+	              qty: 1, //수량
+	              unique: '123', //해당 상품을 구분짓는 primary key
+	              price: 1000, //상품 단가
+	          }
+	      ],
+	      order_id: '고유order_id_1234', //고유 주문번호로, 생성하신 값을 보내주셔야 합니다.
+	  }).error(function (data) {
+	      //결제 진행시 에러가 발생하면 수행됩니다.
+	      console.log(data);
+	  }).cancel(function (data) {
+	      //결제가 취소되면 수행됩니다.
+	      console.log(data);
+	  }).close(function (data) {
+	      // 결제창이 닫힐때 수행됩니다. (성공,실패,취소에 상관없이 모두 수행됨)
+	      console.log(data);
+	  }).done(function (data) {
+	      //결제가 정상적으로 완료되면 수행됩니다
+	      //비즈니스 로직을 수행하기 전에 결제 유효성 검증을 하시길 추천합니다.
+	      console.log(data);
+	  });
+	}
 </script>
 <!-- footer -->
 	<div class="bg-light">

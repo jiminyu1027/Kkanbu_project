@@ -99,10 +99,18 @@ public class ShoerologueController {
 		return "shoerologue/myInfoPwd";
 	}
 	@RequestMapping(value="/cs.do")
+<<<<<<< HEAD
 	public String cs(Locale locale,Model model)throws Exception{
+=======
+	public String cs(Locale locale, Model model)throws Exception {
+>>>>>>> branch 'master' of https://github.com/jiminyu1027/Kkanbu_project.git
 		
 		return "shoerologue/cs";
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/jiminyu1027/Kkanbu_project.git
 }
 
 	
