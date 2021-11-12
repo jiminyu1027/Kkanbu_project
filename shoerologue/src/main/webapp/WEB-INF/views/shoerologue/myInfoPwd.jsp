@@ -628,54 +628,6 @@
 				span.textContent = "";
 				span.style.display = "none";
 			}
-		}else if(type == 'passre'){
-			var value = document.frm.password.value;
-			var value2 = document.frm.passwordre.value;
-			var span = document.getElementsByClassName("passwordre")[0].getElementsByTagName("span")[0];
-			if(value2 == ""){
-				span.textContent = "*필수";
-				span.style.color = "red";
-				span.style.display = "inline";
-			}else if(value != value2){
-				span.textContent = "*불일치";
-				span.style.color = "red";
-				span.style.display = "inline";
-			}else{
-				span.textContent = "";
-				span.style.display = "none";
-			}
-		}else if(type == 'email'){
-			var checkEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/g;
-			var value = document.frm.email.value;
-			var span = document.getElementsByClassName("email")[0].getElementsByTagName("span")[0];
-			if(value == ""){
-				span.textContent = "*필수";
-				span.style.color = "red";
-				span.style.display = "inline";
-			}else if(!checkEmail.test(value)){
-				span.textContent = "*형식오류";
-				span.style.color = "red";
-				span.style.display = "inline";
-			}else{
-				span.textContent = "";
-				span.style.display = "none";
-			}
-		}else if(type == 'phone'){
-			var checkPhone = /^[0-9]{10,12}/g;
-			var value = document.frm.phone.value;
-			var span = document.getElementsByClassName("phone")[0].getElementsByTagName("span")[0];
-			if(value == ""){
-				span.textContent = "*필수";
-				span.style.color = "red";
-				span.style.display = "inline";
-			}else if(!checkPhone.test(value)){
-				span.textContent = "*형식오류";
-				span.style.color = "red";
-				span.style.display = "inline";
-			}else{
-				span.textContent = "";
-				span.style.display = "none";
-			}
 		}
 	}
 	/*---------------------------------서브밋---------------------------------*/
@@ -721,44 +673,6 @@
 		
 		
 		
-		var checkEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/g;
-		value = document.frm.email.value;
-		span = document.getElementsByClassName("email")[0].getElementsByTagName("span")[0];
-		if(value == ""){
-			span.textContent = "*필수";
-			span.style.color = "red";
-			span.style.display = "inline";
-			result = false;
-		}else if(!checkEmail.test(value)){
-			span.textContent = "*형식오류";
-			span.style.color = "red";
-			span.style.display = "inline";
-			result = false;
-		}else{
-			span.textContent = "";
-			span.style.display = "none";
-		}
-		
-		
-		var checkPhone = /^[0-9]{10,12}/g;
-		var value = document.frm.phone.value;
-		var span = document.getElementsByClassName("phone")[0].getElementsByTagName("span")[0];
-		if(value == ""){
-			span.textContent = "*필수";
-			span.style.color = "red";
-			span.style.display = "inline";
-		}else if(!checkPhone.test(value)){
-			span.textContent = "*형식오류";
-			span.style.color = "red";
-			span.style.display = "inline";
-		}else{
-			span.textContent = "";
-			span.style.display = "none";
-		}
-		
-		if(result){
-			document.frm.submit();
-		}
 	}
 	
 	
@@ -767,14 +681,7 @@
 	}
 	
 	
-	// 동의 모두선택 / 해제
-	const agreeChkAll = document.querySelector('input[name=agree_all]');
-	    agreeChkAll.addEventListener('change', (e) => {
-	    let agreeChk = document.querySelectorAll('input[name=agree]');
-	    for(let i = 0; i < agreeChk.length; i++){
-	      agreeChk[i].checked = e.target.checked;
-	    }
-	});
+	
 	</script>
 	
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
