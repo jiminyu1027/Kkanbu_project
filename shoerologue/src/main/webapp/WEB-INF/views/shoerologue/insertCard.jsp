@@ -27,6 +27,10 @@
 	integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
 	crossorigin="anonymous"></script>
 
+<!-- 글꼴 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <!-- Bootstrap Font Icon CSS 아이콘 -->
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -393,7 +397,7 @@
 				</svg></span>
 				<div class="myPageMenu3">
 					<a href="receiveAddr.do" class="gray">배송지 관리</a><br>
-					<a href="myInfo.do" class="gray">개인 정보 수정</a><br>
+					<a href="myInfoPwd.do" class="gray">개인 정보 수정</a><br>
 					<a href="leave.do" class="gray">회원 탈퇴</a>
 				</div>
 			</div>
