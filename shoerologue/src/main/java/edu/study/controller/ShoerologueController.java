@@ -92,12 +92,22 @@ public class ShoerologueController {
 		return "shoerologue/leave";
 	}
 	/*--------------------------------------------------------------ªÛ»∆--------*/
-	@RequestMapping(value="/cs.do")
-	public String cs(Locale locale, Model model)throws Exception{
-		
-		return "shoerologue/cs";
-	}
 	
+	@RequestMapping(value="/myInfoPwd.do")
+	public String myInfoPwd(Locale locale, Model model)throws Exception {
+		
+		return "shoerologue/myInfoPwd";
+	}
+	@RequestMapping(value="/myInfoPwd.do")
+	public String myInfoPwd(Locale locale, Model model)throws Exception {
+		
+		return "shoerologue/myInfoPwd";
+	}
+	@RequestMapping(value="/myInfoPwd.do")
+	public String myInfoPwd(Locale locale, Model model)throws Exception {
+		
+		return "shoerologue/myInfoPwd";
+	}
 }
 
 	

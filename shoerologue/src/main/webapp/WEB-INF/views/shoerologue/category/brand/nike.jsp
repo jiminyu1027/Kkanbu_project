@@ -205,10 +205,6 @@
 			padding-top:6px;
 			position:absolute;
 		}
-	
-		input[type=checkbox]{
-			display:none;
-		}
 		
 		input[type=range]:focus{
 			border:1px solid red;
@@ -232,80 +228,8 @@
 			border-bottom:1px solid gray;
 		}
 		
-		.filterSize{
-			padding-top:10px;
-			padding-left:-10px;
-			height:130px;
-		}
-		
-		.filterSize>ul>li{
-			display:inline;
-			border:1px solid gray;
-			width:35px;
-			height:25px;
-			text-align:center;
-			float:left;
-			margin:3px;
-		}
-		.filterSize>ul>li>input[type=checkbox]:focus{
-			border:1px solid red;
-			color:red;
-		}
-		.filterColor>ul{
-			margin-left:-30px;
-			margin-top:10px;
-		}
-		.filterColor{
-			height:80px;
-		}
-		.filterColor>ul>li{
-			width:25px;
-			height:25px;
-			float:left;
-			margin:2px;
-			border:1px solid lightgray;
-		}
-		.filterColor>ul>li:nth-child(1){
-			background:#DDCFC8;
-		}
-		.filterColor>ul>li:nth-child(2){
-			background:black;
-		}
-		.filterColor>ul>li:nth-child(3){
-			background:#0058D9;
-		}
-		.filterColor>ul>li:nth-child(4){
-			background:#A94500;
-		}
-		.filterColor>ul>li:nth-child(5){
-			background:#FFD500;
-		}
-		.filterColor>ul>li:nth-child(6){
-			background:#999999;
-		}
-		.filterColor>ul>li:nth-child(7){
-			background:#00BE00;
-		}
-		.filterColor>ul>li:nth-child(8){
-			background:#003E90;
-		}
-		.filterColor>ul>li:nth-child(9){
-			background:#FF6300;
-		}
-		.filterColor>ul>li:nth-child(10){
-			background:#FF0083;
-		}
-		.filterColor>ul>li:nth-child(11){
-			background:#8B00E1;
-		}
-		.filterColor>ul>li:nth-child(12){
-			background:#EA0001;
-		}
-		.filterColor>ul>li:nth-child(13){
-			background:white;
-		}
-		.filterColor>ul>li:nth-child(14){
-			background-image:url(/resources/image/color/rainbow.png);
+		input[type=checkbox]{
+			display:none;
 		}
 		
 		.brandBox{
@@ -336,8 +260,41 @@
 			clear:left;
 			clear:right;
 		}
+		.filterGender>input[type=checkbox]+label{
+			display: inline-block; 
+			cursor: pointer; 
+			padding:4px;
+			background-color:white;
+			border:1px solid gray;
+			font-size:13px;
+			width:80px;
+			height:30px;
+			text-align:center;
+		}
 		
+		.filterSize>input[type=checkbox]+label{
+			display: inline-block; 
+			cursor: pointer; 
+			padding:2px;
+			margin:4px 1px;
+			background-color:white;
+			border:1px solid gray;
+			font-size:13px;
+			width:43px;
+			height:25px;
+			text-align:center;
+		}
 		
+		.filterColor>input[type=checkbox]+label{
+			display: inline-block; 
+			cursor: pointer;
+			margin:2px 0;
+		}
+		
+		.filterColor>input[type=checkbox]+label>img{
+			width:28px;
+			height:28px;
+		}
 		
 	</style>
 </head>
@@ -444,22 +401,6 @@
 				</li>
 			</ul>
 		</div>
-		 <div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
-		      <ul class="navbar-nav me-auto mb-6 mb-lg-0">
-		      </ul>
-		      <ul class="nav justify-content-end"> 
-				  <li class="nav-item nav-fs">
-				    <a class="nav-link text-white fw-bolder" href="#hotdeal">#핫딜</a>
-				  </li>
-				  <li class="nav-item nav-fs">
-				    <a class="nav-link text-white fw-bolder" href="#best">#베스트</a>
-				  </li>
-				   <li class="nav-item nav-fs">
-				    <a class="nav-link text-white fw-bolder" href="#codi">#코디</a>
-				  </li>
-				</ul>
-				
-		    </div>
 		    <div class="col-0 col-sm-0 col-md-0 col-lg-2"></div>
 		</nav>
 	</div>
@@ -548,38 +489,36 @@
 				</div>
 				<h6><a>사이즈</a></h6>
 				<div class="filterSize">
-					<input type="checkbox" id="size_180"><label for="size_180">180</label>
-					<input type="checkbox" id="size_190"><label for="size_190">190</label>
-					<input type="checkbox" id="size_200"><label for="size_200">200</label>
-					<input type="checkbox" id="size_210"><label for="size_210">210</label>
-					<input type="checkbox" id="size_220"><label for="size_220">220</label>
-					<input type="checkbox" id="size_230"><label for="size_230">230</label>
-					<input type="checkbox" id="size_240"><label for="size_240">240</label>
-					<input type="checkbox" id="size_250"><label for="size_250">250</label>
-					<input type="checkbox" id="size_260"><label for="size_260">260</label>
-					<input type="checkbox" id="size_270"><label for="size_270">270</label>
-					<input type="checkbox" id="size_280"><label for="size_280">280</label>
-					<input type="checkbox" id="size_290"><label for="size_290">290</label>
-					<input type="checkbox" id="size_300"><label for="size_300">300</label>
+					<input type="checkbox" id="size180"><label for="size180">180</label>
+					<input type="checkbox" id="size190"><label for="size190">190</label>
+					<input type="checkbox" id="size200"><label for="size200">200</label>
+					<input type="checkbox" id="size210"><label for="size210">210</label>
+					<input type="checkbox" id="size220"><label for="size220">220</label>
+					<input type="checkbox" id="size230"><label for="size230">230</label>
+					<input type="checkbox" id="size240"><label for="size240">240</label>
+					<input type="checkbox" id="size250"><label for="size250">250</label>
+					<input type="checkbox" id="size260"><label for="size260">260</label>
+					<input type="checkbox" id="size270"><label for="size270">270</label>
+					<input type="checkbox" id="size280"><label for="size280">280</label>
+					<input type="checkbox" id="size290"><label for="size290">290</label>
+					<input type="checkbox" id="size300"><label for="size300">300</label>
 				</div>
 				<h6><a>색상</a></h6>
 				<div class="filterColor">
-					<ul>
-						<li><input type="checkbox" id="color_beige"><label for="color_beige"></label></li>
-						<li><input type="checkbox" id="color_black"><label for="color_black"></label></li>
-						<li><input type="checkbox" id="color_blue"><label for="color_blue"></label></li>
-						<li><input type="checkbox" id="color_brown"><label for="color_brown"></label></li>
-						<li><input type="checkbox" id="color_yellow"><label for="color_yellow"></label></li>
-						<li><input type="checkbox" id="color_gray"><label for="color_gray"></label></li>
-						<li><input type="checkbox" id="color_green"><label for="color_green"></label></li>
-						<li><input type="checkbox" id="color_navy"><label for="color_navy"></label></li>
-						<li><input type="checkbox" id="color_orange"><label for="color_orange"></label></li>
-						<li><input type="checkbox" id="color_pink"><label for="color_pink"></label></li>
-						<li><input type="checkbox" id="color_purple"><label for="color_purple"></label></li>
-						<li><input type="checkbox" id="color_red"><label for="color_red"></label></li>
-						<li><input type="checkbox" id="color_white"><label for="color_white"></label></li>
-						<li><input type="checkbox" id="color_rainbow"><label for="color_rainbow"></label></li>
-					</ul>
+					<input type="checkbox" id="color_white"><label for="color_white"><img src="/resources/image/color/white.png"></label>
+					<input type="checkbox" id="color_beige"><label for="color_beige"><img src="/resources/image/color/beige.png"></label>
+					<input type="checkbox" id="color_yellow"><label for="color_yellow"><img src="/resources/image/color/yellow.png"></label>
+					<input type="checkbox" id="color_pink"><label for="color_pink"><img src="/resources/image/color/pink.png"></label>
+					<input type="checkbox" id="color_red"><label for="color_red"><img src="/resources/image/color/red.png"></label>
+					<input type="checkbox" id="color_orange"><label for="color_orange"><img src="/resources/image/color/orange.png"></label>
+					<input type="checkbox" id="color_brown"><label for="color_brown"><img src="/resources/image/color/brown.png"></label>
+					<input type="checkbox" id="color_green"><label for="color_green"><img src="/resources/image/color/green.png"></label>
+					<input type="checkbox" id="color_blue"><label for="color_blue"><img src="/resources/image/color/blue.png"></label>
+					<input type="checkbox" id="color_navy"><label for="color_navy"><img src="/resources/image/color/navy.png"></label>
+					<input type="checkbox" id="color_purple"><label for="color_purple"><img src="/resources/image/color/purple.png"></label>
+					<input type="checkbox" id="color_gray"><label for="color_gray"><img src="/resources/image/color/gray.png"></label>
+					<input type="checkbox" id="color_black"><label for="color_black"><img src="/resources/image/color/black.png"></label>
+					<input type="checkbox" id="color_rainbow"><label for="color_rainbow"><img src="/resources/image/color/rainbow.png"></label>
 				</div>
 			</div>
 		</div>
