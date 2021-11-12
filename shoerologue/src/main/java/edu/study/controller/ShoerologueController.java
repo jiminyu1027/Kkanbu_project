@@ -92,7 +92,11 @@ public class ShoerologueController {
 		return "shoerologue/leave";
 	}
 	/*--------------------------------------------------------------ªÛ»∆--------*/
-	
+	@RequestMapping(value="/cs.do")
+	public String cs(Locale locale, Model model)throws Exception{
+		
+		return "shoerologue/cs";
+	}
 	
 }
 
