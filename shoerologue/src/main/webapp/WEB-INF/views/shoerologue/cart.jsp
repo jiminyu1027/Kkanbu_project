@@ -186,7 +186,27 @@
 							<span class="pColor">WHITE / BLACK</span>
 							<span class="pSize">230</span>
 							</div>	
-							<input type="button" class="pOption" value="옵션변경">	
+							<input type="button" class="pOption" value="옵션변경" data-bs-target="#staticBackdrop" data-bs-toggle="modal">
+							<!-- Modal -->
+							<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+							  <div class="modal-dialog">
+							    <div class="modal-content">
+							      <div class="modal-header">
+							        <h5 class="modal-title" id="staticBackdropLabel">옵션변경</h5>
+							        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							      </div>
+							      <div class="modal-body">
+							        <div>
+							        	
+							        </div>
+							      </div>
+							      <div class="modal-footer">
+							        <button type="button" class="btnClose" data-bs-dismiss="modal">닫기</button>
+							        <button type="button" class="btnComplete">확인</button>
+							      </div>
+							    </div>
+							  </div>
+							</div>	
 						</td>
 						<td>
 						  <div class="d-flex justify-content-center mt-2">
