@@ -400,7 +400,7 @@
 				</svg></span>
 				<div class="myPageMenu3">
 					<a href="receiveAddr.do" class="red">배송지 관리*</a><br>
-					<a href="myInfo.do" class="gray">개인 정보 수정</a><br>
+					<a href="myInfoPwd.do" class="gray">개인 정보 수정</a><br>
 					<a href="leave.do" class="gray">회원 탈퇴</a>
 				</div>
 			</div>

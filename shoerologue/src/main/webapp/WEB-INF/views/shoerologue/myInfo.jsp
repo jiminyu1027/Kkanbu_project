@@ -471,7 +471,7 @@
 				</svg></span>
 				<div class="myPageMenu3">
 					<a href="receiveAddr.do" class="gray">배송지 관리</a><br>
-					<a href="myInfo.do" class="red">개인 정보 수정*</a><br>
+					<a href="myInfoPwd.do" class="red">개인 정보 수정*</a><br>
 					<a href="leave.do" class="gray">회원 탈퇴</a>
 				</div>
 			</div>
@@ -503,14 +503,14 @@
 				<div class="rows password">
 					<label for="password">비밀번호<span class="red">*</span></label>
 					<div class="formalign">
-						<input type="password" class="impor" name="password" id="password" placeholder="비밀번호를 입력하세요. (영문 숫자 조합 4글자 이상)" onblur="checkFn('pass')">
+						<input type="password" class="impor" name="password" id="password" placeholder="비밀번호를 입력해 주세요. (영문 숫자 조합 4글자 이상)" onblur="checkFn('pass')">
 						<span class="check"></span>
 					</div>
 				</div>
 				<div class="rows passwordre">
 					<label for="passwordre">비밀번호 확인<span class="red">*</span></label>
 					<div class="formalign">
-						<input type="password" class="impor" name="passwordre" id="passwordre" placeholder="비밀번호를 다시 입력하세요." onblur="checkFn('passre')">
+						<input type="password" class="impor" name="passwordre" id="passwordre" placeholder="비밀번호를 다시 입력해 주세요." onblur="checkFn('passre')">
 						<span class="check"></span>
 					</div>
 				</div>
@@ -518,14 +518,14 @@
 				<div class="rows email">
 					<label for="email">이메일<span class="red">*</span></label>
 					<div class="formalign">
-						<input type="email" class="impor" name="email" id="email" placeholder="이메일을 입력하세요." onblur="checkFn('email')">
+						<input type="email" class="impor" name="email" id="email" placeholder="이메일을 입력해 주세요." onblur="checkFn('email')">
 						<span class="check"></span>
 					</div>
 				</div>
 				<div class="rows phone">
 					<label for="phone">연락처<span class="red">*</span></label>
 					<div class="formalign">
-						<input type="text" class="impor" name="phone" id="phone" placeholder="핸드폰 번호를 '-' 없이 입력하세요." onblur="checkFn('phone')">
+						<input type="text" class="impor" name="phone" id="phone" placeholder="핸드폰 번호를 '-' 없이 입력해 주세요." onblur="checkFn('phone')">
 						<span class="check"></span>
 					</div>
 				</div>

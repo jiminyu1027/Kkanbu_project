@@ -93,6 +93,11 @@ public class ShoerologueController {
 	}
 	/*--------------------------------------------------------------ªÛ»∆--------*/
 	
+	@RequestMapping(value="/myInfoPwd.do")
+	public String myInfoPwd(Locale locale, Model model)throws Exception {
+		
+		return "shoerologue/myInfoPwd";
+	}
 	
 }
 
