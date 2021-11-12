@@ -245,7 +245,8 @@
 		<!-- 계속 쇼핑, 주문버튼 -->
 		<div class="rows btnGroup">
 			<label>
-				<input type="button" value="계속 쇼핑하기" class="keepShop" onclick="">
+				<a href="/main.do">
+				<input type="button" value="계속 쇼핑하기" class="keepShop"></a>
 			</label>
 			<label>
 				<input type="button" value="주문하기" id="orderbtn" name="gotoOrder" class="orderShop" onclick="goOrder(); return false;">
@@ -283,7 +284,26 @@
 			else $("#allThing").prop("checked", true);
 		});
 	});
-</script>
+	
+	//수량변경 21-11-12ajax 해야함
+	$(".bt_up").click(function(e){
+		var target = $(e.target);
+		var num = parseInt(target.prev().val());
+		if( num < 9 ) {
+			var num = num+1;
+			target.prev().val(num);
+		};
+	});
+	
+	$(".bt_down").click(function(e){
+		var target = $(e.target);
+		var num = parseInt(target.next().val());
+		if( num > 1 ) {
+			var num = num-1;
+			target.next().val(num);
+		};
+	});
+	</script>
 
 <!-- footer -->
 	<div class="bg-light">

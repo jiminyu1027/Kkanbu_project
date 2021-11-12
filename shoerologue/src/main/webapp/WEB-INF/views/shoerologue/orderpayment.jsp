@@ -535,7 +535,7 @@
 				 </div>
 			</div>
 			<div class="bottom-button-wrap">
-				<input type="button" id="gotomain" name="gotomain" class="gotomain" onclick="gotomainbtn()" value="돌아가기">
+				<input type="button" id="gotomain" name="gotomain" class="gotomain" value="돌아가기">
 				<input type="button" id="goOrder2" name="goOrderbt2" class="orderb2" onclick="goOrderbtn(); return false;" value="주문하기">
 			</div>
 		</div>
@@ -629,14 +629,29 @@
 	        }
 	    }).open();
 	}
-
+	
+	<!--돌아가기 버튼-->
+	$(document).ready(function(){
+		$('#gotomain').click(function(){
+			var result = confirm('메인페이지로 이동하시겠습니까?');
+			
+			if(result){
+				location.replace('/main.do');
+			}else{
+				//취소 누르면 변화 없음
+			}
+		});
+	});
+	
+	
+	<!--필수항목 아코디언-->
 	$(".que").click(function() {
 		   $(this).next(".anw").stop().slideToggle(300);
 		  $(this).toggleClass('on').siblings().removeClass('on');
 		  $(this).next(".anw").siblings(".anw").slideUp(300); // 1개씩 펼치기
 		});
 	
-
+	
 </script>
 <!-- footer -->
 	<div class="bg-light">

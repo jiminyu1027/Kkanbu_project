@@ -14,7 +14,7 @@
 		<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 		
 		<!-- 아이콘 크기 -->
-		<link rel="stylesheet" href="resources/css/media_query.css">
+		<link rel="stylesheet" href="resources/css/style.css">
 		<!-- Bootstrap Font Icon CSS -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
