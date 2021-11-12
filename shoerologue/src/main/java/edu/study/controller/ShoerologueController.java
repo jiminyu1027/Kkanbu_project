@@ -98,6 +98,11 @@ public class ShoerologueController {
 		
 		return "shoerologue/myInfoPwd";
 	}
+	@RequestMapping(value="/cs.do")
+	public String cs(Locale locale, Model model)throws Exception {
+		
+		return "shoerologue/cs";
+	}
 
 }
 
