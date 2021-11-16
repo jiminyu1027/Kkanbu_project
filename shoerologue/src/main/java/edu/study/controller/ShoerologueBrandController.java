@@ -76,6 +76,24 @@ public class ShoerologueBrandController {
 		return "shoerologue/category/brand/hawkins";
 	}
 	
+	@RequestMapping(value="brand/ggomoosin.do")
+	public String ggomoosin(Locale locale, Model model)throws Exception {
+		
+		return "shoerologue/category/brand/ggomoosin";
+	}
+	
+	@RequestMapping(value="brand/bearpaw.do")
+	public String bearpaw(Locale locale, Model model)throws Exception {
+		
+		return "shoerologue/category/brand/bearpaw";
+	}
+	
+	@RequestMapping(value="brand/rarago.do")
+	public String rarago(Locale locale, Model model)throws Exception {
+		
+		return "shoerologue/category/brand/rarago";
+	}
+	
 	
 }
 

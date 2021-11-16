@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>브랜드 | 슈롤로그 </title>
+<title>라라고 | 슈롤로그</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 		
@@ -12,6 +12,10 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+		
+		<!-- 글꼴 --> 
+	    <link rel="preconnect" href="https://fonts.googleapis.com">
+	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		
 		<!-- Bootstrap Font Icon CSS 아이콘 -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -23,6 +27,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		
 	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 			
 		*{
@@ -51,7 +56,7 @@
 			color:#999999;
 		}
 		
-		.brandTitle{
+		.brandName{
 			margin:auto;
 			margin-top:30px;
 			font-weight:700;
@@ -59,91 +64,279 @@
 			font-size:29pt;
 		}
 		
-		.bestBrandList>ul>li{
+		.shoesList>ul>li{
 			display:inline;
-			margin-left:-40px;
+			text-align:center;
+			margin-right:45px;
+			font-size:13pt;
+			font-weight:400;
 		}
 		
-		.bestBrandList>ul>li>a>img{
-			border:1px solid #D5D5D5;
-			width:220px;
-			height:92px;
-			margin:10px 25px;
+		.shoesList>ul>li>a:hover{
+			color:gray;
 		}
 		
-		.bestBrandList>ul>li>a>img:hover{
-			border:2px solid black;
-		}
-		
-		.bestBrandList{
+		.shoesList{
 			margin:auto;
 			margin-top:30px;
 			margin-bottom:45px;
+			text-align:center;
 		}
 		
+		.redBold{
+			color:red;
+			font-weight:500;
+		}
+		
+		.totalPd{
+			text-align:left;
+			margin-left:5px;
+			margin-top:10px;
+			float:left;
+		}
+		
+		.selection{
+			text-align:right;
+		}
+		
+		.selection>select{
+			border:0px;
+			width:150px;
+			height:40px;
+			margin-right:10px;
+		}
+		
+		.selection>select:focus{
+			border:0px;
+			outline:none;
+		}
 		
 		.hr1{
 			border:1px solid black;
 		}
 		
-		.hr1Gray{
-			border:1px solid gray;
-		}
 		
-		.brandFirstInit{
-			font-size:24pt;
-			font-weight:600;
-			height:60px;
-			padding-left:10px;
-			margin-top:20px;
-		}
-		
-		.brandNameBox{
-			width:100%;
-		}
-		
-		.brandName{
-			height:75px;
-		}
-		
-		.brandName>ul>li{
-			display:inline;
-			width:20%; 
-			float:left;
-			margin-bottom:23px;
-		}
-		
-		.brandName>ul{
-			margin-left:-23px;
-		}
-		
-		.brandName>ul>li>a{
-			color:gray;
-			font-size:11pt;
-			font-weight:300;
-		}
-		
-		.brandList>a>div{
-			width:40px;
-			height:40px;
-			display:inline-block;
-			border:1px solid #D5D5D5;
-			color:#747774;
-			margin:2px;
+		.page{
 			text-align:center;
-			padding-top:10px;
-			font-size:10pt;
+			margin-top:40px;
+			height:150px;
+			clear:left;
+			clear:right;
 		}
 		
-		.brandList>a>div:hover{
+		.brandBanner>img{
+			width:100%;
+			margin:35px 0px;
+		}
+		
+		.bestBox{
+			height:460px;
+		}
+		
+		.bestTitle{
+			font-weight:700;
+			font-size:16pt;
+			margin:6px;
+		}
+		
+		.bestPd{
+			width:224px;
+			float:left;
+			margin:6.7px;
+			position:relative;
+		}
+		
+		.bestPd:hover{
+			border:1px solid black;
+			position:relative;
+		}
+		
+		.bestPd>a>img{
+			width:222px;
+			height:222px;
+			margin-bottom:10px;
+		}
+		
+		.shoesBrand{
+			font-weight:400;
+			font-size:12pt;
+			margin:10px 5px;
+		}
+		
+		.shoesName{
+			color:#666666;
+			margin-bottom:20px;
+			margin-left:5px;
+		}
+		
+		.shoesPrice{
+			font-weight:700;
+			font-size:14pt;
+		}
+	
+		.won{
+			color:black;
+		}
+		
+		.shoesPriceBox{
+			margin-left:5px;
+		}
+		
+		.ranking{
+			width:50px;
+			height:50px;
 			background-color:black;
 			color:white;
+			font-weight:700;
+			font-size:19pt;
+			text-align:center;
+			padding-top:6px;
+			position:absolute;
 		}
 		
-		
-		.brandList{
-			margin:20px 0;
+		.ranking1{
+			width:50px;
+			height:50px;
+			background-color:#EE1C25;
+			color:white;
+			font-weight:700;
+			font-size:19pt;
+			text-align:center;
+			padding-top:6px;
+			position:absolute;
 		}
+	
+		input[type=checkbox]{
+			display:none;
+		}
+		
+		input[type=range]:focus{
+			border:1px solid red;
+		}
+		
+		.filterBox{
+			background-color:white;
+			width:290px;
+			padding:20px;
+			display:inline-block;
+		}
+		.filterTitle{
+			font-weight:700;
+			font-size:18pt;
+			margin-bottom:20px;
+		}
+		h6{
+			height:50px;
+			padding-top:15px;
+			padding-bottom:15px;
+			border-bottom:1px solid gray;
+		}
+		
+		.filterSize{
+			padding-top:10px;
+			padding-left:-10px;
+			height:130px;
+		}
+		
+		.filterSize>ul>li{
+			display:inline;
+			border:1px solid gray;
+			width:35px;
+			height:25px;
+			text-align:center;
+			float:left;
+			margin:3px;
+		}
+		.filterSize>ul>li>input[type=checkbox]:focus{
+			border:1px solid red;
+			color:red;
+		}
+		.filterColor>ul{
+			margin-left:-30px;
+			margin-top:10px;
+		}
+		.filterColor{
+			height:80px;
+		}
+		.filterColor>ul>li{
+			width:25px;
+			height:25px;
+			float:left;
+			margin:2px;
+			border:1px solid lightgray;
+		}
+		.filterColor>ul>li:nth-child(1){
+			background:#DDCFC8;
+		}
+		.filterColor>ul>li:nth-child(2){
+			background:black;
+		}
+		.filterColor>ul>li:nth-child(3){
+			background:#0058D9;
+		}
+		.filterColor>ul>li:nth-child(4){
+			background:#A94500;
+		}
+		.filterColor>ul>li:nth-child(5){
+			background:#FFD500;
+		}
+		.filterColor>ul>li:nth-child(6){
+			background:#999999;
+		}
+		.filterColor>ul>li:nth-child(7){
+			background:#00BE00;
+		}
+		.filterColor>ul>li:nth-child(8){
+			background:#003E90;
+		}
+		.filterColor>ul>li:nth-child(9){
+			background:#FF6300;
+		}
+		.filterColor>ul>li:nth-child(10){
+			background:#FF0083;
+		}
+		.filterColor>ul>li:nth-child(11){
+			background:#8B00E1;
+		}
+		.filterColor>ul>li:nth-child(12){
+			background:#EA0001;
+		}
+		.filterColor>ul>li:nth-child(13){
+			background:white;
+		}
+		.filterColor>ul>li:nth-child(14){
+			background-image:url(/resources/image/color/rainbow.png);
+		}
+		
+		.brandBox{
+			float:right;
+		}
+		
+		.brandPd{
+			width:282px;
+			float:left;
+			margin:9px;
+		}
+		
+		.brandPd:hover{
+			border:1px solid black;
+		}
+		
+		.brandPd>a>img{
+			width:280px;
+			height:280px;
+			margin-bottom:10px;
+		}
+		
+		.brandPdSmBox{
+			width:900px;
+			height:440px;
+		}
+		.bg-light{
+			clear:left;
+			clear:right;
+		}
+		
 		
 		
 	</style>
@@ -272,7 +465,6 @@
 	</div>
 <!-- body  -->
 
-
 	<div class="bigBox">
 		<div class="channel">
 			<ul>
@@ -280,433 +472,198 @@
 				  <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
 				</svg>
 				<a href="/main.do">HOME</a></li>&nbsp;&nbsp;>&nbsp;&nbsp;
-				<li><a href="/Shoerologue/category/brand.do">BRAND</a></li>
+				<li><a href="/Shoerologue/category/brand.do">BRAND</a></li>&nbsp;&nbsp;>&nbsp;&nbsp;
+				<li>RARAGO</li>
 			</ul>
 		</div>
+	</div>
+	<div class="bigBox">
+		<div class="brandNameBox">
+			<div class="brandName">RARAGO&nbsp;&nbsp;|&nbsp;&nbsp;라라고</div>
+		</div>
+	</div>
+	<div class="brandBanner">
+		<img src="/resources/image/brandbanner/R/RARAGObanner.png">
+	</div>
+	<div class="bigBox">
+		<div class="bestBox">
+			<span class="bestTitle">BEST PRODUCT</span>
+			<div>
+				<div class="bestPd">
+					<div class="ranking1">1</div>
+					<a href="#">
+						<img src="/resources/image/shoesimage/nike/nike_01.png">
+						<div class="shoesBrand">나이키</div>
+						<div class="shoesName">나이키 에어 맥스 SC</div>
+						<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+					</a>
+				</div>
+				<div class="bestPd">
+					<div class="ranking">2</div>
+					<a href="#">
+						<img src="/resources/image/shoesimage/nike/nike_01.png">
+						<div class="shoesBrand">나이키</div>
+						<div class="shoesName">나이키 에어 맥스 SC</div>
+						<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+					</a>
+				</div>
+				<div class="bestPd">
+					<div class="ranking">3</div>
+					<a href="#">
+						<img src="/resources/image/shoesimage/nike/nike_01.png">
+						<div class="shoesBrand">나이키</div>
+						<div class="shoesName">나이키 에어 맥스 SC</div>
+						<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+					</a>
+				</div>
+				<div class="bestPd">
+					<div class="ranking">4</div>
+					<a href="#">
+						<img src="/resources/image/shoesimage/nike/nike_01.png">
+						<div class="shoesBrand">나이키</div>
+						<div class="shoesName">나이키 에어 맥스 SC</div>
+						<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+					</a>
+				</div>
+				<div class="bestPd">
+					<div class="ranking">5</div>
+					<a href="#">
+						<img src="/resources/image/shoesimage/nike/nike_01.png">
+						<div class="shoesBrand">나이키</div>
+						<div class="shoesName">나이키 에어 맥스 SC</div>
+						<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="filterBox">
+			<div class="filterTitle">FILTER</div>
+			<div class="hr1"></div>
+			<div id="menu">
+				<h6><a>성별</a></h6>
+				<div class="filterGender">
+					<input type="checkbox" id="genderMen"><label for="genderMen">MEN</label>
+					<input type="checkbox" id="genderWomen"><label for="genderWomen">WOMEN</label>
+					<input type="checkbox" id="genderKids"><label for="genderKids">KIDS</label>
+				</div>
+				<h6><a>사이즈</a></h6>
+				<div class="filterSize">
+					<input type="checkbox" id="size_180"><label for="size_180">180</label>
+					<input type="checkbox" id="size_190"><label for="size_190">190</label>
+					<input type="checkbox" id="size_200"><label for="size_200">200</label>
+					<input type="checkbox" id="size_210"><label for="size_210">210</label>
+					<input type="checkbox" id="size_220"><label for="size_220">220</label>
+					<input type="checkbox" id="size_230"><label for="size_230">230</label>
+					<input type="checkbox" id="size_240"><label for="size_240">240</label>
+					<input type="checkbox" id="size_250"><label for="size_250">250</label>
+					<input type="checkbox" id="size_260"><label for="size_260">260</label>
+					<input type="checkbox" id="size_270"><label for="size_270">270</label>
+					<input type="checkbox" id="size_280"><label for="size_280">280</label>
+					<input type="checkbox" id="size_290"><label for="size_290">290</label>
+					<input type="checkbox" id="size_300"><label for="size_300">300</label>
+				</div>
+				<h6><a>색상</a></h6>
+				<div class="filterColor">
+					<ul>
+						<li><input type="checkbox" id="color_beige"><label for="color_beige"></label></li>
+						<li><input type="checkbox" id="color_black"><label for="color_black"></label></li>
+						<li><input type="checkbox" id="color_blue"><label for="color_blue"></label></li>
+						<li><input type="checkbox" id="color_brown"><label for="color_brown"></label></li>
+						<li><input type="checkbox" id="color_yellow"><label for="color_yellow"></label></li>
+						<li><input type="checkbox" id="color_gray"><label for="color_gray"></label></li>
+						<li><input type="checkbox" id="color_green"><label for="color_green"></label></li>
+						<li><input type="checkbox" id="color_navy"><label for="color_navy"></label></li>
+						<li><input type="checkbox" id="color_orange"><label for="color_orange"></label></li>
+						<li><input type="checkbox" id="color_pink"><label for="color_pink"></label></li>
+						<li><input type="checkbox" id="color_purple"><label for="color_purple"></label></li>
+						<li><input type="checkbox" id="color_red"><label for="color_red"></label></li>
+						<li><input type="checkbox" id="color_white"><label for="color_white"></label></li>
+						<li><input type="checkbox" id="color_rainbow"><label for="color_rainbow"></label></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 		<div class="brandBox">
-			<div class="brandTitle">BRAND</div>
-			<div class="bestBrandList">
-				<ul>
-					<li><a href="/Shoerologue/category/brand/nike.do"><img src="/resources/image/brandlogo/nike.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/adidas.do"><img src="/resources/image/brandlogo/adidas.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/newbalance.do"><img src="/resources/image/brandlogo/newbalance.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/converse.do"><img src="/resources/image/brandlogo/converse.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/vans.do"><img src="/resources/image/brandlogo/vans.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/reebok.do"><img src="/resources/image/brandlogo/reebok.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/nuovo.do"><img src="/resources/image/brandlogo/nuovo.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/jordan.do"><img src="/resources/image/brandlogo/jordan.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/puma.do"><img src="/resources/image/brandlogo/puma.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/hawkins.do"><img src="/resources/image/brandlogo/hawkins.png"></a></li>
-				</ul>
+			<div class="totalPdSel">
+				<div  class="totalPd">
+					<span>총 <span class="redBold">0</span>개의 상품이 있습니다.</span>
+				</div>
+				<div class="selection">
+					<select class="">
+					  <option value="1" selected>신상품순</option>
+					  <option value="2">베스트상품순</option>
+					  <option value="3">상품평순</option>
+					  <option value="4">낮은가격순</option>
+					  <option value="5">높은가격순</option>
+					</select>
+					<select class="">
+					  <option value="15" selected>15개씩 보기</option>
+					  <option value="30">30개씩 보기</option>
+					  <option value="60">60개씩 보기</option>
+					</select>
+				</div>
+				<div class="hr1"></div>
+			</div>
+			<!-- 상품 -->
+			<div class="brandPdBox">
+			<!-- 브랜드별 상품 첫번째줄 -->
+				<div class="brandPdSmBox">
+					<div class="brandPd">
+						<a href="#">
+							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<div class="shoesBrand">나이키</div>
+							<div class="shoesName">나이키 에어 맥스 SC</div>
+							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+						</a>
+					</div>
+					<div class="brandPd">
+						<a href="#">
+							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<div class="shoesBrand">나이키</div>
+							<div class="shoesName">나이키 에어 맥스 SC</div>
+							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+						</a>
+					</div>
+					<div class="brandPd">
+						<a href="#">
+							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<div class="shoesBrand">나이키</div>
+							<div class="shoesName">나이키 에어 맥스 SC</div>
+							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+						</a>
+					</div>
+				</div>
+			<!-- 브랜드별 상품 두번째줄 -->
+				<div class="brandPdSmBox">
+					<div class="brandPd">
+						<a href="#">
+							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<div class="shoesBrand">나이키</div>
+							<div class="shoesName">나이키 에어 맥스 SC</div>
+							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+						</a>
+					</div>
+					<div class="brandPd">
+						<a href="#">
+							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<div class="shoesBrand">나이키</div>
+							<div class="shoesName">나이키 에어 맥스 SC</div>
+							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+						</a>
+					</div>
+					<div class="brandPd">
+						<a href="#">
+							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<div class="shoesBrand">나이키</div>
+							<div class="shoesName">나이키 에어 맥스 SC</div>
+							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+						</a>
+					</div>
+				</div>
+				<hr>
+				<div class="page">페이징 처리</div>
 			</div>
 		</div>
-		<div class="brandList">
-			<a href="#initA" class="brandInit"><div>A</div></a>
-			<a href="#initB" class="brandInit"><div>B</div></a>
-			<a href="#initC" class="brandInit"><div>C</div></a>
-			<a href="#initD" class="brandInit"><div>D</div></a>
-			<a href="#initE" class="brandInit"><div>E</div></a>
-			<a href="#initF" class="brandInit"><div>F</div></a>
-			<a href="#initG" class="brandInit"><div>G</div></a>
-			<a href="#initH" class="brandInit"><div>H</div></a>
-			<a href="#initI" class="brandInit"><div>I</div></a>
-			<a href="#initJ" class="brandInit"><div>J</div></a>
-			<a href="#initK" class="brandInit"><div>K</div></a>
-			<a href="#initL" class="brandInit"><div>L</div></a>
-			<a href="#initM" class="brandInit"><div>M</div></a>
-			<a href="#initN" class="brandInit"><div>N</div></a>
-			<a href="#initO" class="brandInit"><div>O</div></a>
-			<a href="#initP" class="brandInit"><div>P</div></a>
-			<a href="#initQ" class="brandInit"><div>Q</div></a>
-			<a href="#initR" class="brandInit"><div>R</div></a>
-			<a href="#initS" class="brandInit"><div>S</div></a>
-			<a href="#initT" class="brandInit"><div>T</div></a>
-			<a href="#initU" class="brandInit"><div>U</div></a>
-			<a href="#initV" class="brandInit"><div>V</div></a>
-			<a href="#initW" class="brandInit"><div>W</div></a>
-			<a href="#initX" class="brandInit"><div>X</div></a>
-			<a href="#initY" class="brandInit"><div>Y</div></a>
-			<a href="#initZ" class="brandInit"><div>Z</div></a>
-			<a href="#init123" class="brandInit"><div>123</div></a>
-			<a href="#initHanA" class="brandInit"><div>ㄱ</div></a>
-			<a href="#initHanB" class="brandInit"><div>ㄴ</div></a>
-			<a href="#initHanC" class="brandInit"><div>ㄷ</div></a>
-			<a href="#initHanD" class="brandInit"><div>ㄹ</div></a>
-			<a href="#initHanE" class="brandInit"><div>ㅁ</div></a>
-			<a href="#initHanF" class="brandInit"><div>ㅂ</div></a>
-			<a href="#initHanG" class="brandInit"><div>ㅅ</div></a>
-			<a href="#initHanH" class="brandInit"><div>ㅇ</div></a>
-			<a href="#initHanI" class="brandInit"><div>ㅈ</div></a>
-			<a href="#initHanJ" class="brandInit"><div>ㅊ</div></a>
-			<a href="#initHanK" class="brandInit"><div>ㅋ</div></a>
-			<a href="#initHanL" class="brandInit"><div>ㅌ</div></a>
-			<a href="#initHanM" class="brandInit"><div>ㅍ</div></a>
-			<a href="#initHanN" class="brandInit"><div>ㅎ</div></a>
-		</div>
-		<div class="hr1"></div>
-		<div class="brandinitBox">
-			<div class="brandNameBox">
-				<div class="brandFirstInit" id="initA">A</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="/Shoerologue/category/brand/adidas.do">ADIDAS</a></li>
-						<li><a href="#">AKIII CLASSIC</a></li>
-						<li><a href="#">ASICS</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initB">B</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="/Shoerologue/category/brand/bearpaw.do">BEARPAW</a></li>
-						<li><a href="#">BIRKENSTOCK</a></li>
-						<li><a href="#">BSQTBYCLASSY</a></li>
-						<li><a href="#">Box&amp;Cox</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initC">C</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">CATCHBALL</a></li>
-						<li><a href="#">COCOMODS</a></li>
-						<li><a href="/Shoerologue/category/brand/converse.do">CONVERSE</a></li>
-						<li><a href="#">CROCS</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initD">D</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">D.LAVAN</a></li>
-						<li><a href="#">DANNER</a></li>
-						<li><a href="#">DINOSOLES</a></li>
-						<li><a href="#">DISCOVERY</a></li>
-						<li><a href="#">DR.MARTENS</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initE">E</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">EARTHUS</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initF">F</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">FEIYUE</a></li>
-						<li><a href="#">FILA</a></li>
-						<li><a href="#">FIRENZE ATELIER</a></li>
-						<li><a href="#">FLORIDA STUDIO</a></li>
-						<li><a href="#">FRED PERRY</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initG">G</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="/Shoerologue/category/brand/ggomoosin.do">GGOMOOSIN</a></li>
-						<li><a href="#">GIANCARIO MORELLI</a></li>
-						<li><a href="#">GRENDENE</a></li>
-						<li><a href="#">gravis</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initH">H</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="/Shoerologue/category/brand/hawkins.do">HAWKINS</a></li>
-						<li><a href="#">HUNTER</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initI">I</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">IPANEMA</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initJ">J</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">J.DAUL</a></li>
-						<li><a href="/Shoerologue/category/brand/jordan.do">JORDAN</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initK">K</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">KKOMOMSHOE</a></li>
-						<li><a href="#">KOLCA</a></li>
-						<li><a href="#">KOMUELLO</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initL">L</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">LACOSTE</a></li>
-						<li><a href="#">Little Diana</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initM">M</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">MACMOC</a></li>
-						<li><a href="#">MALIBU SANDALS</a></li>
-						<li><a href="#">MELISSA</a></li>
-						<li><a href="#">MERCY CROWN</a></li>
-						<li><a href="#">MIAMI PROJECT</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initN">N</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="/Shoerologue/category/brand/newbalance.do">NEW BALANCE</a></li>
-						<li><a href="/Shoerologue/category/brand/brandNike.do">NIKE</a></li>
-						<li><a href="/Shoerologue/category/brand/nuovo.do">NUOVO</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initP">P</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">POLO</a></li>
-						<li><a href="#">POPSOCKETS</a></li>
-						<li><a href="#">POSE GANCH</a></li>
-						<li><a href="#">PRO-SPECS</a></li>
-						<li><a href="/Shoerologue/category/brand/puma.do">PUMA</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initR">R</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="/Shoerologue/category/brand/rarago.do">RARAGO</a></li>
-						<li><a href="#">RED WING</a></li>
-						<li><a href="/Shoerologue/category/brand/reebok.do">REEBOK</a></li>
-						<li><a href="#">REVE</a></li>
-						<li><a href="#">ROCKFISH</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initS">S</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">2ND ATELIER</a></li>
-						<li><a href="#">SAUCONY</a></li>
-						<li><a href="#">SKA</a></li>
-						<li><a href="#">SKECHERS</a></li>
-						<li><a href="#">SPERRY</a></li>
-						<li><a href="#">STARTAS</a></li>
-						<li><a href="#">STEFANOROSSI</a></li>
-						<li><a href="#">STRAYE</a></li>
-						<li><a href="#">SUPERGA</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initT">T</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">TIMBERLAND</a></li>
-						<li><a href="#">TOTETOTE</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initU">U</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">UGG</a></li>
-						<li><a href="#">UNPUBLIC</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initV">V</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="/Shoerologue/category/brand/vans.do">VANS</a></li>
-						<li><a href="#">VEJA</a></li>
-						<li><a href="#">VERBENAS</a></li>
-						<li><a href="#">VLADO</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initX">X</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">XEXYMIX</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="init123">123</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">2ND ATELIER</a></li>
-						<li><a href="#">4T2ND</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initHanA">ㄱ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">그라비스</a></li>
-						<li><a href="#">그랜대네</a></li>
-						<li><a href="/Shoerologue/category/brand/ggomoosin.do">꼬무신</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initHanB">ㄴ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="/Shoerologue/category/brand/brandNike.do">나이키</a></li>
-						<li><a href="/Shoerologue/category/brand/nuovo.do">누오보</a></li>
-						<li><a href="/Shoerologue/category/brand/newbalance.do">뉴발란스</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initHanC">ㄷ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">다이노솔즈</a></li>
-						<li><a href="#">닥터마틴</a></li>
-						<li><a href="#">대너</a></li>
-						<li><a href="#">드라반</a></li>
-						<li><a href="#">디스커버리</a></li>
-						<li><a href="#">또떼또떼</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initHanD">ㄹ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="/Shoerologue/category/brand/rarago.do">라라고</a></li>
-						<li><a href="#">라코스테</a></li>
-						<li><a href="#">락피쉬</a></li>
-						<li><a href="#">레드윙</a></li>
-						<li><a href="#">레브</a></li>
-						<li><a href="/Shoerologue/category/brand/reebok.do">리복</a></li>
-						<li><a href="#">리틀다이애나</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initHanE">ㅁ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">마이애미프로젝트</a></li>
-						<li><a href="#">마크모크</a></li>
-						<li><a href="#">말리부 샌들</a></li>
-						<li><a href="#">머씨 크라운</a></li>
-						<li><a href="#">멜리사</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initHanF">ㅂ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">박스앤콕스</a></li>
-						<li><a href="/Shoerologue/category/brand/vans.do">반스</a></li>
-						<li><a href="#">버켄스탁</a></li>
-						<li><a href="#">베르베나스</a></li>
-						<li><a href="/Shoerologue/category/brand/bearpaw.do">베어파우</a></li>
-						<li><a href="#">베자</a></li>
-						<li><a href="#">블라도</a></li>
-						<li><a href="#">비에스큐티바이클래시</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initHanG">ㅅ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">세컨드아뜨리에</a></li>
-						<li><a href="#">수페르가</a></li>
-						<li><a href="#">스카</a></li>
-						<li><a href="#">스케쳐스</a></li>
-						<li><a href="#">스타타스</a></li>
-						<li><a href="#">스테파노로시</a></li>
-						<li><a href="#">스트레이</a></li>
-						<li><a href="#">스페리</a></li>
-						<li><a href="#">써코니</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initHanH">ㅇ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="/Shoerologue/category/brand/adidas.do">아디다스</a></li>
-						<li><a href="#">아식스</a></li>
-						<li><a href="#">아키클래식</a></li>
-						<li><a href="#">어그</a></li>
-						<li><a href="#">어더스</a></li>
-						<li><a href="#">언퍼블릭</a></li>
-						<li><a href="#">이파네마</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initHanI">ㅈ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">장까를로 모렐리</a></li>
-						<li><a href="#">제이다울</a></li>
-						<li><a href="#">젝시믹스</a></li>
-						<li><a href="/Shoerologue/category/brand/jordan.do">조던</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initHanK">ㅋ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">캐치볼</a></li>
-						<li><a href="/Shoerologue/category/brand/converse.do">컨버스</a></li>
-						<li><a href="#">코뮤엘로</a></li>
-						<li><a href="#">코코모즈</a></li>
-						<li><a href="#">콜카</a></li>
-						<li><a href="#">크록스</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initHanL">ㅌ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">팀버랜드</a></li>
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initHanM">ㅍ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">페이유에</a></li>
-						<li><a href="#">포즈간츠</a></li>
-						<li><a href="#">포티세컨드</a></li>
-						<li><a href="#">폴로</a></li>
-						<li><a href="/Shoerologue/category/brand/puma.do">푸마</a></li>
-						<li><a href="#">프레드 페리</a></li>
-						<li><a href="#">프로스펙스</a></li>
-						<li><a href="#">플로리다 스튜디오</a></li>
-						<li><a href="#">피렌체아뜨리에</a></li>
-						
-					</ul>
-				</div>
-				<hr>
-				<div class="brandFirstInit" id="initHanN">ㅎ</div>
-				<div class="brandName">
-					<ul>
-						<li><a href="#">헌터</a></li>
-						<li><a href="/Shoerologue/category/brand/hawkins.do">호킨스</a></li>
-						<li><a href="#">휠라</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<div class="hr1Gray"></div>
-
-
-
 	</div>
 
 <!-- 우측하단 TOP 이동 배너 -->
@@ -779,6 +736,44 @@
 	  </footer>
 	 </div>
 	</div>
+	<script type="text/javascript">
+	//<![CDATA[
+	(function($, undefined){
+		$.fn.multiOpenMenu = function(options) {
+			// 메뉴가 될 엘리먼트가 없는지 체크합니다.
+			if(this.length === 0) {
+				return this;
+			}
+			// 기본값 설정 : active는 처음에 열려 있을 메뉴 입니다.
+			var settings = $.extend({
+				active: 0
+			}, options);
+			// 초기 메뉴를 생성합니다.
+			var headers = this.find(">h6");
+			$.each(headers, function(i, opt) {
+				if(i != settings.active) {
+					$(this).next().hide();
+				}
+			});
+			// 메뉴를 클릭했을때 서브 메뉴를 보여주는 이벤트를 만듭니다.
+			headers.on('click', function() {
+				var menuArea = $(this).next();
+				var isOpen = menuArea.is(":visible");
+				// 열린 상태에 따라 이벤트를 반전해서 발생시킨다.
+				menuArea[isOpen ? 'slideUp' : 'slideDown']().trigger(isOpen ? 'hide' : 'show');
+				// 이벤트 버블링을 멈춘다.
+				return false;
+			});
+			return this;
+		};
+	}(jQuery));
+	// 메뉴를 생성합니다.
+	$(function(){
+		$("#menu").multiOpenMenu();
+	});
+	//]]>
+	</script>
+
 	
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	

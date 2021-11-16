@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>리복 | 슈롤로그</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 		
@@ -20,7 +20,7 @@
 		<!-- Bootstrap Font Icon CSS 아이콘 -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/resources/css/media_query.css">
+		<link rel="stylesheet" href="/resources/css/style.css">
 		
 		<link rel="stylesheet" href="/resources/css/headerFooter.css">
 
