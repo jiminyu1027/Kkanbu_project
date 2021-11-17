@@ -4,9 +4,6 @@
 <configuration>
 
 	<typeAliases>
-        <typeAlias type="edu.study.vo.BoardVO" alias="boardVO"/>
-        <typeAlias type="edu.study.vo.BoardUseMyBatisVO" alias="boardMVO"/>
-        <typeAlias type="edu.study.vo.SampleVO" alias="sampleVO"/>
          <typeAlias type="edu.study.vo.MemberVO" alias="MemberVO"/>
     </typeAliases>
 

@@ -18,8 +18,6 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.study.service.MemberService;
-import edu.study.vo.BoardUseMyBatisVO;
-import edu.study.vo.SampleVO;
 import edu.study.vo.MemberVO;
 
 @RequestMapping(value="/Shoerologue")

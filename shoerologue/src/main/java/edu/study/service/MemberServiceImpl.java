@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.study.dao.MemberDAO;
-import edu.study.vo.SampleVO;
 import edu.study.vo.MemberVO;
 
 @Service
