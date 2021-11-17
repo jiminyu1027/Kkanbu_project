@@ -35,17 +35,18 @@ public class ShoerologueController {
 	
 		return "shoerologue/login";
 	}
+	
 	@RequestMapping(value="/login.do", method=RequestMethod.POST)
 	public String login(Locale locale, Model model, HttpSession session,  MemberVO vo, RedirectAttributes rttr) throws Exception{
 		
 			MemberVO login = MemberService.login(vo);
 			String mName = (String)session.getAttribute("mName");
 			String master = (String) session.getAttribute("master");
-			System.out.println("이름33!!"+mName);
+			//System.out.println("이름33!!"+mName);
 			if(login == null) {
 				session.setAttribute("member", null);
 				rttr.addFlashAttribute("msg", false);
-				System.out.println("이름22!!"+mName);
+				//System.out.println("이름22!!"+mName);
 				return "redirect:/Shoerologue/login.do";
 			}else {
 				
@@ -55,7 +56,7 @@ public class ShoerologueController {
 				session.setAttribute("mName", mName);
 				session.setAttribute("master", master);
 				
-				System.out.println("이름!!"+mName);
+				//System.out.println("이름!!"+mName);
 				
 				session.setAttribute("member", login);
 				
