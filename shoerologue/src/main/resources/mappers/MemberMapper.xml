@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="edu.study.mapper.MemberMapper">
+
+     <select id="list" resultType="MemberVO">
+         SELECT midx
+        	 , mName
+        	 , mId
+        	 , mPwd
+        	 , mEmail
+        	 , mPhone
+        	 , mAddr
+        	 , mJoindate
+        	 , mDelYn
+        	 , master
+          FROM MEMBER
+    </select>
+
+    <insert id="insert" parameterType="MemberVO">
+    		<![CDATA[
+		 	 INSERT INTO member(MIDX,MNAME,MID,MPWD,MPHONE,MEMAIL) VALUES(
+		 	 MIDX_SEQ.nextval
+		 	,#{mName}
+		    ,#{mId}
+		    ,#{mPwd}
+		    ,#{mPhone}
+		    ,#{mEmail}	
+		    )
+		    ]]>
+    </insert>
+   
+   <select id="login" resultType="MemberVO" parameterType="MemberVO">
+   		SELECT mId, mPwd, master, mName, mPhone, mEmail, mAddr, mJoindate
+   		FROM member
+   		WHERE mId = #{mId}
+   		AND mPwd = #{mPwd}
+   </select>
+   
+   
+</mapper>
