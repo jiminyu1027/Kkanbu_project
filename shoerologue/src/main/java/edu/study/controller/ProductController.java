@@ -24,7 +24,7 @@ import edu.study.vo.MemberVO;
 
 @RequestMapping(value="/Shoerologue")
 @Controller
-public class MemberController {
+public class ProductController {
 	
 	@Autowired
 	MemberService MemberService;
