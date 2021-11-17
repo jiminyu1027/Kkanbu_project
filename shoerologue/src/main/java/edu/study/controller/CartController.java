@@ -20,7 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import edu.study.service.MemberService;
 import edu.study.vo.MemberVO;
 
-@RequestMapping(value="/Shoerologue")
+@RequestMapping(value="/Shoerologue/cart")
 @Controller
 public class CartController {
 	
@@ -30,7 +30,7 @@ public class CartController {
 	@RequestMapping(value="/cart.do")
 	public String cart(Locale locale, Model model)throws Exception{
 		
-		return "shoerologue/cart";
+		return "shoerologue/cart/cart";
 	}
 	
 }

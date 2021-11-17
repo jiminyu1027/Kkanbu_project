@@ -65,7 +65,7 @@
 		  <div class="row">
 		    <!-- 로고 -->
 		    <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-		      <a href="http://localhost:8090/main.do"><img class="banner-D" src="/resources/image/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+		      <a href="http://localhost:8090/main.do"><img class="banner-D" src="resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
 		      <div class="logo-scroll3"></div>
 		    </div>
 		    <!-- 검색창 -->
@@ -233,35 +233,35 @@
 				마이페이지
 			</div>
 			<div class="myPageMenu2">
-				<span style="font-size:1.3em; font-weight: bold;"><a href="http://localhost:8090/Shoerologue/wishList.do#">나의 주문관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">나의 주문관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="http://localhost:8090/Shoerologue/myPage.do" class="gray">주문/배송 조회</a><br>
-					<a href="http://localhost:8090/Shoerologue/refund.do" class="gray">취소/교환/반품</a><br>
-					<a href="http://localhost:8090/Shoerologue/insertCard.do" class="gray">카드 등록 관리</a>
+					<a href="/Shoerologue/mypage/claim/myPage.do" class="gray">주문/배송 조회</a><br>
+					<a href="/Shoerologue/mypage/claim/orderCancel.do" class="gray">취소/교환/반품</a><br>
+					<a href="/Shoerologue/mypage/claim/insertCard.do" class="gray">카드 등록 관리</a>
 				</div><br>
 			</div>
 			<div class="myPageMenu2">
-				<span style="font-size:1.3em; font-weight: bold;"><a href="http://localhost:8090/Shoerologue/wishList.do#">나의 활동</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">나의 활동</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="http://localhost:8090/Shoerologue/wishList.do#" class="gray">장바구니</a><br>
-					<a href="http://localhost:8090/Shoerologue/wishList.do" class="red">찜리스트*</a><br>
-					<a href="http://localhost:8090/Shoerologue/wishList.do#" class="gray">상품 Q&amp;A</a><br>
-					<a href="http://localhost:8090/Shoerologue/wishList.do#" class="gray">1:1 문의</a><br>
-					<a href="http://localhost:8090/Shoerologue/wishList.do#" class="gray">나의 리뷰</a>
+					<a href="/Shoerologue/cart/cart.do" class="gray">장바구니</a><br>
+					<a href="/Shoerologue/mypage/shopping/wishlist.do" class="red">찜리스트*</a><br>
+					<a href="/Shoerologue/mypage/shopping/qaList.do" class="gray">상품 Q&A</a><br>
+					<a href="/Shoerologue/mypage/claim/inquiryList.do" class="gray">1:1 문의</a><br>
+					<a href="/Shoerologue/mypage/shopping/myReview.do" class="gray">나의 리뷰</a>
 				</div><br>
 			</div>
 			<div class="myPageMenu2">
-				<span style="font-size:1.3em; font-weight: bold;"><a href="http://localhost:8090/Shoerologue/wishList.do#">내 정보 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"></path>
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">내 정보 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="http://localhost:8090/Shoerologue/receiveAddr.do" class="gray">배송지 관리</a><br>
-					<a href="http://localhost:8090/Shoerologue/myInfo.do" class="gray">개인 정보 수정</a><br>
-					<a href="http://localhost:8090/Shoerologue/secession.do" class="gray">회원 탈퇴</a>
+					<a href="/Shoerologue/mypage/deliveryAddr/receiveAddr.do" class="gray">배송지 관리</a><br>
+					<a href="/Shoerologue/mypage/privateInfo/myInfoPwd.do" class="gray">개인 정보 수정</a><br>
+					<a href="/Shoerologue/member/leave.do" class="gray">회원 탈퇴</a>
 				</div>
 			</div>
 		</div>

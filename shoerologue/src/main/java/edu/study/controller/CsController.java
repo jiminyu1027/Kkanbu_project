@@ -6,40 +6,39 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping(value="/CustomerService")
+@RequestMapping(value="/Shoerologue/customerService")
 @Controller
 public class CsController {
+	
+	@RequestMapping(value="/cs.do")
+	public String cs(Locale locale,Model model)throws Exception {
+		
+		return "shoerologue/customerService/cs";
+	}
+	
 	
 	@RequestMapping(value="/notice.do")
 	public String notice(Locale locale,Model model)throws Exception {
 		
-		return "customerService/notice";
+		return "shoerologue/customerService/notice";
 	}
-	
-
-	
 	
 	@RequestMapping(value="/writeReview.do")
 	public String writeReview(Locale locale,Model model)throws Exception{
 		
-		return "customerService/writeReview";
+		return "shoerologue/customerService/writeReview";
 	}
 	
 	@RequestMapping(value="/event.do")
 	public String event(Locale locale,Model model) throws Exception{
 		
-		return "customerService/event";
+		return "shoerologue/customerService/event";
 	}
 	
-	@RequestMapping(value="/inquiryDetail.do")
-	public String inquiryDetail(Locale locale,Model model)throws Exception{
-		
-		return "customerService/inquiryDetail";
-	}
 	@RequestMapping(value="/qaDetail.do")
 	public String qaDetail(Locale locale,Model model)throws Exception{
 		
-		return "customerService/qaDetail";
+		return "shoerologue/customerService/qaDetail";
 	}
 	
 }

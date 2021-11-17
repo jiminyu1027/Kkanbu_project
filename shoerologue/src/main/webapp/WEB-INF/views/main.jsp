@@ -78,7 +78,7 @@
 	  <div class="row">
 	  	  <!-- 로고 -->
 	      <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-              <a href="/main.do"><img class="banner-D" src="resources/image/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+              <a href="/main.do"><img class="banner-D" src="resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
               <div class="logo-scroll3"></div>
            </div>
         <!-- 검색창 -->   
@@ -93,15 +93,15 @@
 	     <!-- 마이페이지, 찜목록, 장바구니 -->
 	     <div class="col-0 col-sm-0 col-md-2 col-lg-3 d-flex justify-content-center align-items-center">
 			<ul class="iconul d-flex align-items-center icon-absolute">
-				<li class="iconli"><a href="Shoerologue/myPage.do">
+				<li class="iconli"><a href="Shoerologue/mypage/claim/myPage.do">
 					<i class="bi bi-person icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="Shoerologue/wishlist.do">
+				<li class="iconli"><a href="Shoerologue/mypage/shopping/wishlist.do">
 					<i class="bi bi-heart icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="Shoerologue/cart.do">
+				<li class="iconli"><a href="Shoerologue/cart/cart.do">
 					<i class="bi bi-bag icon"></i>
 					</a>
 				</li>
@@ -193,13 +193,13 @@
 	  <!-- 배너이미지 3장 -->
 	  <div class="carousel-inner">
 	    <div class="carousel-item active">
-	      <img src="resources/image/001.png" class="d-block w-100" alt="45%할인 이벤트">
+	      <img src="resources/image/mainbanner/001.png" class="d-block w-100" alt="45%할인 이벤트">
 	    </div>
 	    <div class="carousel-item">
-	      <img src="resources/image/KAKAO.png" class="d-block w-100" alt="카카오페이 결제시 3천원 할인 이벤트">
+	      <img src="resources/image/mainbanner/KAKAO.png" class="d-block w-100" alt="카카오페이 결제시 3천원 할인 이벤트">
 	    </div>
 	    <div class="carousel-item">
-	      <img src="resources/image/ilnam.png" class="d-block w-100" alt="45%할인 이벤트">
+	      <img src="resources/image/mainbanner/ilnam.png" class="d-block w-100" alt="45%할인 이벤트">
 	    </div>
 	  </div>
 	  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -275,7 +275,7 @@
 	
 	<!-- 이벤트 광고 베너 -->
 	<div class="jumping"></div>
-		<img src="resources/image/005.png" class="img-fluid" alt="이젠카드 결제시 20% 할인 이벤트">
+		<img src="resources/image/mainbanner/005.png" class="img-fluid" alt="이젠카드 결제시 20% 할인 이벤트">
 	<div class="jumping"></div>
 	
 	<!-- BEST 20 상품 -->
@@ -546,7 +546,7 @@
 	<!-- 공백 -->
 	<div class="jumping"></div>
 	<!-- 3번째 배너 -->
-	<img src="resources/image/banner3.png" class="img-fluid" alt="크리스마스 선물 이벤트">
+	<img src="resources/image/mainbanner/banner3.png" class="img-fluid" alt="크리스마스 선물 이벤트">
 	<!-- 공백 -->
 	<div class="jumping"></div>
 	
@@ -564,16 +564,16 @@
 	    <div class="swiper mySwiper slideSize slideH">
 		      <div class="swiper-wrapper">
 			    <div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper1.png" alt="필라코디" ></div>
-				<div class="swiper-slide imageSize"><img class="image" src="resources/image/1582871130_20.jpg" alt="컨버스코디" ></div>
+				<div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper2.jpg" alt="컨버스코디" ></div>
 				<div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper3.png" alt="뉴발란스코디" ></div>
-				<div class="swiper-slide imageSize"><img class="image" src="resources/image/slide5.jpg" alt="뉴발란스코디" ></div>
-				<div class="swiper-slide imageSize"><img class="image" src="resources/image/slide18.jpeg" alt="컨버스코디" ></div>
+				<div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper4.jpg" alt="뉴발란스코디" ></div>
+				<div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper5.jpeg" alt="컨버스코디" ></div>
 				<div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper6.png" alt="닥터마틴코디" ></div>
+				<div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper7.png" alt="나이키코디" ></div>
 				<div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper8.png" alt="콜카신발" ></div>
 				<div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper9.png" alt="꼬무신신발" ></div>
-				<div class="swiper-slide imageSize"><img class="image" src="resources/image/slide16.jpeg" alt="나이키코디" ></div>
 				<div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper10.png" alt="아디다스코디" ></div>
-				<div class="swiper-slide imageSize"><img class="image" src="resources/image/slide9.jpg" alt="나이키코디" ></div>
+				<div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper11.jpg" alt="나이키코디" ></div>
 				<div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper12.png" alt="반스코디" ></div>
 		      </div>
 		    <div class="swiper-button-next"></div>
@@ -615,10 +615,9 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="Shoerologue/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="Shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
 	        </ul>
 	      </div>
 		  <div class="col-4 col-sm-4 col-md-2 ">

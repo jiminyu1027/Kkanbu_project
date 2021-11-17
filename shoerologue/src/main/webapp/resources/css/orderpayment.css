@@ -165,7 +165,7 @@ select {
 	padding: 5px 10px;
 	border: 1px solid #999;
 	font-family: inherit;
-	background: url('/resources/image/arrow.svg') no-repeat 95% 50%;
+	background: url('/resources/image/symbol/arrow.svg') no-repeat 95% 50%;
 	border-radius: 0px;
 	-webkit-appearance: none;
 	-moz-appearance: none;

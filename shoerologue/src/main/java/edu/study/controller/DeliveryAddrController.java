@@ -20,7 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import edu.study.service.MemberService;
 import edu.study.vo.MemberVO;
 
-@RequestMapping(value="/Shoerologue")
+@RequestMapping(value="/Shoerologue/mypage/deliveryAddr")
 @Controller
 public class DeliveryAddrController {
 	
@@ -30,7 +30,7 @@ public class DeliveryAddrController {
 	@RequestMapping(value="/receiveAddr.do")
 	public String receiveAddr(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/receiveAddr";
+		return "shoerologue/mypage/deliveryAddr/receiveAddr";
 	}
 }
 

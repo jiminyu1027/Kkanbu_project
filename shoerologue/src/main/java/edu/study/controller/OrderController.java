@@ -13,7 +13,7 @@ public class OrderController{
 	@RequestMapping(value="/orderpayment.do")
 	public String orderpayment(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/orderpayment";
+		return "shoerologue/mypage/order/orderpayment";
 	}
 	
 }

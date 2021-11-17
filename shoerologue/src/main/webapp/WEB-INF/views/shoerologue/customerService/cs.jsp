@@ -120,7 +120,7 @@
 	  <div class="row">
 	  	  <!-- 로고 -->
 	      <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-              <a href="/main.do"><img class="banner-D" src="/resources/image/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+              <a href="/main.do"><img class="banner-D" src="resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
               <div class="logo-scroll3"></div>
            </div>
         <!-- 검색창 -->   
@@ -203,22 +203,6 @@
 				</li>
 			</ul>
 		</div>
-		 <div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
-		      <ul class="navbar-nav me-auto mb-6 mb-lg-0">
-		      </ul>
-		      <ul class="nav justify-content-end"> 
-				  <li class="nav-item nav-fs">
-				    <a class="nav-link text-white fw-bolder" href="#hotdeal">#핫딜</a>
-				  </li>
-				  <li class="nav-item nav-fs">
-				    <a class="nav-link text-white fw-bolder" href="#best">#베스트</a>
-				  </li>
-				   <li class="nav-item nav-fs">
-				    <a class="nav-link text-white fw-bolder" href="#codi">#코디</a>
-				  </li>
-				</ul>
-				
-		    </div>
 		    <div class="col-0 col-sm-0 col-md-0 col-lg-2"></div>
 		</nav>
 	</div>
@@ -229,11 +213,11 @@
 		
 		<div class="filter-box">
 			<div class="filter-title"><span id="filter-title"><center>고객센터</center></span></div>
-			<center><p><a href="/Shoerologue/cs.do" class="main">FAQ</a></p></center>
-			<center><p><a href="/CustomerService/notice.do" class="other">공지사항</a></p></center>
+			<center><p><a href="/Shoerologue/customerService/cs.do" class="main">FAQ</a></p></center>
+			<center><p><a href="/Shoerologue/customerService/notice.do" class="other">공지사항</a></p></center>
 			<center><p><a href="/CustomerService/inquiry.do" class="other">1:1 문의</a></p></center>
-			<center><p><a href="/CustomerService/qa.do" class="other">상품 QA</a></p></center>
-			<center><p><a href="/CustomerService/myReview.do" class="other">나의 리뷰</a></p></center>
+			<center><p><a href="#" class="other">고객의 소리</a></p></center>
+			<center><p><a href="#" class="other">회원 혜택 안내</a></p></center>
 			<hr>
 			<center><h5>슈롤샵 고객센터</h5></center>
 			<center><p class="comNum">1661-0332</p></center>

@@ -50,7 +50,7 @@
 	  <div class="row">
 	    <!-- 로고 -->
 	    <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-	      <a href="/main.do"><img class="banner-D" src="/resources/image/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+	      <a href="/main.do"><img class="banner-D" src="resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
 	      <div class="logo-scroll3"></div>
 	    </div>
 	    <!-- 검색창 -->
@@ -251,7 +251,7 @@
 				<span class="won">원</span>
 				</span>
 			</div>
-			<img src="/resources/image/equal.png" class="equalIcon">
+			<img src="/resources/image/symbol/equal.png" class="equalIcon">
 			<div  class="paymentBox2">
 				<span class="paymentValue">결제금액</span>
 				<span class="price" id="totalPay">0

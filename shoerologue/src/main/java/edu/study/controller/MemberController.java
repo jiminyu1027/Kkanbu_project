@@ -20,7 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import edu.study.service.MemberService;
 import edu.study.vo.MemberVO;
 
-@RequestMapping(value="/Shoerologue")
+@RequestMapping(value="/Shoerologue/member")
 @Controller
 public class MemberController {
 	
@@ -32,7 +32,7 @@ public class MemberController {
 		//System.out.println("midx>>>>>>>>>>>"+vo.getMidx());
 		//TestMemberservice.insert(vo);	
 		
-		return "shoerologue/join";
+		return "shoerologue/member/join";
 	}
 		@RequestMapping(value="/joinAction.do")
 		public String joinAction(Locale locale, Model model,MemberVO vo)throws Exception {
@@ -52,18 +52,18 @@ public class MemberController {
 	@RequestMapping(value="/findId.do")
 	public String findId(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/findId";
+		return "shoerologue/member/findId";
 	}
 	@RequestMapping(value="/findPwd.do")
 	public String findPwd(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/findPwd";
+		return "shoerologue/member/findPwd";
 	}
 
 	@RequestMapping(value="/leave.do")
 	public String leave(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/leave";
+		return "shoerologue/member/leave";
 	}
 	
 	

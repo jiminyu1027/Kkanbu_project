@@ -20,29 +20,29 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import edu.study.service.MemberService;
 import edu.study.vo.MemberVO;
 
-@RequestMapping(value="/Shoerologue")
+@RequestMapping(value="/Shoerologue/mypage/shopping")
 @Controller
 public class ShoppingController {
 	
 	@Autowired
 	MemberService MemberService;
-
+	
 	@RequestMapping(value="/wishlist.do")
 	public String wishlist(Locale locale, Model model)throws Exception{
 		
-		return "shoerologue/wishlist";
+		return "shoerologue/mypage/shopping/wishlist";
 	}
 	
-	@RequestMapping(value="/qa.do")
-	public String qa(Locale locale,Model model)throws Exception{
+	@RequestMapping(value="/qaList.do")
+	public String qaList(Locale locale,Model model)throws Exception{
 		
-		return "customerService/qa";
+		return "shoerologue/mypage/shopping/qaList";
 	}
 	
 	@RequestMapping(value="/myReview.do")
 	public String myReview(Locale locale,Model model)throws Exception{
 		
-		return "customerService/myReview";
+		return "shoerologue/mypage/shopping/myReview";
 	}
 }
 

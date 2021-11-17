@@ -20,7 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import edu.study.service.MemberService;
 import edu.study.vo.MemberVO;
 
-@RequestMapping(value="/Shoerologue")
+@RequestMapping(value="/Shoerologue/mypage/memberCounsel")
 @Controller
 public class MemberCounselController {
 	
@@ -30,7 +30,7 @@ public class MemberCounselController {
 	@RequestMapping(value="/inquiry.do")
 	public String inquiry(Locale locale, Model model)throws Exception{
 		
-		return "customerService/inquiry";
+		return "shoerologue/mypage/memberCounsel/inquiry";
 	}
 
 }
