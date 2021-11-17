@@ -24,32 +24,17 @@ import edu.study.vo.MemberVO;
 
 @RequestMapping(value="/Shoerologue")
 @Controller
-public class ClaimController {
+public class CartController {
 	
 	@Autowired
 	MemberService MemberService;
 
-	@RequestMapping(value="/myPage.do")
-	public String myPage(Locale locale, Model model)throws Exception {
+	@RequestMapping(value="/cart.do")
+	public String cart(Locale locale, Model model)throws Exception{
 		
-		return "shoerologue/myPage";
+		return "shoerologue/cart";
 	}
 	
-	@RequestMapping(value="/insertCard.do")
-	public String insertCard(Locale locale, Model model)throws Exception {
-		
-		return "shoerologue/insertCard";
-	}
-	@RequestMapping(value="/refund.do")
-	public String refund(Locale locale, Model model)throws Exception {
-		
-		return "shoerologue/refund";
-	}
-	@RequestMapping(value="/orderCancel.do")
-	public String orderCancel(Locale locale, Model model)throws Exception {
-		
-		return "shoerologue/orderCancel";
-	}
 }
 
 	
