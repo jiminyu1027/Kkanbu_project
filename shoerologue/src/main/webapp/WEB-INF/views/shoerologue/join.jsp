@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>\
+ <%@page import ="edu.study.vo.*" %>
+<%
+	MemberVO vo = (MemberVO)request.getAttribute("vo");
+%>   
 <!DOCTYPE html>
 <html>
 	<head>
@@ -11,13 +15,7 @@
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 			<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-			
-			<!-- 글꼴 -->
-		    <link rel="preconnect" href="https://fonts.googleapis.com">
-		    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		    <link rel="preconnect" href="https://fonts.googleapis.com">
-	
-		  
+
 		  <!-- Bootstrap Font Icon CSS 아이콘 -->
 	    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 	    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
@@ -25,7 +23,6 @@
 		    <link rel="stylesheet" href="/resources/css/headerFooter.css">
 	
 	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 		
 		*{
@@ -282,13 +279,13 @@
 	</div>
 
 		<section>
-			<form name="frm" action="#" method="post">
+			<form name="frm" action="joinAction.do" method="post">
 			<div class="joinbox">
 				<div class="header">회원가입</div>
 				<div class="rows id mt-5">
 					<label for="id">아이디<span class="red">*</span></label>
 					<div class="formalign">
-						<input type="text" class="id impor" name="id" id="id" placeholder="아이디를 입력해 주세요." onblur="checkFn('id')"> 
+						<input type="text" class="id impor" name="mId" id="id" placeholder="아이디를 입력해 주세요." onblur="checkFn('id')"> 
 						<input type="button" class="id" value="id 중복확인">
 					</div>
 					<span class="check"></span>
@@ -296,7 +293,7 @@
 				<div class="rows password">
 					<label for="password">비밀번호<span class="red">*</span></label>
 					<div class="formalign">
-						<input type="password" class="impor" name="password" id="password" placeholder="비밀번호를 입력해 주세요. (영문 숫자 조합 4글자 이상)" onblur="checkFn('pass')">
+						<input type="password" class="impor" name="mPwd" id="password" placeholder="비밀번호를 입력해 주세요. (영문 숫자 조합 4글자 이상)" onblur="checkFn('pass')">
 						<span class="check"></span>
 					</div>
 				</div>
@@ -310,21 +307,21 @@
 				<div class="rows name">
 					<label for="name">이름<span class="red">*</span></label>
 					<div class="formalign">
-						<input type="text" class="impor" name="name" id="name" placeholder="이름을 입력해 주세요." onblur="checkFn('name')">
+						<input type="text" class="impor" name="mName" id="name" placeholder="이름을 입력해 주세요." onblur="checkFn('name')">
 						<span class="check"></span>
 					</div>
 				</div>
 				<div class="rows email">
 					<label for="email">이메일<span class="red">*</span></label>
 					<div class="formalign">
-						<input type="email" class="impor" name="email" id="email" placeholder="이메일을 입력해 주세요." onblur="checkFn('email')">
+						<input type="email" class="impor" name="mEmail" id="email" placeholder="이메일을 입력해 주세요." onblur="checkFn('email')">
 						<span class="check"></span>
 					</div>
 				</div>
 				<div class="rows phone">
 					<label for="phone">연락처<span class="red">*</span></label>
 					<div class="formalign">
-						<input type="text" class="impor" name="phone" id="phone" placeholder="휴대폰 번호를 '-' 없이 입력해 주세요." onblur="checkFn('phone')">
+						<input type="text" class="impor" name="mPhone" id="phone" placeholder="휴대폰 번호를 '-' 없이 입력해 주세요." onblur="checkFn('phone')">
 						<span class="check"></span>
 					</div>
 				</div>
@@ -559,8 +556,8 @@
 			span.style.display = "none";
 		}
 		
-		
-		var checkPass = /^.*(?=^.{4,20}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
+	
+		var checkPass =  /^.*(?=^.{4,20}$)(?=.*\d)(?=.*[a-zA-Z]).*$/;
 		value = document.frm.password.value;
 		span = document.getElementsByClassName("password")[0].getElementsByTagName("span")[0];
 		if(value == ""){
@@ -666,6 +663,7 @@
 	    }
 	});
 	</script>
+
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	
 		
