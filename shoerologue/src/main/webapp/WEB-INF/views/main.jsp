@@ -1,8 +1,12 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="true" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
-
+<%@ page import="java.util.*" %>
+<%@ page import="edu.study.vo.*" %>
+<%
+	MemberVO vo =(MemberVO) session.getAttribute("member");
+%>
 <html>
 	<head>
 		<title>신발의 시작, ShoeRologue</title>
@@ -47,12 +51,24 @@
 			<nav class="navbar navbar-expand-lg navbar-light topNav">
 			      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 			      <ul class="nav justify-content-end"> 
-					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="Shoerologue/login.do">로그인</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="Shoerologue/join.do">회원가입</a>
-					  </li>
+			      <!-- 로그인 안했을때 -->
+			      <c:if test="${member == null}">
+						  <li class="nav-item">
+						    <a class="nav-link text-black-50 fw-bolder" href="Shoerologue/login.do">로그인</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link text-black-50 fw-bolder" href="Shoerologue/join.do">회원가입</a>
+						  </li>
+					</c:if>
+					<!-- 로그인 했을때 -->
+					<c:if test="${member != null}">
+						  <li class="nav-item">
+						    <a class="nav-link text-black-50 fw-bolder" href="Shoerologue/login.do">${member.mName}님 환영합니다</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link text-black-50 fw-bolder" href="Shoerologue/join.do">로그아웃</a>
+						  </li>
+					</c:if>
 					</ul>
 				</nav>
 			</div>
@@ -547,18 +563,18 @@
 	<div class="row">
 	    <div class="swiper mySwiper slideSize slideH">
 		      <div class="swiper-wrapper">
-			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper1.png" alt="필라코디" ></div>
+			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/slide14.jpeg" alt="반스코디" ></div>
 			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/1582871130_20.jpg" alt="컨버스코디" ></div>
-			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper3.png" alt="뉴발란스코디" ></div>
+			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/slide15.jpg" alt="부츠코디" ></div>
 			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/slide5.jpg" alt="뉴발란스코디" ></div>
 			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/slide18.jpeg" alt="컨버스코디" ></div>
-			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper6.png" alt="닥터마틴코디" ></div>
-			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper8.png" alt="콜카신발" ></div>
-			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper9.png" alt="꼬무신신발" ></div>
+			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/slide7.jpg" alt="닥터마틴코디" ></div>
+			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/slide8.jpg" alt="샌들코디" ></div>
+			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/slide9.jpg" alt="나이키코디" ></div>
 			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/slide16.jpeg" alt="나이키코디" ></div>
-			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper10.png" alt="아디다스코디" ></div>
+			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/slide17.jpeg" alt="아디다스코디" ></div>
 			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/slide10.jpg" alt="컨버스코디" ></div>
-			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/swiper/swiper12.png" alt="반스코디" ></div>
+			        <div class="swiper-slide imageSize"><img class="image" src="resources/image/slide13jpeg.jpeg" alt="반스코디" ></div>
 		      </div>
 		    <div class="swiper-button-next"></div>
 		    <div class="swiper-button-prev"></div>
