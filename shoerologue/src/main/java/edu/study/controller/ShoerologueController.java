@@ -93,11 +93,6 @@ public class ShoerologueController {
 		return "shoerologue/myPage";
 	}
 	
-	@RequestMapping(value="/ff.do")
-	public String ff(Locale locale, Model model)throws Exception {
-		
-		return "shoerologue/ff";
-	}
 	
 	
 	/*--------------------------¥Ÿ¿±----------------------------------------------*/
