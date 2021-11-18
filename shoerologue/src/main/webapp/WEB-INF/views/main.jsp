@@ -6,6 +6,8 @@
 <%@ page import="edu.study.vo.*" %>
 <%
 	MemberVO vo =(MemberVO) session.getAttribute("member");
+	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
+	List<ProductVO> list = (List<ProductVO>)request.getAttribute("list");
 %>
 <html>
 	<head>
@@ -57,7 +59,7 @@
 						    <a class="nav-link text-black-50 fw-bolder" href="Shoerologue/login.do">로그인</a>
 						  </li>
 						  <li class="nav-item">
-						    <a class="nav-link text-black-50 fw-bolder" href="Shoerologue/join.do">회원가입</a>
+						    <a class="nav-link text-black-50 fw-bolder" href="Shoerologue/member/join.do">회원가입</a>
 						  </li>
 					</c:if>
 					<!-- 로그인 했을때 -->
@@ -227,22 +229,29 @@
 		  </div>
 		</div>
 	    </div>
-	     <!-- 핫딜 상품 -->
+	     <!-- 핫딜 상품 --> 
+	     <%
+			     if(list.size()>=3){
+			     for(int i=0; i<3;i++) {	    
+	    	 %>
 	     <div class="col-6 col-sm-6 col-md-3 col-lg-3 cardhover">
-	     <a href="Shoerologue/product/product.do">
+			<a href="Shoerologue/product/product.do?pidx=<%=list.get(i).getPidx()%>">
 		     <div class="card w-20">
 			  <img src="resources/image/hot1.jpg" class="card-img-top" alt="...">
 			  <div class="card-body">
-			    <h5 class="card-title brandtitle">컨버스</h5>
-			    <p class="card-text">척 70 하이</p>
-			    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
+			  	<h5 class="card-title brandtitle"><%=list.get(i).getpBrandKr()%></h5>
+			    <p class="card-text"><%=list.get(i).getpNameKr()%></p>
+			    <span class="card-text exitPrice"><del><%=list.get(i).getpPrice()%>원</del></span>&nbsp;
 			    <span class="card-text HotPrice">42,000</span>
 			    <span class="card-text HotPer">원 [57%]</span>
 			  </div>
 			</div>
 		  </a>
 	    </div>
-	    <div class="col-6 col-sm-6 col-md-3 col-lg-3 cardhover">
+	    <% } 
+		} %>
+	    
+	  <!--   <div class="col-6 col-sm-6 col-md-3 col-lg-3 cardhover">
 	     <a href="#">
 		     <div class="card w-20">
 			  <img src="resources/image/hot2.jpg" class="card-img-top" alt="...">
@@ -253,7 +262,7 @@
 			    <span class="card-text HotPrice">29,000</span>
 			    <span class="card-text HotPer">원 [62%]</span>
 			  </div>
-			</div>
+			</div>  
 		  </a>
 	    </div>
 	      <div class="col-6 col-sm-6 col-md-3 col-lg-3 cardhover">
@@ -269,7 +278,7 @@
 			  </div>
 			</div>
 		  </a>
-	    </div>
+	    </div> -->
 	</div>
 	</div>
 	
@@ -604,7 +613,7 @@
 	  <footer class="py-4">
 	    <div class="row">
 		  <div class="col-12 col-sm-12 col-md-4">
-		     <img class="banner-D" src="resources/image/mainlogo.png" alt="슈롤로그 로고"  width="45%">
+		     <img class="banner-D" src="resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고"  width="45%">
 		     <div class="d-flex w-100 gap-2"><br>
 			          ㈜ 슈롤로그 대표: 성기훈 | 주소 : 전라북도 전주시 덕진구 쌍문동 <br>
 				사업자 등록번호: 001-0456-000456 <br>통신판매업 신고: 제 2021-서울중구-1456호<br>

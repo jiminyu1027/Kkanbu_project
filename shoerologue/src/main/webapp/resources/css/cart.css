@@ -1,4 +1,6 @@
-
+		*{
+			font-family: 'Montserrat', "Noto Sans KR", sans-serif;
+		}
 		.text-left {
 			font-weight:700;
 			line-height: 1;
@@ -146,8 +148,8 @@
 		}
 		
 		.sectionBox{
-			width: 1100px;
-	   		margin: 0 auto;
+			float:right;
+	   		margin: 65px auto;
 		}
 		
 		.cartProd2{

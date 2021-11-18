@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="edu.study.vo.*" %>
+<%
+	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
+%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -385,7 +390,7 @@
 	  <div class="row">
 	  	  <!-- 로고 -->
 	      <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-              <a href="/main.do"><img class="banner-D" src="resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+              <a href="/main.do"><img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
               <div class="logo-scroll3"></div>
            </div>
         <!-- 검색창 -->   
@@ -400,15 +405,15 @@
 	     <!-- 마이페이지 찜목록 장바구니 -->
 	     <div class="col-0 col-sm-0 col-md-2 col-lg-3 d-flex justify-content-center align-items-center">
 			<ul class="iconul d-flex align-items-center icon-absolute">
-				<li class="iconli"><a href="#">
+				<li class="iconli"><a href="/Shoerologue/mypage/claim/myPage.do">
 					<i class="bi bi-person icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="#">
+				<li class="iconli"><a href="/Shoerologue/mypage/shopping/wishlist.do">
 					<i class="bi bi-heart icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="#">
+				<li class="iconli"><a href="/Shoerologue/cart/cart.do">
 					<i class="bi bi-bag icon"></i>
 					</a>
 				</li>
@@ -471,18 +476,6 @@
 		 <div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
 		      <ul class="navbar-nav me-auto mb-6 mb-lg-0">
 		      </ul>
-		      <ul class="nav justify-content-end"> 
-				  <li class="nav-item nav-fs">
-				    <a class="nav-link text-white fw-bolder" href="#hotdeal">#핫딜</a>
-				  </li>
-				  <li class="nav-item nav-fs">
-				    <a class="nav-link text-white fw-bolder" href="#best">#베스트</a>
-				  </li>
-				   <li class="nav-item nav-fs">
-				    <a class="nav-link text-white fw-bolder" href="#codi">#코디</a>
-				  </li>
-				</ul>
-				
 		    </div>
 		    <div class="col-0 col-sm-0 col-md-0 col-lg-2"></div>
 		</nav>
@@ -533,11 +526,11 @@
 							</svg></a>
 						</div>
 						<div class="pdContents">
-							<div class="caBrand" id="caBrand"><a href="#">컨버스 ></a></div><br>
-							<div class="pTitle" id="pTitle">척 70 하이</div>
-							<div class="pContents" id="pContents">Chuck 70 HI</div>
+							<div class="caBrand" id="caBrand"><a href="#"><%=pvo.getpBrandKr() %></a></div><br>
+							<div class="pTitle" id="pTitle"><%=pvo.getpNameKr() %></div>
+							<div class="pContents" id="pContents"><%=pvo.getpNameEng() %></div>
 							<br>
-							<span class="pPrice" id="pPrice"><del>99,000원</del></span>&nbsp;&nbsp;&nbsp;
+							<span class="pPrice" id="pPrice"><del><%=pvo.getpPrice() %>원</del></span>&nbsp;&nbsp;&nbsp;
 							<span class="salePrice" id="salePrice"> 59,000</span>
 							<span class="salePer" id="salePer"> 원 [40%]</span>
 						</div>
@@ -577,7 +570,7 @@
 								</tr>
 								<tr>
 									<th height=45>색상코드</th>
-									<td><span class="pColor" id="pColor">Cedar Bark/Midnight Navy/Egret</span></td>
+									<td><span class="pColor" id="pColor"></span></td>
 								</tr>
 								<tr>
 									<th>사이즈</th>
@@ -977,7 +970,7 @@
 	  <footer class="py-5">
 	    <div class="row">
 		  <div class="col-12 col-sm-12 col-md-4">
-		     <img class="banner-D" src="/resources/image/mainlogo.png" alt="슈롤로그 로고"  width="45%">
+		     <img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고"  width="45%">
 		     <div class="d-flex w-100 gap-2"><br>
 			          ㈜ 슈롤로그 대표: 성기훈 | 주소 : 전라북도 전주시 덕진구 쌍문동 <br>
 				사업자 등록번호: 001-0456-000456 <br>통신판매업 신고: 제 2021-서울중구-1456호<br>

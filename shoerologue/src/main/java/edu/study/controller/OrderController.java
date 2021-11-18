@@ -6,14 +6,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping(value="/Shoerologue")
+@RequestMapping(value="/Shoerologue/order")
 @Controller
 public class OrderController{
 	
 	@RequestMapping(value="/orderpayment.do")
 	public String orderpayment(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/mypage/order/orderpayment";
+		return "shoerologue/order/orderpayment";
 	}
 	
 }

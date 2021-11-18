@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="edu.study.mapper.ProductMapper">
+	 <select id="list" resultType="ProductVO">
+   		SELECT pidx
+					,pSaleYn
+					,pNameKr
+					,pNameEng
+					,pBrandKr
+					,pBrandEng
+					,pPrice
+					,pSize
+					,pColor
+					,pGender
+					,pType
+					,pFile1
+					,pFile2
+					,pFile3
+					,pFile4
+					,pFile5
+					,pWrite
+					,pDelYn
+   		FROM product
+   		WHERE 1=1
+   </select>
+
+	<select id="detail" resultType="ProductVO" parameterType="int">
+		SELECT pidx
+         			,pSaleYn
+					,pNameKr
+					,pNameEng
+					,pBrandKr
+					,pBrandEng
+					,pPrice
+					,pSize
+					,pColor
+					,pGender
+					,pType
+					,pFile1
+					,pFile2
+					,pFile3
+					,pFile4
+					,pFile5
+					,pWrite
+					,pDelYn
+   		FROM product
+        WHERE pidx = #{pidx}
+	</select>
+   
+</mapper>

@@ -26,7 +26,7 @@ public class ShoerologueController {
 	
 	@Autowired
 	MemberService MemberService;
-	
+
 	@RequestMapping(value="/login.do", method=RequestMethod.GET)
 	public String login(Locale locale, Model model, MemberVO vo)throws Exception {
 		model.addAttribute("vo", vo);

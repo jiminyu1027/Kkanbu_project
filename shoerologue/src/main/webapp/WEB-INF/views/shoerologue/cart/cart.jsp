@@ -1,95 +1,89 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+    
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-		<title>장바구니 | 슈롤로그</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 		
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-	
-		<link rel="stylesheet" href="/resources/css/style.css">
 
-		<!-- Bootstrap Font Icon CSS -->
+		<!-- Bootstrap Font Icon CSS 아이콘 -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-    
-		<link rel="stylesheet" href="/resources/css/headerFooter.css">	
-		<link rel="stylesheet" href="/resources/css/cart.css">			
-
+		<link rel="stylesheet" href="/resources/css/style.css">
+		<link rel="stylesheet" href="/resources/css/mypage.css">
+		<link rel="stylesheet" href="/resources/css/headerFooter.css">
+		<link rel="stylesheet" href="/resources/css/cart.css">
+		<script src="/js/jquery-3.6.0.min.js"></script>
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-		*{
-			font-family: 'Montserrat', "Noto Sans KR", sans-serif;
-		}
 	</style>
-	<script src="/js/jquery-3.6.0.min.js"></script>
-	</head>
+</head>
 <body>
-<!-- header -->
-<header>
 	<div class="container">
-	  <nav class="navbar navbar-expand-lg navbar-light topNav">
-	    <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-	    <ul class="nav justify-content-end">
-	      <li class="nav-item">
-	        <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/login.do">로그인</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/join.do">회원가입</a>
-	      </li>
-	    </ul>
-	  </nav>
-	</div>
+		<nav class="navbar navbar-expand-lg navbar-light topNav">
+		      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+		      <ul class="nav justify-content-end"> 
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/login.do">로그인</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/join.do">회원가입</a>
+				  </li>
+				</ul>
+			</nav>
+		</div>
+	
 	<!-- 로고, 검색창, 마이페이지 -->
 	<div class="container psts">
 	  <div class="row">
-	    <!-- 로고 -->
-	    <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-	      <a href="/main.do"><img class="banner-D" src="resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
-	      <div class="logo-scroll3"></div>
-	    </div>
-	    <!-- 검색창 -->
+	  	  <!-- 로고 -->
+	      <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
+              <a href="/main.do"><img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+              <div class="logo-scroll3"></div>
+           </div>
+        <!-- 검색창 -->   
 	    <div class="col-7 col-sm-7 col-md-6 col-lg-6 search">
 	      <form class="d-flex">
 	        <input class="form-control me-2 searchStyle" type="search" placeholder="검색어를 입력해주세요" aria-label="검색창">
-	        <button class="btn btn-outline" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-	            fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-	            <path
-	              d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-	          </svg></button>
+	        <button class="btn btn-outline" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" >
+			  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+			</svg></button>
 	      </form>
 	    </div>
-	    <!-- 마이페이지 찜목록 장바구니 -->
-		     <div class="col-0 col-sm-0 col-md-2 col-lg-3 d-flex justify-content-center align-items-center">
-				<ul class="iconul d-flex align-items-center icon-absolute">
-					<li class="iconli"><a href="/Shoerologue/ll.do">
-						<i class="bi bi-person icon"></i>
-						</a>
-					</li>
-					<li class="iconli"><a href="#">
-						<i class="bi bi-heart icon"></i>
-						</a>
-					</li>
-					<li class="iconli"><a href="#">
-						<i class="bi bi-bag icon"></i>
-						</a>
-					</li>
-				</ul>
-		    </div>
+	     <!-- 마이페이지 찜목록 장바구니 -->
+	     <div class="col-0 col-sm-0 col-md-2 col-lg-3 d-flex justify-content-center align-items-center">
+			<ul class="iconul d-flex align-items-center icon-absolute">
+				<li class="iconli"><a href="/Shoerologue/mypage/claim/myPage.do">
+					<i class="bi bi-person icon"></i>
+					</a>
+				</li>
+				<li class="iconli"><a href="/Shoerologue/mypage/shopping/wishlist.do">
+					<i class="bi bi-heart icon"></i>
+					</a>
+				</li>
+				<li class="iconli"><a href="/Shoerologue/cart/cart.do">
+					<i class="bi bi-bag icon"></i>
+					</a>
+				</li>
+			</ul>
+	    </div>
 	  </div>
 	</div>
 	<br>
 	
-<!-- 메인 네비게이션 바 -->
+	<!-- 메인 네비게이션 바 -->
 	<div class="row menu">
 		<nav class="navbar navbar-expand-lg navbar-light">
 		<div class="col-0 col-sm-0 col-md-0 col-lg-2 d-sm-none d-md-block d-none"></div>
-		<!-- 대분류 카테고리 -->
 		 <div class="col-10 col-sm-8 col-md-6 col-lg-5">
 			 <ul class="nav navMenu">
 			 	<li class="nav-item">
@@ -136,10 +130,73 @@
 				</li>
 			</ul>
 		</div>
-</header>
-<!-- 장바구니 section -->
-<section>
-	<div class="sectionBox">
+		 <div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
+		    </div>
+		    <div class="col-0 col-sm-0 col-md-0 col-lg-2"></div>
+		</nav>
+	</div>
+	
+	<!-- body  -->
+
+	<!-- 마이페이지 메인박스 -->
+	<div class="myPageMainBox">
+		<!-- 페이지 이동경로 -->
+		<div style=" float: left; width: 0%;">&nbsp;</div>
+		<div style=" float: left; width: 99%;" class="mt-3">
+			<span style="color:#757575; font-size:1em">
+				<a href="/main.do" style="color:#757575; font-size:1.1em">
+				<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-house-fill mb-1" viewBox="0 0 16 16">
+				  <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+				  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+				</svg>
+				HOME</a> 
+			> 마이페이지 > 나의 활동 > 장바구니
+			</span>
+		</div>
+		<!-- 좌측 마이페이지 메뉴-->
+		<div class="mt-3" style=" float: left; width: 19%;">
+		<div class="myPageMenu">
+			<div class="myPageTitle">
+				마이페이지
+			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">나의 주문관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="/Shoerologue/mypage/claim/myPage.do" class="gray">주문/배송 조회</a><br>
+					<a href="/Shoerologue/mypage/claim/orderCancel.do" class="gray">취소/교환/반품</a><br>
+					<a href="/Shoerologue/mypage/claim/insertCard.do" class="gray">카드 등록 관리</a>
+				</div><br>
+			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">나의 활동</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="/Shoerologue/cart/cart.do" class="red">장바구니*</a><br>
+					<a href="/Shoerologue/mypage/shopping/wishlist.do" class="gray">찜리스트</a><br>
+					<a href="/Shoerologue/mypage/shopping/qaList.do" class="gray">상품 Q&A</a><br>
+					<a href="/Shoerologue/mypage/claim/inquiryList.do" class="gray">1:1 문의</a><br>
+					<a href="/Shoerologue/mypage/shopping/myReview.do" class="gray">나의 리뷰</a>
+				</div><br>
+			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">내 정보 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="/Shoerologue/mypage/deliveryAddr/receiveAddr.do" class="gray">배송지 관리</a><br>
+					<a href="/Shoerologue/mypage/privateInfo/myInfoPwd.do" class="gray">개인 정보 수정</a><br>
+					<a href="/Shoerologue/member/leave.do" class="gray">회원 탈퇴</a>
+				</div>
+			</div>
+		</div>
+		</div>
+		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
+		
+		<!-- 마이페이지 메인 -->
+		<div class="sectionBox" style="width:81%">
 		<form name="Frm" action="orderpayment.do" method="POST">
 			<span  class="text-left">장바구니
 			<span id="insertCount">(0)</span>
@@ -158,7 +215,6 @@
 				</div>
 			</div>
 		</div>
-		
 		<!-- 장바구니 상품이 없을 경우 -->
 		<div class="cartNoItem">
 			<div class="flex-box">
@@ -167,7 +223,6 @@
 				  장바구니에 담겨 있는 상품이 없습니다.</div>
 			</div>
 		</div>
-		
 		<!-- 장바구니 상품이 있는 경우 -->
 		<div class="cartInItem">
 			<div class="flex-box">
@@ -218,7 +273,7 @@
 						</td>
 						<td>
 						<div>
-							<a href="/Shoerologue/orderpayment.do"> <input type="button" name="rightOrder" value="바로구매" id="rightOrder" class="orderbtn" onclick="goOrder(); return false;"> </a>
+							<a href="/Shoerologue/order/orderpayment.do"> <input type="button" name="rightOrder" value="바로구매" id="rightOrder" class="orderbtn" onclick="goOrder(); return false;"> </a>
 						</div>
 						<div>
 							<a href=""><input type="button" value="삭제" id="delbtn" class="delbtn" onclick=""></a>
@@ -281,13 +336,16 @@
 		</div>
 	</form>
 	</div>
-	<!-- 우측하단 TOP 이동 배너 -->
+	</div><br>
+	
+<!-- 우측하단 TOP 이동 배너 -->
 	<a href="#top">
 	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill top fixed" viewBox="0 0 16 16">
 	  <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
 	</svg></a>
-</section>
-<script>
+	
+	
+	<script>
 	$(document).ready(function(){
 		$("#allThing").click(function(){
 			if($("#allThing").is(":checked")) $("input[name=shoes]").prop("checked", true);
@@ -321,8 +379,8 @@
 		};
 	});
 	</script>
-
-<!-- footer -->
+	
+	<!-- footer -->
 	<div class="bg-light">
 		<div class="row footLine">
 			<div class="col-md-2"></div>
@@ -335,7 +393,7 @@
 	  <footer class="py-4">
 	    <div class="row">
 		  <div class="col-12 col-sm-12 col-md-4">
-		     <img class="banner-D" src="/resources/image/mainlogo.png" alt="슈롤로그 로고"  width="45%">
+		     <img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고"  width="45%">
 		     <div class="d-flex w-100 gap-2"><br>
 			          ㈜ 슈롤로그 대표: 성기훈 | 주소 : 전라북도 전주시 덕진구 쌍문동 <br>
 				사업자 등록번호: 001-0456-000456 <br>통신판매업 신고: 제 2021-서울중구-1456호<br>
@@ -378,15 +436,14 @@
 	    </div><br>
 	    <div class="justify-content-between pt-4 pb-1 mt-4 mb-1 border-top">
 	  	  사업자정보확인 | 개인정보처리방침 | 이용약관 | 멤버십 이용약관 | 위치 정보 서비스 이용약관 | 구매안전서비스 가입사실확인<br><br>
-	  	  <p/>
+	      <p/>
 	   	   본 상품의 상품 이미지 저작권은 ㈜깐부코리아에 있으며 내용의 무단복제를 금합니다.<br>
 	      COPYRIGHT &copy;KKANBU KOREA CO,LTD. ALL RIGHTS RESERVED.
 	    </div>
 	  </footer>
 	 </div>
-	</div>	
-	<!-- bootstrap js -->
+	</div>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	
 </body>
 </html>
