@@ -48,11 +48,12 @@ public class ClaimController {
 		
 		return "shoerologue/mypage/claim/orderCancel";
 	}
-	@RequestMapping(value="/inquiryList.do")
+	@RequestMapping(value="/inquiryContents.do")
 	public String inquiryList(Locale locale,Model model)throws Exception{
 		
-		return "shoerologue/mypage/claim/inquiryList";
+		return "shoerologue/mypage/claim/inquiryContents";
 	}
+	
 }
 
 	

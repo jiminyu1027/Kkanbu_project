@@ -158,7 +158,7 @@
 		    border: 0;
 		}
 		</style>
-		<script src="../js/jquery-3.6.0.min.js"></script>	
+		<script src="/js/jquery-3.6.0.min.js"></script>	
 		<script>	
 			function btnFn(){
 				var form = document.frm;
@@ -199,7 +199,7 @@
 	  <div class="row">
 	  	  <!-- 로고 -->
 	      <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-              <a href="/main.do"><img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+              <a href="/"><img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
               <div class="logo-scroll3"></div>
            </div>
         <!-- 검색창 -->   
@@ -296,11 +296,11 @@
 		
 		<div class="filter-box">
 			<div class="filter-title"><span id="filter-title"><center>고객센터</center></span></div>
-			<center><p><a href="/Shoerologue/cs.do" class="other">FAQ</a></p></center>
-			<center><p><a href="/CustomerService/notice.do" class="main">공지사항</a></p></center>
-			<center><p><a href="/CustomerService/inquiry.do" class="other">1:1 문의</a></p></center>
-			<center><p><a href="/CustomerService/qa.do" class="other">상품 QA</a></p></center>
-			<center><p><a href="/CustomerService/myReview.do" class="other">나의 리뷰</a></p></center>
+			<center><p><a href="/Shoerologue/customerService/cs.do" class="other">FAQ</a></p></center>
+			<center><p><a href="/Shoerologue/customerService/notice.do" class="main">공지사항</a></p></center>
+			<center><p><a href="/Shoerologue/mypage/memberCounsel/inquiry.do" class="other">1:1 문의</a></p></center>
+			<center><p><a href="#" class="other">고객의 소리</a></p></center>
+			<center><p><a href="#" class="other">회원 혜택 안내</a></p></center>
 			<hr>
 			<center><h5>슈롤샵 고객센터</h5></center>
 			<center><p class="comNum">1661-0332</p></center>
@@ -313,9 +313,10 @@
 			<center><div class="smft">신한 101-010-1010</div></center>
 			<center><div class="smft">농협 210-120-2151</div></center>
 			<center><div class="tsft">예금주:㈜깐부 글로벌</div></center>
+			
 		</div>
 		<div><span class="mainTitle">공지작성</span></div>
-		<form action="/CustomerService/notice.do" method="post" class="frm" id="frm" name="frm">
+		<form action="/Shoerologue/customerService/notice.do" method="post" class="frm" id="frm" name="frm">
 			<table class="ask-box">
 				<colgroup>
 					<col width="10%">
@@ -390,7 +391,7 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="/Shoerologue/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="/Shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>

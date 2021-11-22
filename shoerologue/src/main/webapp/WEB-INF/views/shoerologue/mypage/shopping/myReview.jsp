@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>나의 리뷰내역 | 슈롤로그</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 		
@@ -79,10 +79,10 @@
 		.mainTitle{
 			position:absolute;
 			font-size:30px;
-			font-style:strong;
-			margin-left:30px;
+			margin-left:280px;
 		}
 		.inquiry-box{
+			margin-top:15px;
 			width:73%;
 		}
 		.inquiry-title{
@@ -160,7 +160,7 @@
 	  <div class="row">
 	  	  <!-- 로고 -->
 	      <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-              <a href="/main.do"><img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+              <a href="/"><img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
               <div class="logo-scroll3"></div>
            </div>
         <!-- 검색창 -->   
@@ -252,9 +252,19 @@
 	</div>
 <!-- body  -->
 
-	<div class="empty-box"></div>
 	<div class="body-box">
-		
+	<div style=" float: left; width: 0%;">&nbsp;</div>
+	<div style=" float: left; width: 99%;" class="mt-3">
+		<span style="color:#757575; font-size:1em">
+			<a href="/main.do" style="color:#757575; font-size:1.1em">
+			<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-house-fill mb-1" viewBox="0 0 16 16">
+			  <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg>
+			HOME</a> 
+		> 마이페이지 > 나의 활동 > 1:1문의
+		</span>
+	</div>		
 	<!-- 좌측 마이페이지 메뉴-->
 		<div style=" float: left; width: 20%;">
 		<div class="myPageMenu">
@@ -279,7 +289,7 @@
 					<a href="/Shoerologue/cart/cart.do" class="gray">장바구니</a><br>
 					<a href="/Shoerologue/mypage/shopping/wishlist.do" class="gray">찜리스트</a><br>
 					<a href="/Shoerologue/mypage/shopping/qaList.do" class="gray">상품 Q&A</a><br>
-					<a href="/Shoerologue/mypage/claim/inquiryList.do" class="gray">1:1 문의</a><br>
+					<a href="/Shoerologue/mypage/memberCounsel/inquiry.do" class="gray">1:1 문의</a><br>
 					<a href="/Shoerologue/mypage/shopping/myReview.do" class="red">나의 리뷰*</a>
 				</div><br>
 			</div>
@@ -296,7 +306,9 @@
 		</div>
 		</div>
 		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
-		<div><span class="mainTitle">나의 리뷰</span></div>	
+		<div class="empty-box"></div>
+		<div class="empty-box"></div>
+		<div class="mainTitle">나의 리뷰</div>	
 		<br>
 		<br>	
 		<table class="inquiry-box">
@@ -314,7 +326,7 @@
 					<td class="inquiry-subject-detail"><a href="#">이빨로 물어뜯어도 전혀 해지지않는 튼튼한 재질의 가죽입니다 아주 좋아요 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</a></td>
 					<td class="inquiry-writeday-detail">2021-11-02</td>
 					<td class="inquiry-btn-detail">
-						<input type="button" value="수정" onclick="location.href='writeReview.do'">
+						<input type="button" value="수정" onclick="location.href='/Shoerologue/customerService/writeReview.do'">
 						<input type="button" value="삭제">
 					</td>
 				</tr>
@@ -372,7 +384,7 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="/Shoerologue/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="/Shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>

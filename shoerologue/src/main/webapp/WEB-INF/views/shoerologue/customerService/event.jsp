@@ -218,11 +218,11 @@
 		
 		<div class="filter-box">
 			<div class="filter-title"><span id="filter-title"><center>고객센터</center></span></div>
-			<center><p><a href="/Shoerologue/cs.do" class="other">FAQ</a></p></center>
-			<center><p><a href="/CustomerService/notice.do" class="main">공지사항</a></p></center>
-			<center><p><a href="/CustomerService/inquiry.do" class="other">1:1 문의</a></p></center>
-			<center><p><a href="/CustomerService/qa.do" class="other">상품 QA</a></p></center>
-			<center><p><a href="/CustomerService/myReview.do" class="other">나의 리뷰</a></p></center>
+			<center><p><a href="/Shoerologue/customerService/cs.do" class="other">FAQ</a></p></center>
+			<center><p><a href="/Shoerologue/customerService/notice.do" class="main">공지사항</a></p></center>
+			<center><p><a href="/Shoerologue/mypage/memberCounsel/inquiry.do" class="other">1:1 문의</a></p></center>
+			<center><p><a href="#" class="other">고객의 소리</a></p></center>
+			<center><p><a href="#" class="other">회원 혜택 안내</a></p></center>
 			<hr>
 			<center><h5>슈롤샵 고객센터</h5></center>
 			<center><p class="comNum">1661-0332</p></center>
@@ -234,7 +234,7 @@
 			<center><div class="smft">국민 010-101-0101</div></center>
 			<center><div class="smft">신한 101-010-1010</div></center>
 			<center><div class="smft">농협 210-120-2151</div></center>
-			<center><div class="tsft">예금주:㈜깐부 글로벌</div></center>
+			<center><div class="tsft">예금주:㈜깐부 글로벌</div></center>		
 		</div>
 		<h2><span class="red-font">E</span>vent</h2>
 		<table>

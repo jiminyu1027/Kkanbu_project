@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>1:1문의내용 | 슈롤로그</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 		
@@ -289,7 +289,7 @@
 				<tr><td style="border-bottom:1px solid gray; height:30px;" colspan="3"></td></tr>	
 			</tbody>
 		</table>
-		<input type="button" value="목록보기" onclick="location.href='inquiry.do'" class="btnFn" style="background-color:white;">
+		<input type="button" value="목록보기" onclick="location.href='/Shoerologue/mypage/memberCounsel/inquiry.do'" class="btnFn" style="background-color:white;">
 	</div>	
 	<div class="empty-box"></div>
 	<div class="empty-box"></div>
@@ -323,7 +323,7 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="/Shoerologue/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="/Shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>

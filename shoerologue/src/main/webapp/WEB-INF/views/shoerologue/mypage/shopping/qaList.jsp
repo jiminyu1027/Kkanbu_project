@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>상품 Q&A | 슈롤로그</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 		
@@ -104,20 +104,13 @@
 		.inquiry-writer{
 			text-align:center;
 		}
-		.answer-box{
-			width:120px;
-			height:45px;
-			border:1px solid black;
-			margin-left:970px;
-			text-align:center;
+		.btnBox{
+			width:100px;
+			height:50px;
 			background-color:white;
-			padding-top:10px;
-			font-size:14px;
-			font-weight:500;
-		}
-		.answer-link{
 			color:#111;
 			margin-top:auto;
+			margin-left:1007px;
 		}
 		.answer-ling:hover{
 			color:red;
@@ -158,7 +151,7 @@
 					    <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/login.do">로그인</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/join.do">회원가입</a>
+					    <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/member/join.do">회원가입</a>
 					  </li>
 					</ul>
 				</nav>
@@ -169,7 +162,7 @@
 	  <div class="row">
 	  	  <!-- 로고 -->
 	      <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-              <a href="/main.do"><img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+              <a href="/"><img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
               <div class="logo-scroll3"></div>
            </div>
         <!-- 검색창 -->   
@@ -301,7 +294,7 @@
 					<a href="/Shoerologue/cart/cart.do" class="gray">장바구니</a><br>
 					<a href="/Shoerologue/mypage/shopping/wishlist.do" class="gray">찜리스트</a><br>
 					<a href="/Shoerologue/mypage/shopping/qaList.do" class="red">상품 Q&A*</a><br>
-					<a href="/Shoerologue/mypage/claim/inquiryList.do" class="gray">1:1 문의</a><br>
+					<a href="/Shoerologue/mypage/memberCounsel/inquiry.do" class="gray">1:1 문의</a><br>
 					<a href="/Shoerologue/mypage/shopping/myReview.do" class="gray">나의 리뷰</a>
 				</div><br>
 			</div>
@@ -320,9 +313,7 @@
 		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
 		<div style=" float: left; width: 79%;" class="mt-5">
 		<div class="mainTitle">상품 Q&amp;A</div>
-		<div class="answer-box">
-			<a class="answer-link" href="/CustomerService/qaAsk.do">질문하기</a>
-		</div>
+			<button class="btnBox" onclick="location.href='/Shoerologue/admin/qaAsk.do'">질문하기</button>
 		<br>
 		<br>	
 		<table class="inquiry-box table table-hover">
@@ -343,7 +334,7 @@
 			<tbody>
 				<tr class="inquiry-contents-box">
 					<td class="inquiry-number-detail">1</td>
-					<td class="inquiry-subject-detail"><a href="/CustomerService/qaDetail.do">상품문의 1번째 제목입니다.</a></td>
+					<td class="inquiry-subject-detail"><a href="/Shoerologue/customerService/qaDetail.do">상품문의 1번째 제목입니다.</a></td>
 					<td class="inquiry-writeday-detail">2021-11-02</td>
 					<td class="inquiry-writer-detail">홍길동</td>
 				</tr>
@@ -395,7 +386,7 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="/Shoerologue/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="/Shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>

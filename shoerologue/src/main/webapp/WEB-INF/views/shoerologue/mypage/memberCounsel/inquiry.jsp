@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>1:1문의 내역 | 슈롤로그</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 		
@@ -17,6 +17,7 @@
     	<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"> -->
 	 	<link rel="stylesheet" href="/resources/css/style.css">
 		<link rel="stylesheet" href="/resources/css/headerFooter.css">
+		<link rel="stylesheet" href="/resources/css/mypage.css">
 		
 		<style>
       @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
@@ -78,8 +79,7 @@
 		.mainTitle{
 			position:absolute;
 			font-size:30px;
-			font-style:strong;
-			margin-left:30px;
+			margin-left:280px;
 		}
 		.inquiry-box{
 			width:70%;
@@ -102,14 +102,13 @@
 		.inquiry-writer{
 			text-align:center;
 		}
-		.answer-box{
-			width:80px;
-			height:25px;
-			border:1px solid black;
-			margin-left:1230px;
-			text-align:center;
-			border-radius:10px;
-			background-color:gray;
+		.btnBox{
+			width:100px;
+			height:50px;
+			margin-top:auto;
+			margin-left:880px;
+			background-color:white;
+			color:black;
 		}
 		.answer-link{
 			color:white;
@@ -150,7 +149,7 @@
 					    <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/login.do">로그인</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/join.do">회원가입</a>
+					    <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/member/join.do">회원가입</a>
 					  </li>
 					</ul>
 				</nav>
@@ -161,7 +160,7 @@
 	  <div class="row">
 	  	  <!-- 로고 -->
 	      <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-              <a href="/main.do"><img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+              <a href="/"><img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
               <div class="logo-scroll3"></div>
            </div>
         <!-- 검색창 -->   
@@ -251,35 +250,66 @@
 		    <div class="col-0 col-sm-0 col-md-0 col-lg-2"></div>
 		</nav>
 	</div>
-<!-- body  -->
-
-	<div class="empty-box"></div>
+<!-- body  -->	
 	<div class="body-box">
+	<div style=" float: left; width: 0%;">&nbsp;</div>
+		<div style=" float: left; width: 99%;" class="mt-3">
+			<span style="color:#757575; font-size:1em">
+				<a href="/main.do" style="color:#757575; font-size:1.1em">
+				<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-house-fill mb-1" viewBox="0 0 16 16">
+				  <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+				  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+				</svg>
+				HOME</a> 
+			> 마이페이지 > 나의 활동 > 1:1문의
+			</span>
+		</div>	
 		
-		<div class="filter-box">
-			<div class="filter-title"><span id="filter-title"><center>고객센터</center></span></div>
-			<center><p><a href="/Shoerologue/cs.do" class="other">FAQ</a></p></center>
-			<center><p><a href="/CustomerService/notice.do" class="other">공지사항</a></p></center>
-			<center><p><a href="/CustomerService/inquiry.do" class="main">1:1 문의</a></p></center>
-			<center><p><a href="/CustomerService/qa.do" class="other">상품 QA</a></p></center>
-			<center><p><a href="/CustomerService/myReview.do" class="other">나의 리뷰</a></p></center>
-			<hr>
-			<center><h5>슈롤샵 고객센터</h5></center>
-			<center><p class="comNum">1661-0332</p></center>
-			<center><div class="smft">평일 09:30~17:30</div></center>
-			<center><div class="smft">점심시간 13:00~14:00</div></center>
-			<center><div class="smft">주말·공휴일 휴무</div></center>
-			<hr>
-			<center><h5>은행계좌 안내</h5></center>
-			<center><div class="smft">국민 010-101-0101</div></center>
-			<center><div class="smft">신한 101-010-1010</div></center>
-			<center><div class="smft">농협 210-120-2151</div></center>
-			<center><div class="tsft">예금주:㈜깐부 글로벌</div></center>
+		<!-- 좌측 마이페이지 메뉴-->
+		<div style=" float: left; width: 20%;">
+		<div class="myPageMenu">
+			<div class="myPageTitle">
+				마이페이지
+			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">나의 주문관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="/Shoerologue/mypage/claim/myPage.do" class="gray">주문/배송 조회</a><br>
+					<a href="/Shoerologue/mypage/claim/orderCancel.do" class="gray">취소/교환/반품</a><br>
+					<a href="/Shoerologue/mypage/claim/insertCard.do" class="gray">카드 등록 관리</a>
+				</div><br>
+			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">나의 활동</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="/Shoerologue/cart/cart.do" class="gray">장바구니</a><br>
+					<a href="/Shoerologue/mypage/shopping/wishlist.do" class="gray">찜리스트</a><br>
+					<a href="/Shoerologue/mypage/shopping/qaList.do" class="gray">상품 Q&A</a><br>
+					<a href="/Shoerologue/mypage/memberCounsel/inquiry.do" class="red">1:1 문의*</a><br>
+					<a href="/Shoerologue/mypage/shopping/myReview.do" class="gray">나의 리뷰</a>
+				</div><br>
+			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">내 정보 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="/Shoerologue/mypage/deliveryAddr/receiveAddr.do" class="gray">배송지 관리</a><br>
+					<a href="/Shoerologue/mypage/privateInfo/myInfoPwd.do" class="gray">개인 정보 수정</a><br>
+					<a href="/Shoerologue/member/leave.do" class="gray">회원 탈퇴</a>
+				</div>
+			</div>
 		</div>
-		<div><span class="mainTitle">1:1문의</span></div>
-		<div class="answer-box">
-			<a class="answer-link" href="/CustomerService/ask.do">문의하기</a>
 		</div>
+		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
+		<div class="empty-box"></div>
+		<div class="empty-box"></div>
+		<div class="mainTitle">1:1문의</div>
+		<input type="button" class="btnBox" onclick="location.href='/Shoerologue/admin/inquiryAsk.do'" value="문의하기">
 		<br>
 		<br>	
 		<table class="inquiry-box table table-hover">
@@ -300,7 +330,7 @@
 			<tbody>
 				<tr class="inquiry-contents-box">
 					<td class="inquiry-number-detail">1</td>
-					<td class="inquiry-subject-detail"><a href="/CustomerService/inquiryDetail.do">1:1문의 1번째 제목입니다.</a></td>
+					<td class="inquiry-subject-detail"><a href="/Shoerologue/mypage/claim/inquiryContents.do">1:1문의 1번째 제목입니다.</a></td>
 					<td class="inquiry-writeday-detail">2021-11-02</td>
 					<td class="inquiry-writer-detail">홍길동</td>
 				</tr>
@@ -352,7 +382,7 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="/Shoerologue/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="/Shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
