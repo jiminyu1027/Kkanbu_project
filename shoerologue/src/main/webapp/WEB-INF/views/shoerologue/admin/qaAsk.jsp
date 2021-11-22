@@ -116,7 +116,7 @@
  		.cancel{
  			position:relative;
  			top:510px;
- 			left:500px;
+ 			left:550px;
  		}
  		.cancel-button{
  			width:150px;
@@ -127,7 +127,7 @@
  		.submit-button{
  			position:relative;
  			top:560px;
- 			left:680px;
+ 			left:730px;
  			width:150px;
  			height:50px;
  			background-color:black;

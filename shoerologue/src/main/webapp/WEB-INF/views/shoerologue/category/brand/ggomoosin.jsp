@@ -346,7 +346,7 @@
 					    <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/login.do">로그인</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/join.do">회원가입</a>
+					    <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/member/join.do">회원가입</a>
 					  </li>
 					</ul>
 				</nav>
@@ -357,7 +357,7 @@
 	  <div class="row">
 	  	  <!-- 로고 -->
 	      <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-              <a href="/main.do"><img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+              <a href="/"><img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
               <div class="logo-scroll3"></div>
            </div>
         <!-- 검색창 -->   
@@ -692,7 +692,7 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="/Shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
