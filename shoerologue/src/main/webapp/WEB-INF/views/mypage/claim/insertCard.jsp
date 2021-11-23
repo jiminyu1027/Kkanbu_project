@@ -6,11 +6,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
@@ -32,8 +30,8 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="/resources/css/style.css">
-<link rel="stylesheet" href="/resources/css/headerFooter.css">
+<link rel="stylesheet" href="/shoerologue/resources/css/style.css">
+<link rel="stylesheet" href="/shoerologue/resources/css/headerFooter.css">
 <style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 		*{
@@ -174,10 +172,10 @@
 			<ul class="nav justify-content-end">
 				<li class="nav-item"><a
 					class="nav-link text-black-50 fw-bolder"
-					href="/Shoerologue/login.do">로그인</a></li>
+					href="/shoerologue/login.do">로그인</a></li>
 				<li class="nav-item"><a
 					class="nav-link text-black-50 fw-bolder"
-					href="/Shoerologue/join.do">회원가입</a></li>
+					href="/shoerologue/member/join.do">회원가입</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -188,8 +186,8 @@
 			<!-- 로고 -->
 			<div
 				class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-				<a href="/main.do"><img class="banner-D"
-					src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+				<a href="/shoerologue"><img class="banner-D"
+					src="/shoerologue/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
 				<div class="logo-scroll3"></div>
 			</div>
 			<!-- 검색창 -->
@@ -209,15 +207,15 @@
 			<!-- 마이페이지 찜목록 장바구니 -->
 			<div class="col-0 col-sm-0 col-md-2 col-lg-3 d-flex justify-content-center align-items-center">
 			<ul class="iconul d-flex align-items-center icon-absolute">
-				<li class="iconli"><a href="/Shoerologue/mypage/claim/myPage.do">
+				<li class="iconli"><a href="/shoerologue/mypage/claim/myPage.do">
 					<i class="bi bi-person icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="/Shoerologue/mypage/shopping/wishlist.do">
+				<li class="iconli"><a href="/shoerologue/mypage/shopping/wishlist.do">
 					<i class="bi bi-heart icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="/Shoerologue/cart/cart.do">
+				<li class="iconli"><a href="/shoerologue/cart/cart.do">
 					<i class="bi bi-bag icon"></i>
 					</a>
 				</li>
@@ -370,9 +368,9 @@
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="/Shoerologue/mypage/claim/myPage.do" class="gray">주문/배송 조회</a><br>
-					<a href="/Shoerologue/mypage/claim/orderCancel.do" class="gray">취소/교환/반품</a><br>
-					<a href="/Shoerologue/mypage/claim/insertCard.do" class="red">카드 등록 관리*</a>
+					<a href="/shoerologue/mypage/claim/myPage.do" class="gray">주문/배송 조회</a><br>
+					<a href="/shoerologue/mypage/claim/orderCancel.do" class="gray">취소/교환/반품</a><br>
+					<a href="/shoerologue/mypage/claim/insertCard.do" class="red">카드 등록 관리*</a>
 				</div><br>
 			</div>
 			<div class="myPageMenu2">
@@ -380,11 +378,11 @@
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="/Shoerologue/cart/cart.do" class="gray">장바구니</a><br>
-					<a href="/Shoerologue/mypage/shopping/wishlist.do" class="gray">찜리스트</a><br>
-					<a href="/Shoerologue/mypage/shopping/qaList.do" class="gray">상품 Q&A</a><br>
-					<a href="/Shoerologue/mypage/claim/inquiryList.do" class="gray">1:1 문의</a><br>
-					<a href="/Shoerologue/mypage/shopping/myReview.do" class="gray">나의 리뷰</a>
+					<a href="/shoerologue/cart/cart.do" class="gray">장바구니</a><br>
+					<a href="/shoerologue/mypage/shopping/wishlist.do" class="gray">찜리스트</a><br>
+					<a href="/shoerologue/mypage/shopping/qaList.do" class="gray">상품 Q&A</a><br>
+					<a href="/shoerologue/mypage/claim/inquiryList.do" class="gray">1:1 문의</a><br>
+					<a href="/shoerologue/mypage/shopping/myReview.do" class="gray">나의 리뷰</a>
 				</div><br>
 			</div>
 			<div class="myPageMenu2">
@@ -392,9 +390,9 @@
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="/Shoerologue/mypage/deliveryAddr/receiveAddr.do" class="gray">배송지 관리</a><br>
-					<a href="/Shoerologue/mypage/privateInfo/myInfoPwd.do" class="gray">개인 정보 수정</a><br>
-					<a href="/Shoerologue/member/leave.do" class="gray">회원 탈퇴</a>
+					<a href="/shoerologue/mypage/deliveryAddr/receiveAddr.do" class="gray">배송지 관리</a><br>
+					<a href="/shoerologue/mypage/privateInfo/myInfoPwd.do" class="gray">개인 정보 수정</a><br>
+					<a href="/shoerologue/member/leave.do" class="gray">회원 탈퇴</a>
 				</div>
 			</div>
 		</div>
@@ -438,7 +436,7 @@
 								<div class="nos2">
 									<div class="nos-card">
 										<div class="nos-card1">
-											<form action="/ShoeRologue/card/cardadd.do" method="post"
+											<form action="/shoeRologue/card/cardadd.do" method="post"
 												id="frm" name="frm" onsubmit="return loginChk()">
 												<a href="#" onClick="return false;"><span
 													class="nos-card1not"><i class="far fa-times-circle"></i></span></a>
@@ -631,7 +629,7 @@
 			<footer class="py-4">
 				<div class="row">
 					<div class="col-12 col-sm-12 col-md-4">
-						<img class="banner-D" src="/resources/image/mainLogo/mainlogo.png"
+						<img class="banner-D" src="/shoerologue/resources/image/mainLogo/mainlogo.png"
 							alt="슈롤로그 로고" width="45%">
 						<div class="d-flex w-100 gap-2">
 							<br> ㈜ 슈롤로그 대표: 성기훈 | 주소 : 전라북도 전주시 덕진구 쌍문동 <br> 사업자
