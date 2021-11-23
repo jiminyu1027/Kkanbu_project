@@ -1,0 +1,278 @@
+*{
+font-family: 'Montserrat', "Noto Sans KR", sans-serif;
+}
+
+.bigBox{
+	margin:auto;
+	width:1200px;
+}
+
+li{
+	list-style:none;
+}
+
+.channel{
+	margin-top:20px;
+	color:#999999;
+}
+
+.channel>ul>li{
+	display:inline;
+}
+
+.channel>ul>li>a{
+	color:#999999;
+}
+
+.brandName{
+	margin:auto;
+	margin-top:30px;
+	font-weight:700;
+	text-align:center;
+	font-size:29pt;
+}
+
+.shoesList>ul>li{
+	display:inline;
+	text-align:center;
+	margin-right:45px;
+	font-size:13pt;
+	font-weight:400;
+}
+
+.shoesList>ul>li>a:hover{
+	color:gray;
+}
+
+.shoesList{
+	margin:auto;
+	margin-top:30px;
+	margin-bottom:45px;
+	text-align:center;
+}
+
+.redBold{
+	color:red;
+	font-weight:500;
+}
+
+.totalPd{
+	text-align:left;
+	margin-left:5px;
+	margin-top:10px;
+	float:left;
+}
+
+.selection{
+	text-align:right;
+}
+
+.selection>select{
+	border:0px;
+	width:150px;
+	height:40px;
+	margin-right:10px;
+}
+
+.selection>select:focus{
+	border:0px;
+	outline:none;
+}
+
+.hr1{
+	border:1px solid black;
+}
+
+.page{
+	text-align:center;
+	margin-top:40px;
+	height:150px;
+	clear:left;
+}
+
+.brandBanner>img{
+	width:100%;
+	margin:35px 0px;
+}
+
+.bestBox{
+	height:460px;
+}
+
+.bestTitle{
+	font-weight:700;
+	font-size:16pt;
+	margin:6px;
+}
+
+.bestPd{
+	width:224px;
+	float:left;
+	margin:6.7px;
+	position:relative;
+}
+
+.bestPd:hover{
+	border:1px solid black;
+	position:relative;
+}
+
+.bestPd>a>img{
+	width:222px;
+	height:222px;
+	margin-bottom:10px;
+}
+
+.shoesBrand{
+	font-weight:400;
+	font-size:12pt;
+	margin:10px 5px;
+}
+
+.shoesName{
+	color:#666666;
+	margin-bottom:20px;
+	margin-left:5px;
+}
+
+.shoesPrice{
+	font-weight:700;
+	font-size:14pt;
+}
+
+.won{
+	color:black;
+}
+
+.shoesPriceBox{
+	margin-left:5px;
+}
+
+.ranking{
+	width:50px;
+	height:50px;
+	background-color:black;
+	color:white;
+	font-weight:700;
+	font-size:19pt;
+	text-align:center;
+	padding-top:6px;
+	position:absolute;
+}
+
+.ranking1{
+	width:50px;
+	height:50px;
+	background-color:#EE1C25;
+	color:white;
+	font-weight:700;
+	font-size:19pt;
+	text-align:center;
+	padding-top:6px;
+	position:absolute;
+}
+
+input[type=range]:focus{
+	border:1px solid red;
+}
+
+.filterBox{
+	background-color:white;
+	width:290px;
+	padding:20px;
+	display:inline-block;
+}
+.filterTitle{
+	font-weight:700;
+	font-size:18pt;
+	margin-bottom:20px;
+}
+h6{
+	height:50px;
+	padding-top:15px;
+	padding-bottom:15px;
+	border-bottom:1px solid gray;
+}
+
+input[type=checkbox]{
+	display:none;
+}
+
+.brandBox{
+	float:right;
+}
+
+.brandPd{
+	width:282px;
+	float:left;
+	margin:9px;
+	height:415px;
+}
+
+.brandPd:hover{
+	border:1px solid black;
+}
+
+.brandPd>a>img{
+	width:280px;
+	height:280px;
+	margin-bottom:10px;
+}
+
+.brandPdSmBox{
+	width:900px;
+	height:440px;
+}
+.bg-light{
+	clear:left;
+	clear:right;
+}
+.filterGender>input[type=checkbox]+label{
+	display: inline-block; 
+	cursor: pointer; 
+	padding:4px;
+	background-color:white;
+	border:1px solid gray;
+	font-size:13px;
+	width:80px;
+	height:30px;
+	text-align:center;
+}
+
+.filterGender>input[type=checkbox]:checked+label{
+	border:1px solid #EE1C25;
+	color:#EE1C25;
+}
+
+.filterSize>input[type=checkbox]+label{
+	display: inline-block; 
+	cursor: pointer; 
+	padding:2px;
+	margin:4px 1px;
+	background-color:white;
+	border:1px solid gray;
+	font-size:13px;
+	width:43px;
+	height:25px;
+	text-align:center;
+}
+
+.filterSize>input[type=checkbox]:checked+label{
+	border:1px solid #EE1C25;
+	color:#EE1C25;
+}
+
+.filterColor>input[type=checkbox]+label{
+	display: inline-block; 
+	cursor: pointer;
+	margin:2px 0;
+}
+
+.filterColor>input[type=checkbox]:checked+label>img{
+	border:3px double black;
+}
+
+.filterColor>input[type=checkbox]+label>img{
+	width:28px;
+	height:28px;
+}

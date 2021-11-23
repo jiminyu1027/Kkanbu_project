@@ -16,9 +16,8 @@
 		<!-- Bootstrap Font Icon CSS 아이콘 -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-		<link rel="stylesheet" href="/resources/css/style.css">
-		
-		<link rel="stylesheet" href="/resources/css/headerFooter.css">
+		<link rel="stylesheet" href="/shoerologue/resources/css/style.css">
+		<link rel="stylesheet" href="/shoerologue/resources/css/headerFooter.css">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		
@@ -154,10 +153,10 @@
 			      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 			      <ul class="nav justify-content-end"> 
 					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/login.do">로그인</a>
+					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/join.do">회원가입</a>
+					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/member/join.do">회원가입</a>
 					  </li>
 					</ul>
 				</nav>
@@ -168,7 +167,7 @@
 	  <div class="row">
 	  	  <!-- 로고 -->
 	      <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-              <a href="/main.do"><img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+              <a href="/shoerologue"><img class="banner-D" src="/shoerologue/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
               <div class="logo-scroll3"></div>
            </div>
         <!-- 검색창 -->   
@@ -183,15 +182,15 @@
 	     <!-- 마이페이지 찜목록 장바구니 -->
 	     <div class="col-0 col-sm-0 col-md-2 col-lg-3 d-flex justify-content-center align-items-center">
 			<ul class="iconul d-flex align-items-center icon-absolute">
-				<li class="iconli"><a href="#">
+				<li class="iconli"><a href="/shoerologue/mypage/claim/myPage.do">
 					<i class="bi bi-person icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="#">
+				<li class="iconli"><a href="/shoerologue/mypage/shopping/wishlist.do">
 					<i class="bi bi-heart icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="#">
+				<li class="iconli"><a href="/shoerologue/cart/cart.do">
 					<i class="bi bi-bag icon"></i>
 					</a>
 				</li>
@@ -208,65 +207,53 @@
 		 <div class="col-10 col-sm-8 col-md-6 col-lg-5">
 			 <ul class="nav navMenu">
 			 	<li class="nav-item">
-				<a class="nav-link fw-bolder text-white nav-fs" href="/Shoerologue/category/brand.do">BRAND</a>
+				<a class="nav-link fw-bolder text-white nav-fs" href="/shoerologue/category/brand.do">BRAND</a>
 				</li>
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/Shoerologue/category/gender/men.do" role="button" aria-expanded="false">MEN</a>
+				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/men.do" role="button" aria-expanded="false">MEN</a>
 				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
-				    	<li><a class="dropdown-item fw-bolder" href="/Shoerologue/category/gender/men.do">MEN</a></li>
+				    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/men.do">MEN</a></li>
 				   		<li><hr class="dropdown-divider "></li>
-					 	<li><a class="dropdown-item" href="/Shoerologue/category/gender/men/sneakers.do">운동화</a></li>
-					 	<li><a class="dropdown-item" href="/Shoerologue/category/gender/men/sports.do">스포츠</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/men/dressShoes.do">구두</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/men/sandle.do">샌들</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/men/casual.do">캐주얼</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/men/boots.do">부츠</a></li>
+					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/men/sneakers.do">운동화</a></li>
+					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/men/sports.do">스포츠</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/dressShoes.do">구두</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/sandle.do">샌들</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/casual.do">캐주얼</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/boots.do">부츠</a></li>
 				    </ul>
 				</li>
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/Shoerologue/category/gender/women.do" role="button" aria-expanded="false">WOMEN</a>
+				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/women.do" role="button" aria-expanded="false">WOMEN</a>
 				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
-				    	<li><a class="dropdown-item fw-bolder" href="/Shoerologue/category/gender/women.do">WOMEN</a></li>
+				    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/women.do">WOMEN</a></li>
 				   		<li><hr class="dropdown-divider"></li>
-					 	<li><a class="dropdown-item" href="/Shoerologue/category/gender/women/sneakers.do">운동화</a></li>
-					 	<li><a class="dropdown-item" href="/Shoerologue/category/gender/women/sports.do">스포츠</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/women/dressShoes.do">구두</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/women/sandle.do">샌들</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/women/casual.do">캐주얼</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/women/boots.do">부츠</a></li>
+					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/women/sneakers.do">운동화</a></li>
+					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/women/sports.do">스포츠</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/dressShoes.do">구두</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/sandle.do">샌들</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/casual.do">캐주얼</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/boots.do">부츠</a></li>
 				    </ul>
 				</li>
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/Shoerologue/category/gender/kids.do" role="button" aria-expanded="false">KIDS</a>
+				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/kids.do" role="button" aria-expanded="false">KIDS</a>
 				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
-				    	<li><a class="dropdown-item fw-bolder" href="/Shoerologue/category/gender/kids.do">KIDS</a></li>
+				    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/kids.do">KIDS</a></li>
 				   		<li><hr class="dropdown-divider"></li>
-					 	<li><a class="dropdown-item" href="/Shoerologue/category/gender/kids/sneakers.do">운동화</a></li>
-					 	<li><a class="dropdown-item" href="/Shoerologue/category/gender/kids/sports.do">스포츠</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/kids/dressShoes.do">구두</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/kids/sandle.do">샌들</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/kids/casual.do">캐주얼</a></li>
-					    <li><a class="dropdown-item" href="/Shoerologue/category/gender/kids/boots.do">부츠</a></li>
+					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/kids/sneakers.do">운동화</a></li>
+					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/kids/sports.do">스포츠</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/dressShoes.do">구두</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/sandle.do">샌들</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/casual.do">캐주얼</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/boots.do">부츠</a></li>
 				    </ul>
 				</li>
 			</ul>
 		</div>
 		 <div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
-		      <ul class="navbar-nav me-auto mb-6 mb-lg-0">
-		      </ul>
-		      <ul class="nav justify-content-end"> 
-				  <li class="nav-item nav-fs">
-				    <a class="nav-link text-white fw-bolder" href="#hotdeal">#핫딜</a>
-				  </li>
-				  <li class="nav-item nav-fs">
-				    <a class="nav-link text-white fw-bolder" href="#best">#베스트</a>
-				  </li>
-				   <li class="nav-item nav-fs">
-				    <a class="nav-link text-white fw-bolder" href="#codi">#코디</a>
-				  </li>
-				</ul>
-				
-		    </div>
+		     <ul class="navbar-nav me-auto mb-6 mb-lg-0">
+		     </ul>
+		 </div>
 		    <div class="col-0 col-sm-0 col-md-0 col-lg-2"></div>
 		</nav>
 	</div>
@@ -279,24 +266,24 @@
 				<li><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
 				  <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
 				</svg>
-				<a href="/main.do">HOME</a></li>&nbsp;&nbsp;>&nbsp;&nbsp;
-				<li><a href="/Shoerologue/category/brand.do">BRAND</a></li>
+				<a href="/shoerologue">HOME</a></li>&nbsp;&nbsp;>&nbsp;&nbsp;
+				<li><a href="/shoerologue/category/brand.do">BRAND</a></li>
 			</ul>
 		</div>
 		<div class="brandBox">
 			<div class="brandTitle">BRAND</div>
 			<div class="bestBrandList">
 				<ul>
-					<li><a href="/Shoerologue/category/brand/nike.do"><img src="/resources/image/brandlogo/nike.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/adidas.do"><img src="/resources/image/brandlogo/adidas.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/newbalance.do"><img src="/resources/image/brandlogo/newbalance.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/converse.do"><img src="/resources/image/brandlogo/converse.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/vans.do"><img src="/resources/image/brandlogo/vans.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/reebok.do"><img src="/resources/image/brandlogo/reebok.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/nuovo.do"><img src="/resources/image/brandlogo/nuovo.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/jordan.do"><img src="/resources/image/brandlogo/jordan.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/puma.do"><img src="/resources/image/brandlogo/puma.png"></a></li>
-					<li><a href="/Shoerologue/category/brand/hawkins.do"><img src="/resources/image/brandlogo/hawkins.png"></a></li>
+					<li><a href="/shoerologue/category/brand/nike.do"><img src="/shoerologue/resources/image/brandlogo/nike.png"></a></li>
+					<li><a href="/shoerologue/category/brand/adidas.do"><img src="/shoerologue/resources/image/brandlogo/adidas.png"></a></li>
+					<li><a href="/shoerologue/category/brand/newbalance.do"><img src="/shoerologue/resources/image/brandlogo/newbalance.png"></a></li>
+					<li><a href="/shoerologue/category/brand/converse.do"><img src="/shoerologue/resources/image/brandlogo/converse.png"></a></li>
+					<li><a href="/shoerologue/category/brand/vans.do"><img src="/shoerologue/resources/image/brandlogo/vans.png"></a></li>
+					<li><a href="/shoerologue/category/brand/reebok.do"><img src="/shoerologue/resources/image/brandlogo/reebok.png"></a></li>
+					<li><a href="/shoerologue/category/brand/nuovo.do"><img src="/shoerologue/resources/image/brandlogo/nuovo.png"></a></li>
+					<li><a href="/shoerologue/category/brand/jordan.do"><img src="/shoerologue/resources/image/brandlogo/jordan.png"></a></li>
+					<li><a href="/shoerologue/category/brand/puma.do"><img src="/shoerologue/resources/image/brandlogo/puma.png"></a></li>
+					<li><a href="/shoerologue/category/brand/hawkins.do"><img src="/shoerologue/resources/image/brandlogo/hawkins.png"></a></li>
 				</ul>
 			</div>
 		</div>
@@ -349,7 +336,7 @@
 				<div class="brandFirstInit" id="initA">A</div>
 				<div class="brandName">
 					<ul>
-						<li><a href="/Shoerologue/category/brand/adidas.do">ADIDAS</a></li>
+						<li><a href="/shoerologue/category/brand/adidas.do">ADIDAS</a></li>
 						<li><a href="#">AKIII CLASSIC</a></li>
 						<li><a href="#">ASICS</a></li>
 					</ul>
@@ -358,7 +345,7 @@
 				<div class="brandFirstInit" id="initB">B</div>
 				<div class="brandName">
 					<ul>
-						<li><a href="/Shoerologue/category/brand/bearpaw.do">BEARPAW</a></li>
+						<li><a href="/shoerologue/category/brand/bearpaw.do">BEARPAW</a></li>
 						<li><a href="#">BIRKENSTOCK</a></li>
 						<li><a href="#">BSQTBYCLASSY</a></li>
 						<li><a href="#">Box&amp;Cox</a></li>
@@ -370,7 +357,7 @@
 					<ul>
 						<li><a href="#">CATCHBALL</a></li>
 						<li><a href="#">COCOMODS</a></li>
-						<li><a href="/Shoerologue/category/brand/converse.do">CONVERSE</a></li>
+						<li><a href="/shoerologue/category/brand/converse.do">CONVERSE</a></li>
 						<li><a href="#">CROCS</a></li>
 					</ul>
 				</div>
@@ -407,7 +394,7 @@
 				<div class="brandFirstInit" id="initG">G</div>
 				<div class="brandName">
 					<ul>
-						<li><a href="/Shoerologue/category/brand/ggomoosin.do">GGOMOOSIN</a></li>
+						<li><a href="/shoerologue/category/brand/ggomoosin.do">GGOMOOSIN</a></li>
 						<li><a href="#">GIANCARIO MORELLI</a></li>
 						<li><a href="#">GRENDENE</a></li>
 						<li><a href="#">gravis</a></li>
@@ -417,7 +404,7 @@
 				<div class="brandFirstInit" id="initH">H</div>
 				<div class="brandName">
 					<ul>
-						<li><a href="/Shoerologue/category/brand/hawkins.do">HAWKINS</a></li>
+						<li><a href="/shoerologue/category/brand/hawkins.do">HAWKINS</a></li>
 						<li><a href="#">HUNTER</a></li>
 					</ul>
 				</div>
@@ -433,7 +420,7 @@
 				<div class="brandName">
 					<ul>
 						<li><a href="#">J.DAUL</a></li>
-						<li><a href="/Shoerologue/category/brand/jordan.do">JORDAN</a></li>
+						<li><a href="/shoerologue/category/brand/jordan.do">JORDAN</a></li>
 					</ul>
 				</div>
 				<hr>
@@ -468,9 +455,9 @@
 				<div class="brandFirstInit" id="initN">N</div>
 				<div class="brandName">
 					<ul>
-						<li><a href="/Shoerologue/category/brand/newbalance.do">NEW BALANCE</a></li>
-						<li><a href="/Shoerologue/category/brand/brandNike.do">NIKE</a></li>
-						<li><a href="/Shoerologue/category/brand/nuovo.do">NUOVO</a></li>
+						<li><a href="/shoerologue/category/brand/newbalance.do">NEW BALANCE</a></li>
+						<li><a href="/shoerologue/category/brand/brandNike.do">NIKE</a></li>
+						<li><a href="/shoerologue/category/brand/nuovo.do">NUOVO</a></li>
 					</ul>
 				</div>
 				<hr>
@@ -481,16 +468,16 @@
 						<li><a href="#">POPSOCKETS</a></li>
 						<li><a href="#">POSE GANCH</a></li>
 						<li><a href="#">PRO-SPECS</a></li>
-						<li><a href="/Shoerologue/category/brand/puma.do">PUMA</a></li>
+						<li><a href="/shoerologue/category/brand/puma.do">PUMA</a></li>
 					</ul>
 				</div>
 				<hr>
 				<div class="brandFirstInit" id="initR">R</div>
 				<div class="brandName">
 					<ul>
-						<li><a href="/Shoerologue/category/brand/rarago.do">RARAGO</a></li>
+						<li><a href="/shoerologue/category/brand/rarago.do">RARAGO</a></li>
 						<li><a href="#">RED WING</a></li>
-						<li><a href="/Shoerologue/category/brand/reebok.do">REEBOK</a></li>
+						<li><a href="/shoerologue/category/brand/reebok.do">REEBOK</a></li>
 						<li><a href="#">REVE</a></li>
 						<li><a href="#">ROCKFISH</a></li>
 					</ul>
@@ -530,7 +517,7 @@
 				<div class="brandFirstInit" id="initV">V</div>
 				<div class="brandName">
 					<ul>
-						<li><a href="/Shoerologue/category/brand/vans.do">VANS</a></li>
+						<li><a href="/shoerologue/category/brand/vans.do">VANS</a></li>
 						<li><a href="#">VEJA</a></li>
 						<li><a href="#">VERBENAS</a></li>
 						<li><a href="#">VLADO</a></li>
@@ -557,16 +544,16 @@
 					<ul>
 						<li><a href="#">그라비스</a></li>
 						<li><a href="#">그랜대네</a></li>
-						<li><a href="/Shoerologue/category/brand/ggomoosin.do">꼬무신</a></li>
+						<li><a href="/shoerologue/category/brand/ggomoosin.do">꼬무신</a></li>
 					</ul>
 				</div>
 				<hr>
 				<div class="brandFirstInit" id="initHanB">ㄴ</div>
 				<div class="brandName">
 					<ul>
-						<li><a href="/Shoerologue/category/brand/brandNike.do">나이키</a></li>
-						<li><a href="/Shoerologue/category/brand/nuovo.do">누오보</a></li>
-						<li><a href="/Shoerologue/category/brand/newbalance.do">뉴발란스</a></li>
+						<li><a href="/shoerologue/category/brand/brandNike.do">나이키</a></li>
+						<li><a href="/shoerologue/category/brand/nuovo.do">누오보</a></li>
+						<li><a href="/shoerologue/category/brand/newbalance.do">뉴발란스</a></li>
 					</ul>
 				</div>
 				<hr>
@@ -585,12 +572,12 @@
 				<div class="brandFirstInit" id="initHanD">ㄹ</div>
 				<div class="brandName">
 					<ul>
-						<li><a href="/Shoerologue/category/brand/rarago.do">라라고</a></li>
+						<li><a href="/shoerologue/category/brand/rarago.do">라라고</a></li>
 						<li><a href="#">라코스테</a></li>
 						<li><a href="#">락피쉬</a></li>
 						<li><a href="#">레드윙</a></li>
 						<li><a href="#">레브</a></li>
-						<li><a href="/Shoerologue/category/brand/reebok.do">리복</a></li>
+						<li><a href="/shoerologue/category/brand/reebok.do">리복</a></li>
 						<li><a href="#">리틀다이애나</a></li>
 					</ul>
 				</div>
@@ -610,10 +597,10 @@
 				<div class="brandName">
 					<ul>
 						<li><a href="#">박스앤콕스</a></li>
-						<li><a href="/Shoerologue/category/brand/vans.do">반스</a></li>
+						<li><a href="/shoerologue/category/brand/vans.do">반스</a></li>
 						<li><a href="#">버켄스탁</a></li>
 						<li><a href="#">베르베나스</a></li>
-						<li><a href="/Shoerologue/category/brand/bearpaw.do">베어파우</a></li>
+						<li><a href="/shoerologue/category/brand/bearpaw.do">베어파우</a></li>
 						<li><a href="#">베자</a></li>
 						<li><a href="#">블라도</a></li>
 						<li><a href="#">비에스큐티바이클래시</a></li>
@@ -638,7 +625,7 @@
 				<div class="brandFirstInit" id="initHanH">ㅇ</div>
 				<div class="brandName">
 					<ul>
-						<li><a href="/Shoerologue/category/brand/adidas.do">아디다스</a></li>
+						<li><a href="/shoerologue/category/brand/adidas.do">아디다스</a></li>
 						<li><a href="#">아식스</a></li>
 						<li><a href="#">아키클래식</a></li>
 						<li><a href="#">어그</a></li>
@@ -654,7 +641,7 @@
 						<li><a href="#">장까를로 모렐리</a></li>
 						<li><a href="#">제이다울</a></li>
 						<li><a href="#">젝시믹스</a></li>
-						<li><a href="/Shoerologue/category/brand/jordan.do">조던</a></li>
+						<li><a href="/shoerologue/category/brand/jordan.do">조던</a></li>
 					</ul>
 				</div>
 				<hr>
@@ -662,7 +649,7 @@
 				<div class="brandName">
 					<ul>
 						<li><a href="#">캐치볼</a></li>
-						<li><a href="/Shoerologue/category/brand/converse.do">컨버스</a></li>
+						<li><a href="/shoerologue/category/brand/converse.do">컨버스</a></li>
 						<li><a href="#">코뮤엘로</a></li>
 						<li><a href="#">코코모즈</a></li>
 						<li><a href="#">콜카</a></li>
@@ -684,7 +671,7 @@
 						<li><a href="#">포즈간츠</a></li>
 						<li><a href="#">포티세컨드</a></li>
 						<li><a href="#">폴로</a></li>
-						<li><a href="/Shoerologue/category/brand/puma.do">푸마</a></li>
+						<li><a href="/shoerologue/category/brand/puma.do">푸마</a></li>
 						<li><a href="#">프레드 페리</a></li>
 						<li><a href="#">프로스펙스</a></li>
 						<li><a href="#">플로리다 스튜디오</a></li>
@@ -697,7 +684,7 @@
 				<div class="brandName">
 					<ul>
 						<li><a href="#">헌터</a></li>
-						<li><a href="/Shoerologue/category/brand/hawkins.do">호킨스</a></li>
+						<li><a href="/shoerologue/category/brand/hawkins.do">호킨스</a></li>
 						<li><a href="#">휠라</a></li>
 					</ul>
 				</div>
@@ -728,7 +715,7 @@
 	  <footer class="py-5">
 	    <div class="row">
 		  <div class="col-12 col-sm-12 col-md-4">
-		     <img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고"  width="45%">
+		     <img class="banner-D" src="/shoerologue/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고"  width="45%">
 		     <div class="d-flex w-100 gap-2"><br>
 			          ㈜ 슈롤로그 대표: 성기훈 | 주소 : 전라북도 전주시 덕진구 쌍문동 <br>
 				사업자 등록번호: 001-0456-000456 <br>통신판매업 신고: 제 2021-서울중구-1456호<br>
