@@ -32,6 +32,8 @@ public class MemberServiceImpl implements MemberService{
 		return MemberDao.login(vo);
 	}
 
+
+
 	
 	
 	

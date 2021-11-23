@@ -69,7 +69,7 @@
 						    <a class="nav-link text-black-50 fw-bolder">${member.mName}님 환영합니다</a>
 						  </li>
 						  <li class="nav-item">
-						    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue">로그아웃</a>
+						    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/logout.do">로그아웃</a>
 						  </li>
 					</c:if>
 					</ul>

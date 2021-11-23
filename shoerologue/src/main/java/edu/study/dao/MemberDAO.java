@@ -29,5 +29,8 @@ public class MemberDAO {
 			return sqlSession.selectOne(Namespace+".login", vo);
 		}
 
+	
+		
+		
 		
 }

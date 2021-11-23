@@ -45,7 +45,7 @@ public class MemberController {
 			
 			MemberService.insert(vo);	
 			
-			return "redirect:/main.do";		
+			return "redirect:/";		
 		
 	}
 	
@@ -65,6 +65,8 @@ public class MemberController {
 		
 		return "/member/leave";
 	}
+	
+	
 	
 	
 }

@@ -154,6 +154,16 @@
 		hr{
 			color:black;
 		}
+		/* 중복아이디 존재하지 않는경우 */
+		.id_input_re_1{
+			color : green;
+			display : none;
+		}
+		/* 중복아이디 존재하는 경우 */
+		.id_input_re_2{
+			color : red;
+			display : none;
+		}
 		</style>	  
 		  
 		   
@@ -279,8 +289,14 @@
 				<div class="rows id mt-5">
 					<label for="id">아이디<span class="red">*</span></label>
 					<div class="formalign">
-						<input type="text" class="id impor" name="mId" id="id" placeholder="아이디를 입력해 주세요." onblur="checkFn('id')"> 
-						<input type="button" class="id" value="id 중복확인">
+						<input type="text" class="id impor id_input" name="mId" id="id" placeholder="아이디를 입력해 주세요." onblur="checkFn('id')"> 
+						<input type="button" class="id" onclick="" value="id 중복확인">
+						
+						<span class="id_input_re_1">사용 가능한 아이디입니다.</span>
+						<span class="id_input_re_2">아이디가 이미 존재합니다.</span>
+						
+						
+						
 					</div>
 					<span class="check"></span>
 				</div>
@@ -426,6 +442,8 @@
 	<!-- 도전 -->
 	<script src="../jquery-3.6.0.min.js"></script>
 	<script>
+	
+	
 	function checkFn(type){
 		if(type == 'id'){
 			var checkId = /[a-z]+[a-z0-9]{4,20}/g;
@@ -654,6 +672,8 @@
 	      agreeChk[i].checked = e.target.checked;
 	    }
 	});
+	    
+	
 	</script>
 
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
