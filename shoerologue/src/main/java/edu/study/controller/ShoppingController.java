@@ -20,7 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import edu.study.service.MemberService;
 import edu.study.vo.MemberVO;
 
-@RequestMapping(value="/shopping")
+@RequestMapping(value="/mypage/shopping")
 @Controller
 public class ShoppingController {
 	
