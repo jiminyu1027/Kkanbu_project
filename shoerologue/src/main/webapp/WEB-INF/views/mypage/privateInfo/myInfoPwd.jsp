@@ -632,7 +632,7 @@
 	function sumbitFn(){
 		var result = true;
 		
-		var checkPass = /^.*(?=^.{4,20}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
+		var checkPass = /^.*(?=^.{4,20}$)(?=.*\d)(?=.*[a-zA-Z]).*$/;
 		value = document.frm.password.value;
 		span = document.getElementsByClassName("password")[0].getElementsByTagName("span")[0];
 		if(value == ""){
