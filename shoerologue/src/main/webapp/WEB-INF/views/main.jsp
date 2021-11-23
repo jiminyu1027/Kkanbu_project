@@ -100,7 +100,7 @@
 					<i class="bi bi-person icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="/shoerologue/shopping/wishlist.do">
+				<li class="iconli"><a href="/shoerologue/mypage/shopping/wishlist.do">
 					<i class="bi bi-heart icon"></i>
 					</a>
 				</li>
