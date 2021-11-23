@@ -20,7 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import edu.study.service.MemberService;
 import edu.study.vo.MemberVO;
 
-@RequestMapping(value="/mypage/claim")
+@RequestMapping(value="/shoerologue/mypage/claim")
 @Controller
 public class ClaimController {
 	
@@ -30,29 +30,30 @@ public class ClaimController {
 	@RequestMapping(value="/myPage.do")
 	public String myPage(Locale locale, Model model)throws Exception {
 		
-		return "/mypage/claim/myPage";
+		return "shoerologue/mypage/claim/myPage";
 	}
 	
 	@RequestMapping(value="/insertCard.do")
 	public String insertCard(Locale locale, Model model)throws Exception {
 		
-		return "/mypage/claim/insertCard";
+		return "shoerologue/mypage/claim/insertCard";
 	}
 	@RequestMapping(value="/refund.do")
 	public String refund(Locale locale, Model model)throws Exception {
 		
-		return "/mypage/claim/refund";
+		return "shoerologue/mypage/claim/refund";
 	}
 	@RequestMapping(value="/orderCancel.do")
 	public String orderCancel(Locale locale, Model model)throws Exception {
 		
-		return "/mypage/claim/orderCancel";
+		return "shoerologue/mypage/claim/orderCancel";
 	}
-	@RequestMapping(value="/inquiryList.do")
+	@RequestMapping(value="/inquiryContents.do")
 	public String inquiryList(Locale locale,Model model)throws Exception{
 		
-		return "/mypage/claim/inquiryList";
+		return "shoerologue/mypage/claim/inquiryContents";
 	}
+	
 }
 
 	

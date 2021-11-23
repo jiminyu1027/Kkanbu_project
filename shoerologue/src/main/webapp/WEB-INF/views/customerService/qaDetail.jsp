@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Q&A 문의하기 | 슈롤로그</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 		
@@ -18,8 +18,9 @@
 		<!-- Bootstrap Font Icon CSS 아이콘 -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"> -->
-	 	<link rel="stylesheet" href="/resources/css/style.css">
-		<link rel="stylesheet" href="/resources/css/headerFooter.css">
+	 	<link rel="stylesheet" href="/shoerologue/resources/css/style.css">
+		<link rel="stylesheet" href="/shoerologue/resources/css/headerFooter.css">
+		<link rel="stylesheet" href="/shoerologue/resources/css/mypage.css">
 		
 		<style>
       @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
@@ -89,7 +90,7 @@
 			font-weight:bold;
 			font-size:15px;
 			margin-top:30px;
-			margin-left:1160px;
+			margin-left:1110px;
 			width:150px;
 			height:50px;
 			border:2px solid gray;
@@ -104,10 +105,10 @@
 			      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 			      <ul class="nav justify-content-end"> 
 					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/login.do">로그인</a>
+					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/join.do">회원가입</a>
+					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/join.do">회원가입</a>
 					  </li>
 					</ul>
 				</nav>
@@ -118,7 +119,7 @@
 	  <div class="row">
 	  	  <!-- 로고 -->
 	      <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-              <a href="/main.do"><img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+              <a href="/"><img class="banner-D" src="/shoerologue/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
               <div class="logo-scroll3"></div>
            </div>
         <!-- 검색창 -->   
@@ -133,15 +134,15 @@
 	     <!-- 마이페이지 찜목록 장바구니 -->
 	     <div class="col-0 col-sm-0 col-md-2 col-lg-3 d-flex justify-content-center align-items-center">
 			<ul class="iconul d-flex align-items-center icon-absolute">
-				<li class="iconli"><a href="/Shoerologue/mypage/claim/myPage.do">
+				<li class="iconli"><a href="/shoerologue/mypage/claim/myPage.do">
 					<i class="bi bi-person icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="/Shoerologue/mypage/shopping/wishlist.do">
+				<li class="iconli"><a href="/shoerologue/mypage/shopping/wishlist.do">
 					<i class="bi bi-heart icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="/Shoerologue/cart/cart.do">
+				<li class="iconli"><a href="/shoerologue/cart/cart.do">
 					<i class="bi bi-bag icon"></i>
 					</a>
 				</li>
@@ -209,30 +210,62 @@
 		</nav>
 	</div>
 <!-- body  -->
-
-	<div class="empty-box"></div>
 	<div class="body-box">
-	<div class="empty-box"></div>
-		<div class="filter-box">
-			<div class="filter-title"><span id="filter-title"><center>고객센터</center></span></div>
-			<center><p><a href="/Shoerologue/cs.do" class="other">FAQ</a></p></center>
-			<center><p><a href="/CustomerService/notice.do" class="other">공지사항</a></p></center>
-			<center><p><a href="/CustomerService/inquiry.do" class="other">1:1 문의</a></p></center>
-			<center><p><a href="/CustomerService/qa.do" class="main">상품 QA</a></p></center>
-			<center><p><a href="/CustomerService/myReview.do" class="other">나의 리뷰</a></p></center>
-			<hr>
-			<center><h5>슈롤샵 고객센터</h5></center>
-			<center><p class="comNum">1661-0332</p></center>
-			<center><div class="smft">평일 09:30~17:30</div></center>
-			<center><div class="smft">점심시간 13:00~14:00</div></center>
-			<center><div class="smft">주말·공휴일 휴무</div></center>
-			<hr>
-			<center><h5>은행계좌 안내</h5></center>
-			<center><div class="smft">국민 010-101-0101</div></center>
-			<center><div class="smft">신한 101-010-1010</div></center>
-			<center><div class="smft">농협 210-120-2151</div></center>
-			<center><div class="tsft">예금주:㈜깐부 글로벌</div></center>
+	<div style=" float: left; width: 0%;">&nbsp;</div>
+	<div style=" float: left; width: 99%;" class="mt-3">
+		<span style="color:#757575; font-size:1em">
+			<a href="/" style="color:#757575; font-size:1.1em">
+			<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-house-fill mb-1" viewBox="0 0 16 16">
+			  <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg>
+			HOME</a> 
+		> 마이페이지 > 나의 활동 > 상품Q&amp;A
+		</span>
+	</div>
+		<!-- 좌측 마이페이지 메뉴-->
+		<div style=" float: left; width: 20%;">
+		<div class="myPageMenu">
+			<div class="myPageTitle">
+				마이페이지
+			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">나의 주문관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="myPage.do" class="gray">주문/배송 조회</a><br>
+					<a href="orderCancel.do" class="gray">취소/교환/반품</a><br>
+					<a href="insertCard.do" class="gray">카드 등록 관리</a>
+				</div><br>
+			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">나의 활동</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="/shoerologue/cart/cart.do" class="gray">장바구니</a><br>
+					<a href="/shoerologue/mypage/shopping/wishlist.do" class="gray">찜리스트</a><br>
+					<a href="/shoerologue/mypage/shopping/qaList.do" class="red">상품 Q&A*</a><br>
+					<a href="/shoerologue/mypage/memberCounsel/inquiry.do" class="gray">1:1 문의</a><br>
+					<a href="/shoerologue/mypage/shopping/myReview.do" class="gray">나의 리뷰</a>
+				</div><br>
+			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">내 정보 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="/shoerologue/mypage/deliveryAddr/receiveAddr.do" class="gray">배송지 관리</a><br>
+					<a href="/shoerologue/mypage/privateInfo/myInfoPwd.do" class="gray">개인 정보 수정</a><br>
+					<a href="/shoerologue/member/leave.do" class="gray">회원 탈퇴</a>
+				</div>
+			</div>
 		</div>
+		</div>
+		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
+		<div class="empty-box"></div>
+		<div class="empty-box"></div>
 		<table>
 			<colgroup>
 				<col style="width:70%;">
@@ -266,7 +299,7 @@
 				<tr><td style="border-bottom:1px solid gray; height:30px;" colspan="3"></td></tr>	
 			</tbody>
 		</table>
-		<input type="button" value="목록보기" onclick="location.href='qa.do'" class="btnFn" style="background-color:white;">
+		<input type="button" value="목록보기" onclick="location.href='/shoerologue/mypage/shopping/qaList.do'" class="btnFn" style="background-color:white;">
 	</div>	
 	<div class="empty-box"></div>
 	<div class="empty-box"></div>
@@ -289,7 +322,7 @@
 	  <footer class="py-4">
 	    <div class="row">
 		  <div class="col-12 col-sm-12 col-md-4">
-		     <img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고"  width="45%">
+		     <img class="banner-D" src="/shoerologue/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고"  width="45%">
 		     <div class="d-flex w-100 gap-2"><br>
 			          ㈜ 슈롤로그 대표: 성기훈 | 주소 : 전라북도 전주시 덕진구 쌍문동 <br>
 				사업자 등록번호: 001-0456-000456 <br>통신판매업 신고: 제 2021-서울중구-1456호<br>
@@ -300,7 +333,7 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="/Shoerologue/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>

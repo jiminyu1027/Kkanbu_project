@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>공지사항 작성 | 슈롤로그</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 		
@@ -15,8 +15,8 @@
 		<!-- Bootstrap Font Icon CSS 아이콘 -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"> -->
-	 	<link rel="stylesheet" href="/resources/css/style.css">
-		<link rel="stylesheet" href="/resources/css/headerFooter.css">
+	 	<link rel="stylesheet" href="/shoerologue/resources/css/style.css">
+		<link rel="stylesheet" href="/shoerologue/resources/css/headerFooter.css">
 		<!-- alert -->
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 		<style>
@@ -158,7 +158,7 @@
 		    border: 0;
 		}
 		</style>
-		<script src="../js/jquery-3.6.0.min.js"></script>	
+		<script src="/js/jquery-3.6.0.min.js"></script>	
 		<script>	
 			function btnFn(){
 				var form = document.frm;
@@ -185,10 +185,10 @@
 			      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 			      <ul class="nav justify-content-end"> 
 					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/login.do">로그인</a>
+					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
 					  </li>
 					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/Shoerologue/join.do">회원가입</a>
+					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/join.do">회원가입</a>
 					  </li>
 					</ul>
 				</nav>
@@ -199,7 +199,7 @@
 	  <div class="row">
 	  	  <!-- 로고 -->
 	      <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-              <a href="/main.do"><img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+              <a href="/"><img class="banner-D" src="/shoerologue/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
               <div class="logo-scroll3"></div>
            </div>
         <!-- 검색창 -->   
@@ -214,15 +214,15 @@
 	     <!-- 마이페이지 찜목록 장바구니 -->
 	     <div class="col-0 col-sm-0 col-md-2 col-lg-3 d-flex justify-content-center align-items-center">
 			<ul class="iconul d-flex align-items-center icon-absolute">
-				<li class="iconli"><a href="/Shoerologue/mypage/claim/myPage.do">
+				<li class="iconli"><a href="/shoerologue/mypage/claim/myPage.do">
 					<i class="bi bi-person icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="/Shoerologue/mypage/shopping/wishlist.do">
+				<li class="iconli"><a href="/shoerologue/mypage/shopping/wishlist.do">
 					<i class="bi bi-heart icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="/Shoerologue/cart/cart.do">
+				<li class="iconli"><a href="/shoerologue/cart/cart.do">
 					<i class="bi bi-bag icon"></i>
 					</a>
 				</li>
@@ -296,11 +296,11 @@
 		
 		<div class="filter-box">
 			<div class="filter-title"><span id="filter-title"><center>고객센터</center></span></div>
-			<center><p><a href="/Shoerologue/cs.do" class="other">FAQ</a></p></center>
-			<center><p><a href="/CustomerService/notice.do" class="main">공지사항</a></p></center>
-			<center><p><a href="/CustomerService/inquiry.do" class="other">1:1 문의</a></p></center>
-			<center><p><a href="/CustomerService/qa.do" class="other">상품 QA</a></p></center>
-			<center><p><a href="/CustomerService/myReview.do" class="other">나의 리뷰</a></p></center>
+			<center><p><a href="/shoerologue/customerService/cs.do" class="other">FAQ</a></p></center>
+			<center><p><a href="/shoerologue/customerService/notice.do" class="main">공지사항</a></p></center>
+			<center><p><a href="/shoerologue/mypage/memberCounsel/inquiry.do" class="other">1:1 문의</a></p></center>
+			<center><p><a href="#" class="other">고객의 소리</a></p></center>
+			<center><p><a href="#" class="other">회원 혜택 안내</a></p></center>
 			<hr>
 			<center><h5>슈롤샵 고객센터</h5></center>
 			<center><p class="comNum">1661-0332</p></center>
@@ -313,9 +313,10 @@
 			<center><div class="smft">신한 101-010-1010</div></center>
 			<center><div class="smft">농협 210-120-2151</div></center>
 			<center><div class="tsft">예금주:㈜깐부 글로벌</div></center>
+			
 		</div>
 		<div><span class="mainTitle">공지작성</span></div>
-		<form action="/CustomerService/notice.do" method="post" class="frm" id="frm" name="frm">
+		<form action='/shoerologue/customerService/notice.do' method="post" class="frm" id="frm" name="frm">
 			<table class="ask-box">
 				<colgroup>
 					<col width="10%">
@@ -379,7 +380,7 @@
 	  <footer class="py-4">
 	    <div class="row">
 		  <div class="col-12 col-sm-12 col-md-4">
-		     <img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고"  width="45%">
+		     <img class="banner-D" src="/shoerologue/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고"  width="45%">
 		     <div class="d-flex w-100 gap-2"><br>
 			          ㈜ 슈롤로그 대표: 성기훈 | 주소 : 전라북도 전주시 덕진구 쌍문동 <br>
 				사업자 등록번호: 001-0456-000456 <br>통신판매업 신고: 제 2021-서울중구-1456호<br>
@@ -390,7 +391,7 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="/Shoerologue/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
