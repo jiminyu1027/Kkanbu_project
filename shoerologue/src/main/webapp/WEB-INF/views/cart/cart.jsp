@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,7 +46,7 @@
 	  <div class="row">
 	  	  <!-- 로고 -->
 	      <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-              <a href="/"><img class="banner-D" src="/shoerologue/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%" ></a>
+              <a href="/shoerologue"><img class="banner-D" src="/shoerologue/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%" ></a>
               <div class="logo-scroll3"></div>
            </div>
         <!-- 검색창 -->   
@@ -380,6 +379,9 @@
 			target.next().val(num);
 		};
 	});
+	
+	
+	
 	</script>
 	
 	<!-- footer -->

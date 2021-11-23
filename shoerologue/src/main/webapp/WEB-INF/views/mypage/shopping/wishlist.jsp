@@ -293,7 +293,7 @@
 		<!-- 우측 삭제, 장바구니 버튼-->
 		<div class="btn-wrap">
 			<input type="submit" value="삭제" id="del" class="delbtn" onclick="">
-			<input type="submit" value="장바구니" id="cart" class="cartbtn" onclick="">
+			<a href="/shoerologue/cart/cart.do"><input type="submit" value="장바구니" id="cart" class="cartbtn" onclick="">
 			<i class="bi bi-cart4"></i>
 		</div>
 		<!-- 찜리스트 목록 CONTENT -->
@@ -303,7 +303,7 @@
 				    <div class="col-6 col-md-3 cardhover">
 				    	<a href="/shoerologue/shopping/wishList.do">
 					     <div class="card w-20">
-						  <img src="/resources/image/vans.jpg" class="card-img-top" alt="...">
+						  <img src="/shoerologue/resources/image/vans.jpg" class="card-img-top" alt="...">
 						  <div class="card-body">
 						    <h5 class="card-title brandtitle">NIKE</h5>
 						    <p class="card-text">NIKE BURROW</p>

@@ -7,6 +7,7 @@
          <typeAlias type="edu.study.vo.MemberVO" alias="MemberVO"/>
          <typeAlias type="edu.study.vo.ProductVO" alias="ProductVO"/>
          <typeAlias type="edu.study.vo.HotProductVO" alias="HotProductVO"/>
+         <typeAlias type="edu.study.vo.CartVO" alias="CartVO"/>
     </typeAliases>
 
 </configuration>

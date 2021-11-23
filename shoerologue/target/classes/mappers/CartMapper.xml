@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="edu.study.mapper.CartMapper">
+	<!-- 카트목록 -->
+	 <select id="list" resultType="CartVO">
+   		SELECT *
+   		FROM cart
+   		WHERE ctidx = #{ctidx} 
+   </select>
+   
+   	<!-- 카트확인 -->
+	<select id="check" resultType="CartVO">
+		SELECT FROM cart
+		WHERE midx=#{midx} and ctidx=#{ctidx} 
+	</select>
+	
+	<!-- 카트추가 -->
+	<insert id="insert" parameterType="CartVO">
+		INSERT INTO cart 
+		VALUE (
+		ctidx_seq.nextval,
+		#{ctwriteday},
+		#{ctcnt},
+		#{pidx},
+		#{midx}
+		)
+	</insert>
+   
+   <!-- 카트삭제 -->
+   <delete id="del">
+   		DELETE FROM cart
+   		WHERE ctidx=#{ctidx}
+   </delete>
+   
+   <!-- 카트 수량 수정 -->
+   <update id="modify">
+   		UPDATE cart 
+   		SET ctcnt=#{ctcnt}
+   		WHERE citdx=#{ctidx}
+   </update>
+</mapper>
