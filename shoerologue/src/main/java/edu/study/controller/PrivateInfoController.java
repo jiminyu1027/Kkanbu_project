@@ -20,7 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import edu.study.service.MemberService;
 import edu.study.vo.MemberVO;
 
-@RequestMapping(value="/Shoerologue/mypage/privateInfo")
+@RequestMapping(value="/mypage/privateInfo")
 @Controller
 public class PrivateInfoController {
 	
@@ -30,13 +30,13 @@ public class PrivateInfoController {
 	@RequestMapping(value="/myInfo.do")
 	public String myInfo(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/mypage/privateInfo/myInfo";
+		return "/mypage/privateInfo/myInfo";
 	}
 
 	@RequestMapping(value="/myInfoPwd.do")
 	public String myInfoPwd(Locale locale, Model model)throws Exception {
 		
-		return "shoerologue/mypage/privateInfo/myInfoPwd";
+		return "/mypage/privateInfo/myInfoPwd";
 	}
 }
 

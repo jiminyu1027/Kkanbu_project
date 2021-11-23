@@ -5,26 +5,9 @@
  
 <mapper namespace="edu.study.mapper.ProductMapper">
 	 <select id="list" resultType="ProductVO">
-   		SELECT pidx
-					,pSaleYn
-					,pNameKr
-					,pNameEng
-					,pBrandKr
-					,pBrandEng
-					,pPrice
-					,pSize
-					,pColor
-					,pGender
-					,pType
-					,pFile1
-					,pFile2
-					,pFile3
-					,pFile4
-					,pFile5
-					,pWrite
-					,pDelYn
+   		SELECT *
    		FROM product
-   		WHERE 1=1
+   		WHERE 1=1 
    </select>
 
 	<select id="detail" resultType="ProductVO" parameterType="int">

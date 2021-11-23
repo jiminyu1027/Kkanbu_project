@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import edu.study.service.ProductService;
 import edu.study.vo.ProductVO;
 
-@RequestMapping(value="/Shoerologue/product")
+@RequestMapping(value="/product")
 @Controller
 public class ShoerologueProductController {
 	
@@ -31,7 +31,7 @@ public class ShoerologueProductController {
 //		model.addAttribute("list", list);
 		
 		
-		return "shoerologue/product/product";
+		return "/product/product";
 	}
 	
 	
