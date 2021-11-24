@@ -1,17 +1,28 @@
 package edu.study.controller;
 
+import java.util.List;
 import java.util.Locale;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import edu.study.service.ProductService;
+import edu.study.vo.ProductVO;
 
 @RequestMapping(value="/category/gender")
 @Controller
 public class ShoerologueGenderController {
 	
+	@Autowired
+	ProductService productService;
+	
 	@RequestMapping(value="/men.do")
 	public String men(Locale locale, Model model)throws Exception {
+		
+		List<ProductVO> menlist = productService.menList();
+		model.addAttribute("menlist", menlist);
 		
 		return "/category/gender/men";
 	}
@@ -51,6 +62,9 @@ public class ShoerologueGenderController {
 	@RequestMapping(value="/women.do")
 	public String women(Locale locale, Model model)throws Exception {
 		
+		List<ProductVO> womenlist = productService.womenList();
+		model.addAttribute("womenlist", womenlist);
+		
 		return "/category/gender/women";
 	}
 	@RequestMapping(value="/women/sneakers.do")
@@ -88,6 +102,9 @@ public class ShoerologueGenderController {
 	
 	@RequestMapping(value="/kids.do")
 	public String kids(Locale locale, Model model)throws Exception {
+		
+		List<ProductVO> kidslist = productService.kidsList();
+		model.addAttribute("womenlist", kidslist);
 		
 		return "/category/gender/kids";
 	}

@@ -276,3 +276,32 @@ input[type=checkbox]{
 	width:28px;
 	height:28px;
 }
+
+.shoesGender{
+	margin:auto;
+	margin-top:30px;
+	font-weight:700;
+	text-align:center;
+	font-size:29pt;
+}
+
+.filterSearh{
+	border-radius:0px;
+	border:0px;
+	height:40px;
+	width:210px;
+}
+
+.filterSearh:focus{
+	border-radius:0px;
+}
+
+.filterSearchBtn{
+	border:0;
+	background:none;
+}
+
+.filterSearchBox{
+	border:1px solid black;
+	margin:20px 0;
+}

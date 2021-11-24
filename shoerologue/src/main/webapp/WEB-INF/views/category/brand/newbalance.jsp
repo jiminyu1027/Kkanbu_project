@@ -1,10 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="edu.study.vo.*" %>
+<%
+	List<ProductVO> newbalancelist = (List<ProductVO>)request.getAttribute("newbalancelist");
+	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
+%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>뉴발란스 | 슈롤로그</title>
+<title><%=newbalancelist.get(0).getpBrandKr()%> | 슈롤로그</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 		
@@ -129,6 +135,10 @@
 				</li>
 			</ul>
 		</div>
+		<div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
+			<ul class="navbar-nav me-auto mb-6 mb-lg-0">
+			</ul>
+		</div>
 		    <div class="col-0 col-sm-0 col-md-0 col-lg-2"></div>
 		</nav>
 	</div>
@@ -152,7 +162,7 @@
 		</div>
 	</div>
 	<div class="brandBanner">
-		<img src="/shoerologue/resources/image/brandbanner/N/NEW BALANCEbanner.png">
+		<!-- <img src="/shoerologue/resources/image/brandbanner/N/NEW BALANCEbanner.png"> -->
 	</div>
 	<div class="bigBox">
 		<div class="bestBox">
@@ -275,57 +285,20 @@
 			<div class="brandPdBox">
 			<!-- 브랜드별 상품 첫번째줄 -->
 				<div class="brandPdSmBox">
+					<%
+					     if(newbalancelist.size() != 0){
+					     for(int i=0; i<newbalancelist.size();i++) {	    
+			    	 %>
 					<div class="brandPd">
-						<a href="#">
-							<img src="/shoerologue/resources/image/shoesimage/nike/nike_01.png">
-							<div class="shoesBrand">뉴발란스</div>
-							<div class="shoesName">뉴발란스 에어 맥스 SC</div>
-							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+						<a href="/shoerologue/product/product.do?pidx=<%=newbalancelist.get(i).getPidx()%>">
+							<img src="/shoerologue/resources/image/productdetail/<%=newbalancelist.get(i).getpFile1()%>">
+							<div class="shoesBrand" id="pBrandKr"><%=newbalancelist.get(i).getpBrandKr()%></div>
+							<div class="shoesName" id="pNameKr"><%=newbalancelist.get(i).getpNameKr()%></div>
+							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=newbalancelist.get(i).getpPrice()%></span><span class="won">원</span></div>
 						</a>
 					</div>
-					<div class="brandPd">
-						<a href="#">
-							<img src="/shoerologue/resources/image/shoesimage/nike/nike_01.png">
-							<div class="shoesBrand">뉴발란스</div>
-							<div class="shoesName">뉴발란스 에어 맥스 SC</div>
-							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-						</a>
-					</div>
-					<div class="brandPd">
-						<a href="#">
-							<img src="/shoerologue/resources/image/shoesimage/nike/nike_01.png">
-							<div class="shoesBrand">뉴발란스</div>
-							<div class="shoesName">뉴발란스 에어 맥스 SC</div>
-							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-						</a>
-					</div>
-				</div>
-			<!-- 브랜드별 상품 두번째줄 -->
-				<div class="brandPdSmBox">
-					<div class="brandPd">
-						<a href="#">
-							<img src="/shoerologue/resources/image/shoesimage/nike/nike_01.png">
-							<div class="shoesBrand">뉴발란스</div>
-							<div class="shoesName">뉴발란스 에어 맥스 SC</div>
-							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-						</a>
-					</div>
-					<div class="brandPd">
-						<a href="#">
-							<img src="/shoerologue/resources/image/shoesimage/nike/nike_01.png">
-							<div class="shoesBrand">뉴발란스</div>
-							<div class="shoesName">뉴발란스 에어 맥스 SC</div>
-							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-						</a>
-					</div>
-					<div class="brandPd">
-						<a href="#">
-							<img src="/shoerologue/resources/image/shoesimage/nike/nike_01.png">
-							<div class="shoesBrand">뉴발란스</div>
-							<div class="shoesName">뉴발란스 에어 맥스 SC</div>
-							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-						</a>
-					</div>
+					<% } 
+					} %>
 				</div>
 				<hr>
 				<div class="page">페이징 처리</div>

@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="edu.study.vo.*" %>
+<%
+	List<ProductVO> reeboklist = (List<ProductVO>)request.getAttribute("reeboklist");
+	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -127,6 +133,10 @@
 					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/boots.do">부츠</a></li>
 				    </ul>
 				</li>
+			</ul>
+		</div>
+		<div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
+			<ul class="navbar-nav me-auto mb-6 mb-lg-0">
 			</ul>
 		</div>
 		    <div class="col-0 col-sm-0 col-md-0 col-lg-2"></div>
@@ -275,57 +285,20 @@
 			<div class="brandPdBox">
 			<!-- 브랜드별 상품 첫번째줄 -->
 				<div class="brandPdSmBox">
+					<%
+					     if(reeboklist.size() != 0){
+					     for(int i=0; i<reeboklist.size();i++) {	    
+			    	 %>
 					<div class="brandPd">
-						<a href="#">
-							<img src="/shoerologue/resources/image/shoesimage/nike/nike_01.png">
-							<div class="shoesBrand">리복</div>
-							<div class="shoesName">리복 에어 맥스 SC</div>
-							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+						<a href="/shoerologue/product/product.do?pidx=<%=reeboklist.get(i).getPidx()%>">
+							<img src="/shoerologue/resources/image/productdetail/<%=reeboklist.get(i).getpFile1()%>">
+							<div class="shoesBrand" id="pBrandKr"><%=reeboklist.get(i).getpBrandKr()%></div>
+							<div class="shoesName" id="pNameKr"><%=reeboklist.get(i).getpNameKr()%></div>
+							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=reeboklist.get(i).getpPrice()%></span><span class="won">원</span></div>
 						</a>
 					</div>
-					<div class="brandPd">
-						<a href="#">
-							<img src="/shoerologue/resources/image/shoesimage/nike/nike_01.png">
-							<div class="shoesBrand">리복</div>
-							<div class="shoesName">리복 에어 맥스 SC</div>
-							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-						</a>
-					</div>
-					<div class="brandPd">
-						<a href="#">
-							<img src="/shoerologue/resources/image/shoesimage/nike/nike_01.png">
-							<div class="shoesBrand">리복</div>
-							<div class="shoesName">리복 에어 맥스 SC</div>
-							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-						</a>
-					</div>
-				</div>
-			<!-- 브랜드별 상품 두번째줄 -->
-				<div class="brandPdSmBox">
-					<div class="brandPd">
-						<a href="#">
-							<img src="/shoerologue/resources/image/shoesimage/nike/nike_01.png">
-							<div class="shoesBrand">리복</div>
-							<div class="shoesName">리복 에어 맥스 SC</div>
-							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-						</a>
-					</div>
-					<div class="brandPd">
-						<a href="#">
-							<img src="/shoerologue/resources/image/shoesimage/nike/nike_01.png">
-							<div class="shoesBrand">리복</div>
-							<div class="shoesName">리복 에어 맥스 SC</div>
-							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-						</a>
-					</div>
-					<div class="brandPd">
-						<a href="#">
-							<img src="/shoerologue/resources/image/shoesimage/nike/nike_01.png">
-							<div class="shoesBrand">리복</div>
-							<div class="shoesName">리복 에어 맥스 SC</div>
-							<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
-						</a>
-					</div>
+					<% } 
+					} %>
 				</div>
 				<hr>
 				<div class="page">페이징 처리</div>

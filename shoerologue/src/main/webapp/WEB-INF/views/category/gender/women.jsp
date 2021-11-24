@@ -1,10 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="edu.study.vo.*" %>
+<%
+	List<ProductVO> womenlist = (List<ProductVO>)request.getAttribute("womenlist");
+	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
+%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>여성 | 슈롤로그</title>
+
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 		
@@ -13,16 +20,12 @@
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 		
-		<!-- 글꼴 --> 
-	    <link rel="preconnect" href="https://fonts.googleapis.com">
-	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		
 		<!-- Bootstrap Font Icon CSS 아이콘 -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/shoerologue/resources/css/style.css">
+		<link rel="stylesheet" href="/shoerologue/resources/css/brand.css">
 		<link rel="stylesheet" href="/shoerologue/resources/css/headerFooter.css">
-		<link rel="stylesheet" href="/shoerologue/resources/css/gender.css">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		
@@ -65,20 +68,20 @@
 	     <!-- 마이페이지 찜목록 장바구니 -->
 	     <div class="col-0 col-sm-0 col-md-2 col-lg-3 d-flex justify-content-center align-items-center">
 			<ul class="iconul d-flex align-items-center icon-absolute">
-				<li class="iconli"><a href="#">
+				<li class="iconli"><a href="/shoerologue/mypage/claim/myPage.do">
 					<i class="bi bi-person icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="#">
+				<li class="iconli"><a href="/shoerologue/mypage/shopping/wishlist.do">
 					<i class="bi bi-heart icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="#">
+				<li class="iconli"><a href="/shoerologue/cart/cart.do">
 					<i class="bi bi-bag icon"></i>
 					</a>
 				</li>
 			</ul>
-	    </div>
+		</div>
 	  </div>
 	</div>
 	<br>
@@ -133,28 +136,44 @@
 				</li>
 			</ul>
 		</div>
-		 <div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
-		      <ul class="navbar-nav me-auto mb-6 mb-lg-0">
-		      </ul>
-		      <ul class="nav justify-content-end"> 
-				  <li class="nav-item nav-fs">
-				    <a class="nav-link text-white fw-bolder" href="#hotdeal">#핫딜</a>
-				  </li>
-				  <li class="nav-item nav-fs">
-				    <a class="nav-link text-white fw-bolder" href="#best">#베스트</a>
-				  </li>
-				   <li class="nav-item nav-fs">
-				    <a class="nav-link text-white fw-bolder" href="#codi">#코디</a>
-				  </li>
-				</ul>
-				
-		    </div>
+	    <div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
+	      <ul class="navbar-nav me-auto mb-6 mb-lg-0">
+	      </ul>
+		</div>
 		    <div class="col-0 col-sm-0 col-md-0 col-lg-2"></div>
 		</nav>
 	</div>
 <!-- body  -->
+
+	<div class="bigBox">
+		<div class="channel">
+			<ul>
+				<li><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+				  <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+				</svg>
+				<a href="/shoerologue">HOME</a></li>&nbsp;&nbsp;>&nbsp;&nbsp;
+				<li><a href="/shoerologue/category/gender/women.do">WOMEN</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="bigBox">
+		<div class="shoesBox">
+			<div class="shoesGender">WOMEN</div>
+			<div class="shoesList">
+				<ul>
+					<li><a href="/shoerologue/category/gender/women/sneakers.do">운동화</a></li>
+				 	<li><a href="/shoerologue/category/gender/women/sports.do">스포츠</a></li>
+				    <li><a href="/shoerologue/category/gender/women/dressShoes.do">구두</a></li>
+				    <li><a href="/shoerologue/category/gender/women/sandle.do">샌들</a></li>
+				    <li><a href="/shoerologue/category/gender/women/casual.do">캐주얼</a></li>
+				    <li><a href="/shoerologue/category/gender/women/boots.do">부츠</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 	
-	<div class="filterBox">
+	<div class="bigBox">
+		<div class="filterBox">
 		<div class="filterTitle">FILTER</div>
 		<div class="hr1"></div>
 		<div id="menu">
@@ -217,29 +236,7 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="bigBox">
-		<div class="channel">
-			<ul>
-				<li><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-				  <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
-				</svg>
-				<a href="/shoerologue">HOME</a></li>&nbsp;&nbsp;>&nbsp;&nbsp;
-				<li><a href="/shoerologue/category/gender/women.do">WOMEN</a></li>
-			</ul>
-		</div>
-		<div class="shoesBox">
-			<div class="shoesGender">WOMEN</div>
-			<div class="shoesList">
-				<ul>
-					<li><a href="/shoerologue/category/gender/women/sneakers.do">운동화</a></li>
-				 	<li><a href="/shoerologue/category/gender/women/sports.do">스포츠</a></li>
-				    <li><a href="/shoerologue/category/gender/women/dressShoes.do">구두</a></li>
-				    <li><a href="/shoerologue/category/gender/women/sandle.do">샌들</a></li>
-				    <li><a href="/shoerologue/category/gender/women/casual.do">캐주얼</a></li>
-				    <li><a href="/shoerologue/category/gender/women/boots.do">부츠</a></li>
-				</ul>
-			</div>
+		<div class="brandBox">
 			<div class="totalPdSel">
 				<div  class="totalPd">
 					<span>총 <span class="redBold">0</span>개의 상품이 있습니다.</span>
@@ -253,270 +250,34 @@
 					  <option value="5">높은가격순</option>
 					</select>
 					<select class="">
-					  <option value="20" selected>20개씩 보기</option>
-					  <option value="40">40개씩 보기</option>
+					  <option value="15" selected>15개씩 보기</option>
+					  <option value="30">30개씩 보기</option>
 					  <option value="60">60개씩 보기</option>
 					</select>
 				</div>
+				<div class="hr1"></div>
 			</div>
-		</div>
-		<div class="hr1"></div>
-		
-		<div class="productList">
-		<!-- 상품 첫번째줄 -->
-			<div class="productList1">
-				<div class="card">
-					<div class="cardImage">
-						<img src="/shoerologue/resources/image/hot1.jpg" class="card-img-top" alt="...">
+			<!-- 상품 -->
+			<div class="brandPdBox">
+				<div class="brandPdSmBox">
+					<%
+					     if(womenlist.size() != 0){
+					     for(int i=0; i<womenlist.size();i++) {	    
+			    	 %>
+					<div class="brandPd">
+						<a href="/shoerologue/product/product.do?pidx=<%=womenlist.get(i).getPidx()%>">
+							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<div class="shoesBrand" id="pBrandKr"><%=womenlist.get(i).getpBrandKr()%></div>
+							<div class="shoesName" id="pNameKr"><%=womenlist.get(i).getpNameKr()%></div>
+							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=womenlist.get(i).getpPrice()%></span><span class="won">원</span></div>
+						</a>
 					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
+					<% } 
+					} %>
 				</div>
-				<div class="card">
-					<div class="cardImage">
-						<img src="/shoerologue/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
-				<div class="card">
-					<div class="cardImage">
-						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
-				<div class="card">
-					<div class="cardImage">
-						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
+				<hr>
+				<div class="page">페이징 처리</div>
 			</div>
-			<!-- 상품 두번째줄 -->
-			<div class="productList1">
-				<div class="card">
-					<div class="cardImage">
-						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
-				<div class="card">
-					<div class="cardImage">
-						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
-				<div class="card">
-					<div class="cardImage">
-						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
-				<div class="card">
-					<div class="cardImage">
-						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
-			</div>
-			<div class="productList1">
-				<div class="card">
-					<div class="cardImage">
-						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
-				<div class="card">
-					<div class="cardImage">
-						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
-				<div class="card">
-					<div class="cardImage">
-						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
-				<div class="card">
-					<div class="cardImage">
-						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
-			</div>
-			<div class="productList1">
-				<div class="card">
-					<div class="cardImage">
-						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
-				<div class="card">
-					<div class="cardImage">
-						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
-				<div class="card">
-					<div class="cardImage">
-						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
-				<div class="card">
-					<div class="cardImage">
-						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
-			</div>
-			<div class="productList1">
-				<div class="card">
-					<div class="cardImage">
-						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
-				<div class="card">
-					<div class="cardImage">
-						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
-				<div class="card">
-					<div class="cardImage">
-						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
-				<div class="card">
-					<div class="cardImage">
-						<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
-					</div>
-					<div class="cardText">
-						<h5 class="card-title brandtitle">컨버스</h5>
-					    <p class="card-text">척 70 하이</p>
-					    <span class="card-text exitPrice"><del>99,000원</del></span>&nbsp;
-					    <span class="card-text HotPrice">42,000</span>
-					    <span class="card-text HotPer">원 [57%]</span>
-					</div>
-				</div>
-			</div>
-			<div class="hr1"></div>
-			<div class="page">페이징 처리</div>
 		</div>
 	</div>
 
@@ -539,7 +300,7 @@
 	  <footer class="py-5">
 	    <div class="row">
 		  <div class="col-12 col-sm-12 col-md-4">
-		     <img class="banner-D" src="/shoerologue/resources/image/mainlogo.png" alt="슈롤로그 로고"  width="45%">
+		     <img class="banner-D" src="/shoerologue/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고"  width="45%">
 		     <div class="d-flex w-100 gap-2"><br>
 			          ㈜ 슈롤로그 대표: 성기훈 | 주소 : 전라북도 전주시 덕진구 쌍문동 <br>
 				사업자 등록번호: 001-0456-000456 <br>통신판매업 신고: 제 2021-서울중구-1456호<br>

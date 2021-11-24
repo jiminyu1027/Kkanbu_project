@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="edu.study.mapper.ProductMapper">
+	<select id="nikelist" resultType="ProductVO">
+   		SELECT * FROM product WHERE pBrandKr='나이키' ORDER BY pidx desc
+	</select>
+	
+	<select id="adidaslist" resultType="ProductVO">
+   		SELECT * FROM product WHERE pBrandKr='아디다스' ORDER BY pidx desc
+	</select>
+	
+	<select id="newbalancelist" resultType="ProductVO">
+   		SELECT * FROM product WHERE pBrandKr='뉴발란스' ORDER BY pidx desc
+	</select>
+	
+	<select id="converselist" resultType="ProductVO">
+   		SELECT * FROM product WHERE pBrandKr='컨버스' ORDER BY pidx desc
+	</select>
+	
+	<select id="vanslist" resultType="ProductVO">
+   		SELECT * FROM product WHERE pBrandKr='반스' ORDER BY pidx desc
+	</select>
+	
+	<select id="reeboklist" resultType="ProductVO">
+   		SELECT * FROM product WHERE pBrandKr='리복' ORDER BY pidx desc
+	</select>
+	
+	<select id="nuovolist" resultType="ProductVO">
+   		SELECT * FROM product WHERE pBrandKr='누오보' ORDER BY pidx desc
+	</select>
+	
+	<select id="jordanlist" resultType="ProductVO">
+   		SELECT * FROM product WHERE pBrandKr='조던' ORDER BY pidx desc
+	</select>
+	
+	<select id="pumalist" resultType="ProductVO">
+   		SELECT * FROM product WHERE pBrandKr='푸마' ORDER BY pidx desc
+	</select>
+	
+	<select id="hawkinslist" resultType="ProductVO">
+   		SELECT * FROM product WHERE pBrandKr='호킨스' ORDER BY pidx desc
+	</select>
+	
+	<select id="ggomoosinlist" resultType="ProductVO">
+   		SELECT * FROM product WHERE pBrandKr='꼬무신' ORDER BY pidx desc
+	</select>
+	
+	<select id="raragolist" resultType="ProductVO">
+   		SELECT * FROM product WHERE pBrandKr='라라고' ORDER BY pidx desc
+	</select>
+	
+	<select id="bearpawlist" resultType="ProductVO">
+   		SELECT * FROM product WHERE pBrandKr='베어파우' ORDER BY pidx desc
+	</select>
+	
+	
+	
+	
+</mapper>

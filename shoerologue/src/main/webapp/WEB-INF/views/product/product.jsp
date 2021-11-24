@@ -9,7 +9,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title><%=pvo.getpNameKr() %> | 슈롤로그</title>
 	
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 		
@@ -154,14 +154,15 @@
 			}
 			.pTitle{
 				font-weight:700;
-				font-size:30px;
+				font-size:32px;
 			}
 			.pContents{
-				font-size:18px;
+				font-size:16px;
 			}
 			.pPrice{
-				color:gray;
-				font-size:15px;
+				color:black;
+				font-size:25px;
+				font-weight:600;
 			}
 			.salePrice{
 				font-weight:600;
@@ -390,7 +391,7 @@
 	  <div class="row">
 	  	  <!-- 로고 -->
 	      <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-              <a href="/shoerologue"><img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+              <a href="/shoerologue"><img class="banner-D" src="/shoerologue/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
               <div class="logo-scroll3"></div>
            </div>
         <!-- 검색창 -->   
@@ -505,14 +506,14 @@
 				<!-- 상품 이미지 -->
 				<div class="productImgBox">
 					<div>
-					 	<img src="/resources/image/hot1.jpg" class="pdImage" alt="...">
+					 	<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>" class="pdImage" alt="...">
 					</div>
 					<div class="pdSmImgeBox">
-						<img src="/resources/image/hot1.jpg" class="pdSmImge" alt="...">
-						<img src="/resources/image/hot1.jpg" class="pdSmImge" alt="...">
-						<img src="/resources/image/hot1.jpg" class="pdSmImge" alt="...">
-						<img src="/resources/image/hot1.jpg" class="pdSmImge" alt="...">
-						<img src="/resources/image/hot1.jpg" class="pdSmImge" alt="...">
+						<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>" class="pdSmImge" alt="...">
+						<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile2()%>" class="pdSmImge" alt="...">
+						<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile3()%>" class="pdSmImge" alt="...">
+						<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile4()%>" class="pdSmImge" alt="...">
+						<!-- <img src="/shoerologue/resources/image/hot1.jpg" class="pdSmImge" alt="...">-->
 					</div>
 				</div>
 				<!-- 상품 내용  -->
@@ -527,13 +528,11 @@
 							</svg></a>
 						</div>
 						<div class="pdContents">
-							<div class="caBrand" id="caBrand"><a href="#"><%=pvo.getpBrandKr() %></a></div><br>
-							<div class="pTitle" id="pTitle"><%=pvo.getpNameKr() %></div>
-							<div class="pContents" id="pContents"><%=pvo.getpNameEng() %></div>
+							<div class="caBrand" id="pBrandKr"><a href="#"><%=pvo.getpBrandKr() %></a></div><br>
+							<div class="pTitle" id="pNameKr"><%=pvo.getpNameKr() %></div>
+							<div class="pContents" id="pNameEng"><%=pvo.getpNameEng() %></div>
 							<br>
-							<span class="pPrice" id="pPrice"><del><%=pvo.getpPrice() %>원</del></span>&nbsp;&nbsp;&nbsp;
-							<span class="salePrice" id="salePrice"> 59,000</span>
-							<span class="salePer" id="salePer"> 원 [40%]</span>
+							<span class="pPrice" id="pPrice"><%=pvo.getpPrice() %><span>원</span></span>
 						</div>
 						<div class="hr2"></div>
 						<!-- 상품 컬러 -->
@@ -571,7 +570,7 @@
 								</tr>
 								<tr>
 									<th height=45>색상코드</th>
-									<td><span class="pColor" id="pColor"></span></td>
+									<td><span class="pColor" id="pColor"><%=pvo.getpColor() %></span></td>
 								</tr>
 								<tr>
 									<th>사이즈</th>
@@ -628,10 +627,10 @@
 			<div class="gap50"></div>
 			<div class="gap50"></div>
 			<div class="productDetailImg">
-				<div><img alt="..." src="/resources/image/hot1.jpg"></div>
-				<div><img alt="..." src="/resources/image/hot1.jpg"></div>
-				<div><img alt="..." src="/resources/image/hot1.jpg"></div>
-				<div><img alt="..." src="/resources/image/hot1.jpg"></div>
+				<div><img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>" class="pdSmImge" alt="..."></div>
+				<div><img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile2()%>" class="pdSmImge" alt="..."></div>
+				<div><img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile3()%>" class="pdSmImge" alt="..."></div>
+				<div><img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile4()%>" class="pdSmImge" alt="..."></div>
 			</div>
 		</div>
 		
@@ -971,7 +970,7 @@
 	  <footer class="py-5">
 	    <div class="row">
 		  <div class="col-12 col-sm-12 col-md-4">
-		     <img class="banner-D" src="/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고"  width="45%">
+		     <img class="banner-D" src="/shoerologue/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고"  width="45%">
 		     <div class="d-flex w-100 gap-2"><br>
 			          ㈜ 슈롤로그 대표: 성기훈 | 주소 : 전라북도 전주시 덕진구 쌍문동 <br>
 				사업자 등록번호: 001-0456-000456 <br>통신판매업 신고: 제 2021-서울중구-1456호<br>

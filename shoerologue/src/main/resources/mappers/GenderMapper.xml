@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="edu.study.mapper.ProductMapper">
+	
+	<select id="menlist" resultType="ProductVO">
+   		SELECT * FROM product WHERE pGender='M' or pGender='U' ORDER BY pidx desc
+	</select>
+	
+	<select id="womenlist" resultType="ProductVO">
+   		SELECT * FROM product WHERE pGender='W' or pGender='U' ORDER BY pidx desc
+	</select>
+	
+	<select id="kidslist" resultType="ProductVO">
+   		SELECT * FROM product WHERE pGender='K' ORDER BY pidx desc
+	</select>
+
+   
+</mapper>
