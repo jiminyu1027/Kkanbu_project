@@ -283,7 +283,6 @@
 			</div>
 			<!-- 상품 -->
 			<div class="brandPdBox">
-			<!-- 브랜드별 상품 첫번째줄 -->
 				<div class="brandPdSmBox">
 					<%
 					     if(adidaslist.size() != 0){

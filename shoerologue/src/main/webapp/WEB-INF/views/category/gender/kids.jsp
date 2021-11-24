@@ -266,7 +266,7 @@
 			    	 %>
 					<div class="brandPd">
 						<a href="/shoerologue/product/product.do?pidx=<%=kidslist.get(i).getPidx()%>">
-							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<img src="/shoerologue/resources/image/productdetail/<%=kidslist.get(i).getpFile1()%>">
 							<div class="shoesBrand" id="pBrandKr"><%=kidslist.get(i).getpBrandKr()%></div>
 							<div class="shoesName" id="pNameKr"><%=kidslist.get(i).getpNameKr()%></div>
 							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=kidslist.get(i).getpPrice()%></span><span class="won">원</span></div>
