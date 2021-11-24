@@ -2,9 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="edu.study.vo.*" %>
+<%@ page import="edu.study.domain.*" %>
 <%
 	List<ProductVO> womenlist = (List<ProductVO>)request.getAttribute("womenlist");
 	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
+	PageMaker pm = (PageMaker)request.getAttribute("pm");
 %>
 <!DOCTYPE html>
 <html>
@@ -276,7 +278,9 @@
 					} %>
 				</div>
 				<hr>
-				<div class="page">페이징 처리</div>
+				<div class="page">
+					페이징 처리
+				</div>
 			</div>
 		</div>
 	</div>

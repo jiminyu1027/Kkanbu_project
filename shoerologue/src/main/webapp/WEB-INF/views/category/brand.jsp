@@ -337,7 +337,7 @@
 				<div class="brandName">
 					<ul>
 						<li><a href="/shoerologue/category/brand/adidas.do">ADIDAS</a></li>
-						<li><a href="#">AKIII CLASSIC</a></li>
+						<li><a href="/shoerologue/category/test.do">AKIII CLASSIC</a></li>
 						<li><a href="#">ASICS</a></li>
 					</ul>
 				</div>
