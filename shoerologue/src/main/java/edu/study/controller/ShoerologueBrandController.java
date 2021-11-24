@@ -25,6 +25,15 @@ public class ShoerologueBrandController {
 		return "/category/brand";
 	}
 	
+	@RequestMapping(value="/test.do")
+	public String test(Locale locale, Model model)throws Exception {
+		
+		List<ProductVO> list = productService.list();
+		model.addAttribute("nikelist", list);
+		
+		return "/category/test";
+	}
+	
 	@RequestMapping(value="brand/nike.do")
 	public String nike(Locale locale, Model model)throws Exception {
 		

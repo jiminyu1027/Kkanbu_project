@@ -55,11 +55,11 @@
 				margin-top:50px;
 				margin-left:65px;
 				height:800px;
-				
 			}
 			.productBox3{
 				float:left;
 				margin:auto;
+				margin-left:50px;
 			}
 			.pdImage{
 				width:580px;
@@ -72,12 +72,19 @@
 			.pdSmImgeBox{
 				padding:10px 35px;
 			}
-			
-			
 			.productDetailImg{
 				text-align:center;
 				padding-top:20px;
 			}
+			
+			.productDetailImg>div>img{
+				width:800px;
+				height:800px;
+			}
+			.productDetailImg>div{
+				margin-bottom:10px;
+			}
+			
 			.red{
 				color:red;
 			}
@@ -363,6 +370,7 @@
 			}
 			.productImgBox{
 				float:left;
+				margin-left:-40px;
 			}
 			.hr2{
 				border:1px solid black;
@@ -492,8 +500,8 @@
 				  <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
 				</svg>
 				<a href="/shoerologue">HOME</a></li>&nbsp;&nbsp;>&nbsp;&nbsp;
-				<li><a href="/shoerologue/category/gender/men.do">MEN</a></li>&nbsp;&nbsp;>&nbsp;&nbsp;
-				<li>운동화</li>
+				<li><%=pvo.getpGender() %></li>&nbsp;&nbsp;>&nbsp;&nbsp;
+				<li><%=pvo.getpType() %></li>
 			</ul>
 		</div>
 	</div>
@@ -509,11 +517,19 @@
 					 	<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>" class="pdImage" alt="...">
 					</div>
 					<div class="pdSmImgeBox">
-						<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>" class="pdSmImge" alt="...">
-						<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile2()%>" class="pdSmImge" alt="...">
-						<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile3()%>" class="pdSmImge" alt="...">
-						<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile4()%>" class="pdSmImge" alt="...">
-						<!-- <img src="/shoerologue/resources/image/hot1.jpg" class="pdSmImge" alt="...">-->
+						<a href="">
+							<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>" class="pdSmImge" alt="...">
+						</a>
+						<a href="">
+							<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile2()%>" class="pdSmImge" alt="...">
+						</a>
+						<a href="">
+							<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile3()%>" class="pdSmImge" alt="...">
+						</a>
+						<a href="">
+							<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile4()%>" class="pdSmImge" alt="...">
+						</a>
+						<!-- <a><img src="/shoerologue/resources/image/hot1.jpg" class="pdSmImge" alt="..."></a>-->
 					</div>
 				</div>
 				<!-- 상품 내용  -->
@@ -772,7 +788,7 @@
 					<!--  -->
 					<center>페이징 처리</center>
 					<div class="ReviewBtn">
-						<button onclick="location.href='#'"> 상품 후기 작성</button>
+						<button onclick="location.href='/shoerologue/customerService/writeReview.do'"> 상품 후기 작성</button>
 					</div>
 				</div>
 			</div>
@@ -825,8 +841,8 @@
 				<!--  -->
 				<center>페이징 처리</center>
 				<div class="QnaBtn">
-					<button onclick="location.href='#'">자주하는 질문 보기</button>
-					<button onclick="location.href='#'">Q&amp;A작성</button>
+					<button onclick="location.href='/shoerologue/customerService/cs.do'">자주하는 질문 보기</button>
+					<button onclick="location.href='/shoerologue/admin/inquiryAsk.do'">Q&amp;A작성</button>
 				</div>
 			</div>
 		</div>

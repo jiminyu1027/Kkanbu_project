@@ -33,7 +33,7 @@ public class PageMaker {
 		//ceil 올림 메소드 
 		startPage = (endPage-displayPageNum)+1;
 		// 1번부터 시작을 한다는 말
-		int tempEndPage = (int)Math.ceil(totalCount/(double)scri.getPerPageNumP()); //전체갯수/15개로 나누는것
+		int tempEndPage = (int)Math.ceil(totalCount/(double)scri.getPerPageNum()); //전체갯수/15개로 나누는것
 		//임시 끝번호 페이지
 		
 		if(endPage > tempEndPage) {
@@ -43,7 +43,7 @@ public class PageMaker {
 		//이전버튼 만들기
 		prev = (startPage == 1 ? false:true); //스타트페이지가 1이면 fasle 이전페이지가 나타날 필요가 없다
 		//다음버튼 만들기
-		next = (endPage * scri.getPerPageNumP() >= totalCount ? false:true);
+		next = (endPage * scri.getPerPageNum() >= totalCount ? false:true);
 		
 		
 		

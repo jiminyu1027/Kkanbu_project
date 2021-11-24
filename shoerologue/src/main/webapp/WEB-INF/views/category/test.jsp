@@ -24,8 +24,39 @@
 		*{
 		font-family: 'Montserrat', "Noto Sans KR", sans-serif;
 		}
+		.pdImage{
+				width:580px;
+				height:580px;
+			}
+			.pdSmImge{
+				width:100px;
+				height:100px;
+			}
+			.pdSmImgeBox{
+				padding:10px 35px;
+			}
+			.productDetailImg{
+				text-align:center;
+				padding-top:20px;
+			}
+			
+			.productDetailImg>div>img{
+				width:800px;
+				height:800px;
+			}
+			.productDetailImg>div{
+				margin-bottom:10px;
+			}
 	</style> 
-		 
+	<script>
+		$(function(){
+			$(".pdSmImgeBox a").click(function(){
+				$(".changeImg img").attr("src",$(this))
+				
+				return false;
+			});
+		});
+	</script>
 		 
 </head>
 <body>
@@ -48,7 +79,7 @@
 	  <div class="row">
 	  	  <!-- 로고 -->
 	      <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-              <a href="/main.do"><img class="banner-D" src="/shoerologue/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+              <a href="/shoerologue"><img class="banner-D" src="/shoerologue/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
               <div class="logo-scroll3"></div>
            </div>
         <!-- 검색창 -->   
@@ -139,6 +170,26 @@
 <!-- body  -->
 
 
+		<div class="productImgBox">
+					<div class="changeImg">
+					 	<img src="/shoerologue/resources/image/productdetail/NU1-1.png" class="pdImage" alt="...">
+					</div>
+					<div class="pdSmImgeBox">
+						<a href="/shoerologue/resources/image/productdetail/NU1-1.png">
+							<img src="/shoerologue/resources/image/productdetail/NU1-1.png" class="pdSmImge" alt="...">
+						</a>
+						<a href="/shoerologue/resources/image/productdetail/NU1-1.png">
+							<img src="/shoerologue/resources/image/productdetail/NU1-2.png" class="pdSmImge" alt="...">
+						</a>
+						<a href="/shoerologue/resources/image/productdetail/NU1-1.png">
+							<img src="/shoerologue/resources/image/productdetail/NU1-3.png" class="pdSmImge" alt="...">
+						</a>
+						<a href="/shoerologue/resources/image/productdetail/NU1-1.png">
+							<img src="/shoerologue/resources/image/productdetail/NU1-4.png" class="pdSmImge" alt="...">
+						</a>
+						<!-- <a><img src="/shoerologue/resources/image/hot1.jpg" class="pdSmImge" alt="..."></a>-->
+					</div>
+				</div>
 
 <!-- 우측하단 TOP 이동 배너 -->
 	<a href="#top">
@@ -212,7 +263,7 @@
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </body>
 </html>
