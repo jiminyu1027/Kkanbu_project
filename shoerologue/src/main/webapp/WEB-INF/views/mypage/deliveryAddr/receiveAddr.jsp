@@ -1,6 +1,11 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>    
+<%@ page import="edu.study.vo.*" %>       
+<%
+	List<AddressVO> list = (List<AddressVO>)request.getAttribute("list");
+%>     
 <!DOCTYPE html>
 <html>
 <head>
@@ -181,6 +186,15 @@
 		.modalFs{
 			font-size:20px;
 		}
+		.addrDelbtn{
+			background-color:white;
+			border:1px solid white;
+			width:40px;
+			height:23px;
+		}
+		.tetete{
+			text-align: center;
+		}
 	</style>
 
 </head>
@@ -324,7 +338,7 @@
 				  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
 				  <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
 				</svg>		
-        		<span style="font-size:0.8em; font-weight: bold;">멤버십 회원 가입일 ${member.mJoindate}</span>
+        		<span style="font-size:0.8em; font-weight: bold;">멤버십 회원 가입일 ${member.mJoindate.substring(0,10)}</span>
         	</div>
         </div>
         <div class="myPageBoxs">
@@ -442,21 +456,21 @@
 		      </div>
 		      <div class="modal-body">
 		        
-		        <form name="frm" id="frm" method="post" action="/burning/shipping/shippingAction.do" onsubmit="return loginChk()">
+		        <form name="frm" id="frm" method="post" action="/shoerologue/mypage/deliveryAddr/receiveAddr.do" >
                 
                 <h3>배송지 등록하기</h3><br>
                 
-               	<a class="modalFs">받으실분</a> :  <input type="text" id="receiver" name="receiver" placeholder=" 이름을 입력해 주세요."><br>
+               	<a class="modalFs">받으실분</a> :  <input type="text" id="receiver" name="adRec" placeholder=" 이름을 입력해 주세요."><br>
                	<br>
-               	<a class="modalFs">핸드폰 번호</a> :  <input type="text" id="phone" name="phone" placeholder=" 핸드폰 번호를 '-' 없이 입력해 주세요."><br>
+               	<a class="modalFs">핸드폰 번호</a> :  <input type="text" id="phone" name="adPhone" placeholder=" 핸드폰 번호를 '-' 없이 입력해 주세요."><br>
 	           	<br>
 	           	<a class="modalFs">주소</a> :     &nbsp;<input type="text" id="sample4_postcode" placeholder=" 우편번호" readonly class="bg-gray1">
 						 <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="bg-gray3"><br>
-						 <input type="text" id="sample4_roadAddress" placeholder=" 도로명주소" readonly class="bg-gray2"><br>
+						 <input type="text" name="addr1" id="sample4_roadAddress" placeholder=" 도로명주소" readonly class="bg-gray2"><br>
 						 <input type="text" id="sample4_jibunAddress" placeholder=" 지번주소" readonly class="bg-gray2"><br>
 						 <span id="guide" style="color:#999;display:none"></span>
 						 <input type="text" id="sample4_extraAddress" placeholder=" 주소 참고항목" readonly class="bg-gray2"><br>
-						 <input type="text" id="sample4_detailAddress" placeholder=" 상세주소를 입력해 주세요." class="bg-gray4">
+						 <input type="text" name="addr3" id="sample4_detailAddress" placeholder=" 상세주소를 입력해 주세요." class="bg-gray4">
 				
 				
 				<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -527,49 +541,55 @@
 		      <div class="modal-footer">
 		      	<button type="button" class="btn btn-secondary " onclick="frm_reset()" data-bs-dismiss="modal">닫기</button>
 		      	<button type="button" class="btn btn-secondary " onclick="frm_reset()">초기화</button>
-		        <button type="submit" class="btn btn-primary submitco" onsubmit="return loginChk()">배송지 등록</button>
+		        <button type="submit" class="btn btn-primary submitco">배송지 등록</button>
 		      </div>
 		      </form>
 		    </div>
 		  </div>
 		</div>
-			<!-- 상품 혹은 목록이 없는 경우 -->
+			<!-- 배송지 목록이 없는 경우 -->
 			   <div class="wishNoItem">
 			      <div class="flex-box">
 			         <div class="wishNoItem2">
 			         <i class="bi bi-exclamation-circle exclamation"></i><br>
-			       		  등록된 배송지가 없습니다.</div>
+			       		  등록된 배송지가 없습니다.
+			       	 </div>
 			      </div>
 			   </div><br>
+			<!-- 배송지 목록이 있는 경우 --> 
 			<table class="table table-hover">
 			  <thead>
 			    <tr>
-			      <th scope="col">번호</th>
-			      <th scope="col">받으실 분</th>
-			      <th scope="col">핸드폰 번호</th>
-			      <th scope="col">배송지 주소</th>
+			      <th scope="col" style="width:10%">번호</th>
+			      <th scope="col" style="width:13%">받으실 분</th>
+			      <th scope="col" style="width:20%">핸드폰 번호</th>
+			      <th scope="col" style="width:52%">배송지 주소</th>
+			      <th scope="col" style="width:5%" class="tetete">삭제</th>
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr>
-			      <th scope="row">1</th>
-			      <td></td>
-			      <td></td>
-			      <td></td>
-			    </tr>
-			    <tr>
-			      <th scope="row">2</th>
-			      <td></td>
-			      <td></td>
-			      <td></td>
-			    </tr>
-			    <tr>
-			      <th scope="row">3</th>
-			      <td colspan="2"></td>
-			      <td></td>
-			    </tr>
-			  </tbody>
+			    
+				<%
+						for(int i=0; i<list.size(); i++){
+				%>
+					<tr>
+						<td><%=i+1 %></td>
+						<td><%=list.get(i).getAdRec() %></td>
+						<td><%=list.get(i).getAdPhone() %></td>
+						<td><%=list.get(i).getAddr1() %>&nbsp; <%=list.get(i).getAddr3() %></td>
+						<td><button class="addrDelbtn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+							  <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+							</svg></button>
+						</td>
+					</tr>
+				<%
+					}
+					
+				%>
+				
+			</tbody>
 			</table>
+			  
 			<br><br>
 			<div style="float: left; width: 100%;">
 				<div class="gray-box notice-box">

@@ -33,7 +33,7 @@
     </insert>
    
    <select id="login" resultType="MemberVO" parameterType="MemberVO">
-   		SELECT mId, mPwd, master, mName, mPhone, mEmail, mAddr, mJoindate
+   		SELECT mId, master, mName, mJoindate,mIdx
    		FROM member
    		WHERE mId = #{mId}
    		AND mPwd = #{mPwd}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="edu.study.mapper.AddressMapper">
+
+	<select id="list" parameterType="int" resultType="AddressVO">
+        SELECT 
+        	adidx,
+        	adName,
+        	adRec,
+        	adSend,
+        	addr1,
+        	addr2,
+        	addr3,
+        	adPhone,
+        	midx
+        FROM Address 
+       WHERE 1=1
+         AND midx = #{mIdx}
+    </select> 
+    
+    <insert id="insert" parameterType="AddressVO">
+	<![CDATA[
+		INSERT INTO Address(adidx, adrec, adphone, addr1, addr3, midx) VALUES(
+			adidx_seq.nextval
+			,#{adRec}
+			,#{adPhone}
+			,#{addr1}
+			,#{addr3}
+			,#{midx}
+		)
+	]]>
+		<selectKey resultType="int" keyProperty="adidx" order="AFTER">
+			SELECT MAX(adidx) FROM Address
+		</selectKey>
+	</insert>
+    
+    
+</mapper>

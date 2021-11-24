@@ -19,6 +19,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.study.service.MemberService;
 import edu.study.vo.MemberVO;
+import edu.study.service.AddressService;
+import edu.study.vo.AddressVO;
 
 @RequestMapping(value="/mypage/deliveryAddr")
 @Controller
@@ -27,11 +29,36 @@ public class DeliveryAddrController {
 	@Autowired
 	MemberService MemberService;
 	
+	@Autowired
+	AddressService AddressService;
+	
 	@RequestMapping(value="/receiveAddr.do")
-	public String receiveAddr(Locale locale, Model model)throws Exception {
+	public String receiveAddr(Locale locale, Model model, HttpSession session)throws Exception {
+		
+		MemberVO member = (MemberVO)session.getAttribute("member");
+		
+		List<AddressVO> list = AddressService.list(member.getMidx());
+		model.addAttribute("list",list);
 		
 		return "/mypage/deliveryAddr/receiveAddr";
 	}
+	
+	@RequestMapping(value="/receiveAddr.do", method=RequestMethod.POST)
+	public String receiveAddr(Locale locale, Model model,AddressVO vo, HttpSession session)throws Exception {
+		
+		MemberVO member = (MemberVO)session.getAttribute("member");
+		vo.setMidx(member.getMidx());
+
+		System.out.println("adrec :"+vo.getAdRec() );
+		
+		AddressService.insert(vo);
+		
+		//return "/mypage/deliveryAddr/receiveAddr";
+		return "redirect:/mypage/deliveryAddr/receiveAddr.do";
+	}
+	
+	
+	
 }
 
 	
