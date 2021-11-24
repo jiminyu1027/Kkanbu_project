@@ -7,6 +7,6 @@ import edu.study.vo.CartVO;
 
 public interface CartService {
 
-	public List<CartVO> list(int ctidx) throws Exception;
-	
+	public List<CartVO> list(int midx) throws Exception;
+	public void del(CartVO cvo) throws Exception;
 }
