@@ -480,7 +480,7 @@
 					    document.getElementById("frm").reset();
 					}
 					
-					<!-- 주소 API -->
+					<!-- 주소  -->
 				    // 본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
 				    function sample4_execDaumPostcode() {
 				        new daum.Postcode({
@@ -548,6 +548,7 @@
 		  </div>
 		</div>
 			<!-- 배송지 목록이 없는 경우 -->
+			<c:if test="${list.size()==0}">
 			   <div class="wishNoItem">
 			      <div class="flex-box">
 			         <div class="wishNoItem2">
@@ -556,7 +557,9 @@
 			       	 </div>
 			      </div>
 			   </div><br>
+			 </c:if>  
 			<!-- 배송지 목록이 있는 경우 --> 
+			<c:if test="${list.size()>0}">
 			<table class="table table-hover">
 			  <thead>
 			    <tr>
@@ -589,7 +592,7 @@
 				
 			</tbody>
 			</table>
-			  
+			</c:if>  
 			<br><br>
 			<div style="float: left; width: 100%;">
 				<div class="gray-box notice-box">
