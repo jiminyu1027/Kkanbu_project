@@ -13,15 +13,16 @@ li{
 
 .channel{
 	margin-top:20px;
-	color:#999999;
+	color:#757575;
 }
 
 .channel>ul>li{
 	display:inline;
+	color:#757575;
 }
 
 .channel>ul>li>a{
-	color:#999999;
+	color:#757575;
 }
 
 .brandName{

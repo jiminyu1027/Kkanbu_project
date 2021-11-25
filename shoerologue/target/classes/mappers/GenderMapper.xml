@@ -6,11 +6,11 @@
 <mapper namespace="edu.study.mapper.ProductMapper">
 	
 	<select id="menlist" resultType="ProductVO">
-   		SELECT * FROM product WHERE pGender='M' or pGender='U' ORDER BY pidx desc
+   		SELECT * FROM product WHERE pGender='M' OR pGender='U' ORDER BY pidx desc
 	</select>
 	
 	<select id="womenlist" resultType="ProductVO">
-   		SELECT * FROM product WHERE pGender='W' or pGender='U' ORDER BY pidx desc
+		SELECT * FROM product WHERE pGender='W' OR pGender='U' ORDER BY pidx desc
 	</select>
 	
 	<select id="kidslist" resultType="ProductVO">

@@ -21,7 +21,10 @@ public class ProductDAO {
 		}
 
 		public ProductVO detail(int pidx) throws Exception  {
-			return sqlSession.selectOne(Namespace+".detail", pidx);
+			ProductVO pt  = sqlSession.selectOne(Namespace+".detail", pidx);
+			String g = pt.getpGender();
+			System.out.println("g"+g);
+			return  pt;
 		}
 		
 		public List<ProductVO> nikelist() throws Exception{		

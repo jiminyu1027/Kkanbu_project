@@ -104,7 +104,7 @@ public class ShoerologueGenderController {
 	public String kids(Locale locale, Model model)throws Exception {
 		
 		List<ProductVO> kidslist = productService.kidsList();
-		model.addAttribute("womenlist", kidslist);
+		model.addAttribute("kidslist", kidslist);
 		
 		return "/category/gender/kids";
 	}
