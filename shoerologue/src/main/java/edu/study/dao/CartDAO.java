@@ -18,9 +18,12 @@ public class CartDAO {
 	
 	private static final String Namespace = "edu.study.mapper.CartMapper";	
 	
-			public List<CartVO> list(int ctidx) throws Exception{
-				return sqlSession.selectList(Namespace + ".list", ctidx);
-			}
-
-		
+	public List<CartVO> list(int midx) throws Exception{
+		return sqlSession.selectList(Namespace+".list", midx);
+	}
+	
+	public void del(CartVO cvo) throws Exception{
+		sqlSession.delete(Namespace+".del", cvo);
+	}
+	
 }

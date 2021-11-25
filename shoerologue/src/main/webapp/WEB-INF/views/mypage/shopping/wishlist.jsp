@@ -1,3 +1,4 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -278,6 +279,16 @@
 		<!-- 찜리스트 메인 -->
 		<div style="float: left; width: 80%;" class="header-margin">
 			<span class="wishHeader">찜리스트</span>
+		<!-- 찜한 상품이 없는 경우 -->
+		<c:if test="${ wishlist == null }">
+			<div class="wishNoItem">
+				<div class="flex-box">
+					<div class="wishNoItem2">
+					 <i class="bi bi-exclamation-circle exclamation"></i><br>
+					 찜한 상품이 없습니다 !</div>
+				</div>
+			</div>
+		</c:if>
 		<!-- 찜한 상품이 있는 경우 -->
 		<div class="checkLine">
 			<span class="allCheck">
@@ -333,16 +344,8 @@
 				</nav>
 			</div>
 		</div>
-		<!-- 찜한 상품이 없는 경우 -->
-			<div class="wishNoItem">
-				<div class="flex-box">
-					<div class="wishNoItem2">
-					 <i class="bi bi-exclamation-circle exclamation"></i><br>
-					 찜한 상품이 없습니다 !</div>
-				</div>
-			</div>
-		</div>
 	</div>
+</div>
 	
 	<!-- 우측하단 TOP 이동 배너 -->
 		<a href="/shoerologue/shopping/wishList.do">

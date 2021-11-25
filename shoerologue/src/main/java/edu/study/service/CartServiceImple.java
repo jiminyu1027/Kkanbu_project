@@ -18,16 +18,15 @@ public class CartServiceImple implements CartService{
 	CartDAO CartDao;
 
 	@Override
-	public List<CartVO> list(int ctidx) throws Exception {
-		return CartDao.list(ctidx);
+	public List<CartVO> list(int midx) throws Exception {
+		return CartDao.list(midx);
 	}
+
+	@Override
+	public void del(CartVO cvo) throws Exception {
+		CartDao.del(cvo);
+	}
+
+
 	
-
-
-
-
-
-
-
-
 }
