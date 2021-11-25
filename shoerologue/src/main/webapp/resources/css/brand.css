@@ -57,6 +57,13 @@ li{
 	font-weight:500;
 }
 
+.redBold2{
+	color:red;
+	font-weight:500;
+	text-decoration:underline;
+	text-underline-position:under;
+}
+
 .totalPd{
 	text-align:left;
 	margin-left:5px;
@@ -305,4 +312,15 @@ input[type=checkbox]{
 .filterSearchBox{
 	border:1px solid black;
 	margin:20px 0;
+}
+
+.emptyProductBox{
+	text-align:center;
+	font-weight:400;
+	font-size:18px;
+	margin:300px 0;
+}
+
+.exclamation{
+	color:#808080;
 }

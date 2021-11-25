@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import edu.study.service.ProductService;
+import edu.study.service.GenderService;
 import edu.study.vo.ProductVO;
 
 @RequestMapping(value="/category/gender")
@@ -16,12 +16,12 @@ import edu.study.vo.ProductVO;
 public class ShoerologueGenderController {
 	
 	@Autowired
-	ProductService productService;
+	GenderService genderService;
 	
 	@RequestMapping(value="/men.do")
 	public String men(Locale locale, Model model)throws Exception {
 		
-		List<ProductVO> menlist = productService.menList();
+		List<ProductVO> menlist = genderService.menList();
 		model.addAttribute("menlist", menlist);
 		
 		return "/category/gender/men";
@@ -62,7 +62,7 @@ public class ShoerologueGenderController {
 	@RequestMapping(value="/women.do")
 	public String women(Locale locale, Model model)throws Exception {
 		
-		List<ProductVO> womenlist = productService.womenList();
+		List<ProductVO> womenlist = genderService.womenList();
 		model.addAttribute("womenlist", womenlist);
 		
 		return "/category/gender/women";
@@ -103,38 +103,62 @@ public class ShoerologueGenderController {
 	@RequestMapping(value="/kids.do")
 	public String kids(Locale locale, Model model)throws Exception {
 		
-		List<ProductVO> kidslist = productService.kidsList();
+		List<ProductVO> kidslist = genderService.kidsList();
 		model.addAttribute("kidslist", kidslist);
 		
 		return "/category/gender/kids";
 	}
+	
 	@RequestMapping(value="/kids/sneakers.do")
 	public String kidsSneakers(Locale locale, Model model)throws Exception {
 		
+		List<ProductVO> kidslistsneakers = genderService.kidsListSneakers();
+		model.addAttribute("kidslistsneakers", kidslistsneakers);
+		
 		return "/category/gender/kids/sneakers";
 	}
+	
 	@RequestMapping(value="/kids/dressShoes.do")
 	public String kidsDressShoes(Locale locale, Model model)throws Exception {
 		
+		List<ProductVO> kidslistdressshoes = genderService.kidsListDressShoes();
+		model.addAttribute("kidslistdressshoes", kidslistdressshoes);
+		
 		return "/category/gender/kids/dressShoes";
 	}
+	
 	@RequestMapping(value="/kids/casual.do")
 	public String kidsCasual(Locale locale, Model model)throws Exception {
 		
+		List<ProductVO> kidslistcasual = genderService.kidsListCasual();
+		model.addAttribute("kidslistcasual", kidslistcasual);
+		
 		return "/category/gender/kids/casual";
 	}
+	
 	@RequestMapping(value="/kids/sports.do")
 	public String kidsSports(Locale locale, Model model)throws Exception {
 		
+		List<ProductVO> kidslistsports = genderService.kidsListSports();
+		model.addAttribute("kidslistsports", kidslistsports);
+		
 		return "/category/gender/kids/sports";
 	}
+	
 	@RequestMapping(value="/kids/sandle.do")
 	public String kidsSandle(Locale locale, Model model)throws Exception {
 		
+		List<ProductVO> kidslistsandle = genderService.kidsListSandle();
+		model.addAttribute("kidslistsandle", kidslistsandle);
+		
 		return "/category/gender/kids/sandle";
 	}
+	
 	@RequestMapping(value="/kids/boots.do")
 	public String kidsBoots(Locale locale, Model model)throws Exception {
+		
+		List<ProductVO> kidslistboots = genderService.kidsListBoots();
+		model.addAttribute("kidslistboots", kidslistboots);
 		
 		return "/category/gender/kids/boots";
 	}

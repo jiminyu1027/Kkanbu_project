@@ -9,12 +9,40 @@
    		SELECT * FROM product WHERE pGender='M' OR pGender='U' ORDER BY pidx desc
 	</select>
 	
+	
+	
 	<select id="womenlist" resultType="ProductVO">
 		SELECT * FROM product WHERE pGender='W' OR pGender='U' ORDER BY pidx desc
 	</select>
 	
+	
+	
 	<select id="kidslist" resultType="ProductVO">
    		SELECT * FROM product WHERE pGender='K' ORDER BY pidx desc
+	</select>
+	
+	<select id="kidslistboots" resultType="ProductVO">
+   		SELECT * FROM product WHERE pGender='K' AND pType='부츠' ORDER BY pidx desc
+	</select>
+	
+	<select id="kidslistcasual" resultType="ProductVO">
+   		SELECT * FROM product WHERE pGender='K' AND pType='캐주얼' ORDER BY pidx desc
+	</select>
+	
+	<select id="kidslistdressshoes" resultType="ProductVO">
+   		SELECT * FROM product WHERE pGender='K' AND pType='구두' ORDER BY pidx desc
+	</select>
+	
+	<select id="kidslistsandle" resultType="ProductVO">
+   		SELECT * FROM product WHERE pGender='K' AND pType='샌들' ORDER BY pidx desc
+	</select>
+	
+	<select id="kidslistsneakers" resultType="ProductVO">
+   		SELECT * FROM product WHERE pGender='K' AND pType='운동화' ORDER BY pidx desc
+	</select>
+	
+	<select id="kidslistsports" resultType="ProductVO">
+   		SELECT * FROM product WHERE pGender='K' AND pType='스포츠' ORDER BY pidx desc
 	</select>
 
    

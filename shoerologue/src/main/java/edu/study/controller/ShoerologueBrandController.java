@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import edu.study.service.BrandService;
 import edu.study.service.ProductService;
 import edu.study.vo.ProductVO;
 
@@ -16,6 +17,8 @@ import edu.study.vo.ProductVO;
 @Controller
 public class ShoerologueBrandController {
 	
+	@Autowired
+	BrandService brandService;
 	@Autowired
 	ProductService productService;
 	
@@ -37,7 +40,7 @@ public class ShoerologueBrandController {
 	@RequestMapping(value="brand/nike.do")
 	public String nike(Locale locale, Model model)throws Exception {
 		
-		List<ProductVO> nikelist = productService.nikeList();
+		List<ProductVO> nikelist = brandService.nikeList();
 		model.addAttribute("nikelist", nikelist);
 		
 		return "/category/brand/nike";
@@ -46,7 +49,7 @@ public class ShoerologueBrandController {
 	@RequestMapping(value="brand/adidas.do")
 	public String adidas(Locale locale, Model model)throws Exception {
 		
-		List<ProductVO> adidaslist = productService.adidasList();
+		List<ProductVO> adidaslist = brandService.adidasList();
 		model.addAttribute("adidaslist", adidaslist);
 		
 		return "/category/brand/adidas";
@@ -55,7 +58,7 @@ public class ShoerologueBrandController {
 	@RequestMapping(value="brand/newbalance.do")
 	public String newbalance(Locale locale, Model model)throws Exception {
 		
-		List<ProductVO> newbalancelist = productService.newbalanceList();
+		List<ProductVO> newbalancelist = brandService.newbalanceList();
 		model.addAttribute("newbalancelist", newbalancelist);
 		
 		return "/category/brand/newbalance";
@@ -64,7 +67,7 @@ public class ShoerologueBrandController {
 	@RequestMapping(value="brand/converse.do")
 	public String converse(Locale locale, Model model)throws Exception {
 		
-		List<ProductVO> converselist = productService.converseList();
+		List<ProductVO> converselist = brandService.converseList();
 		model.addAttribute("converselist", converselist);
 		
 		return "/category/brand/converse";
@@ -73,7 +76,7 @@ public class ShoerologueBrandController {
 	@RequestMapping(value="brand/vans.do")
 	public String vans(Locale locale, Model model)throws Exception {
 		
-		List<ProductVO> vanslist = productService.vansList();
+		List<ProductVO> vanslist = brandService.vansList();
 		model.addAttribute("vanslist", vanslist);
 		
 		return "/category/brand/vans";
@@ -82,7 +85,7 @@ public class ShoerologueBrandController {
 	@RequestMapping(value="brand/reebok.do")
 	public String reebok(Locale locale, Model model)throws Exception {
 		
-		List<ProductVO> reeboklist = productService.reebokList();
+		List<ProductVO> reeboklist = brandService.reebokList();
 		model.addAttribute("reeboklist", reeboklist);
 		
 		return "/category/brand/reebok";
@@ -91,7 +94,7 @@ public class ShoerologueBrandController {
 	@RequestMapping(value="brand/nuovo.do")
 	public String nuovo(Locale locale, Model model)throws Exception {
 		
-		List<ProductVO> nuovolist = productService.nuovoList();
+		List<ProductVO> nuovolist = brandService.nuovoList();
 		model.addAttribute("nuovolist", nuovolist);
 		
 		return "/category/brand/nuovo";
@@ -100,7 +103,7 @@ public class ShoerologueBrandController {
 	@RequestMapping(value="brand/jordan.do")
 	public String jordan(Locale locale, Model model)throws Exception {
 		
-		List<ProductVO> jordanlist = productService.jordanList();
+		List<ProductVO> jordanlist = brandService.jordanList();
 		model.addAttribute("jordanlist", jordanlist);
 		
 		return "/category/brand/jordan";
@@ -109,7 +112,7 @@ public class ShoerologueBrandController {
 	@RequestMapping(value="brand/puma.do")
 	public String puma(Locale locale, Model model)throws Exception {
 		
-		List<ProductVO> pumalist = productService.pumaList();
+		List<ProductVO> pumalist = brandService.pumaList();
 		model.addAttribute("pumalist", pumalist);
 		
 		return "/category/brand/puma";
@@ -118,7 +121,7 @@ public class ShoerologueBrandController {
 	@RequestMapping(value="brand/hawkins.do")
 	public String hawkins(Locale locale, Model model)throws Exception {
 		
-		List<ProductVO> hawkinslist = productService.hawkinsList();
+		List<ProductVO> hawkinslist = brandService.hawkinsList();
 		model.addAttribute("hawkinslist", hawkinslist);
 		
 		return "/category/brand/hawkins";
@@ -127,7 +130,7 @@ public class ShoerologueBrandController {
 	@RequestMapping(value="brand/ggomoosin.do")
 	public String ggomoosin(Locale locale, Model model)throws Exception {
 		
-		List<ProductVO> ggomoosinlist = productService.ggomoosinList();
+		List<ProductVO> ggomoosinlist = brandService.ggomoosinList();
 		model.addAttribute("ggomoosinlist", ggomoosinlist);
 		
 		return "/category/brand/ggomoosin";
@@ -136,7 +139,7 @@ public class ShoerologueBrandController {
 	@RequestMapping(value="brand/bearpaw.do")
 	public String bearpaw(Locale locale, Model model)throws Exception {
 		
-		List<ProductVO> bearpawlist = productService.bearpawList();
+		List<ProductVO> bearpawlist = brandService.bearpawList();
 		model.addAttribute("bearpawlist", bearpawlist);
 		
 		return "/category/brand/bearpaw";
@@ -145,7 +148,7 @@ public class ShoerologueBrandController {
 	@RequestMapping(value="brand/rarago.do")
 	public String rarago(Locale locale, Model model)throws Exception {
 		
-		List<ProductVO> raragolist = productService.raragoList();
+		List<ProductVO> raragolist = brandService.raragoList();
 		model.addAttribute("raragolist", raragolist);
 		
 		return "/category/brand/rarago";

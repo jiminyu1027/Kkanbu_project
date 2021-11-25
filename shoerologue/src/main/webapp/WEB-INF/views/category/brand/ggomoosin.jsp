@@ -306,7 +306,7 @@
 			    	 %>
 					<div class="brandPd">
 						<a href="/shoerologue/product/product.do?pidx=<%=ggomoosinlist.get(i).getPidx()%>">
-							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<img src="/shoerologue/resources/image/productdetail/<%=ggomoosinlist.get(i).getpFile1()%>">
 							<div class="shoesBrand" id="pBrandKr"><%=ggomoosinlist.get(i).getpBrandKr()%></div>
 							<div class="shoesName" id="pNameKr"><%=ggomoosinlist.get(i).getpNameKr()%></div>
 							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=ggomoosinlist.get(i).getpPrice()%></span><span class="won">원</span></div>

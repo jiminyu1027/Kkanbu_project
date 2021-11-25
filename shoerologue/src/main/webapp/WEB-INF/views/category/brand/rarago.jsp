@@ -1,3 +1,4 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
@@ -305,7 +306,7 @@
 			    	 %>
 					<div class="brandPd">
 						<a href="/shoerologue/product/product.do?pidx=<%=raragolist.get(i).getPidx()%>">
-							<img src="/resources/image/shoesimage/nike/nike_01.png">
+							<img src="/shoerologue/resources/image/productdetail/<%=raragolist.get(i).getpFile1()%>">
 							<div class="shoesBrand" id="pBrandKr"><%=raragolist.get(i).getpBrandKr()%></div>
 							<div class="shoesName" id="pNameKr"><%=raragolist.get(i).getpNameKr()%></div>
 							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=raragolist.get(i).getpPrice()%></span><span class="won">원</span></div>
