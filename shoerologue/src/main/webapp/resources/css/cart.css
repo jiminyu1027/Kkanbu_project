@@ -191,7 +191,7 @@
 		
 		.myPageCart{
 			width:1500px !important;
-			height:1500px !important;
+			height:100% !important;
 			padding-left:50px !important;
 			padding-right:50px !important;
 			margin:auto !important;
