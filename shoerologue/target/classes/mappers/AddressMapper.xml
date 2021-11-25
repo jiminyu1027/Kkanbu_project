@@ -23,11 +23,12 @@
     
     <insert id="insert" parameterType="AddressVO">
 	<![CDATA[
-		INSERT INTO Address(adidx, adrec, adphone, addr1, addr3, midx) VALUES(
+		INSERT INTO Address(adidx, adrec, adphone, addr1, addr2,addr3, midx) VALUES(
 			adidx_seq.nextval
 			,#{adRec}
 			,#{adPhone}
 			,#{addr1}
+			,#{addr2}
 			,#{addr3}
 			,#{midx}
 		)
@@ -36,6 +37,41 @@
 			SELECT MAX(adidx) FROM Address
 		</selectKey>
 	</insert>
+    
+<!-- 	<select id="detail" resultType="AddressVO" parameterType="int"> -->
+<!--         SELECT  -->
+<!--         	adidx, -->
+<!--         	adName, -->
+<!--         	adRec, -->
+<!--         	adSend, -->
+<!--         	addr1, -->
+<!--         	addr2, -->
+<!--         	addr3, -->
+<!--         	adPhone, -->
+<!--         	midx -->
+<!--         FROM Address  -->
+<!--        WHERE 1=1 -->
+<!--          AND midx = #{mIdx} -->
+<!-- 	</select> -->
+	
+<!-- 	<update id="modify" parameterType="AddressVO"> -->
+<!-- 		UPDATE Address SET  -->
+<!-- 						adRec = #{adRec} -->
+<!-- 						,adPhone = #{adPhone} -->
+<!-- 						,addr1 = #{addr1} -->
+<!-- 						,addr2 = #{addr2} -->
+<!-- 						,addr3 = #{addr3} -->
+<!-- 					WHERE midx = #{midx} -->
+<!-- 	</update>     -->
+    
+    
+    <delete id="del" parameterType="int">
+    	DELETE FROM Address
+    				WHERE 1=1
+    				AND midx=#{midx}
+    </delete>
+    
+    
     
     
 </mapper>

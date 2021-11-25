@@ -660,6 +660,7 @@
 		}
 		
 		if(result){
+			alert("회원가입에 성공하셨습니다. 다시 로그인 해주세요.")
 			document.frm.submit();
 		}
 	}

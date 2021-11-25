@@ -45,7 +45,7 @@ public class MemberController {
 			
 			MemberService.insert(vo);	
 			
-			return "redirect:/";		
+			return "redirect:/login.do";		
 		
 	}
 	

@@ -5,6 +5,9 @@
 <%@ page import="edu.study.vo.*" %>       
 <%
 	List<AddressVO> list = (List<AddressVO>)request.getAttribute("list");
+%>
+<%
+	AddressVO vo = (AddressVO)request.getAttribute("vo");
 %>     
 <!DOCTYPE html>
 <html>
@@ -187,14 +190,19 @@
 			font-size:20px;
 		}
 		.addrDelbtn{
-			background-color:white;
+			background-color: rgba( 255, 255, 255, 0.5 );
 			border:1px solid white;
 			width:40px;
 			height:23px;
 		}
-		.tetete{
+		.addrTxct{
 			text-align: center;
 		}
+		.addrUpdateBtn{
+			border:1px solid white;
+			background-color: rgba( 255, 255, 255, 0.5 );
+		}
+		
 	</style>
 
 </head>
@@ -563,11 +571,12 @@
 			<table class="table table-hover">
 			  <thead>
 			    <tr>
-			      <th scope="col" style="width:10%">번호</th>
-			      <th scope="col" style="width:13%">받으실 분</th>
-			      <th scope="col" style="width:20%">핸드폰 번호</th>
-			      <th scope="col" style="width:52%">배송지 주소</th>
-			      <th scope="col" style="width:5%" class="tetete">삭제</th>
+			      <th scope="col" style="width:7%">번호</th>
+			      <th scope="col" style="width:11%">받으실 분</th>
+			      <th scope="col" style="width:15%">핸드폰 번호</th>
+			      <th scope="col" style="width:60%">배송지 주소</th>
+			      <th scope="col" style="width:6%" class="addrTxct">수정</th>
+			      <th scope="col" style="width:6%" class="addrTxct">삭제</th>
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -580,9 +589,12 @@
 						<td><%=list.get(i).getAdRec() %></td>
 						<td><%=list.get(i).getAdPhone() %></td>
 						<td><%=list.get(i).getAddr1() %>&nbsp; <%=list.get(i).getAddr3() %></td>
-						<td><button class="addrDelbtn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+						<td class="addrTxct"><button class="addrUpdateBtn">수정</button></td>
+						<td class="addrTxct"><button class="addrDelbtn" onclick="location.href='delete.do?adidx=<%=list.get(i).getAdidx() %>'">
+							  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
 							  <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
-							</svg></button>
+							  </svg>
+							</button>
 						</td>
 					</tr>
 				<%

@@ -12,5 +12,9 @@ public interface AddressService {
 	
 	public void insert(AddressVO vo) throws Exception;
 	
+	//public AddressVO detail(int midx) throws Exception;
 	
+	//public void modify(AddressVO vo) throws Exception;
+	
+	public void del(int adidx) throws Exception;
 }

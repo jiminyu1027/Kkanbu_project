@@ -17,14 +17,26 @@ public class AddressDAO {
 	
 	private static final String Namespace = "edu.study.mapper.AddressMapper";	
 	
-	public List<AddressVO> list(int mIdx) throws Exception{
-		return sqlSession.selectList(Namespace+".list", mIdx);
+	public List<AddressVO> list(int midx) throws Exception{
+		return sqlSession.selectList(Namespace+".list", midx);
 	}		
 
 	public void insert(AddressVO vo) throws Exception{
 		sqlSession.insert(Namespace+".insert", vo);
 	}	
-		
+	
+//	public AddressVO detail(int midx) throws Exception{
+//		return sqlSession.selectOne(Namespace+".detail",midx);
+//	}
+	
+//	public void modify(AddressVO vo) throws Exception{
+//		sqlSession.update(Namespace+".modify",vo);
+//	}
+	
+	
+	public void del(int midx) throws Exception{
+		sqlSession.delete(Namespace+".del",midx);
+	}
 	
 	
 }

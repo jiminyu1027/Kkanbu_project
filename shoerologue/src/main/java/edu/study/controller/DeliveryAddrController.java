@@ -56,8 +56,20 @@ public class DeliveryAddrController {
 		//return "/mypage/deliveryAddr/receiveAddr";
 		return "redirect:/mypage/deliveryAddr/receiveAddr.do";
 	}
+
+
 	
 	
+	@RequestMapping(value="/delete.do")
+	public String delete(Locale locale, Model model,AddressVO vo,int adidx, HttpSession session) throws Exception{
+		
+		MemberVO member = (MemberVO)session.getAttribute("member");
+		vo.setMidx(member.getMidx());
+		
+		AddressService.del(adidx);
+
+		return "redirect:/mypage/deliveryAddr/receiveAddr.do";
+	}
 	
 }
 
