@@ -1,12 +1,16 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ page import="java.util.*" %>    
+<%@ page import="edu.study.vo.*" %>       
+<%
+	List<CartVO> list = (List<CartVO>)request.getAttribute("list");
+%>   
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-
+<title>장바구니 | 슈롤로그</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 		
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -21,26 +25,38 @@
 		<link rel="stylesheet" href="/shoerologue/resources/css/mypage.css">
 		<link rel="stylesheet" href="/shoerologue/resources/css/headerFooter.css">
 		<link rel="stylesheet" href="/shoerologue/resources/css/cart.css">
-		<script src="/js/jquery-3.6.0.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 	</style>
 </head>
 <body>
+<!-- 로그인 회원가입 -->
 	<div class="container">
 		<nav class="navbar navbar-expand-lg navbar-light topNav">
 		      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 		      <ul class="nav justify-content-end"> 
-				  <li class="nav-item">
-				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
-				  </li>
-				  <li class="nav-item">
-				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/member/join.do">회원가입</a>
-				  </li>
+		      <!-- 로그인 안했을때 -->
+		      <c:if test="${member == null}">
+					  <li class="nav-item">
+					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/member/join.do">회원가입</a>
+					  </li>
+				</c:if>
+				<!-- 로그인 했을때 -->
+				<c:if test="${member != null}">
+					  <li class="nav-item">
+					    <a class="nav-link text-black-50 fw-bolder">${member.mName}님 환영합니다</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/logout.do">로그아웃</a>
+					  </li>
+				</c:if>
 				</ul>
 			</nav>
 		</div>
-	
 	<!-- 로고, 검색창, 마이페이지 -->
 	<div class="container psts">
 	  <div class="row">
@@ -140,7 +156,7 @@
 	
 	<!-- body  -->
 	<!-- 마이페이지 메인박스 -->
-	<div class="myPageMainBox">
+	<div class="myPageCart">
 		<!-- 페이지 이동경로 -->
 		<div style=" float: left; width: 0%;">&nbsp;</div>
 		<div style=" float: left; width: 99%;" class="mt-3">
@@ -198,7 +214,7 @@
 		
 		<!-- 마이페이지 메인 -->
 		<div class="sectionBox" style="width:81%">
-		<form name="Frm" action="orderpayment.do" method="POST">
+		<form name="form" action="orderpayment.do" method="GET">
 			<span  class="text-left">장바구니
 			<span id="insertCount">(0)</span>
 			</span>	
@@ -211,33 +227,67 @@
 					<span class="checkText">전체선택</span>
 					<div class="right-text">
 					<span class="zzim"><i class="bi bi-heart bicon" style="color:#FF0000"></i>선택 찜하기</span>
-					<span class="chooseDel"><i class="bi bi-trash bicon"></i>선택 삭제</span>
+					<span class="Del_btn" ><i class="bi bi-trash bicon"></i>선택 삭제</span>
+					<script>
+// 					$(".Del_btn").click(function(){
+// 						var confirm_val = confirm("삭제하시겠습니까?");
+						
+// 						if(confirm_val){
+// 							var checkArr = new Array();
+							
+// 							$("input[class='chBox']:checked").each(function(){
+// 								checkArr.push($(this).attr("data-ctidx"));
+// 							});
+// 							$.ajax({
+// 								url:"/cart/del",
+// 								type:"post",
+// 								data: { chBox : checkArr },
+// 								success : function(result){
+// 									if(result == 1){
+// 										location.href="/cart/cart";
+// 									}	else {
+// 										alert("삭제실패!");
+// 									}
+// 								}
+// 							});
+// 						}
+// 					});
+					</script>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- 장바구니 상품이 없을 경우 -->
-		<div class="cartNoItem">
-			<div class="flex-box">
-				<div class="cartNoItem2">
-				  <i class="bi bi-exclamation-circle exclamation"></i><br>
-				  장바구니에 담겨 있는 상품이 없습니다.</div>
-			</div>
-		</div>
+		<c:choose>
+			<c:when test="${ cart == null }">
+				<div class="cartNoItem">
+					<div class="flex-box">
+						<div class="cartNoItem2">
+						  <i class="bi bi-exclamation-circle exclamation"></i><br>
+						  장바구니에 담겨 있는 상품이 없습니다.</div>
+					</div>
+				</div>
+			</c:when>
+ 		<c:otherwise> 
 		<!-- 장바구니 상품이 있는 경우 -->
+		<form name="frm" id="frm" method="post" action="orderpayment.do">
 		<div class="cartInItem">
 			<div class="flex-box">
 				<table>
+				<%
+					for(int i=0; i<list.size(); i++){
+				%>
 					<tr>
-						<td class="check"><input type="checkbox" name="shoes" id="checks">
+					<c:set var="sum" value="0" />
+						<td class="check"><input type="checkbox" name="shoes" class="chBox" id="checks" data-ctidx="${list.ctidx}">
 														<label for="checks"></label></td>
-						<td class="imgSize"><img src="/shoerologue/resources/image/tim.jpg" width="120px"></td>
+						<td class="imgSize"><img src="" width="120px"></td>
 						<td class="prodIntro">
-							<span class="pBrand">VANS</span>
-							<div class="pTitle">OLD SCOOL</div>
+							<span class="pBrand"><%=list.get(i).getpBrandeng() %></span>
+							<div class="pTitle"><%=list.get(i).getpNameeng() %></div>
 							<div>
-							<span class="pColor">WHITE / BLACK</span>
-							<span class="pSize">230</span>
+							<span class="pColor"><%=list.get(i).getpColor()%></span>
+							<span class="pSize"><%=list.get(i).getpSize()%></span>
 							</div>	
 							<input type="button" class="pOption" value="옵션변경" data-bs-target="#staticBackdrop" data-bs-toggle="modal">
 							<!-- Modal -->
@@ -249,9 +299,6 @@
 							        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 							      </div>
 							      <div class="modal-body">
-							        <div>
-							        	
-							        </div>
 							      </div>
 							      <div class="modal-footer">
 							        <button type="button" class="btnClose" data-bs-dismiss="modal">닫기</button>
@@ -263,13 +310,13 @@
 						</td>
 						<td>
 						  <div class="d-flex justify-content-center mt-2">
-							<div class="each_input_sub1 text1 bt_down">-</div>
-	                        <input type="text" class="each_input num" id="30" name="amount" value="1">
-	                        <div class="each_input_sub2 text1 bt_up">+</div>
+							<div class="each_input_sub1 text1 bt_down" onclick="del();" >-</div>
+	                        <input type="text" class="each_input num" id="30" onclick="change();" name="amount" value="" pattern="#,###,###">
+	                        <div class="each_input_sub2 text1 bt_up" onclick="add();" >+</div>
 	                       </div>
 						</td>
 						<td>
-							<span class="pPrice">29,000</span>
+							<span class="pPrice" name="sell_price"  pattern="#,###,###"><%=list.get(i).getpPrice() %></span>
 							<span class="won">원</span>
 						</td>
 						<td>
@@ -281,6 +328,8 @@
 						</div>
 						</td>
 					</tr>
+<%-- 					<c:set var="sum" value="${sum+(list.pPrice * list.amount)}" /> --%>
+					<%} %>
 				</table>
 			</div>
 		</div>
@@ -289,7 +338,7 @@
 		<div class="paymentBox d-flex justify-content-evenly align-items-center">
 			<div class="paymentBox2">
 				<span class="paymentLabel">상품금액</span>
-				<span class="price" id="pricePay">0
+				<span class="price" id="pricePay" name="sum" value="" pattern="#,###,###">
 				<span class="won">원</span>
 				</span>
 			</div>
@@ -303,28 +352,31 @@
 			<i class="bi bi-plus-circle" style="font-size:2rem;"></i>
 			<div  class="paymentBox2">
 				<span class="paymentLabel px-3">배송비</span>
-				<span class="price" id="deliveryPay">0
+				<span class="price" id="deliveryPay">
 				<span class="won">원</span>
 				</span>
 			</div>
 			<img src="/shoerologue/resources/image/symbol/equal.png" class="equalIcon">
 			<div  class="paymentBox2">
 				<span class="paymentValue">결제금액</span>
-				<span class="price" id="totalPay">0
+				<span class="price" id="totalPay" value="${sum}" pattern="###,###,###">
 				<span class="won">원</span>
 				</span>
 			</div>
 		</div>
+		</form>
 		<!-- 계속 쇼핑, 주문버튼 -->
 		<div class="rows btnGroup">
 			<label>
-				<a href="/main.do">
+				<a href="/shoerologue">
 				<input type="button" value="계속 쇼핑하기" class="keepShop"></a>
 			</label>
 			<label>
 				<input type="button" value="주문하기" id="orderbtn" name="gotoOrder" class="orderShop" onclick="goOrder(); return false;">
 			</label>
 		</div>
+		</c:otherwise>
+		</c:choose>
 		<!-- 결제 전 주의사항 -->
 		<div class="cautionBox">
 			<span class="caution1"><i class="bi bi-exclamation-circle" style="font-size: 18px;"></i> 상품 주문 전 확인해주세요!</span>
@@ -335,9 +387,9 @@
 				<li class="bullet">배송비: 일반택배 3,000원 (5만원 이상 무료)</li>
 			</ul>
 		</div>
-	</form>
 	</div>
-	</div><br>
+	</div>
+	<br>
 	
 <!-- 우측하단 TOP 이동 배너 -->
 	<a href="#top">
@@ -345,8 +397,8 @@
 	  <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
 	</svg></a>
 	
-	
 	<script>
+	//전체선택
 	$(document).ready(function(){
 		$("#allThing").click(function(){
 			if($("#allThing").is(":checked")) $("input[name=shoes]").prop("checked", true);
@@ -362,6 +414,7 @@
 	});
 	
 	//수량변경 21-11-12ajax 해야함
+	
 	$(".bt_up").click(function(e){
 		var target = $(e.target);
 		var num = parseInt(target.prev().val());
@@ -379,8 +432,7 @@
 			target.next().val(num);
 		};
 	});
-	
-	
+
 	
 	</script>
 	
