@@ -12,7 +12,7 @@
 %>
 <html>
 	<head>
-		<title>신발의 시작, 슈롤로그</title>
+		<title>신발의 시작, 슈롤로그.</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 		
