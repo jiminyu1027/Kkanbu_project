@@ -15,8 +15,16 @@ public class CartVO {
 	private String pPrice;
 	private String pColor;
 	private String pSize;
+	private String pFile1;
 	private int money;
 	private int amount;
+	
+	public String getpFile1() {
+		return pFile1;
+	}
+	public void setpFile1(String pFile1) {
+		this.pFile1 = pFile1;
+	}
 	
 	public String getpBrandeng() {
 		return pBrandeng;

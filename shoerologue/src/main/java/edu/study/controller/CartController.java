@@ -24,6 +24,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import edu.study.service.CartService;
 import edu.study.vo.CartVO;
 import edu.study.vo.MemberVO;
+import edu.study.vo.ProductVO;
 
 @RequestMapping(value="/cart")
 @Controller
@@ -33,32 +34,18 @@ public class CartController {
 	CartService CartService;
 
 	@RequestMapping(value="/cart.do", method = RequestMethod.GET)
-	public String list(@ModelAttribute CartVO cvo, HttpSession session)throws Exception{
-		
-		MemberVO member=(MemberVO)session.getAttribute("member");
-		
-		if(member==null) {
-			return "redirect:/login.do";
-		}
-		cvo.setmId(member.getmId());
-		CartService.insert(cvo);
-		return "/cart/cart";
-	}
-
-	@RequestMapping(value="/cart.do", method = RequestMethod.POST)
-	public String list(HttpSession session, ModelAndView mav, Model model, String mId) throws Exception {
-		//Map<String, Object> map=new HashMap<>();
-		
+	public String list(@ModelAttribute CartVO cvo, HttpSession session,Model model,Locale locale)throws Exception{
+		//System.out.println("cart test");
 		MemberVO member=(MemberVO)session.getAttribute("member");
 		
 		if(member != null){
-			// 장바구니테이블에 있는 로그인 유저의 전체 목록
-			List<CartVO> list=CartService.list(mId);
+			// 장바구니테이블에 있는 로그인 유저의 선택상품 전체 목록
+			List<CartVO> list=CartService.list(member.getMidx());
+			//System.out.println("LIST"+list);
 			
 			//장바구니 테이블에 있는 로그인 유저의 전체 금액
-			double totalPrice = 0.0;
-			
-			
+			double totalPrice = CartService.sum(member.getMidx());
+			System.out.println("total sum"+totalPrice);
 			
 			model.addAttribute("list",list);
 			model.addAttribute("totalPrice",totalPrice);
@@ -69,6 +56,7 @@ public class CartController {
 		}
 	}
 }
+
 
 	
 	

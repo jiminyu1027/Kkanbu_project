@@ -22,8 +22,8 @@ public class CartDAO {
 		sqlSession.insert(Namespace+".insert", cvo);
 	}
 	
-	public List<CartVO> list(String mId) throws Exception{
-		return sqlSession.selectList(Namespace+".list", mId);
+	public List<CartVO> list(int midx) throws Exception{
+		return sqlSession.selectList(Namespace+".list",midx);
 	}
 	//장바구니 개별삭제
 	public void del(int ctidx) throws Exception{
@@ -38,8 +38,8 @@ public class CartDAO {
 	}
 	
 	//장바구니 금액합계
-	public int sumMoney(String mId) {
-		return sqlSession.selectOne(Namespace+".sumMoney",mId);
+	public int sum(int midx) {
+		return sqlSession.selectOne(Namespace+".sum",midx);
 	}
 	
 	public int count(String mId, int pidx)throws Exception{

@@ -4,16 +4,30 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
 <mapper namespace="edu.study.mapper.CartMapper">
-		<!-- 카트 담기 -->
-  	<insert id="insert" parameterType="CartVO">
-  		INSERT INTO cart (ctidx, mId, midx, pidx, amount)
-  		VALUES (ctidx_seq.nextval, #{mId}, #{midx}, #{pidx}, #{amount})
-  	</insert> 
+		<!-- 카트 목록 -->
+  	<select id="list" resultType="CartVO" parameterType="int">
+   		 SELECT 
+   		 	ctidx,  
+  		 	p.pidx,  
+   		 	m.midx, 
+   		 	c.mId,  
+  		 	amount, 
+   		 	m.mName,  
+   		 	p.pPrice,  
+  		 	p.pBrandeng, 
+   		 	p.pNamekr, 
+   		 	p.pColor, 
+  		 	p.pSize,
+  		 	p.pFile1 
+   		 	FROM cart c, product p, member m 
+  		 	WHERE m.mId=c.mId AND c.pidx=p.pidx AND c.midx=#{midx}
+	 	ORDER BY ctidx 
+  	</select> 
   	
   	<!-- 합계 -->
-  	<select id="sum">
+  	<select id="sum" resultType="int">
 	  	SELECT sum(to_number(replace(p.pprice,',',''))) 
 		  FROM cart c, product p 
-		 WHERE c.pidx = p.pidx and c.midx=#{c.midx};
+		 WHERE c.pidx = p.pidx and c.midx=#{c.midx}
   	</select>
 </mapper>

@@ -5,7 +5,8 @@
 <%@ page import="edu.study.vo.*" %>       
 <%
 	List<CartVO> list = (List<CartVO>)request.getAttribute("list");
-%>   
+	double totalPrice = (Integer)request.getAttribute("totalPrice");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -258,8 +259,7 @@
 			</div>
 		</div>
 		<!-- 장바구니 상품이 없을 경우 -->
-		<c:choose>
-			<c:when test="${ cart == null }">
+			<c:if test="${list.size() == 0}">
 				<div class="cartNoItem">
 					<div class="flex-box">
 						<div class="cartNoItem2">
@@ -267,9 +267,9 @@
 						  장바구니에 담겨 있는 상품이 없습니다.</div>
 					</div>
 				</div>
-			</c:when>
- 		<c:otherwise> 
+			</c:if>
 		<!-- 장바구니 상품이 있는 경우 -->
+		<c:if test="${list.size() > 0}">
 		<form name="frm" id="frm" method="post" action="orderpayment.do">
 		<div class="cartInItem">
 			<div class="flex-box">
@@ -278,13 +278,15 @@
 					for(int i=0; i<list.size(); i++){
 				%>
 					<tr>
-					<c:set var="sum" value="0" />
-						<td class="check"><input type="checkbox" name="shoes" class="chBox" id="checks" data-ctidx="${list.ctidx}">
+						<td class="check"><input type="checkbox" name="shoes" class="chBox" id="checks">
 														<label for="checks"></label></td>
-						<td class="imgSize"><img src="" width="120px"></td>
+						<td class="imgSize" >
+						<a href="/shoerologue/resources/image/productdetail/<%=list.get(i).getpFile1() %>" >
+								<img src="/shoerologue/resources/image/productdetail/<%=list.get(i).getpFile1() %>" width="120px">
+						</td>
 						<td class="prodIntro">
 							<span class="pBrand"><%=list.get(i).getpBrandeng() %></span>
-							<div class="pTitle"><%=list.get(i).getpNameeng() %></div>
+							<div class="pTitle"><%=list.get(i).getpNamekr()%></div>
 							<div>
 							<span class="pColor"><%=list.get(i).getpColor()%></span>
 							<span class="pSize"><%=list.get(i).getpSize()%></span>
@@ -311,7 +313,7 @@
 						<td>
 						  <div class="d-flex justify-content-center mt-2">
 							<div class="each_input_sub1 text1 bt_down" onclick="del();" >-</div>
-	                        <input type="text" class="each_input num" id="30" onclick="change();" name="amount" value="" pattern="#,###,###">
+	                        <input type="text" class="each_input num" id="30" onclick="change();" value="<%=list.get(i).getAmount() %>" name="amount" >
 	                        <div class="each_input_sub2 text1 bt_up" onclick="add();" >+</div>
 	                       </div>
 						</td>
@@ -328,7 +330,6 @@
 						</div>
 						</td>
 					</tr>
-<%-- 					<c:set var="sum" value="${sum+(list.pPrice * list.amount)}" /> --%>
 					<%} %>
 				</table>
 			</div>
@@ -336,9 +337,10 @@
 		
 		<!-- 결제 금액 계산 -->
 		<div class="paymentBox d-flex justify-content-evenly align-items-center">
+
 			<div class="paymentBox2">
 				<span class="paymentLabel">상품금액</span>
-				<span class="price" id="pricePay" name="sum" value="" pattern="#,###,###">
+				<span class="price" id="pricePay" name="sum" value="" pattern="#,###,###"><%=totalPrice %>
 				<span class="won">원</span>
 				</span>
 			</div>
@@ -375,8 +377,7 @@
 				<input type="button" value="주문하기" id="orderbtn" name="gotoOrder" class="orderShop" onclick="goOrder(); return false;">
 			</label>
 		</div>
-		</c:otherwise>
-		</c:choose>
+		</c:if>
 		<!-- 결제 전 주의사항 -->
 		<div class="cautionBox">
 			<span class="caution1"><i class="bi bi-exclamation-circle" style="font-size: 18px;"></i> 상품 주문 전 확인해주세요!</span>
@@ -433,6 +434,7 @@
 		};
 	});
 
+	
 	
 	</script>
 	

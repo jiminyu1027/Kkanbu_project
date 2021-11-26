@@ -37,8 +37,8 @@ public class CartServiceImple implements CartService{
 	}
 
 	@Override
-	public int sumMoney(String mId) throws Exception{
-		return CartDao.sumMoney(mId);
+	public int sum(int midx) throws Exception{
+		return CartDao.sum(midx);
 	}
 
 	@Override
@@ -56,8 +56,8 @@ public class CartServiceImple implements CartService{
 	}
 
 	@Override
-	public List<CartVO> list(String mId) throws Exception {
-		return CartDao.list(mId);
+	public List<CartVO> list(int midx) throws Exception {
+		return CartDao.list(midx);
 	}
 
 
