@@ -4,56 +4,16 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
 <mapper namespace="edu.study.mapper.CartMapper">
-	<!-- 카트리스트 -->
-	<select id="list" resultType="CartVO">
-		SELECT row_number() over(order by c.ctidx desc) AS num,
-		c.ctidx, c.mId, c.pidx, c.amount, c.ctwriteday, p.pidx, p.pPrice
-		FROM cart c INNER JOIN product p ON c.pidx=p.pidx
-		WHERE c.mId=#{mId}
-	</select>
-	
-<!-- 	 <select id="list" resultType="CartVO"> -->
-<!--    		SELECT ctidx, p.pidx, m.midx, mName, pBrandeng, pNameeng, pColor, pSize, amount, pPrice, (pPrice*amount) money -->
-<!--   		FROM cart c, product p, member m -->
-<!--   		WHERE m.mId=c.mId and c.pidx=p.pdix and c.mId=#{mId} order by ctidx -->
-<!--    </select> -->
-   
-   	<!-- 카트확인 -->
-	<select id="check" resultType="CartVO">
-		SELECT FROM cart
-		WHERE midx=#{midx} and ctidx=#{ctidx} 
-	</select>
-	
-	<!-- 장바구니추가 -->
-	<insert id="insert" parameterType="CartVO">
-		INSERT INTO cart (ctidx, midx, pidx, mId, amount)
-		VALUE (
-		ctidx_seq.nextval,
-		#{midx},
-		#{pidx},
-		#{mId},
-		#{amount}
-		)
-	</insert>
-   
-   <!-- 카트삭제 -->
-   <delete id="del">
-   		DELETE cart
-   		WHERE ctidx=#{ctidx}
-   		AND mId=#{mId}
-   </delete>
-   
-   <!-- 카트 수량 수정 -->
-   <update id="modify">
-   		UPDATE cart 
-   		SET ctcnt=#{ctcnt}
-   		WHERE citdx=#{ctidx}
-   </update>
-   
-   <select id="sumMoney" resultType="int">
-   		SELECT nvl(sum(pPrice*amount),0)
-   		FROM cart c, product p
-   		WHERE c.pidx=p.pidx and mId=#{mId}
-   </select>
-   
+		<!-- 카트 담기 -->
+  	<insert id="insert" parameterType="CartVO">
+  		INSERT INTO cart (ctidx, mId, midx, pidx, amount)
+  		VALUES (ctidx_seq.nextval, #{mId}, #{midx}, #{pidx}, #{amount})
+  	</insert> 
+  	
+  	<!-- 합계 -->
+  	<select id="sum">
+	  	SELECT sum(to_number(replace(p.pprice,',',''))) 
+		  FROM cart c, product p 
+		 WHERE c.pidx = p.pidx and c.midx=#{c.midx};
+  	</select>
 </mapper>

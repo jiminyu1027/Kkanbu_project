@@ -13,15 +13,16 @@ li{
 
 .channel{
 	margin-top:20px;
-	color:#999999;
+	color:#757575;
 }
 
 .channel>ul>li{
 	display:inline;
+	color:#757575;
 }
 
 .channel>ul>li>a{
-	color:#999999;
+	color:#757575;
 }
 
 .brandName{
@@ -54,6 +55,13 @@ li{
 .redBold{
 	color:red;
 	font-weight:500;
+}
+
+.redBold2{
+	color:red;
+	font-weight:500;
+	text-decoration:underline;
+	text-underline-position:under;
 }
 
 .totalPd{
@@ -304,4 +312,15 @@ input[type=checkbox]{
 .filterSearchBox{
 	border:1px solid black;
 	margin:20px 0;
+}
+
+.emptyProductBox{
+	text-align:center;
+	font-weight:400;
+	font-size:18px;
+	margin:300px 0;
+}
+
+.exclamation{
+	color:#808080;
 }

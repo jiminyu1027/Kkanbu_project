@@ -5,30 +5,31 @@
  
 <mapper namespace="edu.study.mapper.ProductMapper">
 	 <select id="list" resultType="ProductVO">
-   		SELECT *
+	 	SELECT pidx,pNameKr,pNameEng,pBrandKr,PBrandEng,pPrice,pSize,pColor,pType,pFile1,pFile2,pFile3,pFile4,pFile5,pWrite, 
+   		DECODE(pGender,'M','MEN','W','WOMEN','K','KIDS','MEN') as pGender
    		FROM product
    		WHERE 1=1 
    </select>
 
 	<select id="detail" resultType="ProductVO" parameterType="int">
 		SELECT pidx
-         			,pSaleYn
-					,pNameKr
-					,pNameEng
-					,pBrandKr
-					,pBrandEng
-					,pPrice
-					,pSize
-					,pColor
-					,pGender
-					,pType
-					,pFile1
-					,pFile2
-					,pFile3
-					,pFile4
-					,pFile5
-					,pWrite
-					,pDelYn
+		    ,pSaleYn
+			,pNameKr
+			,pNameEng
+			,pBrandKr
+			,pBrandEng
+			,pPrice
+			,pSize
+			,pColor
+			,pType
+			,pFile1
+			,pFile2
+			,pFile3
+			,pFile4
+			,pFile5
+			,pWrite
+			,pDelYn,
+		DECODE(pGender,'M','MEN','W','WOMEN','K','KIDS','MEN') as pGender
    		FROM product
         WHERE pidx = #{pidx}
 	</select>
