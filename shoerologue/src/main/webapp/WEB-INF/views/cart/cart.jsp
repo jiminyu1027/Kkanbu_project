@@ -5,7 +5,7 @@
 <%@ page import="edu.study.vo.*" %>       
 <%
 	List<CartVO> list = (List<CartVO>)request.getAttribute("list");
-	//double totalPrice = (Integer)request.getAttribute("totalPrice");
+	double totalPrice = (Integer)request.getAttribute("totalPrice");
 %>
 <!DOCTYPE html>
 <html>
@@ -340,7 +340,7 @@
 
 			<div class="paymentBox2">
 				<span class="paymentLabel">상품금액</span>
-				<span class="price" id="pricePay" name="sum" value="" pattern="#,###,###">
+				<span class="price" id="pricePay" name="sum" value="" pattern="#,###,###"><%=totalPrice %>
 				<span class="won">원</span>
 				</span>
 			</div>

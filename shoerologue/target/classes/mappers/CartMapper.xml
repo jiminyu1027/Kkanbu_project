@@ -28,6 +28,6 @@
   	<select id="sum" resultType="int">
 	  	SELECT sum(to_number(replace(p.pprice,',',''))) 
 		  FROM cart c, product p 
-		 WHERE c.pidx = p.pidx and c.midx=#{c.midx}
+		 WHERE c.pidx = p.pidx and c.midx=#{midx}
   	</select>
 </mapper>

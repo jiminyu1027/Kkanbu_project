@@ -38,8 +38,9 @@ public class CartDAO {
 	}
 	
 	//장바구니 금액합계
-	public int sum(int midx) {
-		return sqlSession.selectOne(Namespace+".sum",midx);
+	public int sum(int midx) throws Exception{
+		//System.out.println("midx"+midx);
+		return sqlSession.selectOne(Namespace+".sum", midx);
 	}
 	
 	public int count(String mId, int pidx)throws Exception{
