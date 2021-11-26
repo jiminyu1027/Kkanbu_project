@@ -44,11 +44,11 @@ public class CartController {
 			//System.out.println("LIST"+list);
 			
 			//장바구니 테이블에 있는 로그인 유저의 전체 금액
-			double totalPrice = CartService.sum(member.getMidx());
-			System.out.println("total sum"+totalPrice);
+			//double totalPrice = CartService.sum(member.getMidx());
+			//System.out.println("total sum"+totalPrice);
 			
 			model.addAttribute("list",list);
-			model.addAttribute("totalPrice",totalPrice);
+			//model.addAttribute("totalPrice",totalPrice);
 			
 			return "/cart/cart";
 		}else {
