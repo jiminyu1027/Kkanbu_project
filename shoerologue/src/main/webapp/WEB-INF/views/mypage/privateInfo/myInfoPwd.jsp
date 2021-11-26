@@ -163,6 +163,7 @@
 			border-top:0;
 			border-bottom:3;
 			border-color:#9EA4AA;
+			padding-left:10px;
 		}
 		input[type=button].id{
 			width:100%;

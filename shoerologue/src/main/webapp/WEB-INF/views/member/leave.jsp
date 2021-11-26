@@ -631,9 +631,7 @@
 	    function mLeave() {
 	        if (!confirm("정말 ShoeRologue 회원을 탈퇴하시겠습니까?")) {
 	            alert("취소되었습니다.");
-	            return false;
 	        } else {
-	            alert("탈퇴가 정상적으로 이루어졌습니다.\n그동안 ShoeRologue 를 이용해 주셔서 감사합니다.");
 	            document.frm.submit();
 	        }
 	    }

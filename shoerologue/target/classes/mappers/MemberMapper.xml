@@ -37,6 +37,7 @@
    		FROM member
    		WHERE mId = #{mId}
    		AND mPwd = #{mPwd}
+   		AND mDelyn = 'N'
    </select>
    
    <select id="member" resultType="MemberVO" parameterType="int">
@@ -45,11 +46,14 @@
    		WHERE midx = #{midx}
    </select>
    
-   <delete id="del">
-    	DELETE FROM MEMBER
+  
+   
+   <update id="del" parameterType="MemberVO">
+    	UPDATE MEMBER SET
+    		MDELYN = 'Y'
 			WHERE mId = #{mId}
 		    AND mPwd = #{mPwd} 
-   </delete>
+   </update>
    
    
 </mapper>
