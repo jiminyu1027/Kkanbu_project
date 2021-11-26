@@ -39,6 +39,17 @@
    		AND mPwd = #{mPwd}
    </select>
    
+   <select id="member" resultType="MemberVO" parameterType="int">
+   		SELECT mId, master, mName, mJoindate,mIdx , mPwd
+   		FROM member
+   		WHERE midx = #{midx}
+   </select>
+   
+   <delete id="del">
+    	DELETE FROM MEMBER
+			WHERE mId = #{mId}
+		    AND mPwd = #{mPwd} 
+   </delete>
    
    
 </mapper>

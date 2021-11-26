@@ -29,8 +29,13 @@ public class MemberDAO {
 			return sqlSession.selectOne(Namespace+".login", vo);
 		}
 
-	
+		public void del(MemberVO vo) throws Exception{
+			sqlSession.delete(Namespace+".del",vo);
+		}
 		
+		public MemberVO member(int midx) throws Exception{
+			return sqlSession.selectOne(Namespace+".member",midx);
+		}	
 		
 		
 }

@@ -3,6 +3,9 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="edu.study.vo.*" %>    
+<%
+	MemberVO vo = (MemberVO)request.getAttribute("vo");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +41,7 @@
 		}
 		.myPageMainBox{
 			width:1500px;
-			height:1200px;
+			height:2000px;
 			padding-left:50px;
 			padding-right:50px;
 			margin:auto;
@@ -144,7 +147,7 @@
 			margin-bottom:10px;
 			width:150px;
 			height:60px;
-			background-color: gray !important;
+			background-color:#BDBDBD !important;
 			color:white;
 		}
 		.myPageLine{
@@ -156,6 +159,83 @@
 			border-top:2px solid gray;
 			height:30px;
 			margin-top:35px;
+		}
+		.myPageEndLine2{
+			border-top:2px solid lightgray;
+			height:30px;
+			margin-top:1px;
+		}
+		.delsize{
+			height:40px;
+			width:50%;
+			background-color:white;
+			border-left:0;
+			border-right:0;
+			border-top:0;
+			border-bottom:3;
+			border-color:#9EA4AA;
+		}
+		.infoBox{
+			width:1120px;
+			padding-bottom:30px;
+			padding-top:20px;
+			border-bottom:2px solid lightgray;
+			border-top:2px solid lightgray;
+		}
+		.inputleaveId{
+			height:37px;
+			width:100%;
+			background-color:white;
+			border-left:0;
+			border-right:0;
+			border-top:0;
+			border-bottom:0;
+			border-color:#9EA4AA;
+			padding-left:7px;
+		}
+		.inputleavePwd{
+			height:37px;
+			width:100%;
+			background-color:white;
+			border-left:0;
+			border-right:0;
+			border-top:0;
+			border-bottom:3;
+			border-color:#9EA4AA;
+			padding-left:7px;	
+		}
+		.joinbox{
+			width:55%;
+			height:100%;
+			margin-left:50px;
+			margin-top:30px;
+		}
+		.rows{
+			width:100%;
+			height:60px;
+			text-align:left;
+		}
+		.formalign{
+			float:right;
+			width:370px;
+			height:40px;
+		}
+		label{
+			margin-top:10px;
+			font-weight:bold;
+			font-size:15px;
+		}
+		.myPageInfoLetterSize1{
+			font-size:25px;
+			font-weight:bold;
+		}
+		.myPageInfoLetterSize2{
+			font-size:18px;
+			font-weight:bold;
+		}
+		.myInfoReadonly{
+			background-color: lightgray;
+			border-radius:5px;
 		}
 	</style>
 
@@ -416,32 +496,61 @@
 					<li>탈퇴 후 재가입은 탈퇴일로부터 14일 이후에 가능합니다. 단, 재가입 시 회원가입 포인트 및 쿠폰은 재발급되지 않습니다.</li>
 				</ul>
 			</div>
+			<div class="myPageLine"></div>
 			<br>
-			<div class="myPageEndLine"></div>
-			<form name="frm" id="frm" method="post" action="/burning/shipping/shippingAction.do" onsubmit="return loginChk()">
-			<h3>탈퇴 사유</h3><br>
-				<div class="secessionReason">
-					<p><input type="checkbox" id="ReasonCheck1"> 방문 빈도가 낮아서</p>
-					<p><input type="checkbox" id="ReasonCheck2"> 상품 가격이 비싸서</p>
-					<p><input type="checkbox" id="ReasonCheck3"> 개인 정보 유출이 우려되어서</p>
-					<p><input type="checkbox" id="ReasonCheck4"> 사이트 쇼핑기능이 불편해서</p>
-					<p><input type="checkbox" id="ReasonCheck5"> 고객서비스가 만족스럽지 않아서</p>
-					<p><input type="checkbox" id="ReasonCheck6"> 교환/환불/반품이 불편해서</p>
-					<p><input type="checkbox" id="ReasonCheck7"> 기타</p>
-				</div><br>
-				<div>
-					<h3>남기실 말씀</h3>
-					<textarea placeholder="내용을 입력해 주세요."></textarea>
-				</div>
-				<br>
-					<button type="submit" class="btn btn-secondary secessionbtn" onsubmit="return loginChk()">회원 탈퇴</button>
-					<button type="button" class="btn btn-light resetbtn" onclick="frm_reset()">초기화</button>
+			<form name="frm" id="frm" method="post" action="/shoerologue/member/leave.do">
 				<br><br>
-				<div class="myPageEndLine"></div>
-			</form>
-		  </div>
-		</div>
-	</div><br>
+				<span class="myPageInfoLetterSize1">회원탈퇴</span>
+					<span class="myPageInfoLetterSize2">&gt; 비밀번호 확인</span>
+					<div class="infoBox">
+						<div class="joinbox">
+							<div class="rows password">
+								<label for="id">아이디</label>
+								<div class="formalign">
+									<input class="myInfoReadonly inputleaveId" type="text" id="mId" name="mId" value="${member.mId}" readonly="readonly"/>
+									<span class="check"></span>
+								</div>
+							</div>
+							<div class="rows password">
+								<label for="password">비밀번호<span class="red">*</span></label>
+								<div class="formalign">
+									<input type="password" class="impor inputleavePwd" name="mPwd" id="mPwd" placeholder="비밀번호를 입력해 주세요.">
+									<span class="check"></span>
+								</div>
+							</div>
+						</div>
+					</div><br><br><br>
+				<h3>탈퇴 사유</h3>
+				<div class="myPageEndLine2"></div><br>
+					<div class="secessionReason">
+						<p><input type="checkbox" id="ReasonCheck1"> 방문 빈도가 낮아서</p>
+						<p><input type="checkbox" id="ReasonCheck2"> 상품 가격이 비싸서</p>
+						<p><input type="checkbox" id="ReasonCheck3"> 개인 정보 유출이 우려되어서</p>
+						<p><input type="checkbox" id="ReasonCheck4"> 사이트 쇼핑기능이 불편해서</p>
+						<p><input type="checkbox" id="ReasonCheck5"> 고객서비스가 만족스럽지 않아서</p>
+						<p><input type="checkbox" id="ReasonCheck6"> 교환/환불/반품이 불편해서</p>
+						<p><input type="checkbox" id="ReasonCheck7"> 기타</p>
+					</div>
+					<div class="myPageEndLine2"></div><br><br>
+					<div>
+						<h3>남기실 말씀</h3>
+						<div class="myPageEndLine2"></div>
+							<textarea placeholder="내용을 입력해 주세요."></textarea>
+						</div><br><br>
+							<button type="submit" class="btn btn-secondary secessionbtn" onclick="mLeave();return false;">회원 탈퇴</button>
+							<button type="button" class="btn btn-light resetbtn" onclick="frm_reset()">초기화</button>
+						<br>
+						
+				</form>
+				<div class="myPageLine"></div>
+				<c:if test="${msg == false }">
+				 <p>
+				 입력한 비밀번호가 잘 못 되었습니다.
+				 </p>
+				</c:if>
+			  </div>
+			</div>
+		</div><br>
 	
 <!-- 우측하단 TOP 이동 배너 -->
 	<a href="#top">
@@ -517,6 +626,19 @@
 		function frm_reset() {
 		    document.getElementById("frm").reset();
 		}
+		
+		
+	    function mLeave() {
+	        if (!confirm("정말 ShoeRologue 회원을 탈퇴하시겠습니까?")) {
+	            alert("취소되었습니다.");
+	            return false;
+	        } else {
+	            alert("탈퇴가 정상적으로 이루어졌습니다.\n그동안 ShoeRologue 를 이용해 주셔서 감사합니다.");
+	            document.frm.submit();
+	        }
+	    }
+	
+		
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	

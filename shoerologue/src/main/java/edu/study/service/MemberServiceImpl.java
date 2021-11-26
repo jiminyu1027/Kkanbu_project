@@ -32,6 +32,16 @@ public class MemberServiceImpl implements MemberService{
 		return MemberDao.login(vo);
 	}
 
+	@Override
+	public void del(MemberVO vo) throws Exception {
+		MemberDao.del(vo);
+	}
+
+	@Override
+	public MemberVO member(int midx) throws Exception {
+		return MemberDao.member(midx);
+	}
+
 
 
 	
