@@ -31,86 +31,44 @@ public class CartController {
 	
 	@Autowired
 	CartService CartService;
-	
-	private static final Logger logger = LoggerFactory.getLogger(CartController.class);
-	
-	@RequestMapping(value="/cart.do")
-	public String list(HttpSession session, Model model) throws Exception{
+
+	@RequestMapping(value="/cart.do", method = RequestMethod.GET)
+	public String list(@ModelAttribute CartVO cvo, HttpSession session)throws Exception{
 		
-		MemberVO member = (MemberVO)session.getAttribute("member");
+		MemberVO member=(MemberVO)session.getAttribute("member");
 		
-		List<CartVO> list = CartService.list(member.getMidx());
-		model.addAttribute("list", list);
-		
-		//String mId=member.getmId();
-		//System.out.println("memberid::::"+mId);
-		
-		//List<CartVO> list=CartService.lst
-		
-		//model.addAttribute("list", list);
+		if(member==null) {
+			return "redirect:/login.do";
+		}
+		cvo.setmId(member.getmId());
+		CartService.insert(cvo);
 		return "/cart/cart";
 	}
-	
-	@ResponseBody
-	@RequestMapping(value="/cart.do", method=RequestMethod.POST)
-	public int del(HttpSession session, @RequestParam(value="chBox[]") List<String>chArr, CartVO cvo) throws Exception{
-		logger.info("del");
-		
-		MemberVO member = (MemberVO)session.getAttribute("member");
-		String mId = member.getmId();
-		
-		int result=0;
-		int ctidx=0;
-		
-		if(member != null) {
-			cvo.setmId(mId);
-			
-			for(String i : chArr) {
-				ctidx = Integer.parseInt(i);
-				cvo.setCtidx(ctidx);
-				CartService.del(cvo);
-			}
-			result=1;
-		}
-		return result;
-	}
 
-//	@RequestMapping("insert.do")
-//	public String insert(@ModelAttribute CartVO cvo, HttpSession session)throws Exception{
-//		
-//		String mId=(String)session.getAttribute("mId");
-//		if(mId==null) {
-//			return "redirect:/login.do";
-//		}
-//		cvo.setmId(mId);
-//		CartService.insert(cvo);
-//			return "redirect:/cart/cart.do";
-//	}
-//
-//	@RequestMapping("list.do")
-//	public ModelAndView list(HttpSession session, ModelAndView mav) {
-//		Map<String, Object> map=new HashMap<>();
-//		String mId=(String)session.getAttribute("mId");
-//		if(mId != null) {
-//			List<CartVO> list=CartService.listCart(mId);
-//			int sumMoney=CartService.sumMoney(mId);
-//			int fee=sumMoney >= 50000 ? 0 : 3000;
-//			
-//			map.put("sumMoney", sumMoney);
-//			map.put("fee", fee);
-//			map.put("sum", sumMoney+fee);
-//			map.put("list", list);
-//			map.put("count", list.size());
-//			
-//			mav.setViewName("/cart/cart");
-//			mav.addObject("map",map);
-//			
-//			return mav;
-//			}else {
-//				return new ModelAndView("login","",null);
-//			}
-//	}
-	
+	@RequestMapping(value="/cart.do", method = RequestMethod.POST)
+	public String list(HttpSession session, ModelAndView mav, Model model, String mId) throws Exception {
+		//Map<String, Object> map=new HashMap<>();
+		
+		MemberVO member=(MemberVO)session.getAttribute("member");
+		
+		if(member != null){
+			// 장바구니테이블에 있는 로그인 유저의 전체 목록
+			List<CartVO> list=CartService.list(mId);
+			
+			//장바구니 테이블에 있는 로그인 유저의 전체 금액
+			double totalPrice = 0.0;
+			
+			
+			
+			model.addAttribute("list",list);
+			model.addAttribute("totalPrice",totalPrice);
+			
+			return "/cart/cart";
+		}else {
+			return "redirect:/login.do";
+		}
+	}
 }
 
+	
 	
