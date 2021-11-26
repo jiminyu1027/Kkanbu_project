@@ -256,7 +256,7 @@
 		<div class="brandBox">
 			<div class="totalPdSel">
 				<div  class="totalPd">
-					<span>총 <span class="redBold">0</span>개의 상품이 있습니다.</span>
+					<span>총 <span class="redBold"><%=womenlist.size()%></span>개의 상품이 있습니다.</span>
 				</div>
 				<div class="selection">
 					<select class="">

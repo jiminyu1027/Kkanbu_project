@@ -3,6 +3,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="edu.study.vo.*" %>
+<%@ page import="edu.study.domain.*" %>
 <%
 	List<ProductVO> kidslist = (List<ProductVO>)request.getAttribute("kidslist");
 	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
@@ -33,6 +34,12 @@
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 	</style>
+	<script>
+	var chkList = document.querySelectorAll("input[name=filterColor]:checked");
+	chkList.forEach(function (ch) {
+	    console.log(ch.value);
+	});
+	</script>
 </head>
 <body>
 	<div class="container">
@@ -224,20 +231,20 @@
 			<h6><a>색상</a></h6>
 			<form action="#" method="get" name="filterColorFrm">
 			<div class="filterColor">
-				<input type="checkbox" id="color_white"><label for="color_white"><img src="/shoerologue/resources/image/color/white.png"></label>
-				<input type="checkbox" id="color_beige"><label for="color_beige"><img src="/shoerologue/resources/image/color/beige.png"></label>
-				<input type="checkbox" id="color_yellow"><label for="color_yellow"><img src="/shoerologue/resources/image/color/yellow.png"></label>
-				<input type="checkbox" id="color_pink"><label for="color_pink"><img src="/shoerologue/resources/image/color/pink.png"></label>
-				<input type="checkbox" id="color_red"><label for="color_red"><img src="/shoerologue/resources/image/color/red.png"></label>
-				<input type="checkbox" id="color_orange"><label for="color_orange"><img src="/shoerologue/resources/image/color/orange.png"></label>
-				<input type="checkbox" id="color_brown"><label for="color_brown"><img src="/shoerologue/resources/image/color/brown.png"></label>
-				<input type="checkbox" id="color_green"><label for="color_green"><img src="/shoerologue/resources/image/color/green.png"></label>
-				<input type="checkbox" id="color_blue"><label for="color_blue"><img src="/shoerologue/resources/image/color/blue.png"></label>
-				<input type="checkbox" id="color_navy"><label for="color_navy"><img src="/shoerologue/resources/image/color/navy.png"></label>
-				<input type="checkbox" id="color_purple"><label for="color_purple"><img src="/shoerologue/resources/image/color/purple.png"></label>
-				<input type="checkbox" id="color_gray"><label for="color_gray"><img src="/shoerologue/resources/image/color/gray.png"></label>
-				<input type="checkbox" id="color_black"><label for="color_black"><img src="/shoerologue/resources/image/color/black.png"></label>
-				<input type="checkbox" id="color_rainbow"><label for="color_rainbow"><img src="/shoerologue/resources/image/color/rainbow.png"></label>
+				<input type="checkbox" name="filterColor" id="color_white"><label for="color_white"><img src="/shoerologue/resources/image/color/white.png"></label>
+				<input type="checkbox" name="filterColor" id="color_beige"><label for="color_beige"><img src="/shoerologue/resources/image/color/beige.png"></label>
+				<input type="checkbox" name="filterColor" id="color_yellow"><label for="color_yellow"><img src="/shoerologue/resources/image/color/yellow.png"></label>
+				<input type="checkbox" name="filterColor" id="color_pink"><label for="color_pink"><img src="/shoerologue/resources/image/color/pink.png"></label>
+				<input type="checkbox" name="filterColor" id="color_red"><label for="color_red"><img src="/shoerologue/resources/image/color/red.png"></label>
+				<input type="checkbox" name="filterColor" id="color_orange"><label for="color_orange"><img src="/shoerologue/resources/image/color/orange.png"></label>
+				<input type="checkbox" name="filterColor" id="color_brown"><label for="color_brown"><img src="/shoerologue/resources/image/color/brown.png"></label>
+				<input type="checkbox" name="filterColor" id="color_green"><label for="color_green"><img src="/shoerologue/resources/image/color/green.png"></label>
+				<input type="checkbox" name="filterColor" id="color_blue"><label for="color_blue"><img src="/shoerologue/resources/image/color/blue.png"></label>
+				<input type="checkbox" name="filterColor" id="color_navy"><label for="color_navy"><img src="/shoerologue/resources/image/color/navy.png"></label>
+				<input type="checkbox" name="filterColor" id="color_purple"><label for="color_purple"><img src="/shoerologue/resources/image/color/purple.png"></label>
+				<input type="checkbox" name="filterColor" id="color_gray"><label for="color_gray"><img src="/shoerologue/resources/image/color/gray.png"></label>
+				<input type="checkbox" name="filterColor" id="color_black"><label for="color_black"><img src="/shoerologue/resources/image/color/black.png"></label>
+				<input type="checkbox" name="filterColor" id="color_rainbow"><label for="color_rainbow"><img src="/shoerologue/resources/image/color/rainbow.png"></label>
 			</div>
 			</form>
 			<h6><a>가격</a></h6>
@@ -254,7 +261,7 @@
 		<div class="brandBox">
 			<div class="totalPdSel">
 				<div  class="totalPd">
-					<span>총 <span class="redBold">0</span>개의 상품이 있습니다.</span>
+					<span>총 <span class="redBold"><%=kidslist.size()%></span>개의 상품이 있습니다.</span>
 				</div>
 				<div class="selection">
 					<select class="">
@@ -291,7 +298,9 @@
 					} %>
 				</div>
 				<hr>
-				<div class="page">페이징 처리</div>
+				<div class="page">
+					  페이징처리
+				</div>
 			</div>
 		</div>
 	</div>
@@ -403,7 +412,6 @@
 	});
 	//]]>
 	</script>
-
 	
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	

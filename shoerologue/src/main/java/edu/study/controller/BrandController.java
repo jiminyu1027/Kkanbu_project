@@ -1,6 +1,5 @@
 package edu.study.controller;
 
-import java.io.File;
 import java.util.List;
 import java.util.Locale;
 
@@ -15,7 +14,7 @@ import edu.study.vo.ProductVO;
 
 @RequestMapping(value="/category")
 @Controller
-public class ShoerologueBrandController {
+public class BrandController {
 	
 	@Autowired
 	BrandService brandService;
@@ -32,7 +31,7 @@ public class ShoerologueBrandController {
 	public String test(Locale locale, Model model)throws Exception {
 		
 		List<ProductVO> list = productService.list();
-		model.addAttribute("nikelist", list);
+		model.addAttribute("list", list);
 		
 		return "/category/test";
 	}

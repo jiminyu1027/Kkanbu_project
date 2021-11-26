@@ -255,7 +255,7 @@
 		<div class="brandBox">
 			<div class="totalPdSel">
 				<div  class="totalPd">
-					<span>총 <span class="redBold">0</span>개의 상품이 있습니다.</span>
+					<span>총 <span class="redBold"><%=kidslistsneakers.size()%></span>개의 상품이 있습니다.</span>
 				</div>
 				<div class="selection">
 					<select class="">
@@ -277,8 +277,8 @@
 			<div class="brandPdBox">
 				<div class="brandPdSmBox">
 					<%
-					     if(kidslistsneakers.size() != 0){
-					     for(int i=0; i<kidslistsneakers.size();i++) {	    
+						if(kidslistsneakers.size() != 0){
+							for(int i=0; i<kidslistsneakers.size();i++) {	    
 			    	 %>
 					<div class="brandPd">
 						<a href="/shoerologue/product/product.do?pidx=<%=kidslistsneakers.get(i).getPidx()%>">

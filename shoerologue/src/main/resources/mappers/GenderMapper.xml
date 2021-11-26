@@ -3,22 +3,68 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
-<mapper namespace="edu.study.mapper.ProductMapper">
+<mapper namespace="edu.study.mapper.GenderMapper">
 	
 	<select id="menlist" resultType="ProductVO">
    		SELECT * FROM product WHERE pGender='M' OR pGender='U' ORDER BY pidx desc
 	</select>
 	
+	<select id="menlistboots" resultType="ProductVO">
+		SELECT * FROM product WHERE pGender='M' AND pType='부츠' OR pGender='U' AND pType='부츠' ORDER BY pidx desc
+	</select>
 	
+	<select id="menlistcasual" resultType="ProductVO">
+		SELECT * FROM product WHERE pGender='M' AND pType='캐주얼' OR pGender='U' AND pType='캐주얼' ORDER BY pidx desc
+	</select>
 	
-	<select id="womenlist" resultType="ProductVO">
-		SELECT * FROM product WHERE pGender='W' OR pGender='U' ORDER BY pidx desc
+	<select id="menlistdressshoes" resultType="ProductVO">
+		SELECT * FROM product WHERE pGender='M' AND pType='구두' OR pGender='U' AND pType='구두' ORDER BY pidx desc
+	</select>
+	
+	<select id="menlistsandle" resultType="ProductVO">
+		SELECT * FROM product WHERE pGender='M' AND pType='샌들' OR pGender='U' AND pType='샌들' ORDER BY pidx desc
+	</select>
+	
+	<select id="menlistsneakers" resultType="ProductVO">
+		SELECT * FROM product WHERE pGender='M' AND pType='운동화' OR pGender='U' AND pType='운동화' ORDER BY pidx desc
+	</select>
+	
+	<select id="menlistsports" resultType="ProductVO">
+		SELECT * FROM product WHERE pGender='M' AND pType='스포츠' OR pGender='U' AND pType='스포츠' ORDER BY pidx desc
 	</select>
 	
 	
+	<select id="womenlist" resultType="ProductVO">	
+		SELECT * FROM product WHERE pGender='W' OR pGender='U' ORDER BY pidx desc
+	</select>
 	
-	<select id="kidslist" resultType="ProductVO">
-   		SELECT * FROM product WHERE pGender='K' ORDER BY pidx desc
+	<select id="womenlistboots" resultType="ProductVO">
+		SELECT * FROM product WHERE pGender='W' AND pType='부츠' OR pGender='U' AND pType='부츠' ORDER BY pidx desc
+	</select>
+	
+	<select id="womenlistcasual" resultType="ProductVO">
+		SELECT * FROM product WHERE pGender='W' AND pType='캐주얼' OR pGender='U' AND pType='캐주얼' ORDER BY pidx desc
+	</select>
+	
+	<select id="womenlistdressshoes" resultType="ProductVO">
+		SELECT * FROM product WHERE pGender='W' AND pType='구두' OR pGender='U' AND pType='구두' ORDER BY pidx desc
+	</select>
+	
+	<select id="womenlistsandle" resultType="ProductVO">
+		SELECT * FROM product WHERE pGender='W' AND pType='샌들' OR pGender='U' AND pType='샌들' ORDER BY pidx desc
+	</select>
+	
+	<select id="womenlistsneakers" resultType="ProductVO">
+		SELECT * FROM product WHERE pGender='W' AND pType='운동화' OR pGender='U' AND pType='운동화' ORDER BY pidx desc
+	</select>
+	
+	<select id="womenlistsports" resultType="ProductVO">
+		SELECT * FROM product WHERE pGender='W' AND pType='스포츠' OR pGender='U' AND pType='스포츠' ORDER BY pidx desc
+	</select>
+	
+	
+	<select id="kidslist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+		SELECT * FROM product WHERE pGender='K' ORDER BY pidx desc
 	</select>
 	
 	<select id="kidslistboots" resultType="ProductVO">

@@ -14,7 +14,7 @@ public class BrandDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	private static final String Namespace = "edu.study.mapper.ProductMapper";	
+	private static final String Namespace = "edu.study.mapper.BrandMapper";	
 	
 		public List<ProductVO> nikelist() throws Exception{		
 			return sqlSession.selectList(Namespace+".nikelist");
