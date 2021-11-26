@@ -27,8 +27,10 @@ public class PrivateInfoController {
 	@Autowired
 	MemberService MemberService;
 	
+	
 	@RequestMapping(value="/myInfo.do")
 	public String myInfo(Locale locale, Model model)throws Exception {
+		
 		
 		return "/mypage/privateInfo/myInfo";
 	}

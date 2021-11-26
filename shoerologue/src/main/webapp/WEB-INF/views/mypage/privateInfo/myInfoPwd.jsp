@@ -624,75 +624,12 @@
 	<!-- 유효성 검사 -->
 	<script src="../jquery-3.6.0.min.js"></script>
 	<script>
-	function checkFn(type){
-		if(type == 'pass'){
-			var checkId = /^.*(?=^.{4,20}$)(?=.*\d)(?=.*[a-zA-Z]).*$/;
-			var value = document.frm.password.value;
-			var span = document.getElementsByClassName("password")[0].getElementsByTagName("span")[0];
-			if(value == ""){
-				span.textContent = "*필수";
-				span.style.color = "red";
-				span.style.display = "inline";
-			}else if(!checkId.test(value)){
-				span.textContent = "*형식오류";
-				span.style.color = "red";
-				span.style.display = "inline";
-			}else{
-				span.textContent = "";
-				span.style.display = "none";
-			}
-		}
-	}
-	/*---------------------------------서브밋---------------------------------*/
-	function sumbitFn(){
-		var result = true;
-		
-		var checkPass = /^.*(?=^.{4,20}$)(?=.*\d)(?=.*[a-zA-Z]).*$/;
-		value = document.frm.password.value;
-		span = document.getElementsByClassName("password")[0].getElementsByTagName("span")[0];
-		if(value == ""){
-			span.textContent = "*필수";
-			span.style.color = "red";
-			span.style.display = "inline";
-			result = false;
-		}else if(!checkPass.test(value)){
-			span.textContent = "*형식오류";
-			span.style.color = "red";
-			span.style.display = "inline";
-			result = false;
-		}else{
-			span.textContent = "";
-			span.style.display = "none";
-		}
-		
-		
-		value = document.frm.password.value;
-		var value2 = document.frm.passwordre.value;
-		span = document.getElementsByClassName("passwordre")[0].getElementsByTagName("span")[0];
-		if(value2 == ""){
-			span.textContent = "*필수";
-			span.style.color = "red";
-			span.style.display = "inline";
-			result = false;
-		}else if(value != value2){
-			span.textContent = "*불일치";
-			span.style.color = "red";
-			span.style.display = "inline";
-			result = false;
-		}else{
-			span.textContent = "";
-			span.style.display = "none";
-		}
-		
-		
-		
-	}
+	
 	
 	
 	function frm_reset() {
 	    document.getElementById("frm").reset();
 	}
-	
 	
 	
 	</script>

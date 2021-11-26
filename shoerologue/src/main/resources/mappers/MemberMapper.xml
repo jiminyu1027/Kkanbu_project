@@ -50,7 +50,7 @@
    
    <update id="del" parameterType="MemberVO">
     	UPDATE MEMBER SET
-    		MDELYN = 'Y'
+    		MDELYN = 'Y' 
 			WHERE mId = #{mId}
 		    AND mPwd = #{mPwd} 
    </update>

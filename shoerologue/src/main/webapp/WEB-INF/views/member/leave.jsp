@@ -6,7 +6,7 @@
 <%
 	MemberVO vo = (MemberVO)request.getAttribute("vo");
 %>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
 <meta charset="UTF-8">
@@ -41,7 +41,7 @@
 		}
 		.myPageMainBox{
 			width:1500px;
-			height:2000px;
+			height:1700px;
 			padding-left:50px;
 			padding-right:50px;
 			margin:auto;

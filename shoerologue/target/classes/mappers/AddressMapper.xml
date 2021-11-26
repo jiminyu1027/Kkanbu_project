@@ -69,6 +69,7 @@
     				WHERE 1=1
     				AND midx=#{midx}
     </delete>
+
     
     
     

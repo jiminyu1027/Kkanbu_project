@@ -450,7 +450,7 @@
 								<div class="nos2">
 									<div class="nos-card">
 										<div class="nos-card1">
-											<form action="/shoeRologue/card/cardadd.do" method="post"
+											<form action="#" method="post"
 												id="frm" name="frm" onsubmit="return loginChk()">
 												<a href="#" onClick="return false;"><span
 													class="nos-card1not"><i class="far fa-times-circle"></i></span></a>
