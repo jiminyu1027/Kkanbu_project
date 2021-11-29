@@ -42,6 +42,11 @@ public class MemberServiceImpl implements MemberService{
 		return MemberDao.member(midx);
 	}
 
+	@Override
+	public void update(MemberVO vo) throws Exception {
+		MemberDao.update(vo);
+	}
+
 
 
 	

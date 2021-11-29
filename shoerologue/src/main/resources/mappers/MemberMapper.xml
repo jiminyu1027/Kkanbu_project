@@ -33,7 +33,7 @@
     </insert>
    
    <select id="login" resultType="MemberVO" parameterType="MemberVO">
-   		SELECT mId, master, mName, mJoindate,mIdx
+   		SELECT mId, master, mName, mJoindate, mIdx
    		FROM member
    		WHERE mId = #{mId}
    		AND mPwd = #{mPwd}
@@ -41,7 +41,7 @@
    </select>
    
    <select id="member" resultType="MemberVO" parameterType="int">
-   		SELECT mId, master, mName, mJoindate,mIdx , mPwd
+   		SELECT mId, master, mName, mJoindate, mIdx , mPwd, mEmail, mPhone
    		FROM member
    		WHERE midx = #{midx}
    </select>
@@ -54,6 +54,17 @@
 			WHERE mId = #{mId}
 		    AND mPwd = #{mPwd} 
    </update>
+   
+   <update id="update" parameterType="MemberVO">
+    	UPDATE 
+    		MEMBER 
+    	SET
+    		mPwd = #{mPwd},
+    		mEmail = #{mEmail},
+    		mPhone = #{mPhone}
+		WHERE
+			mId = #{mId}
+   </update>   
    
    
 </mapper>

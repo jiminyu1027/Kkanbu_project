@@ -12,4 +12,5 @@ public interface MemberService {
 	public MemberVO login (MemberVO vo) throws Exception;
 	public void del(MemberVO vo) throws Exception;
 	public MemberVO member(int midx) throws Exception;
+	public void update(MemberVO vo) throws Exception;
 }

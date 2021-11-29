@@ -1,6 +1,11 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="edu.study.vo.*" %>    
+<%
+	MemberVO vo = (MemberVO)request.getAttribute("vo");
+%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -497,26 +502,26 @@
 		<div class="myPageListBox">
 		<h2>개인 정보 수정</h2>
 			<div class="section1">
-			<form name="frm" id="frm" action="#" method="post" class="infoBox">
+			<form name="frm" id="frm" action="/shoerologue/mypage/privateInfo/myInfo.do" method="post" class="infoBox">
 			<div class="joinbox">
 				<div class="rows name mt-5">
 					<label for="name">이름<span class="red"></span></label>
 					<div class="formalign">
-						<input type="text" class="impor myInfoReadonly" name="name" id="name" placeholder="이름" onblur="checkFn('name')" readonly>
+						<input type="text" class="impor myInfoReadonly" name="mName" id="name" value="${member.mName}" onblur="checkFn('name')" readonly>
 						<span class="check"></span>
 					</div>
 				</div>
 				<div class="rows id">
 					<label for="id">아이디<span class="red"></span></label>
 					<div class="formalign">
-						<input type="text" class="id impor myInfoReadonly" name="id" id="id" placeholder="아이디" onblur="checkFn('id')" readonly> 
+						<input type="text" class="id impor myInfoReadonly" name="mId" id="id" value="${member.mId}" onblur="checkFn('id')" readonly> 
 					</div>
 					<span class="check"></span>
 				</div>
 				<div class="rows password">
 					<label for="password">비밀번호<span class="red">*</span></label>
 					<div class="formalign">
-						<input type="password" class="impor" name="password" id="password" placeholder="비밀번호를 입력해 주세요. (영문 숫자 조합 4글자 이상)" onblur="checkFn('pass')">
+						<input type="password" class="impor" name="mPwd" id="password" placeholder="비밀번호를 입력해 주세요. (영문 숫자 조합 4글자 이상)" onblur="checkFn('pass')">
 						<span class="check"></span>
 					</div>
 				</div>
@@ -531,14 +536,14 @@
 				<div class="rows email">
 					<label for="email">이메일<span class="red">*</span></label>
 					<div class="formalign">
-						<input type="email" class="impor" name="email" id="email" placeholder="이메일을 입력해 주세요." onblur="checkFn('email')">
+						<input type="email" class="impor" name="mEmail" id="email" value="${loginUserInfo.mEmail}" onblur="checkFn('email')">
 						<span class="check"></span>
 					</div>
 				</div>
 				<div class="rows phone">
 					<label for="phone">연락처<span class="red">*</span></label>
 					<div class="formalign">
-						<input type="text" class="impor" name="phone" id="phone" placeholder="핸드폰 번호를 '-' 없이 입력해 주세요." onblur="checkFn('phone')">
+						<input type="text" class="impor" name="mPhone" id="phone" value="${loginUserInfo.mPhone}" onblur="checkFn('phone')">
 						<span class="check"></span>
 					</div>
 				</div>
@@ -756,7 +761,7 @@
 	function sumbitFn(){
 		var result = true;
 		
-		var checkPass = /^.*(?=^.{4,20}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&+=]).*$/;
+		var checkPass = /^.*(?=^.{4,20}$)(?=.*\d)(?=.*[a-zA-Z]).*$/;
 		value = document.frm.password.value;
 		span = document.getElementsByClassName("password")[0].getElementsByTagName("span")[0];
 		if(value == ""){

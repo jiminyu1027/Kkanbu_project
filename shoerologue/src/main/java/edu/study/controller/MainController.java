@@ -103,7 +103,7 @@ public class MainController {
 			}
 		}
 	
-	 /* 메인페이지 로그아웃 */
+	 /* 로그아웃 */
     @RequestMapping(value="logout.do", method=RequestMethod.GET)
     public String logoutMainGET(HttpServletRequest request) throws Exception{
         

@@ -37,5 +37,8 @@ public class MemberDAO {
 			return sqlSession.selectOne(Namespace+".member",midx);
 		}	
 		
+		public void update(MemberVO vo) throws Exception{
+			sqlSession.delete(Namespace+".update",vo);
+		}
 		
 }

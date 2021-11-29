@@ -516,13 +516,13 @@
 		<span class="myPageInfoLetterSize1">개인정보 수정</span>
 		<span class="myPageInfoLetterSize2">&gt; 비밀번호 확인</span>
 			<div class="section1">
-			<form name="frm" id="frm" action="myInfo.do" method="post">
+			<form name="frm" id="frm" method="post">
 			<div class="infoBox">
 				<div class="joinbox">
 					<div class="rows password">
 						<label for="password">비밀번호<span class="red">*</span></label>
 						<div class="formalign">
-							<input type="password" class="impor" name="password" id="password" placeholder="비밀번호를 입력해 주세요." onblur="checkFn('pass')">
+							<input type="password" class="impor" name="mPwd" id="mPwd" placeholder="비밀번호를 입력해 주세요." onblur="checkFn('pass')">
 							<span class="check"></span>
 						</div>
 					</div>
