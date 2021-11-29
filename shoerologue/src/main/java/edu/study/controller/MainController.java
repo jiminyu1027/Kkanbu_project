@@ -1,11 +1,13 @@
 package edu.study.controller;
 
+import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -63,7 +65,7 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/login.do", method=RequestMethod.POST)
-	public String login(Locale locale, Model model, HttpSession session,  MemberVO vo, RedirectAttributes rttr) throws Exception{
+	public void login(Locale locale, Model model, HttpSession session,  MemberVO vo, RedirectAttributes rttr, HttpServletResponse response) throws Exception{
 		
 			MemberVO login = MemberService.login(vo);
 			String mName = (String)session.getAttribute("mName");
@@ -73,7 +75,14 @@ public class MainController {
 				session.setAttribute("member", null);
 				rttr.addFlashAttribute("msg", false);
 				//System.out.println("이름22!!"+mName);
-				return "redirect:/login.do";
+				
+				PrintWriter pw = response.getWriter();
+				response.setContentType("text/html; charset=UTF-8");
+				
+				pw.println("<script>alert(' 아이디 혹은 비밀번호가 일치하지 않습니다. '); location.href='/shoerologue/login.do'; </script>");
+				pw.flush();
+				
+				
 			}else {
 				
 				mName= login.getmName();
@@ -86,7 +95,11 @@ public class MainController {
 				
 				session.setAttribute("member", login);
 				
-				return "redirect:/";
+				PrintWriter pw = response.getWriter();
+				response.setContentType("text/html; charset=UTF-8");
+				
+				pw.println("<script> alert(' 로그인에 성공하였습니다. '); location.href='/shoerologue'; </script>");
+				pw.flush();
 			}
 		}
 	
