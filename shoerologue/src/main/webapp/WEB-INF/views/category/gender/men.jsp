@@ -1,3 +1,4 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -7,6 +8,7 @@
 <%
 	List<ProductVO> menlist = (List<ProductVO>)request.getAttribute("menlist");
 	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
+	PageMaker pageMaker = (PageMaker)request.getAttribute("pageMaker");
 %>
 <!DOCTYPE html>
 <html>
@@ -33,7 +35,21 @@
 		
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+		.page>ul>li {
+			display:inline;
+			padding: 6px;
+			text-align:center;
+		}
+		.pm:visited{
+			background-color:black;
+		}
 	</style>
+	<script>
+	function selChange() {
+		var sel = document.getElementById('cntPerPage').value;
+		location.href="/shoerologue/category/gender/men.do?nowPage=${paging.nowPage}&cntPerPage="+sel;
+	}
+</script>
 </head>
 <body>
 	<div class="container">
@@ -265,11 +281,21 @@
 					  <option value="4">낮은가격순</option>
 					  <option value="5">높은가격순</option>
 					</select>
+					<select id="cntPerPage" name="sel" onchange="selChange()">
+						<option value="15"
+							<c:if test="${paging.cntPerPage == 15}">selected</c:if>>15개씩 보기</option>
+						<option value="30"
+							<c:if test="${paging.cntPerPage == 30}">selected</c:if>>30개씩 보기</option>
+						<option value="60"
+							<c:if test="${paging.cntPerPage == 60}">selected</c:if>>60개씩 보기</option>
+					</select>
+					<!--
 					<select class="">
 					  <option value="15" selected>15개씩 보기</option>
 					  <option value="30">30개씩 보기</option>
 					  <option value="60">60개씩 보기</option>
 					</select>
+					  -->
 				</div>
 				<div class="hr1"></div>
 			</div>
@@ -289,10 +315,31 @@
 						</a>
 					</div>
 					<% } 
-					} %>
+					} else{
+					%>
+					<div class="emptyProductBox">
+						<div class="exclamation"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+						</svg></div>
+					등록된 상품이 없습니다.
+					</div>
+					<%
+					}%>
 				</div>
-				<hr>
-				<div class="page">페이징 처리</div>
+				<div class="page">
+					<ul>
+						<c:if test="${pageMaker.prev}">
+							<li><a class="pm" href="/shoerologue/category/gender/men.do${pageMaker.makeQuery(pageMaker.startPage - 1)}">이전</a></li>
+						</c:if> 
+						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+							<li><a class="pm" href="/shoerologue/category/gender/men.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
+						</c:forEach>
+						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+							<li><a class="pm" href="/shoerologue/category/gender/men.do${pageMaker.makeQuery(pageMaker.endPage + 1)}">다음</a></li>
+						</c:if> 
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>

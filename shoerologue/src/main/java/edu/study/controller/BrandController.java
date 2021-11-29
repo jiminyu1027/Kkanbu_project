@@ -7,8 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import edu.study.domain.Paging;
 import edu.study.service.BrandService;
+import edu.study.service.GenderService;
 import edu.study.service.ProductService;
 import edu.study.vo.ProductVO;
 
@@ -20,6 +23,9 @@ public class BrandController {
 	BrandService brandService;
 	@Autowired
 	ProductService productService;
+	@Autowired
+	GenderService genderService;
+	
 	
 	@RequestMapping(value="/brand.do")
 	public String brand(Locale locale, Model model)throws Exception {
@@ -30,16 +36,13 @@ public class BrandController {
 	@RequestMapping(value="/test.do")
 	public String test(Locale locale, Model model)throws Exception {
 		
-		List<ProductVO> list = productService.list();
-		model.addAttribute("list", list);
-		
 		return "/category/test";
 	}
 	
 	@RequestMapping(value="brand/nike.do")
-	public String nike(Locale locale, Model model)throws Exception {
+	public String nike(Locale locale, Model model,ProductVO pvo)throws Exception {
 		
-		List<ProductVO> nikelist = brandService.nikeList();
+		List<ProductVO> nikelist = brandService.nikeList(pvo);
 		model.addAttribute("nikelist", nikelist);
 		
 		return "/category/brand/nike";

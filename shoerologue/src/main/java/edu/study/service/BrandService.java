@@ -7,7 +7,7 @@ import edu.study.vo.ProductVO;
 
 public interface BrandService {
 
-	List<ProductVO> nikeList() throws Exception;
+	List<ProductVO> nikeList(ProductVO pvo) throws Exception;
 	
 	List<ProductVO> adidasList() throws Exception;
 	

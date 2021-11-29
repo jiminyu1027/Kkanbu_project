@@ -16,7 +16,7 @@ public class BrandServiceImpl implements BrandService{
 	
 
 	@Override
-	public List<ProductVO> nikeList() throws Exception {
+	public List<ProductVO> nikeList(ProductVO pvo) throws Exception {
 		return BrandDao.nikelist();
 	}
 	

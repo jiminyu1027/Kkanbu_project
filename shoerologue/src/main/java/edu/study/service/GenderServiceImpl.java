@@ -16,10 +16,18 @@ public class GenderServiceImpl implements GenderService{
 	GenderDAO GenderDao;
 	
 	@Override
-	public List<ProductVO> menList() throws Exception {
-		return GenderDao.menlist();
+	public List<ProductVO> menList(ProductVO pvo,Criteria cri) throws Exception {
+		return GenderDao.menlist(pvo,cri);
 	}
 
+	@Override
+	public int countmenlist() throws Exception {
+		return GenderDao.countmenlist();
+	}
+
+	
+	
+	
 	@Override
 	public List<ProductVO> menListBoots() throws Exception {
 		return GenderDao.menlistboots();
@@ -123,6 +131,7 @@ public class GenderServiceImpl implements GenderService{
 	public List<ProductVO> kidsListSports() throws Exception {
 		return GenderDao.kidslistsports();
 	}
+
 
 	
 }

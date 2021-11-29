@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import edu.study.domain.Criteria;
+import edu.study.domain.Paging;
 import edu.study.vo.ProductVO;
 
 @Repository
@@ -18,9 +19,18 @@ public class GenderDAO {
 	private static final String Namespace = "edu.study.mapper.GenderMapper";	
 	
 		
-		public List<ProductVO> menlist() throws Exception{	
-			return sqlSession.selectList(Namespace+".menlist");
+		public List<ProductVO> menlist(ProductVO pvo, Criteria cri) throws Exception{	
+			
+			return sqlSession.selectList(Namespace+".menlist",cri);
 		}
+		
+		public int countmenlist() throws Exception{	
+			return sqlSession.selectOne(Namespace+".countmenlist");
+		}
+		
+		
+		
+		
 		public List<ProductVO> menlistboots() throws Exception{	
 			return sqlSession.selectList(Namespace+".menlistboots");
 		}

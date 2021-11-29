@@ -5,10 +5,25 @@
  
 <mapper namespace="edu.study.mapper.GenderMapper">
 	
-	<select id="menlist" resultType="ProductVO">
-   		SELECT * FROM product WHERE pGender='M' OR pGender='U' ORDER BY pidx desc
+	<!-- 페이징 처리 후 게시글 조회 -->
+	<select id="menlist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product WHERE pGender='M' OR pGender='U' 
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
 	</select>
 	
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countmenlist" resultType="int">
+		SELECT COUNT(*) FROM product WHERE pGender='M' OR pGender='U' ORDER BY pidx desc
+	</select>
+
 	<select id="menlistboots" resultType="ProductVO">
 		SELECT * FROM product WHERE pGender='M' AND pType='부츠' OR pGender='U' AND pType='부츠' ORDER BY pidx desc
 	</select>

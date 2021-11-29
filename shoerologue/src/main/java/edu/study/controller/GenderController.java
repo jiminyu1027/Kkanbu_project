@@ -7,11 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.study.service.GenderService;
 import edu.study.vo.ProductVO;
 import edu.study.domain.Criteria;
 import edu.study.domain.PageMaker;
+import edu.study.domain.Paging;
 
 @RequestMapping(value="/category/gender")
 @Controller
@@ -21,13 +23,22 @@ public class GenderController {
 	GenderService genderService;
 	
 	@RequestMapping(value="/men.do")
-	public String men(Locale locale, Model model)throws Exception {
+	public String men(Locale locale, Model model,ProductVO pvo, Criteria cri)throws Exception {
 		
-		List<ProductVO> menlist = genderService.menList();
-		model.addAttribute("menlist", menlist);
+		List<ProductVO> menlist = genderService.menList(pvo,cri);
+		model.addAttribute("menlist", genderService.menList(pvo, cri));
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(genderService.countmenlist());
+		
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "/category/gender/men";
 	}
+	
+	
+	
 	@RequestMapping(value="/men/sneakers.do")
 	public String menSneakers(Locale locale, Model model)throws Exception {
 		
@@ -145,11 +156,15 @@ public class GenderController {
 	
 	
 	
+	
+	
 	@RequestMapping(value="/kids.do")
 	public String kids(Locale locale, Model model)throws Exception {
-		
+	
 		List<ProductVO> kidslist = genderService.kidsList();
 		model.addAttribute("kidslist", kidslist);
+		
+		
 		
 		return "/category/gender/kids";
 	}
