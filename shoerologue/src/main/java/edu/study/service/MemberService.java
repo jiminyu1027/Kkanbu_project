@@ -13,4 +13,5 @@ public interface MemberService {
 	public void del(MemberVO vo) throws Exception;
 	public MemberVO member(int midx) throws Exception;
 	public void update(MemberVO vo) throws Exception;
+	public MemberVO findID(MemberVO vo) throws Exception;
 }

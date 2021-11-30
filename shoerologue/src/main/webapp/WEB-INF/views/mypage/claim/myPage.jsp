@@ -31,6 +31,12 @@
 			height:30px;
 			margin-top:1px;
 	}
+	.wishNoItem2 {
+		padding-top:180px !important;
+		font-size:17pt;
+		letter-spacing: -1px;
+		font-weight:500;
+	}
 	</style>
 
 </head>

@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="edu.study.vo.*" %>    
+<%
+	MemberVO vo = (MemberVO)request.getAttribute("vo");
+%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -144,7 +149,7 @@
 		font-size:15px;
 	}
 	
-	input[type=submit]{
+	.findInfobtn{
 		width:290px;
 		height:40px;
 		padding:0px;
@@ -163,7 +168,7 @@
 		border-bottom:2;
 		border-color:#9EA4AA;
 	}
-	
+
 	</style>	  
 	  
 	   
@@ -285,7 +290,7 @@
 <!-- 아이디 찾기 -->
 
 	<section>
-			<form name="frm" action="#" method="post">
+			<form name="frm" action="/shoerologue/member/findId.do" method="post">
 			<div class="logbox">
 				<div class="header">
 					아이디 찾기
@@ -296,21 +301,20 @@
 					<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
 					  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
 					</svg>&nbsp;&nbsp;
-					<input type="text" class="Name impor" name="Name" id="Name" placeholder=" 이름을 입력해 주세요." onblur="checkFn('Name')">
+					<input type="text" class="Name impor" name="mName" id="Name" placeholder=" 이름을 입력해 주세요." onblur="checkFn('Name')">
 					<span class="확인"></span>
 				</div>
-				
 				
 				<div class="rows phone mt-3">
 					<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
 					  <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
 					</svg>&nbsp;&nbsp;
-					<input type="text" class="impor" name="phone" id="phone" placeholder=" 핸드폰 번호를 '-' 없이 입력해 주세요." onblur="checkFn('phone')">
+					<input type="text" class="impor" name="mPhone" id="phone" placeholder=" 핸드폰 번호를 '-' 없이 입력해 주세요." onblur="checkFn('phone')">
 					<span class="확인"></span>
 				</div>
 				<div class="rows mt-4">
 					<label>
-						<input type="submit" value="아이디 찾기" id="findId" onclick="submitFn();return false;">
+						<input type="submit" class="btn btn-secondary findInfobtn" value="아이디 찾기" id="findId" onclick="submitFn();return false;">
 					</label>
 				</div>
 				</div>
@@ -319,10 +323,10 @@
 					<p style="text-align:left;">비밀번호를 잊으셨나요?&nbsp;&nbsp; <U><a href="findPwd.do"> 비밀번호 찾기</a></U></p>
 					<p style="text-align:left;">아직 슈롤로그 회원이 아니신가요?&nbsp;&nbsp; <U><a href="join.do"> 회원가입</a></U></p>
 				</div>
-				
 			</div>
 			</form>
 		</section>
+		
 
 
 <!-- footer -->
@@ -480,10 +484,12 @@
 						span.textContent = "*필수";
 						span.style.color = "red";
 						span.style.display = "inline";
+						 result = false;
 					}else if(!checkPhone.test(value)){
 						span.textContent = "*형식오류";
 						span.style.color = "red";
 						span.style.display = "inline";
+						 result = false;
 					}else{
 						span.textContent = "";
 						span.style.display = "none";

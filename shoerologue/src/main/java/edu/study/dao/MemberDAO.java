@@ -41,4 +41,7 @@ public class MemberDAO {
 			sqlSession.delete(Namespace+".update",vo);
 		}
 		
+		public MemberVO findId(MemberVO vo) throws Exception{
+			return sqlSession.selectOne(Namespace+".findId",vo);
+		}
 }

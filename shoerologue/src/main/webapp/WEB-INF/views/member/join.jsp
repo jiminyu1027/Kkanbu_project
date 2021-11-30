@@ -295,8 +295,6 @@
 						<span class="id_input_re_1">사용 가능한 아이디입니다.</span>
 						<span class="id_input_re_2">아이디가 이미 존재합니다.</span>
 						
-						
-						
 					</div>
 					<span class="check"></span>
 				</div>

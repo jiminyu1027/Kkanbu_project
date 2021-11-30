@@ -98,7 +98,7 @@ public class MainController {
 				PrintWriter pw = response.getWriter();
 				response.setContentType("text/html; charset=UTF-8");
 				
-				pw.println("<script> alert(' 로그인에 성공하였습니다. '); location.href='/shoerologue'; </script>");
+				pw.println("<script>  location.href='/shoerologue'; </script>");
 				pw.flush();
 			}
 		}

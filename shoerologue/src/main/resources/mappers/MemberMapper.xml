@@ -46,8 +46,6 @@
    		WHERE midx = #{midx}
    </select>
    
-  
-   
    <update id="del" parameterType="MemberVO">
     	UPDATE MEMBER SET
     		MDELYN = 'Y' 
@@ -65,6 +63,14 @@
 		WHERE
 			mId = #{mId}
    </update>   
+   
+   <select id="findId" resultType="MemberVO">
+   		SELECT mId, mJoindate
+   		FROM member
+   		WHERE mName = #{mName}
+   		AND mPhone = #{mPhone}
+   </select> 
+   
    
    
 </mapper>

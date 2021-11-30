@@ -126,6 +126,15 @@
 		border-color:#9EA4AA;
 		padding-bottom:30px;
 	}
+	.findInfobtn{
+		width:290px;
+		height:40px;
+		padding:0px;
+		color:white;
+		background-color:black;
+		border:solid 2px black;
+		margin-left:40px;
+	}
 	</style>	  
 	  
 	   
@@ -255,7 +264,6 @@
 				</div>
 				<div class="rows mt-2 findBox">비밀번호를 찾고자 하는 아이디를 입력해주세요.</div><br>
 				<div class="findBoxStyle">
-				
 				<div class="rows id  mt-4">
 					<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
 					  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -285,7 +293,7 @@
 				</div>
 				<div class="rows mt-4">
 					<label>
-						<input type="submit" value="비밀번호 찾기" id="findPwd" onclick="sumbitFn();return false;">
+						<input type="submit" value="비밀번호 찾기" class="btn btn-secondary findInfobtn" id="findPwd" onclick="sumbitFn();return false;">
 					</label>
 				</div>
 				</div>

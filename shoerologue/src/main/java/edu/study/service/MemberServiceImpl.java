@@ -47,6 +47,11 @@ public class MemberServiceImpl implements MemberService{
 		MemberDao.update(vo);
 	}
 
+	@Override
+	public MemberVO findID(MemberVO vo) throws Exception {
+		return MemberDao.findId(vo);
+	}
+
 
 
 	

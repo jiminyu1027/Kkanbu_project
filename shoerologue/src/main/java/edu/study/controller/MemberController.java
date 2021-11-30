@@ -51,17 +51,33 @@ public class MemberController {
 		
 	}
 	
-	@RequestMapping(value="/findId.do")
-	public String findId(Locale locale, Model model)throws Exception {
+	@RequestMapping(value="/findId.do", method = RequestMethod.GET)
+	public String findId(Locale locale, Model model,MemberVO vo)throws Exception {
 		
 		return "/member/findId";
 	}
-	@RequestMapping(value="/findPwd.do")
+	
+	@RequestMapping(value="/findId.do", method = RequestMethod.POST)
+	public String findId(Locale locale, Model model,MemberVO vo, HttpServletResponse response)throws Exception {
+		
+		MemberVO findVO = MemberService.findID(vo);
+		
+		model.addAttribute("vo",findVO);
+		
+		return "/member/findIdResult";
+	}
+	
+	@RequestMapping(value="/findPwd.do", method = RequestMethod.GET)
 	public String findPwd(Locale locale, Model model)throws Exception {
 		
 		return "/member/findPwd";
 	}
 
+	@RequestMapping(value="/findPwd.do", method = RequestMethod.POST)
+	public String findPwd(Locale locale, Model model,MemberVO vo)throws Exception {
+		
+		return "/member/findPwd";
+	}
 	
 	// È¸¿ø Å»Åð get
 	@RequestMapping(value="/leave.do", method = RequestMethod.GET)
