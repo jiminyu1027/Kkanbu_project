@@ -3,9 +3,11 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="edu.study.vo.*" %>
+<%@ page import="edu.study.domain.*" %>
 <%
 	List<ProductVO> kidslistcasual = (List<ProductVO>)request.getAttribute("kidslistcasual");
 	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
+	PageMaker pageMaker = (PageMaker)request.getAttribute("pageMaker");
 %>
 <!DOCTYPE html>
 <html>
@@ -255,7 +257,7 @@
 		<div class="brandBox">
 			<div class="totalPdSel">
 				<div  class="totalPd">
-					<span>총 <span class="redBold"><%=kidslistcasual.size()%></span>개의 상품이 있습니다.</span>
+					<span>총 <span class="redBold"><%=pageMaker.getTotalCount()%></span>개의 상품이 있습니다.</span>
 				</div>
 				<div class="selection">
 					<select class="">
@@ -301,8 +303,20 @@
 					<%
 					}%>
 				</div>
-				<hr>
-				<div class="page">페이징 처리</div>
+				<div class="page">
+				<div class="hr1"></div>
+					<ul>
+						<c:if test="${pageMaker.prev}">
+							<li><a class="pm" href="/shoerologue/category/gender/kids/casual.do${pageMaker.makeQuery(pageMaker.startPage - 1)}">이전</a></li>
+						</c:if> 
+						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+							<li><a class="pm" href="/shoerologue/category/gender/kids/casual.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
+						</c:forEach>
+						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+							<li><a class="pm" href="/shoerologue/category/gender/kids/casual.do${pageMaker.makeQuery(pageMaker.endPage + 1)}">다음</a></li>
+						</c:if> 
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>

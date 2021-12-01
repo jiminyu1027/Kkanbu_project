@@ -23,377 +23,42 @@
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     	<link rel="stylesheet" href="/shoerologue/resources/css/style.css">
+    	<link rel="stylesheet" href="/shoerologue/resources/css/product.css">
 	    <link rel="stylesheet" href="/shoerologue/resources/css/headerFooter.css">
 	   
  	 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-			
-			*{
-			font-family: 'Montserrat', "Noto Sans KR", sans-serif;
-			}
-			.bigBox{
-				margin:auto;
-				width:1200px;
-			}
-			.channel{
-				margin-top:20px;
-				color:#999999 !important;
-			}
-			.channel>ul>li{
-				display:inline;
-			}
-			.channel>ul>li>a{
-				color:#999999 !important;
-			}
-			.productBox{
-				width:1200px;
-				height:800px;
-				
-			}
-			.productBox2{
-				margin-top:50px;
-				margin-left:65px;
-				height:800px;
-			}
-			.productBox3{
-				float:left;
-				margin:auto;
-				margin-left:50px;
-			}
-			.pdImage{
-				width:580px;
-				height:580px;
-			}
-			.pdSmImge{
-				width:100px;
-				height:100px;
-			}
-			.pdSmImgeBox{
-				padding:10px 35px;
-			}
-			.productDetailImg{
-				text-align:center;
-				padding-top:20px;
-			}
-			
-			.productDetailImg>div>img{
-				width:800px;
-				height:800px;
-			}
-			.productDetailImg>div{
-				margin-bottom:10px;
-			}
-			
-			.red{
-				color:red;
-			}
-			.redBold{
-				color:red;
-				font-weight:bold;
-			}
-			.redUnderline{
-				color:red !important;
-				text-decoration:underline;
-			}
-			.blackBold{
-				color:black;
-				font-weight:bold;
-			}
-			ul>li{
-				list-style:none;
-			}
-			th{
-				width:130px;
-			}
-			.pdText{
-				margin-left:15px;
-			}
-			.nav-tabs{
-				font-size:20px;
-			}
-			.gap50{
-				height:50px;
-			}
-			.gap100{
-				height:100px;
-			}
-			.gap150{
-				height:150px;
-			}
-			.gapMenu{
-				height:60px;
-			}
-			.productReview{
-				width:1200px;
-			}
-			.productReviewOpt{
-				border:1px solid black;
-				width:1200px;
-			}
-			.pdReviewBox2,#productQNA,#productCS{
-				width:1200px;
-			}
-			.sizeSelect{
-				font-weight:bold;
-				font-size:16px;
-				margin:5px;
-			}
-			.sizeSelect2{
-				font-size:12px;
-				color:gray;
-				margin-left:45px;
-			}
-			.bi-exclamation-circle{
-				color:gray;
-			}
-			.QnaBtn,.ReviewBtn{
-				float:right;
-			}
-			.wishShareBtn{
-				float:right;
-				margin:10px 30px 0px 10px;
-			}
-			.caBrand{
-				text-decoration:underline;
-				font-weight:400;
-				font-size:17px;
-			}
-			.pTitle{
-				font-weight:700;
-				font-size:32px;
-			}
-			.pContents{
-				font-size:16px;
-			}
-			.pPrice{
-				color:black;
-				font-size:25px;
-				font-weight:600;
-			}
-			.salePrice{
-				font-weight:600;
-				font-size:22px;
-				color:red;
-			}
-			.salePer{
-				font-size:15px;
-				color:red;
-			}
-			.pColor{
-				font-weight:500;
-			}
-			.productSizeBtn>button{
-				width:40px;
-				height:25px;
-				float:left;
-				outline:0px;
-				background-color:white;
-				border-radius:0px;
-				border:1px solid gray;
-				color:gray;
-				margin:2px;
-				font-size:13px;
-			}
-			.productTotalPrice{
-				font-weight:700;
-				font-size:30px;
-				color:red;
-			}
-			.totalPriceRight{
-				float:right;
-			}
-			
-			.productPaymentBtn>span>button{
-				width:230px;
-				height:60px;
-				outline:0px;
-				border-radius:0px;
-				color:white;
-				font-size:16px;
-				font-weight:bold;
-			}
-			.cartBtn>button{
-				background-color:#666666;
-				border:0px;
-			}
-			.cartBtn>button:hover{
-				background-color:black;
-				border:0px;
-			}
-			.paymentBtn>button{
-				background-color:black;
-				border:0px;
-			}
-			.productMenuBtn{
-				width:300px;
-				height:60px;
-				border-radius:0px;
-				color:gray;
-				font-size:16px;
-				text-align:center;
-				padding:15px;
-				border-top:1px solid gray;
-				border-right:1px solid gray;
-				border-left:1px solid gray;
-				border-bottom:3px solid black;
-			}
-			.productMenuBtnSel{
-				width:300px;
-				height:60px;
-				border-radius:0px;
-				color:black;
-				font-size:16px;
-				font-weight:bold;
-				text-align:center;
-				padding:15px;
-				border-top:3px solid black;
-				border-right:3px solid black;
-				border-left:3px solid black;
-				border-bottom:0px;
-			}
-			.pdDetailMenuBox>a{
-				float:left;
-			}
-			.sizeSelBox{
-				float:left;
-				width:599px;
-				height:140px;
-				border-bottom:1px solid lightgray;
-				padding:20px;
-			}
-			.sizeSelBox:first-child{
-				border-right:1px solid lightgray;
-			}
-			.explText{
-				font-size:13px;
-				color:#747774;
-				padding-top:30px;
-			}
-			.ReviewBtn>button{
-				width:150px;
-				height:50px;
-				background-color:black;
-				color:white;
-				border:0px;
-				font-weight:500;
-			}
-			.QnaBtn>button:first-child{
-				width:150px;
-				height:50px;
-				background-color:white;
-				color:black;
-				border:1px solid black;
-				font-weight:500;
-			}
-			.QnaBtn>button:first-child:hover{
-				width:150px;
-				height:50px;
-				background-color:#EEEEEE;
-				color:black;
-				border:1px solid black;
-				font-weight:500;
-			}
-			.QnaBtn>button:last-child{
-				width:150px;
-				height:50px;
-				background-color:black;
-				color:white;
-				border:0px;
-				font-weight:500;
-			}
-			.productCS{
-				margin:20px;
-			}
-			.sizeSelectBtn>button{
-				width:100px;
-				height:25px;
-				background-color:white;
-				color:gray;
-				border-radius:15px;
-				border:1px solid gray;
-				font-size:13px;
-				float:right;
-				margin-top:15px;
-				margin-right:20px;
-			}
-			.sizeSelectBtn{
-				background-color:#F8F8F8;
-				height:55px;
-				margin:10px -20px;
-			}
-			.noReview,.noQNA{
-				text-align:center;
-				height:200px;
-				margin-top:100px;
-			}
-			.deliText{
-				background-color:#fafafa;
-			}
-			.que:first-child{
-				border-top: 1px solid black;
-			}
-			.que{
-				position: relative;
-				padding: 15px 0;
-				cursor: pointer;
-				font-size: 15px;
-				border-bottom: 1px solid #b5b5b5;
-			}
-			.anw {
-				display: none;
-				overflow: hidden;
-				font-size: 14px;
-				background-color:#fafafa;
-				padding: 15px 10px;
-				border-bottom: 1px solid #b5b5b5;
-			}
-			table{
-				width:100%;
-			}
-			.reviewImg{
-				margin-top:10px;
-				margin:auto;
-				width:100px;
-				height:100px;
-			}
-			.reviewContents{
-				margin-top:10px;
-				margin:auto;
-				width:1050px;
-				height:100px;
-			}
-			.reviewHelpBtn>button{
-				background-color:white;
-				border:1px solid lightgray;
-				border-radius: 30px;
-			}
-			.productImgBox{
-				float:left;
-				margin-left:-40px;
-			}
-			.hr2{
-				border:1px solid black;
-				margin-top:10px;
-			}
-			.pdSmImgeBox>a:focus{
-				width:100px;
-				height:100px;
-				border:1px solid black;
-			}
 		</style>
+		<!-- 상품 이미지 페이지 클릭시 사진 변화/검정 테두리 -->
+		
 		<script>
 			$(function(){
 				$(".pdSmImgeBox a").click(function(){
-					$(".pdImage").attr("src",$(this).attr('href'))
-					
+					$(".pdImage").attr("src",$(this).attr('href'));
+					$(".pdSmImgeBox a").css("border","none");
+					$(this).css("border","1px solid black");
 					return false;
 				});
 			});
 		</script>
+        <script>
+			$(document).ready( function() {
+				$(".productSizeBtn").click(function(){
+					 $(".hereSize").append($(this).attr('value')," / ");
+					 $(".productTotalPrice").append(<%=pvo.getpPrice()%>);
+				return false;
+				});
+			});
+ 
+        </script>
 		
-	</head>
+		<!-- 상품 이미지 페이지 없을시 숨기기 -->
+		<script>
+		</script>
+		
+</head>
 	<body>
 		<div class="container">
 				<nav class="navbar navbar-expand-lg navbar-light topNav">
@@ -547,19 +212,58 @@
 							<a href="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>">
 								<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>" class="pdSmImge" alt="...">
 							</a>
+							<%
+							     if(pvo.getpFile2() != null){    
+					    	 %>
 							<a href="/shoerologue/resources/image/productdetail/<%=pvo.getpFile2()%>">
 								<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile2()%>" class="pdSmImge" alt="...">
 							</a>
+							<%
+							    }else{
+							%>
+							<a href="#"></a>
+							<%
+							    }
+					    	 %>
+							<%
+							     if(pvo.getpFile3() != null){    
+					    	 %>
 							<a href="/shoerologue/resources/image/productdetail/<%=pvo.getpFile3()%>">
 								<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile3()%>" class="pdSmImge" alt="...">
 							</a>
+							<%
+							    }else{
+							%>
+							<a href="#"></a>
+							<%
+							    }
+					    	 %>
+							<%
+							     if(pvo.getpFile4() != null){    
+					    	 %>
 							<a href="/shoerologue/resources/image/productdetail/<%=pvo.getpFile4()%>">
 								<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile4()%>" class="pdSmImge" alt="...">
 							</a>
+							<%
+							    }else{
+							%>
+							<a href="#"></a>
+							<%
+							    }
+					    	 %>
+							<%
+							     if(pvo.getpFile5() != null){    
+					    	 %>
 							<a href="/shoerologue/resources/image/productdetail/<%=pvo.getpFile5()%>">
 								<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile5()%>" class="pdSmImge" alt="...">
 							</a>
-							<!-- <a><img src="/shoerologue/resources/image/hot1.jpg" class="pdSmImge" alt="..."></a>-->
+							<%
+							    }else{
+							%>
+							<a href="#"></a>
+							<%
+							    }
+					    	 %>
 						</div>
 					</div>
 					<!-- 상품 내용  -->
@@ -574,11 +278,11 @@
 								</svg></a>
 							</div>
 							<div class="pdContents">
-								<div class="caBrand" id="pBrandKr"><a href="#"><%=pvo.getpBrandKr() %></a></div><br>
-								<div class="pTitle" id="pNameKr"><%=pvo.getpNameKr() %></div>
-								<div class="pContents" id="pNameEng"><%=pvo.getpNameEng() %></div>
+								<div class="caBrand" id="pBrandKr" name="pBrandKr"><a href="#"><%=pvo.getpBrandKr() %></a></div><br>
+								<div class="pTitle" id="pNameKr" name="pNameKr"><%=pvo.getpNameKr() %></div>
+								<div class="pContents" id="pNameEng" name="pNameEng"><%=pvo.getpNameEng() %></div>
 								<br>
-								<span class="pPrice" id="pPrice"><%=pvo.getpPrice() %><span>원</span></span>
+								<span class="pPrice" id="pPrice" name="pPrice"><%=pvo.getpPrice() %></span><span>원</span>
 							</div>
 							<div class="hr2"></div>
 							<!-- 상품 컬러 -->
@@ -621,19 +325,22 @@
 									<tr>
 										<th>사이즈</th>
 										<td>
-											<ul>
-												<li class="productSizeBtn"><button>210</button></li>
-												<li class="productSizeBtn"><button>220</button></li>
-												<li class="productSizeBtn"><button>230</button></li>
-												<li class="productSizeBtn"><button>240</button></li>
-												<li class="productSizeBtn"><button>250</button></li>
-												<li class="productSizeBtn"><button>260</button></li>
-												<li class="productSizeBtn"><button>270</button></li>
-												<li class="productSizeBtn"><button>280</button></li>
-												<li class="productSizeBtn"><button>290</button></li>
-												<li class="productSizeBtn"><button>300</button></li>
-												<li class="productSizeBtn"><button>310</button></li>
-											</ul>
+											<button class="productSizeBtn" value ="210">210</button>
+											<button class="productSizeBtn" value ="220">220</button>
+											<button class="productSizeBtn" value ="230">230</button>
+											<button class="productSizeBtn" value ="240">240</button>
+											<button class="productSizeBtn" value ="250">250</button>
+										</td>
+									</tr>
+									<tr>
+										<th></th>
+										<td>	
+											<button class="productSizeBtn" value ="260">260</button>
+											<button class="productSizeBtn" value ="270">270</button>
+											<button class="productSizeBtn" value ="280">280</button>
+											<button class="productSizeBtn" value ="290">290</button>
+											<button class="productSizeBtn" value ="300">300</button>
+											<button class="productSizeBtn" value ="310">310</button>
 										</td>
 									</tr>
 								</table>
@@ -644,15 +351,16 @@
 										<table>
 											<th height=100>총 결제금액</th>
 											<td>
+												<div class="hereSize"></div>
 												<div class="totalPriceRight">
-													<span class="productTotalPrice">0</span>&nbsp;<span>원</span>
+													<span class="productTotalPrice" pattern="#,###,###"></span>&nbsp;<span>원</span>
 												</div>
 											</td>
 										</table>
 									</div>
 									<div class="productPaymentBtn">
-										<span class="cartBtn"><button>장바구니</button></span>
-										<span class="paymentBtn"><button>바로구매</button></span>
+										<span class="cartBtn"><button onclick="location.href='/shoerologue/cart/cart.do'">장바구니</button></span>
+										<span class="paymentBtn"><button onclick="location.href='/shoerologue/order/orderpayment.do'">바로구매</button></span>
 									</div>
 								</div>
 						</div>
@@ -674,10 +382,50 @@
 				<div class="gap50"></div>
 				<div class="productDetailImg">
 					<div><img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>" class="pdSmImge" alt="..."></div>
+					<%
+					     if(pvo.getpFile2() != null){    
+			    	 %>
 					<div><img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile2()%>" class="pdSmImge" alt="..."></div>
+					<%
+					    }else{
+					%>
+					<div></div>
+					<%
+					    }
+			    	 %>
+			    	 <%
+					     if(pvo.getpFile3() != null){    
+			    	 %>
 					<div><img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile3()%>" class="pdSmImge" alt="..."></div>
+					<%
+					    }else{
+					%>
+					<div></div>
+					<%
+					    }
+			    	 %>
+			    	 <%
+					     if(pvo.getpFile4() != null){    
+			    	 %>
 					<div><img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile4()%>" class="pdSmImge" alt="..."></div>
+					<%
+					    }else{
+					%>
+					<div></div>
+					<%
+					    }
+			    	 %>
+					<%
+					     if(pvo.getpFile5() != null){    
+			    	 %>
 					<div><img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile5()%>" class="pdSmImge" alt="..."></div>
+					<%
+					    }else{
+					%>
+					<div></div>
+					<%
+					    }
+			    	 %>
 				</div>
 			</div>
 			
@@ -783,7 +531,9 @@
 								<tr>
 									<td height=120></td>
 									<td>
-										<div class="reviewImg"><img src="#"></div>
+										<div class="reviewImg">
+											<img src="#">
+										</div>
 									</td>
 									<td colspan="4">
 										<div class="reviewContents">내용</div>
@@ -989,15 +739,6 @@
 		</div>
 		<div class="gap150"></div>
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	<!-- 우측하단 TOP 이동 배너 -->
 		<a href="#top">
 		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill top fixed" viewBox="0 0 16 16">
@@ -1068,6 +809,9 @@
 		  </footer>
 		 </div>
 		</div>
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+	  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	
+		<!-- 안내사항 클릭시 펼쳐지기 -->
 		<script>
 			$(".que").click(function() {
 				$(this).next(".anw").stop().slideToggle(300);
@@ -1075,7 +819,5 @@
 				$(this).next(".anw").siblings(".anw").slideUp(300); // 1개씩 펼치기
 			});
 		</script>
-		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-	  	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	
 	</body>
 </html>

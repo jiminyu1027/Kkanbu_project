@@ -10,5 +10,7 @@ public interface ProductService {
 	List<ProductVO> list() throws Exception;
 
 	ProductVO detail(int pidx) throws Exception;
+	
+	ProductVO productsize(int pidx) throws Exception;
 
 }

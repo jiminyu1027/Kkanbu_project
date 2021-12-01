@@ -13,7 +13,7 @@ import edu.study.vo.ProductVO;
 
 @RequestMapping(value="/product")
 @Controller
-public class ShoerologueProductController {
+public class ProductController {
 	
 	@Autowired
 	ProductService productService;
@@ -22,10 +22,9 @@ public class ShoerologueProductController {
 	public String product(Locale locale, Model model,int pidx)throws Exception {
 			
 				ProductVO pvo = productService.detail(pidx);
-				
 				model.addAttribute("pvo", pvo);
+			
 				
-
 //		List<ProductVO> list = productService.hotDealList();
 //		
 //		model.addAttribute("list", list);

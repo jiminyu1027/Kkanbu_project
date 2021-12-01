@@ -12,7 +12,8 @@
 			SELECT ROWNUM RN, A.* 
 				FROM (
 						SELECT * 
-						FROM product WHERE pGender='M' OR pGender='U' 
+						FROM product 
+						WHERE pGender='M' OR pGender='U' 
 						ORDER BY pidx DESC 
 						) A
 				)
@@ -21,90 +22,429 @@
 	
 	<!-- 총 게시글 갯수 출력 -->
 	<select id="countmenlist" resultType="int">
-		SELECT COUNT(*) FROM product WHERE pGender='M' OR pGender='U' ORDER BY pidx desc
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='M' OR pGender='U'
 	</select>
 
-	<select id="menlistboots" resultType="ProductVO">
-		SELECT * FROM product WHERE pGender='M' AND pType='부츠' OR pGender='U' AND pType='부츠' ORDER BY pidx desc
+	<select id="menlistboots" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pGender='M' AND pType='부츠' OR pGender='U' AND pType='부츠'
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
 	</select>
 	
-	<select id="menlistcasual" resultType="ProductVO">
-		SELECT * FROM product WHERE pGender='M' AND pType='캐주얼' OR pGender='U' AND pType='캐주얼' ORDER BY pidx desc
-	</select>
-	
-	<select id="menlistdressshoes" resultType="ProductVO">
-		SELECT * FROM product WHERE pGender='M' AND pType='구두' OR pGender='U' AND pType='구두' ORDER BY pidx desc
-	</select>
-	
-	<select id="menlistsandle" resultType="ProductVO">
-		SELECT * FROM product WHERE pGender='M' AND pType='샌들' OR pGender='U' AND pType='샌들' ORDER BY pidx desc
-	</select>
-	
-	<select id="menlistsneakers" resultType="ProductVO">
-		SELECT * FROM product WHERE pGender='M' AND pType='운동화' OR pGender='U' AND pType='운동화' ORDER BY pidx desc
-	</select>
-	
-	<select id="menlistsports" resultType="ProductVO">
-		SELECT * FROM product WHERE pGender='M' AND pType='스포츠' OR pGender='U' AND pType='스포츠' ORDER BY pidx desc
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countmenboots" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='M' AND pType='부츠' OR pGender='U' AND pType='부츠'
 	</select>
 	
 	
-	<select id="womenlist" resultType="ProductVO">	
-		SELECT * FROM product WHERE pGender='W' OR pGender='U' ORDER BY pidx desc
+	<select id="menlistcasual" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pGender='M' AND pType='캐주얼' OR pGender='U' AND pType='캐주얼'
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
 	</select>
 	
-	<select id="womenlistboots" resultType="ProductVO">
-		SELECT * FROM product WHERE pGender='W' AND pType='부츠' OR pGender='U' AND pType='부츠' ORDER BY pidx desc
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countmencasual" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='M' AND pType='캐주얼' OR pGender='U' AND pType='캐주얼'
 	</select>
 	
-	<select id="womenlistcasual" resultType="ProductVO">
-		SELECT * FROM product WHERE pGender='W' AND pType='캐주얼' OR pGender='U' AND pType='캐주얼' ORDER BY pidx desc
+	<select id="menlistdressshoes" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pGender='M' AND pType='구두' OR pGender='U' AND pType='구두'
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
 	</select>
 	
-	<select id="womenlistdressshoes" resultType="ProductVO">
-		SELECT * FROM product WHERE pGender='W' AND pType='구두' OR pGender='U' AND pType='구두' ORDER BY pidx desc
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countmendressshoes" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='M' AND pType='구두' OR pGender='U' AND pType='구두'
 	</select>
 	
-	<select id="womenlistsandle" resultType="ProductVO">
-		SELECT * FROM product WHERE pGender='W' AND pType='샌들' OR pGender='U' AND pType='샌들' ORDER BY pidx desc
+	<select id="menlistsandle" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pGender='M' AND pType='샌들' OR pGender='U' AND pType='샌들'
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
 	</select>
 	
-	<select id="womenlistsneakers" resultType="ProductVO">
-		SELECT * FROM product WHERE pGender='W' AND pType='운동화' OR pGender='U' AND pType='운동화' ORDER BY pidx desc
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countmensandle" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='M' AND pType='샌들' OR pGender='U' AND pType='샌들'
 	</select>
 	
-	<select id="womenlistsports" resultType="ProductVO">
-		SELECT * FROM product WHERE pGender='W' AND pType='스포츠' OR pGender='U' AND pType='스포츠' ORDER BY pidx desc
+	<select id="menlistsneakers" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pGender='M' AND pType='운동화' OR pGender='U' AND pType='운동화'
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
 	</select>
 	
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countmensneakers" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='M' AND pType='운동화' OR pGender='U' AND pType='운동화'
+	</select>
+	
+	<select id="menlistsports" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pGender='M' AND pType='스포츠' OR pGender='U' AND pType='스포츠'
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+	
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countmensports" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='M' AND pType='스포츠' OR pGender='U' AND pType='스포츠'
+	</select>
+	
+	<select id="womenlist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pGender='W' OR pGender='U' 
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+	
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countwomenlist" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='W' OR pGender='U'
+	</select>
+	
+	<select id="womenlistboots" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pGender='W' AND pType='부츠' OR pGender='U' AND pType='부츠'
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+	
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countwomenboots" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='W' AND pType='부츠' OR pGender='U' AND pType='부츠'
+	</select>
+	
+	<select id="womenlistcasual" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pGender='W' AND pType='캐주얼' OR pGender='U' AND pType='캐주얼'
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+	
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countwomencasual" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='W' AND pType='캐주얼' OR pGender='U' AND pType='캐주얼'
+	</select>
+	
+	<select id="womenlistdressshoes" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pGender='W' AND pType='구두' OR pGender='U' AND pType='구두'
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+	
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countwomendressshoes" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='W' AND pType='구두' OR pGender='U' AND pType='구두'
+	</select>
+	
+	<select id="womenlistsandle" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pGender='W' AND pType='샌들' OR pGender='U' AND pType='샌들'
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+	
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countwomensandle" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='W' AND pType='샌들' OR pGender='U' AND pType='샌들'
+	</select>
+	
+	<select id="womenlistsneakers" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pGender='W' AND pType='운동화' OR pGender='U' AND pType='운동화'
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+	
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countwomensneakers" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='W' AND pType='운동화' OR pGender='U' AND pType='운동화'
+	</select>
+	
+	<select id="womenlistsports" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pGender='W' AND pType='스포츠' OR pGender='U' AND pType='스포츠'
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+	
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countwomensports" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='W' AND pType='스포츠' OR pGender='U' AND pType='스포츠'
+	</select>
 	
 	<select id="kidslist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-		SELECT * FROM product WHERE pGender='K' ORDER BY pidx desc
+		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product WHERE pGender='K' 
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
 	</select>
 	
-	<select id="kidslistboots" resultType="ProductVO">
-   		SELECT * FROM product WHERE pGender='K' AND pType='부츠' ORDER BY pidx desc
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countkidslist" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='K'
 	</select>
 	
-	<select id="kidslistcasual" resultType="ProductVO">
-   		SELECT * FROM product WHERE pGender='K' AND pType='캐주얼' ORDER BY pidx desc
+	<select id="kidslistboots" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product WHERE pGender='K'
+						AND pType='부츠'
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
 	</select>
 	
-	<select id="kidslistdressshoes" resultType="ProductVO">
-   		SELECT * FROM product WHERE pGender='K' AND pType='구두' ORDER BY pidx desc
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countkidsboots" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='K' AND pType='부츠'
 	</select>
 	
-	<select id="kidslistsandle" resultType="ProductVO">
-   		SELECT * FROM product WHERE pGender='K' AND pType='샌들' ORDER BY pidx desc
+	<select id="kidslistcasual" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product WHERE pGender='K'
+						AND pType='캐주얼'
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
 	</select>
 	
-	<select id="kidslistsneakers" resultType="ProductVO">
-   		SELECT * FROM product WHERE pGender='K' AND pType='운동화' ORDER BY pidx desc
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countkidscasual" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='K' AND pType='캐주얼'
 	</select>
 	
-	<select id="kidslistsports" resultType="ProductVO">
-   		SELECT * FROM product WHERE pGender='K' AND pType='스포츠' ORDER BY pidx desc
+	<select id="kidslistdressshoes" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product WHERE pGender='K'
+						AND pType='구두'
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+	
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countkidsdressshoes" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='K' AND pType='구두'
+	</select>
+	
+	<select id="kidslistsandle" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product WHERE pGender='K'
+						AND pType='샌들'
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+	
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countkidssandle" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='K' AND pType='샌들'
+	</select>	
+	
+	<select id="kidslistsneakers" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product WHERE pGender='K'
+						AND pType='운동화'
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+	
+	<!-- 총 게시글 갯수 출력 -->
+	<select id="countkidssneakers" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='K' AND pType='운동화'
+	</select>
+	
+	<select id="kidslistsports" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product WHERE pGender='K'
+						AND pType='스포츠'
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
 	</select>
 
+   <!-- 총 게시글 갯수 출력 -->
+	<select id="countkidssports" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pGender='K' AND pType='스포츠'
+	</select>
    
 </mapper>

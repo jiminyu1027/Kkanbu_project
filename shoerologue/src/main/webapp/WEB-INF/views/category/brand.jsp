@@ -472,7 +472,7 @@
 				<div class="brandName">
 					<ul>
 						<li><a href="/shoerologue/category/brand/newbalance.do">NEW BALANCE</a></li>
-						<li><a href="/shoerologue/category/brand/brandNike.do">NIKE</a></li>
+						<li><a href="/shoerologue/category/brand/nike.do">NIKE</a></li>
 						<li><a href="/shoerologue/category/brand/nuovo.do">NUOVO</a></li>
 					</ul>
 				</div>
@@ -567,7 +567,7 @@
 				<div class="brandFirstInit" id="initHanB">ㄴ</div>
 				<div class="brandName">
 					<ul>
-						<li><a href="/shoerologue/category/brand/brandNike.do">나이키</a></li>
+						<li><a href="/shoerologue/category/brand/nike.do">나이키</a></li>
 						<li><a href="/shoerologue/category/brand/nuovo.do">누오보</a></li>
 						<li><a href="/shoerologue/category/brand/newbalance.do">뉴발란스</a></li>
 					</ul>

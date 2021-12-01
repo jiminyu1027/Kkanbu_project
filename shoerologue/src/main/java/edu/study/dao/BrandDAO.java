@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import edu.study.domain.Criteria;
 import edu.study.vo.ProductVO;
 
 @Repository
@@ -16,56 +17,108 @@ public class BrandDAO {
 	
 	private static final String Namespace = "edu.study.mapper.BrandMapper";	
 	
-		public List<ProductVO> nikelist() throws Exception{		
-			return sqlSession.selectList(Namespace+".nikelist");
+		public List<ProductVO> nikelist(ProductVO pvo, Criteria cri) throws Exception{		
+			return sqlSession.selectList(Namespace+".nikelist",cri);
 		}
 		
-		public List<ProductVO> adidaslist() throws Exception{	
-			return sqlSession.selectList(Namespace+".adidaslist");
+		public int countnike() throws Exception{	
+			return sqlSession.selectOne(Namespace+".countnike");
 		}
 		
-		public List<ProductVO> newbalancelist() throws Exception{	
-			return sqlSession.selectList(Namespace+".newbalancelist");
+		public List<ProductVO> adidaslist(ProductVO pvo, Criteria cri) throws Exception{	
+			return sqlSession.selectList(Namespace+".adidaslist",cri);
 		}
 		
-		public List<ProductVO> converselist() throws Exception{		
-			return sqlSession.selectList(Namespace+".converselist");
+		public int countadidas() throws Exception{	
+			return sqlSession.selectOne(Namespace+".countadidas");
 		}
 		
-		public List<ProductVO> vanslist() throws Exception{	
-			return sqlSession.selectList(Namespace+".vanslist");
+		public List<ProductVO> newbalancelist(ProductVO pvo, Criteria cri) throws Exception{	
+			return sqlSession.selectList(Namespace+".newbalancelist",cri);
 		}
 		
-		public List<ProductVO> reeboklist() throws Exception{	
-			return sqlSession.selectList(Namespace+".reeboklist");
+		public int countnewbalance() throws Exception{	
+			return sqlSession.selectOne(Namespace+".countnewbalance");
 		}
 		
-		public List<ProductVO> nuovolist() throws Exception{		
-			return sqlSession.selectList(Namespace+".nuovolist");
+		public List<ProductVO> converselist(ProductVO pvo, Criteria cri) throws Exception{		
+			return sqlSession.selectList(Namespace+".converselist",cri);
 		}
 		
-		public List<ProductVO> jordanlist() throws Exception{	
-			return sqlSession.selectList(Namespace+".jordanlist");
+		public int countconverse() throws Exception{	
+			return sqlSession.selectOne(Namespace+".countconverse");
 		}
 		
-		public List<ProductVO> pumalist() throws Exception{	
-			return sqlSession.selectList(Namespace+".pumalist");
+		public List<ProductVO> vanslist(ProductVO pvo, Criteria cri) throws Exception{	
+			return sqlSession.selectList(Namespace+".vanslist",cri);
 		}
 		
-		public List<ProductVO> hawkinslist() throws Exception{	
-			return sqlSession.selectList(Namespace+".hawkinslist");
+		public int countvans() throws Exception{	
+			return sqlSession.selectOne(Namespace+".countvans");
 		}
 		
-		public List<ProductVO> ggomoosinlist() throws Exception{	
-			return sqlSession.selectList(Namespace+".ggomoosinlist");
+		public List<ProductVO> reeboklist(ProductVO pvo, Criteria cri) throws Exception{	
+			return sqlSession.selectList(Namespace+".reeboklist",cri);
 		}
 		
-		public List<ProductVO> raragolist() throws Exception{	
-			return sqlSession.selectList(Namespace+".raragolist");
+		public int countreebok() throws Exception{	
+			return sqlSession.selectOne(Namespace+".countreebok");
 		}
 		
-		public List<ProductVO> bearpawlist() throws Exception{	
-			return sqlSession.selectList(Namespace+".bearpawlist");
+		public List<ProductVO> nuovolist(ProductVO pvo, Criteria cri) throws Exception{		
+			return sqlSession.selectList(Namespace+".nuovolist",cri);
+		}
+		
+		public int countnuovo() throws Exception{	
+			return sqlSession.selectOne(Namespace+".countnuovo");
+		}
+		
+		public List<ProductVO> jordanlist(ProductVO pvo, Criteria cri) throws Exception{	
+			return sqlSession.selectList(Namespace+".jordanlist",cri);
+		}
+		
+		public int countjordan() throws Exception{	
+			return sqlSession.selectOne(Namespace+".countjordan");
+		}
+		
+		public List<ProductVO> pumalist(ProductVO pvo, Criteria cri) throws Exception{	
+			return sqlSession.selectList(Namespace+".pumalist",cri);
+		}
+		
+		public int countpuma() throws Exception{	
+			return sqlSession.selectOne(Namespace+".countpuma");
+		}
+		
+		public List<ProductVO> hawkinslist(ProductVO pvo, Criteria cri) throws Exception{	
+			return sqlSession.selectList(Namespace+".hawkinslist",cri);
+		}
+		
+		public int counthawkins() throws Exception{	
+			return sqlSession.selectOne(Namespace+".counthawkins");
+		}
+		
+		public List<ProductVO> ggomoosinlist(ProductVO pvo, Criteria cri) throws Exception{	
+			return sqlSession.selectList(Namespace+".ggomoosinlist",cri);
+		}
+		
+		public int countggomoosin() throws Exception{	
+			return sqlSession.selectOne(Namespace+".countggomoosin");
+		}
+		
+		public List<ProductVO> raragolist(ProductVO pvo, Criteria cri) throws Exception{	
+			return sqlSession.selectList(Namespace+".raragolist",cri);
+		}
+		
+		public int countrarago() throws Exception{	
+			return sqlSession.selectOne(Namespace+".countrarago");
+		}
+		
+		public List<ProductVO> bearpawlist(ProductVO pvo, Criteria cri) throws Exception{	
+			return sqlSession.selectList(Namespace+".bearpawlist",cri);
+		}
+		
+		public int countbearpaw() throws Exception{	
+			return sqlSession.selectOne(Namespace+".countbearpaw");
 		}
 		
 		

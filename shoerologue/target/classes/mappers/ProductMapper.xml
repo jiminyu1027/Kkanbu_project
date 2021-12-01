@@ -5,7 +5,21 @@
  
 <mapper namespace="edu.study.mapper.ProductMapper">
 	 <select id="list" resultType="ProductVO">
-	 	SELECT pidx,pNameKr,pNameEng,pBrandKr,PBrandEng,pPrice,pSize,pColor,pType,pFile1,pFile2,pFile3,pFile4,pFile5,pWrite, 
+	 	SELECT pidx
+	 		,pNameKr
+	 		,pNameEng
+	 		,pBrandKr
+	 		,PBrandEng
+	 		,pPrice
+	 		,pSize
+	 		,pColor
+	 		,pType
+	 		,pFile1
+	 		,pFile2
+	 		,pFile3
+	 		,pFile4
+	 		,pFile5
+	 		,pWrite, 
    		DECODE(pGender,'M','MEN','W','WOMEN','K','KIDS','MEN') as pGender
    		FROM product
    		WHERE 1=1 
@@ -33,5 +47,19 @@
    		FROM product
         WHERE pidx = #{pidx}
 	</select>
-   
+   	
+   	<select id="productsize" resultType="ProductVO">
+   		SELECT SUBSTR(pSize,1,3),
+				SUBSTR(pSize,5,3),
+				SUBSTR(pSize,9,3),
+				SUBSTR(pSize,13,3),
+				SUBSTR(pSize,17,3),
+				SUBSTR(pSize,21,3),
+				SUBSTR(pSize,25,3),
+				SUBSTR(pSize,29,3),
+				SUBSTR(pSize,33,3),
+				SUBSTR(pSize,37,3),
+				SUBSTR(pSize,41,3) 
+   		FROM product
+   	</select>
 </mapper>

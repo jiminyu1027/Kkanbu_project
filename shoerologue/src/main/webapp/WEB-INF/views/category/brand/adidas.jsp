@@ -3,9 +3,11 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="edu.study.vo.*" %>
+<%@ page import="edu.study.domain.*" %>
 <%
 	List<ProductVO> adidaslist = (List<ProductVO>)request.getAttribute("adidaslist");
 	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
+	PageMaker pageMaker = (PageMaker)request.getAttribute("pageMaker");
 %>
 <!DOCTYPE html>
 <html>
@@ -187,47 +189,47 @@
 			<div>
 				<div class="bestPd">
 					<div class="ranking1">1</div>
-					<a href="#">
-						<img src="/shoerologue/resources/image/shoesimage/nike/nike_01.png">
-						<div class="shoesBrand">아디다스</div>
-						<div class="shoesName">아디다스 에어 맥스 SC</div>
-						<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+					<a href="/shoerologue/product/product.do?pidx=<%=adidaslist.get(15).getPidx()%>">
+						<img src="/shoerologue/resources/image/productdetail/<%=adidaslist.get(15).getpFile1()%>">
+						<div class="shoesBrand"><%=adidaslist.get(15).getpBrandKr()%></div>
+						<div class="shoesName"><%=adidaslist.get(15).getpNameKr()%></div>
+						<div class="shoesPriceBox"><span class="shoesPrice"><%=adidaslist.get(15).getpPrice()%></span><span class="won">원</span></div>
 					</a>
 				</div>
 				<div class="bestPd">
 					<div class="ranking">2</div>
-					<a href="#">
-						<img src="/shoerologue/resources/image/shoesimage/nike/nike_01.png">
-						<div class="shoesBrand">아디다스</div>
-						<div class="shoesName">아디다스 에어 맥스 SC</div>
-						<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+					<a href="/shoerologue/product/product.do?pidx=<%=adidaslist.get(12).getPidx()%>">
+						<img src="/shoerologue/resources/image/productdetail/<%=adidaslist.get(12).getpFile1()%>">
+						<div class="shoesBrand"><%=adidaslist.get(12).getpBrandKr()%></div>
+						<div class="shoesName"><%=adidaslist.get(12).getpNameKr()%></div>
+						<div class="shoesPriceBox"><span class="shoesPrice"><%=adidaslist.get(12).getpPrice()%></span><span class="won">원</span></div>
 					</a>
 				</div>
 				<div class="bestPd">
 					<div class="ranking">3</div>
-					<a href="#">
-						<img src="/shoerologue/resources/image/shoesimage/nike/nike_01.png">
-						<div class="shoesBrand">아디다스</div>
-						<div class="shoesName">아디다스 에어 맥스 SC</div>
-						<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+					<a href="/shoerologue/product/product.do?pidx=<%=adidaslist.get(14).getPidx()%>">
+						<img src="/shoerologue/resources/image/productdetail/<%=adidaslist.get(14).getpFile1()%>">
+						<div class="shoesBrand"><%=adidaslist.get(14).getpBrandKr()%></div>
+						<div class="shoesName"><%=adidaslist.get(14).getpNameKr()%></div>
+						<div class="shoesPriceBox"><span class="shoesPrice"><%=adidaslist.get(14).getpPrice()%></span><span class="won">원</span></div>
 					</a>
 				</div>
 				<div class="bestPd">
 					<div class="ranking">4</div>
-					<a href="#">
-						<img src="/shoerologue/resources/image/shoesimage/nike/nike_01.png">
-						<div class="shoesBrand">아디다스</div>
-						<div class="shoesName">아디다스 에어 맥스 SC</div>
-						<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+					<a href="/shoerologue/product/product.do?pidx=<%=adidaslist.get(7).getPidx()%>">
+						<img src="/shoerologue/resources/image/productdetail/<%=adidaslist.get(7).getpFile1()%>">
+						<div class="shoesBrand"><%=adidaslist.get(7).getpBrandKr()%></div>
+						<div class="shoesName"><%=adidaslist.get(7).getpNameKr()%></div>
+						<div class="shoesPriceBox"><span class="shoesPrice"><%=adidaslist.get(7).getpPrice()%></span><span class="won">원</span></div>
 					</a>
 				</div>
 				<div class="bestPd">
 					<div class="ranking">5</div>
-					<a href="#">
-						<img src="/shoerologue/resources/image/shoesimage/nike/nike_01.png">
-						<div class="shoesBrand">아디다스</div>
-						<div class="shoesName">아디다스 에어 맥스 SC</div>
-						<div class="shoesPriceBox"><span class="shoesPrice">89,000</span><span class="won">원</span></div>
+					<a href="/shoerologue/product/product.do?pidx=<%=adidaslist.get(13).getPidx()%>">
+						<img src="/shoerologue/resources/image/productdetail/<%=adidaslist.get(13).getpFile1()%>">
+						<div class="shoesBrand"><%=adidaslist.get(13).getpBrandKr()%></div>
+						<div class="shoesName"><%=adidaslist.get(13).getpNameKr()%></div>
+						<div class="shoesPriceBox"><span class="shoesPrice"><%=adidaslist.get(13).getpPrice()%></span><span class="won">원</span></div>
 					</a>
 				</div>
 			</div>
@@ -280,7 +282,7 @@
 		<div class="brandBox">
 			<div class="totalPdSel">
 				<div  class="totalPd">
-					<span>총 <span class="redBold"><%=adidaslist.size()%></span>개의 상품이 있습니다.</span>
+					<span>총 <span class="redBold"><%=pageMaker.getTotalCount()%></span>개의 상품이 있습니다.</span>
 				</div>
 				<div class="selection">
 					<select class="">
@@ -314,10 +316,32 @@
 						</a>
 					</div>
 					<% } 
-					} %>
+					} else{
+					%>
+					<div class="emptyProductBox">
+						<div class="exclamation"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+						</svg></div>
+					등록된 상품이 없습니다.
+					</div>
+					<%
+					}%>
 				</div>
-				<hr>
-				<div class="page">페이징 처리</div>
+				<div class="page">
+				<div class="hr1"></div>
+					<ul>
+						<c:if test="${pageMaker.prev}">
+							<li><a class="pm" href="/shoerologue/category/brand/adidas.do${pageMaker.makeQuery(pageMaker.startPage - 1)}">이전</a></li>
+						</c:if> 
+						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+							<li><a class="pm" href="/shoerologue/category/brand/adidas.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
+						</c:forEach>
+						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+							<li><a class="pm" href="/shoerologue/category/brand/adidas.do${pageMaker.makeQuery(pageMaker.endPage + 1)}">다음</a></li>
+						</c:if> 
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>

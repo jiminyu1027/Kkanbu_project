@@ -98,6 +98,10 @@ li{
 	clear:left;
 }
 
+.page>ul{
+	margin-top:30px;
+}
+
 .brandBanner>img{
 	width:100%;
 	margin:35px 0px;
@@ -323,4 +327,10 @@ input[type=checkbox]{
 
 .exclamation{
 	color:#808080;
+}
+
+.page>ul>li {
+	display:inline;
+	padding: 6px;
+	text-align:center;
 }

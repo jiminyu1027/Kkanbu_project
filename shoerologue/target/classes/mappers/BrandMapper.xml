@@ -5,59 +5,265 @@
  
 <mapper namespace="edu.study.mapper.BrandMapper">
 
-	<select id="nikelist" resultType="ProductVO">
-   		SELECT * FROM product WHERE pBrandKr='나이키' ORDER BY pidx desc
+	
+	<select id="nikelist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pBrandKr='나이키' 
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
 	</select>
 	
-	<select id="adidaslist" resultType="ProductVO">
-   		SELECT * FROM product WHERE pBrandKr='아디다스' ORDER BY pidx desc
+	<select id="countnike" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pBrandKr='나이키'
 	</select>
 	
-	<select id="newbalancelist" resultType="ProductVO">
-   		SELECT * FROM product WHERE pBrandKr='뉴발란스' ORDER BY pidx desc
+	<select id="adidaslist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pBrandKr='아디다스' 
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
 	</select>
 	
-	<select id="converselist" resultType="ProductVO">
-   		SELECT * FROM product WHERE pBrandKr='컨버스' ORDER BY pidx desc
+	<select id="countadidas" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pBrandKr='아디다스'
 	</select>
 	
-	<select id="vanslist" resultType="ProductVO">
-   		SELECT * FROM product WHERE pBrandKr='반스' ORDER BY pidx desc
+	<select id="newbalancelist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pBrandKr='뉴발란스' 
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
 	</select>
 	
-	<select id="reeboklist" resultType="ProductVO">
-   		SELECT * FROM product WHERE pBrandKr='리복' ORDER BY pidx desc
+	<select id="countnewbalance" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pBrandKr='뉴발란스'
 	</select>
 	
-	<select id="nuovolist" resultType="ProductVO">
-   		SELECT * FROM product WHERE pBrandKr='누오보' ORDER BY pidx desc
+	<select id="converselist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pBrandKr='컨버스' 
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
 	</select>
 	
-	<select id="jordanlist" resultType="ProductVO">
-   		SELECT * FROM product WHERE pBrandKr='조던' ORDER BY pidx desc
+	<select id="countconverse" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pBrandKr='컨버스'
 	</select>
 	
-	<select id="pumalist" resultType="ProductVO">
-   		SELECT * FROM product WHERE pBrandKr='푸마' ORDER BY pidx desc
+	<select id="vanslist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pBrandKr='반스' 
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
 	</select>
 	
-	<select id="hawkinslist" resultType="ProductVO">
-   		SELECT * FROM product WHERE pBrandKr='호킨스' ORDER BY pidx desc
+	<select id="countvans" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pBrandKr='반스'
 	</select>
 	
-	<select id="ggomoosinlist" resultType="ProductVO">
-   		SELECT * FROM product WHERE pBrandKr='꼬무신' ORDER BY pidx desc
+	<select id="reeboklist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pBrandKr='리복' 
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
 	</select>
 	
-	<select id="raragolist" resultType="ProductVO">
-   		SELECT * FROM product WHERE pBrandKr='라라고' ORDER BY pidx desc
+	<select id="countreebok" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pBrandKr='리복'
 	</select>
 	
-	<select id="bearpawlist" resultType="ProductVO">
-   		SELECT * FROM product WHERE pBrandKr='베어파우' ORDER BY pidx desc
+	<select id="nuovolist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pBrandKr='누오보' 
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
 	</select>
 	
+	<select id="countnuovo" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pBrandKr='누오보'
+	</select>
 	
+	<select id="jordanlist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pBrandKr='조던' 
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
 	
+	<select id="countjordan" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pBrandKr='조던'
+	</select>
+	
+	<select id="pumalist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pBrandKr='푸마' 
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+	
+	<select id="countpuma" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pBrandKr='푸마'
+	</select>
+	
+	<select id="hawkinslist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pBrandKr='호킨스' 
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+	
+	<select id="counthawkins" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pBrandKr='호킨스'
+	</select>
+	
+	<select id="ggomoosinlist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pBrandKr='꼬무신' 
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+	
+	<select id="countggomoosin" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pBrandKr='꼬무신'
+	</select>
+	
+	<select id="raragolist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pBrandKr='라라고' 
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+	
+	<select id="countrarago" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pBrandKr='라라고'
+	</select>
+	
+	<select id="bearpawlist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product 
+						WHERE pBrandKr='베어파우' 
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+	
+	<select id="countbearpaw" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE pBrandKr='베어파우'
+	</select>
 	
 </mapper>

@@ -20,11 +20,16 @@ public class ProductDAO {
 			return sqlSession.selectList(Namespace+".list");
 		}
 
-		public ProductVO detail(int pidx) throws Exception  {
+		public ProductVO detail(int pidx) throws Exception{
 			ProductVO pt  = sqlSession.selectOne(Namespace+".detail", pidx);
 			String g = pt.getpGender();
 			System.out.println("g"+g);
 			return  pt;
+		}
+		
+		public ProductVO productsize(int pidx) throws Exception{
+			return (ProductVO) sqlSession.selectList(Namespace+".productsize", pidx);
+			
 		}
 		
 		

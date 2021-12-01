@@ -12,28 +12,45 @@ public interface GenderService {
 	List<ProductVO> menList(ProductVO pvo,Criteria cri) throws Exception;
 	// °Ô½Ã¹° ÃÑ °¹¼ö
 	public int countmenlist()throws Exception;
-
-	List<ProductVO> menListBoots() throws Exception;
-	List<ProductVO> menListCasual() throws Exception;
-	List<ProductVO> menListDressShoes() throws Exception;
-	List<ProductVO> menListSandle() throws Exception;
-	List<ProductVO> menListSneakers() throws Exception;
-	List<ProductVO> menListSports() throws Exception;
-	
-	List<ProductVO> womenList() throws Exception;
-	List<ProductVO> womenListBoots() throws Exception;
-	List<ProductVO> womenListCasual() throws Exception;
-	List<ProductVO> womenListDressShoes() throws Exception;
-	List<ProductVO> womenListSandle() throws Exception;
-	List<ProductVO> womenListSneakers() throws Exception;
-	List<ProductVO> womenListSports() throws Exception;
-	
-	List<ProductVO> kidsList() throws Exception;
-	List<ProductVO> kidsListBoots() throws Exception;
-	List<ProductVO> kidsListCasual() throws Exception;
-	List<ProductVO> kidsListDressShoes() throws Exception;
-	List<ProductVO> kidsListSandle() throws Exception;
-	List<ProductVO> kidsListSneakers() throws Exception;
-	List<ProductVO> kidsListSports() throws Exception;
+	List<ProductVO> menListBoots(ProductVO pvo,Criteria cri) throws Exception;
+	public int countmenboots()throws Exception;
+	List<ProductVO> menListCasual(ProductVO pvo,Criteria cri) throws Exception;
+	public int countmencasual()throws Exception;
+	List<ProductVO> menListDressShoes(ProductVO pvo,Criteria cri) throws Exception;
+	public int countmendressshoes()throws Exception;
+	List<ProductVO> menListSandle(ProductVO pvo,Criteria cri) throws Exception;
+	public int countmensandle()throws Exception;
+	List<ProductVO> menListSneakers(ProductVO pvo,Criteria cri) throws Exception;
+	public int countmensneakers()throws Exception;
+	List<ProductVO> menListSports(ProductVO pvo,Criteria cri) throws Exception;
+	public int countmensports()throws Exception;
+	List<ProductVO> womenList(ProductVO pvo,Criteria cri) throws Exception;
+	public int countwomenlist()throws Exception;
+	List<ProductVO> womenListBoots(ProductVO pvo,Criteria cri) throws Exception;
+	public int countwomenboots()throws Exception;
+	List<ProductVO> womenListCasual(ProductVO pvo,Criteria cri) throws Exception;
+	public int countwomencasual()throws Exception;
+	List<ProductVO> womenListDressShoes(ProductVO pvo,Criteria cri) throws Exception;
+	public int countwomendressshoes()throws Exception;
+	List<ProductVO> womenListSandle(ProductVO pvo,Criteria cri) throws Exception;
+	public int countwomensandle()throws Exception;
+	List<ProductVO> womenListSneakers(ProductVO pvo,Criteria cri) throws Exception;
+	public int countwomensneakers()throws Exception;
+	List<ProductVO> womenListSports(ProductVO pvo,Criteria cri) throws Exception;
+	public int countwomensports()throws Exception;
+	List<ProductVO> kidsList(ProductVO pvo,Criteria cri) throws Exception;
+	public int countkidslist()throws Exception;
+	List<ProductVO> kidsListBoots(ProductVO pvo,Criteria cri) throws Exception;
+	public int countkidsboots()throws Exception;
+	List<ProductVO> kidsListCasual(ProductVO pvo,Criteria cri) throws Exception;
+	public int countkidscasual()throws Exception;
+	List<ProductVO> kidsListDressShoes(ProductVO pvo,Criteria cri) throws Exception;
+	public int countkidsdressshoes()throws Exception;
+	List<ProductVO> kidsListSandle(ProductVO pvo,Criteria cri) throws Exception;
+	public int countkidssandle()throws Exception;
+	List<ProductVO> kidsListSneakers(ProductVO pvo,Criteria cri) throws Exception;
+	public int countkidssneakers()throws Exception;
+	List<ProductVO> kidsListSports(ProductVO pvo,Criteria cri) throws Exception;
+	public int countkidssports()throws Exception;
 
 }
