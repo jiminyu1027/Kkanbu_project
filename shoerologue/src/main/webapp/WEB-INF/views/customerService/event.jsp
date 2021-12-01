@@ -1,5 +1,11 @@
+<%@page import="edu.study.vo.NoticeVO"%>
+<%@page import="java.util.List"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	NoticeVO nvo = (NoticeVO)request.getAttribute("nvo");
+%>     
 <!DOCTYPE html>
 <html>
 
@@ -101,21 +107,31 @@
 		
 </head>
 <body>
-
 	<div class="container">
-			<nav class="navbar navbar-expand-lg navbar-light topNav">
-			      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-			      <ul class="nav justify-content-end"> 
-					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/join.do">회원가입</a>
-					  </li>
-					</ul>
-				</nav>
-			</div>
-	
+		<nav class="navbar navbar-expand-lg navbar-light topNav">
+	      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+	      <ul class="nav justify-content-end"> 
+	      <!-- 로그인 안했을때 -->
+	      <c:if test="${member == null}">
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/member/join.do">회원가입</a>
+				  </li>
+			</c:if>
+			<!-- 로그인 했을때 -->
+			<c:if test="${member != null}">
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder">${member.mName}님 환영합니다</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/logout.do">로그아웃</a>
+				  </li>
+			</c:if>
+			</ul>
+		</nav>
+	</div>
 	<!-- 로고, 검색창, 마이페이지 -->
 	<div class="container psts">
 	  <div class="row">
@@ -237,6 +253,8 @@
 			<center><div class="tsft">예금주:㈜깐부 글로벌</div></center>		
 		</div>
 		<h2><span class="red-font">E</span>vent</h2>
+	<form action="/shoerologue/customerService/notice.do" method="post">
+	<input type="hidden" name="nidx" value="<%=nvo.getNidx() %>">
 		<table>
 			<colgroup>
 				<col style="width:70%;">
@@ -245,22 +263,26 @@
 			</colgroup>
 			<thead style="border-top:2px solid black; border-bottom:2px solid gray; height:70px;">
 				<tr>
-					<th style="font-size:20px; color:gray;">이벤트 타이틀입니다.</th>
-					<th style="font-size:15px; color:gray; padding-left:70px;">2021-11-10</th>
+					<th style="font-size:20px; color:gray;"><%=nvo.getnTitle()%></th>
+					<th style="font-size:15px; color:gray; padding-left:70px;"><%=nvo.getnWriteday().substring(0,10) %></th>
 					<th style="font-size:15px; color:gray; text-align:right; padding-right:50px;">0</th>
 				</tr>	
 			</thead>
 			<tbody>
-				<tr><td style="height:50px;"></td></tr>
+				<tr><td style="height:50px;" colspan="3"><%=nvo.getnContents() %></td></tr>
 				<tr>
 					<td colspan="3">
-						<img src="/resources/image/KAKAO.png" class="d-block w-100" alt="카카오페이 결제시 3천원 할인 이벤트" style="width:100%; height:500px;">
+						<img src="/shoerologue/resources/image/mainbanner/KAKAO.png" class="d-block w-100" alt="카카오페이 결제시 3천원 할인 이벤트" style="width:100%; height:500px;">
 					</td>
 				</tr>
 				<tr><td style="border-bottom:1px solid gray; height:30px;" colspan="3"></td></tr>	
 			</tbody>
 		</table>
 		<input type="button" value="목록보기" onclick="location.href='notice.do'" class="btnFn" style="background-color:white;">
+		<c:if test="${master eq 'master'}">
+			<input type="submit" value="공지삭제" class="btnFn" style="background-color:gray;">
+		</c:if>
+	</form>
 	</div>	
 	<div class="empty-box"></div>
 	<div class="empty-box"></div>

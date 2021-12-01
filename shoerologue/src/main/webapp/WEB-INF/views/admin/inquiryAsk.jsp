@@ -1,3 +1,4 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -108,7 +109,7 @@
  		.cancel{
  			position:relative;
  			top:510px;
- 			left:500px;
+ 			left:550px;
  		}
  		.cancel-button{
  			width:150px;
@@ -119,7 +120,7 @@
  		.submit-button{
  			position:relative;
  			top:560px;
- 			left:680px;
+ 			left:730px;
  			width:150px;
  			height:50px;
  			background-color:black;
@@ -158,7 +159,7 @@
 		    border: 0;
 		}
 		</style>
-		<script src="/js/jquery-3.6.0.min.js"></script>	
+		<script src="../js/jquery-3.6.0.min.js"></script>	
 		<script>	
 			function btnFn(){
 				var form = document.frm;
@@ -179,20 +180,31 @@
 		</script>
 </head>
 <body>
-
 	<div class="container">
-			<nav class="navbar navbar-expand-lg navbar-light topNav">
-			      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-			      <ul class="nav justify-content-end"> 
-					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/join.do">회원가입</a>
-					  </li>
-					</ul>
-				</nav>
-			</div>
+	<nav class="navbar navbar-expand-lg navbar-light topNav">
+	      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+	      <ul class="nav justify-content-end"> 
+	      <!-- 로그인 안했을때 -->
+	      <c:if test="${member == null}">
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/member/join.do">회원가입</a>
+				  </li>
+			</c:if>
+			<!-- 로그인 했을때 -->
+			<c:if test="${member != null}">
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder">${member.mName}님 환영합니다</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/logout.do">로그아웃</a>
+				  </li>
+			</c:if>
+			</ul>
+		</nav>
+	</div>
 	
 	<!-- 로고, 검색창, 마이페이지 -->
 	<div class="container psts">
@@ -347,7 +359,7 @@
 		<div class="empty-box"></div>
 		<div class="empty-box"></div>
 		<div class="mainTitle">문의내용</div>
-		<form action="/shoerologue/mypage/memberCounsel/inquiry.do" method="post" class="frm" id="frm" name="frm">
+		<form action="/shoerologue/mypage/memberCounsel/inquiryAction.do" method="post" class="frm" id="frm" name="frm">
 			<table class="ask-box">
 				<colgroup>
 					<col width="10%">
@@ -358,15 +370,15 @@
 						<label class="ask-box-detail">유형<label class="red-label">*</label></label>
 					</td>
  					<td>
-						<select class="options">
-							<option class="option-detail">상품정보</option>
-							<option class="option-detail">회원정보</option>
-							<option class="option-detail">일반정보</option>
-							<option class="option-detail">주문/결제/취소</option>
-							<option class="option-detail">교환/반품/환불</option>
-							<option class="option-detail">AS</option>
-							<option class="option-detail">배송현황</option>
-							<option class="option-detail">기타</option>
+						<select class="options" name="qReason">
+							<option class="option-detail" value="상품정보">상품정보</option>
+							<option class="option-detail" value="회원정보">회원정보</option>
+							<option class="option-detail" value="일반정보">일반정보</option>
+							<option class="option-detail" value="주문정보">주문/결제/취소</option>
+							<option class="option-detail" value="반품관련">교환/반품/환불</option>
+							<option class="option-detail" value="AS">AS</option>
+							<option class="option-detail" value="배송현황">배송현황</option>
+							<option class="option-detail" value="기타">기타</option>
 						</select>
 					</td>
 				</tr>
@@ -375,7 +387,7 @@
 						<label class="ask-box-detail">제목<label class="red-label">*</label></label>
 					</td>
 					<td>
-						<input type="text" placeholder="제목을 입력해주세요" class="subject" id="subject" name="subject">
+						<input type="text" placeholder="제목을 입력해주세요" class="subject" id="subject" name="qTitle">
 					</td>
 				</tr>
 				<tr style="height:65%;">	
@@ -383,7 +395,7 @@
 						<label class="ask-box-detail">내용<label class="red-label">*</label></label>
 					</td>
 					<td>
-						<textarea placeholder="내용을 입력해주세요" id="contents"></textarea>
+						<textarea placeholder="내용을 입력해주세요" id="contents" name="qContents"></textarea>
 					</td>
 				</tr>
 				<tr style="height:15%;">	
@@ -393,7 +405,7 @@
 					<td class="filebox">
 						<input class="upload-name" value="첨부파일" placeholder="첨부파일">
 					    <label for="file">파일찾기</label> 
-					    <input type="file" id="file">
+					    <input type="file" id="file" name="qFile">
 					</td>
 				</tr>	
 			</table>

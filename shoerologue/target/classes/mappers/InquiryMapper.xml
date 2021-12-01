@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.study.mapper.InquiryMapper">
+
+	<insert id="insert" parameterType="edu.study.vo.InquiryVO">
+		<![CDATA[
+			INSERT INTO QUESTION(
+				QIDX,QTITLE,QCONTENTS,QFILE,QREASON,MIDX)
+				VALUES(
+				QIDX_SEQ.nextval
+				,#{qTitle}
+				,#{qContents}
+				,#{qFile}
+				,#{qReason}
+				,#{midx}
+				)
+		]]>
+	</insert>
+	
+	<select id="qlist" parameterType="int" resultType="edu.study.vo.InquiryVO">
+		SELECT * FROM QUESTION WHERE 1=1 AND MIDX=#{MIDX} ORDER BY QIDX ASC
+	</select>
+	<!--회원의 MIDX와 작성자의 MIDX가 일치하는 것들만 추려서 보여준다.-->
+	<select id="masterList" resultType="edu.study.vo.InquiryVO">
+		SELECT * FROM QUESTION WHERE 1=1 ORDER BY QIDX ASC
+	</select>
+	<select id="detail" resultType="edu.study.vo.InquiryVO">
+		SELECT * FROM QUESTION WHERE QIDX = #{QIDX}
+	</select>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM QUESTION WHERE QIDX = #{QIDX}
+	</delete>
+</mapper>

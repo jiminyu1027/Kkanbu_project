@@ -1,3 +1,4 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -147,12 +148,24 @@
 			<nav class="navbar navbar-expand-lg navbar-light topNav">
 			      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 			      <ul class="nav justify-content-end"> 
-					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/member/join.do">회원가입</a>
-					  </li>
+			      <!-- 로그인 안했을때 -->
+			      <c:if test="${member == null}">
+						  <li class="nav-item">
+						    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/member/join.do">회원가입</a>
+						  </li>
+					</c:if>
+					<!-- 로그인 했을때 -->
+					<c:if test="${member != null}">
+						  <li class="nav-item">
+						    <a class="nav-link text-black-50 fw-bolder">${member.mName}님 환영합니다</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/logout.do">로그아웃</a>
+						  </li>
+					</c:if>
 					</ul>
 				</nav>
 			</div>
@@ -281,9 +294,9 @@
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="myPage.do" class="gray">주문/배송 조회</a><br>
-					<a href="orderCancel.do" class="gray">취소/교환/반품</a><br>
-					<a href="insertCard.do" class="gray">카드 등록 관리</a>
+					<a href="/shoerologue/mypage/claim/myPage.do" class="gray">주문/배송 조회</a><br>
+					<a href="/shoerologue/mypage/claim/orderCancel.do" class="gray">취소/교환/반품</a><br>
+					<a href="/shoerologue/mypage/claim/insertCard.do" class="gray">카드 등록 관리</a>
 				</div><br>
 			</div>
 			<div class="myPageMenu2">

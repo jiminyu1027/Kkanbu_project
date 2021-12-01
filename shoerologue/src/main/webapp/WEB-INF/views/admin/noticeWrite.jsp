@@ -1,3 +1,4 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -158,7 +159,7 @@
 		    border: 0;
 		}
 		</style>
-		<script src="/js/jquery-3.6.0.min.js"></script>	
+		<script src="../js/jquery-3.6.0.min.js"></script>	
 		<script>	
 			function btnFn(){
 				var form = document.frm;
@@ -179,21 +180,31 @@
 		</script>
 </head>
 <body>
-
 	<div class="container">
-			<nav class="navbar navbar-expand-lg navbar-light topNav">
-			      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-			      <ul class="nav justify-content-end"> 
-					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/join.do">회원가입</a>
-					  </li>
-					</ul>
-				</nav>
-			</div>
-	
+		<nav class="navbar navbar-expand-lg navbar-light topNav">
+	      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+	      <ul class="nav justify-content-end"> 
+	      <!-- 로그인 안했을때 -->
+	      <c:if test="${member == null}">
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/member/join.do">회원가입</a>
+				  </li>
+			</c:if>
+			<!-- 로그인 했을때 -->
+			<c:if test="${member != null}">
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder">${member.mName}님 환영합니다</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/logout.do">로그아웃</a>
+				  </li>
+			</c:if>
+			</ul>
+		</nav>
+	</div>
 	<!-- 로고, 검색창, 마이페이지 -->
 	<div class="container psts">
 	  <div class="row">
@@ -316,7 +327,7 @@
 			
 		</div>
 		<div><span class="mainTitle">공지작성</span></div>
-		<form action='/shoerologue/customerService/notice.do' method="post" class="frm" id="frm" name="frm">
+		<form action='/shoerologue/customerService/noticeAction.do' method="post" class="frm" id="frm" name="frm">
 			<table class="ask-box">
 				<colgroup>
 					<col width="10%">
@@ -327,7 +338,7 @@
 						<label class="ask-box-detail">제목<label class="red-label">*</label></label>
 					</td>
 					<td>
-						<input type="text" placeholder="제목을 입력해주세요" class="subject" id="subject" name="subject">
+						<input type="text" placeholder="제목을 입력해주세요" class="subject" id="subject" name="nTitle">
 					</td>
 				</tr>
 				<tr style="height:65%;">	
@@ -335,7 +346,7 @@
 						<label class="ask-box-detail">내용<label class="red-label">*</label></label>
 					</td>
 					<td>
-						<textarea placeholder="내용을 입력해주세요" id="contents"></textarea>
+						<textarea placeholder="내용을 입력해주세요" id="contents" name="nContents"></textarea>
 					</td>
 				</tr>
 				<tr style="height:15%;">	
@@ -345,7 +356,7 @@
 					<td class="filebox">
 						<input class="upload-name" value="첨부파일" placeholder="첨부파일">
 					    <label for="file">파일찾기</label> 
-					    <input type="file" id="file">
+					    <input type="file" id="file" name="nFile">
 					</td>
 				</tr>	
 			</table>
@@ -357,7 +368,7 @@
 			  $(".upload-name").val(fileName);
 			});
 		</script>
-		<a href="/CustomerService/inquiry.do" class="cancel"><input type="button" value="취소" class="cancel-button"></a>
+		<a href="/shoerologue/customerService/notice.do" class="cancel"><input type="button" value="취소" class="cancel-button"></a>
 	</div>	
 <!-- 우측하단 TOP 이동 배너 -->
 	<div class="empty-box"></div>

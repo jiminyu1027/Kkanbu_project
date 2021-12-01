@@ -1,5 +1,10 @@
+<%@page import="edu.study.vo.InquiryVO"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	InquiryVO ivo = (InquiryVO)request.getAttribute("ivo");
+%>    
 <!DOCTYPE html>
 <html>
 
@@ -87,33 +92,67 @@
 			width:70%;
 		}
 		.btnFn{
+			position:absolute;
 			font-weight:bold;
 			font-size:15px;
 			margin-top:30px;
-			margin-left:1160px;
+			margin-left:830px;
 			width:150px;
 			height:50px;
 			border:2px solid gray;
+		}
+		.subFn{
+			position:absolute;
+			font-weight:bold;
+			font-size:15px;
+			margin-top:30px;
+			margin-left:650px;
+			width:150px;
+			height:50px;
+			border:2px solid gray;
+		}
+		textarea{
+			resize:none; 
+ 			width:978px;
+			height:150px;
+		} 
+		.commentFn{
+			width:100px;
+			height:30px;
+		}
+		.commentBox{
+			margin-top:150px;
+			margin-left:280px;
 		}
 		</style>
 		
 </head>
 <body>
-
 	<div class="container">
-			<nav class="navbar navbar-expand-lg navbar-light topNav">
-			      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-			      <ul class="nav justify-content-end"> 
-					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/join.do">회원가입</a>
-					  </li>
-					</ul>
-				</nav>
-			</div>
-	
+		<nav class="navbar navbar-expand-lg navbar-light topNav">
+	      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+	      <ul class="nav justify-content-end"> 
+	      <!-- 로그인 안했을때 -->
+	      <c:if test="${member == null}">
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/member/join.do">회원가입</a>
+				  </li>
+			</c:if>
+			<!-- 로그인 했을때 -->
+			<c:if test="${member != null}">
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder">${member.mName}님 환영합니다</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/logout.do">로그아웃</a>
+				  </li>
+			</c:if>
+			</ul>
+		</nav>
+	</div>
 	<!-- 로고, 검색창, 마이페이지 -->
 	<div class="container psts">
 	  <div class="row">
@@ -238,7 +277,7 @@
 					<a href="/shoerologue/cart/cart.do" class="gray">장바구니</a><br>
 					<a href="/shoerologue/mypage/shopping/wishlist.do" class="gray">찜리스트</a><br>
 					<a href="/shoerologue/mypage/shopping/qaList.do" class="gray">상품 Q&A</a><br>
-					<a href="/shoerologue/mypage/claim/inquiryList.do" class="red">1:1 문의*</a><br>
+					<a href="/shoerologue/mypage/memberCounsel/inquiry.do" class="red">1:1 문의*</a><br>
 					<a href="/shoerologue/mypage/shopping/myReview.do" class="gray">나의 리뷰</a>
 				</div><br>
 			</div>
@@ -255,42 +294,49 @@
 		</div>
 		</div>
 		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
-		<table>
-			<colgroup>
-				<col style="width:70%;">
-				<col style="width:15%;">
-				<col style="width:15%;">
-			</colgroup>
-			<thead style="border-top:2px solid black; border-bottom:2px solid gray; height:70px;">
-				<tr>
-					<th style="font-size:20px; color:gray;">1:1문의 타이틀입니다.</th>
-					<th style="font-size:15px; color:gray; padding-left:70px;">2021-11-10</th>
-					<th style="font-size:15px; color:gray; text-align:right; padding-right:40px;">홍길동</th>
-				</tr>	
-			</thead>
-			<tbody>
-				<tr><td style="height:20px;"></td></tr>
-				<tr><td style="font-size:25px; font-weight:bold; height:80px;">문의유형 : ~</td></tr>
-				<tr>
-					<td colspan="3">
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	<img src="/resources/image/KAKAO.png" class="d-block w-100" alt="카카오페이 결제시 3천원 할인 이벤트" style="width:100%; height:500px;">
-					</td>
-				</tr>
-				<tr><td style="border-bottom:1px solid gray; height:30px;" colspan="3"></td></tr>	
-			</tbody>
-		</table>
-		<input type="button" value="목록보기" onclick="location.href='/shoerologue/mypage/memberCounsel/inquiry.do'" class="btnFn" style="background-color:white;">
-	</div>	
+		<form action="/shoerologue/mypage/memberCounsel/inquiry.do" method="post">	
+		<input type="hidden" name="qidx" value="<%=ivo.getQidx() %>">	
+			<table>
+				<colgroup>
+					<col style="width:70%;">
+					<col style="width:15%;">
+					<col style="width:15%;">
+				</colgroup>
+				<thead style="border-top:2px solid black; border-bottom:2px solid gray; height:70px;">
+					<tr>
+						<th style="font-size:20px; color:gray;"><%=ivo.getqTitle() %></th>
+						<th style="font-size:15px; color:gray; padding-left:70px;"><%=ivo.getqWriteday().substring(0,10) %></th>
+						<th style="font-size:15px; color:gray; text-align:right; padding-right:40px;"><%=ivo.getqReason() %></th>
+					</tr>	
+				</thead>
+				<tbody>
+					<tr><td style="height:20px;"></td></tr>
+					<tr>
+						<td colspan="3">
+						 	<%=ivo.getqContents() %>
+						 	<img src="/resources/image/KAKAO.png" class="d-block w-100" alt="카카오페이 결제시 3천원 할인 이벤트" style="width:100%; height:500px;">
+						</td>
+					</tr>
+					<tr><td style="border-bottom:1px solid gray; height:30px;" colspan="3"></td></tr>	
+				</tbody>
+			</table>
+				<input type="submit" value="문의삭제" class="subFn" style="background-color:gray;">
+				<input type="button" value="목록보기" onclick="location.href='/shoerologue/mypage/memberCounsel/inquiry.do'" class="btnFn" style="background-color:white;">
+		</form>	
+	<div class="empty-box"></div>
+	<div class="empty-box"></div>	
+	<div>
+		<form action="/shoerologue/mypage/memberCounsel/comment.do" method="post" class="commentBox">
+			<p>
+				<textarea name="aContents" placeholder="여기에 댓글을 작성하세요"></textarea>				
+			</p>
+			<p>
+				<input type="hidden" name="midx" value="${member.midx}">
+				<input type="submit" value="댓글 작성" class="commentFn">
+			</p>
+		</form>
+	</div>
+	</div>
 	<div class="empty-box"></div>
 	<div class="empty-box"></div>
 <!-- 우측하단 TOP 이동 배너 -->

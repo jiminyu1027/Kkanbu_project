@@ -1,5 +1,11 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="edu.study.vo.*" %>
+<%
+	List<NoticeVO> nlist = (List<NoticeVO>)request.getAttribute("nlist");
+%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -128,21 +134,31 @@
 		</style>
 </head>
 <body>
-
 	<div class="container">
-			<nav class="navbar navbar-expand-lg navbar-light topNav">
-			      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-			      <ul class="nav justify-content-end"> 
-					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/member/join.do">회원가입</a>
-					  </li>
-					</ul>
-				</nav>
-			</div>
-	
+		<nav class="navbar navbar-expand-lg navbar-light topNav">
+	      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+	      <ul class="nav justify-content-end"> 
+	      <!-- 로그인 안했을때 -->
+	      <c:if test="${member == null}">
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/member/join.do">회원가입</a>
+				  </li>
+			</c:if>
+			<!-- 로그인 했을때 -->
+			<c:if test="${member != null}">
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder">${member.mName}님 환영합니다</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/logout.do">로그아웃</a>
+				  </li>
+			</c:if>
+			</ul>
+		</nav>
+	</div>
 	<!-- 로고, 검색창, 마이페이지 -->
 	<div class="container psts">
 	  <div class="row">
@@ -265,7 +281,9 @@
 			
 		</div>
 		<span class="mainTitle">공지사항</span>
-		<input type="button" value="공지 작성" onclick="location.href='/shoerologue/admin/noticeWrite.do'" class="goWrite">	
+		<c:if test="${master eq 'master'}">
+			<input type="button" value="공지 작성" onclick="location.href='/shoerologue/admin/noticeWrite.do'" class="goWrite">	
+		</c:if>
 		<table class="notice-box table table-hover">
 			<colgroup>
 				<col width="10%">
@@ -280,56 +298,21 @@
 				</tr>	
 			</thead>
 			<tbody>
+<!-- 				<tr class="notice-contents-box"> -->
+<!-- 					<td class="notice-number-detail">1</td> -->
+<!-- 					<td class="notice-subject-detail"><a href="/shoerologue/customerService/event.do">이벤트 공지입니다.</a></td> -->
+<!-- 					<td class="notice-writeday-detail">2021-11-02</td> -->
+<!-- 				</tr> -->
+				<%
+					for(int i=0; i<nlist.size(); i++){
+				%>
 				<tr class="notice-contents-box">
-					<td class="notice-number-detail">1</td>
-					<td class="notice-subject-detail"><a href="/shoerologue/customerService/event.do">이벤트 공지입니다.</a></td>
-					<td class="notice-writeday-detail">2021-11-02</td>
+					<td class="notice-number-detail"><%=i+1 %></td>
+					<td class="notice-subject-detail" onclick="location.href='/shoerologue/customerService/event.do?nidx=<%=nlist.get(i).getNidx()%>'"><%=nlist.get(i).getnTitle() %></td>
+					<td class="notice-writeday-detail"><%=nlist.get(i).getnWriteday().substring(0,10)%></td>
+					
 				</tr>
-				<tr class="notice-contents-box">
-					<td class="notice-number-detail">2</td>
-					<td class="notice-subject-detail"><a href="#">두번째 제목</a></td>
-					<td class="notice-writeday-detail">2021-11-01</td>
-				</tr>
-				<tr class="notice-contents-box">
-					<td class="notice-number-detail">3</td>
-					<td class="notice-subject-detail"><a href="#">세번째 제목</a></td>
-					<td class="notice-writeday-detail">2021-10-31</td>
-				</tr>
-				<tr class="notice-contents-box">
-					<td class="notice-number-detail">4</td>
-					<td class="notice-subject-detail"><a href="#">네번째 제목</a></td>
-					<td class="notice-writeday-detail">2021-10-30</td>
-				</tr>
-				<tr class="notice-contents-box">
-					<td class="notice-number-detail">5</td>
-					<td class="notice-subject-detail"><a href="#">다섯번째 제목</a></td>
-					<td class="notice-writeday-detail">2021-10-29</td>
-				</tr>
-				<tr class="notice-contents-box">
-					<td class="notice-number-detail">6</td>
-					<td class="notice-subject-detail"><a href="#">여섯번째 제목</a></td>
-					<td class="notice-writeday-detail">2021-10-28</td>
-				</tr>
-				<tr class="notice-contents-box">
-					<td class="notice-number-detail">7</td>
-					<td class="notice-subject-detail"><a href="#">일곱번째 제목</a></td>
-					<td class="notice-writeday-detail">2021-10-27</td>
-				</tr>
-				<tr class="notice-contents-box">
-					<td class="notice-number-detail">8</td>
-					<td class="notice-subject-detail"><a href="#">여덟번째 제목</a></td>
-					<td class="notice-writeday-detail">2021-10-26</td>
-				</tr>
-				<tr class="notice-contents-box">
-					<td class="notice-number-detail">9</td>
-					<td class="notice-subject-detail"><a href="#">아홉번째 제목</a></td>
-					<td class="notice-writeday-detail">2021-10-25</td>
-				</tr>
-				<tr class="notice-contents-box">
-					<td class="notice-number-detail">10</td>
-					<td class="notice-subject-detail"><a href="#">열번째 제목</a></td>
-					<td class="notice-writeday-detail">2021-10-24</td>
-				</tr>
+				<%} %>
 			</tbody>
 		</table>
 	</div>	

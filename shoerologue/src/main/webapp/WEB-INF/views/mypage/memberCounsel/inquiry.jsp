@@ -1,5 +1,13 @@
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="edu.study.vo.*" %>
+<%
+	List<InquiryVO> qlist = (List<InquiryVO>)request.getAttribute("qlist");
+
+	List<InquiryVO> masterList = (List<InquiryVO>)request.getAttribute("masterList");
+%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -145,12 +153,24 @@
 			<nav class="navbar navbar-expand-lg navbar-light topNav">
 			      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 			      <ul class="nav justify-content-end"> 
-					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
-					  </li>
-					  <li class="nav-item">
-					    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/member/join.do">회원가입</a>
-					  </li>
+			      <!-- 로그인 안했을때 -->
+			      <c:if test="${member == null}">
+						  <li class="nav-item">
+						    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/member/join.do">회원가입</a>
+						  </li>
+					</c:if>
+					<!-- 로그인 했을때 -->
+					<c:if test="${member != null}">
+						  <li class="nav-item">
+						    <a class="nav-link text-black-50 fw-bolder">${member.mName}님 환영합니다</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/logout.do">로그아웃</a>
+						  </li>
+					</c:if>
 					</ul>
 				</nav>
 			</div>
@@ -312,43 +332,76 @@
 		<input type="button" class="btnBox" onclick="location.href='/shoerologue/admin/inquiryAsk.do'" value="문의하기">
 		<br>
 		<br>	
-		<table class="inquiry-box table table-hover">
-			<colgroup>
-				<col width="10%">
-				<col width="60%">
-				<col width="20%">
-				<col width="10%">
-			</colgroup>
-			<thead class="inquiry-title">
-				<tr>
-					<th class="inquiry-number" id="inquiry-number" name="inquiry-number">번호</th>
-					<th class="inquiry-subject" id="inquiry-subject" name="inquiry-subject">제목</th>
-					<th class="inquiry-writeday" id="inquiry-writeday" name="inquiry-writeday">작성일</th>
-					<th class="inquiry-writer" id="inquiry-writeday" name="inquiry-writeday">작성자</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class="inquiry-contents-box">
-					<td class="inquiry-number-detail">1</td>
-					<td class="inquiry-subject-detail"><a href="/shoerologue/mypage/claim/inquiryContents.do">1:1문의 1번째 제목입니다.</a></td>
-					<td class="inquiry-writeday-detail">2021-11-02</td>
-					<td class="inquiry-writer-detail">홍길동</td>
-				</tr>
-				<tr class="inquiry-contents-box">
-					<td class="inquiry-number-detail">2</td>
-					<td class="inquiry-subject-detail"><a href="#">1:1문의 2번째 제목입니다.</a></td>
-					<td class="inquiry-writeday-detail">2020-10-12</td>
-					<td class="inquiry-writer-detail">홍길우</td>
-				</tr>
-				<tr class="inquiry-contents-box">
-					<td class="inquiry-number-detail">3</td>
-					<td class="inquiry-subject-detail"><a href="#">1:1문의 3번째 제목입니다.</a></td>
-					<td class="inquiry-writeday-detail">2017-11-08</td>
-					<td class="inquiry-writer-detail">홍길순</td>
-				</tr>
-			</tbody>
-		</table>
-		
+<%-- 		<c:if test="${count==0}"> --%>
+<!-- 			<table width="80%" border="1" cellpadding="0" cellspacing="0"> -->
+<!-- 		<tr> -->
+<!--     		<td align="center"> -->
+<!--     		저장된 글이 없습니다. -->
+<!--     		</td> -->
+<!-- 			</table> -->
+<%-- 		</c:if>	 --%>
+<%-- 		<c:if test="${count!=0}"> --%>
+			<c:if test="${master ne 'master'}">
+				<table class="inquiry-box table table-hover">
+					<colgroup>
+						<col width="10%">
+						<col width="60%">
+						<col width="20%">
+						<col width="10%">
+					</colgroup>
+					<thead class="inquiry-title">
+						<tr>
+							<th class="inquiry-number" id="inquiry-number" name="inquiry-number">번호</th>
+							<th class="inquiry-subject" id="inquiry-subject" name="inquiry-subject">제목</th>
+							<th class="inquiry-writeday" id="inquiry-writeday" name="inquiry-writeday">작성일</th>
+							<th class="inquiry-writer" id="inquiry-writeday" name="inquiry-writeday">문의유형</th>
+						</tr>
+					</thead>
+					<tbody>	
+						<%
+							for(int i=0; i<qlist.size(); i++){
+						%>
+							<tr class="inquiry-contents-box">
+								<td class="inquiry-number-detail"><%=i+1 %></td>
+								<td class="inquiry-subject-detail" onclick="location.href='/shoerologue/mypage/claim/inquiryContents.do?qidx=<%=qlist.get(i).getQidx()%>'"><%=qlist.get(i).getqTitle() %></td>
+								<td class="inquiry-writeday-detail"><%=qlist.get(i).getqWriteday().substring(0,10) %></td>
+								<td class="inquiry-writer-detail"><%=qlist.get(i).getqReason() %></td>
+							</tr>
+						<%} %>		
+					</tbody>
+				</table>
+			</c:if>
+			<c:if test="${master eq 'master'}">
+				<table class="inquiry-box table table-hover">
+					<colgroup>
+						<col width="10%">
+						<col width="60%">
+						<col width="20%">
+						<col width="10%">
+					</colgroup>
+					<thead class="inquiry-title">
+						<tr>
+							<th class="inquiry-number" id="inquiry-number" name="inquiry-number">번호</th>
+							<th class="inquiry-subject" id="inquiry-subject" name="inquiry-subject">제목</th>
+							<th class="inquiry-writeday" id="inquiry-writeday" name="inquiry-writeday">작성일</th>
+							<th class="inquiry-writer" id="inquiry-writeday" name="inquiry-writeday">문의유형</th>
+						</tr>
+					</thead>
+					<tbody>	
+						<%
+							for(int j=0; j<masterList.size(); j++){
+						%>
+							<tr class="inquiry-contents-box">
+								<td class="inquiry-number-detail"><%=j+1 %></td>
+								<td class="inquiry-subject-detail" onclick="location.href='/shoerologue/mypage/claim/inquiryContents.do?qidx=<%=masterList.get(j).getQidx()%>'"><%=masterList.get(j).getqTitle() %></td>
+								<td class="inquiry-writeday-detail"><%=masterList.get(j).getqWriteday().substring(0,10) %></td>
+								<td class="inquiry-writer-detail"><%=masterList.get(j).getqReason() %></td>
+							</tr>
+						<%} %>		
+					</tbody>
+				</table>
+			</c:if>
+ 								
 	</div>	
 	<div class="empty-box"></div>
 	<div class="empty-box"></div>
