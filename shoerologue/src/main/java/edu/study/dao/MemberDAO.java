@@ -47,5 +47,10 @@ public class MemberDAO {
 		
 		public MemberVO findPwd(MemberVO vo) throws Exception{
 			return sqlSession.selectOne(Namespace+".findPwd",vo);
-		}		
+		}
+		
+		public int idCheck(MemberVO vo) throws Exception{
+			int result = sqlSession.selectOne(Namespace+".idCheck",vo);
+			return result;
+		}
 }

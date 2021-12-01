@@ -15,4 +15,7 @@ public interface MemberService {
 	public void update(MemberVO vo) throws Exception;
 	public MemberVO findID(MemberVO vo) throws Exception;
 	public MemberVO findPwd(MemberVO vo) throws Exception;
+	
+	// 아이디 중복 검사
+	public int idCheck(MemberVO vo) throws Exception;
 }

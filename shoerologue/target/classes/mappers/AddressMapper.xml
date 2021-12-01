@@ -66,8 +66,7 @@
     
     <delete id="del" parameterType="int">
     	DELETE FROM Address
-    				WHERE 1=1
-    				AND midx=#{midx}
+    		WHERE midx=#{midx}
     </delete>
 
     

@@ -8,13 +8,15 @@
 <html>
 	<head>
 	<meta charset="UTF-8">
+		
 		<title>회원가입 | Shoerologue</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
-	
+			<script src="/shoerologue/resources/js/jquery-3.6.0.min.js"></script>
 			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 			<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+			
 
 		  <!-- Bootstrap Font Icon CSS 아이콘 -->
 	    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -290,12 +292,12 @@
 				<div class="rows id mt-5">
 					<label for="id">아이디<span class="red">*</span></label>
 					<div class="formalign">
-						<input type="text" class="id impor id_input" name="mId" id="id" placeholder="아이디를 입력해 주세요." onblur="checkFn('id')"> 
-						<input type="button" class="id" onclick="" value="id 중복확인">
-						
-						<span class="id_input_re_1">사용 가능한 아이디입니다.</span>
-						<span class="id_input_re_2">아이디가 이미 존재합니다.</span>
-						
+						<div class="in_input_box">
+							<input type="text" class="id impor id_input" name="mId" id="mId" placeholder="아이디를 입력해 주세요." onblur="checkFn('id')" onchange="idCheckReset()"> 
+							<input type="button" class="id" onclick="idCheck()" value="id 중복확인">
+						</div>
+							<span class="id_input_re_1">사용 가능한 아이디입니다.</span>
+							<span class="id_input_re_2">아이디가 이미 존재합니다.</span>
 					</div>
 					<span class="check"></span>
 				</div>
@@ -439,14 +441,40 @@
 	</div>	
 	
 	<!-- 도전 -->
-	<script src="../jquery-3.6.0.min.js"></script>
 	<script>
+	var idCheckYN = false; // 중복확인 버튼 
+	var idUseYN = false; // 아이디 사용 가능 여부
+	function idCheck(){
+		idCheckYN = true;
+		if($("#mId").val() != ""){
+			$.ajax({
+				url : "idCheck.do",
+				type : "post",
+				dataType : "json",
+				data : {"mId" : $("#mId").val()},
+				success : function(data){
+					if(data > 0){
+						alert("중복된 아이디입니다.");
+					}else if(data == 0){
+						$("#idChk").attr("value", "Y");
+						idUseYN = true;
+						alert("사용 가능한 아이디입니다.");
+					}
+				}
+			})
+		}else{
+			alert("아이디를 입력하세요.");
+		}
+	}
 	
+	function idCheckReset(){
+		idCheckYN = false;
+	}
 	
 	function checkFn(type){
 		if(type == 'id'){
 			var checkId = /[a-z]+[a-z0-9]{4,20}/g;
-			var value = document.frm.id.value;
+			var value = document.frm.mId.value;
 			var span = document.getElementsByClassName("id")[0].getElementsByTagName("span")[0];
 			var result = checkId.test(value);
 			console.log(result);
@@ -548,8 +576,8 @@
 	function sumbitFn(){
 		var result = true;
 		var checkId = /^[a-z]+[a-z0-9]{4,20}/g;
-		var value = document.frm.id.value;
-		var span = document.getElementsByClassName("id")[0].getElementsByTagName("span")[0];
+		var value = document.frm.mId.value;
+		var span = document.getElementsByClassName("mId")[0].getElementsByTagName("span")[0];
 		if(value == ""){
 			span.textContent = "*필수";
 			span.style.color = "red";
@@ -649,19 +677,33 @@
 			span.textContent = "*필수";
 			span.style.color = "red";
 			span.style.display = "inline";
+			result = false;
 		}else if(!checkPhone.test(value)){
 			span.textContent = "*형식오류";
 			span.style.color = "red";
 			span.style.display = "inline";
+			result = false;
 		}else{
 			span.textContent = "";
 			span.style.display = "none";
 		}
 		
 		if(result){
-			alert("회원가입에 성공하셨습니다. 다시 로그인 해주세요.")
-			document.frm.submit();
+			if(idCheckYN == true){
+				if(idUseYN == true){
+					document.frm.submit();
+				}else{
+					alert("중복된 아이디입니다.");
+				}	
+			}else{
+				alert("아이디 중복확인 버튼을 클릭해주세요");
+			}
 		}
+		
+		//if(result){
+		//	alert("회원가입에 성공하셨습니다. 다시 로그인 해주세요.")
+		//	document.frm.submit();
+		//}
 	}
 	
 	// 동의 모두선택 / 해제
@@ -673,8 +715,8 @@
 	    }
 	});
 	    
-	
 	</script>
+	
 
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	

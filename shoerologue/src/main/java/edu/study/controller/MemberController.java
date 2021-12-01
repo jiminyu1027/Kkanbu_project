@@ -1,8 +1,10 @@
 package edu.study.controller;
 
 import java.io.PrintWriter;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.logging.Logger;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,8 +16,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -36,18 +40,33 @@ public class MemberController {
 		
 		return "/member/join";
 	}
-		@RequestMapping(value="/joinAction.do")
-		public String joinAction(Locale locale, Model model,MemberVO vo)throws Exception {
-			System.out.println("MNAME>>>>>>>>>>>"+vo.getmName());
-			System.out.println("MID>>>>>>>>>>"+vo.getmId());
-			System.out.println("MPWD>>>>>>>>>>>"+vo.getmPwd());
-			System.out.println("MPHONE>>>>>>>>>>>"+vo.getmPhone());
-			System.out.println("MEMAIL>>>>>>>>>>>"+vo.getmEmail());
-			System.out.println("MADDR>>>>>>>>>>>"+vo.getmAddr());
-			
-			MemberService.insert(vo);	
-			
-			return "redirect:/login.do";		
+	
+	// 아이디 중복 검사
+	@RequestMapping(value="/idCheck.do")
+	@ResponseBody
+	public int idCheck(MemberVO vo) throws Exception{
+		int result = MemberService.idCheck(vo);
+		return result;
+	}
+	
+	@RequestMapping(value="/joinAction.do", method = RequestMethod.POST)
+	public String joinAction(Locale locale, Model model,MemberVO vo, String mId)throws Exception {
+		
+		int result = MemberService.idCheck(vo);
+		
+		try {
+			if(result == 1) {
+				return "/member/join";
+			}else if(result == 0) {
+				MemberService.insert(vo);
+			}
+			// 요기에서~ 입력된 아이디가 존재한다면 -> 다시 회원가입 페이지로 돌아가기 
+			// 존재하지 않는다면 -> register
+		} catch (Exception e) {
+			throw new RuntimeException();
+		}
+		
+		return "redirect:/login.do";		
 		
 	}
 	
