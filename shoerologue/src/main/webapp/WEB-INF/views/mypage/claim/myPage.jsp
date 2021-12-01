@@ -264,7 +264,7 @@
 					<a href="/shoerologue/cart/cart.do" class="gray">장바구니</a><br>
 					<a href="/shoerologue/mypage/shopping/wishlist.do" class="gray">찜리스트</a><br>
 					<a href="/shoerologue/mypage/shopping/qaList.do" class="gray">상품 Q&A</a><br>
-					<a href="/shoerologue/mypage/claim/inquiryList.do" class="gray">1:1 문의</a><br>
+					<a href="/shoerologue/mypage/memberCounsel/inquiry.do" class="gray">1:1 문의</a><br>
 					<a href="/shoerologue/mypage/shopping/myReview.do" class="gray">나의 리뷰</a>
 				</div><br>
 			</div>

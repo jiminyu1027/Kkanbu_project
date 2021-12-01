@@ -68,15 +68,19 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="/findPwd.do", method = RequestMethod.GET)
-	public String findPwd(Locale locale, Model model)throws Exception {
+	public String findPwd(Locale locale, Model model,MemberVO vo)throws Exception {
 		
 		return "/member/findPwd";
 	}
 
 	@RequestMapping(value="/findPwd.do", method = RequestMethod.POST)
-	public String findPwd(Locale locale, Model model,MemberVO vo)throws Exception {
+	public String findPwd(Locale locale, Model model,MemberVO vo, HttpServletResponse response)throws Exception {
 		
-		return "/member/findPwd";
+		MemberVO findVO = MemberService.findPwd(vo);
+		
+		model.addAttribute("vo",findVO);		
+		
+		return "/member/findPwdResult";
 	}
 	
 	// È¸¿ø Å»Åð get

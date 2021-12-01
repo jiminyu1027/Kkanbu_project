@@ -52,7 +52,10 @@ public class MemberServiceImpl implements MemberService{
 		return MemberDao.findId(vo);
 	}
 
-
+	@Override
+	public MemberVO findPwd(MemberVO vo) throws Exception {
+		return MemberDao.findPwd(vo);
+	}
 
 	
 	

@@ -101,15 +101,16 @@
 		font-weight:bold;
 	}
 	
-	input{
+	input[type=text]{
 		height:40px;
 		width:65%;
 		background-color:white;
 		border-left:0;
-			border-right:0;
-			border-top:0;
-			border-bottom:3;
-			border-color:#9EA4AA;
+		border-right:0;
+		border-top:0;
+		border-bottom:3;
+		border-color:#9EA4AA;
+		padding-left:5px;
 	}
 	.rows{
 		width:99%;
@@ -150,13 +151,13 @@
 	}
 	
 	.findInfobtn{
-		width:290px;
+		width:292px;
 		height:40px;
 		padding:0px;
 		color:white;
 		background-color:black;
 		border:solid 2px black;
-		margin-left:40px;
+		margin-left:37px;
 	}
 	.findIdBoxStyle{
 		width:450px;

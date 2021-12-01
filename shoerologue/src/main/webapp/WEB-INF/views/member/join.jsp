@@ -52,6 +52,7 @@
 		}
 		input[type=text].id{
 			width:260px;
+			padding:5px;
 		}
 		input{
 			height:37px;
@@ -62,15 +63,15 @@
 			border-top:0;
 			border-bottom:3;
 			border-color:#9EA4AA;
+			padding:5px;
 		}
 		input[type=button].id{
-			width:102px;
-			height:36px;
-			maign-top:2px;
+			width:105px;
+			height:38px;
 			margin-bottom:0px;
 			background-color: white;
-			border:1px solid black;
-			color:black;
+			border:2px solid #9EA4AA;
+			color:#616161;
 		}
 		input[type=submit]{
 			width:370px;

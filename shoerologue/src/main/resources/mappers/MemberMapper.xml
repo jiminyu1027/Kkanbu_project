@@ -71,6 +71,13 @@
    		AND mPhone = #{mPhone}
    </select> 
    
+   <select id="findPwd" resultType="MemberVO">
+   		SELECT mId, mPwd ,mJoindate
+   		FROM member
+   		WHERE mId = #{mId}
+   			AND	mName = #{mName}
+   			AND mPhone = #{mPhone}
+   </select> 
    
    
 </mapper>
