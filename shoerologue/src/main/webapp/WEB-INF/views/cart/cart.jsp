@@ -225,7 +225,7 @@
 			<div class="cartBox1 mt-5">
 				<div class="check-box my-3">
 					<div class="allThingBox">
-					<input type="checkbox" id="allThing" class="mx-1 chk" name="allThing" onclick='selectAll(this)' checked>
+					<input type="checkbox" id="allThing" class="mx-1 chk" name="allThing" checked>
 					<label for="allThing" ></label>
 					<span class="checkText">전체선택</span>
 					<div class="right-text">
@@ -281,7 +281,7 @@
 					%>
 						<tr>
 							<td class="check">
-								<input type="checkbox" name="shoes" class="chkBox" id="checks" value="<%=list.get(i).getPidx()%>" onclick='checkSelectAll()' checked>
+								<input type="checkbox" name="shoes" class="chkBox" id="checks" value="<%=list.get(i).getPidx()%>"  checked>
 								<label for="checks"></label></td>
 							<td class="imgSize" >
 							<a href="/shoerologue/resources/image/productdetail/<%=list.get(i).getpBrandeng()%>" >
@@ -317,7 +317,7 @@
 							  <div class="d-flex justify-content-center mt-2">
 							  	<input type="hidden" id="amount" name="amount" value="<%=list.get(i).getpPrice() %>">
 								<div class="each_input_sub1 text1 bt_down" onclick='minus(document.getElementsByName("cnt")[<%=i %>].value,document.getElementsByName("amount")[<%=i %>].value,<%=i %>)'>-</div>
-		                        <input type="text" class="each_input num" id="cnt" name="cnt" value="<%=list.get(i).getAmount() %>" >
+		                        <input type="number" class="each_input num" id="cnt" name="cnt" value="<%=list.get(i).getAmount() %>" >
 		                        <div class="each_input_sub2 text1 bt_up" onclick='plus(document.getElementsByName("cnt")[<%=i %>].value,document.getElementsByName("amount")[<%=i %>].value,<%=i %>)'>+</div>
 		                       </div>
 							</td>
@@ -413,13 +413,14 @@
             } else {
                 $("input:checkbox[name='shoes']").prop("checked", false);
             }
-        });
+        });  
 
         // 체크박스 클릭 시
         $("input:checkbox[name='shoes']").click(function() {
-            var allCnt = $("input:checkbox[name='shoes']").length;         // 체크박스 전체갯수
-            var selCnt = $("inupt:checkbox[name='shoes']:checked").length; // 체크박스 선택갯수
-
+          var allCnt = $("input:checkbox[name='shoes']").length;         // 체크박스 전체갯수
+          console.log(allCnt);
+          var selCnt = $("input:checkbox[name='shoes']:checked").length; // 체크박스 선택갯수
+			console.log(selCnt);
             if(allCnt != selCnt) {
                 $("input:checkbox[name='allThing']").prop("checked", false);
             }
@@ -437,6 +438,7 @@
 		document.getElementsByName('pPrice')[i].innerHTML= total_amount.toLocaleString('kr-KR');	
 		document.getElementsByName('cnt')[i].value=cnt;
 		
+		count();
 		autoCalc();
 		return ;
 	}
@@ -452,6 +454,16 @@
 		
 		autoCalc();
 		count();
+		return;
+	}
+	
+	function count(){
+		var cnt = document.getElementsByName('cnt').value;
+		console.log("cnt:"+document.getElementsByName('cnt').value);
+		let sum=0;
+		for(let i=0; i<cnt; i++){
+			 alert(document.getElementsByName('cnt')[i].innerHTML);
+		}
 		return;
 	}
 	
