@@ -34,7 +34,7 @@ public class CartController {
 	CartService CartService;
 
 	@RequestMapping(value="/cart.do", method = RequestMethod.GET)
-	public String list(@ModelAttribute CartVO cvo, HttpSession session,Model model,Locale locale)throws Exception{
+	public String list(@ModelAttribute CartVO cvo, HttpSession session,Model model,Locale locale, String mId)throws Exception{
 		//System.out.println("cart test");
 		MemberVO member=(MemberVO)session.getAttribute("member");
 		
@@ -44,11 +44,19 @@ public class CartController {
 			//System.out.println("LIST"+list);
 			
 			//장바구니 테이블에 있는 로그인 유저의 전체 금액
-			double totalPrice = CartService.sum(member.getMidx());
-			System.out.println("total sum"+totalPrice);
+			int totalPrice = CartService.sum(member.getMidx());
+			//System.out.println("total sum"+totalPrice);
+			
+			//배송비
+			int fee = totalPrice >= 50000 ? 0 : 3000;
+			
+			//총금액
+			int allSum = CartService.sumMoney(member.getMidx());
 			
 			model.addAttribute("list",list);
 			model.addAttribute("totalPrice",totalPrice);
+			model.addAttribute("fee", fee);
+			model.addAttribute("allSum", allSum);
 			
 			return "/cart/cart";
 		}else {

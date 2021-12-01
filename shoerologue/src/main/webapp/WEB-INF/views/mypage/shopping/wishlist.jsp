@@ -280,7 +280,7 @@
 		<div style="float: left; width: 80%;" class="header-margin">
 			<span class="wishHeader">찜리스트</span>
 		<!-- 찜한 상품이 없는 경우 -->
-		<c:if test="${ wishlist == null }">
+		<c:if test="${ empty wishlist.size }">
 			<div class="wishNoItem">
 				<div class="flex-box">
 					<div class="wishNoItem2">
@@ -290,9 +290,11 @@
 			</div>
 		</c:if>
 		<!-- 찜한 상품이 있는 경우 -->
+		<c:if test="${not empty wishlist.size }">
+		<div>
 		<div class="checkLine">
 			<span class="allCheck">
-				<input type="checkbox" id="wishCheckAll">
+				<input type="checkbox" id="wishCheckAll" checked>
 				<label for="wishCheckAll"></label>
 			</span>
 			<span class="resultText">
@@ -320,7 +322,7 @@
 						    <p class="card-text">NIKE BURROW</p>
 						    <span class="card-text normalPrice">69,000원</span>&nbsp;
 						    <span class="wishCheckBox">
-							    <input type="checkbox" id="wishCheck" name="chk">
+							    <input type="checkbox" id="wishCheck" name="chk" checked>
 							    <label for="wishCheck"></label>
 						    </span>
 						  </div>
@@ -331,19 +333,21 @@
 			</div>
 		</div>
 		<!-- 찜한상품 페이징 -->
-		<div class="pagingBox">
-			<div>
-				<nav aria-label="Page navigation example">
-				  <ul class="pagination">
-				    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">1</a></li>
-				    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">2</a></li>
-				    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">3</a></li>
-				    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">4</a></li>
-				    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">5</a></li>
-				  </ul>
-				</nav>
+			<div class="pagingBox">
+				<div>
+					<nav aria-label="Page navigation example">
+					  <ul class="pagination">
+					    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">1</a></li>
+					    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">2</a></li>
+					    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">3</a></li>
+					    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">4</a></li>
+					    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">5</a></li>
+					  </ul>
+					</nav>
+				</div>
 			</div>
-		</div>
+			</div>
+			</c:if>
 	</div>
 </div>
 	

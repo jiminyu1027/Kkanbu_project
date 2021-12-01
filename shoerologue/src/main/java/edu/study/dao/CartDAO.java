@@ -37,10 +37,13 @@ public class CartDAO {
 	public void update(int ctidx) throws Exception{
 	}
 	
-	//장바구니 금액합계
 	public int sum(int midx) throws Exception{
 		//System.out.println("midx"+midx);
 		return sqlSession.selectOne(Namespace+".sum", midx);
+	}
+	
+	public int sumMoney(int midx)throws Exception{
+		return sqlSession.selectOne(Namespace+".sumMoney",midx);
 	}
 	
 	public int count(String mId, int pidx)throws Exception{

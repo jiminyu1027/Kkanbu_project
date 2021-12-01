@@ -38,6 +38,7 @@ public class CartServiceImple implements CartService{
 
 	@Override
 	public int sum(int midx) throws Exception{
+		//System.out.println("midxxxx"+midx);
 		return CartDao.sum(midx);
 	}
 
@@ -58,6 +59,11 @@ public class CartServiceImple implements CartService{
 	@Override
 	public List<CartVO> list(int midx) throws Exception {
 		return CartDao.list(midx);
+	}
+
+	@Override
+	public int sumMoney(int midx) throws Exception {
+		return CartDao.sumMoney(midx);
 	}
 
 

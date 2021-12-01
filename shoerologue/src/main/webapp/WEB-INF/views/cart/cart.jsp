@@ -1,11 +1,14 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>    
-<%@ page import="edu.study.vo.*" %>       
+<%@ page import="edu.study.vo.*" %>  
 <%
 	List<CartVO> list = (List<CartVO>)request.getAttribute("list");
-	double totalPrice = (Integer)request.getAttribute("totalPrice");
+	int totalPrice = Integer.parseInt(request.getAttribute("totalPrice").toString());
+	int fee = Integer.parseInt(request.getAttribute("fee").toString());
+	int allSum = Integer.parseInt(request.getAttribute("allSum").toString());
 %>
 <!DOCTYPE html>
 <html>
@@ -215,20 +218,19 @@
 		
 		<!-- 마이페이지 메인 -->
 		<div class="sectionBox" style="width:81%">
-		<form name="form" action="orderpayment.do" method="GET">
 			<span  class="text-left">장바구니
-			<span id="insertCount">(0)</span>
+			<span id="insertCount">(<%=list.size() %>)</span>
 			</span>	
 			<!--cart nav -->
 			<div class="cartBox1 mt-5">
 				<div class="check-box my-3">
 					<div class="allThingBox">
-					<input type="checkbox" id="allThing" class="mx-1" name="전체선택">
-					<label for="allThing"></label>
+					<input type="checkbox" id="allThing" class="mx-1 chk" name="allThing" onclick='selectAll(this)' checked>
+					<label for="allThing" ></label>
 					<span class="checkText">전체선택</span>
 					<div class="right-text">
 					<span class="zzim"><i class="bi bi-heart bicon" style="color:#FF0000"></i>선택 찜하기</span>
-					<span class="Del_btn" ><i class="bi bi-trash bicon"></i>선택 삭제</span>
+					<span class="Del_btn" id="Del_btn"><i class="bi bi-trash bicon"></i>선택 삭제</span>
 					<script>
 // 					$(".Del_btn").click(function(){
 // 						var confirm_val = confirm("삭제하시겠습니까?");
@@ -259,184 +261,234 @@
 			</div>
 		</div>
 		<!-- 장바구니 상품이 없을 경우 -->
-			<c:if test="${list.size() == 0}">
-				<div class="cartNoItem">
-					<div class="flex-box">
-						<div class="cartNoItem2">
-						  <i class="bi bi-exclamation-circle exclamation"></i><br>
-						  장바구니에 담겨 있는 상품이 없습니다.</div>
-					</div>
+		<c:if test="${list.size()==0}">
+			<div class="cartNoItem">
+				<div class="flex-box">
+					<div class="cartNoItem2">
+					  <i class="bi bi-exclamation-circle exclamation"></i><br>
+					  장바구니에 담겨 있는 상품이 없습니다.</div>
 				</div>
-			</c:if>
-		<!-- 장바구니 상품이 있는 경우 -->
-		<c:if test="${list.size() > 0}">
-		<form name="frm" id="frm" method="post" action="orderpayment.do">
-		<div class="cartInItem">
-			<div class="flex-box">
-				<table>
-				<%
-					for(int i=0; i<list.size(); i++){
-				%>
-					<tr>
-						<td class="check"><input type="checkbox" name="shoes" class="chBox" id="checks">
-														<label for="checks"></label></td>
-						<td class="imgSize" >
-						<a href="/shoerologue/resources/image/productdetail/<%=list.get(i).getpFile1() %>" >
-								<img src="/shoerologue/resources/image/productdetail/<%=list.get(i).getpFile1() %>" width="120px">
-						</td>
-						<td class="prodIntro">
-							<span class="pBrand"><%=list.get(i).getpBrandeng() %></span>
-							<div class="pTitle"><%=list.get(i).getpNamekr()%></div>
-							<div>
-							<span class="pColor"><%=list.get(i).getpColor()%></span>
-							<span class="pSize"><%=list.get(i).getpSize()%></span>
-							</div>	
-							<input type="button" class="pOption" value="옵션변경" data-bs-target="#staticBackdrop" data-bs-toggle="modal">
-							<!-- Modal -->
-							<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-							  <div class="modal-dialog">
-							    <div class="modal-content">
-							      <div class="modal-header">
-							        <h5 class="modal-title" id="staticBackdropLabel">옵션변경</h5>
-							        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							      </div>
-							      <div class="modal-body">
-							      </div>
-							      <div class="modal-footer">
-							        <button type="button" class="btnClose" data-bs-dismiss="modal">닫기</button>
-							        <button type="button" class="btnComplete">확인</button>
-							      </div>
-							    </div>
-							  </div>
-							</div>	
-						</td>
-						<td>
-						  <div class="d-flex justify-content-center mt-2">
-							<div class="each_input_sub1 text1 bt_down" onclick="del();" >-</div>
-	                        <input type="text" class="each_input num" id="30" onclick="change();" value="<%=list.get(i).getAmount() %>" name="amount" >
-	                        <div class="each_input_sub2 text1 bt_up" onclick="add();" >+</div>
-	                       </div>
-						</td>
-						<td>
-							<span class="pPrice" name="sell_price"  pattern="#,###,###"><%=list.get(i).getpPrice() %></span>
-							<span class="won">원</span>
-						</td>
-						<td>
-						<div>
-							<a href="/shoerologue/order/orderpayment.do"> <input type="button" name="rightOrder" value="바로구매" id="rightOrder" class="orderbtn" onclick="goOrder(); return false;"> </a>
-						</div>
-						<div>
-							<a href=""><input type="button" value="삭제" id="delbtn" class="delbtn" onclick=""></a>
-						</div>
-						</td>
-					</tr>
-					<%} %>
-				</table>
 			</div>
-		</div>
-		
-		<!-- 결제 금액 계산 -->
-		<div class="paymentBox d-flex justify-content-evenly align-items-center">
-
-			<div class="paymentBox2">
-				<span class="paymentLabel">상품금액</span>
-				<span class="price" id="pricePay" name="sum" value="" pattern="#,###,###"><%=totalPrice %>
-				<span class="won">원</span>
-				</span>
-			</div>
-			<i class="bi bi-dash-circle" style="font-size:2rem; color:red;"></i>
-			<div  class="paymentBox2">
-				<span class="paymentLabel">총 할인금액</span>
-				<span class="price" id="discountPay">0
-				<span class="won">원</span>
-				</span>
-			</div>
-			<i class="bi bi-plus-circle" style="font-size:2rem;"></i>
-			<div  class="paymentBox2">
-				<span class="paymentLabel px-3">배송비</span>
-				<span class="price" id="deliveryPay">
-				<span class="won">원</span>
-				</span>
-			</div>
-			<img src="/shoerologue/resources/image/symbol/equal.png" class="equalIcon">
-			<div  class="paymentBox2">
-				<span class="paymentValue">결제금액</span>
-				<span class="price" id="totalPay" value="${sum}" pattern="###,###,###">
-				<span class="won">원</span>
-				</span>
-			</div>
-		</div>
-		</form>
-		<!-- 계속 쇼핑, 주문버튼 -->
-		<div class="rows btnGroup">
-			<label>
-				<a href="/shoerologue">
-				<input type="button" value="계속 쇼핑하기" class="keepShop"></a>
-			</label>
-			<label>
-				<input type="button" value="주문하기" id="orderbtn" name="gotoOrder" class="orderShop" onclick="goOrder(); return false;">
-			</label>
-		</div>
 		</c:if>
-		<!-- 결제 전 주의사항 -->
-		<div class="cautionBox">
-			<span class="caution1"><i class="bi bi-exclamation-circle" style="font-size: 18px;"></i> 상품 주문 전 확인해주세요!</span>
-			<ul class="ulText">
-				<li class="bullet">위 내용은 쿠폰 적용 전 결제내용이며  쿠폰  적용시  결제금액이 달라질 수 있습니다.</li>
-				<li class="bullet">모니터에 따라 약간의 색상차가 있을 수 있습니다.</li>
-				<li class="bullet">주문시 사이즈 및 색상을 꼭 확인해주세요.	</li>
-				<li class="bullet">배송비: 일반택배 3,000원 (5만원 이상 무료)</li>
-			</ul>
+		<!-- 장바구니 상품이 있는 경우 -->
+		<c:if test="${list.size()>0}">
+			<div class="cartInItem">
+				<div class="flex-box">
+				<form name="frm" id="frm" method="post" action="orderpayment.do">
+					<table>
+					<%
+						for(int i=0; i<list.size(); i++){
+					%>
+						<tr>
+							<td class="check">
+								<input type="checkbox" name="shoes" class="chkBox" id="checks" value="<%=list.get(i).getPidx()%>" onclick='checkSelectAll()' checked>
+								<label for="checks"></label></td>
+							<td class="imgSize" >
+							<a href="/shoerologue/resources/image/productdetail/<%=list.get(i).getpBrandeng()%>" >
+									<img src="/shoerologue/resources/image/productdetail/<%=list.get(i).getpFile1() %>" width="120px"></a>
+							</td>
+							<td class="prodIntro">
+								<span class="pBrand"><%=list.get(i).getpBrandeng() %></span>
+								<div class="pTitle"><%=list.get(i).getpNamekr()%></div>
+								<div>
+								<span class="pColor"><%=list.get(i).getpColor()%></span>
+								<span class="pSize"><%=list.get(i).getpSize()%></span>
+								</div>	
+								<input type="button" class="pOption" value="옵션변경" data-bs-target="#staticBackdrop" data-bs-toggle="modal">
+								<!-- Modal -->
+								<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+								  <div class="modal-dialog">
+								    <div class="modal-content">
+								      <div class="modal-header">
+								        <h5 class="modal-title" id="staticBackdropLabel">옵션변경</h5>
+								        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+								      </div>
+								      <div class="modal-body">
+								      </div>
+								      <div class="modal-footer">
+								        <button type="button" class="btnClose" data-bs-dismiss="modal">닫기</button>
+								        <button type="button" class="btnComplete">확인</button>
+								      </div>
+								    </div>
+								  </div>
+								</div>	
+							</td>
+							<td>
+							  <div class="d-flex justify-content-center mt-2">
+							  	<input type="hidden" id="amount" name="amount" value="<%=list.get(i).getpPrice() %>">
+								<div class="each_input_sub1 text1 bt_down" onclick='minus(document.getElementsByName("cnt")[<%=i %>].value,document.getElementsByName("amount")[<%=i %>].value,<%=i %>)'>-</div>
+		                        <input type="text" class="each_input num" id="cnt" name="cnt" value="<%=list.get(i).getAmount() %>" >
+		                        <div class="each_input_sub2 text1 bt_up" onclick='plus(document.getElementsByName("cnt")[<%=i %>].value,document.getElementsByName("amount")[<%=i %>].value,<%=i %>)'>+</div>
+		                       </div>
+							</td>
+							<td>
+								<span class="pPrice" id="pPrice" name="pPrice"><%=list.get(i).getpPrice() %></span>
+								<span class="won">원</span>
+							</td>
+							<td>
+							<div>
+								<a href="/shoerologue/order/orderpayment.do"> <input type="button" name="rightOrder" value="바로구매" id="rightOrder" class="orderbtn" onclick="goOrder(); return false;"> </a>
+							</div>
+							<div>
+								<a href=""><input type="button" value="삭제" id="delbtn" class="delbtn" onclick=""></a>
+							</div>
+							</td>
+						</tr>
+						<%} %>
+					</table>
+
+			<!-- 결제 금액 계산 -->
+			<div class="paymentBox d-flex justify-content-evenly align-items-center">
+				<div class="paymentBox2">
+					<span class="paymentLabel">상품금액</span>
+					<span class="price" id="totalPrice" name="totalPrice" >
+					<fmt:formatNumber><%=totalPrice %></fmt:formatNumber>
+					<span class="won">원</span>
+					</span>
+				</div>
+				<i class="bi bi-dash-circle" style="font-size:2rem; color:red;"></i>
+				<div  class="paymentBox2">
+					<span class="paymentLabel">총 할인금액</span>
+					<span class="price" id="discountPay">0
+					<span class="won">원</span>
+					</span>
+				</div>
+				<i class="bi bi-plus-circle" style="font-size:2rem;"></i>
+				<div  class="paymentBox2">
+					<span class="paymentLabel px-3">배송비</span>
+					<span class="price" name="fee" id="fee"><%=fee %>
+					<span class="won">원</span>
+					</span>
+				</div>
+				<img src="/shoerologue/resources/image/symbol/equal.png" class="equalIcon">
+				<div  class="paymentBox2">
+					<span class="paymentValue">결제금액</span>
+					<span class="price" id="totalPay">
+					<fmt:formatNumber><%=allSum+fee%></fmt:formatNumber>
+					<span class="won">원</span>
+					</span>
+				</div>
+			</div>
+			<!-- 계속 쇼핑, 주문버튼-->
+				<div class="rows btnGroup">
+					<label>
+						<a href="/shoerologue">
+						<input type="button" value="계속 쇼핑하기" class="keepShop"></a>
+					</label>
+					<label>
+						<input type="button" value="주문하기" id="orderbtn" name="gotoOrder" class="orderShop" onclick="goOrder(); return false;">
+					</label>
+				</div>
+					</form>
+				</div>
+			</div>
+		</c:if>
+			<!-- 결제 전 주의사항 -->
+			<div class="cautionBox">
+				<span class="caution1"><i class="bi bi-exclamation-circle" style="font-size: 18px;"></i> 상품 주문 전 확인해주세요!</span>
+				<ul class="ulText">
+					<li class="bullet">위 내용은 쿠폰 적용 전 결제내용이며  쿠폰  적용시  결제금액이 달라질 수 있습니다.</li>
+					<li class="bullet">모니터에 따라 약간의 색상차가 있을 수 있습니다.</li>
+					<li class="bullet">주문시 사이즈 및 색상을 꼭 확인해주세요.	</li>
+					<li class="bullet">배송비: 일반택배 3,000원 (5만원 이상 무료)</li>
+				</ul>
+			</div>
+			</div>
 		</div>
-	</div>
-	</div>
 	<br>
-	
+
 <!-- 우측하단 TOP 이동 배너 -->
 	<a href="#top">
 	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill top fixed" viewBox="0 0 16 16">
 	  <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
 	</svg></a>
 	
-	<script>
-	//전체선택
-	$(document).ready(function(){
-		$("#allThing").click(function(){
-			if($("#allThing").is(":checked")) $("input[name=shoes]").prop("checked", true);
-			else  $("input[name=shoes]").prop("checked", false);
-		});				
-		$("input[name=shoes]").click(function(){
-			var total = $("input[name=shoes]").length;
-			var checked = $("input[name=shoes]:checked").length;
-			
-			if(total != checked) $("#allThing").prop("checked", false);
-			else $("#allThing").prop("checked", true);
-		});
-	});
-	
-	//수량변경 21-11-12ajax 해야함
-	
-	$(".bt_up").click(function(e){
-		var target = $(e.target);
-		var num = parseInt(target.prev().val());
-		if( num < 9 ) {
-			var num = num+1;
-			target.prev().val(num);
-		};
-	});
-	
-	$(".bt_down").click(function(e){
-		var target = $(e.target);
-		var num = parseInt(target.next().val());
-		if( num > 1 ) {
-			var num = num-1;
-			target.next().val(num);
-		};
-	});
+	<script type="text/javascript">
+	//체크박스
+	$(document).ready(function() {
+        // 전체선택 클릭 시
+        $("input:checkbox[name='allThing']").click(function() {
+            if($("input:checkbox[name='allThing']").is(":checked") == true) {
+                $("input:checkbox[name='shoes']").prop("checked", true);
+            } else {
+                $("input:checkbox[name='shoes']").prop("checked", false);
+            }
+        });
 
+        // 체크박스 클릭 시
+        $("input:checkbox[name='shoes']").click(function() {
+            var allCnt = $("input:checkbox[name='shoes']").length;         // 체크박스 전체갯수
+            var selCnt = $("inupt:checkbox[name='shoes']:checked").length; // 체크박스 선택갯수
+
+            if(allCnt != selCnt) {
+                $("input:checkbox[name='allThing']").prop("checked", false);
+            }
+        });
+    });
+	
+	//수량 plus
+	function plus(cnt,amount,i){
+		cnt  *= 1;
+		cnt = cnt+1;
+		//alert(cnt);
+		amount  = amount.replace(",","")
+		//alert(amount);
+		total_amount = cnt*amount;
+		document.getElementsByName('pPrice')[i].innerHTML= total_amount.toLocaleString('kr-KR');	
+		document.getElementsByName('cnt')[i].value=cnt;
+		
+		autoCalc();
+		return ;
+	}
+	
+	//수량 minus
+	function minus(cnt,amount,i){
+		cnt *= 1;
+		cnt = cnt-1;
+		amount  = amount.replace(",","")
+		total_amount = cnt*amount;
+		document.getElementsByName('pPrice')[i].innerHTML= total_amount.toLocaleString('kr-KR');	
+		document.getElementsByName('cnt')[i].value=cnt;
+		
+		autoCalc();
+		count();
+		return;
+	}
+	
+	//상품금액 합
+	function autoCalc(){
+		
+		var totalCnt = document.getElementsByName('cnt').length;
+		//alert("총리스트수"+totalCnt);
+		let sum = 0;
+		  for(let i = 0; i < totalCnt; i++)  {
+			  //alert(document.getElementsByName('pPrice')[i].innerHTML.replace(",",""));
+		    sum = sum + parseInt(document.getElementsByName('pPrice')[i].innerHTML.replace(",",""));
+	  }
+		//alert(sum);
+		document.getElementById('totalPrice').innerText = sum.toLocaleString('kr-KR');		
+		
+		allSum();
+		return;
+	}
+	
+	//전체금액 합계
+	function allSum(){
+		var fee = <%=fee%>
+		//alert(fee);
+		var totalPrice = parseInt(document.getElementById('totalPrice').innerText.replace(",",""));
+		//alert(totalPrice);
+		
+		let sum = 0;
+		sum = fee+totalPrice;
+		//alert(sum);
+		
+		document.getElementById('totalPay').innerText = sum.toLocaleString('kr-KR');	
+		return;
+	}
 	
 	
-	</script>
+	</script>	
 	
 	<!-- footer -->
 	<div class="bg-light">
