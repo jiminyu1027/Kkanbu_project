@@ -30,20 +30,20 @@
 			text-align:center;
 		}
 		.myPageMainBox{
-			width:1500px;
+			width:100%;
 			height:1300px;
-			padding-left:50px;
-			padding-right:50px;
+			padding-left:12%;
+			padding-right:12%;
 			margin:auto;
 		}
 		.myPageBox{
-			width:1930px;
+			width:100%;
 			height:230px;
 			background-color: light;
 			margin:0 auto;
 		}
 		.myPageBoxs{
-			width:230px;
+			width:12%;
 			height:100%;
 			float:left;
 			margin:auto;
@@ -51,19 +51,20 @@
 			text-align:center;
 			font-size:20px;
 			font-weight:bold;
+			display:inline-block;
 		}
 		.ft-weight{
 			font-weight: bold;
 			font-size:50px;
 		}
 		.myPageBoxs1{
-			width:550px;
+			width:40%;
 			height:100%;
 			float:left;
 			padding-top:70px;
 			text-align:left;
 			font-size:20px;
-			margin-left:240px;
+			display:inline-block;
 		}
 		.myPageMenu{
 			border:0px solid #616161;
@@ -92,9 +93,10 @@
 		
 		.myPageListBox{
 			margin-top:33px;
-			width:1120px;
+			width:100%;
 		}
 		.gray-box{
+			width:100%;
 			background-color: #EEEEEE;
 			padding-left:20px;
 			padding-top:10px;
@@ -111,6 +113,7 @@
 			color:red;
 		}
 		.myPageLine1{
+			width:100%;
 			border-bottom:3px solid black;
 			border-top:1px solid lightgray;
 			border-left:1px solid lightgray;
@@ -121,6 +124,7 @@
 			font-weight:bold;
 		}
 		.myPageLine2{
+			width:100%;
 			border-left :3px solid black;
 			border-top :3px solid black;
 			border-right :3px solid black;
@@ -131,6 +135,7 @@
 			font-weight:bold;
 		}
 		.myPageEndLine{
+			width:100%;
 			border-top:2px solid gray;
 			height:30px;
 			margin-top:35px;
@@ -287,14 +292,14 @@
 	<section>
 	<div class="myPageBox">
 		 <div class="myPageBoxs1">
-		 	<div style=" float: left; width: 16%;">
+		 	<div style=" float: left; width:30%;">&nbsp;</div>
+		 	<div style=" float: left; width:13%;">
 			 	<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
 				  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
 				  <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
 				</svg>
 			</div>
-			<div style=" float: left; width:4%;">&nbsp;</div>
-			<div style=" float: left; width:80%;">
+			<div style=" float: left; width:56%;">
         		<span style="font-size:1.5em; font-weight: bold;">${member.mName}</span> <span style="font-size:1.0em; font-weight: bold;">님은 통합멤버십 회원입니다.</span><br>
         		<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
 				  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
@@ -346,7 +351,7 @@
 		<div style=" float: left; width: 0%;">&nbsp;</div>
 		<div style=" float: left; width: 99%;" class="mt-3">
 			<span style="color:#757575; font-size:1em">
-				<a href="/main.do" style="color:#757575; font-size:1.1em">
+				<a href="/shoerologue" style="color:#757575; font-size:1.1em">
 				<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-house-fill mb-1" viewBox="0 0 16 16">
 				  <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
 				  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
