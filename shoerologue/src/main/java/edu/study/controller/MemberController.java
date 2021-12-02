@@ -46,27 +46,24 @@ public class MemberController {
 	@ResponseBody
 	public int idCheck(MemberVO vo) throws Exception{
 		int result = MemberService.idCheck(vo);
+		
+		
 		return result;
 	}
 	
 	@RequestMapping(value="/joinAction.do", method = RequestMethod.POST)
-	public String joinAction(Locale locale, Model model,MemberVO vo, String mId)throws Exception {
+	public void joinAction(Locale locale, Model model,MemberVO vo, String mId, HttpSession session, HttpServletResponse response)throws Exception {
 		
-		int result = MemberService.idCheck(vo);
-		
+		PrintWriter pw = response.getWriter();
+		response.setContentType("text/html; charset=UTF-8");
 		try {
-			if(result == 1) {
-				return "/member/join";
-			}else if(result == 0) {
-				MemberService.insert(vo);
-			}
-			// 요기에서~ 입력된 아이디가 존재한다면 -> 다시 회원가입 페이지로 돌아가기 
-			// 존재하지 않는다면 -> register
-		} catch (Exception e) {
-			throw new RuntimeException();
-		}
-		
-		return "redirect:/login.do";		
+			MemberService.insert(vo);
+			pw.println("<script>alert(' 회원가입에 성공하였습니다. ');location.href='/shoerologue/login.do'; </script>");
+			pw.flush();
+		}catch(Exception e) {
+			pw.println("<script>alert(' 알수없는 오류가 발생하였습니다. ');location.href='/shoerologue/member/join.do'; </script>");
+			pw.flush();
+		}		
 		
 	}
 	
