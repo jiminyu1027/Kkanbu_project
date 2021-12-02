@@ -341,7 +341,7 @@
 <!-- 			</table> -->
 <%-- 		</c:if>	 --%>
 <%-- 		<c:if test="${count!=0}"> --%>
-			<c:if test="${master ne 'master'}">
+			<c:if test="${master ne 'master' or midx eq null}">
 				<table class="inquiry-box table table-hover">
 					<colgroup>
 						<col width="10%">

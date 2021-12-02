@@ -289,9 +289,9 @@
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="myPage.do" class="gray">주문/배송 조회</a><br>
-					<a href="orderCancel.do" class="gray">취소/교환/반품</a><br>
-					<a href="insertCard.do" class="gray">카드 등록 관리</a>
+					<a href="/shoerologue/mypage/claim/myPage.do" class="gray">주문/배송 조회</a><br>
+					<a href="/shoerologue/mypage/claim/orderCancel.do" class="gray">취소/교환/반품</a><br>
+					<a href="/shoerologue/mypage/claim/insertCard.do" class="gray">카드 등록 관리</a>
 				</div><br>
 			</div>
 			<div class="myPageMenu2">

@@ -298,11 +298,6 @@
 				</tr>	
 			</thead>
 			<tbody>
-<!-- 				<tr class="notice-contents-box"> -->
-<!-- 					<td class="notice-number-detail">1</td> -->
-<!-- 					<td class="notice-subject-detail"><a href="/shoerologue/customerService/event.do">이벤트 공지입니다.</a></td> -->
-<!-- 					<td class="notice-writeday-detail">2021-11-02</td> -->
-<!-- 				</tr> -->
 				<%
 					for(int i=0; i<nlist.size(); i++){
 				%>

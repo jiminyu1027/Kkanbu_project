@@ -5,18 +5,22 @@
 <mapper namespace="edu.study.mapper.AnswerMapper">
 	<!--댓글 작성 -->
 	<insert id="replyWrite" parameterType="edu.study.vo.AnswerVO">
-		INSERT INTO ANSWER(
-			AIDX
-			,ATITLE
-			,ACONTENTS
-			,MIDX
-			,QIDX
-			)VALUES(
-			AIDX_SEQ.nextval
-			,#{aTitle}
-			,#{aContents}
-			,#{midx}
-			,#{qidx}
-			)
+		<![CDATA[
+			INSERT INTO ANSWER(
+				AIDX
+				,ACONTENTS
+				,MIDX
+				,QIDX
+				)VALUES(
+				AIDX_SEQ.nextval
+				,#{aContents}
+				,#{midx}
+				,#{qidx}
+				)
+		]]>		
 	</insert>
+	
+	<select id="alist" parameterType="int" resultType="edu.study.vo.AnswerVO">
+		SELECT * FROM ANSWER WHERE 1=1 AND QIDX=#{QIDX} ORDER BY AIDX ASC
+	</select>
 </mapper>

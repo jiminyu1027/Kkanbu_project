@@ -1,10 +1,17 @@
-<%@page import="edu.study.vo.InquiryVO"%>
+<%@ page import="edu.study.vo.*" %>
+<%@ page import="java.util.*" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
 	InquiryVO ivo = (InquiryVO)request.getAttribute("ivo");
-%>    
+
+	List<AnswerVO> alist = (List<AnswerVO>)request.getAttribute("alist");
+	
+	
+%>  
+
+  
 <!DOCTYPE html>
 <html>
 
@@ -121,7 +128,7 @@
 			height:30px;
 		}
 		.commentBox{
-			margin-top:150px;
+			margin-top:50px;
 			margin-left:280px;
 		}
 		</style>
@@ -325,13 +332,32 @@
 		</form>	
 	<div class="empty-box"></div>
 	<div class="empty-box"></div>	
+	<table style="border:1px solid black; width:978px; margin-left:280px; margin-top:50px;">
+		<colgroup>
+<%-- 			<col style="width:5%"> --%>
+			<col style="width:85%">
+			<col style="width:15%">
+		</colgroup>
+		<%
+			for(int i=0; i<alist.size(); i++){
+		%>
+			<tr style="border-bottom:1px solid gray;">
+				<td style="border-right:1px solid gray;"></td>
+				<td style="word-break:break-all; border-right:1px solid gray;"><%=alist.get(i).getaContents() %></td>
+				<td><%=alist.get(i).getaWriteday() %></td>
+			</tr>
+		<%
+			}
+		%>
+	</table>
 	<div>
-		<form action="/shoerologue/mypage/memberCounsel/comment.do" method="post" class="commentBox">
+		<form action="/shoerologue/mypage/claim/comment.do" method="post" class="commentBox">
 			<p>
 				<textarea name="aContents" placeholder="여기에 댓글을 작성하세요"></textarea>				
 			</p>
 			<p>
 				<input type="hidden" name="midx" value="${member.midx}">
+				<input type="hidden" name="qidx" value="${qidx}">
 				<input type="submit" value="댓글 작성" class="commentFn">
 			</p>
 		</form>

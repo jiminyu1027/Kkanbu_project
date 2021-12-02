@@ -19,7 +19,6 @@
 	</insert>
 	
 	<select id="nlist" resultType="edu.study.vo.NoticeVO">
-<!-- 		SELECT * FROM NOTICE where 1=1 order by nidx asc -->
 		
 		select rownum , a.* from notice a
 	</select>

@@ -21,6 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.study.service.InquiryService;
 import edu.study.service.MemberService;
+import edu.study.vo.AnswerVO;
 import edu.study.vo.InquiryVO;
 import edu.study.vo.MemberVO;
 
@@ -75,7 +76,7 @@ public class MemberCounselController {
 			
 		return "redirect:/mypage/memberCounsel/inquiry.do";
 	}
-
+	
 }
 
 	
