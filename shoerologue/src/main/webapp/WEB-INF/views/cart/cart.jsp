@@ -33,6 +33,51 @@
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 	</style>
+	<script type="text/javascript">
+	
+	$(function(){
+	    var listAll = $("input[type='checkbox'].chk");    //전체 클릭하는 엘리먼트에 .agreechkAll 클랙스가 추가되어야 한다.
+	    var list = $("input[type='checkbox'].chkBox");    //각각 클릭하는 엘리먼트에 .chack 클랙스가 추가되어야 한다.
+	    var common = {
+	        allCheck : function(e){ 
+	        	alert("ttttt");
+	            if($(e.target).prop("checked") === true) { 
+	                //해당화면에 전체 checkbox들을 체크한다 
+	                list.prop("checked",true);
+	            } else if($(e.target).prop("checked") === false){
+	                //해당화면에 모든 checkbox들의 체크를해제 한다. 
+	                list.prop("checked",false);
+	            }
+	        },
+	        check : function(e){
+	        	alert("ddddd");
+	        	alert($("input:checkbox[name='shoes'][0]"));
+	            if($(e.target).prop("checked") === true){
+	                $(e.target).prop("checked", true)
+	            }
+	            if($(e.target).prop("checked") === false){
+	            	alert("aaaaa");
+	                $(e.target).prop("checked", false)
+	                listAll.prop('checked', false);
+	            }
+	            // 각자 하나씩 선택시 자동으로 전채선태도 활성화 시키기
+	            var size = list.filter(':checked').length;
+	                if(size == list.length) {
+	                    listAll.prop("checked", true);
+	                } else {
+	                    listAll.prop("checked", false);
+	                }
+	            },
+	        }
+
+	    $('.allThingBox').on('click','.chk', common.allCheck)
+	    $('.flex-box').on('click','.chkBox', common.check)
+	});
+	
+	
+	</script>
+	
+	
 </head>
 <body>
 <!-- 로그인 회원가입 -->
@@ -175,7 +220,7 @@
 			</span>
 		</div>
 		<!-- 좌측 마이페이지 메뉴-->
-		<div class="mt-3" style=" float: left; width: 19%;">
+		<div class="mt-3" style=" float: left; width: 17%;">
 		<div class="myPageMenu">
 			<div class="myPageTitle">
 				마이페이지
@@ -217,9 +262,10 @@
 		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
 		
 		<!-- 마이페이지 메인 -->
-		<div class="sectionBox" style="width:81%">
+		<div class="sectionBox" style="width:80%">
+		<form name="frm" id="frm" method="post" action="">
 			<span  class="text-left">장바구니
-			<span id="insertCount">(<%=list.size() %>)</span>
+			<span id="insertCount" name="insertCount">(<%=list.size() %>)</span>
 			</span>	
 			<!--cart nav -->
 			<div class="cartBox1 mt-5">
@@ -229,8 +275,8 @@
 					<label for="allThing" ></label>
 					<span class="checkText">전체선택</span>
 					<div class="right-text">
-					<span class="zzim"><i class="bi bi-heart bicon" style="color:#FF0000"></i>선택 찜하기</span>
-					<span class="Del_btn" id="Del_btn"><i class="bi bi-trash bicon"></i>선택 삭제</span>
+					<button class="zzim"><i class="bi bi-heart bicon" style="color:#FF0000"></i>선택 찜하기</button>
+					<button class="Del_btn" id="Del_btn" onclick="location.href='/cart/cartdel.do'"><i class="bi bi-trash bicon"></i>선택 삭제</button>
 					<script>
 // 					$(".Del_btn").click(function(){
 // 						var confirm_val = confirm("삭제하시겠습니까?");
@@ -274,7 +320,6 @@
 		<c:if test="${list.size()>0}">
 			<div class="cartInItem">
 				<div class="flex-box">
-				<form name="frm" id="frm" method="post" action="orderpayment.do">
 					<table>
 					<%
 						for(int i=0; i<list.size(); i++){
@@ -304,6 +349,7 @@
 								        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 								      </div>
 								      <div class="modal-body">
+								      	서비스 개발 중입니다.
 								      </div>
 								      <div class="modal-footer">
 								        <button type="button" class="btnClose" data-bs-dismiss="modal">닫기</button>
@@ -322,7 +368,7 @@
 		                       </div>
 							</td>
 							<td>
-								<span class="pPrice" id="pPrice" name="pPrice"><%=list.get(i).getpPrice() %></span>
+								<span class="pPrice" id="pPrice" name="pPrice"><fmt:formatNumber><%=list.get(i).getpPrice() %></fmt:formatNumber></span>
 								<span class="won">원</span>
 							</td>
 							<td>
@@ -356,7 +402,8 @@
 				<i class="bi bi-plus-circle" style="font-size:2rem;"></i>
 				<div  class="paymentBox2">
 					<span class="paymentLabel px-3">배송비</span>
-					<span class="price" name="fee" id="fee"><%=fee %>
+					<span class="price" name="fee" id="fee">
+					<fmt:formatNumber><%=fee %></fmt:formatNumber>
 					<span class="won">원</span>
 					</span>
 				</div>
@@ -402,30 +449,8 @@
 	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill top fixed" viewBox="0 0 16 16">
 	  <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
 	</svg></a>
-	
-	<script type="text/javascript">
-	//체크박스
-	$(document).ready(function() {
-        // 전체선택 클릭 시
-        $("input:checkbox[name='allThing']").click(function() {
-            if($("input:checkbox[name='allThing']").is(":checked") == true) {
-                $("input:checkbox[name='shoes']").prop("checked", true);
-            } else {
-                $("input:checkbox[name='shoes']").prop("checked", false);
-            }
-        });  
-
-        // 체크박스 클릭 시
-        $("input:checkbox[name='shoes']").click(function() {
-          var allCnt = $("input:checkbox[name='shoes']").length;         // 체크박스 전체갯수
-          console.log(allCnt);
-          var selCnt = $("input:checkbox[name='shoes']:checked").length; // 체크박스 선택갯수
-			console.log(selCnt);
-            if(allCnt != selCnt) {
-                $("input:checkbox[name='allThing']").prop("checked", false);
-            }
-        });
-    });
+	<
+		<script type="text/javascript">
 	
 	//수량 plus
 	function plus(cnt,amount,i){
@@ -435,7 +460,7 @@
 		amount  = amount.replace(",","")
 		//alert(amount);
 		total_amount = cnt*amount;
-		document.getElementsByName('pPrice')[i].innerHTML= total_amount.toLocaleString('kr-KR');	
+		document.getElementsByName('pPrice')[i].innerHTML= comma(total_amount);	
 		document.getElementsByName('cnt')[i].value=cnt;
 		
 		count();
@@ -449,11 +474,11 @@
 		cnt = cnt-1;
 		amount  = amount.replace(",","")
 		total_amount = cnt*amount;
-		document.getElementsByName('pPrice')[i].innerHTML= total_amount.toLocaleString('kr-KR');	
+		document.getElementsByName('pPrice')[i].innerHTML= comma(total_amount);	
 		document.getElementsByName('cnt')[i].value=cnt;
 		
-		autoCalc();
 		count();
+		autoCalc();
 		return;
 	}
 	
@@ -467,6 +492,8 @@
 		return;
 	}
 	
+	
+	
 	//상품금액 합
 	function autoCalc(){
 		
@@ -478,7 +505,7 @@
 		    sum = sum + parseInt(document.getElementsByName('pPrice')[i].innerHTML.replace(",",""));
 	  }
 		//alert(sum);
-		document.getElementById('totalPrice').innerText = sum.toLocaleString('kr-KR');		
+		document.getElementById('totalPrice').innerText = comma(sum);		
 		
 		allSum();
 		return;
@@ -495,10 +522,22 @@
 		sum = fee+totalPrice;
 		//alert(sum);
 		
-		document.getElementById('totalPay').innerText = sum.toLocaleString('kr-KR');	
+		document.getElementById('totalPay').innerText = comma(sum);	
 		return;
 	}
 	
+	function comma(n) 
+	{
+	    var reg = /(^[+-]?\d+)(\d{3})/;   // 정규식
+	    n += '';                          // 숫자를 문자열로 변환
+	 
+	    while (reg.test(n))
+	    {
+	    n = n.replace(reg, '$1' + ',' + '$2');
+	    }
+	 
+	    return n;
+	}
 	
 	</script>	
 	

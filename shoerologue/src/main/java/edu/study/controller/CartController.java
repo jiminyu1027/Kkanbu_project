@@ -53,6 +53,7 @@ public class CartController {
 			//ÃÑ±Ý¾×
 			int allSum = CartService.sumMoney(member.getMidx());
 			
+			
 			model.addAttribute("list",list);
 			model.addAttribute("totalPrice",totalPrice);
 			model.addAttribute("fee", fee);
@@ -63,6 +64,23 @@ public class CartController {
 			return "redirect:/login.do";
 		}
 	}
+	
+	@RequestMapping(value="/cartdel.do", method=RequestMethod.POST)
+	public String del(Locale locale, Model model, int ctidx) throws Exception{
+		
+		CartService.del(ctidx);
+		
+			return"redirect:/cart/cart.do";
+	}
+	
+	@RequestMapping(value="/cartdelAll.do", method=RequestMethod.POST)
+	public String delAll(Locale locale, Model model, String mId) throws Exception{
+		
+		CartService.dellAll(mId);
+		
+			return"redirect:/cart/cart.do";
+	}
+	
 }
 
 

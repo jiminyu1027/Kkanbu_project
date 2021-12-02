@@ -48,19 +48,32 @@
 	<body>
 		<!-- header -->
 	<header>
+		<!-- 로그인 회원가입 -->
 		<div class="container">
-		  <nav class="navbar navbar-expand-lg navbar-light topNav">
-		    <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-		    <ul class="nav justify-content-end">
-		      <li class="nav-item">
-		        <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
-		      </li>
-		      <li class="nav-item">
-		        <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/member/join.do">회원가입</a>
-		      </li>
-		    </ul>
-		  </nav>
-		</div>
+			<nav class="navbar navbar-expand-lg navbar-light topNav">
+			      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+			      <ul class="nav justify-content-end"> 
+			      <!-- 로그인 안했을때 -->
+			      <c:if test="${member == null}">
+						  <li class="nav-item">
+						    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/member/join.do">회원가입</a>
+						  </li>
+					</c:if>
+					<!-- 로그인 했을때 -->
+					<c:if test="${member != null}">
+						  <li class="nav-item">
+						    <a class="nav-link text-black-50 fw-bolder">${member.mName}님 환영합니다</a>
+						  </li>
+						  <li class="nav-item">
+						    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/logout.do">로그아웃</a>
+						  </li>
+					</c:if>
+					</ul>
+				</nav>
+			</div>
 		<!-- 로고, 검색창, 마이페이지 -->
 		<div class="container psts">
 		  <div class="row">
@@ -162,6 +175,7 @@
 	<!-- 상단 마이페이지 배너 -->
 	<section>
 	<div class="myPageBox">
+		<div class="myPageNav">
 		 <div class="myPageBoxs1">
 		 	<div style=" float: left; width: 16%;">
 			 	<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -171,12 +185,12 @@
 			</div>
 			<div style=" float: left; width:4%;">&nbsp;</div>
 			<div style=" float: left; width:80%;">
-	       		<span style="font-size:1.5em; font-weight: bold;">성기훈</span> <span style="font-size:1.0em; font-weight: bold;">님은 통합멤버십 회원입니다.</span><br>
-	       		<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
-				  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"></path>
-				  <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"></path>
+	       		<span style="font-size:1.5em; font-weight: bold;">${member.mName}</span> <span style="font-size:1.0em; font-weight: bold;">님은 통합멤버십 회원입니다.</span><br>
+        		<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-credit-card" viewBox="0 0 16 16">
+				  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/>
+				  <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/>
 				</svg>		
-	       		<span style="font-size:0.8em; font-weight: bold;">멤버십 회원 가입일 2021.10.11</span>
+        		<span style="font-size:0.8em; font-weight: bold;">멤버십 회원 가입일 ${member.mJoindate.substring(0,10)}</span>
 	       	</div>
 	       </div>
 	       <div class="myPageBoxs">
@@ -215,6 +229,7 @@
 	       		0
 	       	</span>개
 	       </div>
+	      </div>
 	</div>
 	</section>
 	
@@ -258,7 +273,7 @@
 					<a href="/shoerologue/cart/cart.do" class="gray">장바구니</a><br>
 					<a href="/shoerologue/mypage/shopping/wishlist.do" class="red">찜리스트*</a><br>
 					<a href="/shoerologue/mypage/shopping/qaList.do" class="gray">상품 Q&A</a><br>
-					<a href="/shoerologue/mypage/claim/inquiryList.do" class="gray">1:1 문의</a><br>
+					<a href="/shoerologue/mypage/memberCounsel/inquiry.do" class="gray">1:1 문의</a><br>
 					<a href="/shoerologue/mypage/shopping/myReview.do" class="gray">나의 리뷰</a>
 				</div><br>
 			</div>
@@ -285,7 +300,7 @@
 				<div class="flex-box">
 					<div class="wishNoItem2">
 					 <i class="bi bi-exclamation-circle exclamation"></i><br>
-					 찜한 상품이 없습니다 !</div>
+					 찜한 상품이 없습니다</div>
 				</div>
 			</div>
 		</c:if>

@@ -18,6 +18,12 @@
 	   		text-align: center;
 		}
 		
+		button{
+			border:0;
+			outline:0;
+			background-color:#EAEAEA;
+		}
+		
 		.cartNoItem {
 			height:500px;
 		}
@@ -193,7 +199,7 @@
 			width:1500px !important;
 			height:1400px !important;
 			padding-left:50px !important;
-			padding-right:50px !important;
+			padding-right:30px !important;
 			margin:auto !important;
 		}
 		

@@ -22,19 +22,24 @@
   		 	WHERE m.mId=c.mId AND c.pidx=p.pidx AND c.midx=#{midx}
 	 	ORDER BY ctidx 
   	</select> 
-  	
-  	<!-- 합계 -->
-  	<select id="sum" resultType="int">
-	  	SELECT  case count(c.midx) when 0 then 0 else sum(to_number(replace(p.pprice,',','')))  end  as total
-		  FROM cart c, product p  
-		 WHERE c.pidx = p.pidx and c.midx=#{c.midx}
-  	</select>
-  	
-  	<!-- 전체 총합 -->
-  	<select id="sumMoney" resultType="int">
-  	SELECT NVL(SUM(to_number(replace(pPrice,',','')) *amount),0) money 
-	FROM cart c, product p
-	WHERE c.pidx = p.pidx AND c.midx = #{c.midx}
+  
+	<!-- 합계 -->
+	<select id="sum" resultType="int">
+		SELECT SUM(pPrice) 
+		FROM cart c, product p
+		WHERE c.pidx = p.pidx AND c.midx=#{c.midx}
 	</select>
+
+	<!-- 총합 -->
+	<select id="sumMoney" resultType="int">
+		SELECT NVL(SUM(p.pPrice*amount),0) money
+		FROM cart c, product p
+		WHERE c.pidx = p.pidx AND c.midx=#{c.midx}
+	</select>
+	
+	<!-- 상품개별삭제 -->
+	<delete id="del">
+		DELETE FROM cart WHERE ctidx=#{ctidx}
+	</delete>
   	
 </mapper>
