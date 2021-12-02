@@ -28,123 +28,123 @@
 		<link rel="stylesheet" href="/shoerologue/resources/css/mypage.css">
 		
 		<style>
-      @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+     @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
       *{
          font-family: 'Montserrat', "Noto Sans KR", sans-serif;
       }
-		.empty-box{
-			width:100%;
-			height:50px;
-		}
-		.filter-box{
-			width:150px;
-			height:600px;
-			margin-right:180px;
-			border:1px solid black;
-			border-radius:10px;
-			float:left;
-		}
-		.filter-title{
-			height:40px;
-			background-color:black;
-			border-radius:8px;
-		}
-		#filter-title{
-			color:white;
-			font-size:20px;
-			font-style:bold;
-		}
-		.comNum{
-			color:red;
-			font-size:25px;
-		}
-		.main{
-			color:red;
-			text-decoration: underline;
-			font-size:20px;
-		}
-		.other{
-			font-size:20px;
-		}
-		.other:hover{
-			color:red;
-			text-decoration: underline;
-		}
-		.smft{
-			color:gray;
-		}
-		.tsft{
-			color:black;
-			text-decoration: underline;
-		}
-		.cl-left{
-			clear:left;
-		}
-		.body-box{
-			width:1400px;
-			margin:auto;
-		}
-		.mainTitle{
-			position:absolute;
-			font-size:30px;
-			margin-left:280px;
-		}
-		.inquiry-box{
-			width:70%;
-		}
-		.inquiry-title{
-			border-top:3px solid black;
-			border-bottom:2px solid gray;
-			font-size:15px;
-			color:gray;
-		}
-		.inquiry-number{
-			text-align:center;
-		}
-		.inquiry-subject{
-			text-align:left;
-		}
-		.inquiry-writeday{;
-			text-align:center;
-		}
-		.inquiry-writer{
-			text-align:center;
-		}
-		.btnBox{
-			width:100px;
-			height:50px;
-			margin-top:auto;
-			margin-left:880px;
-			background-color:white;
-			color:black;
-		}
-		.answer-link{
-			color:white;
-			margin-top:auto;
-		}
-		.answer-ling:hover{
-			color:red;
-		}
-		.inquiry-contents-box{
-			border-bottom:1px solid gray;
-		}
-		.inquiry-number-detail{
-			text-align:center;
-			font-size:20px;
-			height:50px;
-		}
-		.inquiry-subject-detail{
-			text-align:left;
-			font-size:20px;
-		}
-		.inquiry-writeday-detail{
-			text-align:center;
-			font-size:20px;
-		}
-		.inquiry-writer-detail{
-			text-align:center;
-			font-size:20px;
-		}
+      .empty-box{
+         width:100%;
+         height:50px;
+      }
+      .filter-box{
+         width:150px;
+         height:600px;
+         margin-right:180px;
+         border:1px solid black;
+         border-radius:10px;
+         float:left;
+      }
+      .filter-title{
+         height:40px;
+         background-color:black;
+         border-radius:8px;
+      }
+      #filter-title{
+         color:white;
+         font-size:20px;
+         font-style:bold;
+      }
+      .comNum{
+         color:red;
+         font-size:25px;
+      }
+      .main{
+         color:red;
+         text-decoration: underline;
+         font-size:20px;
+      }
+      .other{
+         font-size:20px;
+      }
+      .other:hover{
+         color:red;
+         text-decoration: underline;
+      }
+      .smft{
+         color:gray;
+      }
+      .tsft{
+         color:black;
+         text-decoration: underline;
+      }
+      .cl-left{
+         clear:left;
+      }
+      .body-box{
+         width:1400px;
+         margin:auto;
+      }
+      .mainTitle{
+         position:absolute;
+         font-size:30px;
+         margin-left:280px;
+      }
+      .inquiry-box{
+         width:70%;
+      }
+      .inquiry-title{
+         border-top:3px solid black;
+         border-bottom:2px solid gray;
+         font-size:15px;
+         color:gray;
+      }
+      .inquiry-number{
+         text-align:center;
+      }
+      .inquiry-subject{
+         text-align:left;
+      }
+      .inquiry-writeday{;
+         text-align:center;
+      }
+      .inquiry-writer{
+         text-align:center;
+      }
+      .btnBox{
+         width:100px;
+         height:50px;
+         margin-top:auto;
+         margin-left:880px;
+         background-color:white;
+         color:black;
+      }
+      .answer-link{
+         color:white;
+         margin-top:auto;
+      }
+      .answer-ling:hover{
+         color:red;
+      }
+      .inquiry-contents-box{
+         border-bottom:1px solid gray;
+      }
+      .inquiry-number-detail{
+         text-align:center;
+         font-size:20px;
+         height:50px;
+      }
+      .inquiry-subject-detail{
+         text-align:left;
+         font-size:20px;
+      }
+      .inquiry-writeday-detail{
+         text-align:center;
+         font-size:20px;
+      }
+      .inquiry-writer-detail{
+         text-align:center;
+         font-size:20px;
+      }
 		</style>
 </head>
 <body>
@@ -341,7 +341,7 @@
 <!-- 			</table> -->
 <%-- 		</c:if>	 --%>
 <%-- 		<c:if test="${count!=0}"> --%>
-			<c:if test="${master ne 'master' or midx eq null}">
+			<c:if test="${master ne 'master'}">
 				<table class="inquiry-box table table-hover">
 					<colgroup>
 						<col width="10%">
@@ -438,7 +438,6 @@
 	          <li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
 	        </ul>
 	      </div>
 		  <div class="col-4 col-sm-4 col-md-2 ">

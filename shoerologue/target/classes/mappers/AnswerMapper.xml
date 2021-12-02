@@ -11,11 +11,13 @@
 				,ACONTENTS
 				,MIDX
 				,QIDX
+				,MNAME
 				)VALUES(
 				AIDX_SEQ.nextval
 				,#{aContents}
 				,#{midx}
 				,#{qidx}
+				,#{mName}
 				)
 		]]>		
 	</insert>

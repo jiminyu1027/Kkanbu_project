@@ -59,7 +59,8 @@ public class ClaimController {
 		return "/mypage/claim/orderCancel";
 	}
 	@RequestMapping(value="/inquiryContents.do")
-	public String inquiryList(Locale locale,Model model,@RequestParam("qidx") int qidx)throws Exception{
+	public String inquiryList(Locale locale,Model model,@RequestParam("qidx") int qidx,HttpSession httr)throws Exception{
+		
 		
 		InquiryVO ivo = InquiryService.detail(qidx);
 		

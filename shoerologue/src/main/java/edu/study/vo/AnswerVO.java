@@ -7,6 +7,13 @@ public class AnswerVO {
 	private String aContents;
 	private String aWriteday;
 	private String aDelYn;
+	private String mName;
+	public String getmName() {
+		return mName;
+	}
+	public void setmName(String mName) {
+		this.mName = mName;
+	}
 	private int midx;
 	private int qidx;
 	public int getAidx() {
