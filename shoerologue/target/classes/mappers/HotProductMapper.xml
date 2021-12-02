@@ -11,9 +11,8 @@
    </select>
 
 	<select id="detail" resultType="HotProductVO" parameterType="int">
-		SELECT *
-   		FROM hotproduct
-        WHERE hidx = #{hidx}
+		SELECT * FROM hotproduct h, product p
+        WHERE h.pidx=p.pidx AND h.pidx = #{h.pidx};
 	</select>
    
 </mapper>

@@ -32,15 +32,17 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+		.myPageCart{
+			
+		}
 	</style>
 	<script type="text/javascript">
-	
 	$(function(){
 	    var listAll = $("input[type='checkbox'].chk");    //전체 클릭하는 엘리먼트에 .agreechkAll 클랙스가 추가되어야 한다.
 	    var list = $("input[type='checkbox'].chkBox");    //각각 클릭하는 엘리먼트에 .chack 클랙스가 추가되어야 한다.
 	    var common = {
 	        allCheck : function(e){ 
-	        	alert("ttttt");
+	        	//alert("ttttt");
 	            if($(e.target).prop("checked") === true) { 
 	                //해당화면에 전체 checkbox들을 체크한다 
 	                list.prop("checked",true);
@@ -50,13 +52,21 @@
 	            }
 	        },
 	        check : function(e){
-	        	alert("ddddd");
-	        	alert($("input:checkbox[name='shoes'][0]"));
+	        	console.log(e.target);
+	        	if($(e.target).prop("checked") == true){
+	                $(e.target).prop("checked", true);
+	            }else{
+	            	//console.log("check nono");
+	            	$(e.target).prop("checked", false);
+	            }
+	        	
+	        	//alert("ddddd");
+	        	//alert($("input:checkbox[name='shoes'][0]"));
 	            if($(e.target).prop("checked") === true){
 	                $(e.target).prop("checked", true)
 	            }
 	            if($(e.target).prop("checked") === false){
-	            	alert("aaaaa");
+	            	//alert("aaaaa");
 	                $(e.target).prop("checked", false)
 	                listAll.prop('checked', false);
 	            }
@@ -67,14 +77,12 @@
 	                } else {
 	                    listAll.prop("checked", false);
 	                }
-	            },
+	                
+	            }
 	        }
 
 	    $('.allThingBox').on('click','.chk', common.allCheck)
-	    $('.flex-box').on('click','.chkBox', common.check)
-	});
-	
-	
+	    $('.check').on('click','.chkBox', common.check)
 	</script>
 	
 	
@@ -208,9 +216,9 @@
 	<div class="myPageCart">
 		<!-- 페이지 이동경로 -->
 		<div style=" float: left; width: 0%;">&nbsp;</div>
-		<div style=" float: left; width: 99%;" class="mt-3">
+		<div style="width: 99%;" class="mt-3">
 			<span style="color:#757575; font-size:1em">
-				<a href="/main.do" style="color:#757575; font-size:1.1em">
+				<a href="/shoerologue" style="color:#757575; font-size:1.1em">
 				<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-house-fill mb-1" viewBox="0 0 16 16">
 				  <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
 				  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
@@ -243,7 +251,7 @@
 					<a href="/shoerologue/cart/cart.do" class="red">장바구니*</a><br>
 					<a href="/shoerologue/mypage/shopping/wishlist.do" class="gray">찜리스트</a><br>
 					<a href="/shoerologue/mypage/shopping/qaList.do" class="gray">상품 Q&A</a><br>
-					<a href="/shoerologue/mypage/claim/inquiryList.do" class="gray">1:1 문의</a><br>
+					<a href="/shoerologue/mypage/memberCounsel/inquiry.do" class="gray">1:1 문의</a><br>
 					<a href="/shoerologue/mypage/shopping/myReview.do" class="gray">나의 리뷰</a>
 				</div><br>
 			</div>
@@ -325,15 +333,16 @@
 						for(int i=0; i<list.size(); i++){
 					%>
 						<tr>
-							<td class="check">
-								<input type="checkbox" name="shoes" class="chkBox" id="checks" value="<%=list.get(i).getPidx()%>"  checked>
-								<label for="checks"></label></td>
+							<td class="check" id="<%=list.get(i).getPidx()%>">
+								<input type="checkbox" name="shoes" class="chkBox" id="checks<%=list.get(i).getPidx()%>" value="<%=list.get(i).getPidx()%>"  checked>
+								<label for="checks<%=list.get(i).getPidx()%>"></label>
+							</td>
 							<td class="imgSize" >
-							<a href="/shoerologue/resources/image/productdetail/<%=list.get(i).getpBrandeng()%>" >
+							<a href="/shoerologue/product/product.do?pidx=<%=list.get(i).getPidx()%>">
 									<img src="/shoerologue/resources/image/productdetail/<%=list.get(i).getpFile1() %>" width="120px"></a>
 							</td>
 							<td class="prodIntro">
-								<span class="pBrand"><%=list.get(i).getpBrandeng() %></span>
+								<span class="pBrand" ><%=list.get(i).getpBrandeng() %></span>
 								<div class="pTitle"><%=list.get(i).getpNamekr()%></div>
 								<div>
 								<span class="pColor"><%=list.get(i).getpColor()%></span>
@@ -388,7 +397,8 @@
 				<div class="paymentBox2">
 					<span class="paymentLabel">상품금액</span>
 					<span class="price" id="totalPrice" name="totalPrice" >
-					<fmt:formatNumber><%=totalPrice %></fmt:formatNumber>
+					<%=totalPrice %>
+					
 					<span class="won">원</span>
 					</span>
 				</div>
@@ -449,7 +459,6 @@
 	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill top fixed" viewBox="0 0 16 16">
 	  <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
 	</svg></a>
-	<
 		<script type="text/javascript">
 	
 	//수량 plus
@@ -457,8 +466,12 @@
 		cnt  *= 1;
 		cnt = cnt+1;
 		//alert(cnt);
-		amount  = amount.replace(",","")
+		//amount  = amount.replace(",","")
 		//alert(amount);
+		if(cnt >= 10){
+			alert("주문가능한 최대 수량입니다.");
+			return false;
+		}
 		total_amount = cnt*amount;
 		document.getElementsByName('pPrice')[i].innerHTML= comma(total_amount);	
 		document.getElementsByName('cnt')[i].value=cnt;
@@ -472,7 +485,11 @@
 	function minus(cnt,amount,i){
 		cnt *= 1;
 		cnt = cnt-1;
-		amount  = amount.replace(",","")
+		if(cnt < 1 ){
+			alert("주문가능한 최소 수량은 1개입니다.");
+			return false;
+		}
+		//amount  = amount.replace(",","")
 		total_amount = cnt*amount;
 		document.getElementsByName('pPrice')[i].innerHTML= comma(total_amount);	
 		document.getElementsByName('cnt')[i].value=cnt;
@@ -502,7 +519,7 @@
 		let sum = 0;
 		  for(let i = 0; i < totalCnt; i++)  {
 			  //alert(document.getElementsByName('pPrice')[i].innerHTML.replace(",",""));
-		    sum = sum + parseInt(document.getElementsByName('pPrice')[i].innerHTML.replace(",",""));
+		    sum = sum + parseInt(document.getElementsByName('pPrice')[i].innerHTML.replaceAll(",",""));
 	  }
 		//alert(sum);
 		document.getElementById('totalPrice').innerText = comma(sum);		
@@ -513,31 +530,64 @@
 	
 	//전체금액 합계
 	function allSum(){
-		var fee = <%=fee%>
-		//alert(fee);
-		var totalPrice = parseInt(document.getElementById('totalPrice').innerText.replace(",",""));
-		//alert(totalPrice);
+		var fee = Number('<%=fee%>');
+		var totalPrice = Number(document.getElementById('totalPrice').textContent.replaceAll(",",""));
 		
-		let sum = 0;
+		var sum = 0;  
 		sum = fee+totalPrice;
-		//alert(sum);
 		
 		document.getElementById('totalPay').innerText = comma(sum);	
 		return;
 	}
-	
+	/*
 	function comma(n) 
 	{
 	    var reg = /(^[+-]?\d+)(\d{3})/;   // 정규식
 	    n += '';                          // 숫자를 문자열로 변환
-	 
 	    while (reg.test(n))
 	    {
 	    n = n.replace(reg, '$1' + ',' + '$2');
 	    }
-	 
 	    return n;
 	}
+	*/
+		function comma(str) { 
+			 str = String(str); 
+			  str = str.replace(/[^\d]+/g, ''); // 숫자만 남김 
+			  return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'); 
+		}
+	
+	/*
+	
+	
+	// 정규식을 이용한 숫자 3자리마다 콤마(,)를 입력 
+function money_comma(str) { 
+  str = Number(str); 
+  str = str.replace(/[^\d]+/g, ''); // 숫자만 남김 
+  return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'); 
+} 
+
+// 정규식을 이용한 숫자만 추출 
+function money_uncomma(str) { 
+  str = Number(str); 
+  return str.replace(/[^\d]+/g, ''); 
+}
+
+// 금액값 입력 
+var money = 25763000;
+
+// 콤마 입력
+console.log(money_comma(money));
+
+// 결과값 
+// 25,763,000
+
+// 콤마 제거
+console.log(money_uncomma(money_comma(money));
+
+// 결과값 
+// 25763000
+	*/
 	
 	</script>	
 	

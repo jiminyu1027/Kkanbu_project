@@ -62,7 +62,6 @@
         }
         body {
         position: relative;
-        height: 100%;
         color: #000;
         font-size:14px;
         margin: 0;
@@ -154,6 +153,7 @@
 	  }
 	  .brandtitle ,.normalPrice{
 	  	font-weight: bold;
+	  	font-size:14pt;
 	  }
 	  .iconul{
 	  	list-style:none;
@@ -185,7 +185,8 @@
 		color:white !important;
 	}
 	.dropdown-item:hover{
-		color:black !important;
+		background-color:black;
+		color:white !important;
 	}
 	.swiper-button-next,.swiper-button-prev{
 		color:white !important;
@@ -193,3 +194,6 @@
 	.dropdown:hover .dropdown-menu {
     	display: block;
 	}
+	.dropdown-item:focus{
+		background-color:black;
+		color:white;

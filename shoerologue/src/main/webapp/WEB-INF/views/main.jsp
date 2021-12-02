@@ -126,7 +126,7 @@
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/men.do" role="button" aria-expanded="false">MEN</a>
-				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
+				    <ul class="dropdown-menu bg-white dropDownMenu">
 				    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/men.do">MEN</a></li>
 				   		<li><hr class="dropdown-divider "></li>
 					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/men/sneakers.do">운동화</a></li>
@@ -139,7 +139,7 @@
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/women.do" role="button" aria-expanded="false">WOMEN</a>
-				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
+				    <ul class="dropdown-menu bg-white dropDownMenu">
 				    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/women.do">WOMEN</a></li>
 				   		<li><hr class="dropdown-divider"></li>
 					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/women/sneakers.do">운동화</a></li>
@@ -152,7 +152,7 @@
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/kids.do" role="button" aria-expanded="false">KIDS</a>
-				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
+				    <ul class="dropdown-menu bg-white dropDownMenu ">
 				    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/kids.do">KIDS</a></li>
 				   		<li><hr class="dropdown-divider"></li>
 					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/kids/sneakers.do">운동화</a></li>
@@ -236,15 +236,24 @@
 			     for(int i=0; i<3;i++) {	    
 	    	 %>
 	     <div class="col-6 col-sm-6 col-md-3 col-lg-3 cardhover">
-			<a href="/shoerologue/product/product.do?pidx=<%=hlist.get(i).getHidx()%>">
+			<a href="/shoerologue/product/product.do?pidx=<%=hlist.get(i).getPidx()%>">
 		     <div class="card w-20">
-			  <img src="resources/image/hot1.jpg" class="card-img-top" alt="...">
+			 <img src="/shoerologue/resources/image/productdetail/<%=hlist.get(i).gethFile1()%>" class="card-img-top" alt="핫딜상품">
 			  <div class="card-body">
 			  	<h5 class="card-title brandtitle"><%=hlist.get(i).gethBrandKr()%></h5>
 			    <p class="card-text"><%=hlist.get(i).gethNameKr()%></p>
-			    <span class="card-text exitPrice"><del><%=hlist.get(i).gethPrice()%>원</del></span>&nbsp;
-			    <span class="card-text HotPrice">42,000</span>
-			    <span class="card-text HotPer">원 [57%]</span>
+			    <span class="card-text exitPrice">
+			    	<del>
+<%-- 				    	<% if(hlist.get(i).gethPrice().length() <6) {%> --%>
+<%-- 							<%=hlist.get(i).gethPrice().substring(hlist.get(i).gethPrice().length()-5,hlist.get(i).gethPrice().length()-3) %>,<%=hlist.get(i).gethPrice().substring(hlist.get(i).gethPrice().length()-3,hlist.get(i).gethPrice().length()) %> --%>
+<%-- 						<%}else{ %> --%>
+<%-- 							<%=hlist.get(i).gethPrice().substring(hlist.get(i).gethPrice().length()-6,hlist.get(i).gethPrice().length()-3) %>,<%=hlist.get(i).gethPrice().substring(hlist.get(i).gethPrice().length()-3,hlist.get(i).gethPrice().length()) %> --%>
+<%-- 						<% } %> --%>
+			    	원
+			    	</del>
+			    </span>&nbsp;
+			    <span class="card-text HotPrice"><%=hlist.get(i).getHsaleprice()%></span>
+			    <span class="card-text HotPer">원 [<%=hlist.get(i).getHsaleper()%>%]</span>
 			  </div>
 			</div>
 		  </a>
@@ -292,18 +301,31 @@
 	<h1 class="text-center fw-bolder" id="best">#BEST 20</h1><br>
 	<div class="container">
 	  <div class="row">
+	  <%
+			     if(plist.size()>=20){
+			     for(int i=0; i<20;i++) {	    
+	    	 %>
 	    <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
+	    	<a href="/shoerologue/product/product.do?pidx=<%=plist.get(i).getPidx()%>">
 		     <div class="card w-20">
-			  <img src="resources/image/vans.jpg" class="card-img-top" alt="...">
+			  <img src="/shoerologue/resources/image/productdetail/<%=plist.get(i).getpFile1()%>" class="card-img-top" alt="best20상품">
 			  <div class="card-body">
-			    <h5 class="card-title brandtitle">반스</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
+			    <h5 class="card-title brandtitle"><%=plist.get(i).getpBrandKr() %></h5>
+			    <p class="card-text"><%=plist.get(i).getpNameKr() %></p>
+			    <span class="card-text normalPrice">
+			    	<% if(plist.get(i).getpPrice().length() <6) {%>
+					<%=plist.get(i).getpPrice().substring(plist.get(i).getpPrice().length()-5,plist.get(i).getpPrice().length()-3) %>,<%=plist.get(i).getpPrice().substring(plist.get(i).getpPrice().length()-3,plist.get(i).getpPrice().length()) %>
+					<%}else{ %>
+						<%=plist.get(i).getpPrice().substring(plist.get(i).getpPrice().length()-6,plist.get(i).getpPrice().length()-3) %>,<%=plist.get(i).getpPrice().substring(plist.get(i).getpPrice().length()-3,plist.get(i).getpPrice().length()) %>
+					<% } %>
+			    원</span>&nbsp;
 			  </div>
 			</div>
 		  </a>
 	    </div>
+	     <% } 
+		} %>
+		<!-- 
 	      <div class="col-6 col-md-3 cardhover">
 	    	<a href="#">
 		     <div class="card w-20">
@@ -549,6 +571,7 @@
 			  </div>
 		    </a>
 	     </div>
+	      -->
 	  </div>
 	  <br>
 	</div>

@@ -23,13 +23,13 @@
 	 	ORDER BY ctidx 
   	</select> 
   
-	<!-- 합계 -->
-	<select id="sum" resultType="int">
-		SELECT SUM(pPrice) 
-		FROM cart c, product p
-		WHERE c.pidx = p.pidx AND c.midx=#{c.midx}
-	</select>
-
+	<!-- 합계  -->
+	  	<select id="sum" resultType="int">
+		  	SELECT  case count(c.midx) when 0 then 0 else sum(to_number(replace(p.pprice,',','')))  end  as total
+			  FROM cart c, product p  
+			 WHERE c.pidx = p.pidx and c.midx=#{c.midx}
+	  	</select>
+	  	
 	<!-- 총합 -->
 	<select id="sumMoney" resultType="int">
 		SELECT NVL(SUM(p.pPrice*amount),0) money
