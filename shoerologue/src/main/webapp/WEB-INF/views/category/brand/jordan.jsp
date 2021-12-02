@@ -191,7 +191,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=jordanlist.get(0).getpFile1()%>">
 						<div class="shoesBrand"><%=jordanlist.get(0).getpBrandKr()%></div>
 						<div class="shoesName"><%=jordanlist.get(0).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=jordanlist.get(0).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(jordanlist.get(0).getpPrice().length() <6) {%>
+									<%=jordanlist.get(0).getpPrice().substring(jordanlist.get(0).getpPrice().length()-5,jordanlist.get(0).getpPrice().length()-3) %>,<%=jordanlist.get(0).getpPrice().substring(jordanlist.get(0).getpPrice().length()-3,jordanlist.get(0).getpPrice().length()) %>
+								<%}else{ %>
+									<%=jordanlist.get(0).getpPrice().substring(jordanlist.get(0).getpPrice().length()-6,jordanlist.get(0).getpPrice().length()-3) %>,<%=jordanlist.get(0).getpPrice().substring(jordanlist.get(0).getpPrice().length()-3,jordanlist.get(0).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -200,7 +209,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=jordanlist.get(7).getpFile1()%>">
 						<div class="shoesBrand"><%=jordanlist.get(7).getpBrandKr()%></div>
 						<div class="shoesName"><%=jordanlist.get(7).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=jordanlist.get(7).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(jordanlist.get(7).getpPrice().length() <6) {%>
+									<%=jordanlist.get(7).getpPrice().substring(jordanlist.get(7).getpPrice().length()-5,jordanlist.get(7).getpPrice().length()-3) %>,<%=jordanlist.get(7).getpPrice().substring(jordanlist.get(7).getpPrice().length()-3,jordanlist.get(7).getpPrice().length()) %>
+								<%}else{ %>
+									<%=jordanlist.get(7).getpPrice().substring(jordanlist.get(7).getpPrice().length()-6,jordanlist.get(7).getpPrice().length()-3) %>,<%=jordanlist.get(7).getpPrice().substring(jordanlist.get(7).getpPrice().length()-3,jordanlist.get(7).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -209,7 +227,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=jordanlist.get(4).getpFile1()%>">
 						<div class="shoesBrand"><%=jordanlist.get(4).getpBrandKr()%></div>
 						<div class="shoesName"><%=jordanlist.get(4).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=jordanlist.get(4).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(jordanlist.get(4).getpPrice().length() <6) {%>
+									<%=jordanlist.get(4).getpPrice().substring(jordanlist.get(4).getpPrice().length()-5,jordanlist.get(4).getpPrice().length()-3) %>,<%=jordanlist.get(4).getpPrice().substring(jordanlist.get(4).getpPrice().length()-3,jordanlist.get(4).getpPrice().length()) %>
+								<%}else{ %>
+									<%=jordanlist.get(4).getpPrice().substring(jordanlist.get(4).getpPrice().length()-6,jordanlist.get(4).getpPrice().length()-3) %>,<%=jordanlist.get(4).getpPrice().substring(jordanlist.get(4).getpPrice().length()-3,jordanlist.get(4).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -218,7 +245,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=jordanlist.get(5).getpFile1()%>">
 						<div class="shoesBrand"><%=jordanlist.get(5).getpBrandKr()%></div>
 						<div class="shoesName"><%=jordanlist.get(5).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=jordanlist.get(5).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(jordanlist.get(5).getpPrice().length() <6) {%>
+									<%=jordanlist.get(5).getpPrice().substring(jordanlist.get(5).getpPrice().length()-5,jordanlist.get(5).getpPrice().length()-3) %>,<%=jordanlist.get(5).getpPrice().substring(jordanlist.get(5).getpPrice().length()-3,jordanlist.get(5).getpPrice().length()) %>
+								<%}else{ %>
+									<%=jordanlist.get(5).getpPrice().substring(jordanlist.get(5).getpPrice().length()-6,jordanlist.get(5).getpPrice().length()-3) %>,<%=jordanlist.get(5).getpPrice().substring(jordanlist.get(5).getpPrice().length()-3,jordanlist.get(5).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -227,7 +263,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=jordanlist.get(1).getpFile1()%>">
 						<div class="shoesBrand"><%=jordanlist.get(1).getpBrandKr()%></div>
 						<div class="shoesName"><%=jordanlist.get(1).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=jordanlist.get(1).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(jordanlist.get(1).getpPrice().length() <6) {%>
+									<%=jordanlist.get(1).getpPrice().substring(jordanlist.get(1).getpPrice().length()-5,jordanlist.get(1).getpPrice().length()-3) %>,<%=jordanlist.get(1).getpPrice().substring(jordanlist.get(1).getpPrice().length()-3,jordanlist.get(1).getpPrice().length()) %>
+								<%}else{ %>
+									<%=jordanlist.get(1).getpPrice().substring(jordanlist.get(1).getpPrice().length()-6,jordanlist.get(1).getpPrice().length()-3) %>,<%=jordanlist.get(1).getpPrice().substring(jordanlist.get(1).getpPrice().length()-3,jordanlist.get(1).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 			</div>
@@ -311,7 +356,18 @@
 							<img src="/shoerologue/resources/image/productdetail/<%=jordanlist.get(i).getpFile1()%>">
 							<div class="shoesBrand" id="pBrandKr"><%=jordanlist.get(i).getpBrandKr()%></div>
 							<div class="shoesName" id="pNameKr"><%=jordanlist.get(i).getpNameKr()%></div>
-							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=jordanlist.get(i).getpPrice()%></span><span class="won">원</span></div>
+							<div class="shoesPriceBox">
+								<span class="shoesPrice" id="pPrice">
+									<span class="pPrice" id="pPrice" name="pPrice">
+										<% if(jordanlist.get(i).getpPrice().length() <6) {%>
+											<%=jordanlist.get(i).getpPrice().substring(jordanlist.get(i).getpPrice().length()-5,jordanlist.get(i).getpPrice().length()-3) %>,<%=jordanlist.get(i).getpPrice().substring(jordanlist.get(i).getpPrice().length()-3,jordanlist.get(i).getpPrice().length()) %>
+										<%}else{ %>
+											<%=jordanlist.get(i).getpPrice().substring(jordanlist.get(i).getpPrice().length()-6,jordanlist.get(i).getpPrice().length()-3) %>,<%=jordanlist.get(i).getpPrice().substring(jordanlist.get(i).getpPrice().length()-3,jordanlist.get(i).getpPrice().length()) %>
+										<% } %>
+									</span>
+								</span>
+								<span class="won">원</span>
+							</div>
 						</a>
 					</div>
 					<% } 
@@ -375,10 +431,9 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">고객센터</a></li>
+	         <li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
 	        </ul>
 	      </div>
 		  <div class="col-4 col-sm-4 col-md-2 ">

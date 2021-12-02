@@ -191,7 +191,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=bearpawlist.get(6).getpFile1()%>">
 						<div class="shoesBrand"><%=bearpawlist.get(6).getpBrandKr()%></div>
 						<div class="shoesName"><%=bearpawlist.get(6).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=bearpawlist.get(6).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(bearpawlist.get(6).getpPrice().length() <6) {%>
+									<%=bearpawlist.get(6).getpPrice().substring(bearpawlist.get(6).getpPrice().length()-5,bearpawlist.get(6).getpPrice().length()-3) %>,<%=bearpawlist.get(6).getpPrice().substring(bearpawlist.get(6).getpPrice().length()-3,bearpawlist.get(6).getpPrice().length()) %>
+								<%}else{ %>
+									<%=bearpawlist.get(6).getpPrice().substring(bearpawlist.get(6).getpPrice().length()-6,bearpawlist.get(6).getpPrice().length()-3) %>,<%=bearpawlist.get(6).getpPrice().substring(bearpawlist.get(6).getpPrice().length()-3,bearpawlist.get(6).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -200,7 +209,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=bearpawlist.get(3).getpFile1()%>">
 						<div class="shoesBrand"><%=bearpawlist.get(3).getpBrandKr()%></div>
 						<div class="shoesName"><%=bearpawlist.get(3).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=bearpawlist.get(3).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(bearpawlist.get(3).getpPrice().length() <6) {%>
+									<%=bearpawlist.get(3).getpPrice().substring(bearpawlist.get(3).getpPrice().length()-5,bearpawlist.get(3).getpPrice().length()-3) %>,<%=bearpawlist.get(3).getpPrice().substring(bearpawlist.get(3).getpPrice().length()-3,bearpawlist.get(3).getpPrice().length()) %>
+								<%}else{ %>
+									<%=bearpawlist.get(3).getpPrice().substring(bearpawlist.get(3).getpPrice().length()-6,bearpawlist.get(3).getpPrice().length()-3) %>,<%=bearpawlist.get(3).getpPrice().substring(bearpawlist.get(3).getpPrice().length()-3,bearpawlist.get(3).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -209,7 +227,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=bearpawlist.get(2).getpFile1()%>">
 						<div class="shoesBrand"><%=bearpawlist.get(2).getpBrandKr()%></div>
 						<div class="shoesName"><%=bearpawlist.get(2).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=bearpawlist.get(2).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(bearpawlist.get(2).getpPrice().length() <6) {%>
+									<%=bearpawlist.get(2).getpPrice().substring(bearpawlist.get(2).getpPrice().length()-5,bearpawlist.get(2).getpPrice().length()-3) %>,<%=bearpawlist.get(2).getpPrice().substring(bearpawlist.get(2).getpPrice().length()-3,bearpawlist.get(2).getpPrice().length()) %>
+								<%}else{ %>
+									<%=bearpawlist.get(2).getpPrice().substring(bearpawlist.get(2).getpPrice().length()-6,bearpawlist.get(2).getpPrice().length()-3) %>,<%=bearpawlist.get(2).getpPrice().substring(bearpawlist.get(2).getpPrice().length()-3,bearpawlist.get(2).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -218,7 +245,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=bearpawlist.get(4).getpFile1()%>">
 						<div class="shoesBrand"><%=bearpawlist.get(4).getpBrandKr()%></div>
 						<div class="shoesName"><%=bearpawlist.get(4).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=bearpawlist.get(4).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(bearpawlist.get(4).getpPrice().length() <6) {%>
+									<%=bearpawlist.get(4).getpPrice().substring(bearpawlist.get(4).getpPrice().length()-5,bearpawlist.get(4).getpPrice().length()-3) %>,<%=bearpawlist.get(4).getpPrice().substring(bearpawlist.get(4).getpPrice().length()-3,bearpawlist.get(4).getpPrice().length()) %>
+								<%}else{ %>
+									<%=bearpawlist.get(4).getpPrice().substring(bearpawlist.get(4).getpPrice().length()-6,bearpawlist.get(4).getpPrice().length()-3) %>,<%=bearpawlist.get(4).getpPrice().substring(bearpawlist.get(64).getpPrice().length()-3,bearpawlist.get(4).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -227,7 +263,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=bearpawlist.get(1).getpFile1()%>">
 						<div class="shoesBrand"><%=bearpawlist.get(1).getpBrandKr()%></div>
 						<div class="shoesName"><%=bearpawlist.get(1).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=bearpawlist.get(1).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(bearpawlist.get(1).getpPrice().length() <6) {%>
+									<%=bearpawlist.get(1).getpPrice().substring(bearpawlist.get(1).getpPrice().length()-5,bearpawlist.get(1).getpPrice().length()-3) %>,<%=bearpawlist.get(1).getpPrice().substring(bearpawlist.get(1).getpPrice().length()-3,bearpawlist.get(1).getpPrice().length()) %>
+								<%}else{ %>
+									<%=bearpawlist.get(1).getpPrice().substring(bearpawlist.get(1).getpPrice().length()-6,bearpawlist.get(1).getpPrice().length()-3) %>,<%=bearpawlist.get(1).getpPrice().substring(bearpawlist.get(1).getpPrice().length()-3,bearpawlist.get(1).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 			</div>
@@ -311,7 +356,18 @@
 							<img src="/shoerologue/resources/image/productdetail/<%=bearpawlist.get(i).getpFile1()%>">
 							<div class="shoesBrand" id="pBrandKr"><%=bearpawlist.get(i).getpBrandKr()%></div>
 							<div class="shoesName" id="pNameKr"><%=bearpawlist.get(i).getpNameKr()%></div>
-							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=bearpawlist.get(i).getpPrice()%></span><span class="won">원</span></div>
+							<div class="shoesPriceBox">
+								<span class="shoesPrice" id="pPrice">
+									<span class="pPrice" id="pPrice" name="pPrice">
+										<% if(bearpawlist.get(i).getpPrice().length() <6) {%>
+											<%=bearpawlist.get(i).getpPrice().substring(bearpawlist.get(i).getpPrice().length()-5,bearpawlist.get(i).getpPrice().length()-3) %>,<%=bearpawlist.get(i).getpPrice().substring(bearpawlist.get(i).getpPrice().length()-3,bearpawlist.get(i).getpPrice().length()) %>
+										<%}else{ %>
+											<%=bearpawlist.get(i).getpPrice().substring(bearpawlist.get(i).getpPrice().length()-6,bearpawlist.get(i).getpPrice().length()-3) %>,<%=bearpawlist.get(i).getpPrice().substring(bearpawlist.get(i).getpPrice().length()-3,bearpawlist.get(i).getpPrice().length()) %>
+										<% } %>
+									</span>
+								</span>
+								<span class="won">원</span>
+							</div>
 						</a>
 					</div>
 					<% } 
@@ -375,10 +431,9 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
 	        </ul>
 	      </div>
 		  <div class="col-4 col-sm-4 col-md-2 ">

@@ -191,7 +191,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=pumalist.get(8).getpFile1()%>">
 						<div class="shoesBrand"><%=pumalist.get(8).getpBrandKr()%></div>
 						<div class="shoesName"><%=pumalist.get(8).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=pumalist.get(8).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(pumalist.get(8).getpPrice().length() <6) {%>
+									<%=pumalist.get(8).getpPrice().substring(pumalist.get(8).getpPrice().length()-5,pumalist.get(8).getpPrice().length()-3) %>,<%=pumalist.get(8).getpPrice().substring(pumalist.get(8).getpPrice().length()-3,pumalist.get(8).getpPrice().length()) %>
+								<%}else{ %>
+									<%=pumalist.get(8).getpPrice().substring(pumalist.get(8).getpPrice().length()-6,pumalist.get(8).getpPrice().length()-3) %>,<%=pumalist.get(8).getpPrice().substring(pumalist.get(8).getpPrice().length()-3,pumalist.get(8).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -200,7 +209,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=pumalist.get(12).getpFile1()%>">
 						<div class="shoesBrand"><%=pumalist.get(12).getpBrandKr()%></div>
 						<div class="shoesName"><%=pumalist.get(12).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=pumalist.get(12).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(pumalist.get(12).getpPrice().length() <6) {%>
+									<%=pumalist.get(12).getpPrice().substring(pumalist.get(12).getpPrice().length()-5,pumalist.get(12).getpPrice().length()-3) %>,<%=pumalist.get(12).getpPrice().substring(pumalist.get(12).getpPrice().length()-3,pumalist.get(12).getpPrice().length()) %>
+								<%}else{ %>
+									<%=pumalist.get(12).getpPrice().substring(pumalist.get(12).getpPrice().length()-6,pumalist.get(12).getpPrice().length()-3) %>,<%=pumalist.get(12).getpPrice().substring(pumalist.get(12).getpPrice().length()-3,pumalist.get(12).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -209,7 +227,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=pumalist.get(11).getpFile1()%>">
 						<div class="shoesBrand"><%=pumalist.get(11).getpBrandKr()%></div>
 						<div class="shoesName"><%=pumalist.get(11).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=pumalist.get(11).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(pumalist.get(11).getpPrice().length() <6) {%>
+									<%=pumalist.get(11).getpPrice().substring(pumalist.get(11).getpPrice().length()-5,pumalist.get(11).getpPrice().length()-3) %>,<%=pumalist.get(11).getpPrice().substring(pumalist.get(11).getpPrice().length()-3,pumalist.get(11).getpPrice().length()) %>
+								<%}else{ %>
+									<%=pumalist.get(11).getpPrice().substring(pumalist.get(11).getpPrice().length()-6,pumalist.get(11).getpPrice().length()-3) %>,<%=pumalist.get(11).getpPrice().substring(pumalist.get(11).getpPrice().length()-3,pumalist.get(11).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -218,7 +245,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=pumalist.get(6).getpFile1()%>">
 						<div class="shoesBrand"><%=pumalist.get(6).getpBrandKr()%></div>
 						<div class="shoesName"><%=pumalist.get(6).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=pumalist.get(6).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(pumalist.get(6).getpPrice().length() <6) {%>
+									<%=pumalist.get(6).getpPrice().substring(pumalist.get(6).getpPrice().length()-5,pumalist.get(6).getpPrice().length()-3) %>,<%=pumalist.get(6).getpPrice().substring(pumalist.get(6).getpPrice().length()-3,pumalist.get(6).getpPrice().length()) %>
+								<%}else{ %>
+									<%=pumalist.get(6).getpPrice().substring(pumalist.get(6).getpPrice().length()-6,pumalist.get(6).getpPrice().length()-3) %>,<%=pumalist.get(6).getpPrice().substring(pumalist.get(6).getpPrice().length()-3,pumalist.get(6).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -227,7 +263,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=pumalist.get(5).getpFile1()%>">
 						<div class="shoesBrand"><%=pumalist.get(5).getpBrandKr()%></div>
 						<div class="shoesName"><%=pumalist.get(5).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=pumalist.get(5).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(pumalist.get(5).getpPrice().length() <6) {%>
+									<%=pumalist.get(5).getpPrice().substring(pumalist.get(5).getpPrice().length()-5,pumalist.get(5).getpPrice().length()-3) %>,<%=pumalist.get(5).getpPrice().substring(pumalist.get(5).getpPrice().length()-3,pumalist.get(5).getpPrice().length()) %>
+								<%}else{ %>
+									<%=pumalist.get(5).getpPrice().substring(pumalist.get(5).getpPrice().length()-6,pumalist.get(5).getpPrice().length()-3) %>,<%=pumalist.get(5).getpPrice().substring(pumalist.get(5).getpPrice().length()-3,pumalist.get(5).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 			</div>
@@ -311,7 +356,18 @@
 							<img src="/shoerologue/resources/image/productdetail/<%=pumalist.get(i).getpFile1()%>">
 							<div class="shoesBrand" id="pBrandKr"><%=pumalist.get(i).getpBrandKr()%></div>
 							<div class="shoesName" id="pNameKr"><%=pumalist.get(i).getpNameKr()%></div>
-							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=pumalist.get(i).getpPrice()%></span><span class="won">원</span></div>
+							<div class="shoesPriceBox">
+								<span class="shoesPrice" id="pPrice">
+									<span class="pPrice" id="pPrice" name="pPrice">
+										<% if(pumalist.get(i).getpPrice().length() <6) {%>
+											<%=pumalist.get(i).getpPrice().substring(pumalist.get(i).getpPrice().length()-5,pumalist.get(i).getpPrice().length()-3) %>,<%=pumalist.get(i).getpPrice().substring(pumalist.get(i).getpPrice().length()-3,pumalist.get(i).getpPrice().length()) %>
+										<%}else{ %>
+											<%=pumalist.get(i).getpPrice().substring(pumalist.get(i).getpPrice().length()-6,pumalist.get(i).getpPrice().length()-3) %>,<%=pumalist.get(i).getpPrice().substring(pumalist.get(i).getpPrice().length()-3,pumalist.get(i).getpPrice().length()) %>
+										<% } %>
+									</span>
+								</span>
+								<span class="won">원</span>
+							</div>
 						</a>
 					</div>
 					<% } 
@@ -375,10 +431,9 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">고객센터</a></li>
+	         <li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
 	        </ul>
 	      </div>
 		  <div class="col-4 col-sm-4 col-md-2 ">

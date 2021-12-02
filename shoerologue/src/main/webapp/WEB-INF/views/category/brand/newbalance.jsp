@@ -191,7 +191,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=newbalancelist.get(10).getpFile1()%>">
 						<div class="shoesBrand"><%=newbalancelist.get(10).getpBrandKr()%></div>
 						<div class="shoesName"><%=newbalancelist.get(10).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=newbalancelist.get(10).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(newbalancelist.get(10).getpPrice().length() <6) {%>
+									<%=newbalancelist.get(10).getpPrice().substring(newbalancelist.get(10).getpPrice().length()-5,newbalancelist.get(10).getpPrice().length()-3) %>,<%=newbalancelist.get(10).getpPrice().substring(newbalancelist.get(10).getpPrice().length()-3,newbalancelist.get(10).getpPrice().length()) %>
+								<%}else{ %>
+									<%=newbalancelist.get(10).getpPrice().substring(newbalancelist.get(10).getpPrice().length()-6,newbalancelist.get(10).getpPrice().length()-3) %>,<%=newbalancelist.get(10).getpPrice().substring(newbalancelist.get(10).getpPrice().length()-3,newbalancelist.get(10).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -200,7 +209,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=newbalancelist.get(8).getpFile1()%>">
 						<div class="shoesBrand"><%=newbalancelist.get(8).getpBrandKr()%></div>
 						<div class="shoesName"><%=newbalancelist.get(8).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=newbalancelist.get(8).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(newbalancelist.get(8).getpPrice().length() <6) {%>
+									<%=newbalancelist.get(8).getpPrice().substring(newbalancelist.get(8).getpPrice().length()-5,newbalancelist.get(8).getpPrice().length()-3) %>,<%=newbalancelist.get(8).getpPrice().substring(newbalancelist.get(8).getpPrice().length()-3,newbalancelist.get(8).getpPrice().length()) %>
+								<%}else{ %>
+									<%=newbalancelist.get(8).getpPrice().substring(newbalancelist.get(8).getpPrice().length()-6,newbalancelist.get(8).getpPrice().length()-3) %>,<%=newbalancelist.get(8).getpPrice().substring(newbalancelist.get(8).getpPrice().length()-3,newbalancelist.get(8).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -209,7 +227,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=newbalancelist.get(9).getpFile1()%>">
 						<div class="shoesBrand"><%=newbalancelist.get(9).getpBrandKr()%></div>
 						<div class="shoesName"><%=newbalancelist.get(9).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=newbalancelist.get(9).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(newbalancelist.get(9).getpPrice().length() <6) {%>
+									<%=newbalancelist.get(9).getpPrice().substring(newbalancelist.get(9).getpPrice().length()-5,newbalancelist.get(9).getpPrice().length()-3) %>,<%=newbalancelist.get(9).getpPrice().substring(newbalancelist.get(9).getpPrice().length()-3,newbalancelist.get(9).getpPrice().length()) %>
+								<%}else{ %>
+									<%=newbalancelist.get(9).getpPrice().substring(newbalancelist.get(9).getpPrice().length()-6,newbalancelist.get(9).getpPrice().length()-3) %>,<%=newbalancelist.get(9).getpPrice().substring(newbalancelist.get(9).getpPrice().length()-3,newbalancelist.get(9).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -218,7 +245,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=newbalancelist.get(4).getpFile1()%>">
 						<div class="shoesBrand"><%=newbalancelist.get(4).getpBrandKr()%></div>
 						<div class="shoesName"><%=newbalancelist.get(4).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=newbalancelist.get(4).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(newbalancelist.get(4).getpPrice().length() <6) {%>
+									<%=newbalancelist.get(4).getpPrice().substring(newbalancelist.get(4).getpPrice().length()-5,newbalancelist.get(4).getpPrice().length()-3) %>,<%=newbalancelist.get(4).getpPrice().substring(newbalancelist.get(4).getpPrice().length()-3,newbalancelist.get(4).getpPrice().length()) %>
+								<%}else{ %>
+									<%=newbalancelist.get(4).getpPrice().substring(newbalancelist.get(4).getpPrice().length()-6,newbalancelist.get(4).getpPrice().length()-3) %>,<%=newbalancelist.get(4).getpPrice().substring(newbalancelist.get(4).getpPrice().length()-3,newbalancelist.get(4).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -227,7 +263,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=newbalancelist.get(3).getpFile1()%>">
 						<div class="shoesBrand"><%=newbalancelist.get(3).getpBrandKr()%></div>
 						<div class="shoesName"><%=newbalancelist.get(3).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=newbalancelist.get(3).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(newbalancelist.get(3).getpPrice().length() <6) {%>
+									<%=newbalancelist.get(3).getpPrice().substring(newbalancelist.get(3).getpPrice().length()-5,newbalancelist.get(3).getpPrice().length()-3) %>,<%=newbalancelist.get(3).getpPrice().substring(newbalancelist.get(3).getpPrice().length()-3,newbalancelist.get(3).getpPrice().length()) %>
+								<%}else{ %>
+									<%=newbalancelist.get(3).getpPrice().substring(newbalancelist.get(3).getpPrice().length()-6,newbalancelist.get(3).getpPrice().length()-3) %>,<%=newbalancelist.get(3).getpPrice().substring(newbalancelist.get(3).getpPrice().length()-3,newbalancelist.get(3).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 			</div>
@@ -311,7 +356,18 @@
 							<img src="/shoerologue/resources/image/productdetail/<%=newbalancelist.get(i).getpFile1()%>">
 							<div class="shoesBrand" id="pBrandKr"><%=newbalancelist.get(i).getpBrandKr()%></div>
 							<div class="shoesName" id="pNameKr"><%=newbalancelist.get(i).getpNameKr()%></div>
-							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=newbalancelist.get(i).getpPrice()%></span><span class="won">원</span></div>
+							<div class="shoesPriceBox">
+								<span class="shoesPrice" id="pPrice">
+									<span class="pPrice" id="pPrice" name="pPrice">
+										<% if(newbalancelist.get(i).getpPrice().length() <6) {%>
+											<%=newbalancelist.get(i).getpPrice().substring(newbalancelist.get(i).getpPrice().length()-5,newbalancelist.get(i).getpPrice().length()-3) %>,<%=newbalancelist.get(i).getpPrice().substring(newbalancelist.get(i).getpPrice().length()-3,newbalancelist.get(i).getpPrice().length()) %>
+										<%}else{ %>
+											<%=newbalancelist.get(i).getpPrice().substring(newbalancelist.get(i).getpPrice().length()-6,newbalancelist.get(i).getpPrice().length()-3) %>,<%=newbalancelist.get(i).getpPrice().substring(newbalancelist.get(i).getpPrice().length()-3,newbalancelist.get(i).getpPrice().length()) %>
+										<% } %>
+									</span>
+								</span>
+								<span class="won">원</span>
+							</div>
 						</a>
 					</div>
 					<% } 
@@ -375,10 +431,9 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
 	        </ul>
 	      </div>
 		  <div class="col-4 col-sm-4 col-md-2 ">

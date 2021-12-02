@@ -191,7 +191,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=reeboklist.get(5).getpFile1()%>">
 						<div class="shoesBrand"><%=reeboklist.get(5).getpBrandKr()%></div>
 						<div class="shoesName"><%=reeboklist.get(5).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=reeboklist.get(5).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(reeboklist.get(5).getpPrice().length() <6) {%>
+									<%=reeboklist.get(5).getpPrice().substring(reeboklist.get(5).getpPrice().length()-5,reeboklist.get(5).getpPrice().length()-3) %>,<%=reeboklist.get(5).getpPrice().substring(reeboklist.get(5).getpPrice().length()-3,reeboklist.get(5).getpPrice().length()) %>
+								<%}else{ %>
+									<%=reeboklist.get(5).getpPrice().substring(reeboklist.get(5).getpPrice().length()-6,reeboklist.get(5).getpPrice().length()-3) %>,<%=reeboklist.get(5).getpPrice().substring(reeboklist.get(5).getpPrice().length()-3,reeboklist.get(5).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -200,7 +209,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=reeboklist.get(0).getpFile1()%>">
 						<div class="shoesBrand"><%=reeboklist.get(0).getpBrandKr()%></div>
 						<div class="shoesName"><%=reeboklist.get(0).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=reeboklist.get(0).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(reeboklist.get(0).getpPrice().length() <6) {%>
+									<%=reeboklist.get(0).getpPrice().substring(reeboklist.get(0).getpPrice().length()-5,reeboklist.get(0).getpPrice().length()-3) %>,<%=reeboklist.get(0).getpPrice().substring(reeboklist.get(0).getpPrice().length()-3,reeboklist.get(0).getpPrice().length()) %>
+								<%}else{ %>
+									<%=reeboklist.get(0).getpPrice().substring(reeboklist.get(0).getpPrice().length()-6,reeboklist.get(0).getpPrice().length()-3) %>,<%=reeboklist.get(0).getpPrice().substring(reeboklist.get(0).getpPrice().length()-3,reeboklist.get(0).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -209,7 +227,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=reeboklist.get(1).getpFile1()%>">
 						<div class="shoesBrand"><%=reeboklist.get(1).getpBrandKr()%></div>
 						<div class="shoesName"><%=reeboklist.get(1).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=reeboklist.get(1).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(reeboklist.get(1).getpPrice().length() <6) {%>
+									<%=reeboklist.get(1).getpPrice().substring(reeboklist.get(1).getpPrice().length()-5,reeboklist.get(1).getpPrice().length()-3) %>,<%=reeboklist.get(1).getpPrice().substring(reeboklist.get(1).getpPrice().length()-3,reeboklist.get(1).getpPrice().length()) %>
+								<%}else{ %>
+									<%=reeboklist.get(1).getpPrice().substring(reeboklist.get(1).getpPrice().length()-6,reeboklist.get(1).getpPrice().length()-3) %>,<%=reeboklist.get(1).getpPrice().substring(reeboklist.get(1).getpPrice().length()-3,reeboklist.get(1).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -218,7 +245,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=reeboklist.get(7).getpFile1()%>">
 						<div class="shoesBrand"><%=reeboklist.get(7).getpBrandKr()%></div>
 						<div class="shoesName"><%=reeboklist.get(7).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=reeboklist.get(7).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(reeboklist.get(7).getpPrice().length() <6) {%>
+									<%=reeboklist.get(7).getpPrice().substring(reeboklist.get(7).getpPrice().length()-5,reeboklist.get(7).getpPrice().length()-3) %>,<%=reeboklist.get(7).getpPrice().substring(reeboklist.get(7).getpPrice().length()-3,reeboklist.get(7).getpPrice().length()) %>
+								<%}else{ %>
+									<%=reeboklist.get(7).getpPrice().substring(reeboklist.get(7).getpPrice().length()-6,reeboklist.get(7).getpPrice().length()-3) %>,<%=reeboklist.get(7).getpPrice().substring(reeboklist.get(7).getpPrice().length()-3,reeboklist.get(7).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -227,7 +263,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=reeboklist.get(3).getpFile1()%>">
 						<div class="shoesBrand"><%=reeboklist.get(3).getpBrandKr()%></div>
 						<div class="shoesName"><%=reeboklist.get(3).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=reeboklist.get(3).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(reeboklist.get(3).getpPrice().length() <6) {%>
+									<%=reeboklist.get(3).getpPrice().substring(reeboklist.get(3).getpPrice().length()-5,reeboklist.get(3).getpPrice().length()-3) %>,<%=reeboklist.get(3).getpPrice().substring(reeboklist.get(3).getpPrice().length()-3,reeboklist.get(3).getpPrice().length()) %>
+								<%}else{ %>
+									<%=reeboklist.get(3).getpPrice().substring(reeboklist.get(3).getpPrice().length()-6,reeboklist.get(3).getpPrice().length()-3) %>,<%=reeboklist.get(3).getpPrice().substring(reeboklist.get(3).getpPrice().length()-3,reeboklist.get(3).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 			</div>
@@ -311,7 +356,18 @@
 							<img src="/shoerologue/resources/image/productdetail/<%=reeboklist.get(i).getpFile1()%>">
 							<div class="shoesBrand" id="pBrandKr"><%=reeboklist.get(i).getpBrandKr()%></div>
 							<div class="shoesName" id="pNameKr"><%=reeboklist.get(i).getpNameKr()%></div>
-							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=reeboklist.get(i).getpPrice()%></span><span class="won">원</span></div>
+							<div class="shoesPriceBox">
+								<span class="shoesPrice" id="pPrice">
+									<span class="pPrice" id="pPrice" name="pPrice">
+										<% if(reeboklist.get(i).getpPrice().length() <6) {%>
+											<%=reeboklist.get(i).getpPrice().substring(reeboklist.get(i).getpPrice().length()-5,reeboklist.get(i).getpPrice().length()-3) %>,<%=reeboklist.get(i).getpPrice().substring(reeboklist.get(i).getpPrice().length()-3,reeboklist.get(i).getpPrice().length()) %>
+										<%}else{ %>
+											<%=reeboklist.get(i).getpPrice().substring(reeboklist.get(i).getpPrice().length()-6,reeboklist.get(i).getpPrice().length()-3) %>,<%=reeboklist.get(i).getpPrice().substring(reeboklist.get(i).getpPrice().length()-3,reeboklist.get(i).getpPrice().length()) %>
+										<% } %>
+									</span>
+								</span>
+								<span class="won">원</span>
+							</div>
 						</a>
 					</div>
 					<% } 
@@ -375,10 +431,9 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
 	        </ul>
 	      </div>
 		  <div class="col-4 col-sm-4 col-md-2 ">

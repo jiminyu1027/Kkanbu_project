@@ -193,7 +193,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=adidaslist.get(15).getpFile1()%>">
 						<div class="shoesBrand"><%=adidaslist.get(15).getpBrandKr()%></div>
 						<div class="shoesName"><%=adidaslist.get(15).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=adidaslist.get(15).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(adidaslist.get(15).getpPrice().length() <6) {%>
+									<%=adidaslist.get(15).getpPrice().substring(adidaslist.get(15).getpPrice().length()-5,adidaslist.get(15).getpPrice().length()-3) %>,<%=adidaslist.get(15).getpPrice().substring(adidaslist.get(15).getpPrice().length()-3,adidaslist.get(15).getpPrice().length()) %>
+								<%}else{ %>
+									<%=adidaslist.get(15).getpPrice().substring(adidaslist.get(15).getpPrice().length()-6,adidaslist.get(15).getpPrice().length()-3) %>,<%=adidaslist.get(15).getpPrice().substring(adidaslist.get(15).getpPrice().length()-3,adidaslist.get(15).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -202,7 +211,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=adidaslist.get(12).getpFile1()%>">
 						<div class="shoesBrand"><%=adidaslist.get(12).getpBrandKr()%></div>
 						<div class="shoesName"><%=adidaslist.get(12).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=adidaslist.get(12).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(adidaslist.get(12).getpPrice().length() <6) {%>
+									<%=adidaslist.get(12).getpPrice().substring(adidaslist.get(12).getpPrice().length()-5,adidaslist.get(12).getpPrice().length()-3) %>,<%=adidaslist.get(12).getpPrice().substring(adidaslist.get(12).getpPrice().length()-3,adidaslist.get(12).getpPrice().length()) %>
+								<%}else{ %>
+									<%=adidaslist.get(12).getpPrice().substring(adidaslist.get(12).getpPrice().length()-6,adidaslist.get(12).getpPrice().length()-3) %>,<%=adidaslist.get(12).getpPrice().substring(adidaslist.get(12).getpPrice().length()-3,adidaslist.get(12).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -211,7 +229,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=adidaslist.get(14).getpFile1()%>">
 						<div class="shoesBrand"><%=adidaslist.get(14).getpBrandKr()%></div>
 						<div class="shoesName"><%=adidaslist.get(14).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=adidaslist.get(14).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(adidaslist.get(14).getpPrice().length() <6) {%>
+									<%=adidaslist.get(14).getpPrice().substring(adidaslist.get(14).getpPrice().length()-5,adidaslist.get(14).getpPrice().length()-3) %>,<%=adidaslist.get(14).getpPrice().substring(adidaslist.get(14).getpPrice().length()-3,adidaslist.get(14).getpPrice().length()) %>
+								<%}else{ %>
+									<%=adidaslist.get(14).getpPrice().substring(adidaslist.get(14).getpPrice().length()-6,adidaslist.get(14).getpPrice().length()-3) %>,<%=adidaslist.get(14).getpPrice().substring(adidaslist.get(14).getpPrice().length()-3,adidaslist.get(14).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -220,7 +247,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=adidaslist.get(7).getpFile1()%>">
 						<div class="shoesBrand"><%=adidaslist.get(7).getpBrandKr()%></div>
 						<div class="shoesName"><%=adidaslist.get(7).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=adidaslist.get(7).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(adidaslist.get(7).getpPrice().length() <6) {%>
+									<%=adidaslist.get(7).getpPrice().substring(adidaslist.get(7).getpPrice().length()-5,adidaslist.get(7).getpPrice().length()-3) %>,<%=adidaslist.get(7).getpPrice().substring(adidaslist.get(7).getpPrice().length()-3,adidaslist.get(7).getpPrice().length()) %>
+								<%}else{ %>
+									<%=adidaslist.get(7).getpPrice().substring(adidaslist.get(7).getpPrice().length()-6,adidaslist.get(7).getpPrice().length()-3) %>,<%=adidaslist.get(7).getpPrice().substring(adidaslist.get(7).getpPrice().length()-3,adidaslist.get(7).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -229,7 +265,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=adidaslist.get(13).getpFile1()%>">
 						<div class="shoesBrand"><%=adidaslist.get(13).getpBrandKr()%></div>
 						<div class="shoesName"><%=adidaslist.get(13).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=adidaslist.get(13).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(adidaslist.get(3).getpPrice().length() <6) {%>
+									<%=adidaslist.get(3).getpPrice().substring(adidaslist.get(3).getpPrice().length()-5,adidaslist.get(3).getpPrice().length()-3) %>,<%=adidaslist.get(3).getpPrice().substring(adidaslist.get(3).getpPrice().length()-3,adidaslist.get(3).getpPrice().length()) %>
+								<%}else{ %>
+									<%=adidaslist.get(3).getpPrice().substring(adidaslist.get(3).getpPrice().length()-6,adidaslist.get(3).getpPrice().length()-3) %>,<%=adidaslist.get(3).getpPrice().substring(adidaslist.get(3).getpPrice().length()-3,adidaslist.get(3).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 			</div>
@@ -312,7 +357,18 @@
 							<img src="/shoerologue/resources/image/productdetail/<%=adidaslist.get(i).getpFile1()%>">
 							<div class="shoesBrand" id="pBrandKr"><%=adidaslist.get(i).getpBrandKr()%></div>
 							<div class="shoesName" id="pNameKr"><%=adidaslist.get(i).getpNameKr()%></div>
-							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=adidaslist.get(i).getpPrice()%></span><span class="won">원</span></div>
+							<div class="shoesPriceBox">
+								<span class="shoesPrice" id="pPrice">
+									<span class="pPrice" id="pPrice" name="pPrice">
+										<% if(adidaslist.get(i).getpPrice().length() <6) {%>
+											<%=adidaslist.get(i).getpPrice().substring(adidaslist.get(i).getpPrice().length()-5,adidaslist.get(i).getpPrice().length()-3) %>,<%=adidaslist.get(i).getpPrice().substring(adidaslist.get(i).getpPrice().length()-3,adidaslist.get(i).getpPrice().length()) %>
+										<%}else{ %>
+											<%=adidaslist.get(i).getpPrice().substring(adidaslist.get(i).getpPrice().length()-6,adidaslist.get(i).getpPrice().length()-3) %>,<%=adidaslist.get(i).getpPrice().substring(adidaslist.get(i).getpPrice().length()-3,adidaslist.get(i).getpPrice().length()) %>
+										<% } %>
+									</span>
+								</span>
+								<span class="won">원</span>
+							</div>
 						</a>
 					</div>
 					<% } 
@@ -376,10 +432,9 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
 	        </ul>
 	      </div>
 		  <div class="col-4 col-sm-4 col-md-2 ">

@@ -191,7 +191,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=raragolist.get(6).getpFile1()%>">
 						<div class="shoesBrand"><%=raragolist.get(6).getpBrandKr()%></div>
 						<div class="shoesName"><%=raragolist.get(6).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=raragolist.get(6).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(raragolist.get(6).getpPrice().length() <6) {%>
+									<%=raragolist.get(6).getpPrice().substring(raragolist.get(6).getpPrice().length()-5,raragolist.get(6).getpPrice().length()-3) %>,<%=raragolist.get(6).getpPrice().substring(raragolist.get(6).getpPrice().length()-3,raragolist.get(6).getpPrice().length()) %>
+								<%}else{ %>
+									<%=raragolist.get(6).getpPrice().substring(raragolist.get(6).getpPrice().length()-6,raragolist.get(6).getpPrice().length()-3) %>,<%=raragolist.get(6).getpPrice().substring(raragolist.get(6).getpPrice().length()-3,raragolist.get(6).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -200,7 +209,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=raragolist.get(1).getpFile1()%>">
 						<div class="shoesBrand"><%=raragolist.get(1).getpBrandKr()%></div>
 						<div class="shoesName"><%=raragolist.get(1).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=raragolist.get(1).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(raragolist.get(1).getpPrice().length() <6) {%>
+									<%=raragolist.get(1).getpPrice().substring(raragolist.get(1).getpPrice().length()-5,raragolist.get(1).getpPrice().length()-3) %>,<%=raragolist.get(1).getpPrice().substring(raragolist.get(1).getpPrice().length()-3,raragolist.get(1).getpPrice().length()) %>
+								<%}else{ %>
+									<%=raragolist.get(1).getpPrice().substring(raragolist.get(1).getpPrice().length()-6,raragolist.get(1).getpPrice().length()-3) %>,<%=raragolist.get(1).getpPrice().substring(raragolist.get(1).getpPrice().length()-3,raragolist.get(1).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -209,7 +227,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=raragolist.get(2).getpFile1()%>">
 						<div class="shoesBrand"><%=raragolist.get(2).getpBrandKr()%></div>
 						<div class="shoesName"><%=raragolist.get(2).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=raragolist.get(2).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(raragolist.get(2).getpPrice().length() <6) {%>
+									<%=raragolist.get(2).getpPrice().substring(raragolist.get(2).getpPrice().length()-5,raragolist.get(2).getpPrice().length()-3) %>,<%=raragolist.get(2).getpPrice().substring(raragolist.get(2).getpPrice().length()-3,raragolist.get(2).getpPrice().length()) %>
+								<%}else{ %>
+									<%=raragolist.get(2).getpPrice().substring(raragolist.get(2).getpPrice().length()-6,raragolist.get(2).getpPrice().length()-3) %>,<%=raragolist.get(2).getpPrice().substring(raragolist.get(2).getpPrice().length()-3,raragolist.get(2).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -218,7 +245,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=raragolist.get(3).getpFile1()%>">
 						<div class="shoesBrand"><%=raragolist.get(3).getpBrandKr()%></div>
 						<div class="shoesName"><%=raragolist.get(3).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=raragolist.get(3).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(raragolist.get(3).getpPrice().length() <6) {%>
+									<%=raragolist.get(3).getpPrice().substring(raragolist.get(3).getpPrice().length()-5,raragolist.get(3).getpPrice().length()-3) %>,<%=raragolist.get(3).getpPrice().substring(raragolist.get(3).getpPrice().length()-3,raragolist.get(3).getpPrice().length()) %>
+								<%}else{ %>
+									<%=raragolist.get(3).getpPrice().substring(raragolist.get(3).getpPrice().length()-6,raragolist.get(3).getpPrice().length()-3) %>,<%=raragolist.get(3).getpPrice().substring(raragolist.get(3).getpPrice().length()-3,raragolist.get(3).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -227,7 +263,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=raragolist.get(5).getpFile1()%>">
 						<div class="shoesBrand"><%=raragolist.get(5).getpBrandKr()%></div>
 						<div class="shoesName"><%=raragolist.get(5).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=raragolist.get(5).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(raragolist.get(5).getpPrice().length() <6) {%>
+									<%=raragolist.get(5).getpPrice().substring(raragolist.get(5).getpPrice().length()-5,raragolist.get(5).getpPrice().length()-3) %>,<%=raragolist.get(5).getpPrice().substring(raragolist.get(5).getpPrice().length()-3,raragolist.get(5).getpPrice().length()) %>
+								<%}else{ %>
+									<%=raragolist.get(5).getpPrice().substring(raragolist.get(5).getpPrice().length()-6,raragolist.get(5).getpPrice().length()-3) %>,<%=raragolist.get(5).getpPrice().substring(raragolist.get(5).getpPrice().length()-3,raragolist.get(5).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 			</div>
@@ -311,7 +356,18 @@
 							<img src="/shoerologue/resources/image/productdetail/<%=raragolist.get(i).getpFile1()%>">
 							<div class="shoesBrand" id="pBrandKr"><%=raragolist.get(i).getpBrandKr()%></div>
 							<div class="shoesName" id="pNameKr"><%=raragolist.get(i).getpNameKr()%></div>
-							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=raragolist.get(i).getpPrice()%></span><span class="won">원</span></div>
+							<div class="shoesPriceBox">
+								<span class="shoesPrice" id="pPrice">
+									<span class="pPrice" id="pPrice" name="pPrice">
+										<% if(raragolist.get(i).getpPrice().length() <6) {%>
+											<%=raragolist.get(i).getpPrice().substring(raragolist.get(i).getpPrice().length()-5,raragolist.get(i).getpPrice().length()-3) %>,<%=raragolist.get(i).getpPrice().substring(raragolist.get(i).getpPrice().length()-3,raragolist.get(i).getpPrice().length()) %>
+										<%}else{ %>
+											<%=raragolist.get(i).getpPrice().substring(raragolist.get(i).getpPrice().length()-6,raragolist.get(i).getpPrice().length()-3) %>,<%=raragolist.get(i).getpPrice().substring(raragolist.get(i).getpPrice().length()-3,raragolist.get(i).getpPrice().length()) %>
+										<% } %>
+									</span>
+								</span>
+								<span class="won">원</span>
+							</div>
 						</a>
 					</div>
 					<% } 
@@ -375,10 +431,9 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
 	        </ul>
 	      </div>
 		  <div class="col-4 col-sm-4 col-md-2 ">

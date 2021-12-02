@@ -302,7 +302,18 @@
 							<img src="/shoerologue/resources/image/productdetail/<%=womenlist.get(i).getpFile1()%>">
 							<div class="shoesBrand" id="pBrandKr"><%=womenlist.get(i).getpBrandKr()%></div>
 							<div class="shoesName" id="pNameKr"><%=womenlist.get(i).getpNameKr()%></div>
-							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=womenlist.get(i).getpPrice()%></span><span class="won">원</span></div>
+							<div class="shoesPriceBox">
+								<span class="shoesPrice" id="pPrice">
+									<span class="pPrice" id="pPrice" name="pPrice">
+										<% if(womenlist.get(i).getpPrice().length() <6) {%>
+											<%=womenlist.get(i).getpPrice().substring(womenlist.get(i).getpPrice().length()-5,womenlist.get(i).getpPrice().length()-3) %>,<%=womenlist.get(i).getpPrice().substring(womenlist.get(i).getpPrice().length()-3,womenlist.get(i).getpPrice().length()) %>
+										<%}else{ %>
+											<%=womenlist.get(i).getpPrice().substring(womenlist.get(i).getpPrice().length()-6,womenlist.get(i).getpPrice().length()-3) %>,<%=womenlist.get(i).getpPrice().substring(womenlist.get(i).getpPrice().length()-3,womenlist.get(i).getpPrice().length()) %>
+										<% } %>
+									</span>
+								</span>
+								<span class="won">원</span>
+							</div>
 						</a>
 					</div>
 					<% } 
@@ -369,7 +380,6 @@
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
 	        </ul>
 	      </div>
 		  <div class="col-4 col-sm-4 col-md-2 ">

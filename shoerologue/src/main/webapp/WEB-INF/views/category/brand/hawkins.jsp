@@ -191,7 +191,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=hawkinslist.get(10).getpFile1()%>">
 						<div class="shoesBrand"><%=hawkinslist.get(10).getpBrandKr()%></div>
 						<div class="shoesName"><%=hawkinslist.get(10).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=hawkinslist.get(10).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(hawkinslist.get(10).getpPrice().length() <6) {%>
+									<%=hawkinslist.get(10).getpPrice().substring(hawkinslist.get(10).getpPrice().length()-5,hawkinslist.get(10).getpPrice().length()-3) %>,<%=hawkinslist.get(10).getpPrice().substring(hawkinslist.get(10).getpPrice().length()-3,hawkinslist.get(10).getpPrice().length()) %>
+								<%}else{ %>
+									<%=hawkinslist.get(10).getpPrice().substring(hawkinslist.get(10).getpPrice().length()-6,hawkinslist.get(10).getpPrice().length()-3) %>,<%=hawkinslist.get(10).getpPrice().substring(hawkinslist.get(10).getpPrice().length()-3,hawkinslist.get(10).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -200,7 +209,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=hawkinslist.get(0).getpFile1()%>">
 						<div class="shoesBrand"><%=hawkinslist.get(0).getpBrandKr()%></div>
 						<div class="shoesName"><%=hawkinslist.get(0).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=hawkinslist.get(0).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(hawkinslist.get(0).getpPrice().length() <6) {%>
+									<%=hawkinslist.get(0).getpPrice().substring(hawkinslist.get(0).getpPrice().length()-5,hawkinslist.get(0).getpPrice().length()-3) %>,<%=hawkinslist.get(0).getpPrice().substring(hawkinslist.get(0).getpPrice().length()-3,hawkinslist.get(0).getpPrice().length()) %>
+								<%}else{ %>
+									<%=hawkinslist.get(0).getpPrice().substring(hawkinslist.get(0).getpPrice().length()-6,hawkinslist.get(0).getpPrice().length()-3) %>,<%=hawkinslist.get(0).getpPrice().substring(hawkinslist.get(0).getpPrice().length()-3,hawkinslist.get(0).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -209,7 +227,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=hawkinslist.get(20).getpFile1()%>">
 						<div class="shoesBrand"><%=hawkinslist.get(20).getpBrandKr()%></div>
 						<div class="shoesName"><%=hawkinslist.get(20).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=hawkinslist.get(20).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(hawkinslist.get(20).getpPrice().length() <6) {%>
+									<%=hawkinslist.get(20).getpPrice().substring(hawkinslist.get(20).getpPrice().length()-5,hawkinslist.get(20).getpPrice().length()-3) %>,<%=hawkinslist.get(20).getpPrice().substring(hawkinslist.get(20).getpPrice().length()-3,hawkinslist.get(20).getpPrice().length()) %>
+								<%}else{ %>
+									<%=hawkinslist.get(20).getpPrice().substring(hawkinslist.get(20).getpPrice().length()-6,hawkinslist.get(20).getpPrice().length()-3) %>,<%=hawkinslist.get(20).getpPrice().substring(hawkinslist.get(20).getpPrice().length()-3,hawkinslist.get(20).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -218,7 +245,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=hawkinslist.get(12).getpFile1()%>">
 						<div class="shoesBrand"><%=hawkinslist.get(12).getpBrandKr()%></div>
 						<div class="shoesName"><%=hawkinslist.get(12).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=hawkinslist.get(12).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(hawkinslist.get(12).getpPrice().length() <6) {%>
+									<%=hawkinslist.get(12).getpPrice().substring(hawkinslist.get(12).getpPrice().length()-5,hawkinslist.get(12).getpPrice().length()-3) %>,<%=hawkinslist.get(12).getpPrice().substring(hawkinslist.get(12).getpPrice().length()-3,hawkinslist.get(12).getpPrice().length()) %>
+								<%}else{ %>
+									<%=hawkinslist.get(12).getpPrice().substring(hawkinslist.get(12).getpPrice().length()-6,hawkinslist.get(12).getpPrice().length()-3) %>,<%=hawkinslist.get(12).getpPrice().substring(hawkinslist.get(12).getpPrice().length()-3,hawkinslist.get(12).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -227,7 +263,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=hawkinslist.get(5).getpFile1()%>">
 						<div class="shoesBrand"><%=hawkinslist.get(5).getpBrandKr()%></div>
 						<div class="shoesName"><%=hawkinslist.get(5).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=hawkinslist.get(5).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(hawkinslist.get(5).getpPrice().length() <6) {%>
+									<%=hawkinslist.get(5).getpPrice().substring(hawkinslist.get(5).getpPrice().length()-5,hawkinslist.get(5).getpPrice().length()-3) %>,<%=hawkinslist.get(5).getpPrice().substring(hawkinslist.get(5).getpPrice().length()-3,hawkinslist.get(5).getpPrice().length()) %>
+								<%}else{ %>
+									<%=hawkinslist.get(5).getpPrice().substring(hawkinslist.get(5).getpPrice().length()-6,hawkinslist.get(5).getpPrice().length()-3) %>,<%=hawkinslist.get(5).getpPrice().substring(hawkinslist.get(5).getpPrice().length()-3,hawkinslist.get(5).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 			</div>
@@ -311,7 +356,18 @@
 							<img src="/shoerologue/resources/image/productdetail/<%=hawkinslist.get(i).getpFile1()%>">
 							<div class="shoesBrand" id="pBrandKr"><%=hawkinslist.get(i).getpBrandKr()%></div>
 							<div class="shoesName" id="pNameKr"><%=hawkinslist.get(i).getpNameKr()%></div>
-							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=hawkinslist.get(i).getpPrice()%></span><span class="won">원</span></div>
+							<div class="shoesPriceBox">
+								<span class="shoesPrice" id="pPrice">
+									<span class="pPrice" id="pPrice" name="pPrice">
+										<% if(hawkinslist.get(i).getpPrice().length() <6) {%>
+											<%=hawkinslist.get(i).getpPrice().substring(hawkinslist.get(i).getpPrice().length()-5,hawkinslist.get(i).getpPrice().length()-3) %>,<%=hawkinslist.get(i).getpPrice().substring(hawkinslist.get(i).getpPrice().length()-3,hawkinslist.get(i).getpPrice().length()) %>
+										<%}else{ %>
+											<%=hawkinslist.get(i).getpPrice().substring(hawkinslist.get(i).getpPrice().length()-6,hawkinslist.get(i).getpPrice().length()-3) %>,<%=hawkinslist.get(i).getpPrice().substring(hawkinslist.get(i).getpPrice().length()-3,hawkinslist.get(i).getpPrice().length()) %>
+										<% } %>
+									</span>
+								</span>
+								<span class="won">원</span>
+							</div>
 						</a>
 					</div>
 					<% } 
@@ -375,10 +431,9 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
 	        </ul>
 	      </div>
 		  <div class="col-4 col-sm-4 col-md-2 ">

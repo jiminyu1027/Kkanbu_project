@@ -8,7 +8,6 @@
 <%
 	List<ProductVO> menlist = (List<ProductVO>)request.getAttribute("menlist");
 	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
-	Paging paging = (Paging)request.getAttribute("paging");
 %>
 <!DOCTYPE html>
 <html>
@@ -321,24 +320,7 @@
 				</div>
 				<hr>
 				<div class="page">	
-					<div style="display: block; text-align: center;">		
-						<c:if test="<%=paging.getStartPage() != 1 %>">
-							<a href="/shoerologue/category/gender/men.do?nowPage=<%=paging.getStartPage() -1 %>&cntPerPage=<%=paging.getCntPerPage() %>">&lt;</a>
-						</c:if>
-						<c:forEach begin="<%=paging.getStartPage() %>" end="<%=paging.getEndPage() %>" var="p">
-							<c:choose>
-								<c:when test="<%=paging.getStartPage() == paging.getNowPage() %>">
-									<b><%=paging.getStartPage() %></b>
-								</c:when>
-								<c:when test="<%=paging.getStartPage() != paging.getNowPage()%>">
-									<a href="/shoerologue/category/gender/men.do?nowPage=<%=paging.getStartPage() %>&cntPerPage=<%=paging.getCntPerPage() %>"><%=paging.getStartPage() %></a>
-								</c:when>
-							</c:choose>
-						</c:forEach>
-						<c:if test="<%=paging.getEndPage() !=paging.getLastPage() %>">
-							<a href="/shoerologue/category/gender/men.do?nowPage=<%=paging.getEndPage()+1 %>&cntPerPage=<%=paging.getCntPerPage() %>">&gt;</a>
-						</c:if>
-					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -377,7 +359,6 @@
 	          <li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
 	        </ul>
 	      </div>
 		  <div class="col-4 col-sm-4 col-md-2 ">

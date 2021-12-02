@@ -287,7 +287,18 @@
 							<img src="/shoerologue/resources/image/productdetail/<%=menlistdressshoes.get(i).getpFile1()%>">
 							<div class="shoesBrand" id="pBrandKr"><%=menlistdressshoes.get(i).getpBrandKr()%></div>
 							<div class="shoesName" id="pNameKr"><%=menlistdressshoes.get(i).getpNameKr()%></div>
-							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=menlistdressshoes.get(i).getpPrice()%></span><span class="won">원</span></div>
+							<div class="shoesPriceBox">
+								<span class="shoesPrice" id="pPrice">
+									<span class="pPrice" id="pPrice" name="pPrice">
+										<% if(menlistdressshoes.get(i).getpPrice().length() <6) {%>
+											<%=menlistdressshoes.get(i).getpPrice().substring(menlistdressshoes.get(i).getpPrice().length()-5,menlistdressshoes.get(i).getpPrice().length()-3) %>,<%=menlistdressshoes.get(i).getpPrice().substring(menlistdressshoes.get(i).getpPrice().length()-3,menlistdressshoes.get(i).getpPrice().length()) %>
+										<%}else{ %>
+											<%=menlistdressshoes.get(i).getpPrice().substring(menlistdressshoes.get(i).getpPrice().length()-6,menlistdressshoes.get(i).getpPrice().length()-3) %>,<%=menlistdressshoes.get(i).getpPrice().substring(menlistdressshoes.get(i).getpPrice().length()-3,menlistdressshoes.get(i).getpPrice().length()) %>
+										<% } %>
+									</span>
+								</span>
+								<span class="won">원</span>
+							</div>
 						</a>
 					</div>
 					<% } 
@@ -354,7 +365,6 @@
 	          <li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
 	        </ul>
 	      </div>
 		  <div class="col-4 col-sm-4 col-md-2 ">

@@ -191,7 +191,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=ggomoosinlist.get(10).getpFile1()%>">
 						<div class="shoesBrand"><%=ggomoosinlist.get(10).getpBrandKr()%></div>
 						<div class="shoesName"><%=ggomoosinlist.get(10).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=ggomoosinlist.get(10).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(ggomoosinlist.get(10).getpPrice().length() <6) {%>
+									<%=ggomoosinlist.get(10).getpPrice().substring(ggomoosinlist.get(10).getpPrice().length()-5,ggomoosinlist.get(10).getpPrice().length()-3) %>,<%=ggomoosinlist.get(10).getpPrice().substring(ggomoosinlist.get(10).getpPrice().length()-3,ggomoosinlist.get(10).getpPrice().length()) %>
+								<%}else{ %>
+									<%=ggomoosinlist.get(10).getpPrice().substring(ggomoosinlist.get(10).getpPrice().length()-6,ggomoosinlist.get(10).getpPrice().length()-3) %>,<%=ggomoosinlist.get(10).getpPrice().substring(ggomoosinlist.get(10).getpPrice().length()-3,ggomoosinlist.get(10).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -200,7 +209,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=ggomoosinlist.get(6).getpFile1()%>">
 						<div class="shoesBrand"><%=ggomoosinlist.get(6).getpBrandKr()%></div>
 						<div class="shoesName"><%=ggomoosinlist.get(6).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=ggomoosinlist.get(6).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(ggomoosinlist.get(6).getpPrice().length() <6) {%>
+									<%=ggomoosinlist.get(6).getpPrice().substring(ggomoosinlist.get(6).getpPrice().length()-5,ggomoosinlist.get(6).getpPrice().length()-3) %>,<%=ggomoosinlist.get(6).getpPrice().substring(ggomoosinlist.get(6).getpPrice().length()-3,ggomoosinlist.get(6).getpPrice().length()) %>
+								<%}else{ %>
+									<%=ggomoosinlist.get(6).getpPrice().substring(ggomoosinlist.get(6).getpPrice().length()-6,ggomoosinlist.get(6).getpPrice().length()-3) %>,<%=ggomoosinlist.get(6).getpPrice().substring(ggomoosinlist.get(6).getpPrice().length()-3,ggomoosinlist.get(6).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -209,7 +227,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=ggomoosinlist.get(9).getpFile1()%>">
 						<div class="shoesBrand"><%=ggomoosinlist.get(9).getpBrandKr()%></div>
 						<div class="shoesName"><%=ggomoosinlist.get(9).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=ggomoosinlist.get(9).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(ggomoosinlist.get(9).getpPrice().length() <6) {%>
+									<%=ggomoosinlist.get(9).getpPrice().substring(ggomoosinlist.get(9).getpPrice().length()-5,ggomoosinlist.get(9).getpPrice().length()-3) %>,<%=ggomoosinlist.get(9).getpPrice().substring(ggomoosinlist.get(9).getpPrice().length()-3,ggomoosinlist.get(9).getpPrice().length()) %>
+								<%}else{ %>
+									<%=ggomoosinlist.get(9).getpPrice().substring(ggomoosinlist.get(9).getpPrice().length()-6,ggomoosinlist.get(9).getpPrice().length()-3) %>,<%=ggomoosinlist.get(9).getpPrice().substring(ggomoosinlist.get(9).getpPrice().length()-3,ggomoosinlist.get(9).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -218,7 +245,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=ggomoosinlist.get(2).getpFile1()%>">
 						<div class="shoesBrand"><%=ggomoosinlist.get(2).getpBrandKr()%></div>
 						<div class="shoesName"><%=ggomoosinlist.get(2).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=ggomoosinlist.get(2).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(ggomoosinlist.get(2).getpPrice().length() <6) {%>
+									<%=ggomoosinlist.get(2).getpPrice().substring(ggomoosinlist.get(2).getpPrice().length()-5,ggomoosinlist.get(2).getpPrice().length()-3) %>,<%=ggomoosinlist.get(2).getpPrice().substring(ggomoosinlist.get(2).getpPrice().length()-3,ggomoosinlist.get(2).getpPrice().length()) %>
+								<%}else{ %>
+									<%=ggomoosinlist.get(2).getpPrice().substring(ggomoosinlist.get(2).getpPrice().length()-6,ggomoosinlist.get(2).getpPrice().length()-3) %>,<%=ggomoosinlist.get(2).getpPrice().substring(ggomoosinlist.get(2).getpPrice().length()-3,ggomoosinlist.get(2).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 				<div class="bestPd">
@@ -227,7 +263,16 @@
 						<img src="/shoerologue/resources/image/productdetail/<%=ggomoosinlist.get(0).getpFile1()%>">
 						<div class="shoesBrand"><%=ggomoosinlist.get(0).getpBrandKr()%></div>
 						<div class="shoesName"><%=ggomoosinlist.get(0).getpNameKr()%></div>
-						<div class="shoesPriceBox"><span class="shoesPrice"><%=ggomoosinlist.get(0).getpPrice()%></span><span class="won">원</span></div>
+						<div class="shoesPriceBox">
+							<span class="shoesPrice">
+								<% if(ggomoosinlist.get(0).getpPrice().length() <6) {%>
+									<%=ggomoosinlist.get(0).getpPrice().substring(ggomoosinlist.get(0).getpPrice().length()-5,ggomoosinlist.get(0).getpPrice().length()-3) %>,<%=ggomoosinlist.get(0).getpPrice().substring(ggomoosinlist.get(0).getpPrice().length()-3,ggomoosinlist.get(0).getpPrice().length()) %>
+								<%}else{ %>
+									<%=ggomoosinlist.get(0).getpPrice().substring(ggomoosinlist.get(0).getpPrice().length()-6,ggomoosinlist.get(0).getpPrice().length()-3) %>,<%=ggomoosinlist.get(0).getpPrice().substring(ggomoosinlist.get(0).getpPrice().length()-3,ggomoosinlist.get(0).getpPrice().length()) %>
+								<% } %>
+							</span>
+							<span class="won">원</span>
+						</div>
 					</a>
 				</div>
 			</div>
@@ -311,7 +356,18 @@
 							<img src="/shoerologue/resources/image/productdetail/<%=ggomoosinlist.get(i).getpFile1()%>">
 							<div class="shoesBrand" id="pBrandKr"><%=ggomoosinlist.get(i).getpBrandKr()%></div>
 							<div class="shoesName" id="pNameKr"><%=ggomoosinlist.get(i).getpNameKr()%></div>
-							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=ggomoosinlist.get(i).getpPrice()%></span><span class="won">원</span></div>
+							<div class="shoesPriceBox">
+								<span class="shoesPrice" id="pPrice">
+									<span class="pPrice" id="pPrice" name="pPrice">
+										<% if(ggomoosinlist.get(i).getpPrice().length() <6) {%>
+											<%=ggomoosinlist.get(i).getpPrice().substring(ggomoosinlist.get(i).getpPrice().length()-5,ggomoosinlist.get(i).getpPrice().length()-3) %>,<%=ggomoosinlist.get(i).getpPrice().substring(ggomoosinlist.get(i).getpPrice().length()-3,ggomoosinlist.get(i).getpPrice().length()) %>
+										<%}else{ %>
+											<%=ggomoosinlist.get(i).getpPrice().substring(ggomoosinlist.get(i).getpPrice().length()-6,ggomoosinlist.get(i).getpPrice().length()-3) %>,<%=ggomoosinlist.get(i).getpPrice().substring(ggomoosinlist.get(i).getpPrice().length()-3,ggomoosinlist.get(i).getpPrice().length()) %>
+										<% } %>
+									</span>
+								</span>
+								<span class="won">원</span>
+							</div>
 						</a>
 					</div>
 					<% } 
@@ -375,10 +431,9 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">FAQs</a></li>
 	        </ul>
 	      </div>
 		  <div class="col-4 col-sm-4 col-md-2 ">
