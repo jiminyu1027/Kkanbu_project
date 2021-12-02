@@ -13,7 +13,6 @@ import edu.study.service.GenderService;
 import edu.study.vo.ProductVO;
 import edu.study.domain.Criteria;
 import edu.study.domain.PageMaker;
-import edu.study.domain.Paging;
 
 @RequestMapping(value="/category/gender")
 @Controller

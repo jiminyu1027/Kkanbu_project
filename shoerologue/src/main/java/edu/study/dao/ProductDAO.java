@@ -26,8 +26,8 @@ public class ProductDAO {
 			System.out.println("g"+g);
 			return  pt;
 		}
-		
-		public ProductVO productsize(int pidx) throws Exception{
+
+		public ProductVO price(int pidx) throws Exception{
 			return (ProductVO) sqlSession.selectList(Namespace+".productsize", pidx);
 			
 		}

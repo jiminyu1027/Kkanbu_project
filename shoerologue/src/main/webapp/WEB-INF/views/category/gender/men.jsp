@@ -304,7 +304,12 @@
 							<img src="/shoerologue/resources/image/productdetail/<%=menlist.get(i).getpFile1()%>">
 							<div class="shoesBrand" id="pBrandKr"><%=menlist.get(i).getpBrandKr()%></div>
 							<div class="shoesName" id="pNameKr"><%=menlist.get(i).getpNameKr()%></div>
-							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=menlist.get(i).getpPrice()%></span><span class="won">원</span></div>
+							<div class="shoesPriceBox">
+								<span class="shoesPrice" id="pPrice">
+									<%=menlist.get(i).getpPrice()%>
+								</span>
+								<span class="won">원</span>
+							</div>
 						</a>
 					</div>
 					<% } 

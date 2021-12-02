@@ -37,8 +37,6 @@
 			$(function(){
 				$(".pdSmImgeBox a").click(function(){
 					$(".pdImage").attr("src",$(this).attr('href'));
-					$(".pdSmImgeBox a").css("border","none");
-					$(this).css("border","1px solid black");
 					return false;
 				});
 			});
@@ -51,19 +49,13 @@
 				return false;
 				});
 			});
- 
         </script>
-		
-		<!-- 상품 이미지 페이지 없을시 숨기기 -->
-		<script>
-		</script>
-		
-</head>
-	<body>
-		<div class="container">
+	</head>
+		<body>
+			<div class="container">
 				<nav class="navbar navbar-expand-lg navbar-light topNav">
-				      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
-				      <ul class="nav justify-content-end"> 
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+					<ul class="nav justify-content-end"> 
 			      <!-- 로그인 안했을때 -->
 			      <c:if test="${member == null}">
 						  <li class="nav-item">
@@ -83,8 +75,8 @@
 						  </li>
 					</c:if>
 					</ul>
-					</nav>
-				</div>
+				</nav>
+			</div>
 		
 		<!-- 로고, 검색창, 마이페이지 -->
 		<div class="container psts">
@@ -282,10 +274,14 @@
 								<div class="pTitle" id="pNameKr" name="pNameKr"><%=pvo.getpNameKr() %></div>
 								<div class="pContents" id="pNameEng" name="pNameEng"><%=pvo.getpNameEng() %></div>
 								<br>
-								<span class="pPrice" id="pPrice" name="pPrice"><%=pvo.getpPrice() %></span><span>원</span>
+								<span class="pPrice" id="pPrice" name="pPrice">
+									<%=pvo.getpPrice() %>
+								</span>
+								<span>원</span>
 							</div>
 							<div class="hr2"></div>
 							<!-- 상품 컬러 -->
+							<!-- 
 							<div class="pdColor">
 								<table>
 									<tr>
@@ -306,54 +302,53 @@
 								</table>
 							</div>
 							<hr>
-							<div>
+							-->
+							<!-- 상품 정보 -->
+							<div class="productInfo">
 								<table>
 									<tr>
-										<th height=45>통합멤버십 혜택</th>
+										<th height=50>통합멤버십 혜택</th>
 										<td><span class="blackBold">멤버십 회원 가입 시 <span class="redBold">5,000</span>P 즉시 적립</span></td>
 									</tr>
 									<tr>
-										<th height=45>카드 혜택</th>
+										<th height=50>카드 혜택</th>
 										<td><span class="blackBold">무이자 할부</span>
 											<a href="#"><span class="redUnderline">혜택보기 ></span></a>
 										</td>
 									</tr>
 									<tr>
-										<th height=45>색상코드</th>
+										<th height=50>색상코드</th>
 										<td><span class="pColor" id="pColor"><%=pvo.getpColor() %></span></td>
 									</tr>
 									<tr>
 										<th>사이즈</th>
 										<td>
-											<button class="productSizeBtn" value ="210">210</button>
-											<button class="productSizeBtn" value ="220">220</button>
-											<button class="productSizeBtn" value ="230">230</button>
-											<button class="productSizeBtn" value ="240">240</button>
-											<button class="productSizeBtn" value ="250">250</button>
-										</td>
-									</tr>
-									<tr>
-										<th></th>
-										<td>	
-											<button class="productSizeBtn" value ="260">260</button>
-											<button class="productSizeBtn" value ="270">270</button>
-											<button class="productSizeBtn" value ="280">280</button>
-											<button class="productSizeBtn" value ="290">290</button>
-											<button class="productSizeBtn" value ="300">300</button>
-											<button class="productSizeBtn" value ="310">310</button>
+											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(0,3) %>"><%=pvo.getpSize().substring(0,3) %></button>
+											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(4,7) %>"><%=pvo.getpSize().substring(4,7) %></button>
+											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(8,11) %>"><%=pvo.getpSize().substring(8,11) %></button>
+											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(12,15) %>"><%=pvo.getpSize().substring(12,15) %></button>
+											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(16,19) %>"><%=pvo.getpSize().substring(16,19) %></button>
+											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(20,23) %>"><%=pvo.getpSize().substring(20,23) %></button>
+										
+											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(24,27) %>"><%=pvo.getpSize().substring(24,27) %></button>
+											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(28,31) %>"><%=pvo.getpSize().substring(28,31) %></button>
 										</td>
 									</tr>
 								</table>
 							</div>
 							<hr>
+							<table>
+								<tr>
+									<td><div class="hereSize"></div></td>
+								</tr>
+							</table>
 								<div class="productPaymentBox">
 									<div class="productTotalPriceBox">
 										<table>
 											<th height=100>총 결제금액</th>
 											<td>
-												<div class="hereSize"></div>
 												<div class="totalPriceRight">
-													<span class="productTotalPrice" pattern="#,###,###"></span>&nbsp;<span>원</span>
+													<span class="productTotalPrice" pattern="###,###,###"></span>&nbsp;<span>원</span>
 												</div>
 											</td>
 										</table>

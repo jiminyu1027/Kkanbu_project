@@ -25,12 +25,6 @@ public class ProductServiceImpl implements ProductService{
 		return ProductDao.detail(pidx);
 	}
 
-	@Override
-	public ProductVO productsize(int pidx) throws Exception {
-		return ProductDao.productsize(pidx);
-	}
-
-	
 
 	
 

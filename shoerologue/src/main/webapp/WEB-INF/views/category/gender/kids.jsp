@@ -292,7 +292,12 @@
 							<img src="/shoerologue/resources/image/productdetail/<%=kidslist.get(i).getpFile1()%>">
 							<div class="shoesBrand" id="pBrandKr"><%=kidslist.get(i).getpBrandKr()%></div>
 							<div class="shoesName" id="pNameKr"><%=kidslist.get(i).getpNameKr()%></div>
-							<div class="shoesPriceBox"><span class="shoesPrice" id="pPrice"><%=kidslist.get(i).getpPrice()%></span><span class="won">원</span></div>
+							<div class="shoesPriceBox">
+								<span class="shoesPrice" id="pPrice">
+									<%=kidslist.get(i).getpPrice().substring(kidslist.get(i).getpPrice().length()-5,kidslist.get(i).getpPrice().length()-3) %>,<%=kidslist.get(i).getpPrice().substring(kidslist.get(i).getpPrice().length()-3,kidslist.get(i).getpPrice().length()) %>
+								</span>
+								<span class="won">원</span>
+							</div>
 						</a>
 					</div>
 					<% } 

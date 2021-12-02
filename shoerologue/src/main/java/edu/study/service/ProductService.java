@@ -11,6 +11,5 @@ public interface ProductService {
 
 	ProductVO detail(int pidx) throws Exception;
 	
-	ProductVO productsize(int pidx) throws Exception;
 
 }

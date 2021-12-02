@@ -11,10 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.study.domain.Criteria;
 import edu.study.domain.PageMaker;
-import edu.study.domain.Paging;
 import edu.study.service.BrandService;
-import edu.study.service.GenderService;
-import edu.study.service.ProductService;
 import edu.study.vo.ProductVO;
 
 @RequestMapping(value="/category")
