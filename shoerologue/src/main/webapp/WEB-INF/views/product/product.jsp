@@ -43,8 +43,8 @@
 		</script>
         <script>
 			$(document).ready( function() {
-				$(".productSizeBtn").one(function(){
-					 $(".hereSize").append($(this).attr('value')," / ");
+				$(".productSizeBtn").click(function(){
+					/* $(".hereSize").append($(this).attr('value')," / ");*/
 					 $(".productTotalPrice").append(<%=pvo.getpPrice()%>);
 				return false;
 				});
