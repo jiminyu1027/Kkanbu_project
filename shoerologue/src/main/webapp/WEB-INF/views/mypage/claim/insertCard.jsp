@@ -253,7 +253,7 @@
 						class="nav-link dropdown-toggle fw-bolder text-white"
 						data-bs-toggle="dropdown" href="#" role="button"
 						aria-expanded="false">MEN</a>
-						<ul class="dropdown-menu  dropDownMenu mt-2">
+						<ul class="dropdown-menu  dropDownMenu ">
 							<li><a class="dropdown-item fw-bolder" href="#">MEN</a></li>
 							<li><hr class="dropdown-divider "></li>
 							<li><a class="dropdown-item" href="#">운동화</a></li>
@@ -267,7 +267,7 @@
 						class="nav-link dropdown-toggle fw-bolder text-white"
 						data-bs-toggle="dropdown" href="#" role="button"
 						aria-expanded="false">WOMEN</a>
-						<ul class="dropdown-menu  dropDownMenu mt-2">
+						<ul class="dropdown-menu  dropDownMenu ">
 							<li><a class="dropdown-item fw-bolder" href="#">WOMEN</a></li>
 							<li><hr class="dropdown-divider"></li>
 							<li><a class="dropdown-item" href="#">운동화</a></li>
@@ -281,7 +281,7 @@
 						class="nav-link dropdown-toggle fw-bolder text-white"
 						data-bs-toggle="dropdown" href="#" role="button"
 						aria-expanded="false">KIDS</a>
-						<ul class="dropdown-menu  dropDownMenu mt-2">
+						<ul class="dropdown-menu  dropDownMenu ">
 							<li><a class="dropdown-item fw-bolder" href="#">KIDS</a></li>
 							<li><hr class="dropdown-divider"></li>
 							<li><a class="dropdown-item" href="#">운동화</a></li>
@@ -660,7 +660,7 @@
 							<b>HELP</b>
 						</h5>
 						<ul class="nav flex-column">
-							<li class="nav-item mb-2"><a href="#"
+							<li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do"
 								class="nav-link p-0 text-muted">고객센터</a></li>
 							<li class="nav-item mb-2"><a href="#"
 								class="nav-link p-0 text-muted">입점문의</a></li>
