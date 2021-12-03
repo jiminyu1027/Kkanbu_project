@@ -41,5 +41,11 @@
 	<delete id="del">
 		DELETE FROM cart WHERE ctidx=#{ctidx}
 	</delete>
+	
+	<!-- 장바구니 담기 -->
+	<insert id="cart">
+		INSERT INTO cart(ctidx, mId, midx, pidx, amount) 
+		VALUES (ctidx_seq.nextval, #{mId}, #{midx}, #{pidx}, #{amount})
+	</insert>
   	
 </mapper>

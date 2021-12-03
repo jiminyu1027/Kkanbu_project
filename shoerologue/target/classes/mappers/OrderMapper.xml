@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="edu.study.mapper.OrderMapper">
+		<!-- 카트 목록 -->
+  	<select id="list" resultType="OrderVO" parameterType="int">
+   		 SELECT *
+   		 	FROM ordered o, product p, member m, cart c 
+  		 	WHERE o.midx=m.midx AND o.pidx=p.pidx AND o.midx=#{midx}
+	 	ORDER BY oidx 
+  	</select> 
+  
+  	
+</mapper>

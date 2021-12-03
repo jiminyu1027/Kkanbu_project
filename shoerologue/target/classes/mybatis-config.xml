@@ -12,6 +12,7 @@
          <typeAlias type="edu.study.vo.HotProductVO" alias="HotProductVO"/>
          <typeAlias type="edu.study.vo.CartVO" alias="CartVO"/>
          <typeAlias type="edu.study.vo.AddressVO" alias="AddressVO"/>
+         <typeAlias type="edu.study.vo.OrderVO" alias="OrderVO"/>
     </typeAliases>
 
 </configuration>

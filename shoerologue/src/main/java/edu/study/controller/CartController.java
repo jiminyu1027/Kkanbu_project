@@ -24,6 +24,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import edu.study.service.CartService;
 import edu.study.vo.CartVO;
 import edu.study.vo.MemberVO;
+import edu.study.vo.OrderVO;
 import edu.study.vo.ProductVO;
 
 @RequestMapping(value="/cart")
@@ -59,6 +60,7 @@ public class CartController {
 			model.addAttribute("fee", fee);
 			model.addAttribute("allSum", allSum);
 			
+			
 			return "/cart/cart";
 		}else {
 			return "redirect:/login.do";
@@ -80,6 +82,8 @@ public class CartController {
 		
 			return"redirect:/cart/cart.do";
 	}
+	
+	
 	
 }
 

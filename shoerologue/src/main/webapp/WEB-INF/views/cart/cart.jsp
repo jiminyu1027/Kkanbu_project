@@ -37,52 +37,10 @@
 		}
 	</style>
 	<script type="text/javascript">
-	$(function(){
-	    var listAll = $("input[type='checkbox'].chk");    //전체 클릭하는 엘리먼트에 .agreechkAll 클랙스가 추가되어야 한다.
-	    var list = $("input[type='checkbox'].chkBox");    //각각 클릭하는 엘리먼트에 .chack 클랙스가 추가되어야 한다.
-	    var common = {
-	        allCheck : function(e){ 
-	        	//alert("ttttt");
-	            if($(e.target).prop("checked") === true) { 
-	                //해당화면에 전체 checkbox들을 체크한다 
-	                list.prop("checked",true);
-	            } else if($(e.target).prop("checked") === false){
-	                //해당화면에 모든 checkbox들의 체크를해제 한다. 
-	                list.prop("checked",false);
-	            }
-	        },
-	        check : function(e){
-	        	console.log(e.target);
-	        	if($(e.target).prop("checked") == true){
-	                $(e.target).prop("checked", true);
-	            }else{
-	            	//console.log("check nono");
-	            	$(e.target).prop("checked", false);
-	            }
-	        	
-	        	//alert("ddddd");
-	        	//alert($("input:checkbox[name='shoes'][0]"));
-	            if($(e.target).prop("checked") === true){
-	                $(e.target).prop("checked", true)
-	            }
-	            if($(e.target).prop("checked") === false){
-	            	//alert("aaaaa");
-	                $(e.target).prop("checked", false)
-	                listAll.prop('checked', false);
-	            }
-	            // 각자 하나씩 선택시 자동으로 전채선태도 활성화 시키기
-	            var size = list.filter(':checked').length;
-	                if(size == list.length) {
-	                    listAll.prop("checked", true);
-	                } else {
-	                    listAll.prop("checked", false);
-	                }
-	                
-	            }
-	        }
 
-	    $('.allThingBox').on('click','.chk', common.allCheck)
-	    $('.check').on('click','.chkBox', common.check)
+
+	    
+
 	</script>
 	
 	
@@ -270,50 +228,50 @@
 		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
 		
 		<!-- 마이페이지 메인 -->
-		<div class="sectionBox" style="width:80%">
-		<form name="frm" id="frm" method="post" action="">
+	<div class="sectionBox" style="width:80%">
+		<form name="frm" id="frm" method="POST" action="cart.do">
 			<span  class="text-left">장바구니
-			<span id="insertCount" name="insertCount">(<%=list.size() %>)</span>
+				<span id="insertCount" name="insertCount">(<%=list.size() %>)</span>
 			</span>	
-			<!--cart nav -->
-			<div class="cartBox1 mt-5">
-				<div class="check-box my-3">
-					<div class="allThingBox">
+		<!--cart nav -->
+		<div class="cartBox1 mt-5">
+			<div class="check-box my-3">
+				<div class="allThingBox">
 					<input type="checkbox" id="allThing" class="mx-1 chk" name="allThing" checked>
 					<label for="allThing" ></label>
 					<span class="checkText">전체선택</span>
-					<div class="right-text">
-					<button class="zzim"><i class="bi bi-heart bicon" style="color:#FF0000"></i>선택 찜하기</button>
-					<button class="Del_btn" id="Del_btn" onclick="location.href='/cart/cartdel.do'"><i class="bi bi-trash bicon"></i>선택 삭제</button>
-					<script>
-// 					$(".Del_btn").click(function(){
-// 						var confirm_val = confirm("삭제하시겠습니까?");
-						
-// 						if(confirm_val){
-// 							var checkArr = new Array();
-							
-// 							$("input[class='chBox']:checked").each(function(){
-// 								checkArr.push($(this).attr("data-ctidx"));
-// 							});
-// 							$.ajax({
-// 								url:"/cart/del",
-// 								type:"post",
-// 								data: { chBox : checkArr },
-// 								success : function(result){
-// 									if(result == 1){
-// 										location.href="/cart/cart";
-// 									}	else {
-// 										alert("삭제실패!");
-// 									}
-// 								}
-// 							});
+				<div class="right-text">
+					<button class="zzim" ><i class="bi bi-heart bicon" style="color:#FF0000"></i>선택 찜하기</button>
+					<button class="Del_btn" id="Del_btn" ><i class="bi bi-trash bicon"></i>선택 삭제</button>
+			<script>
+// 			$(".Del_btn").click(function(){
+// 				var confirm_val = confirm("삭제하시겠습니까?");
+				
+// 				if(confirm_val){
+// 					var checkArr = new Array();
+					
+// 					$("input[class='chkBox']:checked").each(function(){
+// 						checkArr.push($(this).attr("data-ctidx"));
+// 					});
+// 					$.ajax({
+// 						url:"/cart/del",
+// 						type:"post",
+// 						data: { chkBox : checkArr },
+// 						success : function(result){
+// 							if(result == 1){
+// 								location.href="/cart/cart";
+// 							}	else {
+// 								alert("삭제실패!");
+// 							}
 // 						}
 // 					});
-					</script>
-					</div>
+// 				}
+// 			});
+			</script>
 				</div>
 			</div>
 		</div>
+	</div>
 		<!-- 장바구니 상품이 없을 경우 -->
 		<c:if test="${list.size()==0}">
 			<div class="cartNoItem">
@@ -334,7 +292,7 @@
 					%>
 						<tr>
 							<td class="check" id="<%=list.get(i).getPidx()%>">
-								<input type="checkbox" name="shoes" class="chkBox" id="checks<%=list.get(i).getPidx()%>" value="<%=list.get(i).getPidx()%>"  checked>
+								<input type="checkbox" name="shoes" class="chkBox" id="checks<%=list.get(i).getPidx()%>" value="<%=list.get(i).getPidx()%>" checked>
 								<label for="checks<%=list.get(i).getPidx()%>"></label>
 							</td>
 							<td class="imgSize" >
@@ -396,10 +354,9 @@
 			<div class="paymentBox d-flex justify-content-evenly align-items-center">
 				<div class="paymentBox2">
 					<span class="paymentLabel">상품금액</span>
-					<span class="price" id="totalPrice" name="totalPrice" >
-					<%=totalPrice %>
-					
-					<span class="won">원</span>
+					<span class="price" id="total" name="totalPrice" >
+						<span class="totalPrice" id="totalPrice"><fmt:formatNumber><%=totalPrice %></fmt:formatNumber></span>
+						<span class="won" id="won1">원</span>
 					</span>
 				</div>
 				<i class="bi bi-dash-circle" style="font-size:2rem; color:red;"></i>
@@ -420,9 +377,9 @@
 				<img src="/shoerologue/resources/image/symbol/equal.png" class="equalIcon">
 				<div  class="paymentBox2">
 					<span class="paymentValue">결제금액</span>
-					<span class="price" id="totalPay">
-					<fmt:formatNumber><%=allSum+fee%></fmt:formatNumber>
-					<span class="won">원</span>
+					<span class="price" id="total">
+						<span class="totalPay" id="totalPay"><fmt:formatNumber><%=allSum+fee%></fmt:formatNumber></span>
+						<span class="won" id="won2">원</span>
 					</span>
 				</div>
 			</div>
@@ -459,8 +416,33 @@
 	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill top fixed" viewBox="0 0 16 16">
 	  <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
 	</svg></a>
-		<script type="text/javascript">
-	
+
+	<script type="text/javascript">
+
+	$(document).ready(function() {
+        // 전체선택 클릭 시
+        $("input:checkbox[name='allThing']").click(function() {
+            if($("input:checkbox[name='allThing']").is(":checked") == true) {
+                $("input:checkbox[name='shoes']").prop("checked", true);
+            } else {
+                $("input:checkbox[name='shoes']").prop("checked", false);
+            }
+        });
+
+        // 체크박스 클릭 시
+        $("input:checkbox[name='shoes']").click(function() {
+            var allCnt = $("input:checkbox[name='shoes']").length;         // 전체갯수
+            var selCnt = $("inupt:checkbox[name='shoes']:checked").length; // 선택갯수
+
+            if(allCnt != selCnt) {
+                $("input:checkbox[name='allThing']").prop("checked", false);
+            }else{
+            	 $("input:checkbox[name='allThing']").prop("checked", true);
+            }
+        });
+    });
+
+		
 	//수량 plus
 	function plus(cnt,amount,i){
 		cnt  *= 1;
@@ -499,27 +481,29 @@
 		return;
 	}
 	
-	function count(){
+		function count(){
 		var cnt = document.getElementsByName('cnt').value;
-		console.log("cnt:"+document.getElementsByName('cnt').value);
+		//console.log("cnt:"+document.getElementsByName('cnt').value);
 		let sum=0;
 		for(let i=0; i<cnt; i++){
 			 alert(document.getElementsByName('cnt')[i].innerHTML);
 		}
 		return;
 	}
-	
-	
-	
-	//상품금액 합
+		
+	//선택 상품금액 합 
 	function autoCalc(){
 		
 		var totalCnt = document.getElementsByName('cnt').length;
 		//alert("총리스트수"+totalCnt);
+		var count = $('.chkBox').length;
+		//alert(count);
 		let sum = 0;
 		  for(let i = 0; i < totalCnt; i++)  {
-			  //alert(document.getElementsByName('pPrice')[i].innerHTML.replace(",",""));
-		    sum = sum + parseInt(document.getElementsByName('pPrice')[i].innerHTML.replaceAll(",",""));
+			  if($(".chkBox")[i].checked == true){
+				  sum = sum + parseInt(document.getElementsByName('pPrice')[i].innerHTML.replaceAll(",",""));
+			  }
+			  //alert(document.getElementsByName('pPrice')[i].innerHTML.replace(",",""));    
 	  }
 		//alert(sum);
 		document.getElementById('totalPrice').innerText = comma(sum);		
@@ -531,63 +515,26 @@
 	//전체금액 합계
 	function allSum(){
 		var fee = Number('<%=fee%>');
-		var totalPrice = Number(document.getElementById('totalPrice').textContent.replaceAll(",",""));
+		var totalPrice = parseInt(document.getElementById('totalPrice').textContent.replaceAll(",",""));
+		console.log(fee);
+		console.log(totalPrice);
 		
 		var sum = 0;  
 		sum = fee+totalPrice;
 		
 		document.getElementById('totalPay').innerText = comma(sum);	
+		//console.log(sum);
 		return;
 	}
-	/*
-	function comma(n) 
-	{
-	    var reg = /(^[+-]?\d+)(\d{3})/;   // 정규식
-	    n += '';                          // 숫자를 문자열로 변환
-	    while (reg.test(n))
-	    {
-	    n = n.replace(reg, '$1' + ',' + '$2');
-	    }
-	    return n;
-	}
-	*/
+	
+	//콤마 정규식
 		function comma(str) { 
 			 str = String(str); 
 			  str = str.replace(/[^\d]+/g, ''); // 숫자만 남김 
 			  return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'); 
 		}
 	
-	/*
-	
-	
-	// 정규식을 이용한 숫자 3자리마다 콤마(,)를 입력 
-function money_comma(str) { 
-  str = Number(str); 
-  str = str.replace(/[^\d]+/g, ''); // 숫자만 남김 
-  return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'); 
-} 
 
-// 정규식을 이용한 숫자만 추출 
-function money_uncomma(str) { 
-  str = Number(str); 
-  return str.replace(/[^\d]+/g, ''); 
-}
-
-// 금액값 입력 
-var money = 25763000;
-
-// 콤마 입력
-console.log(money_comma(money));
-
-// 결과값 
-// 25,763,000
-
-// 콤마 제거
-console.log(money_uncomma(money_comma(money));
-
-// 결과값 
-// 25763000
-	*/
 	
 	</script>	
 	

@@ -66,7 +66,6 @@ public class CartServiceImple implements CartService{
 		return CartDao.sumMoney(midx);
 	}
 
-
 	
 }
 

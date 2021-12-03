@@ -8,7 +8,7 @@ import edu.study.vo.ProductVO;
 
 public interface CartService {
 
-	public void insert(CartVO cvo) throws Exception;
+	void insert(CartVO cvo) throws Exception;
 	List<CartVO> list(int midx) throws Exception;
 	public void del(int ctidx) throws Exception;
 	public void dellAll(String mId) throws Exception;
