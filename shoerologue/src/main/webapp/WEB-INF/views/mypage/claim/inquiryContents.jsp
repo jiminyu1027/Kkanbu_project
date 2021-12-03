@@ -304,8 +304,8 @@
 		<input type="hidden" name="qidx" value="<%=ivo.getQidx() %>">	
 			<table>
 				<colgroup>
-					<col style="width:70%;">
-					<col style="width:15%;">
+					<col style="width:65%;">
+					<col style="width:20%;">
 					<col style="width:15%;">
 				</colgroup>
 				<thead style="border-top:2px solid black; border-bottom:2px solid gray; height:70px;">
@@ -320,7 +320,7 @@
 					<tr>
 						<td colspan="3">
 						 	<%=ivo.getqContents() %>
-						 	<img src="/resources/image/KAKAO.png" class="d-block w-100" alt="카카오페이 결제시 3천원 할인 이벤트" style="width:100%; height:500px;">
+						 	<img src="<%=ivo.getqFile() %>" class="d-block w-100" alt="카카오페이 결제시 3천원 할인 이벤트" style="width:100%; height:500px;">
 						</td>
 					</tr>
 					<tr><td style="border-bottom:1px solid gray; height:30px;" colspan="3"></td></tr>	

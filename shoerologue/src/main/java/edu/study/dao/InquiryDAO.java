@@ -37,8 +37,8 @@ public class InquiryDAO {
 		return sqlSession.selectOne(Namespace+".detail",qidx);
 	}
 	
-	public void delete(int qidx) throws Exception{
+	public void update(int qidx) throws Exception{
 		
-		sqlSession.delete(Namespace+".delete",qidx);
+		sqlSession.delete(Namespace+".update",qidx);
 	}
 }

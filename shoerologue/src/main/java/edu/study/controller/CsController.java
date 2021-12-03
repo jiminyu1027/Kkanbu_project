@@ -41,7 +41,11 @@ public class CsController {
 	}
 	
 	@RequestMapping(value="/event.do")
-	public String event(Locale locale,Model model) throws Exception{
+	public String event(Locale locale,Model model,int nidx) throws Exception{
+		
+		NoticeVO nvo = NoticeService.detail(nidx);
+		
+		model.addAttribute("nvo",nvo);
 		
 		return "/customerService/event";
 	}

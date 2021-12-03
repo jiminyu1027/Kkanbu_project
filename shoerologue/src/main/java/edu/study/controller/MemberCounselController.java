@@ -55,7 +55,7 @@ public class MemberCounselController {
 	public String delete(Locale locale,Model model,@RequestParam("qidx") int qidx) throws Exception{
 		
 				
-		InquiryService.delete(qidx);
+		InquiryService.update(qidx);
 		
 		return "redirect:/mypage/memberCounsel/inquiry.do";
 	}

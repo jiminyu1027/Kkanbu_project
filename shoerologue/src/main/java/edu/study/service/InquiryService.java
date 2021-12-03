@@ -15,5 +15,5 @@ public interface InquiryService {
 	
 	InquiryVO detail(int qidx) throws Exception;
 	
-	void delete(int qidx) throws Exception;
+	void update(int qidx) throws Exception;
 }

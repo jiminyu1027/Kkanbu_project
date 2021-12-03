@@ -39,8 +39,8 @@ public class InquiryServiceImpl implements InquiryService {
 	}
 	
 	@Override
-	public void delete(int qidx) throws Exception{
+	public void update(int qidx) throws Exception{
 		
-		InquiryDao.delete(qidx);
+		InquiryDao.update(qidx);
 	}
 }
