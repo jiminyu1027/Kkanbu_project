@@ -292,7 +292,6 @@
 			</thead>
 			<tbody>
 				<tr><td style="height:20px;"></td></tr>
-				<tr><td style="font-size:25px; font-weight:bold; height:80px;">문의유형 : ~</td></tr>
 				<tr>
 					<td colspan="3">
 					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다

@@ -164,7 +164,7 @@
 		    color:#fff;
 		}
 		</style>
-		<script src="/js/jquery-3.6.0.min.js"></script>		
+		<script src="../js/jquery-3.6.0.min.js"></script>		
 		<script>
 			function btnFn(){
 				var form = document.frm;
