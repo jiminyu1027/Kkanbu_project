@@ -244,15 +244,21 @@
 			    <p class="card-text"><%=hlist.get(i).gethNameKr()%></p>
 			    <span class="card-text exitPrice">
 			    	<del>
-<%-- 				    	<% if(hlist.get(i).gethPrice().length() <6) {%> --%>
-<%-- 							<%=hlist.get(i).gethPrice().substring(hlist.get(i).gethPrice().length()-5,hlist.get(i).gethPrice().length()-3) %>,<%=hlist.get(i).gethPrice().substring(hlist.get(i).gethPrice().length()-3,hlist.get(i).gethPrice().length()) %> --%>
-<%-- 						<%}else{ %> --%>
-<%-- 							<%=hlist.get(i).gethPrice().substring(hlist.get(i).gethPrice().length()-6,hlist.get(i).gethPrice().length()-3) %>,<%=hlist.get(i).gethPrice().substring(hlist.get(i).gethPrice().length()-3,hlist.get(i).gethPrice().length()) %> --%>
-<%-- 						<% } %> --%>
+					<% if(hlist.get(i).gethPrice().length() <6) {%>
+					<%=hlist.get(i).gethPrice().substring(hlist.get(i).gethPrice().length()-5,hlist.get(i).gethPrice().length()-3) %>,<%=hlist.get(i).gethPrice().substring(hlist.get(i).gethPrice().length()-3,hlist.get(i).gethPrice().length()) %>
+					<%}else{ %>
+						<%=hlist.get(i).gethPrice().substring(hlist.get(i).gethPrice().length()-6,hlist.get(i).gethPrice().length()-3) %>,<%=hlist.get(i).gethPrice().substring(hlist.get(i).gethPrice().length()-3,hlist.get(i).gethPrice().length()) %>
+					<% } %>
 			    	원
 			    	</del>
 			    </span>&nbsp;
-			    <span class="card-text HotPrice"><%=hlist.get(i).getHsaleprice()%></span>
+			    <span class="card-text HotPrice">
+				    <% if(hlist.get(i).getHsaleprice().length() <6) {%>
+					<%=hlist.get(i).getHsaleprice().substring(hlist.get(i).getHsaleprice().length()-5,hlist.get(i).getHsaleprice().length()-3) %>,<%=hlist.get(i).getHsaleprice().substring(hlist.get(i).getHsaleprice().length()-3,hlist.get(i).getHsaleprice().length()) %>
+					<%}else{ %>
+						<%=hlist.get(i).getHsaleprice().substring(hlist.get(i).getHsaleprice().length()-6,hlist.get(i).getHsaleprice().length()-3) %>,<%=hlist.get(i).getHsaleprice().substring(hlist.get(i).getHsaleprice().length()-3,hlist.get(i).getHsaleprice().length()) %>
+					<% } %>
+			    </span>
 			    <span class="card-text HotPer">원 [<%=hlist.get(i).getHsaleper()%>%]</span>
 			  </div>
 			</div>

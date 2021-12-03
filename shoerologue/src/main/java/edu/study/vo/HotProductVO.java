@@ -8,7 +8,7 @@ public class HotProductVO {
 	private String hNameEng;
 	private String hBrandKr;
 	private String hBrandEng;
-	private int hPrice;
+	private String hPrice;
 	private String hSize;
 	private String hColor;
 	private String hGender;
@@ -20,8 +20,8 @@ public class HotProductVO {
 	private String hFile5;
 	private String hWrite;
 	private String hDelYn;
-	private int hsaleprice;
-	private int hsaleper;
+	private String hsaleprice;
+	private String hsaleper;
 	private int pidx;
 	
 	public int getPidx() {
@@ -66,25 +66,25 @@ public class HotProductVO {
 	public void sethBrandEng(String hBrandEng) {
 		this.hBrandEng = hBrandEng;
 	}
-	public int gethPrice() {
+	public String gethPrice() {
 		return hPrice;
 	}
-	public void sethPrice(int hPrice) {
+	public void sethPrice(String hPrice) {
 		this.hPrice = hPrice;
 	}
 	public String gethSize() {
 		return hSize;
 	}
-	public int getHsaleprice() {
+	public String getHsaleprice() {
 		return hsaleprice;
 	}
-	public void setHsaleprice(int hsaleprice) {
+	public void setHsaleprice(String hsaleprice) {
 		this.hsaleprice = hsaleprice;
 	}
-	public int getHsaleper() {
+	public String getHsaleper() {
 		return hsaleper;
 	}
-	public void setHsaleper(int hsaleper) {
+	public void setHsaleper(String hsaleper) {
 		this.hsaleper = hsaleper;
 	}
 	public void sethSize(String hSize) {
