@@ -347,7 +347,7 @@
 				<tr class="head-box">
 					<td class="image-detail">
 						<div class="image-box">
-				  			<img src="/resources/image/hot1.jpg" class="card-img-top" alt="...">
+				  			<img src="../resources/image/hot1.jpg" class="card-img-top" alt="...">
 				  		</div>
 					</td>
 					<td colspan="2">

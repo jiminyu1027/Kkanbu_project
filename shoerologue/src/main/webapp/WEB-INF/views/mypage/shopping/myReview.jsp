@@ -336,7 +336,7 @@
 			<tbody>
 				<tr class="inquiry-contents-box">
 					<td class="inquiry-number-detail">1</td>
-					<td class="inquiry-subject-detail"><a href="#">이빨로 물어뜯어도 전혀 해지지않는 튼튼한 재질의 가죽입니다 아주 좋아요 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</a></td>
+					<td class="inquiry-subject-detail"><a href="#">아주 좋아요 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</a></td>
 					<td class="inquiry-writeday-detail">2021-11-02</td>
 					<td class="inquiry-btn-detail">
 						<input type="button" value="수정" onclick="location.href='/shoerologue/customerService/writeReview.do'">
