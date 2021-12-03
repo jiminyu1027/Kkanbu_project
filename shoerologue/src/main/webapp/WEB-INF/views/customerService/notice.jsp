@@ -204,53 +204,53 @@
 		 <div class="col-10 col-sm-8 col-md-6 col-lg-5">
 			 <ul class="nav navMenu">
 			 	<li class="nav-item">
-				<a class="nav-link fw-bolder text-white nav-fs" href="#">BRAND</a>
+				<a class="nav-link fw-bolder text-white nav-fs" href="/shoerologue/category/brand.do">BRAND</a>
 				</li>
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">MEN</a>
-				    <ul class="dropdown-menu bg-black dropDownMenu mt-2">
-				    	<li><a class="dropdown-item fw-bolder" href="#">MEN</a></li>
+				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/men.do" role="button" aria-expanded="false">MEN</a>
+				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
+				    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/men.do">MEN</a></li>
 				   		<li><hr class="dropdown-divider "></li>
-					 	<li><a class="dropdown-item" href="#">운동화</a></li>
-					    <li><a class="dropdown-item" href="#">구두</a></li>
-					    <li><a class="dropdown-item" href="#">캐주얼</a></li>
-					    <li><a class="dropdown-item" href="#">스포츠</a></li>
-					    <li><a class="dropdown-item" href="#">샌들</a></li>
-					    <li><a class="dropdown-item" href="#">부츠</a></li>
+					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/men/sneakers.do">운동화</a></li>
+					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/men/sports.do">스포츠</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/dressShoes.do">구두</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/sandle.do">샌들</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/casual.do">캐주얼</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/boots.do">부츠</a></li>
 				    </ul>
 				</li>
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">WOMEN</a>
-				    <ul class="dropdown-menu bg-black dropDownMenu mt-2">
-				    	<li><a class="dropdown-item fw-bolder" href="#">WOMEN</a></li>
+				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/women.do" role="button" aria-expanded="false">WOMEN</a>
+				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
+				    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/women.do">WOMEN</a></li>
 				   		<li><hr class="dropdown-divider"></li>
-					 	<li><a class="dropdown-item" href="#">운동화</a></li>
-					    <li><a class="dropdown-item" href="#">구두</a></li>
-					    <li><a class="dropdown-item" href="#">캐주얼</a></li>
-					    <li><a class="dropdown-item" href="#">스포츠</a></li>
-					    <li><a class="dropdown-item" href="#">샌들</a></li>
-					    <li><a class="dropdown-item" href="#">부츠</a></li>
+					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/women/sneakers.do">운동화</a></li>
+					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/women/sports.do">스포츠</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/dressShoes.do">구두</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/sandle.do">샌들</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/casual.do">캐주얼</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/boots.do">부츠</a></li>
 				    </ul>
 				</li>
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">KIDS</a>
-				    <ul class="dropdown-menu bg-black dropDownMenu mt-2">
-				    	<li><a class="dropdown-item fw-bolder" href="#">KIDS</a></li>
+				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/kids.do" role="button" aria-expanded="false">KIDS</a>
+				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
+				    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/kids.do">KIDS</a></li>
 				   		<li><hr class="dropdown-divider"></li>
-					 	<li><a class="dropdown-item" href="#">운동화</a></li>
-					    <li><a class="dropdown-item" href="#">구두</a></li>
-					    <li><a class="dropdown-item" href="#">캐주얼</a></li>
-					    <li><a class="dropdown-item" href="#">스포츠</a></li>
-					    <li><a class="dropdown-item" href="#">샌들</a></li>
-					    <li><a class="dropdown-item" href="#">부츠</a></li>
+					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/kids/sneakers.do">운동화</a></li>
+					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/kids/sports.do">스포츠</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/dressShoes.do">구두</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/sandle.do">샌들</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/casual.do">캐주얼</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/boots.do">부츠</a></li>
 				    </ul>
 				</li>
 			</ul>
 		</div>
 		 <div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
-		      <ul class="navbar-nav me-auto mb-6 mb-lg-0">
-		      </ul>
-		    </div>
+		     <ul class="navbar-nav me-auto mb-6 mb-lg-0">
+		     </ul>
+		 </div>
 		    <div class="col-0 col-sm-0 col-md-0 col-lg-2"></div>
 		</nav>
 	</div>
@@ -263,7 +263,7 @@
 			<div class="filter-title"><span id="filter-title"><center>고객센터</center></span></div>
 			<center><p><a href="/shoerologue/customerService/cs.do" class="other">FAQ</a></p></center>
 			<center><p><a href="/shoerologue/customerService/notice.do" class="main">공지사항</a></p></center>
-			<center><p><a href="/shoerologue/mypage/memberCounsel/inquiry.do" class="other">1:1 문의</a></p></center>
+			<center><p><a href="#" class="other">매장 찾기</a></p></center>
 			<center><p><a href="#" class="other">고객의 소리</a></p></center>
 			<center><p><a href="#" class="other">회원 혜택 안내</a></p></center>
 			<hr>

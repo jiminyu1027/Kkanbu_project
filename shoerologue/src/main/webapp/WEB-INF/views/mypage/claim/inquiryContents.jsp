@@ -204,53 +204,53 @@
 		 <div class="col-10 col-sm-8 col-md-6 col-lg-5">
 			 <ul class="nav navMenu">
 			 	<li class="nav-item">
-				<a class="nav-link fw-bolder text-white nav-fs" href="#">BRAND</a>
+				<a class="nav-link fw-bolder text-white nav-fs" href="/shoerologue/category/brand.do">BRAND</a>
 				</li>
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">MEN</a>
-				    <ul class="dropdown-menu bg-black dropDownMenu mt-2">
-				    	<li><a class="dropdown-item fw-bolder" href="#">MEN</a></li>
+				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/men.do" role="button" aria-expanded="false">MEN</a>
+				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
+				    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/men.do">MEN</a></li>
 				   		<li><hr class="dropdown-divider "></li>
-					 	<li><a class="dropdown-item" href="#">운동화</a></li>
-					    <li><a class="dropdown-item" href="#">구두</a></li>
-					    <li><a class="dropdown-item" href="#">캐주얼</a></li>
-					    <li><a class="dropdown-item" href="#">스포츠</a></li>
-					    <li><a class="dropdown-item" href="#">샌들</a></li>
-					    <li><a class="dropdown-item" href="#">부츠</a></li>
+					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/men/sneakers.do">운동화</a></li>
+					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/men/sports.do">스포츠</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/dressShoes.do">구두</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/sandle.do">샌들</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/casual.do">캐주얼</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/boots.do">부츠</a></li>
 				    </ul>
 				</li>
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">WOMEN</a>
-				    <ul class="dropdown-menu bg-black dropDownMenu mt-2">
-				    	<li><a class="dropdown-item fw-bolder" href="#">WOMEN</a></li>
+				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/women.do" role="button" aria-expanded="false">WOMEN</a>
+				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
+				    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/women.do">WOMEN</a></li>
 				   		<li><hr class="dropdown-divider"></li>
-					 	<li><a class="dropdown-item" href="#">운동화</a></li>
-					    <li><a class="dropdown-item" href="#">구두</a></li>
-					    <li><a class="dropdown-item" href="#">캐주얼</a></li>
-					    <li><a class="dropdown-item" href="#">스포츠</a></li>
-					    <li><a class="dropdown-item" href="#">샌들</a></li>
-					    <li><a class="dropdown-item" href="#">부츠</a></li>
+					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/women/sneakers.do">운동화</a></li>
+					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/women/sports.do">스포츠</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/dressShoes.do">구두</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/sandle.do">샌들</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/casual.do">캐주얼</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/boots.do">부츠</a></li>
 				    </ul>
 				</li>
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">KIDS</a>
-				    <ul class="dropdown-menu bg-black dropDownMenu mt-2">
-				    	<li><a class="dropdown-item fw-bolder" href="#">KIDS</a></li>
+				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/kids.do" role="button" aria-expanded="false">KIDS</a>
+				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
+				    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/kids.do">KIDS</a></li>
 				   		<li><hr class="dropdown-divider"></li>
-					 	<li><a class="dropdown-item" href="#">운동화</a></li>
-					    <li><a class="dropdown-item" href="#">구두</a></li>
-					    <li><a class="dropdown-item" href="#">캐주얼</a></li>
-					    <li><a class="dropdown-item" href="#">스포츠</a></li>
-					    <li><a class="dropdown-item" href="#">샌들</a></li>
-					    <li><a class="dropdown-item" href="#">부츠</a></li>
+					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/kids/sneakers.do">운동화</a></li>
+					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/kids/sports.do">스포츠</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/dressShoes.do">구두</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/sandle.do">샌들</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/casual.do">캐주얼</a></li>
+					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/boots.do">부츠</a></li>
 				    </ul>
 				</li>
 			</ul>
 		</div>
 		 <div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
-		      <ul class="navbar-nav me-auto mb-6 mb-lg-0">
-		      </ul>
-		    </div>
+		     <ul class="navbar-nav me-auto mb-6 mb-lg-0">
+		     </ul>
+		 </div>
 		    <div class="col-0 col-sm-0 col-md-0 col-lg-2"></div>
 		</nav>
 	</div>
@@ -331,13 +331,18 @@
 		</form>	
 	<div class="empty-box"></div>
 	<div class="empty-box"></div>	
-	<table style="border:1px solid black; width:978px; margin-left:280px; margin-top:50px;">
+	<table style="border:1px solid black; width:978px; margin-left:280px; margin-top:50px; text-align:center;">
 		<colgroup>
 <%-- 			<col style="width:5%"> --%>
 			<col style="width:10%">
 			<col style="width:75%">
 			<col style="width:15%">
 		</colgroup>
+			<tr style="border-bottom:1px solid gray; height:50px; font-size:20px;">
+				<td style="border-right:1px solid black;">작성자</td>
+				<td style=" border-right:1px solid black;">내용</td>
+				<td style=" border-right:1px solid black;">작성일</td>
+			</tr>
 		<%
 			for(int i=0; i<alist.size(); i++){
 		%>
@@ -358,8 +363,8 @@
 			<p>
 				<input type="hidden" name="midx" value="${member.midx}">
 				<input type="hidden" name="qidx" value="${qidx}">
-				<input type="submit" value="댓글 작성" class="commentFn">
-				<input type="text" name="mName" value="${member.mName}" readonly>
+				작성자 : <input type="text" name="mName" value="${member.mName}" readonly>
+				<input type="submit" value="댓글 작성" class="commentFn">	
 			</p>
 		</form>
 	</div>
