@@ -43,7 +43,7 @@
 		</script>
         <script>
 			$(document).ready( function() {
-				$(".productSizeBtn").click(function(){
+				$(".productSizeBtn").one(function(){
 					 $(".hereSize").append($(this).attr('value')," / ");
 					 $(".productTotalPrice").append(<%=pvo.getpPrice()%>);
 				return false;
@@ -500,7 +500,9 @@
 					<div class="gap100"></div>
 						<span>총 <span class="redBold">0</span>개의 리뷰가 있습니다.</span>
 					<div class="pdReviewList">
+						 
 						<!-- 리뷰가 있을때 -->
+						<!-- 
 						<hr>
 							<table>
 								<tr>
@@ -553,7 +555,7 @@
 								</tr>
 							</table>
 						<hr>
-						<!--  -->
+						 -->
 						
 						<!-- 리뷰가 없을때 -->
 						<hr>
@@ -565,8 +567,9 @@
 								<div>등록된 리뷰가 없습니다.</div>
 							</div>
 						<hr>
-						<!--  -->
+						<!-- 
 						<center>페이징 처리</center>
+						 -->
 						<div class="ReviewBtn">
 							<button onclick="location.href='/shoerologue/customerService/writeReview.do'"> 상품 후기 작성</button>
 						</div>
@@ -596,6 +599,7 @@
 				</div>
 				<div>
 					<!-- 상품 Q&A가 있을때 -->
+					<!-- 
 					<hr>
 						<table>
 							<tr>
@@ -606,6 +610,7 @@
 							</tr>
 						</table>
 					<hr>
+					 -->
 					<!--  -->
 					
 					<!-- 상품 Q&A가 없을때 -->
@@ -619,7 +624,7 @@
 					</div>	
 					<hr>
 					<!--  -->
-					<center>페이징 처리</center>
+					<!--<center>페이징 처리</center>-->
 					<div class="QnaBtn">
 						<button onclick="location.href='/shoerologue/customerService/cs.do'">자주하는 질문 보기</button>
 						<button onclick="location.href='/shoerologue/admin/inquiryAsk.do'">Q&amp;A작성</button>

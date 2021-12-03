@@ -291,15 +291,15 @@
 			<div class="bestBrandList">
 				<ul>
 					<li><a href="/shoerologue/category/brand/nike.do"><img src="/shoerologue/resources/image/brandlogo/nike.png"></a></li>
-					<li><a href="/shoerologue/category/brand/adidas.do"><img src="/shoerologue/resources/image/brandlogo/adidas.png"></a></li>
+					<li><a href="#"><img src="/shoerologue/resources/image/brandlogo/adidas.png"></a></li>
 					<li><a href="/shoerologue/category/brand/newbalance.do"><img src="/shoerologue/resources/image/brandlogo/newbalance.png"></a></li>
 					<li><a href="/shoerologue/category/brand/converse.do"><img src="/shoerologue/resources/image/brandlogo/converse.png"></a></li>
 					<li><a href="/shoerologue/category/brand/vans.do"><img src="/shoerologue/resources/image/brandlogo/vans.png"></a></li>
 					<li><a href="/shoerologue/category/brand/reebok.do"><img src="/shoerologue/resources/image/brandlogo/reebok.png"></a></li>
-					<li><a href="/shoerologue/category/brand/nuovo.do"><img src="/shoerologue/resources/image/brandlogo/nuovo.png"></a></li>
+					<li><a href="#"><img src="/shoerologue/resources/image/brandlogo/nuovo.png"></a></li>
 					<li><a href="/shoerologue/category/brand/jordan.do"><img src="/shoerologue/resources/image/brandlogo/jordan.png"></a></li>
 					<li><a href="/shoerologue/category/brand/puma.do"><img src="/shoerologue/resources/image/brandlogo/puma.png"></a></li>
-					<li><a href="/shoerologue/category/brand/hawkins.do"><img src="/shoerologue/resources/image/brandlogo/hawkins.png"></a></li>
+					<li><a href="#"><img src="/shoerologue/resources/image/brandlogo/hawkins.png"></a></li>
 				</ul>
 			</div>
 		</div>
@@ -352,8 +352,8 @@
 				<div class="brandFirstInit" id="initA">A</div>
 				<div class="brandName">
 					<ul>
-						<li><a href="/shoerologue/category/brand/adidas.do">ADIDAS</a></li>
-						<li><a href="/shoerologue/category/test.do">AKIII CLASSIC</a></li>
+						<li><a href="#">ADIDAS</a></li>
+						<li><a href="#">AKIII CLASSIC</a></li>
 						<li><a href="#">ASICS</a></li>
 					</ul>
 				</div>
@@ -420,7 +420,7 @@
 				<div class="brandFirstInit" id="initH">H</div>
 				<div class="brandName">
 					<ul>
-						<li><a href="/shoerologue/category/brand/hawkins.do">HAWKINS</a></li>
+						<li><a href="#">HAWKINS</a></li>
 						<li><a href="#">HUNTER</a></li>
 					</ul>
 				</div>
@@ -473,7 +473,7 @@
 					<ul>
 						<li><a href="/shoerologue/category/brand/newbalance.do">NEW BALANCE</a></li>
 						<li><a href="/shoerologue/category/brand/nike.do">NIKE</a></li>
-						<li><a href="/shoerologue/category/brand/nuovo.do">NUOVO</a></li>
+						<li><a href="#">NUOVO</a></li>
 					</ul>
 				</div>
 				<hr>
@@ -568,7 +568,7 @@
 				<div class="brandName">
 					<ul>
 						<li><a href="/shoerologue/category/brand/nike.do">나이키</a></li>
-						<li><a href="/shoerologue/category/brand/nuovo.do">누오보</a></li>
+						<li><a href="#">누오보</a></li>
 						<li><a href="/shoerologue/category/brand/newbalance.do">뉴발란스</a></li>
 					</ul>
 				</div>
@@ -641,7 +641,7 @@
 				<div class="brandFirstInit" id="initHanH">ㅇ</div>
 				<div class="brandName">
 					<ul>
-						<li><a href="/shoerologue/category/brand/adidas.do">아디다스</a></li>
+						<li><a href="#">아디다스</a></li>
 						<li><a href="#">아식스</a></li>
 						<li><a href="#">아키클래식</a></li>
 						<li><a href="#">어그</a></li>
@@ -700,7 +700,7 @@
 				<div class="brandName">
 					<ul>
 						<li><a href="#">헌터</a></li>
-						<li><a href="/shoerologue/category/brand/hawkins.do">호킨스</a></li>
+						<li><a href="#">호킨스</a></li>
 						<li><a href="#">휠라</a></li>
 					</ul>
 				</div>
