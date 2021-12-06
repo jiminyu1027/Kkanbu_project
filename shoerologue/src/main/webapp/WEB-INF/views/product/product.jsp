@@ -31,8 +31,7 @@
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 		</style>
-		<!-- 상품 이미지 페이지 클릭시 사진 변화/검정 테두리 -->
-		
+		<!-- 상품 이미지 페이지 클릭시 사진 변화 -->
 		<script>
 			$(function(){
 				$(".pdSmImgeBox a").click(function(){
@@ -41,11 +40,12 @@
 				});
 			});
 		</script>
+		<!-- 가격 , 보이기 -->
         <script>
 			$(document).ready( function() {
-				$(".productSizeBtn").click(function(){
+				$(".productSizeBtn").one('click',function(){
 					/* $(".hereSize").append($(this).attr('value')," / ");*/
-					 $(".productTotalPrice").append(<%=pvo.getpPrice()%>);
+					$(".productTotalPrice").text(<%=pvo.getpPrice()%>);
 				return false;
 				});
 			});
@@ -128,7 +128,7 @@
 					</li>
 					<li class="nav-item dropdown">
 					    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/men.do" role="button" aria-expanded="false">MEN</a>
-					    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
+					    <ul class="dropdown-menu bg-white dropDownMenu">
 					    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/men.do">MEN</a></li>
 					   		<li><hr class="dropdown-divider "></li>
 						 	<li><a class="dropdown-item" href="/shoerologue/category/gender/men/sneakers.do">운동화</a></li>
@@ -141,7 +141,7 @@
 					</li>
 					<li class="nav-item dropdown">
 					    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/women.do" role="button" aria-expanded="false">WOMEN</a>
-					    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
+					    <ul class="dropdown-menu bg-white dropDownMenu">
 					    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/women.do">WOMEN</a></li>
 					   		<li><hr class="dropdown-divider"></li>
 						 	<li><a class="dropdown-item" href="/shoerologue/category/gender/women/sneakers.do">운동화</a></li>
@@ -154,7 +154,7 @@
 					</li>
 					<li class="nav-item dropdown">
 					    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/kids.do" role="button" aria-expanded="false">KIDS</a>
-					    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
+					    <ul class="dropdown-menu bg-white dropDownMenu">
 					    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/kids.do">KIDS</a></li>
 					   		<li><hr class="dropdown-divider"></li>
 						 	<li><a class="dropdown-item" href="/shoerologue/category/gender/kids/sneakers.do">운동화</a></li>
@@ -270,6 +270,7 @@
 								</svg></a>
 							</div>
 							<div class="pdContents">
+								<input type="hidden" id="pidx" name="pidx" value="<%=pvo.getPidx()%>">
 								<div class="caBrand" id="pBrandKr" name="pBrandKr"><a href="#"><%=pvo.getpBrandKr() %></a></div><br>
 								<div class="pTitle" id="pNameKr" name="pNameKr"><%=pvo.getpNameKr() %></div>
 								<div class="pContents" id="pNameEng" name="pNameEng"><%=pvo.getpNameEng() %></div>
@@ -333,7 +334,6 @@
 											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(12,15) %>"><%=pvo.getpSize().substring(12,15) %></button>
 											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(16,19) %>"><%=pvo.getpSize().substring(16,19) %></button>
 											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(20,23) %>"><%=pvo.getpSize().substring(20,23) %></button>
-										
 											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(24,27) %>"><%=pvo.getpSize().substring(24,27) %></button>
 											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(28,31) %>"><%=pvo.getpSize().substring(28,31) %></button>
 										</td>
@@ -352,13 +352,13 @@
 											<th height=100>총 결제금액</th>
 											<td>
 												<div class="totalPriceRight">
-													<span class="productTotalPrice" pattern="###,###,###"></span>&nbsp;<span>원</span>
+													<span class="productTotalPrice"></span>&nbsp;<span>원</span>
 												</div>
 											</td>
 										</table>
 									</div>
 									<div class="productPaymentBtn">
-										<span class="cartBtn"><button onclick="location.href='/shoerologue/cart/cart.do'">장바구니</button></span>
+										<span class="cartBtn"><button onclick="location.href='/shoerologue/cart/cart.do?pidx='">장바구니</button></span>
 										<span class="paymentBtn"><button onclick="location.href='/shoerologue/order/orderpayment.do'">바로구매</button></span>
 									</div>
 								</div>
