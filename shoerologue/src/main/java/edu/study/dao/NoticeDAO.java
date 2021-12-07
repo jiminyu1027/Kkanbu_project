@@ -34,4 +34,9 @@ public class NoticeDAO {
 		
 		sqlSession.delete(Namespace+".delete", nidx);
 	}
+	// 게시판 조회수
+	public void noticeCnt(int nidx) throws Exception{
+		
+		sqlSession.update(Namespace+".noticeCnt",nidx);
+	}
 }

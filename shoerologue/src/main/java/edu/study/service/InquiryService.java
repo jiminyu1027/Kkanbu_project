@@ -13,7 +13,7 @@ public interface InquiryService {
 	
 	List<InquiryVO> masterList() throws Exception;
 	
-	InquiryVO detail(int qidx) throws Exception;
+	InquiryVO detail(InquiryVO mvo) throws Exception;
 	
 	void update(int qidx) throws Exception;
 }

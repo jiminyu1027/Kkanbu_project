@@ -163,6 +163,12 @@
 		    background:gray;
 		    color:#fff;
 		}
+		.writer{
+			position:absolute;
+			margin-top:10px;
+			margin-left:695px;
+			text-align:center;
+		}
 		</style>
 		<script src="../js/jquery-3.6.0.min.js"></script>		
 		<script>
@@ -366,6 +372,7 @@
 		<div class="empty-box"></div>
 		<div><span class="mainTitle">상품QA</span></div>
 		<form action="/shoerologue/mypage/shopping/qaList.do" method="post" class="frm" id="frm" name="frm">
+			<input type="text" value="${member.mName}" name="pqWriter" class="writer" readOnly >
 			<table class="ask-box">
 				<colgroup>
 					<col width="10%">
@@ -376,7 +383,7 @@
 						<label class="ask-box-detail">제목<label class="red-label">*</label></label>
 					</td>
 					<td>
-						<input type="text" placeholder="제목을 입력해주세요" class="subject" id="subject" name="subject">
+						<input type="text" placeholder="제목을 입력해주세요" class="subject" id="subject" name="pqSubject">
 					</td>
 				</tr>
 				<tr style="height:70%">	
@@ -384,17 +391,17 @@
 						<label class="ask-box-detail">내용<label class="red-label">*</label></label>
 					</td>
 					<td>
-						<textarea placeholder="내용을 입력해주세요" id="contents"></textarea>
+						<textarea placeholder="내용을 입력해주세요" id="pqContents" name="pqContents"></textarea>
 					</td>
 				</tr>
 				<tr style="height:15%">
 					<td colspan="2">
 						<label class="box-radio-input radioBtn">
-							<input type="radio" name="check" value="공개" id="open">
+							<input type="radio" name="pqOpen" value="Y" id="open">
 								<span>공개</span>
 						</label>
 						<label class="box-radio-input" style="margin-left:25px;" >
-							<input type="radio" name="check" value="비공개"id="close">
+							<input type="radio" name="pqOpen" value="N"id="close">
 								<span>비공개</span>
 						</label>
 					</td>

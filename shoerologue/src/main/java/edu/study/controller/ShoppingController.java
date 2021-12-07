@@ -19,6 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.study.service.MemberService;
 import edu.study.vo.MemberVO;
+import edu.study.vo.QaVO;
 
 @RequestMapping(value="/mypage/shopping")
 @Controller
@@ -26,6 +27,9 @@ public class ShoppingController {
 	
 	@Autowired
 	MemberService MemberService;
+	
+	@Autowired
+	edu.study.service.QaService QaService;
 	
 	@RequestMapping(value="/wishlist.do")
 	public String wishlist(Locale locale, Model model)throws Exception{
@@ -36,7 +40,25 @@ public class ShoppingController {
 	@RequestMapping(value="/qaList.do")
 	public String qaList(Locale locale,Model model)throws Exception{
 		
+		List<QaVO> pqlist = QaService.pqlist();
+		
+		model.addAttribute("pqlist",pqlist);
+		
 		return "/mypage/shopping/qaList";
+	}
+	
+	@RequestMapping(value="/qaList.do",method=RequestMethod.POST)
+	public String insert(Locale locale,Model model,QaVO vo,HttpSession httr) throws Exception{
+		
+			MemberVO member = (MemberVO)httr.getAttribute("member");
+			
+			int midx = member.getMidx();
+			
+			vo.setMidx(midx);
+			
+			QaService.insert(vo);
+			
+		return "redirect:/mypage/shopping/qaList.do";
 	}
 	
 	@RequestMapping(value="/myReview.do")

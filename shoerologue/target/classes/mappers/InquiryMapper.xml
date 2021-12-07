@@ -20,17 +20,17 @@
 	</insert>
 	
 	<select id="qlist" parameterType="int" resultType="edu.study.vo.InquiryVO">
-		SELECT * FROM QUESTION WHERE 1=1 AND MIDX=#{MIDX} AND QDELYN = 'N' ORDER BY QIDX ASC
+		SELECT * FROM QUESTION WHERE 1=1 AND MIDX=#{MIDX} AND QDELYN = 'N' ORDER BY QIDX DESC
 	</select>
 	<!--회원의 MIDX와 작성자의 MIDX가 일치하는 것들만 추려서 보여준다.-->
 	<select id="masterList" resultType="edu.study.vo.InquiryVO">
-		SELECT * FROM QUESTION WHERE 1=1 AND QDELYN = 'N' ORDER BY QIDX ASC
+		SELECT * FROM QUESTION WHERE 1=1 AND QDELYN = 'N' ORDER BY QIDX DESC
 	</select>
 	<select id="detail" resultType="edu.study.vo.InquiryVO">
-		SELECT * FROM QUESTION WHERE QIDX = #{QIDX}
+		SELECT * FROM QUESTION WHERE QIDX = #{qidx}
 	</select>
 	
 	<update id="update" parameterType="int">
-		UPDATE QUESTION SET QDELYN = 'Y' WHERE QIDX = #{QIDX}
+		UPDATE QUESTION SET QDELYN = 'Y' WHERE QIDX = #{qidx}
 	</update>
 </mapper>

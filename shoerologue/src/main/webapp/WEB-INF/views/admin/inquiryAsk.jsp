@@ -359,7 +359,7 @@
 		<div class="empty-box"></div>
 		<div class="empty-box"></div>
 		<div class="mainTitle">문의내용</div>
-		<form action="/shoerologue/mypage/memberCounsel/inquiryAction.do" method="post" class="frm" id="frm" name="frm">
+		<form action="/shoerologue/mypage/memberCounsel/inquiryAction.do" method="post" class="frm" id="frm" name="frm" enctype="multipart/form-data">
 			<table class="ask-box">
 				<colgroup>
 					<col width="10%">
@@ -405,18 +405,13 @@
 					<td class="filebox">
 						<input class="upload-name" value="첨부파일" placeholder="첨부파일">
 					    <label for="file">파일찾기</label> 
-					    <input type="file" id="file" name="qFile">
+					    <input type="file" id="file" name="qqFile">
 					</td>
 				</tr>	
 			</table>
 			<input type="submit" value="문의하기" class="submit-button" onclick="return btnFn();">
 		</form>
-		<script>
-			$("#file").on('change',function(){
-			  var fileName = $("#file").val();
-			  $(".upload-name").val(fileName);
-			});
-		</script>
+		
 		<a href="/shoerologue/mypage/memberCounsel/inquiry.do" class="cancel"><input type="button" value="문의 취소" class="cancel-button"></a>
 	</div>	
 <!-- 우측하단 TOP 이동 배너 -->

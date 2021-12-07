@@ -1,6 +1,13 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="edu.study.vo.*" %>
+<%
+	QaVO qvo = (QaVO)request.getAttribute("qvo");
+
+	MemberVO loginU = (MemberVO)session.getAttribute("member");
+%>
 <!DOCTYPE html>
 <html>
 
@@ -277,39 +284,36 @@
 		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
 		<div class="empty-box"></div>
 		<div class="empty-box"></div>
+		<form action="/shoerologue/mypage/shopping/qaList.do" method="post">
+		<input type="hidden" name="pqidx" value="<%=qvo.getPqidx() %>">
 		<table>
 			<colgroup>
-				<col style="width:70%;">
-				<col style="width:15%;">
+				<col style="width:65%;">
+				<col style="width:20%;">
 				<col style="width:15%;">
 			</colgroup>
 			<thead style="border-top:2px solid black; border-bottom:2px solid gray; height:70px;">
 				<tr>
-					<th style="font-size:20px; color:gray;">1:1문의 타이틀입니다.</th>
-					<th style="font-size:15px; color:gray; padding-left:70px;">2021-11-10</th>
-					<th style="font-size:15px; color:gray; text-align:right; padding-right:40px;">홍길동</th>
+					<th style="font-size:20px; color:gray;"><%=qvo.getPqSubject() %></th>
+					<th style="font-size:15px; color:gray; padding-left:70px;"><%=qvo.getPqWriteday().substring(0,10) %></th>
+					<th style="font-size:15px; color:gray; text-align:right; padding-right:40px;"><%=qvo.getPqWriter() %></th>
 				</tr>	
 			</thead>
 			<tbody>
 				<tr><td style="height:20px;"></td></tr>
 				<tr>
 					<td colspan="3">
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
-					 	문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다 문의내용입니다
+					 	<%=qvo.getPqContents() %>
 					</td>
 				</tr>
-				<tr><td style="border-bottom:1px solid gray; height:30px;" colspan="3"></td></tr>	
+				<tr><td style="border-bottom:1px solid gray; height:150px;" colspan="3"></td></tr>	
 			</tbody>
 		</table>
-		<input type="button" value="목록보기" onclick="location.href='/shoerologue/mypage/shopping/qaList.do'" class="btnFn" style="background-color:white;">
+		<% if(loginU.getMidx() == qvo.getMidx() || loginU.getMaster().equals("master")) { %>	
+			<input type="submit" value="QA삭제" class="btnFn" style="background-color:gray">
+		<%} %>
+		</form>
+		<input type="button" value="목록보기" class="btnFn" style="background-color:white;" onclick="location.href='/shoerologue/mypage/shopping/qaList.do'">
 	</div>	
 	<div class="empty-box"></div>
 	<div class="empty-box"></div>

@@ -7,6 +7,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
 import edu.study.dao.NoticeDAO;
 import edu.study.vo.NoticeVO;
@@ -28,8 +30,11 @@ public class NoticeServiceImpl implements NoticeService {
 		return NoticeDao.nlist();
 	}
 	
+	@Transactional(isolation = Isolation.READ_COMMITTED)
 	@Override
 	public NoticeVO detail(int nidx) throws Exception{
+			
+		NoticeDao.noticeCnt(nidx);
 		
 		return NoticeDao.detail(nidx);
 	}
@@ -39,4 +44,5 @@ public class NoticeServiceImpl implements NoticeService {
 		
 		NoticeDao.delete(nidx);
 	}
+	
 }

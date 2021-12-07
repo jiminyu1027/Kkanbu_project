@@ -30,4 +30,8 @@
 	<delete id="delete" parameterType="int">
 		DELETE FROM NOTICE WHERE NIDX = #{NIDX}
 	</delete>
+	
+	<update id="noticeCnt" parameterType="int">
+		UPDATE NOTICE SET nCnt = nCnt + 1 WHERE NIDX = #{nidx}
+	</update>
 </mapper>

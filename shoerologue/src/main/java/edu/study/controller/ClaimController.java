@@ -89,8 +89,13 @@ public class ClaimController {
 	@RequestMapping(value="/inquiryContents.do")
 	public String inquiryList(Locale locale,Model model,@RequestParam("qidx") int qidx,HttpSession httr)throws Exception{
 		
+		MemberVO member = (MemberVO)httr.getAttribute("member");
+		int midx = member.getMidx();
 		
-		InquiryVO ivo = InquiryService.detail(qidx);
+		InquiryVO mvo = new InquiryVO();
+		mvo.setMidx(midx);
+		mvo.setQidx(qidx);
+		InquiryVO ivo = InquiryService.detail(mvo);
 		
 		List<AnswerVO> alist = AnswerService.alist(qidx);
 		

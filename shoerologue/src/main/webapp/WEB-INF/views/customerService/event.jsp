@@ -257,22 +257,22 @@
 	<input type="hidden" name="nidx" value="<%=nvo.getNidx() %>">
 		<table>
 			<colgroup>
-				<col style="width:70%;">
-				<col style="width:15%;">
+				<col style="width:65%;">
+				<col style="width:20%;">
 				<col style="width:15%;">
 			</colgroup>
 			<thead style="border-top:2px solid black; border-bottom:2px solid gray; height:70px;">
 				<tr>
 					<th style="font-size:20px; color:gray;"><%=nvo.getnTitle()%></th>
 					<th style="font-size:15px; color:gray; padding-left:70px;"><%=nvo.getnWriteday().substring(0,10) %></th>
-					<th style="font-size:15px; color:gray; text-align:right; padding-right:50px;">0</th>
+					<th style="font-size:15px; color:gray; text-align:right; padding-right:50px;"><%=nvo.getnCnt() %></th>
 				</tr>	
 			</thead>
 			<tbody>
 				<tr><td style="height:50px;" colspan="3"><%=nvo.getnContents() %></td></tr>
 				<tr>
 					<td colspan="3">
-						<img src="/shoerologue/resources/image/mainbanner/KAKAO.png" class="d-block w-100" alt="카카오페이 결제시 3천원 할인 이벤트" style="width:100%; height:500px;">
+						<img src="/shoerologue/resources/image/mainbanner/KAKAO.png" class="d-block w-100" style="width:100%; height:500px;">
 					</td>
 				</tr>
 				<tr><td style="border-bottom:1px solid gray; height:30px;" colspan="3"></td></tr>	

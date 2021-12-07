@@ -1,6 +1,13 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="edu.study.vo.*" %>
+    
+<%
+	List<QaVO> pqlist = (List<QaVO>)request.getAttribute("pqlist");
+	MemberVO loginU = (MemberVO)session.getAttribute("member");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -329,13 +336,13 @@
 			<button class="btnBox" onclick="location.href='/shoerologue/admin/qaAsk.do'">질문하기</button>
 		<br>
 		<br>	
-		<table class="inquiry-box table table-hover">
-			<colgroup>
-				<col width="10%">
-				<col width="60%">
-				<col width="20%">
-				<col width="10%">
-			</colgroup>
+			<table class="inquiry-box table table-hover">
+				<colgroup>
+					<col width="10%">
+					<col width="60%">
+					<col width="20%">
+					<col width="10%">
+				</colgroup>
 			<thead class="inquiry-title">
 				<tr>
 					<th class="inquiry-number" id="inquiry-number" name="inquiry-number">번호</th>
@@ -345,24 +352,35 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class="inquiry-contents-box">
-					<td class="inquiry-number-detail">1</td>
-					<td class="inquiry-subject-detail"><a href="/shoerologue/customerService/qaDetail.do">상품문의 1번째 제목입니다.</a></td>
-					<td class="inquiry-writeday-detail">2021-11-02</td>
-					<td class="inquiry-writer-detail">홍길동</td>
-				</tr>
-				<tr class="inquiry-contents-box">
-					<td class="inquiry-number-detail">2</td>
-					<td class="inquiry-subject-detail"><a href="#">상품문의 2번째 제목입니다.</a></td>
-					<td class="inquiry-writeday-detail">2020-10-12</td>
-					<td class="inquiry-writer-detail">홍길우</td>
-				</tr>
-				<tr class="inquiry-contents-box">
-					<td class="inquiry-number-detail">3</td>
-					<td class="inquiry-subject-detail"><a href="#">상품문의 3번째 제목입니다.</a></td>
-					<td class="inquiry-writeday-detail">2017-11-08</td>
-					<td class="inquiry-writer-detail">홍길순</td>
-				</tr>
+				<%
+					for(int i=0; i<pqlist.size(); i++){	
+				%>
+					
+					<tr class="inquiry-contents-box">
+						<td class="inquiry-number-detail"><%=i+1 %></td>
+						<% if(pqlist.get(i).getPqOpen().equals("N") ){ 
+						
+							//로그인한 user가 관리자 이거나 자신의 글 이면 링크 제공
+							//로그인한 user가 내가 쓴글도 아니고 관리자도 아니다 링크 미제공
+						%>
+							<td class="inquiry-subject-detail"> 
+						<%
+								if(loginU.getMidx() == pqlist.get(i).getMidx() || loginU.getMaster().equals("master")){
+						%>
+								<a href="/shoerologue/customerService/qaDetail.do?pqidx=<%=pqlist.get(i).getPqidx()%>"><%=pqlist.get(i).getPqSubject() %></a>
+							<%  }else{ %>
+								[비공개글은 작성자와 관리자만 볼 수 있습니다.]
+							<%} %>
+							</td>  
+						<%}else{
+						%>
+							<td class="inquiry-subject-detail"><a href="/shoerologue/customerService/qaDetail.do?pqidx=<%=pqlist.get(i).getPqidx()%>"><%=pqlist.get(i).getPqSubject() %></a></td>
+						<%					
+						} %>
+						<td class="inquiry-writeday-detail"><%=pqlist.get(i).getPqWriteday().substring(0,10) %></td>
+						<td class="inquiry-writer-detail"><%=pqlist.get(i).getPqWriter() %></td>
+					</tr>
+				<%} %>	
 			</tbody>
 		</table>
 		</div>

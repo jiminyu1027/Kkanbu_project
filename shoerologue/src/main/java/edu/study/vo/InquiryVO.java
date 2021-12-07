@@ -13,6 +13,7 @@ public class InquiryVO {
 	private int midx;
 	private int pidx;
 	private int oidx;
+	
 	public int getQidx() {
 		return qidx;
 	}

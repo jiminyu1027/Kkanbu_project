@@ -320,7 +320,11 @@
 					<tr>
 						<td colspan="3">
 						 	<%=ivo.getqContents() %>
-						 	<img src="<%=ivo.getqFile() %>" class="d-block w-100" alt="카카오페이 결제시 3천원 할인 이벤트" style="width:100%; height:500px;">
+						 	<% if(ivo.getqFile() != null){ %>
+						 		<img src="/shoerologue<%=ivo.getqFile() %>" class="d-block w-100" alt="카카오페이 결제시 3천원 할인 이벤트" style="width:100%; height:500px;">
+							<% }else{ %>
+								<div style="width:100%; height:500px;"></div>
+							<%} %>								
 						</td>
 					</tr>
 					<tr><td style="border-bottom:1px solid gray; height:30px;" colspan="3"></td></tr>	
@@ -331,22 +335,22 @@
 		</form>	
 	<div class="empty-box"></div>
 	<div class="empty-box"></div>	
-	<table style="border:1px solid black; width:978px; margin-left:280px; margin-top:50px; text-align:center;">
+	<table style="width:978px; margin-left:280px; margin-top:50px; text-align:center;">
 		<colgroup>
 <%-- 			<col style="width:5%"> --%>
 			<col style="width:10%">
 			<col style="width:75%">
 			<col style="width:15%">
 		</colgroup>
-			<tr style="border-bottom:1px solid gray; height:50px; font-size:20px;">
+			<tr style="border-bottom:1px solid black; height:50px; font-size:20px; background-color:#ccc; font-weight:bold;">
 				<td style="border-right:1px solid black;">작성자</td>
 				<td style=" border-right:1px solid black;">내용</td>
-				<td style=" border-right:1px solid black;">작성일</td>
+				<td>작성일</td>
 			</tr>
 		<%
 			for(int i=0; i<alist.size(); i++){
 		%>
-			<tr style="border-bottom:1px solid gray;">
+			<tr style="border-bottom:1px solid gray; height:45px; font-size:18px;">
 				<td style="border-right:1px solid gray;"><%=alist.get(i).getmName() %></td>
 				<td style="word-break:break-all; border-right:1px solid gray;"><%=alist.get(i).getaContents() %></td>
 				<td><%=alist.get(i).getaWriteday() %></td>

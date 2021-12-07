@@ -10,6 +10,13 @@ public class NoticeVO {
 	private String nFile;
 	private int midx;
 	private int pidx;
+	private int nCnt;
+	public int getnCnt() {
+		return nCnt;
+	}
+	public void setnCnt(int nCnt) {
+		this.nCnt = nCnt;
+	}
 	public int getNidx() {
 		return nidx;
 	}

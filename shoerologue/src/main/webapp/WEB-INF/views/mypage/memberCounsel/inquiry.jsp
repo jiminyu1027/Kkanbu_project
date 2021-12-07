@@ -331,16 +331,7 @@
 		<div class="mainTitle">1:1문의</div>
 		<input type="button" class="btnBox" onclick="location.href='/shoerologue/admin/inquiryAsk.do'" value="문의하기">
 		<br>
-		<br>	
-<%-- 		<c:if test="${count==0}"> --%>
-<!-- 			<table width="80%" border="1" cellpadding="0" cellspacing="0"> -->
-<!-- 		<tr> -->
-<!--     		<td align="center"> -->
-<!--     		저장된 글이 없습니다. -->
-<!--     		</td> -->
-<!-- 			</table> -->
-<%-- 		</c:if>	 --%>
-<%-- 		<c:if test="${count!=0}"> --%>
+		<br>
 			<c:if test="${master ne 'master'}">
 				<table class="inquiry-box table table-hover">
 					<colgroup>

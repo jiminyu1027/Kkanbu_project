@@ -32,9 +32,9 @@ public class InquiryDAO {
 		return sqlSession.selectList(Namespace+".masterList");
 	}
 	
-	public InquiryVO detail(int qidx) throws Exception{
+	public InquiryVO detail(InquiryVO mvo) throws Exception{
 		
-		return sqlSession.selectOne(Namespace+".detail",qidx);
+		return sqlSession.selectOne(Namespace+".detail",mvo);
 	}
 	
 	public void update(int qidx) throws Exception{

@@ -33,9 +33,9 @@ public class InquiryServiceImpl implements InquiryService {
 	}
 	
 	@Override
-	public InquiryVO detail(int qidx) throws Exception{
+	public InquiryVO detail(InquiryVO mvo) throws Exception{
 		
-		return InquiryDao.detail(qidx);
+		return InquiryDao.detail(mvo);
 	}
 	
 	@Override
