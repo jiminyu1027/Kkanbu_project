@@ -579,9 +579,8 @@
 			    <tr>
 			      <th scope="col" style="width:7%">번호</th>
 			      <th scope="col" style="width:11%">받으실 분</th>
-			      <th scope="col" style="width:15%">핸드폰 번호</th>
-			      <th scope="col" style="width:60%">배송지 주소</th>
-			      <th scope="col" style="width:6%" class="addrTxct">수정</th>
+			      <th scope="col" style="width:17%">핸드폰 번호</th>
+			      <th scope="col" style="width:64%">배송지 주소</th>
 			      <th scope="col" style="width:6%" class="addrTxct">삭제</th>
 			    </tr>
 			  </thead>
@@ -595,7 +594,6 @@
 						<td><%=list.get(i).getAdRec() %></td>
 						<td><%=list.get(i).getAdPhone() %></td>
 						<td><%=list.get(i).getAddr1() %>&nbsp; <%=list.get(i).getAddr3() %></td>
-						<td class="addrTxct"><button class="addrUpdateBtn">수정</button></td>
 						<td class="addrTxct">
 							<button class="addrDelbtn" onclick="location.href='delete.do?adidx=<%=list.get(i).getAdidx() %>'">
 							  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">

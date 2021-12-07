@@ -47,10 +47,10 @@ public class MemberController {
 	public int idCheck(MemberVO vo) throws Exception{
 		int result = MemberService.idCheck(vo);
 		
-		
 		return result;
 	}
 	
+	//회원가입액션
 	@RequestMapping(value="/joinAction.do", method = RequestMethod.POST)
 	public void joinAction(Locale locale, Model model,MemberVO vo, String mId, HttpSession session, HttpServletResponse response)throws Exception {
 		
@@ -67,12 +67,14 @@ public class MemberController {
 		
 	}
 	
+	//아이디찾기
 	@RequestMapping(value="/findId.do", method = RequestMethod.GET)
 	public String findId(Locale locale, Model model,MemberVO vo)throws Exception {
 		
 		return "/member/findId";
 	}
 	
+	//아이디찾기액션
 	@RequestMapping(value="/findId.do", method = RequestMethod.POST)
 	public String findId(Locale locale, Model model,MemberVO vo, HttpServletResponse response)throws Exception {
 		
@@ -83,12 +85,14 @@ public class MemberController {
 		return "/member/findIdResult";
 	}
 	
+	//비밀번호찾기
 	@RequestMapping(value="/findPwd.do", method = RequestMethod.GET)
 	public String findPwd(Locale locale, Model model,MemberVO vo)throws Exception {
 		
 		return "/member/findPwd";
 	}
-
+	
+	//비밀번호찾기액션
 	@RequestMapping(value="/findPwd.do", method = RequestMethod.POST)
 	public String findPwd(Locale locale, Model model,MemberVO vo, HttpServletResponse response)throws Exception {
 		
@@ -102,7 +106,6 @@ public class MemberController {
 	// 회원 탈퇴 get
 	@RequestMapping(value="/leave.do", method = RequestMethod.GET)
 	public String leave(Locale locale, Model model) throws Exception{
-		
 		
 		return "/member/leave";
 	}

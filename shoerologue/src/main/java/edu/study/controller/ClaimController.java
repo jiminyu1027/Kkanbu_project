@@ -36,11 +36,18 @@ public class ClaimController {
 	
 	@Autowired
 	AnswerService AnswerService;
-
+	
+	//마이페이지
 	@RequestMapping(value="/myPage.do")
-	public String myPage(Locale locale, Model model)throws Exception {
+	public String myPage(Locale locale, Model model, HttpSession session)throws Exception {
+		MemberVO member=(MemberVO)session.getAttribute("member");
 		
-		return "/mypage/claim/myPage";
+		if(member != null){
+			return "/mypage/claim/myPage";
+		}else {
+			return "redirect:/login.do";
+		}
+		
 	}
 	
 	@RequestMapping(value="/insertCard.do")

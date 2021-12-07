@@ -344,8 +344,7 @@
 			function checkFn(type){
 				if(type == 'id'){
 				
-					var checkId = /[a-z]+[a-z0-9]{5,20}/g;
-					
+					var checkId = /^[A-za-z0-9]{4,20}/g;
 					var value = document.frm.id.value;
 					
 					var div = document.getElementsByClassName("id")[0].getElementsByTagName("div")[0];
@@ -402,7 +401,7 @@
 		//-----------------------------------------------------------	
 		function sumbitFn(){
 				var result = true;
-				var checkId = /^[a-z]+[a-z0-9]{4,20}/g;
+				var checkId = /^[A-za-z0-9]{4,20}/g;
 				var value = document.frm.id.value;
 				var span = document.getElementsByClassName("id")[0].getElementsByTagName("span")[0];
 				if(value == ""){
