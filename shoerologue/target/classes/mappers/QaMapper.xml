@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="edu.study.mapper.QaMapper">
+
+	<insert id="insert" parameterType="edu.study.vo.QaVO">
+		<![CDATA[
+			INSERT INTO PRODUCT_QUESTION(
+				PQIDX,PQSUBJECT
+				,PQCONTENTS,PQWRITER
+				,PQOPEN,MIDX)
+				VALUES(
+				PQIDX_SEQ.nextval
+				,#{pqSubject}
+				,#{pqContents}
+				,#{pqWriter}
+				,#{pqOpen}
+				,#{midx}
+				)
+		]]>
+	</insert>
+	
+	<select id="pqlist" resultType="edu.study.vo.QaVO">
+		SELECT * FROM PRODUCT_QUESTION WHERE 1=1 ORDER BY PQIDX DESC
+	</select>
+	
+	<select id="detail" resultType="edu.study.vo.QaVO">
+		SELECT * FROM PRODUCT_QUESTION WHERE PQIDX = #{PQIDX}
+	</select>
+</mapper>  
