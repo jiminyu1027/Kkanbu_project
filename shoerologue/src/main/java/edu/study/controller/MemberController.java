@@ -105,9 +105,16 @@ public class MemberController {
 	
 	// È¸¿ø Å»Åð get
 	@RequestMapping(value="/leave.do", method = RequestMethod.GET)
-	public String leave(Locale locale, Model model) throws Exception{
+	public String leave(Locale locale, Model model, HttpSession session) throws Exception{
 		
-		return "/member/leave";
+		MemberVO member=(MemberVO)session.getAttribute("member");
+		
+		if(member != null){
+		
+			return "/member/leave";
+		}else {
+			return "redirect:/login.do";
+		}
 	}
 	
 	// È¸¿ø Å»Åð post

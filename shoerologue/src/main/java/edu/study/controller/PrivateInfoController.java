@@ -36,15 +36,20 @@ public class PrivateInfoController {
 		// 세션에 있는 member를 가져와 member변수에 넣어줍니다.
 		MemberVO member = (MemberVO) session.getAttribute("member");
 		
-		//세션에 있는 회원 MIDX를 가져와 DB에 MEMBERTABLE에서 조회 
-		int midx = member.getMidx();
+		if(member != null){
 		
-		//서비스에서 midx가 일치하는 user 정보 가져오기
-		MemberVO loginUserInfo = MemberService.member(midx);
-		
-		model.addAttribute("loginUserInfo",loginUserInfo);
+			//세션에 있는 회원 MIDX를 가져와 DB에 MEMBERTABLE에서 조회 
+			int midx = member.getMidx();
+			
+			//서비스에서 midx가 일치하는 user 정보 가져오기
+			MemberVO loginUserInfo = MemberService.member(midx);
+			
+			model.addAttribute("loginUserInfo",loginUserInfo);
 				
-		return "/mypage/privateInfo/myInfo";
+			return "/mypage/privateInfo/myInfo";
+		}else {
+			return "redirect:/login.do";
+		}
 	}
 
 	@RequestMapping(value="/myInfo.do", method = RequestMethod.POST)
@@ -64,9 +69,16 @@ public class PrivateInfoController {
 	
 	
 	@RequestMapping(value="/myInfoPwd.do", method = RequestMethod.GET)
-	public String myInfoPwd(Locale locale, Model model)throws Exception {
+	public String myInfoPwd(Locale locale, Model model,HttpSession session)throws Exception {
 		
-		return "/mypage/privateInfo/myInfoPwd";
+		MemberVO member=(MemberVO)session.getAttribute("member");
+		
+		if(member != null){		
+		
+			return "/mypage/privateInfo/myInfoPwd";
+		}else {
+			return "redirect:/login.do";
+		}
 	}
 	
 	@RequestMapping(value="/myInfoPwd.do", method = RequestMethod.POST)

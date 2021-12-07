@@ -51,19 +51,40 @@ public class ClaimController {
 	}
 	
 	@RequestMapping(value="/insertCard.do")
-	public String insertCard(Locale locale, Model model)throws Exception {
+	public String insertCard(Locale locale, Model model, HttpSession session)throws Exception {
+		MemberVO member=(MemberVO)session.getAttribute("member");
 		
-		return "/mypage/claim/insertCard";
+		if(member != null){
+			return "/mypage/claim/insertCard";
+		}else {
+			return "redirect:/login.do";
+		}
 	}
 	@RequestMapping(value="/refund.do")
-	public String refund(Locale locale, Model model)throws Exception {
+	public String refund(Locale locale, Model model, HttpSession session)throws Exception {
 		
-		return "/mypage/claim/refund";
+		MemberVO member=(MemberVO)session.getAttribute("member");
+		
+		if(member != null){
+			return "/mypage/claim/refund";
+		}else {
+			return "redirect:/login.do";
+		}
+		
+		
 	}
 	@RequestMapping(value="/orderCancel.do")
-	public String orderCancel(Locale locale, Model model)throws Exception {
+	public String orderCancel(Locale locale, Model model, HttpSession session)throws Exception {
 		
-		return "/mypage/claim/orderCancel";
+		MemberVO member=(MemberVO)session.getAttribute("member");
+		
+		if(member != null){
+			return "/mypage/claim/orderCancel";
+		}else {
+			return "redirect:/login.do";
+		}
+		
+		
 	}
 	@RequestMapping(value="/inquiryContents.do")
 	public String inquiryList(Locale locale,Model model,@RequestParam("qidx") int qidx,HttpSession httr)throws Exception{

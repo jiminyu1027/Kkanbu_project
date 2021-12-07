@@ -37,10 +37,15 @@ public class DeliveryAddrController {
 		
 		MemberVO member = (MemberVO)session.getAttribute("member");
 		
-		List<AddressVO> list = AddressService.list(member.getMidx());
-		model.addAttribute("list",list);
+		if(member != null){
 		
-		return "/mypage/deliveryAddr/receiveAddr";
+			List<AddressVO> list = AddressService.list(member.getMidx());
+			model.addAttribute("list",list);
+		
+			return "/mypage/deliveryAddr/receiveAddr";
+		}else {
+			return "redirect:/login.do";
+		}
 	}
 	
 	@RequestMapping(value="/receiveAddr.do", method=RequestMethod.POST)
