@@ -16,7 +16,14 @@ public class OrderVO {
 	private String pColor;
 	private String pSize;
 	private int amount;
+	private int ctsize;
 	
+	public int getCtsize() {
+		return ctsize;
+	}
+	public void setCtsize(int ctsize) {
+		this.ctsize = ctsize;
+	}
 	public String getpBrandeng() {
 		return pBrandeng;
 	}

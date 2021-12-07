@@ -47,4 +47,22 @@
    		FROM product
         WHERE pidx = #{pidx}
 	</select>
+	
+	 <insert id="insert" parameterType="productVO">
+    <![CDATA[		
+		    INSERT INTO cart VALUES(
+		    	 ctidx_seq.nextval
+		    	,sysdate
+		    	,#{pidx}		
+		    	,#{midx}
+		    	,#{amount}
+		    	,#{ctsize}
+		    )
+		    ]]>
+		    <selectKey resultType="int" keyProperty="ctidx" order="AFTER">		<!--keyproperty  selectkey의 값 어디에 담을건지? -->
+		    	SELECT MAX(ctidx) FROM cart
+		    </selectKey>
+    </insert>
+	
+
 </mapper>

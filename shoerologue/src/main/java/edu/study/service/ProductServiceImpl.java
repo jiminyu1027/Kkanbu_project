@@ -25,6 +25,12 @@ public class ProductServiceImpl implements ProductService{
 		return ProductDao.detail(pidx);
 	}
 
+	@Override
+	public void insert(ProductVO pvo) throws Exception {
+		ProductDao.insert(pvo);
+		
+	}
+
 
 	
 

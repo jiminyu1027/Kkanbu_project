@@ -31,12 +31,10 @@ public class OrderController{
 		if(member != null){
 			List<OrderVO> list=orderService.list(member.getMidx());
 			
-			
-			
 			model.addAttribute("list",list);
 		}
 		
-		return "order/orderpayment";
+		return "/order/orderpayment";
 	}
 	
 }

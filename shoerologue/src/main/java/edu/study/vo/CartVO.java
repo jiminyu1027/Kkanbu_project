@@ -5,19 +5,25 @@ public class CartVO {
 	private int ctidx;
 	private int pidx;
 	private int midx;
-	private String mId;
 	private String mName;
-	private int ctcnt;
 	private String ctwriteday;
 	private String pBrandeng;
+	private String pBrandkr;
 	private String pNameeng;
 	private String pNamekr;
 	private String pPrice;
 	private String pColor;
-	private String pSize;
+	private String ctsize;
 	private String pFile1;
 	private int money;
 	private int amount;
+	
+	public String getpBrandkr() {
+		return pBrandkr;
+	}
+	public void setpBrandkr(String pBrandkr) {
+		this.pBrandkr = pBrandkr;
+	}
 	
 	public String getpFile1() {
 		return pFile1;
@@ -56,11 +62,11 @@ public class CartVO {
 	public void setpColor(String pColor) {
 		this.pColor = pColor;
 	}
-	public String getpSize() {
-		return pSize;
+	public String getCtsize() {
+		return ctsize;
 	}
-	public void setpSize(String pSize) {
-		this.pSize = pSize;
+	public void setCtsize(String ctsize) {
+		this.ctsize = ctsize;
 	}
 	public int getMoney() {
 		return money;
@@ -73,12 +79,6 @@ public class CartVO {
 	}
 	public void setAmount(int amount) {
 		this.amount = amount;
-	}
-	public String getmId() {
-		return mId;
-	}
-	public void setmId(String mId) {
-		this.mId = mId;
 	}
 	public String getmName() {
 		return mName;
@@ -103,12 +103,6 @@ public class CartVO {
 	}
 	public void setMidx(int midx) {
 		this.midx = midx;
-	}
-	public int getCtcnt() {
-		return ctcnt;
-	}
-	public void setCtcnt(int ctcnt) {
-		this.ctcnt = ctcnt;
 	}
 	public String getCtwriteday() {
 		return ctwriteday;

@@ -32,7 +32,6 @@
 		*{
 			font-family: 'Montserrat', "Noto Sans KR", sans-serif;
 		}
-
 	</style>
 	<script src="/js/jquery-3.6.0.min.js"></script>
 	<script>
@@ -326,9 +325,9 @@
 </header>
 
 <!-- 주문/결제 section -->
-<section>
+<div class="sectionBox">
 	<form name="frm" action="#" method="POST" autocomplete="off">
-		<div class="sectionBox">
+		<div class="subsectionBox">
 			<span class="orderHead">주문 / 결제</span>
 			<div class="textHead">주문리스트</div>
 		<!--주문/결제 content -->
@@ -354,38 +353,43 @@
 		<!-- 상품정보 -->
 			<div class="infoBox">
 				<table>
+					<%
+						for(int i=0; i<list.size(); i++){
+					%>
 						<tr>
-							<td class="imgSize"><img src="/shoerologue/resources/image/vans.jpg" width="110px"></td>
+							<td class="imgSize"><a href="/shoerologue/product/product.do?pidx=<%=list.get(i).getPidx()%>">
+									<img src="/shoerologue/resources/image/productdetail/<%=list.get(i).getpFile1() %>" width="110px"></a></td>
 							<td class="prodIntro">
-								<span class="pBrand">VANS</span>
-								<div class="pTitle">OLD SCOOL</div>
+								<span class="pBrand"><%=list.get(i).getpBrandeng() %></span>
+								<div class="pTitle"><%=list.get(i).getpNameeng()%></div>
 								<div>
-								<span class="pColor">WHITE / BLACK</span>
+								<span class="pColor"><%=list.get(i).getpColor()%></span>
 								</div>	
-								<span class="pSize">230</span>
+								<span class="pSize"><%=list.get(i).getCtsize()%></span>
 							</td>
 							<td class="textBox">
-							  	<span class="pAmountOp">1</span>
+							  	<span class="pAmountOp"><%=list.get(i).getAmount()%></span>
 							</td>
 							<td class="textBox2">
 								<div class="textBox3">
-								<span class="pPriceVal1">29,000</span>
+								<span class="pPriceVal1"><%=list.get(i).getpPrice()%></span>
 								<span class="won1">원</span>
 								</div>
 							</td>
 							<td class="textBox2">
 								<div class="textBox3">
-								<span class="pPriceVal2">29,000</span>
+								<span class="pPriceVal2">합계금액</span>
 								<span class="won2">원</span>
 								</div>
 							</td>
 							<td class="textBox2">
 								<div class="textBox3">
-								<span class="pPriceVal1">0</span>
+								<span class="pPriceVal1">배송비</span>
 								<span class="won1">원</span>
 								</div>
 							</td>
 						</tr>
+						<%} %>
 					</table>
 			</div>
 			<div class="bullet-right">
@@ -616,7 +620,7 @@
 	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill top fixed" viewBox="0 0 16 16">
 	  <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
 	</svg></a>
-</section>
+	</div>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
 	function zipbtn(){
@@ -657,13 +661,12 @@
 			var result = confirm('메인페이지로 이동하시겠습니까?');
 			
 			if(result){
-				location.replace('/main.do');
+				location.replace('/shoerologue');
 			}else{
 				//취소 누르면 변화 없음
 			}
 		});
 	});
-	
 	
 	<!--필수항목 아코디언-->
 	$(".que").click(function() {

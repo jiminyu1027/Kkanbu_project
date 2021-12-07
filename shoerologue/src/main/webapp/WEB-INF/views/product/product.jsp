@@ -45,10 +45,38 @@
 			$(document).ready( function() {
 				$(".productSizeBtn").one('click',function(){
 					/* $(".hereSize").append($(this).attr('value')," / ");*/
-					$(".productTotalPrice").text(<%=pvo.getpPrice()%>);
+					$(".productTotalPrice").text(comma(<%=pvo.getpPrice()%>));
 				return false;
 				});
 			});
+			
+			//콤마 정규식
+			function comma(str) { 
+				 str = String(str); 
+				  str = str.replace(/[^\d]+/g, ''); // 숫자만 남김 
+				  return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'); 
+			}
+			
+			var sizeSelectYN = false;
+			
+			function sizeSelect(obj){
+				sizeSelectYN = true;
+				var size = obj.textContent;
+				
+				$("input[name='ctsize']").val(size);
+				console.log($("input[name='ctsize']").val());
+				
+			}
+			
+			function gotoCart(){
+				
+				if(sizeSelectYN == false){
+					alert("사이즈를 선택해 주세요.");
+					return false;
+				}else {
+					document.frm.submit();
+				}
+			}
         </script>
 	</head>
 		<body>
@@ -261,6 +289,8 @@
 					<!-- 상품 내용  -->
 					<div class="productBox3">
 						<div class="pdText">
+						<form id="frm" name="frm" action="/shoerologue/cart/cart.do" method="POST">
+							<input type="hidden" name="ctsize" value="">
 							<div class="wishShareBtn">
 								<a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
 									<path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
@@ -270,19 +300,19 @@
 								</svg></a>
 							</div>
 							<div class="pdContents">
-								<input type="hidden" id="pidx" name="pidx" value="<%=pvo.getPidx()%>">
-								<div class="caBrand" id="pBrandKr" name="pBrandKr"><a href="#"><%=pvo.getpBrandKr() %></a></div><br>
-								<div class="pTitle" id="pNameKr" name="pNameKr"><%=pvo.getpNameKr() %></div>
-								<div class="pContents" id="pNameEng" name="pNameEng"><%=pvo.getpNameEng() %></div>
-								<br>
-								<span class="pPrice" id="pPrice" name="pPrice">
-									<% if(pvo.getpPrice().length() <6) {%>
-										<%=pvo.getpPrice().substring(pvo.getpPrice().length()-5,pvo.getpPrice().length()-3) %>,<%=pvo.getpPrice().substring(pvo.getpPrice().length()-3,pvo.getpPrice().length()) %>
-									<%}else{ %>
-										<%=pvo.getpPrice().substring(pvo.getpPrice().length()-6,pvo.getpPrice().length()-3) %>,<%=pvo.getpPrice().substring(pvo.getpPrice().length()-3,pvo.getpPrice().length()) %>
-									<% } %>
-								</span>
-								<span>원</span>
+									<input type="hidden" id="pidx" name="pidx" value="<%=pvo.getPidx()%>">
+									<div class="caBrand" id="pBrandKr" name="pBrandKr"><a href="#"><%=pvo.getpBrandKr() %></a></div><br>
+									<div class="pTitle" id="pNameKr" name="pNameKr"><%=pvo.getpNameKr() %></div>
+									<div class="pContents" id="pNameEng" name="pNameEng"><%=pvo.getpNameEng() %></div>
+									<br>
+									<span class="pPrice" id="pPrice" name="pPrice">
+										<% if(pvo.getpPrice().length() <6) {%>
+											<%=pvo.getpPrice().substring(pvo.getpPrice().length()-5,pvo.getpPrice().length()-3) %>,<%=pvo.getpPrice().substring(pvo.getpPrice().length()-3,pvo.getpPrice().length()) %>
+										<%}else{ %>
+											<%=pvo.getpPrice().substring(pvo.getpPrice().length()-6,pvo.getpPrice().length()-3) %>,<%=pvo.getpPrice().substring(pvo.getpPrice().length()-3,pvo.getpPrice().length()) %>
+										<% } %>
+									</span>
+									<span>원</span>
 							</div>
 							<div class="hr2"></div>
 							<!-- 상품 컬러 -->
@@ -328,14 +358,14 @@
 									<tr>
 										<th>사이즈</th>
 										<td>
-											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(0,3) %>"><%=pvo.getpSize().substring(0,3) %></button>
-											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(4,7) %>"><%=pvo.getpSize().substring(4,7) %></button>
-											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(8,11) %>"><%=pvo.getpSize().substring(8,11) %></button>
-											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(12,15) %>"><%=pvo.getpSize().substring(12,15) %></button>
-											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(16,19) %>"><%=pvo.getpSize().substring(16,19) %></button>
-											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(20,23) %>"><%=pvo.getpSize().substring(20,23) %></button>
-											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(24,27) %>"><%=pvo.getpSize().substring(24,27) %></button>
-											<button class="productSizeBtn" value ="<%=pvo.getpSize().substring(28,31) %>"><%=pvo.getpSize().substring(28,31) %></button>
+											<button type="button" class="productSizeBtn" value ="<%=pvo.getpSize().substring(0,3) %>" onclick="sizeSelect(this)"><%=pvo.getpSize().substring(0,3) %></button>
+											<button type="button" class="productSizeBtn" value ="<%=pvo.getpSize().substring(4,7) %>" onclick="sizeSelect(this)"><%=pvo.getpSize().substring(4,7) %></button>
+											<button type="button" class="productSizeBtn" value ="<%=pvo.getpSize().substring(8,11) %>" onclick="sizeSelect(this)"><%=pvo.getpSize().substring(8,11) %></button>
+											<button type="button" class="productSizeBtn" value ="<%=pvo.getpSize().substring(12,15) %>"onclick="sizeSelect(this)"><%=pvo.getpSize().substring(12,15) %></button>
+											<button type="button" class="productSizeBtn" value ="<%=pvo.getpSize().substring(16,19) %>"onclick="sizeSelect(this)"><%=pvo.getpSize().substring(16,19) %></button>
+											<button type="button" class="productSizeBtn" value ="<%=pvo.getpSize().substring(20,23) %>"onclick="sizeSelect(this)"><%=pvo.getpSize().substring(20,23) %></button>
+											<button type="button" class="productSizeBtn" value ="<%=pvo.getpSize().substring(24,27) %>"onclick="sizeSelect(this)"><%=pvo.getpSize().substring(24,27) %></button>
+											<button type="button" class="productSizeBtn" value ="<%=pvo.getpSize().substring(28,31) %>"onclick="sizeSelect(this)"><%=pvo.getpSize().substring(28,31) %></button>
 										</td>
 									</tr>
 								</table>
@@ -358,10 +388,11 @@
 										</table>
 									</div>
 									<div class="productPaymentBtn">
-										<span class="cartBtn"><button onclick="location.href='/shoerologue/cart/cart.do?pidx='">장바구니</button></span>
+										<span class="cartBtn"><button type="submit" onclick="gotoCart(); return false;">장바구니</button></span>
 										<span class="paymentBtn"><button onclick="location.href='/shoerologue/order/orderpayment.do'">바로구매</button></span>
 									</div>
 								</div>
+								</form>
 						</div>
 					</div>
 				</div>

@@ -7,8 +7,12 @@
 section{
 	margin:60px 400px 100px;
 }
-
 .sectionBox{
+	padding-bottom: 150px;
+	padding-top: 95px;	
+}
+
+.subsectionBox{
 	width: 1200px;
   	margin: 0 auto;
 }
@@ -242,6 +246,7 @@ select::-ms-expand {
 	border:3px solid #111;
 	top:759px;
 	z-index: 1;
+	margin-top:200px;
 }
 .payment-head{
 	padding:10px 0 28px;

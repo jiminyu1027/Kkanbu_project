@@ -11,5 +11,5 @@ public interface ProductService {
 
 	ProductVO detail(int pidx) throws Exception;
 	
-
+	public void insert(ProductVO pvo) throws Exception;
 }

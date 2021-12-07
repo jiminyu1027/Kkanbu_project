@@ -22,6 +22,10 @@ public class CartDAO {
 		sqlSession.insert(Namespace+".insert", cvo);
 	}
 	
+	public void listOne(int ctidx) throws Exception{
+		sqlSession.selectOne(Namespace+".listOne", ctidx);
+	}
+	
 	public List<CartVO> list(int midx) throws Exception{
 		return sqlSession.selectList(Namespace+".list",midx);
 	}
@@ -35,6 +39,7 @@ public class CartDAO {
 	}
 	
 	public void update(int ctidx) throws Exception{
+		sqlSession.update(Namespace+".update", ctidx);
 	}
 	
 	public int sum(int midx) throws Exception{

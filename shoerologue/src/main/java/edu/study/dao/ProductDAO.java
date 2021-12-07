@@ -32,7 +32,9 @@ public class ProductDAO {
 			
 		}
 		
-		
+		public void insert(ProductVO pvo) throws Exception{
+			sqlSession.insert(Namespace+".insert", pvo);
+		}
 		
 		
 }

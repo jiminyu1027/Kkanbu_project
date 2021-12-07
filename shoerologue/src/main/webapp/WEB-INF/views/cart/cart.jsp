@@ -9,6 +9,7 @@
 	int totalPrice = Integer.parseInt(request.getAttribute("totalPrice").toString());
 	int fee = Integer.parseInt(request.getAttribute("fee").toString());
 	int allSum = Integer.parseInt(request.getAttribute("allSum").toString());
+	CartVO cvo = (CartVO)request.getAttribute("cvo");
 %>
 <!DOCTYPE html>
 <html>
@@ -32,18 +33,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-		.myPageCart{
-			
-		}
 	</style>
-	<script type="text/javascript">
-
-
-	    
-
-	</script>
-	
-	
 </head>
 <body>
 <!-- 로그인 회원가입 -->
@@ -229,7 +219,7 @@
 		
 		<!-- 마이페이지 메인 -->
 	<div class="sectionBox" style="width:80%">
-		<form name="frm" id="frm" method="POST" action="cart.do">
+		<form name="frm" id="frm" action="/shoerologue/order/orderpayment.do" method="POST">
 			<span  class="text-left">장바구니
 				<span id="insertCount" name="insertCount">(<%=list.size() %>)</span>
 			</span>	
@@ -237,41 +227,18 @@
 		<div class="cartBox1 mt-5">
 			<div class="check-box my-3">
 				<div class="allThingBox">
-					<input type="checkbox" id="allThing" class="mx-1 chk" name="allThing" checked>
+					<input type="checkbox" id="allThing" class="mx-1 chk" name="allThing"  checked>
 					<label for="allThing" ></label>
 					<span class="checkText">전체선택</span>
 				<div class="right-text">
 					<button class="zzim" ><i class="bi bi-heart bicon" style="color:#FF0000"></i>선택 찜하기</button>
-					<button class="Del_btn" id="Del_btn" ><i class="bi bi-trash bicon"></i>선택 삭제</button>
-			<script>
-// 			$(".Del_btn").click(function(){
-// 				var confirm_val = confirm("삭제하시겠습니까?");
-				
-// 				if(confirm_val){
-// 					var checkArr = new Array();
-					
-// 					$("input[class='chkBox']:checked").each(function(){
-// 						checkArr.push($(this).attr("data-ctidx"));
-// 					});
-// 					$.ajax({
-// 						url:"/cart/del",
-// 						type:"post",
-// 						data: { chkBox : checkArr },
-// 						success : function(result){
-// 							if(result == 1){
-// 								location.href="/cart/cart";
-// 							}	else {
-// 								alert("삭제실패!");
-// 							}
-// 						}
-// 					});
-// 				}
-// 			});
-			</script>
+					<button type="button" class="Del_btn" id="Del_btn" onclick="chkdel();"><i class="bi bi-trash bicon"></i>선택 삭제</button>
 				</div>
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+	</script>
 		<!-- 장바구니 상품이 없을 경우 -->
 		<c:if test="${list.size()==0}">
 			<div class="cartNoItem">
@@ -292,19 +259,19 @@
 					%>
 						<tr>
 							<td class="check" id="<%=list.get(i).getPidx()%>">
-								<input type="checkbox" name="shoes" class="chkBox" id="checks<%=list.get(i).getPidx()%>" value="<%=list.get(i).getPidx()%>" checked>
+								<input type="checkbox" name="shoes" class="chkBox" id="checks<%=list.get(i).getPidx()%>" value="<%=list.get(i).getPidx()%>" onclick="autoCalc();" checked>
 								<label for="checks<%=list.get(i).getPidx()%>"></label>
 							</td>
 							<td class="imgSize" >
 							<a href="/shoerologue/product/product.do?pidx=<%=list.get(i).getPidx()%>">
-									<img src="/shoerologue/resources/image/productdetail/<%=list.get(i).getpFile1() %>" width="120px"></a>
+									<img src="/shoerologue/resources/image/productdetail/<%=list.get(i).getpFile1()%>" width="120px"></a>
 							</td>
 							<td class="prodIntro">
-								<span class="pBrand" ><%=list.get(i).getpBrandeng() %></span>
+								<span class="pBrand" ><%=list.get(i).getpBrandkr()%></span>
 								<div class="pTitle"><%=list.get(i).getpNamekr()%></div>
 								<div>
 								<span class="pColor"><%=list.get(i).getpColor()%></span>
-								<span class="pSize"><%=list.get(i).getpSize()%></span>
+								<span class="pSize"><%=list.get(i).getCtsize()%></span>
 								</div>	
 								<input type="button" class="pOption" value="옵션변경" data-bs-target="#staticBackdrop" data-bs-toggle="modal">
 								<!-- Modal -->
@@ -340,10 +307,10 @@
 							</td>
 							<td>
 							<div>
-								<a href="/shoerologue/order/orderpayment.do"> <input type="button" name="rightOrder" value="바로구매" id="rightOrder" class="orderbtn" onclick="goOrder(); return false;"> </a>
+								<button type="submit" name="rightOrder"  id="rightOrder" class="orderbtn" onclick="goOrder(); return false;">바로 구매</button>
 							</div>
 							<div>
-								<a href=""><input type="button" value="삭제" id="delbtn" class="delbtn" onclick=""></a>
+								<button id="delbtn" class="delbtn" >삭제</button>
 							</div>
 							</td>
 						</tr>
@@ -369,9 +336,9 @@
 				<i class="bi bi-plus-circle" style="font-size:2rem;"></i>
 				<div  class="paymentBox2">
 					<span class="paymentLabel px-3">배송비</span>
-					<span class="price" name="fee" id="fee">
-					<fmt:formatNumber><%=fee %></fmt:formatNumber>
-					<span class="won">원</span>
+					<span class="fees" id="total">
+						<span class="price" name="fee" id="fee"><fmt:formatNumber><%=fee %></fmt:formatNumber></span>
+						<span class="won" id="won2">원</span>
 					</span>
 				</div>
 				<img src="/shoerologue/resources/image/symbol/equal.png" class="equalIcon">
@@ -427,28 +394,40 @@
             } else {
                 $("input:checkbox[name='shoes']").prop("checked", false);
             }
+            reverseCalc(this);
+            //전체 선택시 금액 계산 로직 필요
+            
         });
 
         // 체크박스 클릭 시
         $("input:checkbox[name='shoes']").click(function() {
             var allCnt = $("input:checkbox[name='shoes']").length;         // 전체갯수
-            var selCnt = $("inupt:checkbox[name='shoes']:checked").length; // 선택갯수
-
+            var selCnt =  0 ; // 선택갯수
+            $("input:checkbox[name='shoes']").each(function(){
+            	if($(this).is(":checked")){
+            		selCnt++;
+            	}
+            });
+			
+      
             if(allCnt != selCnt) {
                 $("input:checkbox[name='allThing']").prop("checked", false);
-            }else{
+            }else if(allCnt == selCnt){ 
             	 $("input:checkbox[name='allThing']").prop("checked", true);
             }
         });
     });
-
+	
+	function goOrder(){
+		//alert(2);
+		document.frm.submit();
+	}
 		
 	//수량 plus
 	function plus(cnt,amount,i){
 		cnt  *= 1;
 		cnt = cnt+1;
 		//alert(cnt);
-		//amount  = amount.replace(",","")
 		//alert(amount);
 		if(cnt >= 10){
 			alert("주문가능한 최대 수량입니다.");
@@ -495,6 +474,7 @@
 	function autoCalc(){
 		
 		var totalCnt = document.getElementsByName('cnt').length;
+		console.log(totalCnt);
 		//alert("총리스트수"+totalCnt);
 		var count = $('.chkBox').length;
 		//alert(count);
@@ -507,17 +487,52 @@
 	  }
 		//alert(sum);
 		document.getElementById('totalPrice').innerText = comma(sum);		
+		if(sum < 50000){
+			document.getElementById('fee').innerText = comma(3000);	
+		}else{
+			document.getElementById('fee').innerText = comma(0);
+		}
 		
 		allSum();
+		
 		return;
 	}
+	
+
+	
+	function reverseCalc(obj){
+		var $obj = $(obj);
+		if($obj.is(":checked")){
+		  var sum =0;
+		  $(".chkBox").each(function(){
+				if($(this).is(":checked")){
+					var pay = Number($(this).parent().next().next().next().next().find("#pPrice").text().replaceAll(",",""));
+					sum += pay;
+				}
+		  
+		  });
+			document.getElementById('totalPrice').innerText = comma(sum);		
+			if(sum < 50000){
+				document.getElementById('fee').innerText = comma(3000);	
+			}else{
+				document.getElementById('fee').innerText = comma(0);
+			}
+			
+			allSum();
+		}else{
+			document.getElementById('totalPrice').innerText = comma(0);		
+			document.getElementById('fee').innerText = comma(0);
+			document.getElementById('totalPay').innerText = comma(0);
+		}
+	}
+	
 	
 	//전체금액 합계
 	function allSum(){
 		var fee = Number('<%=fee%>');
 		var totalPrice = parseInt(document.getElementById('totalPrice').textContent.replaceAll(",",""));
-		console.log(fee);
-		console.log(totalPrice);
+		//console.log(fee);
+		//console.log(totalPrice);
 		
 		var sum = 0;  
 		sum = fee+totalPrice;
@@ -528,13 +543,11 @@
 	}
 	
 	//콤마 정규식
-		function comma(str) { 
-			 str = String(str); 
-			  str = str.replace(/[^\d]+/g, ''); // 숫자만 남김 
-			  return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'); 
-		}
-	
-
+	function comma(str) { 
+		 str = String(str); 
+		 str = str.replace(/[^\d]+/g, ''); // 숫자만 남김 
+			return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'); 
+	}
 	
 	</script>	
 	

@@ -50,11 +50,12 @@ public class CartController {
 			
 			//배송비
 			int fee = totalPrice >= 50000 ? 0 : 3000;
-			
+			 
 			//총금액
 			int allSum = CartService.sumMoney(member.getMidx());
 			
 			
+			model.addAttribute("cvo",cvo);
 			model.addAttribute("list",list);
 			model.addAttribute("totalPrice",totalPrice);
 			model.addAttribute("fee", fee);
@@ -67,13 +68,36 @@ public class CartController {
 		}
 	}
 	
-	@RequestMapping(value="/cartdel.do", method=RequestMethod.POST)
-	public String del(Locale locale, Model model, int ctidx) throws Exception{
+	@RequestMapping(value="/order/orderpayment.do", method=RequestMethod.GET)
+	public String insert (Model model,CartVO cvo, HttpSession session)throws Exception{
+		MemberVO member = (MemberVO)session.getAttribute("member");
+		
+		return "/shoerologue/order/orderpayment";
+	}
+	
+	@RequestMapping(value="/order/orderpayment.do", method=RequestMethod.POST)
+	public String insert (Model model, Locale locale, int ctidx, HttpSession session)throws Exception{
+		MemberVO member = (MemberVO)session.getAttribute("member");
+		
+			CartService.update(ctidx);
+			System.out.println("ctidx::"+ctidx);
+			//CartService.listOne(ctidx);
+		return "redirect:/order/orderpayment.do";
+	}
+	
+	
+	
+	
+	@ResponseBody
+	@RequestMapping(value="/del.do")
+	public String del(Locale locale, Model model,HttpSession session, int ctidx) throws Exception{
+		MemberVO member=(MemberVO)session.getAttribute("member");
 		
 		CartService.del(ctidx);
 		
-			return"redirect:/cart/cart.do";
+		return"redirect:/shoerologue/cart/cart.do";
 	}
+	
 	
 	@RequestMapping(value="/cartdelAll.do", method=RequestMethod.POST)
 	public String delAll(Locale locale, Model model, String mId) throws Exception{

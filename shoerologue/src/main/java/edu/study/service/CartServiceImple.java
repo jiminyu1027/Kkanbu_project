@@ -22,10 +22,6 @@ public class CartServiceImple implements CartService{
 		CartDao.insert(cvo);
 	}
 	
-	@Override
-	public void del(int ctidx) throws Exception {
-		CartDao.del(ctidx);
-	}
 
 	@Override
 	public void dellAll(String mId) throws Exception {
@@ -34,6 +30,7 @@ public class CartServiceImple implements CartService{
 
 	@Override
 	public void update(int ctidx) throws Exception{
+		CartDao.update(ctidx);
 	}
 
 	@Override
@@ -64,6 +61,18 @@ public class CartServiceImple implements CartService{
 	@Override
 	public int sumMoney(int midx) throws Exception {
 		return CartDao.sumMoney(midx);
+	}
+
+
+	@Override
+	public void del(int ctidx) throws Exception {
+		CartDao.del(ctidx);
+		
+	}
+
+	@Override
+	public void listOne(int ctidx) throws Exception {
+		CartDao.listOne(ctidx);
 	}
 
 	
