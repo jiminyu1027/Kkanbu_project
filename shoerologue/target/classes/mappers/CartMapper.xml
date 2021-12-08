@@ -9,7 +9,7 @@
    		 SELECT c.ctidx,  
   		 	p.pidx,  
    		 	m.midx, 
-  		 	amount, 
+  		 	c.cnt, 
    		 	m.mName,  
    		 	p.pPrice,  
   		 	p.pBrandeng,
@@ -32,7 +32,7 @@
 	  	
 	<!-- 총합 -->
 	<select id="sumMoney" resultType="int">
-		SELECT NVL(SUM(p.pPrice*amount),0) money
+		SELECT NVL(SUM(p.pPrice*cnt),0) money
 		FROM cart c, product p
 		WHERE c.pidx = p.pidx AND c.midx=#{c.midx}
 	</select>
@@ -43,14 +43,14 @@
 	</delete>
 	
 	<update id="update">
-		UPDATE cart SET amount = #{cnt} WHERE ctidx = #{ctidx} 
+		UPDATE cart SET cnt = #{cnt} WHERE ctidx = #{ctidx} 
 	</update>
 	
 	<select id="listOne" resultType="CartVO" parameterType="int">
 		SELECT c.ctidx,  
   		 	p.pidx,  
    		 	m.midx, 
-  		 	amount, 
+  		 	c.cnt, 
    		 	m.mName,  
    		 	p.pPrice,  
   		 	p.pBrandeng,

@@ -10,13 +10,27 @@ public class OrderVO {
 	private int adidx;
 	private String pFile1;
 	private String pBrandeng;
+	private String pBrandkr;
 	private String pNameeng;
 	private String pNamekr;
 	private String pPrice;
 	private String pColor;
 	private String pSize;
-	private int amount;
+	private int cnt;
 	private int ctsize;
+	
+	public String getpBrandkr() {
+		return pBrandkr;
+	}
+	public void setpBrandkr(String pBrandkr) {
+		this.pBrandkr = pBrandkr;
+	}
+	public int getCnt() {
+		return cnt;
+	}
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
 	
 	public int getCtsize() {
 		return ctsize;
@@ -60,12 +74,7 @@ public class OrderVO {
 	public void setpSize(String pSize) {
 		this.pSize = pSize;
 	}
-	public int getAmount() {
-		return amount;
-	}
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
+	
 	public String getpFile1() {
 		return pFile1;
 	}

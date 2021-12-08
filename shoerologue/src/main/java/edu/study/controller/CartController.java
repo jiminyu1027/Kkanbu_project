@@ -78,15 +78,11 @@ public class CartController {
 	@RequestMapping(value="/order/orderpayment.do", method=RequestMethod.POST)
 	public String insert (Model model, Locale locale, int ctidx, HttpSession session)throws Exception{
 		MemberVO member = (MemberVO)session.getAttribute("member");
-		
 			CartService.update(ctidx);
 			System.out.println("ctidx::"+ctidx);
 			//CartService.listOne(ctidx);
 		return "redirect:/order/orderpayment.do";
 	}
-	
-	
-	
 	
 	@ResponseBody
 	@RequestMapping(value="/del.do")

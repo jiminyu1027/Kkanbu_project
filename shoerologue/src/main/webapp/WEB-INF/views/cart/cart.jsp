@@ -231,7 +231,7 @@
 					<label for="allThing" ></label>
 					<span class="checkText">전체선택</span>
 				<div class="right-text">
-					<button class="zzim" ><i class="bi bi-heart bicon" style="color:#FF0000"></i>선택 찜하기</button>
+					<button type="button" class="zzim" ><i class="bi bi-heart bicon" style="color:#FF0000"></i>선택 찜하기</button>
 					<button type="button" class="Del_btn" id="Del_btn" onclick="chkdel();"><i class="bi bi-trash bicon"></i>선택 삭제</button>
 				</div>
 			</div>
@@ -297,7 +297,7 @@
 							  <div class="d-flex justify-content-center mt-2">
 							  	<input type="hidden" id="amount" name="amount" value="<%=list.get(i).getpPrice() %>">
 								<div class="each_input_sub1 text1 bt_down" onclick='minus(document.getElementsByName("cnt")[<%=i %>].value,document.getElementsByName("amount")[<%=i %>].value,<%=i %>)'>-</div>
-		                        <input type="number" class="each_input num" id="cnt" name="cnt" value="<%=list.get(i).getAmount() %>" >
+		                        <input type="number" class="each_input num" id="cnt" name="cnt" value="<%=list.get(i).getCnt()%>" >
 		                        <div class="each_input_sub2 text1 bt_up" onclick='plus(document.getElementsByName("cnt")[<%=i %>].value,document.getElementsByName("amount")[<%=i %>].value,<%=i %>)'>+</div>
 		                       </div>
 							</td>
@@ -395,8 +395,6 @@
                 $("input:checkbox[name='shoes']").prop("checked", false);
             }
             reverseCalc(this);
-            //전체 선택시 금액 계산 로직 필요
-            
         });
 
         // 체크박스 클릭 시
@@ -408,8 +406,6 @@
             		selCnt++;
             	}
             });
-			
-      
             if(allCnt != selCnt) {
                 $("input:checkbox[name='allThing']").prop("checked", false);
             }else if(allCnt == selCnt){ 

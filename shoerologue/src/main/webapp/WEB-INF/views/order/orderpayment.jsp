@@ -360,19 +360,19 @@
 							<td class="imgSize"><a href="/shoerologue/product/product.do?pidx=<%=list.get(i).getPidx()%>">
 									<img src="/shoerologue/resources/image/productdetail/<%=list.get(i).getpFile1() %>" width="110px"></a></td>
 							<td class="prodIntro">
-								<span class="pBrand"><%=list.get(i).getpBrandeng() %></span>
-								<div class="pTitle"><%=list.get(i).getpNameeng()%></div>
+								<span class="pBrand"><%=list.get(i).getpBrandkr() %></span>
+								<div class="pTitle"><%=list.get(i).getpNamekr()%></div>
 								<div>
 								<span class="pColor"><%=list.get(i).getpColor()%></span>
 								</div>	
 								<span class="pSize"><%=list.get(i).getCtsize()%></span>
 							</td>
 							<td class="textBox">
-							  	<span class="pAmountOp"><%=list.get(i).getAmount()%></span>
+							  	<span class="pAmountOp"><%=list.get(i).getCnt()%></span>
 							</td>
 							<td class="textBox2">
 								<div class="textBox3">
-								<span class="pPriceVal1"><%=list.get(i).getpPrice()%></span>
+								<span class="pPriceVal1"><fmt:formatNumber><%=list.get(i).getpPrice()%></fmt:formatNumber></span>
 								<span class="won1">원</span>
 								</div>
 							</td>
@@ -396,6 +396,7 @@
 				<span class="bullet-text">ㆍ 상품수량 및 옵션변경은 상품상세 또는 장바구니에서 가능합니다.</span>
 			</div>
 			<!-- 주문자 정보 -->
+		<div class="contentBox-wrap">
 		<div class="contentBox">
 			<div class="ordererHead">주문고객정보
 			<span class="redEssen">*표는 필수 입력 사항입니다.</span></div>
@@ -612,6 +613,7 @@
 					<div class="btnBox">
 						<input type="button" name="orderbt1" id="orderb1" class="orderbtn1" onclick="goOrderbtn(); return false;" value="결제하기">
 					</div>
+				</div>
 			</div>
 		</div>
 	</form>
@@ -710,6 +712,13 @@
 	      //비즈니스 로직을 수행하기 전에 결제 유효성 검증을 하시길 추천합니다.
 	      console.log(data);
 	  });
+	}
+	
+	//콤마 정규식
+	function comma(str) { 
+		 str = String(str); 
+		 str = str.replace(/[^\d]+/g, ''); // 숫자만 남김 
+			return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'); 
 	}
 </script>
 <!-- footer -->

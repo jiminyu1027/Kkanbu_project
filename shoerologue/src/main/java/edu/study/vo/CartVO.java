@@ -16,7 +16,7 @@ public class CartVO {
 	private String ctsize;
 	private String pFile1;
 	private int money;
-	private int amount;
+	private int cnt;
 	
 	public String getpBrandkr() {
 		return pBrandkr;
@@ -74,11 +74,11 @@ public class CartVO {
 	public void setMoney(int money) {
 		this.money = money;
 	}
-	public int getAmount() {
-		return amount;
+	public int getCnt() {
+		return cnt;
 	}
-	public void setAmount(int amount) {
-		this.amount = amount;
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
 	}
 	public String getmName() {
 		return mName;
