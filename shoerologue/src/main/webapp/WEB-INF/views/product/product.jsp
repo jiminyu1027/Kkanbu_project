@@ -392,7 +392,7 @@
 										<span class="paymentBtn"><button onclick="location.href='/shoerologue/order/orderpayment.do'">바로구매</button></span>
 									</div>
 								</div>
-								</form>
+							</form>
 						</div>
 					</div>
 				</div>

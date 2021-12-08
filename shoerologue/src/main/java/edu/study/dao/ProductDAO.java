@@ -45,6 +45,7 @@ public class ProductDAO {
 		public List<ProductVO> pdAllList(ProductVO pvo, Criteria2 cri) throws Exception{
 			return sqlSession.selectList(Namespace+".pdAllList",cri);
 		}
+		
 		public int countAllList() throws Exception{	
 			return sqlSession.selectOne(Namespace+".countAllList");
 		}

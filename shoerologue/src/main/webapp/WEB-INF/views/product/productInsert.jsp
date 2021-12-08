@@ -47,8 +47,11 @@
 		
 		
 		function pdInsert(){
-			alert("상품을 등록합니다");
-			document.frm.submit();
+			if(frm != null){
+				alert("채워주세요");
+			}else{
+				document.frm.submit();
+			}
 		}
 		
 	</script>
@@ -182,7 +185,7 @@
 			<div class="pdInsertSmBox">
 				<h3>상품 등록</h3>
 				<br>
-				<form id="frm" name="frm" action="/shoerologue/product/pdAllList.do" method="POST">
+				<form id="frm" name="frm" action="/shoerologue/product/pdAllList.do" method="POST" enctype="multipart/form-data">
 					<table>
 						<tr>
 							<td height=70 width=110>브랜드(한글)</td>
@@ -196,10 +199,10 @@
 							<td>&nbsp;&nbsp;상품 이름(영어)</td>
 							<td><input type="text" name="pNameEng"></td>
 						</tr>
-						<!-- <tr>
+						<tr>
 							<td height=70 >성별</td>
 							<td>
-								<select>
+								<select name="pGender">
 									<option value="M">MEN : 남성</option>
 									<option value="W">WOMEN : 여성</option>
 									<option value="K">KIDS : 키즈</option>
@@ -208,7 +211,7 @@
 						</td>
 							<td>&nbsp;&nbsp;종류</td>
 							<td>
-								<select>
+								<select name="pType">
 									<option value="운동화">운동화</option>
 									<option value="스포츠">스포츠</option>
 									<option value="구두">구두</option>
@@ -217,7 +220,7 @@
 									<option value="부츠">부츠</option>
 								</select>
 							</td>
-						</tr> -->
+						</tr>
 						<tr>
 							<td height=70>색상</td>
 							<td><input type="text" name="pColor"></td>
@@ -230,23 +233,23 @@
 						</tr>
 						<tr>
 							<td height=70>사진</td>
-							<td colspan='3'><input type="file" name="pFile1"></td>
+							<td colspan='3'><input type="file" name="File1"></td>
 						</tr>
 						<tr>
 							<td height=70></td>
-							<td colspan='3'><input type="file" name="pFile1"></td>
+							<td colspan='3'><input type="file" name="File2"></td>
 						</tr>
 						<tr>
 							<td height=70></td>
-							<td colspan='3'><input type="file" name="pFile1"></td>
+							<td colspan='3'><input type="file" name="File3"></td>
 						</tr>
 						<tr>
 							<td height=70></td>
-							<td colspan='3'><input type="file" name="pFile1"></td>
+							<td colspan='3'><input type="file" name="File4"></td>
 						</tr>
 						<tr>
 							<td height=70></td>
-							<td colspan='3'><input type="file" name="pFile1"></td>
+							<td colspan='3'><input type="file" name="File5"></td>
 						</tr>
 					</table>
 					<hr>

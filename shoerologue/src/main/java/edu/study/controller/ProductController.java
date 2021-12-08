@@ -1,9 +1,11 @@
 package edu.study.controller;
 
+import java.io.File;
 import java.lang.reflect.Member;
 import java.util.List;
 import java.util.Locale;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,14 +13,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 
 import edu.study.domain.Criteria;
 import edu.study.domain.Criteria2;
 import edu.study.domain.PageMaker;
 import edu.study.domain.PageMaker2;
+import edu.study.service.MemberService;
 import edu.study.service.ProductService;
+import edu.study.vo.InquiryVO;
 import edu.study.vo.MemberVO;
 import edu.study.vo.ProductVO;
+import utils.UploadFileUtils;
 
 @RequestMapping(value="/")
 @Controller
@@ -27,11 +33,17 @@ public class ProductController {
 	@Autowired
 	ProductService productService;
 	
+	@Autowired
+	MemberService MemberService;
+	
+	@Resource(name="uploadPath")
+	private String uploadPath;
+	
 	@RequestMapping(value="/product/product.do")
 	public String product(Locale locale, Model model,int pidx)throws Exception {
 			
-				ProductVO pvo = productService.detail(pidx);
-				model.addAttribute("pvo", pvo);
+		ProductVO pvo = productService.detail(pidx);
+		model.addAttribute("pvo", pvo);
 			
 				
 //		List<ProductVO> list = productService.hotDealList();
@@ -64,20 +76,61 @@ public class ProductController {
 	
 	@RequestMapping(value="/product/productInsert.do",method=RequestMethod.GET)
 	public String productInsert(Model model,ProductVO pvo,HttpSession session)throws Exception {
-			
+		System.out.println("¤²¤¸¤§");
 		
 		return "/product/productInsert";
 	}
 	
-	@RequestMapping(value="/product/pdAllList.do",method=RequestMethod.POST)
-	public String productInsert(Locale locale, Model model,ProductVO pvo,HttpSession session)throws Exception {
-			
+	@RequestMapping(value="/product/productInsert.do",method=RequestMethod.POST)
+	public String productInsert(Locale locale, Model model,ProductVO pvo,HttpSession session,MultipartFile file1,MultipartFile file2,MultipartFile file3,MultipartFile file4,MultipartFile file5)throws Exception {
+		System.out.println("11");
+		String imgUploadPath = uploadPath + File.separator + "imgUpload";
+		String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
+		String fileName = null;
+
+		if(file1 != null && file1.getSize()>0) {
+		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file1.getOriginalFilename(), file1.getBytes(), ymdPath); 
+		 pvo.setpFile1(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+		} else {
+		 pvo.setpFile1("");
+		}
+		
+		if(file2 != null && file2.getSize()>0) {
+		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file2.getOriginalFilename(), file2.getBytes(), ymdPath); 
+		 pvo.setpFile2(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+		} else {
+		 pvo.setpFile2("");
+		}
+		
+		if(file3 != null && file3.getSize()>0) {
+		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file3.getOriginalFilename(), file3.getBytes(), ymdPath); 
+		 pvo.setpFile3(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+		} else {
+		 pvo.setpFile3("");
+		}
+		
+		if(file4 != null && file4.getSize()>0) {
+		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file4.getOriginalFilename(), file4.getBytes(), ymdPath); 
+		 pvo.setpFile4(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+		} else {
+		 pvo.setpFile4("");
+		}
+		
+		if(file5 != null && file5.getSize()>0) {
+		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file5.getOriginalFilename(), file5.getBytes(), ymdPath); 
+		 pvo.setpFile5(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+		} else {
+		 pvo.setpFile5("");
+		}
+		System.out.println("22");
+		
 		MemberVO member = (MemberVO)session.getAttribute("member");
 		pvo.setMidx(member.getMidx());
 		
 			productService.productInsert(pvo);
+			System.out.println("33");
 				
-		return "redirect:/shoerologue.do";
+		return "redirect:/product/pdAllList.do";
 	}
 	
 	@RequestMapping(value="/product/pdAllList.do")
