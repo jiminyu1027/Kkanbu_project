@@ -354,7 +354,7 @@
 						%>
 							<tr class="inquiry-contents-box">
 								<td class="inquiry-number-detail"><%=i+1 %></td>
-								<td class="inquiry-subject-detail" onclick="location.href='/shoerologue/mypage/claim/inquiryContents.do?qidx=<%=qlist.get(i).getQidx()%>'"><%=qlist.get(i).getqTitle() %></td>
+								<td class="inquiry-subject-detail"><a href='/shoerologue/mypage/claim/inquiryContents.do?qidx=<%=qlist.get(i).getQidx()%>'"><%=qlist.get(i).getqTitle() %></a></td>
 								<td class="inquiry-writeday-detail"><%=qlist.get(i).getqWriteday().substring(0,10) %></td>
 								<td class="inquiry-writer-detail"><%=qlist.get(i).getqReason() %></td>
 							</tr>

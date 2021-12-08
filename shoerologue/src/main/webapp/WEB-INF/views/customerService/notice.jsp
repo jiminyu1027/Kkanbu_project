@@ -303,7 +303,7 @@
 				%>
 				<tr class="notice-contents-box">
 					<td class="notice-number-detail"><%=i+1 %></td>
-					<td class="notice-subject-detail" onclick="location.href='/shoerologue/customerService/event.do?nidx=<%=nlist.get(i).getNidx()%>'"><%=nlist.get(i).getnTitle() %></td>
+					<td class="notice-subject-detail"><a href="/shoerologue/customerService/event.do?nidx=<%=nlist.get(i).getNidx()%>"><%=nlist.get(i).getnTitle() %></a></td>
 					<td class="notice-writeday-detail"><%=nlist.get(i).getnWriteday().substring(0,10)%></td>
 					
 				</tr>

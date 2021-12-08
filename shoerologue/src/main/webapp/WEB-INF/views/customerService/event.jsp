@@ -236,7 +236,7 @@
 			<div class="filter-title"><span id="filter-title"><center>고객센터</center></span></div>
 			<center><p><a href="/shoerologue/customerService/cs.do" class="other">FAQ</a></p></center>
 			<center><p><a href="/shoerologue/customerService/notice.do" class="main">공지사항</a></p></center>
-			<center><p><a href="/shoerologue/mypage/memberCounsel/inquiry.do" class="other">1:1 문의</a></p></center>
+			<center><p><a href="#" class="other">매장 찾기</a></p></center>
 			<center><p><a href="#" class="other">고객의 소리</a></p></center>
 			<center><p><a href="#" class="other">회원 혜택 안내</a></p></center>
 			<hr>
@@ -272,7 +272,7 @@
 				<tr><td style="height:50px;" colspan="3"><%=nvo.getnContents() %></td></tr>
 				<tr>
 					<td colspan="3">
-						<img src="/shoerologue/resources/image/mainbanner/KAKAO.png" class="d-block w-100" style="width:100%; height:500px;">
+						<img src="/shoerologue<%=nvo.getnFile() %>" class="d-block w-100" style="width:100%; height:500px;">
 					</td>
 				</tr>
 				<tr><td style="border-bottom:1px solid gray; height:30px;" colspan="3"></td></tr>	

@@ -327,7 +327,7 @@
 			
 		</div>
 		<div><span class="mainTitle">공지작성</span></div>
-		<form action='/shoerologue/customerService/noticeAction.do' method="post" class="frm" id="frm" name="frm">
+		<form action='/shoerologue/customerService/noticeAction.do' method="post" class="frm" id="frm" name="frm" enctype="multipart/form-data">
 			<table class="ask-box">
 				<colgroup>
 					<col width="10%">
@@ -356,7 +356,7 @@
 					<td class="filebox">
 						<input class="upload-name" value="첨부파일" placeholder="첨부파일">
 					    <label for="file">파일찾기</label> 
-					    <input type="file" id="file" name="nFile">
+					    <input type="file" id="file" name="qqFile">
 					</td>
 				</tr>	
 			</table>
