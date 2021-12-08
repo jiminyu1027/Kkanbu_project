@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.study.dao.ProductDAO;
+import edu.study.domain.Criteria;
+import edu.study.domain.Criteria2;
 import edu.study.vo.ProductVO;
 
 @Service
@@ -30,6 +32,22 @@ public class ProductServiceImpl implements ProductService{
 		ProductDao.insert(pvo);
 		
 	}
+
+	@Override
+	public void productInsert(ProductVO pvo) throws Exception {
+		ProductDao.productInsert(pvo);
+	}
+
+	@Override
+	public List<ProductVO> pdAllList(ProductVO pvo,Criteria2 cri) throws Exception {
+		return ProductDao.pdAllList(pvo,cri);
+	}
+
+	@Override
+	public int countAllList() throws Exception {
+		return ProductDao.countAllList();
+	}
+	
 
 
 	

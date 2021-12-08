@@ -1,4 +1,3 @@
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -6,15 +5,15 @@
 <%@ page import="edu.study.vo.*" %>
 <%@ page import="edu.study.domain.*" %>
 <%
-	List<ProductVO> menlist = (List<ProductVO>)request.getAttribute("menlist");
+	List<ProductVO> pdAllList = (List<ProductVO>)request.getAttribute("pdAllList");
 	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
-	PageMaker pageMaker = (PageMaker)request.getAttribute("pageMaker");
+	PageMaker2 pageMaker2 = (PageMaker2)request.getAttribute("pageMaker2");
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>남성 | 슈롤로그</title>
+<title>상품 리스트 | 슈롤로그</title>
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
@@ -28,14 +27,13 @@
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/shoerologue/resources/css/style.css">
-		<link rel="stylesheet" href="/shoerologue/resources/css/brand.css">
+		<link rel="stylesheet" href="/shoerologue/resources/css/pdAllList.css">
 		<link rel="stylesheet" href="/shoerologue/resources/css/headerFooter.css">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-		
 	</style>
 	<script>
 		function selChange() {
@@ -160,8 +158,8 @@
 			</ul>
 		</div>
 	    <div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
-		      <ul class="navbar-nav me-auto mb-6 mb-lg-0">
-		      </ul>
+	      <ul class="navbar-nav me-auto mb-6 mb-lg-0">
+	      </ul>
 		</div>
 		    <div class="col-0 col-sm-0 col-md-0 col-lg-2"></div>
 		</nav>
@@ -169,148 +167,32 @@
 <!-- body  -->
 
 	<div class="bigBox">
-		<div class="channel">
-			<ul>
-				<li><a href="/shoerologue" style="color:#757575; font-size:1.1em">
-					<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-house-fill mb-1" viewBox="0 0 16 16">
-					  <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-					  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
-					</svg>
-					HOME</a></li>&nbsp;&nbsp;>&nbsp;&nbsp;
-				<li><a href="/shoerologue/category/gender/men.do">MEN</a></li>
-			</ul>
+		<div class="totalPd">
+			<span>총 <span class="redBold"><%=pageMaker2.getTotalCount()%></span>개의 상품이 있습니다.</span>
 		</div>
-	</div>
-	<div class="bigBox">
-		<div class="shoesBox">
-			<div class="shoesGender">MEN</div>
-			<div class="shoesList">
-				<ul>
-					<li><a href="/shoerologue/category/gender/men/sneakers.do">운동화</a></li>
-				 	<li><a href="/shoerologue/category/gender/men/sports.do">스포츠</a></li>
-				    <li><a href="/shoerologue/category/gender/men/dressShoes.do">구두</a></li>
-				    <li><a href="/shoerologue/category/gender/men/sandle.do">샌들</a></li>
-				    <li><a href="/shoerologue/category/gender/men/casual.do">캐주얼</a></li>
-				    <li><a href="/shoerologue/category/gender/men/boots.do">부츠</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	
-	<div class="bigBox">
-		<div class="filterBox">
-		<div class="filterTitle">FILTER</div>
-		<div class="hr1"></div>
-		<div id="menu">
-			<h6><a>브랜드</a></h6>
-			<div>
-				<div class="filterSearchBox">
-					<form action="#" method="get" name="brandSearchFrm">
-						<input type="search" name="brandSearch" placeholder="브랜드검색" class="filterSearh">
-						 <button class="filterSearchBtn" onclick="filterSearchBtn()" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16" >
-						<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-						</svg></button>
-					</form>
-				</div>
-			</div>
-			<h6><a>사이즈</a></h6>
-			<form action="#" method="get" name="filterSizeFrm">
-				<div class="filterSize">
-					<input type="checkbox" id="size180"><label for="size180">180</label>
-					<input type="checkbox" id="size190"><label for="size190">190</label>
-					<input type="checkbox" id="size200"><label for="size200">200</label>
-					<input type="checkbox" id="size210"><label for="size210">210</label>
-					<input type="checkbox" id="size220"><label for="size220">220</label>
-					<input type="checkbox" id="size230"><label for="size230">230</label>
-					<input type="checkbox" id="size240"><label for="size240">240</label>
-					<input type="checkbox" id="size250"><label for="size250">250</label>
-					<input type="checkbox" id="size260"><label for="size260">260</label>
-					<input type="checkbox" id="size270"><label for="size270">270</label>
-					<input type="checkbox" id="size280"><label for="size280">280</label>
-					<input type="checkbox" id="size290"><label for="size290">290</label>
-					<input type="checkbox" id="size300"><label for="size300">300</label>
-				</div>
-			</form>
-			<h6><a>색상</a></h6>
-			<form action="#" method="get" name="filterColorFrm">
-			<div class="filterColor">
-				<input type="checkbox" id="color_white"><label for="color_white"><img src="/shoerologue/resources/image/color/white.png"></label>
-				<input type="checkbox" id="color_beige"><label for="color_beige"><img src="/shoerologue/resources/image/color/beige.png"></label>
-				<input type="checkbox" id="color_yellow"><label for="color_yellow"><img src="/shoerologue/resources/image/color/yellow.png"></label>
-				<input type="checkbox" id="color_pink"><label for="color_pink"><img src="/shoerologue/resources/image/color/pink.png"></label>
-				<input type="checkbox" id="color_red"><label for="color_red"><img src="/shoerologue/resources/image/color/red.png"></label>
-				<input type="checkbox" id="color_orange"><label for="color_orange"><img src="/shoerologue/resources/image/color/orange.png"></label>
-				<input type="checkbox" id="color_brown"><label for="color_brown"><img src="/shoerologue/resources/image/color/brown.png"></label>
-				<input type="checkbox" id="color_green"><label for="color_green"><img src="/shoerologue/resources/image/color/green.png"></label>
-				<input type="checkbox" id="color_blue"><label for="color_blue"><img src="/shoerologue/resources/image/color/blue.png"></label>
-				<input type="checkbox" id="color_navy"><label for="color_navy"><img src="/shoerologue/resources/image/color/navy.png"></label>
-				<input type="checkbox" id="color_purple"><label for="color_purple"><img src="/shoerologue/resources/image/color/purple.png"></label>
-				<input type="checkbox" id="color_gray"><label for="color_gray"><img src="/shoerologue/resources/image/color/gray.png"></label>
-				<input type="checkbox" id="color_black"><label for="color_black"><img src="/shoerologue/resources/image/color/black.png"></label>
-				<input type="checkbox" id="color_rainbow"><label for="color_rainbow"><img src="/shoerologue/resources/image/color/rainbow.png"></label>
-			</div>
-			</form>
-			<h6><a>가격</a></h6>
-			<div class="filterPrice">
-				<form>
-					<div class="priceRange">
-						<input type="range" name="points" min="15000" max="240000" step="5000" value="0" oninput="document.getElementById('priceRange').innerHTML=this.value;">
-						<div id="priceRange"></div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
 		<div class="brandBox">
 			<div class="totalPdSel">
-				<div  class="totalPd">
-					<span>총 <span class="redBold"><%=pageMaker.getTotalCount()%></span>개의 상품이 있습니다.</span>
-				</div>
-				<div class="selection">
-					<select class="">
-					  <option value="1" selected>신상품순</option>
-					  <option value="2">베스트상품순</option>
-					  <option value="3">상품평순</option>
-					  <option value="4">낮은가격순</option>
-					  <option value="5">높은가격순</option>
-					</select>
-					<select id="cntPerPage" name="sel" onchange="selChange()">
-						<option value="15"
-							<c:if test="${paging.cntPerPage == 15}">selected</c:if>>15개씩 보기</option>
-						<option value="30"
-							<c:if test="${paging.cntPerPage == 30}">selected</c:if>>30개씩 보기</option>
-						<option value="60"
-							<c:if test="${paging.cntPerPage == 60}">selected</c:if>>60개씩 보기</option>
-					</select>
-					<!--
-					<select class="">
-					  <option value="15" selected>15개씩 보기</option>
-					  <option value="30">30개씩 보기</option>
-					  <option value="60">60개씩 보기</option>
-					</select>
-					  -->
-				</div>
 				<div class="hr1"></div>
 			</div>
 			<!-- 상품 -->
 			<div class="brandPdBox">
 				<div class="brandPdSmBox">
 					<%
-					     if(menlist.size() != 0){
-					     for(int i=0; i<menlist.size();i++) {	    
+					     if(pdAllList.size() != 0){
+					     for(int i=0; i<pdAllList.size();i++) {	    
 			    	 %>
 					<div class="brandPd">
-						<a href="/shoerologue/product/product.do?pidx=<%=menlist.get(i).getPidx()%>">
-							<img src="/shoerologue/resources/image/productdetail/<%=menlist.get(i).getpFile1()%>">
-							<div class="shoesBrand" id="pBrandKr"><%=menlist.get(i).getpBrandKr()%></div>
-							<div class="shoesName" id="pNameKr"><%=menlist.get(i).getpNameKr()%></div>
+						<a href="/shoerologue/product/product.do?pidx=<%=pdAllList.get(i).getPidx()%>">
+							<img src="/shoerologue/resources/image/productdetail/<%=pdAllList.get(i).getpFile1()%>">
+							<div class="shoesBrand" id="pBrandKr"><%=pdAllList.get(i).getpBrandKr()%></div>
+							<div class="shoesName" id="pNameKr"><%=pdAllList.get(i).getpNameKr()%></div>
 							<div class="shoesPriceBox">
 								<span class="shoesPrice" id="pPrice">
 									<span class="pPrice" id="pPrice" name="pPrice">
-										<% if(menlist.get(i).getpPrice().length() <6) {%>
-											<%=menlist.get(i).getpPrice().substring(menlist.get(i).getpPrice().length()-5,menlist.get(i).getpPrice().length()-3) %>,<%=menlist.get(i).getpPrice().substring(menlist.get(i).getpPrice().length()-3,menlist.get(i).getpPrice().length()) %>
+										<% if(pdAllList.get(i).getpPrice().length() <6) {%>
+											<%=pdAllList.get(i).getpPrice().substring(pdAllList.get(i).getpPrice().length()-5,pdAllList.get(i).getpPrice().length()-3) %>,<%=pdAllList.get(i).getpPrice().substring(pdAllList.get(i).getpPrice().length()-3,pdAllList.get(i).getpPrice().length()) %>
 										<%}else{ %>
-											<%=menlist.get(i).getpPrice().substring(menlist.get(i).getpPrice().length()-6,menlist.get(i).getpPrice().length()-3) %>,<%=menlist.get(i).getpPrice().substring(menlist.get(i).getpPrice().length()-3,menlist.get(i).getpPrice().length()) %>
+											<%=pdAllList.get(i).getpPrice().substring(pdAllList.get(i).getpPrice().length()-6,pdAllList.get(i).getpPrice().length()-3) %>,<%=pdAllList.get(i).getpPrice().substring(pdAllList.get(i).getpPrice().length()-3,pdAllList.get(i).getpPrice().length()) %>
 										<% } %>
 									</span>
 								</span>
@@ -333,16 +215,18 @@
 				</div>
 				<div class="page">
 				<div class="hr1"></div>
-				
+				<c:if test="${master eq 'master'}">
+					<a href="/shoerologue/product/productInsert.do"><div class="pdInsertBtn">상품 등록</div></a>
+				</c:if>
 					<ul>
-						<c:if test="${pageMaker.prev}">
-							<li><a class="pm" href="/shoerologue/category/gender/men.do${pageMaker.makeQuery(pageMaker.startPage - 1)}">이전</a></li>
+						<c:if test="${pageMaker2.prev}">
+							<li><a class="pm" href="/shoerologue/product/pdAllList.do${pageMaker2.makeQuery(pageMaker2.startPage - 1)}">이전</a></li>
 						</c:if> 
-						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-							<li><a class="pm" href="/shoerologue/category/gender/men.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
+						<c:forEach begin="${pageMaker2.startPage}" end="${pageMaker2.endPage}" var="idx">
+							<li><a class="pm" href="/shoerologue/product/pdAllList.do${pageMaker2.makeQuery(idx)}">${idx}</a></li>
 						</c:forEach>
-						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-							<li><a class="pm" href="/shoerologue/category/gender/men.do${pageMaker.makeQuery(pageMaker.endPage + 1)}">다음</a></li>
+						<c:if test="${pageMaker2.next && pageMaker2.endPage > 0}">
+							<li><a class="pm" href="/shoerologue/product/pdAllList.do${pageMaker2.makeQuery(pageMaker2.endPage + 1)}">다음</a></li>
 						</c:if> 
 					</ul>
 				</div>
@@ -380,7 +264,7 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
 	        </ul>

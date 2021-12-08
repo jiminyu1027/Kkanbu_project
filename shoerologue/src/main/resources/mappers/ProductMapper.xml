@@ -63,6 +63,50 @@
 		    	SELECT MAX(ctidx) FROM cart
 		    </selectKey>
     </insert>
+    
+     <insert id="productInsert" parameterType="productVO">
+		<![CDATA[		
+		    INSERT INTO product(PIDX,PNAMEKR,PNAMEENG,PBRANDKR,PBRANDENG,PSIZE,PCOLOR,PGENDER,PTYPE,PFILE1,PFILE2,PFILE3,PFILE4,PFILE5,PPRICE
+			VALUES(
+		    	 pidx_seq.nextval
+		    	,#{pNameKr}
+		    	,#{pNameEng}		
+		    	,#{pBrandKr}
+		    	,#{pBrandEng}
+		    	,#{pSize}
+		    	,#{pColor}
+		    	,#{pGender}
+		    	,#{pType}
+		    	,#{pFile1}
+		    	,#{pFile2}
+		    	,#{pFile3}
+		    	,#{pFile4}
+		    	,#{pFile5}
+		    	,#{pPrice}
+		    )
+		]]>
+    </insert>
+    
+  
+   <select id="pdAllList" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+   		SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT * 
+						FROM product
+						ORDER BY pidx DESC 
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+	</select>
+   
+   <select id="countAllList" resultType="int">
+		SELECT COUNT(*) 
+		FROM product 
+		WHERE 1=1
+	</select>
+    
 	
 
 </mapper>

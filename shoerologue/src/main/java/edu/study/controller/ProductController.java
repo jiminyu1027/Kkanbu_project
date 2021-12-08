@@ -12,6 +12,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import edu.study.domain.Criteria;
+import edu.study.domain.Criteria2;
+import edu.study.domain.PageMaker;
+import edu.study.domain.PageMaker2;
 import edu.study.service.ProductService;
 import edu.study.vo.MemberVO;
 import edu.study.vo.ProductVO;
@@ -36,7 +40,7 @@ public class ProductController {
 		
 		
 		return "/product/product";
-	}
+	}	
 	
 	@RequestMapping(value="/cart/cart.do",method=RequestMethod.GET)
 	public String insert(Model model, ProductVO pvo,HttpSession session)throws Exception {
@@ -51,14 +55,46 @@ public class ProductController {
 		MemberVO member = (MemberVO)session.getAttribute("member");
 		pvo.setMidx(member.getMidx());
 		
-				productService.insert(pvo);
-				//System.out.println("PIDX::"+pvo.getPidx());
-				
+			productService.insert(pvo);
+			//System.out.println("PIDX::"+pvo.getPidx());
+			
 		
 		return "redirect:/cart/cart.do";
 	}
 	
+	@RequestMapping(value="/product/productInsert.do",method=RequestMethod.GET)
+	public String productInsert(Model model,ProductVO pvo,HttpSession session)throws Exception {
+			
+		
+		return "/product/productInsert";
+	}
 	
+	@RequestMapping(value="/product/pdAllList.do",method=RequestMethod.POST)
+	public String productInsert(Locale locale, Model model,ProductVO pvo,HttpSession session)throws Exception {
+			
+		MemberVO member = (MemberVO)session.getAttribute("member");
+		pvo.setMidx(member.getMidx());
+		
+			productService.productInsert(pvo);
+				
+		return "redirect:/shoerologue.do";
+	}
+	
+	@RequestMapping(value="/product/pdAllList.do")
+	public String pdAllList(Locale locale, Model model,ProductVO pvo, Criteria2 cri)throws Exception {
+			
+		List<ProductVO> pdAllList = productService.pdAllList(pvo,cri);
+		model.addAttribute("pdAllList", pdAllList);
+		
+		PageMaker2 pageMaker2 = new PageMaker2();
+		pageMaker2.setCri(cri);;
+		pageMaker2.setTotalCount(productService.countAllList());
+		
+		model.addAttribute("pageMaker2", pageMaker2);
+		
+		
+		return "/product/pdAllList";
+	}
 	
 	
 }

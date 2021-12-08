@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import edu.study.domain.Criteria;
+import edu.study.domain.Criteria2;
 import edu.study.vo.ProductVO;
 
 @Repository
@@ -36,5 +38,14 @@ public class ProductDAO {
 			sqlSession.insert(Namespace+".insert", pvo);
 		}
 		
+		public void productInsert(ProductVO pvo) throws Exception{
+			sqlSession.insert(Namespace+".productInsert", pvo);
+		}
 		
+		public List<ProductVO> pdAllList(ProductVO pvo, Criteria2 cri) throws Exception{
+			return sqlSession.selectList(Namespace+".pdAllList",cri);
+		}
+		public int countAllList() throws Exception{	
+			return sqlSession.selectOne(Namespace+".countAllList");
+		}
 }
