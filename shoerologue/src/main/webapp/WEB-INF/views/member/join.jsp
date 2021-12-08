@@ -439,14 +439,47 @@
 	 </div>
 	</div>	
 	
-	<!-- 도전 -->
+	<!-- 회원가입  -->
 	<script>
 	var idCheckYN = false; 
 	var idUseYN = false; 
 	
-//	var checkId = /^[A-za-z0-9]{4,15}/g;
-//	var value = document.frm.mId.value;
-	
+	var agrChk1 = false;
+	var agrChk2 = false;
+	var agrChk3 = false;
+
+	// 동의 모두선택 / 해제
+	$(document).ready(function() {
+        // 전체선택 클릭 시
+        $("input:checkbox[name='agree_all']").click(function() {
+            if($("input:checkbox[name='agree_all']").is(":checked") == true) {
+            	agrChk1 = true;
+            	agrChk2 = true;
+            	agrChk3 = true;
+                $("input:checkbox[name='agree']").prop("checked", true);
+            } else {
+                $("input:checkbox[name='agree']").prop("checked", false);
+            }
+        });
+
+        // 체크박스 클릭 시
+        $("input:checkbox[name='agree']").click(function() {
+            var allCnt = $("input:checkbox[name='agree']").length;  // 전체갯수
+            var selCnt =  0 ; // 선택갯수
+            $("input:checkbox[name='agree']").each(function(){
+            	if($(this).is(":checked")){
+            		selCnt++;
+            	}
+            });
+			
+      		//숫자 비교
+            if(allCnt != selCnt) {
+                $("input:checkbox[name='agree_all']").prop("checked", false);
+            }else if(allCnt == selCnt){ 
+            	 $("input:checkbox[name='agree_all']").prop("checked", true);
+            }
+        });
+    });
 	
 	function idCheck(){
 		idCheckYN = true;
@@ -697,7 +730,11 @@
  		if(result){
 			if(idCheckYN == true){
  				if(idUseYN == true){
- 					document.frm.submit();
+ 					if(agrChk1 == true && agrChk2 == true && agrChk3 == true){
+ 						document.frm.submit();
+ 					}else{
+ 						alert("필수 이용 약관에 모두 동의해주세요.")
+ 					}
  				}else{
 					alert("중복된 아이디입니다.");
  					return false;
@@ -721,14 +758,7 @@
 	
 	
 	
-	// 동의 모두선택 / 해제
-	const agreeChkAll = document.querySelector('input[name=agree_all]');
-	    agreeChkAll.addEventListener('change', (e) => {
-	    let agreeChk = document.querySelectorAll('input[name=agree]');
-	    for(let i = 0; i < agreeChk.length; i++){
-	      agreeChk[i].checked = e.target.checked;
-	    }
-	});
+
 	    
 	</script>
 	
