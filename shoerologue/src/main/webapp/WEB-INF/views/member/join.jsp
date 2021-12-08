@@ -345,15 +345,15 @@
 					</label><br>
 					<div class="agreebox2">
 						<label for="agree">
-						  <input type="checkbox" name="agree" value="1" class="agreelabel">
+						  <input type="checkbox" name="agree" value="1" class="agreelabel" onchange="agreeChkReset1()">
 						  <span>이용약관 동의<strong class="red">[필수]</strong></span>
 						</label><br>
 						<label for="agree">
-						  <input type="checkbox" name="agree" value="2" class="agreelabel">
+						  <input type="checkbox" name="agree" value="2" class="agreelabel" onchange="agreeChkReset2()">
 						  <span>개인정보 수집, 이용 동의<strong class="red">[필수]</strong></span>
 						</label><br>
 						<label for="agree">
-						  <input type="checkbox" name="agree" value="3" class="agreelabel">
+						  <input type="checkbox" name="agree" value="3" class="agreelabel" onchange="agreeChkReset3()">
 						  <span>개인정보 이용 동의<strong class="red">[필수]</strong></span>
 						</label><br>
 						<label for="agree">
@@ -441,9 +441,11 @@
 	
 	<!-- 회원가입  -->
 	<script>
+	// 아이디 체크
 	var idCheckYN = false; 
 	var idUseYN = false; 
 	
+	// 이용약관
 	var agrChk1 = false;
 	var agrChk2 = false;
 	var agrChk3 = false;
@@ -453,7 +455,7 @@
         // 전체선택 클릭 시
         $("input:checkbox[name='agree_all']").click(function() {
             if($("input:checkbox[name='agree_all']").is(":checked") == true) {
-            	agrChk1 = true;
+            	agrChk1 = true;	// 전체 클릭시 이용약관 트루로 바꾸기
             	agrChk2 = true;
             	agrChk3 = true;
                 $("input:checkbox[name='agree']").prop("checked", true);
@@ -481,6 +483,18 @@
         });
     });
 	
+	// 이용약관 동의 체크해제 시 다시 막기
+	function agreeChkReset1(){
+		agrChk1 = false;
+	}
+	function agreeChkReset2(){
+		agrChk2 = false;
+	}	
+	function agreeChkReset3(){
+		agrChk3 = false;
+	}
+	
+	// 아이디 중복체크
 	function idCheck(){
 		idCheckYN = true;
 		if($("#mId").val() != ""){
@@ -748,18 +762,7 @@
 		
 		
 	}
-	
-	
-	
-	//if(result){
-	//	alert("회원가입에 성공하셨습니다. 다시 로그인 해주세요.")
-	//	document.frm.submit();
-	//}
-	
-	
-	
 
-	    
 	</script>
 	
 
