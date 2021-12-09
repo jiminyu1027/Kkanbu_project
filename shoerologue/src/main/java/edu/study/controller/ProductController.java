@@ -76,14 +76,13 @@ public class ProductController {
 	
 	@RequestMapping(value="/product/productInsert.do",method=RequestMethod.GET)
 	public String productInsert(Model model,ProductVO pvo,HttpSession session)throws Exception {
-		System.out.println("¤²¤¸¤§");
 		
 		return "/product/productInsert";
 	}
 	
-	@RequestMapping(value="/product/productInsert.do",method=RequestMethod.POST)
+	@RequestMapping(value="/product/pdAllListAction.do",method=RequestMethod.POST)
 	public String productInsert(Locale locale, Model model,ProductVO pvo,HttpSession session,MultipartFile file1,MultipartFile file2,MultipartFile file3,MultipartFile file4,MultipartFile file5)throws Exception {
-		System.out.println("11");
+		System.out.println("Æ÷½º");
 		String imgUploadPath = uploadPath + File.separator + "imgUpload";
 		String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
 		String fileName = null;

@@ -6,7 +6,7 @@ font-family: 'Montserrat', "Noto Sans KR", sans-serif;
 	width:1200px;
 }
 .pdInsertBox{
-	padding:100px 150px;
+	padding:121px;
 }
 .pdInsertBtn>button{
 	width:120px;
@@ -49,10 +49,49 @@ input[type="text"],select,input[type="file"]:focus{
 	outline:none;
 }
 .pdInsertSmBox{
+	width:890px;
 	border:2px solid black;
 	padding:50px;
+	margin-left:100px;
 }
 .btnBox{
 	margin:30px;
 	height:10px;
+}
+
+.myPageTitle{
+	height:50px;
+	margin-top:40px;
+	border-radius: 15px 15px 0px 0px;
+	font-size:30px;
+	font-weight:bold;
+}
+
+.myPageMenu2{
+	margin-top:30px;
+	margin-right:10px;
+	font-size:14px;
+}
+
+.myPageMenu3{
+	font-size:14px;
+	margin-top:10px;
+}
+
+.gray{
+	color:gray;
+}
+
+.red{
+	color:red;
+	font-weight: bold;
+}
+
+.red:hover{
+	color:red;
+}
+		
+.brandPdBox{
+	width:80%;
+	float:right;
 }

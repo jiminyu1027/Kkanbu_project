@@ -35,12 +35,12 @@
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 	</style>
-	<script>
+	<!-- <script>
 		function selChange() {
 			var sel = document.getElementById('perPageNum').value;
 			location.href="/shoerologue/category/gender/men.do?nowPage=${paging.nowPage}&perPageNum="+sel;
 		}
-	</script>
+	</script> -->
 </head>
 <body>
 	<div class="container">
@@ -167,6 +167,67 @@
 <!-- body  -->
 
 	<div class="bigBox">
+		<div style=" float: left; width: 99%;" class="mt-3">
+			<span style="color:#757575; font-size:1em">
+				<a href="/shoerologue" style="color:#757575; font-size:1.1em">
+				<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-house-fill mb-1" viewBox="0 0 16 16">
+				  <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+				  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+				</svg>
+				HOME</a> 
+			> 관리자 페이지 > 상품 관리 > 상품 목록
+			</span>
+		</div>
+		<!-- 좌측 마이페이지 메뉴-->
+		<div style=" float: left; width: 20%;">
+		<div class="myPageMenu">
+			<div class="myPageTitle">
+				관리자 페이지
+			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="/shoerologue/mypage/claim/myPage.do">주문/배송 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="/shoerologue/mypage/claim/myPage.do" class="gray">주문 내역</a><br>
+					<a href="#" class="gray">배송 현황</a>
+				</div><br>
+			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">게시판 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="/shoerologue/customerService/notice.do" class="gray">공지 사항</a><br>
+					<a href="/shoerologue/customerService/cs.do" class="gray">FAQs</a><br>
+					<a href="/shoerologue/mypage/memberCounsel/inquiry.do" class="gray">1:1 문의 목록</a><br>
+					<a href="/shoerologue/mypage/shopping/qaList.do" class="gray">QNA 목록</a><br>
+					<a href="#" class="gray">리뷰 목록</a>
+				</div>
+			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">회원 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="#" class="gray">회원 목록</a><br>
+					<a href="#" class="gray">ㅇㅇ 수정</a><br>
+					<a href="#" class="gray">ㅇㅇㅇ 탈퇴</a>
+				</div>
+			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="/shoerologue/product/pdAllList.do">상품 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="/shoerologue/product/pdAllList.do" class="red">상품 목록*</a><br>
+					<a href="/shoerologue/product/productInsert.do" class="gray">상품 등록</a>
+				</div>
+			</div>
+			
+		</div>
+		</div>
+		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
 		<div class="totalPd">
 			<span>총 <span class="redBold"><%=pageMaker2.getTotalCount()%></span>개의 상품이 있습니다.</span>
 		</div>
@@ -213,8 +274,9 @@
 					<%
 					}%>
 				</div>
+				<div class=""></div>
 				<div class="page">
-				<div class="hr1"></div>
+				<div class="hr2"></div>
 				<c:if test="${master eq 'master'}">
 					<a href="/shoerologue/product/productInsert.do"><div class="pdInsertBtn">상품 등록</div></a>
 				</c:if>

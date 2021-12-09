@@ -291,7 +291,7 @@
 			<div class="bestBrandList">
 				<ul>
 					<li><a href="/shoerologue/category/brand/nike.do"><img src="/shoerologue/resources/image/brandlogo/nike.png"></a></li>
-					<li><a href="/shoerologue/product/pdAllList.do"><img src="/shoerologue/resources/image/brandlogo/adidas.png"></a></li>
+					<li><a href="#"><img src="/shoerologue/resources/image/brandlogo/adidas.png"></a></li>
 					<li><a href="/shoerologue/category/brand/newbalance.do"><img src="/shoerologue/resources/image/brandlogo/newbalance.png"></a></li>
 					<li><a href="/shoerologue/category/brand/converse.do"><img src="/shoerologue/resources/image/brandlogo/converse.png"></a></li>
 					<li><a href="/shoerologue/category/brand/vans.do"><img src="/shoerologue/resources/image/brandlogo/vans.png"></a></li>

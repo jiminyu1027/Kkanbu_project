@@ -65,29 +65,18 @@ li{
 }
 
 .totalPd{
-	text-align:right;
 	margin-left:5px;
-	margin-top:100px;
-	float:left;
-}
-
-.selection{
-	text-align:right;
-}
-
-.selection>select{
-	border:0px;
-	width:150px;
-	height:40px;
-	margin-right:10px;
-}
-
-.selection>select:focus{
-	border:0px;
-	outline:none;
+	margin-top:20px;
+	padding-top:100px;
 }
 
 .hr1{
+	float:right;
+	width:80%;
+	border:1px solid black;
+}
+
+.hr2{
 	border:1px solid black;
 }
 
@@ -100,39 +89,6 @@ li{
 
 .page>ul{
 	margin-top:30px;
-}
-
-.brandBanner>img{
-	width:100%;
-	margin:35px 0px;
-}
-
-.bestBox{
-	height:460px;
-}
-
-.bestTitle{
-	font-weight:700;
-	font-size:16pt;
-	margin:6px;
-}
-
-.bestPd{
-	width:224px;
-	float:left;
-	margin:6.7px;
-	position:relative;
-}
-
-.bestPd:hover{
-	border:1px solid black;
-	position:relative;
-}
-
-.bestPd>a>img{
-	width:222px;
-	height:222px;
-	margin-bottom:10px;
 }
 
 .shoesBrand{
@@ -160,34 +116,6 @@ li{
 	margin-left:5px;
 }
 
-.ranking{
-	width:50px;
-	height:50px;
-	background-color:black;
-	color:white;
-	font-weight:700;
-	font-size:19pt;
-	text-align:center;
-	padding-top:6px;
-	position:absolute;
-}
-
-.ranking1{
-	width:50px;
-	height:50px;
-	background-color:#EE1C25;
-	color:white;
-	font-weight:700;
-	font-size:19pt;
-	text-align:center;
-	padding-top:6px;
-	position:absolute;
-}
-
-input[type=range]:focus{
-	border:1px solid red;
-}
-
 .filterBox{
 	background-color:white;
 	width:290px;
@@ -210,14 +138,11 @@ input[type=checkbox]{
 	display:none;
 }
 
-.brandBox{
-	float:right;
-}
 
 .brandPd{
-	width:282px;
+	width:297px;
 	float:left;
-	margin:9px;
+	margin:10px;
 	height:415px;
 }
 
@@ -226,92 +151,14 @@ input[type=checkbox]{
 }
 
 .brandPd>a>img{
-	width:280px;
-	height:280px;
+	width:295px;
+	height:295px;
 	margin-bottom:10px;
 }
 
 .bg-light{
 	clear:left;
 	clear:right;
-}
-.filterGender>input[type=checkbox]+label{
-	display: inline-block; 
-	cursor: pointer; 
-	padding:4px;
-	background-color:white;
-	border:1px solid gray;
-	font-size:13px;
-	width:80px;
-	height:30px;
-	text-align:center;
-}
-
-.filterGender>input[type=checkbox]:checked+label{
-	border:1px solid #EE1C25;
-	color:#EE1C25;
-}
-
-.filterSize>input[type=checkbox]+label{
-	display: inline-block; 
-	cursor: pointer; 
-	padding:2px;
-	margin:4px 1px;
-	background-color:white;
-	border:1px solid gray;
-	font-size:13px;
-	width:43px;
-	height:25px;
-	text-align:center;
-}
-
-.filterSize>input[type=checkbox]:checked+label{
-	border:1px solid #EE1C25;
-	color:#EE1C25;
-}
-
-.filterColor>input[type=checkbox]+label{
-	display: inline-block; 
-	cursor: pointer;
-	margin:2px 0;
-}
-
-.filterColor>input[type=checkbox]:checked+label>img{
-	border:3px double black;
-}
-
-.filterColor>input[type=checkbox]+label>img{
-	width:28px;
-	height:28px;
-}
-
-.shoesGender{
-	margin:auto;
-	margin-top:30px;
-	font-weight:700;
-	text-align:center;
-	font-size:29pt;
-}
-
-.filterSearh{
-	border-radius:0px;
-	border:0px;
-	height:40px;
-	width:210px;
-}
-
-.filterSearh:focus{
-	border-radius:0px;
-}
-
-.filterSearchBtn{
-	border:0;
-	background:none;
-}
-
-.filterSearchBox{
-	border:1px solid black;
-	margin:20px 0;
 }
 
 .emptyProductBox{
@@ -345,3 +192,41 @@ input[type=checkbox]{
 .pdInsertBtn:hover{
 	background-color:#787878;
 }
+
+.myPageTitle{
+	height:50px;
+	margin-top:40px;
+	border-radius: 15px 15px 0px 0px;
+	font-size:30px;
+	font-weight:bold;
+}
+
+.myPageMenu2{
+	margin-top:30px;
+	margin-right:10px;
+	font-size:14px;
+}
+
+.myPageMenu3{
+	font-size:14px;
+	margin-top:10px;
+}
+
+.gray{
+	color:gray;
+}
+
+.red{
+	color:red;
+	font-weight: bold;
+}
+
+.red:hover{
+	color:red;
+}
+
+.brandPdBox{
+	width:80%;
+	float:right;
+}
+

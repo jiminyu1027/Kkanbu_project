@@ -9,7 +9,7 @@ public class Criteria2 {
 	
 	public Criteria2() {
 		this.page = 1;
-		this.perPageNum = 20;
+		this.perPageNum = 18;
 	}
 	
 	public void setPage(int page) {

@@ -87,6 +87,11 @@
 		]]>
     </insert>
     
+    <delete id="delProduct" parameterType="int">
+    	DELETE 
+    	FROM product 
+    	WHERE pidx = #{pidx}
+   </delete>    
   
    <select id="pdAllList" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
    		SELECT * 
