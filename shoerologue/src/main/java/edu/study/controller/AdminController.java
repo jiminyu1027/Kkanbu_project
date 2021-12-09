@@ -1,5 +1,6 @@
 package edu.study.controller;
 
+import java.util.List;
 import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import edu.study.domain.Criteria;
+import edu.study.domain.PageMaker;
+import edu.study.service.MemberService;
+import edu.study.vo.MemberVO;
 import edu.study.vo.ProductVO;
 
 @RequestMapping(value="/admin")
@@ -15,6 +20,10 @@ public class AdminController {
 
 	@Autowired
 	edu.study.service.ProductService ProductService;
+	
+	@Autowired
+	MemberService memberService;
+	
 	
 	@RequestMapping(value="/inquiryAsk.do")
 	public String ask(Locale locale,Model model)throws Exception{
@@ -37,4 +46,21 @@ public class AdminController {
 		
 		return "/admin/qaAsk";
 	}
+	
+	@RequestMapping(value="/memberList.do")
+	public String memberList(Locale locale, Model model,MemberVO mvo,Criteria cri)throws Exception {
+		
+		List<MemberVO> list= memberService.list(mvo,cri);
+		
+		model.addAttribute("list", list);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCri(cri);
+		pageMaker.setTotalCount(memberService.countMemberList());
+		
+		model.addAttribute("pageMaker", pageMaker);
+			
+		
+		return "/admin/memberList";
+	}	
 }

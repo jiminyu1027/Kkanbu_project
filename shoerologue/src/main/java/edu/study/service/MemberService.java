@@ -2,6 +2,7 @@ package edu.study.service;
 
 import java.util.List;
 
+import edu.study.domain.Criteria;
 import edu.study.vo.MemberVO;
 
 
@@ -18,4 +19,7 @@ public interface MemberService {
 	
 	// 아이디 중복 검사
 	public int idCheck(MemberVO vo) throws Exception;
+	
+	List<MemberVO> list(MemberVO mvo,Criteria cri) throws Exception;
+	public int countMemberList()throws Exception;
 }

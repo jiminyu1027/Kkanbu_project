@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import edu.study.domain.Criteria;
 import edu.study.vo.MemberVO;
 
 @Repository
@@ -52,5 +53,12 @@ public class MemberDAO {
 		public int idCheck(MemberVO vo) throws Exception{
 			int result = sqlSession.selectOne(Namespace+".idCheck",vo);
 			return result;
+		}
+		
+		public List<MemberVO> list(MemberVO mvo, Criteria cri) {
+			return sqlSession.selectList(Namespace+".list",cri);
+		}
+		public int countMemberList() throws Exception{	
+			return sqlSession.selectOne(Namespace+".countMemberList");
 		}
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.study.dao.MemberDAO;
+import edu.study.domain.Criteria;
 import edu.study.vo.MemberVO;
 
 @Service
@@ -61,6 +62,16 @@ public class MemberServiceImpl implements MemberService{
 	public int idCheck(MemberVO vo) throws Exception {
 		int result = MemberDao.idCheck(vo);
 		return result;
+	}
+
+	@Override
+	public List<MemberVO> list(MemberVO mvo, Criteria cri) throws Exception {
+		return MemberDao.list(mvo, cri);
+	}
+
+	@Override
+	public int countMemberList() throws Exception {
+		return MemberDao.countMemberList();
 	}
 
 	

@@ -1,0 +1,71 @@
+*{
+font-family: 'Montserrat', "Noto Sans KR", sans-serif;
+}
+.bigBox{
+	margin:auto;
+	width:1200px;
+}
+.memberListBox{
+	padding:121px;
+}
+.memberSmBox{
+	width:920px;
+	margin-left:100px;
+}
+.myPageTitle{
+	height:50px;
+	margin-top:40px;
+	border-radius: 15px 15px 0px 0px;
+	font-size:30px;
+	font-weight:bold;
+}
+.myPageMenu2{
+	margin-top:30px;
+	margin-right:10px;
+	font-size:14px;
+}
+.myPageMenu3{
+	font-size:14px;
+	margin-top:10px;
+}
+.gray{
+	color:gray;
+}
+.red{
+	color:red;
+	font-weight: bold;
+}
+.red:hover{
+	color:red;
+}
+table,tr,td{
+	border-bottom:1px solid black;
+	text-align:center;
+}
+tr:hover{
+	background-color:#EEEEEE;
+}
+tr:first-child{
+	background-color:black;
+	color:white;
+}
+.emptyMember{
+	text-align:center;
+	font-weight:400;
+	font-size:18px;
+	margin:300px 0;
+}
+.page{
+	text-align:center;
+	margin-top:40px;
+	height:150px;
+	clear:left;
+}
+.hr1{
+	border:1px solid black;
+}
+li{
+	list-style:none;
+	display:inline;
+	margin:5px;
+}

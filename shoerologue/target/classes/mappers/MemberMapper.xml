@@ -6,18 +6,31 @@
 <mapper namespace="edu.study.mapper.MemberMapper">
 
      <select id="list" resultType="MemberVO">
-         SELECT midx
-        	 , mName
-        	 , mId
-        	 , mPwd
-        	 , mEmail
-        	 , mPhone
-        	 , mAddr
-        	 , mJoindate
-        	 , mDelYn
-        	 , master
-          FROM MEMBER
+        SELECT * 
+		FROM (
+			SELECT ROWNUM RN, A.* 
+				FROM (
+						SELECT midx
+				        	 , mName
+				        	 , mId
+				        	 , mPwd
+				        	 , mEmail
+				        	 , mPhone
+				        	 , mAddr
+				        	 , mJoindate
+				        	 , mDelYn
+				        	 , master 
+						FROM member
+						ORDER BY midx DESC
+						) A
+				)
+		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
     </select>
+    
+    <!-- 총 멤버수 출력 -->
+	<select id="countMemberList" resultType="int">
+		SELECT COUNT(*) FROM member
+	</select>
 
     <insert id="insert" parameterType="MemberVO">
     		<![CDATA[
@@ -85,7 +98,7 @@
 		FROM MEMBER
 		WHERE mId = #{mId}
 	</select>
-
+	
    
    
 </mapper>

@@ -4,14 +4,16 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="edu.study.vo.*" %>
+<%@ page import="edu.study.domain.*" %>
 <%
-	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
+	List<MemberVO> list = (List<MemberVO>)request.getAttribute("list");
+	PageMaker pageMaker = (PageMaker)request.getAttribute("pageMaker");
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 등록 | 슈롤로그</title>
+<title>회원 목록 | 슈롤로그</title>
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
@@ -25,7 +27,7 @@
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/shoerologue/resources/css/style.css">
-		<link rel="stylesheet" href="/shoerologue/resources/css/productInsert.css">
+		<link rel="stylesheet" href="/shoerologue/resources/css/memberList.css">
 		<link rel="stylesheet" href="/shoerologue/resources/css/headerFooter.css">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -34,63 +36,6 @@
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 		
 	</style>
-	<script>
-		$(document).ready( function() {
-			/* var referrer = document.referrer;
-			console.log(referrer); */
-			$(".prev").click(function(){
-				alert("이전 페이지로 돌아갑니다");
-				history.back();
-			return redirect;
-			});
-		});
-		
-		/* function pdInsert(){
-			if(frm != null){
-				alert("채워주세요");
-			}else{
-				document.frm.submit();
-			}
-		} */
-		
-		function pdInsert(){
-			//alert("test입니다");
-			var fm = document.frm;
-			if(fm.pBrandKr.value==""){
-				alert("브랜드(한글)를 입력해주세요")
-				fm.pBrandKr.focus()
-				return;
-			}else if(fm.pBrandEng.value==""){
-				alert("브랜드(영어)를 입력해주세요")
-				fm.pBrandEng.focus()
-				return;
-			}else if(fm.pNameKr.value==""){
-				alert("상품 이름(한글)을 입력해주세요")
-				fm.pNameKr.focus()
-				return;
-			}else if(fm.pNameEng.value==""){
-				alert("상품 이름(영어)을 입력해주세요")
-				fm.pNameEng.focus()
-				return;
-			}else if(fm.pColor.value==""){
-				alert("상품 색상을 입력해주세요")
-				fm.pColor.focus()
-				return;
-			}else if(fm.pPrice.value==""){
-				alert("상품 가격을 입력해주세요")
-				fm.pPrice.focus()
-				return;
-			}else if(fm.pSize.value==""){
-				alert("사이즈를 입력해주세요")
-				fm.pSize.focus()
-				return;
-			}
-			fm.action="/shoerologue/product/pdAllListAction.do";
-			fm.method="post";
-			fm.submit();
-			return;	
-		}	
-	</script>
 	
 </head>
 <body>
@@ -225,7 +170,7 @@
 				  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
 				</svg>
 				HOME</a> 
-			> 관리자 페이지 > 상품 관리 > 상품 등록
+			> 관리자 페이지 > 회원 관리 > 회원 목록
 			</span>
 		</div>
 		<!-- 좌측 마이페이지 메뉴-->
@@ -260,7 +205,7 @@
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="#" class="gray">회원 목록</a><br>
+					<a href="/shoerologue/admin/memberList.do" class="red">회원 목록*</a><br>
 					<a href="#" class="gray">ㅇㅇ 수정</a>
 				</div>
 			</div>
@@ -269,91 +214,69 @@
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="/shoerologue/product/pdAllList.do" class="gray">상품 목록</a><br>
-					<a href="/shoerologue/product/productInsert.do" class="red">상품 등록*</a>
+					<a href="/shoerologue/admin/pdAllList.do" class="gray">상품 목록</a><br>
+					<a href="/shoerologue/admin/productInsert.do" class="gray">상품 등록</a>
 				</div>
 			</div>
 			
 		</div>
 		</div>
 		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
-		<div class="pdInsertBox">
-			<div class="pdInsertSmBox">
-				<h3>상품 등록</h3>
+		<div class="memberListBox">
+			<div class="memberSmBox">
+				<h3>회원 목록(<%=pageMaker.getTotalCount()%>)</h3>
 				<br>
-				<form id="frm" name="frm" action="/shoerologue/product/pdAllList.do" method="POST" enctype="multipart/form-data">
-					<table>
-						<tr>
-							<td height=70 width=110>브랜드(한글)</td>
-							<td width=280><input type="text" name="pBrandKr"></td>
-							<td width=110>&nbsp;&nbsp;브랜드(영어)</td>
-							<td width=280><input type="text" name="pBrandEng"></td>
-						</tr>
-						<tr>
-							<td height=70>상품 이름(한글)</td>
-							<td><input type="text" name="pNameKr"></td>
-							<td>&nbsp;&nbsp;상품 이름(영어)</td>
-							<td><input type="text" name="pNameEng"></td>
-						</tr>
-						<tr>
-							<td height=70 >성별</td>
-							<td>
-								<select name="pGender">
-									<option value="M" selected>MEN : 남성</option>
-									<option value="W">WOMEN : 여성</option>
-									<option value="K">KIDS : 키즈</option>
-									<option value="U">UNISEX : 남여공용</option>
-								</select>
-						</td>
-							<td>&nbsp;&nbsp;종류</td>
-							<td>
-								<select name="pType">
-									<option value="운동화" selected>운동화</option>
-									<option value="스포츠">스포츠</option>
-									<option value="구두">구두</option>
-									<option value="샌들">샌들</option>
-									<option value="캐주얼">캐주얼</option>
-									<option value="부츠">부츠</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td height=70>색상</td>
-							<td><input type="text" name="pColor"></td>
-							<td>&nbsp;&nbsp;가격</td>
-							<td><input type="text" name="pPrice"></td>
-						</tr>
-						<tr>
-							<td height=70>사이즈</td>
-							<td colspan='3'><input type="text" name="pSize"></td>
-						</tr>
-						<tr>
-							<td height=70>사진</td>
-							<td colspan='3'><input type="file" name="File1"></td>
-						</tr>
-						<tr>
-							<td height=70></td>
-							<td colspan='3'><input type="file" name="File2"></td>
-						</tr>
-						<tr>
-							<td height=70></td>
-							<td colspan='3'><input type="file" name="File3"></td>
-						</tr>
-						<tr>
-							<td height=70></td>
-							<td colspan='3'><input type="file" name="File4"></td>
-						</tr>
-						<tr>
-							<td height=70></td>
-							<td colspan='3'><input type="file" name="File5"></td>
-						</tr>
-					</table>
-					<hr>
-					<div class="btnBox">
-						<div class="cancelBtn"><button type="button" class="prev" >취소</button></div>
-						<div class="pdInsertBtn"><button type="submit" onclick="pdInsert(); return false;">상품등록</button></div>
+				<table>
+					<tr>
+						<th height=60>회원 번호</th>
+						<th width=90>회원 이름</th>
+						<th width=120>회원 아이디</th>
+						<th width=120>회원 비밀번호</th>
+						<th width=170>회원 이메일</th>
+						<th width=130>회원 전화번호</th>
+						<th width=80>가입 날짜</th>
+						<th width=40>탈퇴</th>
+					</tr>
+					<%
+					     if(list.size() != 0){
+					     for(int i=0; i<list.size();i++) {	    
+			    	 %>
+					<tr>
+						<td height=60><%=list.get(i).getMidx() %></td>
+						<td width=90><%=list.get(i).getmName() %></td>
+						<td width=110><%=list.get(i).getmId() %></td>
+						<td width=110><%=list.get(i).getmPwd() %></td>
+						<td width=160><%=list.get(i).getmEmail() %></td>
+						<td width=150><%=list.get(i).getmPhone() %></td>
+						<td width=110><%=list.get(i).getmJoindate() %></td>
+						<td><%=list.get(i).getmDelYn() %></td>
+					</tr>
+					<% } 
+					} else{
+					%>
+					<div class=emptyMember>
+						<div class="exclamation"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+						</svg></div>
+					가입한 회원이 없습니다.
 					</div>
-				</form>
+					<%
+					}%>
+				</table>
+				<div class="page">
+					<ul>
+						<c:if test="${pageMaker.prev}">
+							<li><a class="pm" href="/shoerologue/admin/memberList.do${pageMaker.makeQuery(pageMaker.startPage - 1)}">이전</a></li>
+						</c:if> 
+						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+							<li><a class="pm" href="/shoerologue/admin/memberList.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
+						</c:forEach>
+						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+							<li><a class="pm" href="/shoerologue/admin/memberList.do${pageMaker.makeQuery(pageMaker.endPage + 1)}">다음</a></li>
+						</c:if> 
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
