@@ -68,20 +68,28 @@ public class CartController {
 		}
 	}
 	
-	@RequestMapping(value="/order/orderpayment.do", method=RequestMethod.GET)
-	public String insert (Model model,CartVO cvo, HttpSession session)throws Exception{
+
+	
+	@RequestMapping(value="/order/orderpayment.do")
+	public String insert (Model model, Locale locale, int ctidx ,CartVO cvo,HttpSession session)throws Exception{
 		MemberVO member = (MemberVO)session.getAttribute("member");
-		
-		return "/shoerologue/order/orderpayment";
+		cvo.setMidx(member.getMidx());
+		//CartService.update(cvo);
+		//CartService.insert(cvo);
+			
+			CartVO ovo = CartService.listOne(ctidx);
+			System.out.println("ovo::"+ovo);
+			
+			model.addAttribute("cvo",ovo);
+			
+			
+		return "redirect:/order/orderpayment.do";
 	}
 	
-	@RequestMapping(value="/order/orderpayment.do", method=RequestMethod.POST)
-	public String insert (Model model, Locale locale, int ctidx, HttpSession session)throws Exception{
-		MemberVO member = (MemberVO)session.getAttribute("member");
-			CartService.update(ctidx);
-			System.out.println("ctidx::"+ctidx);
-			//CartService.listOne(ctidx);
-		return "redirect:/order/orderpayment.do";
+	@RequestMapping(value="/update.do")
+	@ResponseBody
+	public void update(Locale locale, Model model,CartVO cvo) throws Exception{
+		CartService.update(cvo);
 	}
 	
 	@ResponseBody
@@ -94,11 +102,12 @@ public class CartController {
 		return"redirect:/shoerologue/cart/cart.do";
 	}
 	
-	
-	@RequestMapping(value="/cartdelAll.do", method=RequestMethod.POST)
-	public String delAll(Locale locale, Model model, String mId) throws Exception{
+	@RequestMapping(value="/cartdelAll.do")
+	public String delAll(Locale locale, Model model,HttpSession session) throws Exception{
+		MemberVO member=(MemberVO)session.getAttribute("member");
+		int midx = (int)member.getMidx();
 		
-		CartService.dellAll(mId);
+		CartService.delAll(midx);
 		
 			return"redirect:/cart/cart.do";
 	}

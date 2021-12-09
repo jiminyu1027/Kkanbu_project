@@ -17,7 +17,6 @@ public class CartVO {
 	private String pFile1;
 	private int money;
 	private int cnt;
-	
 	public String getpBrandkr() {
 		return pBrandkr;
 	}

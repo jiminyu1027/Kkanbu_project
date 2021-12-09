@@ -5,7 +5,8 @@
 <%@ page import="java.util.*" %>    
 <%@ page import="edu.study.vo.*" %>  
 <%
-	List<OrderVO> list = (List<OrderVO>)request.getAttribute("list");
+	List<CartVO> list = (List<CartVO>)request.getAttribute("list");
+	CartVO ovo = (CartVO)request.getAttribute("ovo");
 %>
 <!DOCTYPE html>
 <html>
@@ -353,26 +354,23 @@
 		<!-- 상품정보 -->
 			<div class="infoBox">
 				<table>
-					<%
-						for(int i=0; i<list.size(); i++){
-					%>
 						<tr>
-							<td class="imgSize"><a href="/shoerologue/product/product.do?pidx=<%=list.get(i).getPidx()%>">
-									<img src="/shoerologue/resources/image/productdetail/<%=list.get(i).getpFile1() %>" width="110px"></a></td>
+							<td class="imgSize"><a href="/shoerologue/product/product.do?pidx=<%=ovo.getpFile1()%>">
+									<img src="/shoerologue/resources/image/productdetail/<%=ovo.getpFile1()%>" width="110px"></a></td>
 							<td class="prodIntro">
-								<span class="pBrand"><%=list.get(i).getpBrandkr() %></span>
-								<div class="pTitle"><%=list.get(i).getpNamekr()%></div>
+								<span class="pBrand"><%=ovo.getpBrandkr()%></span>
+								<div class="pTitle"><%=ovo.getpNamekr()%></div>
 								<div>
-								<span class="pColor"><%=list.get(i).getpColor()%></span>
+								<span class="pColor"><%=ovo.getpColor()%></span>
 								</div>	
-								<span class="pSize"><%=list.get(i).getCtsize()%></span>
+								<span class="pSize"><%=ovo.getCtsize()%></span>
 							</td>
 							<td class="textBox">
-							  	<span class="pAmountOp"><%=list.get(i).getCnt()%></span>
+							  	<span class="pAmountOp"><%=ovo.getCnt()%></span>
 							</td>
 							<td class="textBox2">
 								<div class="textBox3">
-								<span class="pPriceVal1"><fmt:formatNumber><%=list.get(i).getpPrice()%></fmt:formatNumber></span>
+								<span class="pPriceVal1"><fmt:formatNumber><%=ovo.getpPrice()%></fmt:formatNumber></span>
 								<span class="won1">원</span>
 								</div>
 							</td>
@@ -389,14 +387,13 @@
 								</div>
 							</td>
 						</tr>
-						<%} %>
 					</table>
 			</div>
 			<div class="bullet-right">
 				<span class="bullet-text">ㆍ 상품수량 및 옵션변경은 상품상세 또는 장바구니에서 가능합니다.</span>
 			</div>
 			<!-- 주문자 정보 -->
-		<div class="contentBox-wrap">
+	<div class="contentBox-wrap">
 		<div class="contentBox">
 			<div class="ordererHead">주문고객정보
 			<span class="redEssen">*표는 필수 입력 사항입니다.</span></div>
@@ -412,7 +409,7 @@
 						<th>이름<span class="colorRed">*</span></th>
 						<td>
 								<div class="input-wrap name" style="width:350px;">
-									<input type="text" class="name" id="name" name="name" onblur="checkFn('name')">
+									<input type="text" class="name" id="name" name="name" onblur="checkFn('name')" value="">
 									<span class="checkSpan"></span>
 								</div>
 						</td>
@@ -670,7 +667,6 @@
 		});
 	});
 	
-	<!--필수항목 아코디언-->
 	$(".que").click(function() {
 		   $(this).next(".anw").stop().slideToggle(300);
 		  $(this).toggleClass('on').siblings().removeClass('on');

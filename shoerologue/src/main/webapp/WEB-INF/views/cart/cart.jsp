@@ -34,6 +34,24 @@
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 	</style>
+	<script>
+	$(document).ready(function(){
+			$("table tbody tr").each(function(){
+				var s = $(this).find("#amount").val();
+				var c = $(this).find("#cnt").val();
+				//alert(c);
+				//alert(s*c);
+			$(this).find("#pPrice").text(comma(s*c));
+			});
+			var t =parseInt($(this).find("#totalPay").html().replaceAll(",",""));
+			var f =parseInt($(this).find("#fee").html().replaceAll(",",""));
+			//alert(t - f);
+			$(this).find("#totalPrice").text(comma(t-f));
+		});
+		
+	
+	
+	</script>
 </head>
 <body>
 <!-- 로그인 회원가입 -->
@@ -219,7 +237,7 @@
 		
 		<!-- 마이페이지 메인 -->
 	<div class="sectionBox" style="width:80%">
-		<form name="frm" id="frm" action="/shoerologue/order/orderpayment.do" method="POST">
+		<form name="frm" id="frm" action="/shoerologue/cart/order/orderpayment.do" method="POST">
 			<span  class="text-left">장바구니
 				<span id="insertCount" name="insertCount">(<%=list.size() %>)</span>
 			</span>	
@@ -232,7 +250,7 @@
 					<span class="checkText">전체선택</span>
 				<div class="right-text">
 					<button type="button" class="zzim" ><i class="bi bi-heart bicon" style="color:#FF0000"></i>선택 찜하기</button>
-					<button type="button" class="Del_btn" id="Del_btn" onclick="chkdel();"><i class="bi bi-trash bicon"></i>선택 삭제</button>
+					<button type="button" class="Del_btn" id="Del_btn" onclick="location.href='/shoerologue/cart/cartdelAll.do'"><i class="bi bi-trash bicon"></i>전체 삭제</button>
 				</div>
 			</div>
 		</div>
@@ -293,21 +311,22 @@
 								  </div>
 								</div>	
 							</td>
-							<td>
+							<td class="priceWrap">
 							  <div class="d-flex justify-content-center mt-2">
 							  	<input type="hidden" id="amount" name="amount" value="<%=list.get(i).getpPrice() %>">
-								<div class="each_input_sub1 text1 bt_down" onclick='minus(document.getElementsByName("cnt")[<%=i %>].value,document.getElementsByName("amount")[<%=i %>].value,<%=i %>)'>-</div>
-		                        <input type="number" class="each_input num" id="cnt" name="cnt" value="<%=list.get(i).getCnt()%>" >
-		                        <div class="each_input_sub2 text1 bt_up" onclick='plus(document.getElementsByName("cnt")[<%=i %>].value,document.getElementsByName("amount")[<%=i %>].value,<%=i %>)'>+</div>
-		                       </div>
+							  	<input type="hidden" name="ctidx" value="<%=list.get(i).getCtidx() %>">
+								<div class="each_input_sub1 text1 bt_down" onclick='minus(document.getElementsByName("cnt")[<%=i %>].value,document.getElementsByName("amount")[<%=i %>].value,<%=i %>,<%=list.get(i).getCtidx()%>)'>-</div>
+		                     	<input type="number" class="each_input num" id="cnt" name="cnt" value="<%=list.get(i).getCnt()%>" >
+		                       	<div class="each_input_sub2 text1 bt_up" onclick='plus(document.getElementsByName("cnt")[<%=i %>].value,document.getElementsByName("amount")[<%=i %>].value,<%=i %>,<%=list.get(i).getCtidx()%>)'>+</div>
+		                      </div>
 							</td>
 							<td>
-								<span class="pPrice" id="pPrice" name="pPrice"><fmt:formatNumber><%=list.get(i).getpPrice() %></fmt:formatNumber></span>
+								<span class="pPrice" id="pPrice" name="pPrice"><fmt:formatNumber><%=list.get(i).getpPrice()%></fmt:formatNumber></span>
 								<span class="won">원</span>
 							</td>
 							<td>
 							<div>
-								<button type="submit" name="rightOrder"  id="rightOrder" class="orderbtn" onclick="goOrder(); return false;">바로 구매</button>
+								<button type="submit" name="rightOrder"  id="rightOrder" class="orderbtn" onclick="location.href='/order/orderpayment.do?ctidx=<%=list.get(i).getCtidx()%>'">바로 구매</button>
 							</div>
 							<div>
 								<button id="delbtn" class="delbtn" >삭제</button>
@@ -357,7 +376,7 @@
 						<input type="button" value="계속 쇼핑하기" class="keepShop"></a>
 					</label>
 					<label>
-						<input type="button" value="주문하기" id="orderbtn" name="gotoOrder" class="orderShop" onclick="goOrder(); return false;">
+						<input type="button" value="전체 상품 주문하기" id="orderbtn" name="gotoOrder" class="orderShop" onclick="goOrder(); return false;">
 					</label>
 				</div>
 					</form>
@@ -414,13 +433,10 @@
         });
     });
 	
-	function goOrder(){
-		//alert(2);
-		document.frm.submit();
-	}
-		
+	
+	
 	//수량 plus
-	function plus(cnt,amount,i){
+	function plus(cnt,amount,i,ctidx){
 		cnt  *= 1;
 		cnt = cnt+1;
 		//alert(cnt);
@@ -433,17 +449,34 @@
 		document.getElementsByName('pPrice')[i].innerHTML= comma(total_amount);	
 		document.getElementsByName('cnt')[i].value=cnt;
 		
-		count();
+//   		var sums = document.getElementById('totalPrice').val();
+//   		if(sums < 50000){
+//   			document.getElementById('fee').innerText = comma(3000);	
+//   		}else{
+//   			document.getElementById('fee').innerText = comma(0);
+//   		}
+		
 		autoCalc();
+		
+		
+		$.ajax({
+			url:'update.do',
+			data:'ctidx='+ctidx+'&cnt='+cnt,
+			success:function(data){
+				//alert("수량이 변경되었습니다.");
+				
+			}
+		});
+		
 		return ;
 	}
 	
 	//수량 minus
-	function minus(cnt,amount,i){
+	function minus(cnt,amount,i,ctidx){
 		cnt *= 1;
 		cnt = cnt-1;
 		if(cnt < 1 ){
-			alert("주문가능한 최소 수량은 1개입니다.");
+			//alert("주문가능한 최소 수량은 1개입니다.");
 			return false;
 		}
 		//amount  = amount.replace(",","")
@@ -451,26 +484,27 @@
 		document.getElementsByName('pPrice')[i].innerHTML= comma(total_amount);	
 		document.getElementsByName('cnt')[i].value=cnt;
 		
-		count();
 		autoCalc();
-		return;
-	}
+		
+		$.ajax({
+			url:'update.do',
+			data:'ctidx='+ctidx+'&cnt='+cnt,
+			success:function(data){
+				//alert("수량이 변경되었습니다.");
+			}
+		});
 	
-		function count(){
-		var cnt = document.getElementsByName('cnt').value;
-		//console.log("cnt:"+document.getElementsByName('cnt').value);
-		let sum=0;
-		for(let i=0; i<cnt; i++){
-			 alert(document.getElementsByName('cnt')[i].innerHTML);
-		}
-		return;
+		
+		return ;
 	}
+		
+	
 		
 	//선택 상품금액 합 
 	function autoCalc(){
 		
 		var totalCnt = document.getElementsByName('cnt').length;
-		console.log(totalCnt);
+		//console.log(totalCnt);
 		//alert("총리스트수"+totalCnt);
 		var count = $('.chkBox').length;
 		//alert(count);
@@ -490,11 +524,8 @@
 		}
 		
 		allSum();
-		
 		return;
 	}
-	
-
 	
 	function reverseCalc(obj){
 		var $obj = $(obj);
@@ -515,6 +546,7 @@
 			}
 			
 			allSum();
+			
 		}else{
 			document.getElementById('totalPrice').innerText = comma(0);		
 			document.getElementById('fee').innerText = comma(0);
@@ -540,10 +572,10 @@
 	
 	//콤마 정규식
 	function comma(str) { 
-		 str = String(str); 
+		 str = String(str);
 		 str = str.replace(/[^\d]+/g, ''); // 숫자만 남김 
 			return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'); 
-	}
+		 }
 	
 	</script>	
 	

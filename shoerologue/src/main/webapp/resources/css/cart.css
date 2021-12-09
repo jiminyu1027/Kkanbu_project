@@ -6,7 +6,17 @@
 			line-height: 1;
 			font-size: 23pt;
 		}
-		
+		.chgBtn{
+			margin-top: 3px;
+		    min-width: 120px;
+		    height: 26px;
+		    padding: 0 12px;
+		    line-height: 24px;
+		    font-size: 13x;
+		    border: 1px solid #111;
+		    letter-spacing: -.6px;
+		    background-color: #FFFFFF;
+		}
 		.cartBox1{
 			width:100%;
 			border-top:2px solid black;

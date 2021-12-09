@@ -18,7 +18,14 @@ public class OrderVO {
 	private String pSize;
 	private int cnt;
 	private int ctsize;
+	private String mName;
 	
+	public String getmName() {
+		return mName;
+	}
+	public void setmName(String mName) {
+		this.mName = mName;
+	}
 	public String getpBrandkr() {
 		return pBrandkr;
 	}

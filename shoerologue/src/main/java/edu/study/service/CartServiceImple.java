@@ -24,13 +24,14 @@ public class CartServiceImple implements CartService{
 	
 
 	@Override
-	public void dellAll(String mId) throws Exception {
-		CartDao.delAll(mId);
+	public void delAll(int midx) throws Exception {
+		CartDao.delAll(midx);
+
 	}
 
 	@Override
-	public void update(int ctidx) throws Exception{
-		CartDao.update(ctidx);
+	public void update(CartVO cvo) throws Exception{
+		CartDao.update(cvo);
 	}
 
 	@Override
@@ -71,8 +72,9 @@ public class CartServiceImple implements CartService{
 	}
 
 	@Override
-	public void listOne(int ctidx) throws Exception {
-		CartDao.listOne(ctidx);
+	public CartVO listOne(int ctidx) throws Exception {
+		//System.out.println("ctidxxxxxxxx"+ctidx);
+		return CartDao.listOne(ctidx);
 	}
 
 	

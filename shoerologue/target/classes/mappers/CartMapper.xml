@@ -19,7 +19,7 @@
    		 	c.ctsize,
   		 	p.pFile1 
    		 	FROM cart c, product p, member m 
-  		 	WHERE c.pidx=p.pidx AND m.midx = c.midx AND c.midx=#{c.midx}
+  		 	WHERE c.pidx=p.pidx AND m.midx = c.midx AND c.midx=#{c.midx} AND c.delYn = 'N'
 	 	ORDER BY ctidx 
   	</select> 
   
@@ -39,10 +39,16 @@
 	
 	<!-- 상품개별삭제 -->
 	<delete id="del" parameterType="int">
-		DELETE FROM cart WHERE ctidx=#{ctidx} AND midx = #{midx}
+		DELETE FROM cart WHERE ctidx=#{ctidx}
 	</delete>
 	
-	<update id="update">
+	<!-- 상품전체삭제 -->
+	<update id="delAll" parameterType="int">
+		UPDATE cart SET delyn = 'Y' WHERE midx=#{midx}
+	</update>
+	
+	<!-- 수량 업데이트 -->
+	<update id="update" parameterType="CartVO">
 		UPDATE cart SET cnt = #{cnt} WHERE ctidx = #{ctidx} 
 	</update>
 	
@@ -67,21 +73,17 @@
 	<!-- 주문상품 담기 -->
 	<insert id="insert" parameterType="CartVO">
     <![CDATA[		
-	    INSERT INTO ordered VALUES( 
-		    	 oidx_seq.nextval 
+ 	    INSERT INTO ordered ( oidx, owriteday, pidx, ctidx ) VALUES( 
+ 		    	 oidx_seq.nextval  
 		    	,sysdate 
- 		    	,#{omessage}		 
- 		    	,#{midx} 
-		    	,#{pidx} 
- 		    	,#{adidx} 
- 		    	,#{ctidx} 
- 		    ) 
- 		    ]]> 
+  		    	,#{pidx} 
+  		    	,#{ctidx}  
+  		    )  
+  		    ]]>  
 		    <selectKey resultType="int" keyProperty="oidx" order="AFTER">		
 		    	SELECT MAX(oidx) FROM ordered
 		    </selectKey>
     </insert>
-  	
   	
   	
 </mapper>

@@ -22,8 +22,9 @@ public class CartDAO {
 		sqlSession.insert(Namespace+".insert", cvo);
 	}
 	
-	public void listOne(int ctidx) throws Exception{
-		sqlSession.selectOne(Namespace+".listOne", ctidx);
+	public CartVO listOne(int ctidx) throws Exception{
+		//System.out.println("ctidx::::"+ctidx);
+		return sqlSession.selectOne(Namespace+".listOne", ctidx);
 	}
 	
 	public List<CartVO> list(int midx) throws Exception{
@@ -34,12 +35,12 @@ public class CartDAO {
 		sqlSession.delete(Namespace+".del", ctidx);
 	}
 	//장바구니 전체 삭제
-	public void delAll(String mId) throws Exception{
-		sqlSession.delete(Namespace+".dellAll", mId);
+	public void delAll(int midx) throws Exception{
+		sqlSession.update(Namespace+".delAll", midx);
 	}
 	
-	public void update(int ctidx) throws Exception{
-		sqlSession.update(Namespace+".update", ctidx);
+	public void update(CartVO cvo) throws Exception{
+		sqlSession.update(Namespace+".update", cvo);
 	}
 	
 	public int sum(int midx) throws Exception{

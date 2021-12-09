@@ -16,7 +16,7 @@ public class OrderDAO {
 	
 	private static final String Namespace = "edu.study.mapper.OrderMapper";	
 	
-	
+
 	public List<OrderVO> list(int midx) throws Exception{
 		return sqlSession.selectList(Namespace+".list",midx);
 	}
