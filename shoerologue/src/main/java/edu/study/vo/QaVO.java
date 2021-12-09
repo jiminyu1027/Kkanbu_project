@@ -9,6 +9,14 @@ public class QaVO {
 	private String pqOpen;
 	private int midx;
 	private String pqWriteday;
+	private int pidx;
+	
+	public int getPidx() {
+		return pidx;
+	}
+	public void setPidx(int pidx) {
+		this.pidx = pidx;
+	}
 	public int getPqidx() {
 		return pqidx;
 	}

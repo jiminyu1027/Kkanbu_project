@@ -20,9 +20,9 @@ public class QaServiceImpl implements QaService {
 	}
 	
 	@Override
-	public List<QaVO> pqlist() throws Exception{
+	public List<QaVO> pqlist(int midx) throws Exception{
 		
-		return QaDao.pqlist(); 
+		return QaDao.pqlist(midx); 
 	}
 	
 	@Override

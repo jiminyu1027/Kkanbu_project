@@ -20,9 +20,9 @@ public class QaDAO {
 		sqlSession.insert(Namespace+".insert",vo);
 	}
 	
-	public List<QaVO> pqlist() throws Exception{
+	public List<QaVO> pqlist(int midx) throws Exception{
 		
-		return sqlSession.selectList(Namespace+".pqlist");
+		return sqlSession.selectList(Namespace+".pqlist",midx);
 	}
 	
 	public QaVO detail(int pqdix) throws Exception{

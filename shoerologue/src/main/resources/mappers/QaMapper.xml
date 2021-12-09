@@ -10,7 +10,7 @@
 			INSERT INTO PRODUCT_QUESTION(
 				PQIDX,PQSUBJECT
 				,PQCONTENTS,PQWRITER
-				,PQOPEN,MIDX)
+				,PQOPEN,MIDX,PIDX)
 				VALUES(
 				PQIDX_SEQ.nextval
 				,#{pqSubject}
@@ -18,12 +18,13 @@
 				,#{pqWriter}
 				,#{pqOpen}
 				,#{midx}
+				,#{pidx}
 				)
 		]]>
 	</insert>
 	
 	<select id="pqlist" resultType="edu.study.vo.QaVO">
-		SELECT * FROM PRODUCT_QUESTION WHERE 1=1 ORDER BY PQIDX DESC
+		SELECT * FROM PRODUCT_QUESTION WHERE 1=1 AND MIDX = #{MIDX} ORDER BY PQIDX DESC
 	</select>
 	
 	<select id="detail" resultType="edu.study.vo.QaVO">

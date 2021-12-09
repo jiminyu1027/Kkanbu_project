@@ -1,6 +1,11 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="edu.study.vo.*" %>
+<%
+	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -83,15 +88,13 @@
 			position:absolute;
 			font-size:30px;
 			font-style:strong;
-			margin-left:30px;
+			margin-left:80px;
 		}
 		.ask-box{
-			position:absolute;
-			margin-top:50px;
 			margin-left:360px;
 			width:800px;
 			height:500px;
-			border-top:2px solid black;
+			border-top:1px solid gray;
 			border-bottom:1px solid gray;	
  		} 
 		.red-label{ 
@@ -120,15 +123,18 @@
  			left:550px;
  		}
  		.cancel-button{
+ 			position:relative;
  			width:150px;
  			height:50px;
+ 			bottom:530px;
+ 			left:280px;
  			background-color:white;
  			color:black;
  		}
  		.submit-button{
  			position:relative;
- 			top:560px;
- 			left:730px;
+ 			top:30px;
+ 			left:1010px;
  			width:150px;
  			height:50px;
  			background-color:black;
@@ -165,9 +171,20 @@
 		}
 		.writer{
 			position:absolute;
-			margin-top:10px;
+			margin-top:-35px;
 			margin-left:695px;
 			text-align:center;
+		}
+		.smImge{
+			width:150px;
+			height:150px;
+		}
+		.pBox{
+			border-top:2px solid black;
+			width:800px;
+			height:50px;
+			margin-left:360px;
+			margin-top:60px;
 		}
 		</style>
 		<script src="../js/jquery-3.6.0.min.js"></script>		
@@ -370,9 +387,20 @@
 		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
 		<div class="empty-box"></div>
 		<div class="empty-box"></div>
-		<div><span class="mainTitle">상품QA</span></div>
+		<div><span class="mainTitle">상품 문의하기</span></div>
 		<form action="/shoerologue/mypage/shopping/qaList.do" method="post" class="frm" id="frm" name="frm">
+			<input type="hidden" name="pidx" value="<%=pvo.getPidx() %>">
 			<input type="text" value="${member.mName}" name="pqWriter" class="writer" readOnly >
+			<table class="pBox">
+			<colgroup>
+				<col width="30%">
+				<col width="70%">
+			</colgroup>
+				<tr>
+					<td><img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>" class="smImge"></td>
+					<td><h6><%=pvo.getpBrandKr() %></h6><%=pvo.getpNameKr() %></td>
+				</tr>
+			</table>
 			<table class="ask-box">
 				<colgroup>
 					<col width="10%">
@@ -410,10 +438,12 @@
 			<input type="submit" value="QA하기" class="submit-button" onclick="return btnFn();">
 		</form>
 		<a href="/shoerologue/mypage/shopping/qaList.do" class="cancel"><input type="button" value="QA취소" class="cancel-button"></a>
-	</div>	
+	</div>
+	<div class="empty-box"></div>
+	<div class="empty-box"></div>
+	<div class="empty-box"></div>
+	<div class="empty-box"></div>			
 <!-- 우측하단 TOP 이동 배너 -->
-	<div class="empty-box"></div>
-	<div class="empty-box"></div>
 	<a href="#top">
 	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill top fixed" viewBox="0 0 16 16">
 	  <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>

@@ -658,7 +658,10 @@
 					<!--<center>페이징 처리</center>-->
 					<div class="QnaBtn">
 						<button onclick="location.href='/shoerologue/customerService/cs.do'">자주하는 질문 보기</button>
-						<button onclick="location.href='/shoerologue/admin/inquiryAsk.do'">Q&amp;A작성</button>
+						<form action="/shoerologue/admin/qaAsk.do" method="get">
+							<input type="hidden" name="pidx" value="<%=pvo.getPidx() %>">
+							<input type="submit" value="Q&amp;A작성">
+						</form>
 					</div>
 				</div>
 			</div>

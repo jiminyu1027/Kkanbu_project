@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -38,9 +39,13 @@ public class ShoppingController {
 	}
 	
 	@RequestMapping(value="/qaList.do")
-	public String qaList(Locale locale,Model model)throws Exception{
+	public String qaList(Locale locale,Model model,HttpSession httr)throws Exception{
 		
-		List<QaVO> pqlist = QaService.pqlist();
+		MemberVO member = (MemberVO)httr.getAttribute("member");
+		
+		int midx = member.getMidx();
+		
+		List<QaVO> pqlist = QaService.pqlist(midx);
 		
 		model.addAttribute("pqlist",pqlist);
 		
@@ -48,13 +53,14 @@ public class ShoppingController {
 	}
 	
 	@RequestMapping(value="/qaList.do",method=RequestMethod.POST)
-	public String insert(Locale locale,Model model,QaVO vo,HttpSession httr) throws Exception{
+	public String insert(Locale locale,Model model,QaVO vo,@RequestParam("pidx") int pidx,HttpSession httr) throws Exception{
 		
 			MemberVO member = (MemberVO)httr.getAttribute("member");
 			
 			int midx = member.getMidx();
 			
 			vo.setMidx(midx);
+			vo.setPidx(pidx);
 			
 			QaService.insert(vo);
 			

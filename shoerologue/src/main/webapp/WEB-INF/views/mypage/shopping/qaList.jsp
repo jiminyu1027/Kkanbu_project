@@ -6,6 +6,7 @@
     
 <%
 	List<QaVO> pqlist = (List<QaVO>)request.getAttribute("pqlist");
+
 	MemberVO loginU = (MemberVO)session.getAttribute("member");
 %>
 <!DOCTYPE html>
@@ -91,6 +92,7 @@
 			margin-left:30px;
 		}
 		.inquiry-box{
+			margin-top:30px;
 			width:100%;
 		}
 		.inquiry-title{
@@ -111,14 +113,6 @@
 		}
 		.inquiry-writer{
 			text-align:center;
-		}
-		.btnBox{
-			width:100px;
-			height:50px;
-			background-color:white;
-			color:#111;
-			margin-top:auto;
-			margin-left:1007px;
 		}
 		.answer-ling:hover{
 			color:red;
@@ -333,7 +327,6 @@
 		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
 		<div style=" float: left; width: 79%;" class="mt-5">
 		<div class="mainTitle">상품 Q&amp;A</div>
-			<button class="btnBox" onclick="location.href='/shoerologue/admin/qaAsk.do'">질문하기</button>
 		<br>
 		<br>	
 			<table class="inquiry-box table table-hover">
@@ -343,42 +336,65 @@
 					<col width="20%">
 					<col width="10%">
 				</colgroup>
-			<thead class="inquiry-title">
-				<tr>
-					<th class="inquiry-number" id="inquiry-number" name="inquiry-number">번호</th>
-					<th class="inquiry-subject" id="inquiry-subject" name="inquiry-subject">제목</th>
-					<th class="inquiry-writeday" id="inquiry-writeday" name="inquiry-writeday">작성일</th>
-					<th class="inquiry-writer" id="inquiry-writeday" name="inquiry-writeday">작성자</th>
-				</tr>
-			</thead>
-			<tbody>
-				<%
-					for(int i=0; i<pqlist.size(); i++){	
-				%>
+			
+<%-- 				<% --%>
+<!--  					for(int i=0; i<pqlist.size(); i++){	 -->
+<%-- 				%> --%>
 					
-					<tr class="inquiry-contents-box">
-						<td class="inquiry-number-detail"><%=i+1 %></td>
-						<% if(pqlist.get(i).getPqOpen().equals("N") ){ 
+<!-- 					<tr class="inquiry-contents-box"> -->
+<%-- 						<td class="inquiry-number-detail"><%=i+1 %></td> --%>
+<%-- 						<% if(pqlist.get(i).getPqOpen().equals("N") ){  --%>
 						
-							//로그인한 user가 관리자 이거나 자신의 글 이면 링크 제공
-							//로그인한 user가 내가 쓴글도 아니고 관리자도 아니다 링크 미제공
-						%>
-							<td class="inquiry-subject-detail"> 
-						<%
-								if(loginU.getMidx() == pqlist.get(i).getMidx() || loginU.getMaster().equals("master")){
-						%>
+<!--  							//로그인한 user가 관리자 이거나 자신의 글 이면 링크 제공 -->
+<!-- 							//로그인한 user가 내가 쓴글도 아니고 관리자도 아니다 링크 미제공 -->
+<%-- 						%> --%>
+<!-- 							<td class="inquiry-subject-detail">  -->
+<%-- 						<% --%>
+<!--  								if(loginU.getMidx() == pqlist.get(i).getMidx() || loginU.getMaster().equals("master")){ -->
+<%-- 						%> --%>
+<%-- 								<a href="/shoerologue/customerService/qaDetail.do?pqidx=<%=pqlist.get(i).getPqidx()%>"><%=pqlist.get(i).getPqSubject() %></a> --%>
+<%-- 							<%  }else{ %> --%>
+<!-- 								[비공개글은 작성자와 관리자만 볼 수 있습니다.] -->
+<%-- 							<%} %> --%>
+<!-- 							</td>   -->
+<%-- 						<%}else{ --%>
+<%-- 						%> --%>
+<%-- 							<td class="inquiry-subject-detail"><a href="/shoerologue/customerService/qaDetail.do?pqidx=<%=pqlist.get(i).getPqidx()%>"><%=pqlist.get(i).getPqSubject() %></a></td> --%>
+<%-- 						<%					 --%>
+<%-- 						} %> --%>
+<%-- 						<td class="inquiry-writeday-detail"><%=pqlist.get(i).getPqWriteday().substring(0,10) %></td> --%>
+<%-- 						<td class="inquiry-writer-detail"><%=pqlist.get(i).getPqWriter() %></td> --%>
+<!-- 					</tr> -->
+<%-- 				<%} %>	 --%>
+				<%if(pqlist.size()>0){ %>
+					<thead class="inquiry-title">
+						<tr>
+							<th class="inquiry-number" id="inquiry-number" name="inquiry-number">번호</th>
+							<th class="inquiry-subject" id="inquiry-subject" name="inquiry-subject">제목</th>
+							<th class="inquiry-writeday" id="inquiry-writeday" name="inquiry-writeday">작성일</th>
+							<th class="inquiry-writer" id="inquiry-writeday" name="inquiry-writeday">작성자</th>
+						</tr>
+					</thead>
+					<tbody>
+					<%
+						for(int i=0; i<pqlist.size(); i++){
+					%>
+						<tr class="inquiry-contents-box">
+							<td class="inquiry-number-detail"><%=i+1 %></td>
+							<td class="inquiry-subject-detail">
 								<a href="/shoerologue/customerService/qaDetail.do?pqidx=<%=pqlist.get(i).getPqidx()%>"><%=pqlist.get(i).getPqSubject() %></a>
-							<%  }else{ %>
-								[비공개글은 작성자와 관리자만 볼 수 있습니다.]
-							<%} %>
-							</td>  
-						<%}else{
-						%>
-							<td class="inquiry-subject-detail"><a href="/shoerologue/customerService/qaDetail.do?pqidx=<%=pqlist.get(i).getPqidx()%>"><%=pqlist.get(i).getPqSubject() %></a></td>
-						<%					
-						} %>
-						<td class="inquiry-writeday-detail"><%=pqlist.get(i).getPqWriteday().substring(0,10) %></td>
-						<td class="inquiry-writer-detail"><%=pqlist.get(i).getPqWriter() %></td>
+							</td>
+							<td class="inquiry-writeday-detail"><%=pqlist.get(i).getPqWriteday().substring(0,10) %></td>
+							<td class="inquiry-writer-detail"><%=pqlist.get(i).getPqWriter() %></td>
+						</tr>
+					<%} %>
+				<%}else{ %>
+					<tr>
+						<td colspan="4" style="height:300px; text-align:center;">
+							<i class="bi bi-exclamation-circle exclamation"></i>
+							<br>
+							QA내역이 없습니다.
+						</td>
 					</tr>
 				<%} %>	
 			</tbody>
