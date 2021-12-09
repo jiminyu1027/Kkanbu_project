@@ -74,13 +74,13 @@ public class ProductController {
 		return "redirect:/cart/cart.do";
 	}
 	
-	@RequestMapping(value="/product/productInsert.do",method=RequestMethod.GET)
+	@RequestMapping(value="/admin/productInsert.do",method=RequestMethod.GET)
 	public String productInsert(Model model,ProductVO pvo,HttpSession session)throws Exception {
 		
-		return "/product/productInsert";
+		return "/admin/productInsert";
 	}
 	
-	@RequestMapping(value="/product/pdAllListAction.do",method=RequestMethod.POST)
+	@RequestMapping(value="/admin/pdAllListAction.do",method=RequestMethod.POST)
 	public String productInsert(Locale locale, Model model,ProductVO pvo,HttpSession session,MultipartFile file1,MultipartFile file2,MultipartFile file3,MultipartFile file4,MultipartFile file5)throws Exception {
 		System.out.println("Æ÷½º");
 		String imgUploadPath = uploadPath + File.separator + "imgUpload";
@@ -129,10 +129,10 @@ public class ProductController {
 			productService.productInsert(pvo);
 			System.out.println("33");
 				
-		return "redirect:/product/pdAllList.do";
+		return "redirect:/admin/pdAllList.do";
 	}
 	
-	@RequestMapping(value="/product/pdAllList.do")
+	@RequestMapping(value="/admin/pdAllList.do")
 	public String pdAllList(Locale locale, Model model,ProductVO pvo, Criteria2 cri)throws Exception {
 			
 		List<ProductVO> pdAllList = productService.pdAllList(pvo,cri);
@@ -145,7 +145,7 @@ public class ProductController {
 		model.addAttribute("pageMaker2", pageMaker2);
 		
 		
-		return "/product/pdAllList";
+		return "/admin/pdAllList";
 	}
 	
 	

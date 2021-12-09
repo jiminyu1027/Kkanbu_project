@@ -403,8 +403,7 @@
 				</svg></span>
 				<div class="myPageMenu3">
 					<a href="#" class="gray">회원 목록</a><br>
-					<a href="#" class="gray">ㅇㅇ 수정</a><br>
-					<a href="#" class="gray">ㅇㅇㅇ 탈퇴</a>
+					<a href="#" class="gray">ㅇㅇ 수정</a>
 				</div>
 			</div>
 			<div class="myPageMenu2">
@@ -412,8 +411,8 @@
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="/shoerologue/product/pdAllList.do" class="gray">상품 목록</a><br>
-					<a href="/shoerologue/product/productInsert.do" class="gray">상품 등록</a>
+					<a href="/shoerologue/admin/pdAllList.do" class="gray">상품 목록</a><br>
+					<a href="/shoerologue/admin/productInsert.do" class="gray">상품 등록</a>
 				</div>
 			</div>
 			
@@ -424,7 +423,7 @@
 		<!-- 마이페이지 메인 -->
 		<div style="float: left; width: 80%;">
 		<div class="myPageListBox">
-			<div style="float: left; width: 100%;" class="myPageLine"><h2>주문/배송 조회</h2></div>
+			<div style="float: left; width: 100%;" class="myPageLine"><h2>주문 조회</h2></div>
 			<!-- 상품 혹은 목록이 없는 경우 -->
 			   <div class="wishNoItem">
 			      <div class="flex-box">
