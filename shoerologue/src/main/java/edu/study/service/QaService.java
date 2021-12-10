@@ -10,6 +10,8 @@ public interface QaService {
 	
 	List<QaVO> pqlist(int midx) throws Exception;
 	
+	List<QaVO> masterList() throws Exception;
+	
 	List<QaVO> productList(int pidx) throws Exception;
 	
 	QaVO detail(int pqidx)throws Exception;

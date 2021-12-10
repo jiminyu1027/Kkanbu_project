@@ -338,13 +338,12 @@
 		<input type="submit" value="QA삭제" class="subFn" style="background-color:gray">
 		<input type="button" value="목록보기" class="btnFn" style="background-color:white;" onclick="location.href='/shoerologue/mypage/shopping/qaList.do'">
 		</form>	
-		<form action="/shoerologue/mypage/shopping/qaComment.do" method="post" class="commentBox">
+		<form action="/shoerologue/customerService/qaComment.do" method="post" class="commentBox">
 			<p>
-				<textarea name="aContents" placeholder="여기에 댓글을 작성하세요"></textarea>				
+				<textarea name="qaSubject" placeholder="여기에 댓글을 작성하세요"></textarea>				
 			</p>
 			<p>
-				<input type="hidden" name="midx" value="${member.midx}">
-				<input type="hidden" name="qidx" value="${qidx}">
+				<input type="hidden" name="qaidx" value="${qaidx}">
 				<input type="submit" value="답글 작성" class="commentFn">	
 			</p>
 		</form>

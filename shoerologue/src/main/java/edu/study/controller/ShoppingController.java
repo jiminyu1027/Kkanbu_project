@@ -47,7 +47,10 @@ public class ShoppingController {
 		
 		List<QaVO> pqlist = QaService.pqlist(midx);
 		
+		List<QaVO> masterList = QaService.masterList();
+		
 		model.addAttribute("pqlist",pqlist);
+		model.addAttribute("masterList",masterList);
 		
 		return "/mypage/shopping/qaList";
 	}

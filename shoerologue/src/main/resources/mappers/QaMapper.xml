@@ -27,6 +27,10 @@
 		SELECT * FROM PRODUCT_QUESTION WHERE 1=1 AND MIDX = #{MIDX} ORDER BY PQIDX DESC
 	</select>
 	
+	<select id="masterList" resultType="edu.study.vo.QaVO">
+		SELECT * FROM PRODUCT_QUESTION WHERE 1=1 ORDER BY PQIDX DESC
+	</select>
+	
 	<select id="productList" resultType="edu.study.vo.QaVO">
 		SELECT * FROM PRODUCT_QUESTION WHERE 1=1 AND PIDX = #{PIDX} ORDER BY PQIDX DESC
 	</select>

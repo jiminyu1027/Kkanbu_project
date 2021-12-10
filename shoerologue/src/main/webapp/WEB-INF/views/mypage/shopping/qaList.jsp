@@ -7,6 +7,8 @@
 <%
 	List<QaVO> pqlist = (List<QaVO>)request.getAttribute("pqlist");
 
+	List<QaVO> masterList = (List<QaVO>)request.getAttribute("masterList");
+
 	MemberVO loginU = (MemberVO)session.getAttribute("member");
 %>
 <!DOCTYPE html>
@@ -366,7 +368,7 @@
 <%-- 						<td class="inquiry-writer-detail"><%=pqlist.get(i).getPqWriter() %></td> --%>
 <!-- 					</tr> -->
 <%-- 				<%} %>	 --%>
-				<%if(pqlist.size()>0){ %>
+				<%if(pqlist.size()>0 || loginU.getMaster().equals("BRONZE")	){ %>
 					<thead class="inquiry-title">
 						<tr>
 							<th class="inquiry-number" id="inquiry-number" name="inquiry-number">번호</th>
@@ -386,6 +388,28 @@
 							</td>
 							<td class="inquiry-writeday-detail"><%=pqlist.get(i).getPqWriteday().substring(0,10) %></td>
 							<td class="inquiry-writer-detail"><%=pqlist.get(i).getPqWriter() %></td>
+						</tr>
+					<%} %>
+				<%}else if(loginU.getMaster().equals("master")){ %>	
+					<thead class="inquiry-title">
+						<tr>
+							<th class="inquiry-number" id="inquiry-number" name="inquiry-number">번호</th>
+							<th class="inquiry-subject" id="inquiry-subject" name="inquiry-subject">제목</th>
+							<th class="inquiry-writeday" id="inquiry-writeday" name="inquiry-writeday">작성일</th>
+							<th class="inquiry-writer" id="inquiry-writeday" name="inquiry-writeday">작성자</th>
+						</tr>
+					</thead>
+					<tbody>
+					<%
+  						for(int j=0; j<masterList.size(); j++){
+ 					%>
+						<tr class="inquiry-contents-box">
+							<td class="inquiry-number-detail"><%=j+1 %></td>
+							<td class="inquiry-subject-detail">
+								<a href="/shoerologue/customerService/qaDetail.do?pqidx=<%=masterList.get(j).getPqidx()%>"><%=masterList.get(j).getPqSubject() %></a>
+							</td>
+							<td class="inquiry-writeday-detail"><%=masterList.get(j).getPqWriteday().substring(0,10) %></td>
+							<td class="inquiry-writer-detail"><%=masterList.get(j).getPqWriter() %></td>	
 						</tr>
 					<%} %>
 				<%}else{ %>

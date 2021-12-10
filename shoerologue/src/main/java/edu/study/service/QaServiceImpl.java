@@ -26,6 +26,12 @@ public class QaServiceImpl implements QaService {
 	}
 	
 	@Override
+	public List<QaVO> masterList() throws Exception{
+		
+		return QaDao.masterList();
+	}
+	
+	@Override
 	public List<QaVO> productList(int pidx) throws Exception{
 		
 		return QaDao.productList(pidx);

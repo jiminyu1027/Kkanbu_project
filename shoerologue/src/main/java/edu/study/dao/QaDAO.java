@@ -25,6 +25,11 @@ public class QaDAO {
 		return sqlSession.selectList(Namespace+".pqlist",midx);
 	}
 	
+	public List<QaVO> masterList() throws Exception{
+		
+		return sqlSession.selectList(Namespace+".masterList");
+	}
+	
 	public List<QaVO> productList(int pidx) throws Exception{
 		
 		return sqlSession.selectList(Namespace+".productList",pidx);
