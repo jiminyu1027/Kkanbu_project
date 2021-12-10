@@ -38,9 +38,16 @@ public class AddressServiceImpl implements AddressService{
 	}
 	
 	@Override
+	public AddressVO selectOne(int adidx) throws Exception {
+		return addressDao.selectOne(adidx);
+	}
+	
+	@Override
 	public void del(int adidx) throws Exception {
 		addressDao.del(adidx);
 	}
+
+
 
 
 	

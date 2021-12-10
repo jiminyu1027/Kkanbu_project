@@ -542,7 +542,7 @@
 							<div class="modal-footer">
 								<button type="button" class="btn btn-secondary " onclick="frm_reset()" data-bs-dismiss="modal">닫기</button>
 		      					<button type="button" class="btn btn-secondary " onclick="frm_reset()">초기화</button>
-								<button type="submit" class="btn btn-primary card_btn" onsubmit="return loginChk()">카드 등록</button>
+								<button type="submit" class="btn btn-primary card_btn" onclick="loginChk2(); return false;">카드 등록</button>
 							</div>
 							</form>
 						</div>
@@ -728,6 +728,13 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
 		crossorigin="anonymous"></script>
 	<script>
+		function loginChk2(){
+			alert("준비중인 서비스입니다.");
+			return false;
+		}
+	
+	
+	
 		<!-- 초기화 버튼  함수-->
 		function frm_reset() {
 		    document.getElementById("frm").reset();

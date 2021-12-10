@@ -33,6 +33,10 @@ public class AddressDAO {
 		sqlSession.update(Namespace+".update",vo);
 	}
 	
+	public AddressVO selectOne(int adidx) throws Exception{
+		return sqlSession.selectOne(Namespace+".selectOne",adidx);
+	}
+	
 	
 	public void del(int midx) throws Exception{
 		sqlSession.delete(Namespace+".del",midx);

@@ -16,5 +16,9 @@ public interface AddressService {
 	
 	public void update(AddressVO vo) throws Exception;
 	
+	public AddressVO selectOne(int adidx) throws Exception;
+	
 	public void del(int adidx) throws Exception;
+	
+	
 }

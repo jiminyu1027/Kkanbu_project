@@ -99,7 +99,7 @@
 		}
 		.myPageListBox{
 			margin-top:33px;
-			width:1120px;
+			width:100%;
 		}
 		.gray-box{
 			width:100%;
@@ -587,9 +587,9 @@
                 <input type="hidden" name="adidx" id="adidx">
                 <h3>배송지 수정하기</h3><br>
                 
-               	<a class="modalFs">받으실분</a> :  <input type="text" id="receiver" name="adRec" placeholder=" 수정할 이름을 입력해 주세요."><br>
+               	<a class="modalFs">받으실분</a> :  <input type="text" id="receiverU" name="adRec" value=""><br>
                	<br>
-               	<a class="modalFs">핸드폰 번호</a> :  <input type="text" id="phone" name="adPhone" placeholder=" 수정할 핸드폰 번호를 '-' 없이 입력해 주세요."><br>
+               	<a class="modalFs">핸드폰 번호</a> :  <input type="text" id="phoneU" name="adPhone" placeholder=" 수정할 핸드폰 번호를 '-' 없이 입력해 주세요."><br>
 	           	<br>
 	           	<a class="modalFs">주소</a> :     &nbsp;<input type="text" id="sample4_postcode2" placeholder=" 우편번호" readonly class="bg-gray1">
 						 <input type="button" onclick="sample4_execDaumPostcode2()" value="우편번호 찾기" class="bg-gray3"><br>
@@ -599,7 +599,7 @@
 						 <input type="text" id="sample4_extraAddress2" placeholder=" 주소 참고항목" readonly class="bg-gray2"><br>
 						 <input type="text" name="addr3" id="sample4_detailAddress2" placeholder=" 상세주소를 입력해 주세요." class="bg-gray4">
 				
-				
+				<script src="/shoerologue/resources/js/jquery-3.6.0.min.js"></script>
 				<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 				<script>
 					<!-- 초기화 버튼  함수-->
@@ -666,6 +666,16 @@
 				    
 				    function fn(adidx){
 				    	document.getElementById("adidx").value = adidx;
+				    	
+				    	$.ajax({
+				    		url:"/shoerologue/mypage/deliveryAddr/addrSelectOne.do",
+				    		type:"POST",
+				    		data:"adidx="+adidx,
+				    		success:function(data){
+				    			$("#receiverU").val(data.adRec);
+				    			$("#phoneU").val(data.adPhone);
+				    		}
+				    	});
 				    }
 				</script>
 		      </div>

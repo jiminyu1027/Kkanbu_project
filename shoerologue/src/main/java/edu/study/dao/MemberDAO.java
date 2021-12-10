@@ -39,7 +39,7 @@ public class MemberDAO {
 		}	
 		
 		public void update(MemberVO vo) throws Exception{
-			sqlSession.delete(Namespace+".update",vo);
+			sqlSession.update(Namespace+".update",vo);
 		}
 		
 		public MemberVO findId(MemberVO vo) throws Exception{

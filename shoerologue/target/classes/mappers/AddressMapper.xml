@@ -65,6 +65,18 @@
 			adidx=#{adidx}
 	</update>    
     
+    <select id="selectOne" resultType="AddressVO" parameterType="int">
+        SELECT 
+			adRec
+			,adPhone 
+			,addr1 
+			,addr3 
+        FROM 
+        	Address 
+       WHERE 
+       		adidx=#{adidx}
+    </select>
+    
     
     <delete id="del" parameterType="int">
     	DELETE FROM Address
