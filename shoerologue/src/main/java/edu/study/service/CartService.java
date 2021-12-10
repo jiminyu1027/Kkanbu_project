@@ -18,5 +18,5 @@ public interface CartService {
 	public int count(String mId, int pidx) throws Exception;
 	public void updateCart(CartVO cvo) throws Exception;
 	public void modifyCart(CartVO cvo) throws Exception;
-	public CartVO listOne(int ctidx) throws Exception;
+	public CartVO listOne(CartVO cvo) throws Exception;
 }

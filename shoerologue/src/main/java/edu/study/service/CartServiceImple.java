@@ -72,9 +72,9 @@ public class CartServiceImple implements CartService{
 	}
 
 	@Override
-	public CartVO listOne(int ctidx) throws Exception {
+	public CartVO listOne(CartVO cvo) throws Exception {
 		//System.out.println("ctidxxxxxxxx"+ctidx);
-		return CartDao.listOne(ctidx);
+		return CartDao.listOne(cvo);
 	}
 
 	

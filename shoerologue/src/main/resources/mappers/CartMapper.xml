@@ -64,9 +64,10 @@
    		 	p.pNamekr, 
    		 	p.pColor, 
    		 	c.ctsize,
-  		 	p.pFile1 
+  		 	p.pFile1 , 
+            (p.pprice*c.cnt) as total
   		 	FROM cart c, product p, member m 
-  		 	WHERE c.pidx=p.pidx AND m.midx = c.midx AND c.midx=#{c.midx} AND c.ctidx=#{c.ctidx}
+  		 	WHERE c.pidx=p.pidx AND m.midx = c.midx AND c.ctidx=#{ctidx}
 	 	ORDER BY ctidx 
 	</select>
 	

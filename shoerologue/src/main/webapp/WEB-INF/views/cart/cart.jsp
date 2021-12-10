@@ -237,7 +237,7 @@
 		
 		<!-- 마이페이지 메인 -->
 	<div class="sectionBox" style="width:80%">
-		<form name="frm" id="frm" action="/shoerologue/cart/order/orderpayment.do" method="POST">
+		<form name="frm" id="frm" action="/shoerologue/order/orderpayment.do" method="POST">
 			<span  class="text-left">장바구니
 				<span id="insertCount" name="insertCount">(<%=list.size() %>)</span>
 			</span>	
@@ -326,7 +326,7 @@
 							</td>
 							<td>
 							<div>
-								<button type="submit" name="rightOrder"  id="rightOrder" class="orderbtn" onclick="location.href='/order/orderpayment.do?ctidx=<%=list.get(i).getCtidx()%>'">바로 구매</button>
+								<button type="button" name="rightOrder"  id="rightOrder" class="orderbtn" onclick="location.href='/shoerologue/order/orderpayment.do?ctidx=<%=list.get(i).getCtidx()%>'">바로 구매</button>
 							</div>
 							<div>
 								<button id="delbtn" class="delbtn" >삭제</button>
@@ -376,7 +376,7 @@
 						<input type="button" value="계속 쇼핑하기" class="keepShop"></a>
 					</label>
 					<label>
-						<input type="button" value="전체 상품 주문하기" id="orderbtn" name="gotoOrder" class="orderShop" onclick="goOrder(); return false;">
+						<input type="submit" value="전체 상품 주문하기" id="orderbtn" name="gotoOrder" class="orderShop" onclick="goOrder(); return false;">
 					</label>
 				</div>
 					</form>

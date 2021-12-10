@@ -57,6 +57,7 @@
 		    	,#{midx}
 		    	,#{amount}
 		    	,#{ctsize}
+		    	,#{delyn}
 		    )
 		    ]]>
 		    <selectKey resultType="int" keyProperty="ctidx" order="AFTER">		<!--keyproperty  selectkey의 값 어디에 담을건지? -->

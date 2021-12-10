@@ -68,23 +68,6 @@ public class CartController {
 		}
 	}
 	
-
-	
-	@RequestMapping(value="/order/orderpayment.do")
-	public String insert (Model model, Locale locale, int ctidx ,CartVO cvo,HttpSession session)throws Exception{
-		MemberVO member = (MemberVO)session.getAttribute("member");
-		cvo.setMidx(member.getMidx());
-		//CartService.update(cvo);
-		//CartService.insert(cvo);
-			
-			CartVO ovo = CartService.listOne(ctidx);
-			System.out.println("ovo::"+ovo);
-			
-			model.addAttribute("cvo",ovo);
-			
-			
-		return "redirect:/order/orderpayment.do";
-	}
 	
 	@RequestMapping(value="/update.do")
 	@ResponseBody

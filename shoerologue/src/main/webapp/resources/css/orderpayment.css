@@ -82,16 +82,20 @@ section{
 	font-size:16pt;
 }
 .textBox{
-	padding:0 70px;
+	padding:0 62px;
 }
 .textBox2{
 	padding:0 50px;
 }
 .textBox3{
-	width:100px;
+	width:150%;
 }
 .won1{
 	font-size:13pt;
+}
+.pPriceVal3{
+	font-weight: 600;
+    font-size: 16pt;
 }
 .pPriceVal2{
 	font-weight:600;
@@ -121,7 +125,7 @@ section{
 	padding:0 5px 0 110px;
 }
 .pDeli{
-	padding:0 5px 0 90px;
+	padding:0 5px 0 110px;
 }
 .colorRed{color:red;}
 ::placeholder{font-size:10pt;}

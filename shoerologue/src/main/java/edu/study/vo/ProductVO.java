@@ -24,7 +24,14 @@ public class ProductVO {
 	private int midx;
 	private int ctidx;
 	private int ctsize;
+	private String delyn = "N";
 	
+	public String getDelyn() {
+		return delyn;
+	}
+	public void setDelyn(String delyn) {
+		this.delyn = delyn;
+	}
 	public int getCtsize() {
 		return ctsize;
 	}

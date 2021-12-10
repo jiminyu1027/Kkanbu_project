@@ -7,6 +7,7 @@
 <%
 	List<CartVO> list = (List<CartVO>)request.getAttribute("list");
 	CartVO ovo = (CartVO)request.getAttribute("ovo");
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -353,10 +354,11 @@
 			</div>
 		<!-- 상품정보 -->
 			<div class="infoBox">
-				<table>
+				<table class="productTbl">
 						<tr>
-							<td class="imgSize"><a href="/shoerologue/product/product.do?pidx=<%=ovo.getpFile1()%>">
-									<img src="/shoerologue/resources/image/productdetail/<%=ovo.getpFile1()%>" width="110px"></a></td>
+							<td class="imgSize">
+									<img src="/shoerologue/resources/image/productdetail/<%=ovo.getpFile1()%>" width="110px">
+							</td>
 							<td class="prodIntro">
 								<span class="pBrand"><%=ovo.getpBrandkr()%></span>
 								<div class="pTitle"><%=ovo.getpNamekr()%></div>
@@ -370,24 +372,24 @@
 							</td>
 							<td class="textBox2">
 								<div class="textBox3">
-								<span class="pPriceVal1"><fmt:formatNumber><%=ovo.getpPrice()%></fmt:formatNumber></span>
+								<span class="pPriceVal1"><fmt:formatNumber><%=ovo.getTotal()%></fmt:formatNumber></span>
 								<span class="won1">원</span>
 								</div>
 							</td>
 							<td class="textBox2">
 								<div class="textBox3">
-								<span class="pPriceVal2">합계금액</span>
+								<span class="pPriceVal2"></span>
 								<span class="won2">원</span>
 								</div>
 							</td>
 							<td class="textBox2">
 								<div class="textBox3">
-								<span class="pPriceVal1">배송비</span>
+								<span class="pPriceVal3"></span>
 								<span class="won1">원</span>
 								</div>
 							</td>
 						</tr>
-					</table>
+				</table>
 			</div>
 			<div class="bullet-right">
 				<span class="bullet-text">ㆍ 상품수량 및 옵션변경은 상품상세 또는 장바구니에서 가능합니다.</span>
@@ -622,6 +624,24 @@
 	</div>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
+	$(document).ready(function(){
+		$(".productTbl tbody tr").each(function(){
+			
+			if($(".pPriceVal1") <= 50000){
+				$(".pPriceVal3").append(0);
+			}else{
+				$(".pPriceVal3").append(comma(3000));
+			}
+			
+			var productPay = parseInt($(this).find(".pPriceVal1").text().replaceAll(",",""));
+			//alert(a);
+			var fee = parseInt($(this).find(".pPriceVal3").text().replaceAll(",",""));
+			//alert(productPay + fee);
+			
+			$(".pPriceVal2").text(comma(productPay+fee));
+		});
+	});
+	
 	function zipbtn(){
 	    new daum.Postcode({
 	        oncomplete: function(data) {

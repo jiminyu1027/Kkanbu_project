@@ -17,6 +17,14 @@ public class CartVO {
 	private String pFile1;
 	private int money;
 	private int cnt;
+	private int total;
+	
+	public int getTotal() {
+		return total;
+	}
+	public void setTotal(int total) {
+		this.total = total;
+	}
 	public String getpBrandkr() {
 		return pBrandkr;
 	}

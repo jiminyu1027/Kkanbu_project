@@ -22,9 +22,9 @@ public class CartDAO {
 		sqlSession.insert(Namespace+".insert", cvo);
 	}
 	
-	public CartVO listOne(int ctidx) throws Exception{
+	public CartVO listOne(CartVO cvo) throws Exception{
 		//System.out.println("ctidx::::"+ctidx);
-		return sqlSession.selectOne(Namespace+".listOne", ctidx);
+		return sqlSession.selectOne(Namespace+".listOne", cvo);
 	}
 	
 	public List<CartVO> list(int midx) throws Exception{
