@@ -156,8 +156,9 @@
 			height:60px;
 			text-align:left;
 		}
-		input[type=text].id{
+		.myInfoReadonly{
 			width:100%;
+			border-bottom:0;
 		}
 		input{
 			height:37px;

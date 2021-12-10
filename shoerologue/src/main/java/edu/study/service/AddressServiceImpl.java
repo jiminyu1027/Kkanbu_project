@@ -32,19 +32,15 @@ public class AddressServiceImpl implements AddressService{
 	//	return addressDao.detail(midx);
 	//}
 
-	//@Override
-	//public void modify(AddressVO vo) throws Exception {
-	//	addressDao.modify(vo);
-	//}
+	@Override
+	public void update(AddressVO vo) throws Exception {
+		addressDao.update(vo);
+	}
 	
 	@Override
 	public void del(int adidx) throws Exception {
 		addressDao.del(adidx);
 	}
-
-	
-
-	
 
 
 	

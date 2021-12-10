@@ -29,9 +29,9 @@ public class AddressDAO {
 //		return sqlSession.selectOne(Namespace+".detail",midx);
 //	}
 	
-//	public void modify(AddressVO vo) throws Exception{
-//		sqlSession.update(Namespace+".modify",vo);
-//	}
+	public void update(AddressVO vo) throws Exception{
+		sqlSession.update(Namespace+".update",vo);
+	}
 	
 	
 	public void del(int midx) throws Exception{

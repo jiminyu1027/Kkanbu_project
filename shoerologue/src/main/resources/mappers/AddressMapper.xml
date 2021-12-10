@@ -53,15 +53,17 @@
 <!--          AND midx = #{mIdx} -->
 <!-- 	</select> -->
 	
-<!-- 	<update id="modify" parameterType="AddressVO"> -->
-<!-- 		UPDATE Address SET  -->
-<!-- 						adRec = #{adRec} -->
-<!-- 						,adPhone = #{adPhone} -->
-<!-- 						,addr1 = #{addr1} -->
-<!-- 						,addr2 = #{addr2} -->
-<!-- 						,addr3 = #{addr3} -->
-<!-- 					WHERE midx = #{midx} -->
-<!-- 	</update>     -->
+	<update id="update" parameterType="AddressVO">
+		UPDATE 
+			Address 
+		SET 
+			adRec = #{adRec}
+			,adPhone = #{adPhone}
+			,addr1 = #{addr1}
+			,addr3 = #{addr3}
+		WHERE 
+			adidx=#{adidx}
+	</update>    
     
     
     <delete id="del" parameterType="int">

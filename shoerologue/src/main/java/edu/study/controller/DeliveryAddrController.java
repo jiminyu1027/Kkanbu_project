@@ -62,7 +62,15 @@ public class DeliveryAddrController {
 		return "redirect:/mypage/deliveryAddr/receiveAddr.do";
 	}
 
-
+	@RequestMapping(value="/receiveAddrUpdate.do", method=RequestMethod.POST)
+	public String update(Locale locale, Model model,AddressVO vo,int adidx, HttpSession session) throws Exception{
+		MemberVO member = (MemberVO)session.getAttribute("member");
+		vo.setMidx(member.getMidx());
+		
+		AddressService.update(vo);
+		
+		return "redirect:/mypage/deliveryAddr/receiveAddr.do";
+	}
 	
 	
 	@RequestMapping(value="/delete.do")

@@ -209,6 +209,15 @@
 		.tableSize{
 			widht:100%;
 		}
+		.modalHD{
+			background-color: #DD2C2F;
+		}
+		.modalHD2{
+			background-color: #FBC02D
+		}
+		.adInsertColor{
+			color:white;
+		}
 	</style>
 
 </head>
@@ -460,12 +469,13 @@
 			</button>
 		</div>
 		
+		<!-- 등록 -->
 		<!-- 배송지 등록 화면 모달 -->
 		<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 		  <div class="modal-dialog">
 		    <div class="modal-content">
-		      <div class="modal-header">
-		        <h5 class="modal-title" id="staticBackdropLabel">ShoeRologue 배송지 등록</h5>
+		      <div class="modal-header modalHD">
+		        <h5 class="modal-title adInsertColor" id="staticBackdropLabel">ShoeRologue 배송지 등록</h5>
 		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		      </div>
 		      <div class="modal-body">
@@ -555,12 +565,120 @@
 		      <div class="modal-footer">
 		      	<button type="button" class="btn btn-secondary " onclick="frm_reset()" data-bs-dismiss="modal">닫기</button>
 		      	<button type="button" class="btn btn-secondary " onclick="frm_reset()">초기화</button>
-		        <button type="submit" class="btn btn-primary submitco">배송지 등록</button>
+		        <button type="submit" class="btn btn-danger submitco">배송지 등록</button>
 		      </div>
 		      </form>
 		    </div>
 		  </div>
 		</div>
+		
+		<!-- 수정 -->
+		<!-- 배송지 수정 화면 모달 -->
+		<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		  <div class="modal-dialog">
+		    <div class="modal-content">
+		      <div class="modal-header modalHD2">
+		        <h5 class="modal-title" id="staticBackdropLabel">ShoeRologue 배송지 수정</h5>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      </div>
+		      <div class="modal-body">
+		        
+		        <form name="frm2" id="frm2" method="post" action="/shoerologue/mypage/deliveryAddr/receiveAddrUpdate.do" >
+                <input type="hidden" name="adidx" id="adidx">
+                <h3>배송지 수정하기</h3><br>
+                
+               	<a class="modalFs">받으실분</a> :  <input type="text" id="receiver" name="adRec" placeholder=" 수정할 이름을 입력해 주세요."><br>
+               	<br>
+               	<a class="modalFs">핸드폰 번호</a> :  <input type="text" id="phone" name="adPhone" placeholder=" 수정할 핸드폰 번호를 '-' 없이 입력해 주세요."><br>
+	           	<br>
+	           	<a class="modalFs">주소</a> :     &nbsp;<input type="text" id="sample4_postcode2" placeholder=" 우편번호" readonly class="bg-gray1">
+						 <input type="button" onclick="sample4_execDaumPostcode2()" value="우편번호 찾기" class="bg-gray3"><br>
+						 <input type="text" name="addr1" id="sample4_roadAddress2" placeholder=" 도로명주소" readonly class="bg-gray2"><br>
+						 <input type="text" id="sample4_jibunAddress2" placeholder=" 지번주소" readonly class="bg-gray2"><br>
+						 <span id="guide2" style="color:#999;display:none"></span>
+						 <input type="text" id="sample4_extraAddress2" placeholder=" 주소 참고항목" readonly class="bg-gray2"><br>
+						 <input type="text" name="addr3" id="sample4_detailAddress2" placeholder=" 상세주소를 입력해 주세요." class="bg-gray4">
+				
+				
+				<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+				<script>
+					<!-- 초기화 버튼  함수-->
+					function frm_reset() {
+					    document.getElementById("frm2").reset();
+					}
+					
+					<!-- 주소  -->
+				    // 본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+				    function sample4_execDaumPostcode2() {
+				        new daum.Postcode({
+				            oncomplete: function(data) {
+				                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+				
+				                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+				                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+				                var roadAddr = data.roadAddress; // 도로명 주소 변수
+				                var extraRoadAddr = ''; // 참고 항목 변수
+				
+				                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+				                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+				                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+				                    extraRoadAddr += data.bname;
+				                }
+				                // 건물명이 있고, 공동주택일 경우 추가한다.
+				                if(data.buildingName !== '' && data.apartment === 'Y'){
+				                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+				                }
+				                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+				                if(extraRoadAddr !== ''){
+				                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+				                }
+				
+				                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+				                document.getElementById('sample4_postcode2').value = data.zonecode;
+				                document.getElementById("sample4_roadAddress2").value = roadAddr;
+				                document.getElementById("sample4_jibunAddress2").value = data.jibunAddress;
+				                
+				                // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+				                if(roadAddr !== ''){
+				                    document.getElementById("sample4_extraAddress2").value = extraRoadAddr;
+				                } else {
+				                    document.getElementById("sample4_extraAddress2").value = '';
+				                }
+				
+				                var guideTextBox = document.getElementById("guide2");
+				                // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+				                if(data.autoRoadAddress) {
+				                    var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+				                    guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
+				                    guideTextBox.style.display = 'block';
+				
+				                } else if(data.autoJibunAddress) {
+				                    var expJibunAddr = data.autoJibunAddress;
+				                    guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
+				                    guideTextBox.style.display = 'block';
+				                } else {
+				                    guideTextBox.innerHTML = '';
+				                    guideTextBox.style.display = 'none';
+				                }
+				            }
+				        }).open();
+				    }
+				    
+				    function fn(adidx){
+				    	document.getElementById("adidx").value = adidx;
+				    }
+				</script>
+		      </div>
+		      <div class="modal-footer">
+		      	<button type="button" class="btn btn-secondary " onclick="frm_reset()" data-bs-dismiss="modal">닫기</button>
+		      	<button type="button" class="btn btn-secondary " onclick="frm_reset()">초기화</button>
+		        <button type="submit" class="btn btn-warning submitco">배송지 수정</button>
+		      </div>
+		      </form>
+		    </div>
+		  </div>
+		</div>
+		
 			<!-- 배송지 목록이 없는 경우 -->
 			<c:if test="${list.size()==0}">
 			   <div class="wishNoItem">
@@ -579,8 +697,9 @@
 			    <tr>
 			      <th scope="col" style="width:7%">번호</th>
 			      <th scope="col" style="width:11%">받으실 분</th>
-			      <th scope="col" style="width:17%">핸드폰 번호</th>
-			      <th scope="col" style="width:64%">배송지 주소</th>
+			      <th scope="col" style="width:15%">핸드폰 번호</th>
+			      <th scope="col" style="width:60%">배송지 주소</th>
+			      <th scope="col" style="width:6%" class="addrTxct">수정</th>
 			      <th scope="col" style="width:6%" class="addrTxct">삭제</th>
 			    </tr>
 			  </thead>
@@ -594,6 +713,11 @@
 						<td><%=list.get(i).getAdRec() %></td>
 						<td><%=list.get(i).getAdPhone() %></td>
 						<td><%=list.get(i).getAddr1() %>&nbsp; <%=list.get(i).getAddr3() %></td>
+						<td class="addrTxct">
+							<button type="button" class="addrUpdateBtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" onclick="fn(<%=list.get(i).getAdidx()%>)">
+							  	수정
+							</button>
+						</td>
 						<td class="addrTxct">
 							<button class="addrDelbtn" onclick="location.href='delete.do?adidx=<%=list.get(i).getAdidx() %>'">
 							  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
