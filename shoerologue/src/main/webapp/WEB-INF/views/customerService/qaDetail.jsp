@@ -98,10 +98,36 @@
 			font-weight:bold;
 			font-size:15px;
 			margin-top:30px;
-			margin-left:1110px;
+			left:1110px;
 			width:150px;
 			height:50px;
 			border:2px solid gray;
+		}
+		.subFn{
+			font-weight:bold;
+			font-size:15px;
+			margin-top:30px;
+			margin-left:680px;
+			width:150px;
+			height:50px;
+			border:2px solid gray;
+		}
+		textarea{
+			resize:none; 
+ 			width:978px;
+			height:150px;
+		} 
+		.commentFn{
+			font-weight:bold;
+			font-size:15px;
+			width:150px;
+			height:50px;
+			margin-left:830px;
+			border:1px solid black;
+		}
+		.commentBox{
+			margin-top:50px;
+			margin-left:280px;
 		}
 		</style>
 		
@@ -308,12 +334,20 @@
 				</tr>
 				<tr><td style="border-bottom:1px solid gray; height:150px;" colspan="3"></td></tr>	
 			</tbody>
-		</table>
-		<% if(loginU.getMidx() == qvo.getMidx() || loginU.getMaster().equals("master")) { %>	
-			<input type="submit" value="QA삭제" class="btnFn" style="background-color:gray">
-		<%} %>
-		</form>
+		</table>	
+		<input type="submit" value="QA삭제" class="subFn" style="background-color:gray">
 		<input type="button" value="목록보기" class="btnFn" style="background-color:white;" onclick="location.href='/shoerologue/mypage/shopping/qaList.do'">
+		</form>	
+		<form action="/shoerologue/mypage/shopping/qaComment.do" method="post" class="commentBox">
+			<p>
+				<textarea name="aContents" placeholder="여기에 댓글을 작성하세요"></textarea>				
+			</p>
+			<p>
+				<input type="hidden" name="midx" value="${member.midx}">
+				<input type="hidden" name="qidx" value="${qidx}">
+				<input type="submit" value="답글 작성" class="commentFn">	
+			</p>
+		</form>
 	</div>	
 	<div class="empty-box"></div>
 	<div class="empty-box"></div>

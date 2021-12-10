@@ -24,6 +24,7 @@ import edu.study.service.ProductService;
 import edu.study.vo.InquiryVO;
 import edu.study.vo.MemberVO;
 import edu.study.vo.ProductVO;
+import edu.study.vo.QaVO;
 import utils.UploadFileUtils;
 
 @RequestMapping(value="/")
@@ -36,6 +37,9 @@ public class ProductController {
 	@Autowired
 	MemberService MemberService;
 	
+	@Autowired
+	edu.study.service.QaService QaService;
+	
 	@Resource(name="uploadPath")
 	private String uploadPath;
 	
@@ -45,7 +49,9 @@ public class ProductController {
 		ProductVO pvo = productService.detail(pidx);
 		model.addAttribute("pvo", pvo);
 			
-				
+		List<QaVO> qalist = QaService.productList(pidx);
+		model.addAttribute("qalist",qalist);	
+		
 //		List<ProductVO> list = productService.hotDealList();
 //		
 //		model.addAttribute("list", list);

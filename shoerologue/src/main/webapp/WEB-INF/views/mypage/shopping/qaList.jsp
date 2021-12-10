@@ -390,10 +390,10 @@
 					<%} %>
 				<%}else{ %>
 					<tr>
-						<td colspan="4" style="height:300px; text-align:center;">
+						<td colspan="4" style="height:150px; text-align:center;">
 							<i class="bi bi-exclamation-circle exclamation"></i>
 							<br>
-							QA내역이 없습니다.
+							등록된 Q&amp;A가 없습니다.
 						</td>
 					</tr>
 				<%} %>	

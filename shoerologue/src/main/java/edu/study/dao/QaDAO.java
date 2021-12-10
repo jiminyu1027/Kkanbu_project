@@ -25,6 +25,11 @@ public class QaDAO {
 		return sqlSession.selectList(Namespace+".pqlist",midx);
 	}
 	
+	public List<QaVO> productList(int pidx) throws Exception{
+		
+		return sqlSession.selectList(Namespace+".productList",pidx);
+	}
+	
 	public QaVO detail(int pqdix) throws Exception{
 		
 		return sqlSession.selectOne(Namespace+".detail",pqdix);

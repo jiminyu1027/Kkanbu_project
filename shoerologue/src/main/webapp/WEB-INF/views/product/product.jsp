@@ -5,6 +5,8 @@
 <%@ page import="edu.study.vo.*" %>
 <%
 	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
+
+	List<QaVO> qalist = (List<QaVO>)request.getAttribute("qalist");
 %>
 <!DOCTYPE html>
 <html>
@@ -630,30 +632,45 @@
 				</div>
 				<div>
 					<!-- 상품 Q&A가 있을때 -->
-					<!-- 
+					<%if(qalist.size()>0){ %>
 					<hr>
 						<table>
-							<tr>
-								<td width=750 height=60>&nbsp;&nbsp;&nbsp;&nbsp;Q&amp;A제목</td>
-								<td width=200 height=60><center>Q&amp;A작성자</center></td>
-								<td width=150 height=60><center>Q&amp;A작성일</center></td>
-								<td width=100 height=60><center>Q&amp;A답변 완료여부</center></td>
+							<tr style="border-bottom:2px solid #EAEAEA; font-weight:bold;">
+								<td width=650 height=60>&nbsp;&nbsp;&nbsp;&nbsp;Q&amp;A제목</td>
+								<td width=200 height=60 style="text-align:center;">Q&amp;A작성자</td>
+								<td width=150 height=60 style="text-align:center;">Q&amp;A작성일</td>
+								<td width=200 height=60 style="text-align:center;">Q&amp;A답변 완료여부</td>
 							</tr>
+							<%for(int i=0; i<qalist.size(); i++){ %>
+								<tr style="border-top:1px solid #EAEAEA;">
+									<td width=600 height=60>
+										<a href="/shoerologue/customerService/qaDetail.do?pqidx=<%=qalist.get(i).getPqidx()%>">
+											&nbsp;&nbsp;&nbsp;&nbsp;<%=qalist.get(i).getPqSubject() %>
+										</a>	
+									</td>
+									<td width=200 height=60 style="text-align:center;">
+										<%=qalist.get(i).getPqWriter() %>
+									</td>
+									<td width=150 height=60 style="text-align:center;">
+										<%=qalist.get(i).getPqWriteday().substring(0,10) %>
+									</td>
+								</tr>
+							<%} %>	
 						</table>
 					<hr>
-					 -->
-					<!--  -->
 					
-					<!-- 상품 Q&A가 없을때 -->
-					<hr>
-					<div class="noQNA">
-						<div><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-							<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-							<path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-						</svg></div>
-						<div>등록된 상품 Q&amp;A가 없습니다.</div>
-					</div>	
-					<hr>
+					<%}else{ %>
+						<!-- 상품 Q&A가 없을때 -->
+						<hr>
+						<div class="noQNA">
+							<div><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+								<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+								<path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+							</svg></div>
+							<div>등록된 상품 Q&amp;A가 없습니다.</div>
+						</div>	
+						<hr>
+					<%} %>
 					<!--  -->
 					<!--<center>페이징 처리</center>-->
 					<div class="QnaBtn">
