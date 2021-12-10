@@ -1,5 +1,7 @@
 package edu.study.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,5 +18,10 @@ public class QaAnswerDAO {
 
 	public void insert(QaAnswerVO vo) throws Exception{
 		sqlSession.insert(Namespace+".replyWrite",vo);
+	}
+	
+	public List<QaAnswerVO> alist(int pqidx) throws Exception{
+		
+		return sqlSession.selectList(Namespace+".alist",pqidx);
 	}
 }

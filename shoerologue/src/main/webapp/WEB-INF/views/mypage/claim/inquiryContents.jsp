@@ -337,7 +337,6 @@
 	<div class="empty-box"></div>	
 	<table style="width:978px; margin-left:280px; margin-top:50px; text-align:center;">
 		<colgroup>
-<%-- 			<col style="width:5%"> --%>
 			<col style="width:10%">
 			<col style="width:75%">
 			<col style="width:15%">

@@ -15,4 +15,6 @@ public interface QaService {
 	List<QaVO> productList(int pidx) throws Exception;
 	
 	QaVO detail(int pqidx)throws Exception;
+	
+	void update(int pqidx) throws Exception;
 }

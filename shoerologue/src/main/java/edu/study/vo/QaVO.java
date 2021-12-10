@@ -10,7 +10,14 @@ public class QaVO {
 	private int midx;
 	private String pqWriteday;
 	private int pidx;
+	private String delYn;
 	
+	public String getDelYn() {
+		return delYn;
+	}
+	public void setDelYn(String delYn) {
+		this.delYn = delYn;
+	}
 	public int getPidx() {
 		return pidx;
 	}

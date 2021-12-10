@@ -39,4 +39,9 @@ public class QaDAO {
 		
 		return sqlSession.selectOne(Namespace+".detail",pqdix);
 	}
+	
+	public void update(int pqidx) throws Exception{
+		
+		 sqlSession.update(Namespace+".update",pqidx);
+	}
 }

@@ -42,4 +42,10 @@ public class QaServiceImpl implements QaService {
 		
 		return QaDao.detail(pqidx);
 	}
+	
+	@Override
+	public void update(int pqidx) throws Exception{
+		
+		QaDao.update(pqidx);
+	}
 }

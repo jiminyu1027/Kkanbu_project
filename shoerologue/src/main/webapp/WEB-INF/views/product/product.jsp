@@ -7,6 +7,8 @@
 	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
 
 	List<QaVO> qalist = (List<QaVO>)request.getAttribute("qalist");
+	
+	MemberVO loginU = (MemberVO)session.getAttribute("member");
 %>
 <!DOCTYPE html>
 <html>
@@ -643,14 +645,29 @@
 							</tr>
 							<%for(int i=0; i<qalist.size(); i++){ %>
 								<tr style="border-top:1px solid #EAEAEA;">
+								<%
+									if(qalist.get(i).getPqOpen().equals("N")){
+								%>
 									<td width=600 height=60>
+									<%
+										if(loginU.getMidx() == qalist.get(i).getMidx() || loginU.getMaster().equals("master")){ 
+									%>
+										<%if(loginU.getMaster().equals("master")){ %>
 										<a href="/shoerologue/customerService/qaDetail.do?pqidx=<%=qalist.get(i).getPqidx()%>">
 											&nbsp;&nbsp;&nbsp;&nbsp;<%=qalist.get(i).getPqSubject() %>
-										</a>	
+										</a>
+										<%}else if(loginU.getMidx() == qalist.get(i).getMidx()){ %>
+											&nbsp;&nbsp;&nbsp;&nbsp;<%=qalist.get(i).getPqSubject() %>
+										<%} %>	
+									<%}else{ %>
+										&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-lock-fill"></i>[비공개글은 작성자와 관리자만 볼 수 있습니다.]
+									<%} %>
 									</td>
+								<%} %>
 									<td width=200 height=60 style="text-align:center;">
-										<%=qalist.get(i).getPqWriter() %>
+										<%=qalist.get(i).getPqWriter().substring(0,1) %>*<%=qalist.get(i).getPqWriter().substring(2,3) %>
 									</td>
+								
 									<td width=150 height=60 style="text-align:center;">
 										<%=qalist.get(i).getPqWriteday().substring(0,10) %>
 									</td>

@@ -31,7 +31,6 @@ public class CsController {
 	edu.study.service.QaService QaService;
 	@Autowired
 	edu.study.service.QaAnswerService QaAnswerService;
-	
 	@Resource(name="uploadPath")
 	private String uploadPath;
 	
@@ -101,12 +100,15 @@ public class CsController {
 		
 		QaVO qvo = QaService.detail(pqidx);
 		
+		List<QaAnswerVO> alist = QaAnswerService.alist(pqidx);
+		
 		model.addAttribute("qvo",qvo);
+		model.addAttribute("alist",alist);
 		
 		return "/customerService/qaDetail";
 	}
 	@RequestMapping(value="/qaComment.do", method=RequestMethod.POST)
-	public String qaComment(Locale locale,Model model,QaAnswerVO vo,@RequestParam("qaidx") int pqidx) throws Exception {
+	public String qaComment(Locale locale,Model model,QaAnswerVO vo,@RequestParam("pqidx") int pqidx) throws Exception {
 		
 		vo.setPqidx(pqidx);
 		

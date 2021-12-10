@@ -6,6 +6,8 @@
 <%
 	QaVO qvo = (QaVO)request.getAttribute("qvo");
 
+	List<QaAnswerVO> alist = (List<QaAnswerVO>)request.getAttribute("alist");
+
 	MemberVO loginU = (MemberVO)session.getAttribute("member");
 %>
 <!DOCTYPE html>
@@ -97,7 +99,8 @@
 		.btnFn{
 			font-weight:bold;
 			font-size:15px;
-			margin-top:30px;
+			margin-top:50px;
+			margin-left:830px;
 			left:1110px;
 			width:150px;
 			height:50px;
@@ -107,7 +110,7 @@
 			font-weight:bold;
 			font-size:15px;
 			margin-top:30px;
-			margin-left:680px;
+			margin-left:830px;
 			width:150px;
 			height:50px;
 			border:2px solid gray;
@@ -310,7 +313,7 @@
 		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
 		<div class="empty-box"></div>
 		<div class="empty-box"></div>
-		<form action="/shoerologue/mypage/shopping/qaList.do" method="post">
+		<form action="/shoerologue/mypage/shopping/qaUpdate.do" method="post">
 		<input type="hidden" name="pqidx" value="<%=qvo.getPqidx() %>">
 		<table>
 			<colgroup>
@@ -335,18 +338,40 @@
 				<tr><td style="border-bottom:1px solid gray; height:150px;" colspan="3"></td></tr>	
 			</tbody>
 		</table>	
+		<%if(loginU.getMaster().equals("master") || qvo.getMidx()==loginU.getMidx()){ %>
 		<input type="submit" value="QA삭제" class="subFn" style="background-color:gray">
+		<%} %>
 		<input type="button" value="목록보기" class="btnFn" style="background-color:white;" onclick="location.href='/shoerologue/mypage/shopping/qaList.do'">
 		</form>	
+		<div class="empty-box"></div>
+		<div class="empty-box"></div>
+		<table style="width:978px; margin-left:280px; margin-top:50px; text-align:center;">
+			<tr style="border-bottom:1px solid black; height:50px; font-size:20px; background-color:#ccc; font-weight:bold;">
+				<td>답변 내용</td>
+			</tr>
+			<%
+				for(int i=0; i<alist.size(); i++){
+			%>
+				<tr style="border-bottom:1px solid gray; height:45px; font-size:18px;" >
+					<td><%=alist.get(i).getQaSubject() %></td>
+				</tr>
+			<%} %>
+		</table>
+		<%
+			if(loginU.getMaster().equals("master")){
+		%>
 		<form action="/shoerologue/customerService/qaComment.do" method="post" class="commentBox">
+		<input type="hidden" name="pqidx" value="<%=qvo.getPqidx()%>">
 			<p>
 				<textarea name="qaSubject" placeholder="여기에 댓글을 작성하세요"></textarea>				
 			</p>
 			<p>
-				<input type="hidden" name="qaidx" value="${qaidx}">
 				<input type="submit" value="답글 작성" class="commentFn">	
 			</p>
 		</form>
+		<%
+			}
+		%>
 	</div>	
 	<div class="empty-box"></div>
 	<div class="empty-box"></div>

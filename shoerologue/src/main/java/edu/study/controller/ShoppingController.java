@@ -70,6 +70,14 @@ public class ShoppingController {
 		return "redirect:/mypage/shopping/qaList.do";
 	}
 	
+	@RequestMapping(value="qaUpdate.do" , method=RequestMethod.POST)
+	public String update(Locale locale,Model model,@RequestParam("pqidx") int pqidx) throws Exception{
+		
+		QaService.update(pqidx);
+		
+		return "redirect:/mypage/shopping/qaList.do";
+	}
+	
 	@RequestMapping(value="/myReview.do")
 	public String myReview(Locale locale,Model model)throws Exception{
 		

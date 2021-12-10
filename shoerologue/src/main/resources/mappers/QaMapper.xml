@@ -24,11 +24,11 @@
 	</insert>
 	
 	<select id="pqlist" resultType="edu.study.vo.QaVO">
-		SELECT * FROM PRODUCT_QUESTION WHERE 1=1 AND MIDX = #{MIDX} ORDER BY PQIDX DESC
+		SELECT * FROM PRODUCT_QUESTION WHERE 1=1 AND MIDX = #{MIDX} AND DELYN='N' ORDER BY PQIDX DESC
 	</select>
 	
 	<select id="masterList" resultType="edu.study.vo.QaVO">
-		SELECT * FROM PRODUCT_QUESTION WHERE 1=1 ORDER BY PQIDX DESC
+		SELECT * FROM PRODUCT_QUESTION WHERE 1=1 AND DELYN='N' ORDER BY PQIDX DESC
 	</select>
 	
 	<select id="productList" resultType="edu.study.vo.QaVO">
@@ -38,5 +38,9 @@
 	<select id="detail" resultType="edu.study.vo.QaVO">
 		SELECT * FROM PRODUCT_QUESTION WHERE PQIDX = #{PQIDX}
 	</select>
+	
+	<update id="update" parameterType="int">
+		UPDATE PRODUCT_QUESTION SET DELYN = 'Y' WHERE PQIDX = #{pqidx}
+	</update>
 	
 </mapper>  
