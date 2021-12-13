@@ -2,7 +2,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>    
-<%@ page import="edu.study.vo.*" %>       
+<%@ page import="edu.study.vo.*" %>  
+<%
+	List<CartVO> clist = (List<CartVO>)request.getAttribute("clist");
+%>     
 <%
 	List<AddressVO> list = (List<AddressVO>)request.getAttribute("list");
 %>
@@ -392,13 +395,13 @@
         	</span>개
         </div>
         <div class="myPageBoxs">
-        	장바구니
+        	<a href="/shoerologue/cart/cart.do">장바구니</a>
         	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
 			  <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
 			</svg><br>
-        	<span class="ft-weight">
-        		0
-        	</span>개
+        	<a class="ft-weight" href="/shoerologue/cart/cart.do">
+        		<%=clist.size() %>
+        	</a>개
         </div>
 	</div>
 	</section>
@@ -573,7 +576,7 @@
 				    	if(adRec == ""){
 				    		alert("받으실 분을 입력해 주세요.");
 				    	}else if(adPhone == ""){
-				    		alert("전화번호를 입력해 주세요.");
+				    		alert("핸드폰 번호를 입력해 주세요.");
 				    	}else if(addr1 == ""){
 				    		alert("우편번호 찾기를 선택해주세요.");
 				    	}else if(addr3 == ""){
@@ -713,7 +716,7 @@
 				    	if(adRec == ""){
 				    		alert("받으실 분을 입력해 주세요.");
 				    	}else if(adPhone == ""){
-				    		alert("전화번호를 입력해 주세요.");
+				    		alert("핸드폰 번호를 입력해 주세요.");
 				    	}else if(addr1 == ""){
 				    		alert("우편번호 찾기를 선택해주세요.");
 				    	}else if(addr3 == ""){
@@ -906,8 +909,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	
 	<script>
-
-		
+		// 배송지 삭제 알럿
 	    function addrDelBtn(adidx) {
 	        if (!confirm("해당 배송지를 삭제하시겠습니까?")) {
 	            alert("취소되었습니다.");
@@ -925,8 +927,6 @@
 		    	});
 	        }
 	    }
-	
-		
 	</script>
 </body>
 </html>
