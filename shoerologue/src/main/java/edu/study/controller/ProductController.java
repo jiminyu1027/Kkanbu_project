@@ -44,13 +44,15 @@ public class ProductController {
 	private String uploadPath;
 	
 	@RequestMapping(value="/product/product.do")
-	public String product(Locale locale, Model model,int pidx)throws Exception {
+	public String product(Locale locale, Model model,int pidx,HttpSession session)throws Exception {
+		MemberVO member=(MemberVO)session.getAttribute("member");
 		
-		ProductVO pvo = productService.detail(pidx);
-		model.addAttribute("pvo", pvo);
-			
-		List<QaVO> qalist = QaService.productList(pidx);
-		model.addAttribute("qalist",qalist);	
+		if(member != null){
+			ProductVO pvo = productService.detail(pidx);
+			model.addAttribute("pvo", pvo);
+				
+			List<QaVO> qalist = QaService.productList(pidx);
+			model.addAttribute("qalist",qalist);	
 		
 //		List<ProductVO> list = productService.hotDealList();
 //		
@@ -58,6 +60,10 @@ public class ProductController {
 		
 		
 		return "/product/product";
+		
+		}else {
+			return "redirect:/login.do";
+		}
 	}	
 	
 	@RequestMapping(value="/cart/cart.do",method=RequestMethod.GET)
