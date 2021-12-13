@@ -35,7 +35,7 @@ public class CartController {
 	CartService CartService;
 
 	@RequestMapping(value="/cart.do", method = RequestMethod.GET)
-	public String list(@ModelAttribute CartVO cvo, HttpSession session,Model model,Locale locale, String mId)throws Exception{
+	public String list(@ModelAttribute CartVO cvo, HttpSession session,Model model,Locale locale)throws Exception{
 		//System.out.println("cart test");
 		MemberVO member=(MemberVO)session.getAttribute("member");
 		
@@ -54,13 +54,10 @@ public class CartController {
 			//ÃÑ±Ý¾×
 			int allSum = CartService.sumMoney(member.getMidx());
 			
-			
-			model.addAttribute("cvo",cvo);
 			model.addAttribute("list",list);
 			model.addAttribute("totalPrice",totalPrice);
 			model.addAttribute("fee", fee);
 			model.addAttribute("allSum", allSum);
-			
 			
 			return "/cart/cart";
 		}else {
@@ -75,14 +72,13 @@ public class CartController {
 		CartService.update(cvo);
 	}
 	
-	@ResponseBody
 	@RequestMapping(value="/del.do")
 	public String del(Locale locale, Model model,HttpSession session, int ctidx) throws Exception{
 		MemberVO member=(MemberVO)session.getAttribute("member");
 		
 		CartService.del(ctidx);
 		
-		return"redirect:/shoerologue/cart/cart.do";
+		return"redirect:/cart/cart.do";
 	}
 	
 	@RequestMapping(value="/cartdelAll.do")

@@ -59,7 +59,6 @@ section{
 }
 
 .pBrand ,.pTitle ,.pSize ,.pColor{
-	width:100px;
 	padding:0 5px;
 }
 
@@ -88,7 +87,7 @@ section{
 	padding:0 50px;
 }
 .textBox3{
-	width:150%;
+	width:180%;
 }
 .won1{
 	font-size:13pt;

@@ -1,5 +1,6 @@
 package edu.study.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -27,6 +28,11 @@ public class CartDAO {
 		return sqlSession.selectOne(Namespace+".listOne", cvo);
 	}
 	
+	public List<CartVO> order(CartVO cvo) throws Exception{
+		//System.out.println("DAOCVO::"+cvo.getCtidx());
+		return sqlSession.selectList(Namespace+".order", cvo);
+	}
+	
 	public List<CartVO> list(int midx) throws Exception{
 		return sqlSession.selectList(Namespace+".list",midx);
 	}
@@ -51,11 +57,6 @@ public class CartDAO {
 	public int sumMoney(int midx)throws Exception{
 		return sqlSession.selectOne(Namespace+".sumMoney",midx);
 	}
-	
-	public int count(String mId, int pidx)throws Exception{
-		return 0;
-	}
-	
 	public void updateCart(CartVO cvo) throws Exception{
 	}
 	

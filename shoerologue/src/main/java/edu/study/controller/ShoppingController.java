@@ -33,9 +33,16 @@ public class ShoppingController {
 	edu.study.service.QaService QaService;
 	
 	@RequestMapping(value="/wishlist.do")
-	public String wishlist(Locale locale, Model model)throws Exception{
-		
+	public String wishlist(Locale locale, Model model, HttpSession session)throws Exception{
+		MemberVO member = (MemberVO)session.getAttribute("member");
+	
+		if(member != null) {
+			
 		return "/mypage/shopping/wishlist";
+		}else {
+			return "redirect:/login.do";
+		}
+		
 	}
 	
 	@RequestMapping(value="/qaList.do")

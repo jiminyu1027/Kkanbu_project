@@ -6,8 +6,6 @@
 <%@ page import="edu.study.vo.*" %>  
 <%
 	List<CartVO> list = (List<CartVO>)request.getAttribute("list");
-	CartVO ovo = (CartVO)request.getAttribute("ovo");
-	
 %>
 <!DOCTYPE html>
 <html>
@@ -353,26 +351,29 @@
 				</div>
 			</div>
 		<!-- 상품정보 -->
-			<div class="infoBox">
+		<div class="infoBox">
 				<table class="productTbl">
+					<%
+						for(int i=0; i<list.size(); i++){
+					%>
 						<tr>
 							<td class="imgSize">
-									<img src="/shoerologue/resources/image/productdetail/<%=ovo.getpFile1()%>" width="110px">
+									<img src="/shoerologue/resources/image/productdetail/<%=list.get(i).getpFile1()%>" width="110px">
 							</td>
 							<td class="prodIntro">
-								<span class="pBrand"><%=ovo.getpBrandkr()%></span>
-								<div class="pTitle"><%=ovo.getpNamekr()%></div>
+								<span class="pBrand"><%=list.get(i).getpBrandeng()%></span>
+								<div class="pTitle"><%=list.get(i).getpNameeng()%></div>
 								<div>
-								<span class="pColor"><%=ovo.getpColor()%></span>
+								<span class="pColor"><%=list.get(i).getpColor()%></span>
 								</div>	
-								<span class="pSize"><%=ovo.getCtsize()%></span>
+								<span class="pSize"><%=list.get(i).getCtsize()%></span>
 							</td>
 							<td class="textBox">
-							  	<span class="pAmountOp"><%=ovo.getCnt()%></span>
+							  	<span class="pAmountOp"><%=list.get(i).getCnt()%></span>
 							</td>
 							<td class="textBox2">
 								<div class="textBox3">
-								<span class="pPriceVal1"><fmt:formatNumber><%=ovo.getTotal()%></fmt:formatNumber></span>
+								<span class="pPriceVal1"><fmt:formatNumber><%=list.get(i).getTotal()%></fmt:formatNumber></span>
 								<span class="won1">원</span>
 								</div>
 							</td>
@@ -389,6 +390,7 @@
 								</div>
 							</td>
 						</tr>
+					<%} %>
 				</table>
 			</div>
 			<div class="bullet-right">
@@ -411,7 +413,7 @@
 						<th>이름<span class="colorRed">*</span></th>
 						<td>
 								<div class="input-wrap name" style="width:350px;">
-									<input type="text" class="name" id="name" name="name" onblur="checkFn('name')" value="">
+									<input type="text" class="name" id="name" name="name" onblur="checkFn('name')">
 									<span class="checkSpan"></span>
 								</div>
 						</td>
@@ -420,7 +422,7 @@
 						<th>휴대폰번호<span class="colorRed">*</span></th>
 						<td>
 							<div class="input-wrap number" style="width:350px;">
-								<input type="text" id="number" name="number" onblur="checkFn('number')" placeholder="휴대폰 번호를 '-' 없이 입력해 주세요." maxlength="11">
+								<input type="text" id="number" name="number" onblur="checkFn('number')" maxlength="11">
 								<span class="checkSpan"></span>
 							</div>
 						</td>
@@ -549,7 +551,7 @@
 			<div class="orderBox mt-2 py-3">
 				<div id="Accordion_wrap">
 				     <div class="que">
-				      <span class="essentialBox">
+				      <span class="essentialBox"></span>
 				      <input type="checkbox" id="checkEssen">
 				      <label for="checkEssen"></label>
 				      <span class="essential"> [필수]</span>주문내역에 대한 동의
@@ -571,14 +573,14 @@
 						<li>
 							<div class="payment-text">
 								<span class="txt">총 정상가</span>
-								<span class="payment-sum" id="paymentsum">29,000
+								<span class="payment-sum" id="paymentsum">
 								<span class="won">원</span></span>
 							</div>
 						</li>
 						<li>
 							<div class="payment-text">
 								<span class="txt">총 배송비</span>
-								<span class="payment-sum" id="deliverysum">5,000
+								<span class="payment-sum" id="deliverysum">
 								<span class="won">원</span></span>
 							</div>
 						</li>
@@ -596,17 +598,10 @@
 								<span class="won">P</span></span>
 							</div>
 						</li>
-						<li>
-							<div class="payment-text">
-								<span class="txt">총 배송비</span>
-								<span class="payment-sum" id="paymentsum">5,000
-								<span class="won">원</span></span>
-							</div>
-						</li>
 					</ul>
 					<div>
 						<span class="totalSum">총 결제예정금액</span>
-						<span class="payment-sum2" id="totalPaymentPrice">29,000
+						<span class="payment-sum2" id="totalPaymentPrice">
 						<span class="won">원</span></span>
 					</div>
 					<div class="btnBox">
@@ -626,11 +621,12 @@
 <script>
 	$(document).ready(function(){
 		$(".productTbl tbody tr").each(function(){
-			
-			if($(".pPriceVal1") <= 50000){
-				$(".pPriceVal3").append(0);
+			var pp = parseInt($(this).find(".pPriceVal1").text().replaceAll(",",""));
+			//alert(pp);
+			if(pp >= 50000){
+				$(".pPriceVal3").text(0);
 			}else{
-				$(".pPriceVal3").append(comma(3000));
+				$(".pPriceVal3").text(comma(3000));
 			}
 			
 			var productPay = parseInt($(this).find(".pPriceVal1").text().replaceAll(",",""));
@@ -639,8 +635,9 @@
 			//alert(productPay + fee);
 			
 			$(".pPriceVal2").text(comma(productPay+fee));
+			
 		});
-	});
+	});	
 	
 	function zipbtn(){
 	    new daum.Postcode({
@@ -687,6 +684,7 @@
 		});
 	});
 	
+	<!-- 필수 체크 -->
 	$(".que").click(function() {
 		   $(this).next(".anw").stop().slideToggle(300);
 		  $(this).toggleClass('on').siblings().removeClass('on');

@@ -1,5 +1,6 @@
 package edu.study.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -39,12 +40,6 @@ public class CartServiceImple implements CartService{
 		//System.out.println("midxxxx"+midx);
 		return CartDao.sum(midx);
 	}
-
-	@Override
-	public int count(String mId, int pidx) throws Exception{
-		return 0;
-	}
-
 	@Override
 	public void updateCart(CartVO cvo) throws Exception{
 	}
@@ -75,6 +70,12 @@ public class CartServiceImple implements CartService{
 	public CartVO listOne(CartVO cvo) throws Exception {
 		//System.out.println("ctidxxxxxxxx"+ctidx);
 		return CartDao.listOne(cvo);
+	}
+
+
+	@Override
+	public List<CartVO> order(CartVO cvo) throws Exception {
+		return CartDao.order(cvo);
 	}
 
 	

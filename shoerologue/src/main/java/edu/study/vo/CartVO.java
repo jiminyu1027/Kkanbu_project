@@ -3,6 +3,7 @@ package edu.study.vo;
 public class CartVO {
 	
 	private int ctidx;
+	private int[] shoes ;
 	private int pidx;
 	private int midx;
 	private String mName;
@@ -18,7 +19,34 @@ public class CartVO {
 	private int money;
 	private int cnt;
 	private int total;
+	private String mPhone;
+	private String mEmail;
+
 	
+	public int[] getShoes() {
+		return shoes;
+	}
+	public void setShoes(int[] shoes) {
+		this.shoes = shoes;
+	}
+	public int getCtidx() {
+		return ctidx;
+	}
+	public void setCtidx(int ctidx) {
+		this.ctidx = ctidx;
+	}
+	public String getmEmail() {
+		return mEmail;
+	}
+	public void setmEmail(String mEmail) {
+		this.mEmail = mEmail;
+	}
+	public String getmPhone() {
+		return mPhone;
+	}
+	public void setmPhone(String mPhone) {
+		this.mPhone = mPhone;
+	}
 	public int getTotal() {
 		return total;
 	}
@@ -93,12 +121,7 @@ public class CartVO {
 	public void setmName(String mName) {
 		this.mName = mName;
 	}
-	public int getCtidx() {
-		return ctidx;
-	}
-	public void setCtidx(int ctidx) {
-		this.ctidx = ctidx;
-	}
+	
 	public int getPidx() {
 		return pidx;
 	}

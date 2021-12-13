@@ -9,7 +9,6 @@
 	int totalPrice = Integer.parseInt(request.getAttribute("totalPrice").toString());
 	int fee = Integer.parseInt(request.getAttribute("fee").toString());
 	int allSum = Integer.parseInt(request.getAttribute("allSum").toString());
-	CartVO cvo = (CartVO)request.getAttribute("cvo");
 %>
 <!DOCTYPE html>
 <html>
@@ -47,8 +46,17 @@
 			var f =parseInt($(this).find("#fee").html().replaceAll(",",""));
 			//alert(t - f);
 			$(this).find("#totalPrice").text(comma(t-f));
+			
 		});
 		
+	 	$(document).ready(function(){
+	 		$(".keepShop").click(function(){
+				alert("이전 페이지로 돌아갑니다");
+				window.histroy.back();
+			});
+	 	});
+		
+	
 	
 	
 	</script>
@@ -277,6 +285,7 @@
 					%>
 						<tr>
 							<td class="check" id="<%=list.get(i).getPidx()%>">
+								<input type="hidden" name="ctidx" value="<%=list.get(i).getCtidx()%>">
 								<input type="checkbox" name="shoes" class="chkBox" id="checks<%=list.get(i).getPidx()%>" value="<%=list.get(i).getPidx()%>" onclick="autoCalc();" checked>
 								<label for="checks<%=list.get(i).getPidx()%>"></label>
 							</td>
@@ -326,10 +335,10 @@
 							</td>
 							<td>
 							<div>
-								<button type="button" name="rightOrder"  id="rightOrder" class="orderbtn" onclick="location.href='/shoerologue/order/orderpayment.do?ctidx=<%=list.get(i).getCtidx()%>'">바로 구매</button>
+								<button type="button" name="rightOrder"  id="rightOrder" class="orderbtn" onclick="location.href='/shoerologue/order/orderpayment.do?shoes=<%=list.get(i).getCtidx()%>'">바로 구매</button>
 							</div>
 							<div>
-								<button id="delbtn" class="delbtn" >삭제</button>
+								<button type="button" id="delbtn" class="delbtn" onclick="location.href='/shoerologue/cart/del.do?ctidx=<%=list.get(i).getCtidx()%>'">삭제</button>
 							</div>
 							</td>
 						</tr>
@@ -373,16 +382,16 @@
 				<div class="rows btnGroup">
 					<label>
 						<a href="/shoerologue">
-						<input type="button" value="계속 쇼핑하기" class="keepShop"></a>
+						<input type="button" value="계속 쇼핑하기" class="keepShop" ></a>
 					</label>
 					<label>
-						<input type="submit" value="전체 상품 주문하기" id="orderbtn" name="gotoOrder" class="orderShop" onclick="goOrder(); return false;">
+						<input type="submit" value="전체 상품 주문하기" id="orderbtn" name="gotoOrder" class="orderShop">
 					</label>
 				</div>
-					</form>
-				</div>
-			</div>
-		</c:if>
+			</form>
+		</div>
+	</div>
+</c:if>
 			<!-- 결제 전 주의사항 -->
 			<div class="cautionBox">
 				<span class="caution1"><i class="bi bi-exclamation-circle" style="font-size: 18px;"></i> 상품 주문 전 확인해주세요!</span>
@@ -498,7 +507,6 @@
 		return ;
 	}
 		
-	
 		
 	//선택 상품금액 합 
 	function autoCalc(){
@@ -576,6 +584,7 @@
 		 str = str.replace(/[^\d]+/g, ''); // 숫자만 남김 
 			return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'); 
 		 }
+	
 	
 	</script>	
 	
