@@ -518,6 +518,7 @@
 		}
 	}
 	
+	//온체인지로 다시막기
 	function idCheckReset(){
 		idCheckYN = false;
 	}
@@ -740,7 +741,7 @@
 			span.style.display = "none";
 		}
 
-		
+		//조건 모두 만족해야 회원가입 가능
  		if(result){
 			if(idCheckYN == true){
  				if(idUseYN == true){
@@ -758,9 +759,7 @@
  				return false;
 			}
  		}
-		
-		
-		
+		//조건 여기까지
 	}
 
 	</script>

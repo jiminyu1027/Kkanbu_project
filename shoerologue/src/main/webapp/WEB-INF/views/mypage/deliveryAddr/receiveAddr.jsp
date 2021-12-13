@@ -476,7 +476,7 @@
 		    <div class="modal-content">
 		      <div class="modal-header modalHD">
 		        <h5 class="modal-title adInsertColor" id="staticBackdropLabel">ShoeRologue 배송지 등록</h5>
-		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="frm_reset()"></button>
 		      </div>
 		      <div class="modal-body">
 		        
@@ -602,7 +602,7 @@
 		    <div class="modal-content">
 		      <div class="modal-header modalHD2">
 		        <h5 class="modal-title" id="staticBackdropLabel">ShoeRologue 배송지 수정</h5>
-		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="frm_reset2()"></button>
 		      </div>
 		      <div class="modal-body">
 		        
@@ -626,7 +626,7 @@
 				<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 				<script>
 					<!-- 초기화 버튼  함수-->
-					function frm_reset() {
+					function frm_reset2() {
 					    document.getElementById("frm2").reset();
 					}
 					
@@ -726,8 +726,8 @@
 				</script>
 		      </div>
 		      <div class="modal-footer">
-		      	<button type="button" class="btn btn-secondary " onclick="frm_reset()" data-bs-dismiss="modal">닫기</button>
-		      	<button type="button" class="btn btn-secondary " onclick="frm_reset()">초기화</button>
+		      	<button type="button" class="btn btn-secondary " onclick="frm_reset2()" data-bs-dismiss="modal">닫기</button>
+		      	<button type="button" class="btn btn-secondary " onclick="frm_reset2()">초기화</button>
 		        <button type="submit" class="btn btn-warning submitco" onclick="addrUpdateBtn(); return false;">배송지 수정</button>
 		      </div>
 		      </form>
@@ -775,7 +775,8 @@
 							</button>
 						</td>
 						<td class="addrTxct">
-							<button class="addrDelbtn" onclick="location.href='delete.do?adidx=<%=list.get(i).getAdidx() %>'">
+							<!--  <button class="addrDelbtn" onclick="location.href='delete.do?adidx=<%=list.get(i).getAdidx() %>'">-->
+							<button class="addrDelbtn" onclick="addrDelBtn(<%=list.get(i).getAdidx() %>); return false;">
 							  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
 							  <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
 							  </svg>
@@ -904,5 +905,28 @@
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	
+	<script>
+
+		
+	    function addrDelBtn(adidx) {
+	        if (!confirm("해당 배송지를 삭제하시겠습니까?")) {
+	            alert("취소되었습니다.");
+	        } else {
+	        	document.getElementById("adidx").value = adidx;
+		    	
+		    	$.ajax({
+		    		url:"/shoerologue/mypage/deliveryAddr/delete.do",
+		    		type:"POST",
+		    		data:"adidx="+adidx,
+		    		success:function(data){
+		    			alert("배송지가 삭제되었습니다.");
+		    			location.reload(); //페이지 새로고침
+		    		}
+		    	});
+	        }
+	    }
+	
+		
+	</script>
 </body>
 </html>

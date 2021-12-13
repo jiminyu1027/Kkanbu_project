@@ -83,7 +83,7 @@ public class DeliveryAddrController {
 	}
 	
 	
-	@RequestMapping(value="/delete.do")
+	@RequestMapping(value="/delete.do", method=RequestMethod.POST)
 	public String delete(Locale locale, Model model,AddressVO vo,int adidx, HttpSession session) throws Exception{
 		
 		MemberVO member = (MemberVO)session.getAttribute("member");
