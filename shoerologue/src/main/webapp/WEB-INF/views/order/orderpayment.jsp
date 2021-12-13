@@ -362,7 +362,7 @@
 							</td>
 							<td class="prodIntro">
 								<span class="pBrand"><%=list.get(i).getpBrandeng()%></span>
-								<div class="pTitle"><%=list.get(i).getpNameeng()%></div>
+								<div class="pTitle"><%=list.get(i).getpNamekr()%></div>
 								<div>
 								<span class="pColor"><%=list.get(i).getpColor()%></span>
 								</div>	
@@ -404,6 +404,9 @@
 			<div class="orderBox">
 				<div class="orderBox2 d-flex align-items-center">
 			<table>
+			<%
+				for(int i=0; i<list.size(); i++){
+			%>
 				<colgroup>
 					<col style="width:165px;">
 					<col>
@@ -413,7 +416,7 @@
 						<th>이름<span class="colorRed">*</span></th>
 						<td>
 								<div class="input-wrap name" style="width:350px;">
-									<input type="text" class="name" id="name" name="name" onblur="checkFn('name')">
+									<input type="text" class="name" id="name" name="name" onblur="checkFn('name')" value="<%=list.get(i).getmName() %>">
 									<span class="checkSpan"></span>
 								</div>
 						</td>
@@ -422,7 +425,7 @@
 						<th>휴대폰번호<span class="colorRed">*</span></th>
 						<td>
 							<div class="input-wrap number" style="width:350px;">
-								<input type="text" id="number" name="number" onblur="checkFn('number')" maxlength="11">
+								<input type="text" id="number" name="number" onblur="checkFn('number')" maxlength="11" value="<%=list.get(i).getmPhone()%>">
 								<span class="checkSpan"></span>
 							</div>
 						</td>
@@ -431,12 +434,13 @@
 						<th>이메일<span class="colorRed">*</span></th>
 						<td>
 							<div class="input-wrap email" style="width:350px;">
-								<input type="text" id="email" name="email" onblur="checkFn('email')">
+								<input type="text" id="email" name="email" onblur="checkFn('email')" value="<%=list.get(i).getmEmail()%>">
 								<span class="checkSpan"></span>
 							</div>
 						</td>
 					</tr>
 				</tbody>
+				<%} %>
 			</table>
 			</div>
 			</div>
@@ -573,8 +577,8 @@
 						<li>
 							<div class="payment-text">
 								<span class="txt">총 정상가</span>
-								<span class="payment-sum" id="paymentsum">
-								<span class="won">원</span></span>
+								<span class="payment-sum" id="paymentsum"></span>
+								<span class="won">원</span>
 							</div>
 						</li>
 						<li>
@@ -636,6 +640,13 @@
 			
 			$(".pPriceVal2").text(comma(productPay+fee));
 			
+			var pv1 = parseInt($(this).find(".pPriceVal1").text().replaceAll(",",""));
+			var pv2 = parseInt($(this).find(".pPriceVal2").text().replaceAll(",",""));
+			var pv3 = parseInt($(this).find(".pPriceVal3").text().replaceAll(",",""));
+			//alert(pv);
+			$("#paymentsum").text(comma(pv1));
+			$("#totalPaymentPrice").text(comma(pv2));
+			$("#deliverysum").text(comma(pv3));
 		});
 	});	
 	
@@ -671,7 +682,7 @@
 	    }).open();
 	}
 	
-	<!--돌아가기 버튼-->
+	<!--돌아가기 버튼--> 
 	$(document).ready(function(){
 		$('#gotomain').click(function(){
 			var result = confirm('메인페이지로 이동하시겠습니까?');

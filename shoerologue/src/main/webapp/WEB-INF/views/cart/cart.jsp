@@ -49,14 +49,22 @@
 			
 		});
 		
-	 	$(document).ready(function(){
-	 		$(".keepShop").click(function(){
-				alert("이전 페이지로 돌아갑니다");
-				window.histroy.back();
-			});
-	 	});
+// 	 	$(document).ready(function(){
+// 	 		$(".keepShop").click(function(){
+// 				alert("이전 페이지로 돌아갑니다");
+// 				window.histroy.back();
+// 			});
+// 	 	});
 		
-	
+	 	$(document).ready( function() {
+			/* var referrer = document.referrer;
+			console.log(referrer); */
+			$(".keepShop").click(function(){
+				alert("이전 페이지로 돌아갑니다");
+				history.back();
+			return redirect;
+			});
+		});
 	
 	
 	</script>
@@ -286,7 +294,7 @@
 						<tr>
 							<td class="check" id="<%=list.get(i).getPidx()%>">
 								<input type="hidden" name="ctidx" value="<%=list.get(i).getCtidx()%>">
-								<input type="checkbox" name="shoes" class="chkBox" id="checks<%=list.get(i).getPidx()%>" value="<%=list.get(i).getPidx()%>" onclick="autoCalc();" checked>
+								<input type="checkbox" name="shoes" class="chkBox" id="checks<%=list.get(i).getPidx()%>" value="<%=list.get(i).getCtidx()%>" onclick="autoCalc();" checked>
 								<label for="checks<%=list.get(i).getPidx()%>"></label>
 							</td>
 							<td class="imgSize" >
@@ -381,8 +389,7 @@
 			<!-- 계속 쇼핑, 주문버튼-->
 				<div class="rows btnGroup">
 					<label>
-						<a href="/shoerologue">
-						<input type="button" value="계속 쇼핑하기" class="keepShop" ></a>
+						<input type="button" value="계속 쇼핑하기" class="keepShop" >
 					</label>
 					<label>
 						<input type="submit" value="전체 상품 주문하기" id="orderbtn" name="gotoOrder" class="orderShop">
@@ -441,8 +448,6 @@
             }
         });
     });
-	
-	
 	
 	//수량 plus
 	function plus(cnt,amount,i,ctidx){

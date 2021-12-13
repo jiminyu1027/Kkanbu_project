@@ -29,7 +29,6 @@ public class CartDAO {
 	}
 	
 	public List<CartVO> order(CartVO cvo) throws Exception{
-		//System.out.println("DAOCVO::"+cvo.getCtidx());
 		return sqlSession.selectList(Namespace+".order", cvo);
 	}
 	

@@ -93,8 +93,23 @@
 	</select>
 	
 	<select id="order" resultType="CartVO" parameterType="CartVO">
-		SELECT * FROM cart WHERE ctidx IN 
-			<foreach collection="shoes" item="ctidx" index="index" open="(" close=")" separator=",">#{ctidx}</foreach>
+		SELECT c.ctidx,  
+  		 	p.pidx,  
+   		 	m.midx, 
+  		 	c.cnt, 
+   		 	m.mName,  
+   		 	p.pPrice,  
+  		 	p.pBrandeng,
+  		 	p.pBrandkr, 
+   		 	p.pNamekr, 
+   		 	p.pColor, 
+   		 	c.ctsize,
+  		 	p.pFile1 ,
+  		 	m.mEmail,
+  		 	m.mPhone,
+            (p.pprice*c.cnt) as total
+    		FROM cart c, product p, member m WHERE c.pidx = p.pidx AND c.midx = m.midx AND c.ctidx IN
+    		<foreach collection="shoes" index="index" item="ctidx" open="(" separator="," close=")">#{ctidx}</foreach>
 	</select>
 	
 </mapper>
