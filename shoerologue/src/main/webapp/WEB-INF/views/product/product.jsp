@@ -81,6 +81,13 @@
 					document.frm.submit();
 				}
 			}
+			
+			$(function(){
+				$(".delBtn").click(function(){
+					alert("상품을 삭제합니다.")
+					return false;
+				});
+			});
         </script>
 	</head>
 		<body>
@@ -393,10 +400,18 @@
 									</div>
 									<div class="productPaymentBtn">
 										<span class="cartBtn"><button type="submit" onclick="gotoCart(); return false;">장바구니</button></span>
-										<span class="paymentBtn"><button onclick="location.href='/shoerologue/order/orderpayment.do'">바로구매</button></span>
+										<span class="paymentBtn"><button type="button" onclick="location.href='/shoerologue/order/orderpayment.do?pidx=<%=pvo.getPidx()%>'">바로구매</button></span>
 									</div>
 								</div>
+								<div class="btnBox">
+									<c:if test="${master eq 'master'}">
+										<button type=button class="delBtn" onclick="location.href='/shoerologue/admin/delProduct.do?pidx=<%=pvo.getPidx()%>'">삭제</button>
+									</c:if>
+								</div>
 							</form>
+							<c:if test="${master eq 'master'}">
+								<button type=button class="modifyBtn" onclick="location.href='/shoerologue/admin/productModify.do?pidx=<%=pvo.getPidx()%>'">수정</button>
+							</c:if>
 						</div>
 					</div>
 				</div>
@@ -744,7 +759,7 @@
 						<button onclick="location.href='/shoerologue/customerService/cs.do'">자주하는 질문 보기</button>
 						<form action="/shoerologue/admin/qaAsk.do" method="get">
 							<input type="hidden" name="pidx" value="<%=pvo.getPidx() %>">
-							<input type="submit" value="Q&amp;A작성">
+							<input type="submit" class="qnaBtn"value="Q&amp;A작성">
 						</form>
 					</div>
 				</div>
