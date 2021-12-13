@@ -47,9 +47,22 @@ public class ProductServiceImpl implements ProductService{
 	public int countAllList() throws Exception {
 		return ProductDao.countAllList();
 	}
+
+	@Override
+	public void delProduct(ProductVO pvo) throws Exception {
+		ProductDao.delProduct(pvo);
+	}
 	
+	@Override
+	public ProductVO detail2(int pidx) throws Exception {
+		return ProductDao.detail2(pidx);
+	}
+	
+	@Override 
+	public void productModify(ProductVO pvo) throws Exception {
+		ProductDao.productModify(pvo); 
+	}
 
 
 	
-
 }

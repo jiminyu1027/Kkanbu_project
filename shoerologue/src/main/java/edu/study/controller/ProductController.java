@@ -45,7 +45,7 @@ public class ProductController {
 	
 	@RequestMapping(value="/product/product.do")
 	public String product(Locale locale, Model model,int pidx)throws Exception {
-			
+		
 		ProductVO pvo = productService.detail(pidx);
 		model.addAttribute("pvo", pvo);
 			
@@ -86,56 +86,127 @@ public class ProductController {
 		return "/admin/productInsert";
 	}
 	
-	@RequestMapping(value="/admin/pdAllListAction.do",method=RequestMethod.POST)
+	@RequestMapping(value="/admin/pdAllList.do",method=RequestMethod.POST)
 	public String productInsert(Locale locale, Model model,ProductVO pvo,HttpSession session,MultipartFile file1,MultipartFile file2,MultipartFile file3,MultipartFile file4,MultipartFile file5)throws Exception {
-		System.out.println("Æ÷½º");
-		String imgUploadPath = uploadPath + File.separator + "imgUpload";
+		
+		String imgUploadPath = uploadPath + File.separator + "productDetail";
 		String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
 		String fileName = null;
 
 		if(file1 != null && file1.getSize()>0) {
 		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file1.getOriginalFilename(), file1.getBytes(), ymdPath); 
-		 pvo.setpFile1(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+		 pvo.setpFile1(File.separator + "productDetail" + ymdPath + File.separator + fileName);
 		} else {
 		 pvo.setpFile1("");
 		}
 		
 		if(file2 != null && file2.getSize()>0) {
 		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file2.getOriginalFilename(), file2.getBytes(), ymdPath); 
-		 pvo.setpFile2(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+		 pvo.setpFile2(File.separator + "productDetail" + ymdPath + File.separator + fileName);
 		} else {
 		 pvo.setpFile2("");
 		}
 		
 		if(file3 != null && file3.getSize()>0) {
 		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file3.getOriginalFilename(), file3.getBytes(), ymdPath); 
-		 pvo.setpFile3(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+		 pvo.setpFile3(File.separator + "productDetail" + ymdPath + File.separator + fileName);
 		} else {
 		 pvo.setpFile3("");
 		}
 		
 		if(file4 != null && file4.getSize()>0) {
 		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file4.getOriginalFilename(), file4.getBytes(), ymdPath); 
-		 pvo.setpFile4(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+		 pvo.setpFile4(File.separator + "productDetail" + ymdPath + File.separator + fileName);
 		} else {
 		 pvo.setpFile4("");
 		}
 		
 		if(file5 != null && file5.getSize()>0) {
 		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file5.getOriginalFilename(), file5.getBytes(), ymdPath); 
-		 pvo.setpFile5(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+		 pvo.setpFile5(File.separator + "productDetail" + ymdPath + File.separator + fileName);
 		} else {
 		 pvo.setpFile5("");
 		}
-		System.out.println("22");
 		
 		MemberVO member = (MemberVO)session.getAttribute("member");
 		pvo.setMidx(member.getMidx());
 		
 			productService.productInsert(pvo);
-			System.out.println("33");
 				
 		return "redirect:/admin/pdAllList.do";
+	}
+	
+	@RequestMapping(value="/admin/delProduct.do",method=RequestMethod.GET)
+	public String delProduct(Model model,ProductVO pvo,HttpSession session)throws Exception {
+		
+		productService.delProduct(pvo);
+		
+		return "redirect:/admin/pdAllList.do";
+	}
+	
+	@RequestMapping(value="/admin/productModify.do",method=RequestMethod.GET)
+	public String productModify(Model model,ProductVO pvo,HttpSession session,int pidx)throws Exception {
+		
+		ProductVO pdvo = productService.detail2(pidx);
+		model.addAttribute("pdvo", pdvo);
+		
+		System.out.println(pdvo.getPidx());
+		System.out.println(pdvo.getpBrandKr());
+		System.out.println(pdvo.getpNameKr());
+		
+		return "/admin/productModify";
+	}
+	
+	
+	@RequestMapping(value="/admin/productModify.do",method=RequestMethod.POST)
+	public String productModify(Locale locale, Model model,ProductVO pvo,HttpSession session,MultipartFile file1,MultipartFile file2,MultipartFile file3,MultipartFile file4,MultipartFile file5)throws Exception {
+		
+		String imgUploadPath = uploadPath + File.separator + "productDetail";
+		String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
+		String fileName = null;
+
+		if(file1 != null && file1.getSize()>0) {
+		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file1.getOriginalFilename(), file1.getBytes(), ymdPath); 
+		 pvo.setpFile1(File.separator + "productDetail" + ymdPath + File.separator + fileName);
+		} else {
+		 pvo.setpFile1("");
+		}
+		
+		if(file2 != null && file2.getSize()>0) {
+		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file2.getOriginalFilename(), file2.getBytes(), ymdPath); 
+		 pvo.setpFile2(File.separator + "productDetail" + ymdPath + File.separator + fileName);
+		} else {
+		 pvo.setpFile2("");
+		}
+		
+		if(file3 != null && file3.getSize()>0) {
+		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file3.getOriginalFilename(), file3.getBytes(), ymdPath); 
+		 pvo.setpFile3(File.separator + "productDetail" + ymdPath + File.separator + fileName);
+		} else {
+		 pvo.setpFile3("");
+		}
+		
+		if(file4 != null && file4.getSize()>0) {
+		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file4.getOriginalFilename(), file4.getBytes(), ymdPath); 
+		 pvo.setpFile4(File.separator + "productDetail" + ymdPath + File.separator + fileName);
+		} else {
+		 pvo.setpFile4("");
+		}
+		
+		if(file5 != null && file5.getSize()>0) {
+		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, file5.getOriginalFilename(), file5.getBytes(), ymdPath); 
+		 pvo.setpFile5(File.separator + "productDetail" + ymdPath + File.separator + fileName);
+		} else {
+		 pvo.setpFile5("");
+		}
+		
+		MemberVO member = (MemberVO)session.getAttribute("member");
+		pvo.setMidx(member.getMidx());
+		
+			productService.productModify(pvo);
+			model.addAttribute("pvo", pvo);
+				
+		return "redirect:/product/product.do?pidx="+pvo.getPidx();
 	}
 	
 	@RequestMapping(value="/admin/pdAllList.do")

@@ -113,6 +113,28 @@
 		WHERE 1=1
 	</select>
     
-	
+    <select id="detail2" resultType="ProductVO" parameterType="int">
+		SELECT * FROM product WHERE pidx = #{pidx}
+	</select>
+    
+     <update id="productModify" parameterType="ProductVO">
+    	UPDATE product 
+    	SET pNameKr = #{pNameKr}
+    		, pNameEng = #{pNameEng}
+    		, pBrandKr = #{pBrandKr}
+	    	, pBrandEng = #{pBrandEng}
+	    	, pSize = #{pSize}
+	    	, pColor = #{pColor}
+	    	, pGender = #{pGender}
+	    	, pType = #{pType}
+	    	, pFile1 = #{pFile1}
+	    	, pFile2 = #{pFile2}
+	    	, pFile3 = #{pFile3}
+	    	, pFile4 = #{pFile4}
+	    	, pFile5 = #{pFile5}
+	    	, pPrice = #{pPrice}
+    	WHERE pidx = #{pidx}
+   	</update>
+   	
 
 </mapper>

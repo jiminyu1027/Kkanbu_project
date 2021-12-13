@@ -31,7 +31,6 @@ public class ProductDAO {
 
 		public ProductVO price(int pidx) throws Exception{
 			return (ProductVO) sqlSession.selectList(Namespace+".productsize", pidx);
-			
 		}
 		
 		public void insert(ProductVO pvo) throws Exception{
@@ -48,5 +47,17 @@ public class ProductDAO {
 		
 		public int countAllList() throws Exception{	
 			return sqlSession.selectOne(Namespace+".countAllList");
+		}
+		
+		public void delProduct(ProductVO pvo) throws Exception{
+			sqlSession.delete(Namespace+".delProduct", pvo);
+		}
+		
+		public ProductVO detail2(int pidx) throws Exception{
+			return  sqlSession.selectOne(Namespace+".detail2", pidx);
+		}
+		
+		public void productModify(ProductVO pvo) throws Exception{
+			sqlSession.update(Namespace+".productModify", pvo);
 		}
 }

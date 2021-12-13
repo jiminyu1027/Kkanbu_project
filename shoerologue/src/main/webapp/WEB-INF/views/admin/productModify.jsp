@@ -1,20 +1,17 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="edu.study.vo.*" %>
-<%@ page import="edu.study.domain.*" %>
 <%
-	List<ProductVO> pdAllList = (List<ProductVO>)request.getAttribute("pdAllList");
-	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
-	PageMaker2 pageMaker2 = (PageMaker2)request.getAttribute("pageMaker2");
+	ProductVO pdvo = (ProductVO)request.getAttribute("pdvo");
 %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 리스트 | 슈롤로그</title>
-
+<title>상품 수정 | 슈롤로그</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
 		
@@ -27,20 +24,66 @@
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="/shoerologue/resources/css/style.css">
-		<link rel="stylesheet" href="/shoerologue/resources/css/pdAllList.css">
+		<link rel="stylesheet" href="/shoerologue/resources/css/productInsert.css">
 		<link rel="stylesheet" href="/shoerologue/resources/css/headerFooter.css">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+		
 	</style>
-	<!-- <script>
-		function selChange() {
-			var sel = document.getElementById('perPageNum').value;
-			location.href="/shoerologue/category/gender/men.do?nowPage=${paging.nowPage}&perPageNum="+sel;
-		}
-	</script> -->
+	<script>
+		$(document).ready( function() {
+			/* var referrer = document.referrer;
+			console.log(referrer); */
+			$(".prev").click(function(){
+				alert("이전 페이지로 돌아갑니다");
+				history.back();
+			return redirect;
+			});
+		});
+		
+		function modify(){
+			//alert("test입니다");
+			var fm = document.frm;
+			if(fm.pBrandKr.value==""){
+				alert("브랜드(한글)를 입력해주세요")
+				fm.pBrandKr.focus()
+				return;
+			}else if(fm.pBrandEng.value==""){
+				alert("브랜드(영어)를 입력해주세요")
+				fm.pBrandEng.focus()
+				return;
+			}else if(fm.pNameKr.value==""){
+				alert("상품 이름(한글)을 입력해주세요")
+				fm.pNameKr.focus()
+				return;
+			}else if(fm.pNameEng.value==""){
+				alert("상품 이름(영어)을 입력해주세요")
+				fm.pNameEng.focus()
+				return;
+			}else if(fm.pColor.value==""){
+				alert("상품 색상을 입력해주세요")
+				fm.pColor.focus()
+				return;
+			}else if(fm.pPrice.value==""){
+				alert("상품 가격을 입력해주세요")
+				fm.pPrice.focus()
+				return;
+			}else if(fm.pSize.value==""){
+				alert("사이즈를 입력해주세요")
+				fm.pSize.focus()
+				return;
+			}
+			fm.action="/shoerologue/admin/productModify.do";
+			fm.method="post";
+			fm.submit();
+			return;	
+		}	
+		
+	</script>
+	
 </head>
 <body>
 	<div class="container">
@@ -158,14 +201,13 @@
 			</ul>
 		</div>
 	    <div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
-	      <ul class="navbar-nav me-auto mb-6 mb-lg-0">
-	      </ul>
+		      <ul class="navbar-nav me-auto mb-6 mb-lg-0">
+		      </ul>
 		</div>
 		    <div class="col-0 col-sm-0 col-md-0 col-lg-2"></div>
 		</nav>
 	</div>
 <!-- body  -->
-
 	<div class="bigBox">
 		<div style=" float: left; width: 99%;" class="mt-3">
 			<span style="color:#757575; font-size:1em">
@@ -175,7 +217,7 @@
 				  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
 				</svg>
 				HOME</a> 
-			> 관리자 페이지 > 상품 관리 > 상품 목록
+			> 관리자 페이지 > 상품 관리 > 상품 등록
 			</span>
 		</div>
 		<!-- 좌측 마이페이지 메뉴-->
@@ -210,8 +252,8 @@
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="/shoerologue/admin/pdAllList.do" class="red">상품 목록*</a><br>
-					<a href="/shoerologue/admin/productInsert.do" class="gray">상품 등록</a>
+					<a href="/shoerologue/admin/pdAllList.do" class="gray">상품 목록</a><br>
+					<a href="/shoerologue/admin/productInsert.do" class="red">상품 등록*</a>
 				</div>
 			</div>
 			<div class="myPageMenu2">
@@ -221,74 +263,88 @@
 				<div class="myPageMenu3">
 					<a href="/shoerologue/admin/memberList.do" class="gray">회원 목록</a>
 				</div>
-			</div>			
+			</div>
 		</div>
 		</div>
 		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
-		<div class="totalPd">
-			<span>총 <span class="redBold"><%=pageMaker2.getTotalCount()%></span>개의 상품이 있습니다.</span>
-		</div>
-		<div class="brandBox">
-			<div class="totalPdSel">
-				<div class="hr1"></div>
-			</div>
-			<!-- 상품 -->
-			<div class="brandPdBox">
-				<div class="brandPdSmBox">
-					<%
-					     if(pdAllList.size() != 0){
-					     for(int i=0; i<pdAllList.size();i++) {	    
-			    	 %>
-					<div class="brandPd">
-						<a href="/shoerologue/product/product.do?pidx=<%=pdAllList.get(i).getPidx()%>">
-							<img src="/shoerologue/resources/image/productdetail/<%=pdAllList.get(i).getpFile1()%>">
-							<div class="shoesBrand" id="pBrandKr"><%=pdAllList.get(i).getpBrandKr()%></div>
-							<div class="shoesName" id="pNameKr"><%=pdAllList.get(i).getpNameKr()%></div>
-							<div class="shoesPriceBox">
-								<span class="shoesPrice" id="pPrice">
-									<span class="pPrice" id="pPrice" name="pPrice">
-										<% if(pdAllList.get(i).getpPrice().length() <6) {%>
-											<%=pdAllList.get(i).getpPrice().substring(pdAllList.get(i).getpPrice().length()-5,pdAllList.get(i).getpPrice().length()-3) %>,<%=pdAllList.get(i).getpPrice().substring(pdAllList.get(i).getpPrice().length()-3,pdAllList.get(i).getpPrice().length()) %>
-										<%}else{ %>
-											<%=pdAllList.get(i).getpPrice().substring(pdAllList.get(i).getpPrice().length()-6,pdAllList.get(i).getpPrice().length()-3) %>,<%=pdAllList.get(i).getpPrice().substring(pdAllList.get(i).getpPrice().length()-3,pdAllList.get(i).getpPrice().length()) %>
-										<% } %>
-									</span>
-								</span>
-								<span class="won">원</span>
-							</div>
-						</a>
+		<div class="pdInsertBox">
+			<div class="pdInsertSmBox">
+				<h3>상품 수정</h3>
+				<br>
+				<form id="frm" name="frm" action="/shoerologue/admin/productModify.do?pidx=<%=pdvo.getPidx()%>" method="POST" enctype="multipart/form-data">
+					<input type="hidden" name="pidx" value="<%=pdvo.getPidx()%>">
+					<table>
+						<tr>
+							<td height=70 width=110>브랜드(한글)</td>
+							<td width=280><input type="text" name="pBrandKr" value="<%=pdvo.getpBrandKr()%>"></td>
+							<td width=110>&nbsp;&nbsp;브랜드(영어)</td>
+							<td width=280><input type="text" name="pBrandEng" value="<%=pdvo.getpBrandEng()%>"></td>
+						</tr>
+						<tr>
+							<td height=70>상품 이름(한글)</td>
+							<td><input type="text" name="pNameKr" value="<%=pdvo.getpNameKr()%>"></td>
+							<td>&nbsp;&nbsp;상품 이름(영어)</td>
+							<td><input type="text" name="pNameEng" value="<%=pdvo.getpNameEng()%>"></td>
+						</tr>
+						<tr>
+							<td height=70 >성별</td>
+							<td>
+								<select name="pGender">
+									<option value="M" selected>MEN : 남성</option>
+									<option value="W">WOMEN : 여성</option>
+									<option value="K">KIDS : 키즈</option>
+									<option value="U">UNISEX : 남여공용</option>
+								</select>
+						</td>
+							<td>&nbsp;&nbsp;종류</td>
+							<td>
+								<select name="pType">
+									<option value="운동화" selected>운동화</option>
+									<option value="스포츠">스포츠</option>
+									<option value="구두">구두</option>
+									<option value="샌들">샌들</option>
+									<option value="캐주얼">캐주얼</option>
+									<option value="부츠">부츠</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td height=70>색상</td>
+							<td><input type="text" name="pColor" value="<%=pdvo.getpColor()%>"></td>
+							<td>&nbsp;&nbsp;가격</td>
+							<td><input type="text" name="pPrice" value="<%=pdvo.getpPrice()%>"></td>
+						</tr>
+						<tr>
+							<td height=70>사이즈</td>
+							<td colspan='3'><input type="text" name="pSize" value="<%=pdvo.getpSize()%>"></td>
+						</tr>
+						<tr>
+							<td height=70>사진</td>
+							<td colspan='3'><input type="file" name="file1" value="<%=pdvo.getpFile1()%>"></td>
+						</tr>
+						<tr>
+							<td height=70></td>
+							<td colspan='3'><input type="file" name="file2" value="<%=pdvo.getpFile2()%>"></td>
+						</tr>
+						<tr>
+							<td height=70></td>
+							<td colspan='3'><input type="file" name="file3" value="<%=pdvo.getpFile3()%>"></td>
+						</tr>
+						<tr>
+							<td height=70></td>
+							<td colspan='3'><input type="file" name="file4" value="<%=pdvo.getpFile4()%>"></td>
+						</tr>
+						<tr>
+							<td height=70></td>
+							<td colspan='3'><input type="file" name="file5" value="<%=pdvo.getpFile5()%>"></td>
+						</tr>
+					</table>
+					<hr>
+					<div class="btnBox">
+						<div class="cancelBtn"><button type="button" class="prev" >취소</button></div>
+						<div class="pdInsertBtn"><button type="submit" onclick="modify(); return false;">수정 하기</button></div>
 					</div>
-					<% } 
-					} else{
-					%>
-					<div class="emptyProductBox">
-						<div class="exclamation"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-						</svg></div>
-					등록된 상품이 없습니다.
-					</div>
-					<%
-					}%>
-				</div>
-				<div class=""></div>
-				<div class="page">
-				<div class="hr2"></div>
-				<c:if test="${master eq 'master'}">
-					<a href="/shoerologue/admin/productInsert.do"><div class="pdInsertBtn">상품 등록</div></a>
-				</c:if>
-					<ul>
-						<c:if test="${pageMaker2.prev}">
-							<li><a class="pm" href="/shoerologue/product/pdAllList.do${pageMaker2.makeQuery(pageMaker2.startPage - 1)}">이전</a></li>
-						</c:if> 
-						<c:forEach begin="${pageMaker2.startPage}" end="${pageMaker2.endPage}" var="idx">
-							<li><a class="pm" href="/shoerologue/product/pdAllList.do${pageMaker2.makeQuery(idx)}">${idx}</a></li>
-						</c:forEach>
-						<c:if test="${pageMaker2.next && pageMaker2.endPage > 0}">
-							<li><a class="pm" href="/shoerologue/product/pdAllList.do${pageMaker2.makeQuery(pageMaker2.endPage + 1)}">다음</a></li>
-						</c:if> 
-					</ul>
-				</div>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -323,7 +379,7 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
 	        </ul>
@@ -362,45 +418,6 @@
 	  </footer>
 	 </div>
 	</div>
-	<script type="text/javascript">
-	//<![CDATA[
-	(function($, undefined){
-		$.fn.multiOpenMenu = function(options) {
-			// 메뉴가 될 엘리먼트가 없는지 체크합니다.
-			if(this.length === 0) {
-				return this;
-			}
-			// 기본값 설정 : active는 처음에 열려 있을 메뉴 입니다.
-			var settings = $.extend({
-				active: 0
-			}, options);
-			// 초기 메뉴를 생성합니다.
-			var headers = this.find(">h6");
-			$.each(headers, function(i, opt) {
-				if(i != settings.active) {
-					$(this).next().hide();
-				}
-			});
-			// 메뉴를 클릭했을때 서브 메뉴를 보여주는 이벤트를 만듭니다.
-			headers.on('click', function() {
-				var menuArea = $(this).next();
-				var isOpen = menuArea.is(":visible");
-				// 열린 상태에 따라 이벤트를 반전해서 발생시킨다.
-				menuArea[isOpen ? 'slideUp' : 'slideDown']().trigger(isOpen ? 'hide' : 'show');
-				// 이벤트 버블링을 멈춘다.
-				return false;
-			});
-			return this;
-		};
-	}(jQuery));
-	// 메뉴를 생성합니다.
-	$(function(){
-		$("#menu").multiOpenMenu();
-	});
-	//]]>
-	</script>
-
-	
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	
 </body>

@@ -45,14 +45,6 @@
 			});
 		});
 		
-		/* function pdInsert(){
-			if(frm != null){
-				alert("채워주세요");
-			}else{
-				document.frm.submit();
-			}
-		} */
-		
 		function pdInsert(){
 			//alert("test입니다");
 			var fm = document.frm;
@@ -85,11 +77,12 @@
 				fm.pSize.focus()
 				return;
 			}
-			fm.action="/shoerologue/product/pdAllListAction.do";
+			fm.action="/shoerologue/admin/pdAllList.do";
 			fm.method="post";
 			fm.submit();
 			return;	
 		}	
+		
 	</script>
 	
 </head>
@@ -256,15 +249,6 @@
 				</div>
 			</div>
 			<div class="myPageMenu2">
-				<span style="font-size:1.3em; font-weight: bold;"><a href="#">회원 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-				</svg></span>
-				<div class="myPageMenu3">
-					<a href="/shoerologue/admin/memberList.do" class="gray">회원 목록</a><br>
-					<a href="#" class="gray">ㅇㅇ 수정</a>
-				</div>
-			</div>
-			<div class="myPageMenu2">
 				<span style="font-size:1.3em; font-weight: bold;"><a href="/shoerologue/product/pdAllList.do">상품 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
@@ -273,7 +257,14 @@
 					<a href="/shoerologue/admin/productInsert.do" class="red">상품 등록*</a>
 				</div>
 			</div>
-			
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">회원 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="/shoerologue/admin/memberList.do" class="gray">회원 목록</a>
+				</div>
+			</div>
 		</div>
 		</div>
 		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
@@ -281,7 +272,7 @@
 			<div class="pdInsertSmBox">
 				<h3>상품 등록</h3>
 				<br>
-				<form id="frm" name="frm" action="/shoerologue/product/pdAllList.do" method="POST" enctype="multipart/form-data">
+				<form id="frm" name="frm" action="/shoerologue/admin/pdAllList.do" method="POST" enctype="multipart/form-data">
 					<table>
 						<tr>
 							<td height=70 width=110>브랜드(한글)</td>
@@ -329,23 +320,23 @@
 						</tr>
 						<tr>
 							<td height=70>사진</td>
-							<td colspan='3'><input type="file" name="File1"></td>
+							<td colspan='3'><input type="file" name="file1" id="File1"></td>
 						</tr>
 						<tr>
 							<td height=70></td>
-							<td colspan='3'><input type="file" name="File2"></td>
+							<td colspan='3'><input type="file" name="file2"></td>
 						</tr>
 						<tr>
 							<td height=70></td>
-							<td colspan='3'><input type="file" name="File3"></td>
+							<td colspan='3'><input type="file" name="file3"></td>
 						</tr>
 						<tr>
 							<td height=70></td>
-							<td colspan='3'><input type="file" name="File4"></td>
+							<td colspan='3'><input type="file" name="file4"></td>
 						</tr>
 						<tr>
 							<td height=70></td>
-							<td colspan='3'><input type="file" name="File5"></td>
+							<td colspan='3'><input type="file" name="file5"></td>
 						</tr>
 					</table>
 					<hr>
