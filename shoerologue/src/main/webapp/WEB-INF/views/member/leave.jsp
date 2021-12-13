@@ -40,14 +40,14 @@
 			text-align:center;
 		}
 		.myPageMainBox{
-			width:100%;
+			min-width:1650px;
 			height:1700px;
 			padding-left:12%;
 			padding-right:12%;
 			margin:auto;
 		}
 		.myPageBox{
-			width:100%;
+			min-width:1650px;
 			height:230px;
 			background-color: light;
 			margin:0 auto;

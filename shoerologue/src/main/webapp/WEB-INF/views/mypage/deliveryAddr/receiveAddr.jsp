@@ -37,14 +37,14 @@
 			text-align:center;
 		}
 		.myPageMainBox{
-			width:100%;
+			min-width:1650px;
 			height:1200px;
 			padding-left:12%;
 			padding-right:12%;
 			margin:auto;
 		}
 		.myPageBox{
-			width:100%;
+			min-width:1650px;
 			height:230px;
 			background-color: light;
 			margin:0 auto;
@@ -560,12 +560,35 @@
 				            }
 				        }).open();
 				    }
+				    
+				    //배송지 추가 널값 리턴펄스 막은거 풀기
+				    function addrInsertBtn(){
+				    	//alert("test");
+				    	
+				    	var adRec = document.frm.adRec.value;
+				    	var adPhone = document.frm.adPhone.value;
+				    	var addr1 = document.frm.addr1.value;
+				    	var addr3 = document.frm.addr3.value;
+				    	
+				    	if(adRec == ""){
+				    		alert("받으실 분을 입력해 주세요.");
+				    	}else if(adPhone == ""){
+				    		alert("전화번호를 입력해 주세요.");
+				    	}else if(addr1 == ""){
+				    		alert("우편번호 찾기를 선택해주세요.");
+				    	}else if(addr3 == ""){
+				    		alert("상세 주소를 입력해주세요.");
+				    	}else{
+				    		document.frm.submit();
+				    	}
+				    }
+				    
 				</script>
 		      </div>
 		      <div class="modal-footer">
 		      	<button type="button" class="btn btn-secondary " onclick="frm_reset()" data-bs-dismiss="modal">닫기</button>
 		      	<button type="button" class="btn btn-secondary " onclick="frm_reset()">초기화</button>
-		        <button type="submit" class="btn btn-danger submitco">배송지 등록</button>
+		        <button type="submit" class="btn btn-danger submitco" onclick="addrInsertBtn(); return false;">배송지 등록</button>
 		      </div>
 		      </form>
 		    </div>
@@ -587,9 +610,9 @@
                 <input type="hidden" name="adidx" id="adidx">
                 <h3>배송지 수정하기</h3><br>
                 
-               	<a class="modalFs">받으실분</a> :  <input type="text" id="receiverU" name="adRec" value=""><br>
+               	<a class="modalFs">받으실분</a> :  <input type="text" id="receiverU" name="adRec" ><br>
                	<br>
-               	<a class="modalFs">핸드폰 번호</a> :  <input type="text" id="phoneU" name="adPhone" placeholder=" 수정할 핸드폰 번호를 '-' 없이 입력해 주세요."><br>
+               	<a class="modalFs">핸드폰 번호</a> :  <input type="text" id="phoneU" name="adPhone" ><br>
 	           	<br>
 	           	<a class="modalFs">주소</a> :     &nbsp;<input type="text" id="sample4_postcode2" placeholder=" 우편번호" readonly class="bg-gray1">
 						 <input type="button" onclick="sample4_execDaumPostcode2()" value="우편번호 찾기" class="bg-gray3"><br>
@@ -677,12 +700,35 @@
 				    		}
 				    	});
 				    }
+				    
+				    //배송지 수정 널값 리턴펄스 막은거 풀기
+				    function addrUpdateBtn(){
+				    	//alert("test");
+				    	
+				    	var adRec = document.frm2.adRec.value;
+				    	var adPhone = document.frm2.adPhone.value;
+				    	var addr1 = document.frm2.addr1.value;
+				    	var addr3 = document.frm2.addr3.value;
+				    	
+				    	if(adRec == ""){
+				    		alert("받으실 분을 입력해 주세요.");
+				    	}else if(adPhone == ""){
+				    		alert("전화번호를 입력해 주세요.");
+				    	}else if(addr1 == ""){
+				    		alert("우편번호 찾기를 선택해주세요.");
+				    	}else if(addr3 == ""){
+				    		alert("상세 주소를 입력해주세요.");
+				    	}else{
+				    		document.frm2.submit();
+				    	}
+				    }
+				    
 				</script>
 		      </div>
 		      <div class="modal-footer">
 		      	<button type="button" class="btn btn-secondary " onclick="frm_reset()" data-bs-dismiss="modal">닫기</button>
 		      	<button type="button" class="btn btn-secondary " onclick="frm_reset()">초기화</button>
-		        <button type="submit" class="btn btn-warning submitco">배송지 수정</button>
+		        <button type="submit" class="btn btn-warning submitco" onclick="addrUpdateBtn(); return false;">배송지 수정</button>
 		      </div>
 		      </form>
 		    </div>
