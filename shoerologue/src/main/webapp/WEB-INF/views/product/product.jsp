@@ -635,44 +635,94 @@
 				<div>
 					<!-- 상품 Q&A가 있을때 -->
 					<%if(qalist.size()>0){ %>
-					<hr>
-						<table>
-							<tr style="border-bottom:2px solid #EAEAEA; font-weight:bold;">
-								<td width=650 height=60>&nbsp;&nbsp;&nbsp;&nbsp;Q&amp;A제목</td>
-								<td width=200 height=60 style="text-align:center;">Q&amp;A작성자</td>
-								<td width=150 height=60 style="text-align:center;">Q&amp;A작성일</td>
-								<td width=200 height=60 style="text-align:center;">Q&amp;A답변 완료여부</td>
-							</tr>
-							<%for(int i=0; i<qalist.size(); i++){ %>
-								<tr style="border-top:1px solid #EAEAEA;">
+						<hr>
+							<table>
+								<tr style="border-bottom:2px solid #EAEAEA; font-weight:bold;">
+									<td width=650 height=60>&nbsp;&nbsp;&nbsp;&nbsp;Q&amp;A제목</td>
+									<td width=200 height=60 style="text-align:center;">Q&amp;A작성자</td>
+									<td width=150 height=60 style="text-align:center;">Q&amp;A작성일</td>
+									<td width=200 height=60 style="text-align:center;">Q&amp;A답변 완료여부</td>
+								</tr>
+								<%for(int i=0; i<qalist.size(); i++){ %>
+									<tr style="border-top:1px solid #EAEAEA;">
 								<%
 									if(qalist.get(i).getPqOpen().equals("N")){
 								%>
 									<td width=600 height=60>
-									<%
-										if(loginU.getMidx() == qalist.get(i).getMidx() || loginU.getMaster().equals("master")){ 
-									%>
+										<%
+											if(loginU.getMidx() == qalist.get(i).getMidx() || loginU.getMaster().equals("master")){ 
+										%>
 										<%if(loginU.getMaster().equals("master")){ %>
-										<a href="/shoerologue/customerService/qaDetail.do?pqidx=<%=qalist.get(i).getPqidx()%>">
-											&nbsp;&nbsp;&nbsp;&nbsp;<%=qalist.get(i).getPqSubject() %>
-										</a>
+											<a href="/shoerologue/customerService/qaDetail.do?pqidx=<%=qalist.get(i).getPqidx()%>">
+												&nbsp;&nbsp;&nbsp;&nbsp;<%=qalist.get(i).getPqSubject() %>
+											</a>
+											<td width=200 height=60 style="text-align:center;">
+												<%=qalist.get(i).getPqWriter().substring(0,1) %>*<%=qalist.get(i).getPqWriter().substring(2,3) %>
+											</td>
+											<td width=150 height=60 style="text-align:center;">
+												<%=qalist.get(i).getPqWriteday().substring(0,10) %>
+											</td>
+									</tr>
 										<%}else if(loginU.getMidx() == qalist.get(i).getMidx()){ %>
-											&nbsp;&nbsp;&nbsp;&nbsp;<%=qalist.get(i).getPqSubject() %>
+											<div class="que" style="border:none;">&nbsp;&nbsp;&nbsp;&nbsp;<%=qalist.get(i).getPqSubject() %></div>
+											<div class="anw" style="border:none;">
+												<%=qalist.get(i).getPqContents() %>
+													<div class="explText">
+														[비공개글은 작성자와 관리자만 볼 수 있습니다.]
+													</div>
+											</div>
+											<td width=200 height=60 style="text-align:center;">
+												<%=qalist.get(i).getPqWriter().substring(0,1) %>*<%=qalist.get(i).getPqWriter().substring(2,3) %>
+											</td>
+											<td width=150 height=60 style="text-align:center;">
+												<%=qalist.get(i).getPqWriteday().substring(0,10) %>
+											</td>
+										</tr>
 										<%} %>	
 									<%}else{ %>
 										&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-lock-fill"></i>[비공개글은 작성자와 관리자만 볼 수 있습니다.]
+										<td width=200 height=60 style="text-align:center;">
+											<%=qalist.get(i).getPqWriter().substring(0,1) %>*<%=qalist.get(i).getPqWriter().substring(2,3) %>
+										</td>
+										<td width=150 height=60 style="text-align:center;">
+											<%=qalist.get(i).getPqWriteday().substring(0,10) %>
+										</td>
+									</tr>
 									<%} %>
+								<%}else if(qalist.get(i).getPqOpen().equals("Y")){ %>
+									<%if(loginU.getMaster().equals("Bronze")){ %>
+									<td>
+										<div class="que" style="border:none;">&nbsp;&nbsp;&nbsp;&nbsp;<%=qalist.get(i).getPqSubject() %></div>
+										<div class="anw" style="border:none;">
+											<%=qalist.get(i).getPqContents() %>
+												<div class="explText">
+													ㅇㅇㅇㅇ
+												</div>
+										</div>
 									</td>
-								<%} %>
 									<td width=200 height=60 style="text-align:center;">
 										<%=qalist.get(i).getPqWriter().substring(0,1) %>*<%=qalist.get(i).getPqWriter().substring(2,3) %>
 									</td>
-								
 									<td width=150 height=60 style="text-align:center;">
 										<%=qalist.get(i).getPqWriteday().substring(0,10) %>
 									</td>
 								</tr>
-							<%} %>	
+								<%}else{ %>
+										<td width=600 height=60>
+											<a href="/shoerologue/customerService/qaDetail.do?pqidx=<%=qalist.get(i).getPqidx()%>">
+												&nbsp;&nbsp;&nbsp;&nbsp;<%=qalist.get(i).getPqSubject() %>
+											</a>
+										</td>
+										<td width=200 height=60 style="text-align:center;">
+											<%=qalist.get(i).getPqWriter().substring(0,1) %>*<%=qalist.get(i).getPqWriter().substring(2,3) %>
+										</td>
+										<td width=150 height=60 style="text-align:center;">
+											<%=qalist.get(i).getPqWriteday().substring(0,10) %>
+										</td>
+									</tr>
+								<%} %>
+							<%} %>
+						<%} %>	
 						</table>
 					<hr>
 					
