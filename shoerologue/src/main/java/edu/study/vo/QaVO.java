@@ -11,7 +11,14 @@ public class QaVO {
 	private String pqWriteday;
 	private int pidx;
 	private String delYn;
+	private String answer;
 	
+	public String getAnswer() {
+		return answer;
+	}
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
 	public String getDelYn() {
 		return delYn;
 	}

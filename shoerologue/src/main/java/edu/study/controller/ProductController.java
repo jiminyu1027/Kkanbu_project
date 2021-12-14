@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import edu.study.domain.Criteria;
@@ -40,6 +41,7 @@ public class ProductController {
 	@Autowired
 	edu.study.service.QaService QaService;
 	
+	
 	@Resource(name="uploadPath")
 	private String uploadPath;
 	
@@ -53,12 +55,7 @@ public class ProductController {
 				
 			List<QaVO> qalist = QaService.productList(pidx);
 			model.addAttribute("qalist",qalist);	
-		
-//		List<ProductVO> list = productService.hotDealList();
-//		
-//		model.addAttribute("list", list);
-		
-		
+			
 		return "/product/product";
 		
 		}else {

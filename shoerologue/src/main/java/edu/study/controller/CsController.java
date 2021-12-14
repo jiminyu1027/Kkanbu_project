@@ -17,7 +17,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import edu.study.vo.MemberVO;
 import edu.study.vo.NoticeVO;
-import edu.study.vo.QaAnswerVO;
 import edu.study.vo.QaVO;
 import utils.UploadFileUtils;
 
@@ -29,8 +28,6 @@ public class CsController {
 	edu.study.service.NoticeService NoticeService;
 	@Autowired
 	edu.study.service.QaService QaService;
-	@Autowired
-	edu.study.service.QaAnswerService QaAnswerService;
 	@Resource(name="uploadPath")
 	private String uploadPath;
 	
@@ -99,22 +96,16 @@ public class CsController {
 		
 		
 		QaVO qvo = QaService.detail(pqidx);
-		
-		List<QaAnswerVO> alist = QaAnswerService.alist(pqidx);
-		
 		model.addAttribute("qvo",qvo);
-		model.addAttribute("alist",alist);
 		
 		return "/customerService/qaDetail";
 	}
 	@RequestMapping(value="/qaComment.do", method=RequestMethod.POST)
-	public String qaComment(Locale locale,Model model,QaAnswerVO vo,@RequestParam("pqidx") int pqidx) throws Exception {
+	public String qaComment(Locale locale,Model model,QaVO vo) throws Exception {
 		
-		vo.setPqidx(pqidx);
+		QaService.replyWrite(vo);
 		
-		QaAnswerService.insert(vo);
-		
-		return "redirect:/customerService/qaDetail.do?pqidx="+pqidx+"";
+		return "redirect:/customerService/qaDetail.do?pqidx="+vo.getPqidx()+"";
 	}
 }
 

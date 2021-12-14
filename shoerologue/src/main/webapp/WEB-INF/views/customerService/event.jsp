@@ -271,9 +271,13 @@
 			<tbody>
 				<tr><td style="height:50px;" colspan="3"><%=nvo.getnContents() %></td></tr>
 				<tr>
+					<%if(nvo.getnFile() != null){ %>
 					<td colspan="3">
 						<img src="/shoerologue<%=nvo.getnFile() %>" class="d-block w-100" style="width:100%; height:500px;">
 					</td>
+					<%}else{ %>
+						<td style="height:500px;"></td>
+					<%} %>
 				</tr>
 				<tr><td style="border-bottom:1px solid gray; height:30px;" colspan="3"></td></tr>	
 			</tbody>

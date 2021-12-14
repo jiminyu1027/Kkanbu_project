@@ -68,14 +68,16 @@ public class ShoppingController {
 			MemberVO member = (MemberVO)httr.getAttribute("member");
 			
 			int midx = member.getMidx();
+					
+			
 			
 			vo.setMidx(midx);
-			vo.setPidx(pidx);
+			vo.setPidx(pidx);   
 			
 			QaService.insert(vo);
 			
 		return "redirect:/mypage/shopping/qaList.do";
-	}
+	} 
 	
 	@RequestMapping(value="qaUpdate.do" , method=RequestMethod.POST)
 	public String update(Locale locale,Model model,@RequestParam("pqidx") int pqidx) throws Exception{

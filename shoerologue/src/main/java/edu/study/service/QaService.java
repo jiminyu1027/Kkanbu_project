@@ -17,4 +17,6 @@ public interface QaService {
 	QaVO detail(int pqidx)throws Exception;
 	
 	void update(int pqidx) throws Exception;
+	
+	void replyWrite(QaVO vo) throws Exception;
 }

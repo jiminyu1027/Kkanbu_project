@@ -338,33 +338,6 @@
 					<col width="20%">
 					<col width="10%">
 				</colgroup>
-			
-<%-- 				<% --%>
-<!--   					for(int i=0; i<pqlist.size(); i++){	 -->
-<%--  				%>  --%>				
-<!-- 					<tr class="inquiry-contents-box"> -->
-<%-- 						<td class="inquiry-number-detail"><%=i+1 %></td> --%>
-<%-- 						<% if(pqlist.get(i).getPqOpen().equals("N") ){  --%>
-<%-- 						%>  --%>
-<!-- 							<td class="inquiry-subject-detail">  -->
-<%-- 						<% --%>
-<!--   								if(loginU.getMidx() == pqlist.get(i).getMidx() || loginU.getMaster().equals("master")){ -->
-<%--  						%> --%>
-<%-- 								<a href="/shoerologue/customerService/qaDetail.do?pqidx=<%=pqlist.get(i).getPqidx()%>"><%=pqlist.get(i).getPqSubject() %></a> --%>
-<%-- 							<%  }else{ %> --%>
-<!-- 								[비공개글은 작성자와 관리자만 볼 수 있습니다.] -->
-<%-- 							<%} %> --%>
-<!-- 							</td>   -->
-<%-- 						<%}else{%> --%>
-<%-- 							<td class="inquiry-subject-detail"><a href="/shoerologue/customerService/qaDetail.do?pqidx=<%=pqlist.get(i).getPqidx()%>"><%=pqlist.get(i).getPqSubject() %></a></td> --%>
-<%-- 						<%					 --%>
-<%-- 						} %>  --%>
-<%-- 						<td class="inquiry-writeday-detail"><%=pqlist.get(i).getPqWriteday().substring(0,10) %></td> --%>
-<%-- 						<td class="inquiry-writer-detail"><%=pqlist.get(i).getPqWriter() %></td> --%>
-<!-- 					</tr> -->
-<%-- 				<%} %>	 --%>
-				
-				
 				<%if(pqlist.size()>0){ %>
 					<thead class="inquiry-title">
 						<tr>
