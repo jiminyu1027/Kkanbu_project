@@ -195,13 +195,13 @@
 	  </div>
 	  <!-- 배너이미지 3장 -->
 	  <div class="carousel-inner">
-	    <div class="carousel-item active">
+	    <div class="carousel-item active"  data-bs-interval="4000">
 	      <img src="/shoerologue/resources/image/mainbanner/001.png" class="d-block w-100" alt="45%할인 이벤트">
 	    </div>
-	    <div class="carousel-item">
+	    <div class="carousel-item"  data-bs-interval="4500">
 	      <img src="/shoerologue/resources/image/mainbanner/KAKAO.png" class="d-block w-100" alt="카카오페이 결제시 3천원 할인 이벤트">
 	    </div>
-	    <div class="carousel-item">
+	    <div class="carousel-item"  data-bs-interval="4500">
 	      <img src="/shoerologue/resources/image/mainbanner/ilnam.png" class="d-block w-100" alt="45%할인 이벤트">
 	    </div>
 	  </div>
