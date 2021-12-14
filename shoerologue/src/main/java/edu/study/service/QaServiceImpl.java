@@ -48,4 +48,10 @@ public class QaServiceImpl implements QaService {
 		
 		QaDao.update(pqidx);
 	}
+	
+	@Override
+	public void replyWrite(QaVO vo) throws Exception {
+
+		QaDao.replyWrite(vo);
+	}
 }

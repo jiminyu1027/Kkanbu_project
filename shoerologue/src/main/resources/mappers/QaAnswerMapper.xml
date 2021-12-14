@@ -22,4 +22,8 @@
 	<select id="alist" parameterType="int" resultType="edu.study.vo.QaAnswerVO">
 		SELECT * FROM QUESTION_ANSWER WHERE 1=1 AND PQIDX=#{PQIDX} ORDER BY QAIDX ASC
 	</select>
+	
+	<select id="detail" resultType="edu.study.vo.QaAnswerVO">
+		SELECT * FROM QUESTION_ANSWER WHERE 1=1 AND PQIDX = #{pqidx}
+	</select>
 </mapper>

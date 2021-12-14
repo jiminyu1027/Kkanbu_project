@@ -679,12 +679,19 @@
 											</td>
 									</tr>
 										<%}else if(loginU.getMidx() == qalist.get(i).getMidx()){ %>
+											<input type="hidden" name="pqidx" value="<%=qalist.get(i).getPqidx() %>">
 											<div class="que" style="border:none;">&nbsp;&nbsp;&nbsp;&nbsp;<%=qalist.get(i).getPqSubject() %></div>
 											<div class="anw" style="border:none;">
 												<%=qalist.get(i).getPqContents() %>
-													<div class="explText">
-														[비공개글은 작성자와 관리자만 볼 수 있습니다.]
-													</div>
+													<%if(qalist.get(i).getAnswer() != null){ %>
+														<div class="explText">
+															<%=qalist.get(i).getAnswer() %>
+														</div>
+													<%}else{ %>
+														<div class="explText">
+															
+														</div>
+													<%} %>	
 											</div>
 											<td width=200 height=60 style="text-align:center;">
 												<%=qalist.get(i).getPqWriter().substring(0,1) %>*<%=qalist.get(i).getPqWriter().substring(2,3) %>
@@ -704,14 +711,14 @@
 										</td>
 									</tr>
 									<%} %>
-								<%}else if(qalist.get(i).getPqOpen().equals("Y")){ %>
-									<%if(loginU.getMaster().equals("Bronze")){ %>
+								<%}else if(qalist.get(i).getPqOpen().equals("Y") ){ %>
+									<%if(!loginU.getMaster().equals("master")){ %>
 									<td>
 										<div class="que" style="border:none;">&nbsp;&nbsp;&nbsp;&nbsp;<%=qalist.get(i).getPqSubject() %></div>
 										<div class="anw" style="border:none;">
 											<%=qalist.get(i).getPqContents() %>
 												<div class="explText">
-													ㅇㅇㅇㅇ
+ 													<%=qalist.get(i).getAnswer() %>
 												</div>
 										</div>
 									</td>
@@ -740,7 +747,6 @@
 						<%} %>	
 						</table>
 					<hr>
-					
 					<%}else{ %>
 						<!-- 상품 Q&A가 없을때 -->
 						<hr>
@@ -753,7 +759,6 @@
 						</div>	
 						<hr>
 					<%} %>
-					<!--  -->
 					<!--<center>페이징 처리</center>-->
 					<div class="QnaBtn">
 						<button onclick="location.href='/shoerologue/customerService/cs.do'">자주하는 질문 보기</button>

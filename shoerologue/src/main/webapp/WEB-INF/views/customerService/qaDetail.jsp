@@ -6,8 +6,6 @@
 <%
 	QaVO qvo = (QaVO)request.getAttribute("qvo");
 
-	List<QaAnswerVO> alist = (List<QaAnswerVO>)request.getAttribute("alist");
-
 	MemberVO loginU = (MemberVO)session.getAttribute("member");
 %>
 <!DOCTYPE html>
@@ -349,21 +347,24 @@
 			<tr style="border-bottom:1px solid black; height:50px; font-size:20px; background-color:#ccc; font-weight:bold;">
 				<td>답변 내용</td>
 			</tr>
-			<%
-				for(int i=0; i<alist.size(); i++){
-			%>
-				<tr style="border-bottom:1px solid gray; height:45px; font-size:18px;" >
-					<td><%=alist.get(i).getQaSubject() %></td>
+			<%if(qvo.getAnswer() != null){ %>
+				<tr>
+					<td><%=qvo.getAnswer() %></td>
 				</tr>
+				</table>
+			<%}else{ %>
+				<tr>
+					
+				</tr>
+				</table>
 			<%} %>
-		</table>
 		<%
 			if(loginU.getMaster().equals("master")){
 		%>
 		<form action="/shoerologue/customerService/qaComment.do" method="post" class="commentBox">
 		<input type="hidden" name="pqidx" value="<%=qvo.getPqidx()%>">
 			<p>
-				<textarea name="qaSubject" placeholder="여기에 댓글을 작성하세요"></textarea>				
+				<textarea name="answer" placeholder="여기에 댓글을 작성하세요"></textarea>				
 			</p>
 			<p>
 				<input type="submit" value="답글 작성" class="commentFn">	

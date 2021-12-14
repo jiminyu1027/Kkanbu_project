@@ -44,4 +44,9 @@ public class QaDAO {
 		
 		 sqlSession.update(Namespace+".update",pqidx);
 	}
+	
+	public void replyWrite(QaVO vo) throws Exception{
+		
+		sqlSession.update(Namespace+".replyWrite",vo);
+	}
 }
