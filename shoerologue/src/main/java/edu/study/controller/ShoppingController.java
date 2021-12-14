@@ -75,7 +75,7 @@ public class ShoppingController {
 			QaService.insert(vo);
 			
 		return "redirect:/mypage/shopping/qaList.do";
-	}
+	} 
 	
 	@RequestMapping(value="qaUpdate.do" , method=RequestMethod.POST)
 	public String update(Locale locale,Model model,@RequestParam("pqidx") int pqidx) throws Exception{
