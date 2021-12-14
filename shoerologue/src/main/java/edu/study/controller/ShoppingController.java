@@ -69,8 +69,10 @@ public class ShoppingController {
 			
 			int midx = member.getMidx();
 			
+			
+			
 			vo.setMidx(midx);
-			vo.setPidx(pidx);
+			vo.setPidx(pidx);   
 			
 			QaService.insert(vo);
 			
