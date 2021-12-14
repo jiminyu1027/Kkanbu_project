@@ -374,7 +374,7 @@
 					
 				}else if(type == 'pass'){
 				
-					var checkId = /^[a-zA-z0-9]{5,20}$/;
+					var checkId = /^.*(?=^.{4,20}$)(?=.*\d)(?=.*[a-zA-Z]).*$/;
 					
 					var value = document.frm.password.value;
 					var span = document.getElementsByClassName("password")[0].getElementsByTagName("span")[0];
@@ -433,80 +433,6 @@
 					span.style.color = "red";
 					span.style.display = "inline";
 					result = false;
-				}else{
-					span.textContent = "";
-					span.style.display = "none";
-				}
-				
-				
-				value = document.frm.password.value;
-				var value2 = document.frm.passwordre.value;
-				span = document.getElementsByClassName("passwordre")[0].getElementsByTagName("span")[0];
-				if(value2 == ""){
-					span.textContent = "*필수";
-					span.style.color = "red";
-					span.style.display = "inline";
-					result = false;
-				}else if(value != value2){
-					span.textContent = "*불일치";
-					span.style.color = "red";
-					span.style.display = "inline";
-					result = false;
-				}else{
-					span.textContent = "";
-					span.style.display = "none";
-				}
-				
-				
-				var checkName = /^[가-힣]/g;
-				value = document.frm.name.value;
-				span = document.getElementsByClassName("name")[0].getElementsByTagName("span")[0];
-				if(value == ""){
-					span.textContent = "*필수";
-					span.style.color = "red";
-					span.style.display = "inline";
-					result = false;
-				}else if(!checkName.test(value)){
-					span.textContent = "*형식오류";
-					span.style.color = "red";
-					span.style.display = "inline";
-					result = false;
-				}else{
-					span.textContent = "";
-					span.style.display = "none";
-				}
-				
-				
-				var checkEmail = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/g;
-				value = document.frm.email.value;
-				span = document.getElementsByClassName("email")[0].getElementsByTagName("span")[0];
-				if(value == ""){
-					span.textContent = "*필수";
-					span.style.color = "red";
-					span.style.display = "inline";
-					result = false;
-				}else if(!checkEmail.test(value)){
-					span.textContent = "*형식오류";
-					span.style.color = "red";
-					span.style.display = "inline";
-					result = false;
-				}else{
-					span.textContent = "";
-					span.style.display = "none";
-				}
-				
-				
-				var checkPhone = /^[0-9]{10,12}/g;
-				var value = document.frm.phone.value;
-				var span = document.getElementsByClassName("phone")[0].getElementsByTagName("span")[0];
-				if(value == ""){
-					span.textContent = "*필수";
-					span.style.color = "red";
-					span.style.display = "inline";
-				}else if(!checkPhone.test(value)){
-					span.textContent = "*형식오류";
-					span.style.color = "red";
-					span.style.display = "inline";
 				}else{
 					span.textContent = "";
 					span.style.display = "none";

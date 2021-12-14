@@ -379,7 +379,7 @@
 			function checkFn(type){
 				if(type == 'id'){
 				
-					var checkId = /^[A-za-z0-9]{4,15}/g;
+					var checkId = /^[A-za-z0-9]{4,20}/g;
 					
 					var value = document.frm.id.value;
 					
@@ -460,7 +460,7 @@
 		//-----------------------------------------------------------	
 			function sumbitFn(){
 				
-				var checkId = /^[A-za-z0-9]{4,15}/g;
+				var checkId = /^[A-za-z0-9]{4,20}/g;
 					
 				var value = document.frm.id.value;
 				

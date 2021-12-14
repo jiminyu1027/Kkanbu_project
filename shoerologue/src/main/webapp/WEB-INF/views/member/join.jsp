@@ -575,7 +575,7 @@
 				span.style.display = "none";
 			}
 		}else if(type == 'name'){
-			var checkName = /^[가-힣]/g;
+			var checkName = /^[가-힣a-zA-Z]+$/;
 			var value = document.frm.name.value;
 			var span = document.getElementsByClassName("name")[0].getElementsByTagName("span")[0];
 			if(value == ""){
@@ -685,7 +685,7 @@
 		}
 		
 		
-		var checkName = /^[가-힣]/g;
+		var checkName = /^[가-힣a-zA-Z]+$/;
 		value = document.frm.name.value;
 		span = document.getElementsByClassName("name")[0].getElementsByTagName("span")[0];
 		if(value == ""){

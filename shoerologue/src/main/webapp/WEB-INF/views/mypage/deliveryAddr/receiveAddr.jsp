@@ -690,6 +690,7 @@
 				        }).open();
 				    }
 				    
+				    // 배송지 수정하기
 				    function fn(adidx){
 				    	document.getElementById("adidx").value = adidx;
 				    	
