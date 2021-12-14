@@ -69,6 +69,8 @@ public class ShoppingController {
 			
 			int midx = member.getMidx();
 					
+			
+			
 			vo.setMidx(midx);
 			vo.setPidx(pidx);   
 			
