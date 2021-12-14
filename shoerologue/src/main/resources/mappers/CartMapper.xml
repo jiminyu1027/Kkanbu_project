@@ -22,25 +22,6 @@
   		 	WHERE c.pidx=p.pidx AND m.midx = c.midx AND c.midx=#{c.midx} AND c.delYn = 'N'
 	 	ORDER BY ctidx 
   	</select> 
-  	
-  		<!-- 카트 전체 주문 -->
-  	<select id="allOrder" resultType="CartVO" parameterType="int">
-   		 SELECT c.ctidx,  
-  		 	p.pidx,  
-   		 	m.midx, 
-  		 	c.cnt, 
-   		 	m.mName,  
-   		 	p.pPrice,  
-  		 	p.pBrandeng,
-  		 	p.pBrandkr, 
-   		 	p.pNamekr, 
-   		 	p.pColor, 
-   		 	c.ctsize,
-  		 	p.pFile1 
-   		 	FROM cart c, product p, member m 
-  		 	WHERE c.pidx=p.pidx AND m.midx = c.midx AND c.midx=#{midx} AND c.delYn = 'N'
-	 	ORDER BY ctidx 
-  	</select> 
   
 	<!-- 합계  -->
 	  	<select id="sum" resultType="int">
@@ -71,27 +52,7 @@
 		UPDATE cart SET cnt = #{cnt} WHERE ctidx = #{ctidx} 
 	</update>
 	
-	<select id="listOne" resultType="CartVO" parameterType="int">
-		SELECT c.ctidx,  
-  		 	p.pidx,  
-   		 	m.midx, 
-  		 	c.cnt, 
-   		 	m.mName,  
-   		 	p.pPrice,  
-  		 	p.pBrandeng,
-  		 	p.pBrandkr, 
-   		 	p.pNamekr, 
-   		 	p.pColor, 
-   		 	c.ctsize,
-  		 	p.pFile1 ,
-  		 	m.mEmail,
-  		 	m.mPhone,
-            (p.pprice*c.cnt) as total
-  		 	FROM cart c, product p, member m 
-  		 	WHERE c.pidx=p.pidx AND m.midx = c.midx AND c.ctidx=#{ctidx}
-	 	ORDER BY ctidx 
-	</select>
-	
+	<!-- 전체주문 -->
 	<select id="order" resultType="CartVO" parameterType="CartVO">
 		SELECT c.ctidx,  
   		 	p.pidx,  

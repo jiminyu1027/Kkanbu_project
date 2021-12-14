@@ -23,11 +23,6 @@ public class CartDAO {
 		sqlSession.insert(Namespace+".insert", cvo);
 	}
 	
-	public CartVO listOne(CartVO cvo) throws Exception{
-		//System.out.println("ctidx::::"+ctidx);
-		return sqlSession.selectOne(Namespace+".listOne", cvo);
-	}
-	
 	public List<CartVO> order(CartVO cvo) throws Exception{
 		return sqlSession.selectList(Namespace+".order", cvo);
 	}
@@ -55,11 +50,5 @@ public class CartDAO {
 	
 	public int sumMoney(int midx)throws Exception{
 		return sqlSession.selectOne(Namespace+".sumMoney",midx);
-	}
-	public void updateCart(CartVO cvo) throws Exception{
-	}
-	
-	public void modifyCart(CartVO cvo) throws Exception{
-		sqlSession.update(Namespace+".modify", cvo);
 	}
 }

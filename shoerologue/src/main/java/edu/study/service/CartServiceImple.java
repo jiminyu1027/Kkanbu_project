@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import edu.study.dao.CartDAO;
 import edu.study.vo.CartVO;
+import edu.study.vo.MemberVO;
 import edu.study.vo.ProductVO;
 
 
@@ -22,7 +23,6 @@ public class CartServiceImple implements CartService{
 	public void insert(CartVO cvo) throws Exception{
 		CartDao.insert(cvo);
 	}
-	
 
 	@Override
 	public void delAll(int midx) throws Exception {
@@ -40,15 +40,7 @@ public class CartServiceImple implements CartService{
 		//System.out.println("midxxxx"+midx);
 		return CartDao.sum(midx);
 	}
-	@Override
-	public void updateCart(CartVO cvo) throws Exception{
-	}
-
-	@Override
-	public void modifyCart(CartVO cvo) throws Exception{
-		CartDao.modifyCart(cvo);
-	}
-
+	
 	@Override
 	public List<CartVO> list(int midx) throws Exception {
 		return CartDao.list(midx);
@@ -67,18 +59,10 @@ public class CartServiceImple implements CartService{
 	}
 
 	@Override
-	public CartVO listOne(CartVO cvo) throws Exception {
-		//System.out.println("ctidxxxxxxxx"+ctidx);
-		return CartDao.listOne(cvo);
-	}
-
-
-	@Override
 	public List<CartVO> order(CartVO cvo) throws Exception {
 		return CartDao.order(cvo);
 	}
 
-	
 }
 
 	

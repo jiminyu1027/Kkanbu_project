@@ -404,9 +404,6 @@
 			<div class="orderBox">
 				<div class="orderBox2 d-flex align-items-center">
 			<table>
-			<%
-				for(int i=0; i<list.size(); i++){
-			%>
 				<colgroup>
 					<col style="width:165px;">
 					<col>
@@ -416,7 +413,7 @@
 						<th>이름<span class="colorRed">*</span></th>
 						<td>
 								<div class="input-wrap name" style="width:350px;">
-									<input type="text" class="name" id="name" name="name" onblur="checkFn('name')" value="<%=list.get(i).getmName() %>">
+									<input type="text" class="name" id="name" name="name" onblur="checkFn('name')" >
 									<span class="checkSpan"></span>
 								</div>
 						</td>
@@ -425,7 +422,7 @@
 						<th>휴대폰번호<span class="colorRed">*</span></th>
 						<td>
 							<div class="input-wrap number" style="width:350px;">
-								<input type="text" id="number" name="number" onblur="checkFn('number')" maxlength="11" value="<%=list.get(i).getmPhone()%>">
+								<input type="text" id="number" name="number" onblur="checkFn('number')" maxlength="11" >
 								<span class="checkSpan"></span>
 							</div>
 						</td>
@@ -434,13 +431,12 @@
 						<th>이메일<span class="colorRed">*</span></th>
 						<td>
 							<div class="input-wrap email" style="width:350px;">
-								<input type="text" id="email" name="email" onblur="checkFn('email')" value="<%=list.get(i).getmEmail()%>">
+								<input type="text" id="email" name="email" onblur="checkFn('email')" >
 								<span class="checkSpan"></span>
 							</div>
 						</td>
 					</tr>
 				</tbody>
-				<%} %>
 			</table>
 			</div>
 			</div>
@@ -570,6 +566,27 @@
 				<input type="button" id="goOrder2" name="goOrderbt2" class="orderb2" onclick="goOrderbtn2(); return false;" value="주문하기">
 			</div>
 		</div>
+		<script type="text/javascript">
+			<!-- 필수 체크 -->
+			$(".que").click(function() {
+				   $(this).next(".anw").stop().slideToggle(300);
+				  $(this).toggleClass('on').siblings().removeClass('on');
+				  $(this).next(".anw").siblings(".anw").slideUp(300); // 1개씩 펼치기
+				});
+		
+			<!--돌아가기 버튼-->
+			$(document).ready(function(){
+				$('#gotomain').click(function(){
+					var result = confirm('메인페이지로 이동하시겠습니까?');
+					
+					if(result){
+						location.replace('/shoerologue');
+					}else{
+						//취소 누르면 변화 없음
+					}
+				});
+			});
+		</script>
 			<!-- 우측 결제 확인 창-->
 			<div class="order-payment-box" id="orderPaymentBox">
 				<h4 class="payment-head">결제정보</h4>
@@ -681,26 +698,6 @@
 	        }
 	    }).open();
 	}
-	
-	<!--돌아가기 버튼--> 
-	$(document).ready(function(){
-		$('#gotomain').click(function(){
-			var result = confirm('메인페이지로 이동하시겠습니까?');
-			
-			if(result){
-				location.replace('/shoerologue');
-			}else{
-				//취소 누르면 변화 없음
-			}
-		});
-	});
-	
-	<!-- 필수 체크 -->
-	$(".que").click(function() {
-		   $(this).next(".anw").stop().slideToggle(300);
-		  $(this).toggleClass('on').siblings().removeClass('on');
-		  $(this).next(".anw").siblings(".anw").slideUp(300); // 1개씩 펼치기
-		});
 	
 	<!--bootpay-->
 	function goOrderbtn2(){

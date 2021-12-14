@@ -32,20 +32,13 @@ public class OrderController{
 	CartService cartService;
 	
 	@RequestMapping(value="/orderpayment.do")
-	public String insert (Model model, Locale locale, CartVO cvo)throws Exception{
+	public String insert (Model model, Locale locale, CartVO cvo,MemberVO mvo)throws Exception{
 		
 		List<CartVO> list = cartService.order(cvo);
 		//System.out.println("listsize:="+cvo.getShoes().length);
 		
 		model.addAttribute("list", list);
 		return "/order/orderpayment";
-	}
-	
-	@RequestMapping(value="/oneOrder.do")
-		public String allOrder(Locale locale, Model model,HttpSession session,CartVO cvo) throws Exception{
-			cartService.listOne(cvo);
-			
-			return"/order/orderpayment";
 	}
 	
 	
