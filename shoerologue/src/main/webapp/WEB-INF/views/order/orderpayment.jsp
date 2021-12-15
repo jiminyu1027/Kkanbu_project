@@ -6,8 +6,6 @@
 <%@ page import="edu.study.vo.*" %>  
 <%
 	List<CartVO> list = (List<CartVO>)request.getAttribute("list");
-%>
-<%
 	MemberVO mInfo = (MemberVO)request.getAttribute("mInfo");
 %>   
 <!DOCTYPE html>
@@ -416,7 +414,8 @@
 							  	<span class="pAmountOp"><%=list.get(i).getCnt()%></span>
 							</td>
 							<td class="textBox2 pOptionInfo">
-								<span class="pPriceVal1" name="priceTotal"><fmt:formatNumber><%=list.get(i).getTotal()%></fmt:formatNumber></span>
+								<span class="pPriceVal1" id="pPriceVal1" name="priceTotal"><fmt:formatNumber><%=list.get(i).getpPrice()%></fmt:formatNumber></span>
+								<input type="hidden" id="hiddenPrice" value="<%=list.get(i).getpPrice()%>">
 								<span class="won1">원</span>
 							</td>
 						</tr>
@@ -430,7 +429,19 @@
 						</tr>
 					</tfoot>
 				</table>
-		
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$("table tbody tr").each(function(){
+						var priceT = parseInt($(this).find("#hiddenPrice").val().replaceAll(",",""));
+						//alert(priceT);
+						var cnts = $(this).find(".pAmountOp").html();
+						//alert(cnts);
+						
+						$(this).find("#pPriceVal1").text(comma(priceT*cnts));
+					});
+				})
+			
+			</script>
 			<!-- 주문자 정보 -->
 	<div class="contentBox-wrap">
 		<div class="contentBox">

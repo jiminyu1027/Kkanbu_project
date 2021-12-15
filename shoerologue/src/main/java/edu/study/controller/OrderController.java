@@ -32,25 +32,48 @@ public class OrderController{
 	OrderService orderService;
 	
 	@Autowired
+	ProductService productService;
+	
+	@Autowired
 	CartService cartService;
 	
 	@Autowired
 	MemberService MemberService;
 	
 	@RequestMapping(value="/orderpayment.do")
-	public String insert (Model model, Locale locale, CartVO cvo,MemberVO mvo, HttpSession session)throws Exception{
+	public String insert (Model model, Locale locale, CartVO cvo,MemberVO mvo,HttpSession session)throws Exception{
 		MemberVO member=(MemberVO)session.getAttribute("member");
 		int midx = member.getMidx();
-		
-		List<CartVO> list = cartService.order(cvo);
-		//System.out.println("listsize:="+cvo.getShoes().length);
 		MemberVO mInfo = MemberService.member(midx);
 		
+		List<CartVO> list = new ArrayList<CartVO>();
+		
+		//System.out.println("pvoooooo"+pvo.getpBrandKr());
+			//바로구매
+		if(cvo.getPidx()>0) {
+			ProductVO pvo = productService.order(cvo);
+			cvo.setpBrandeng(pvo.getpBrandEng());
+			cvo.setpNamekr(pvo.getpNameKr());
+			cvo.setCnt(pvo.getCnt());
+			cvo.setpColor(pvo.getpColor());
+			cvo.setpPrice(pvo.getpPrice());
+			cvo.setpFile1(pvo.getpFile1());
+			list.add(cvo);
+			
+		}else {
+				//장바구니구매
+			list = cartService.order(cvo);
+		}
 		model.addAttribute("list", list);
 		model.addAttribute("mInfo", mInfo);
 		return "/order/orderpayment";
 	}
 	
+	private int Number(String getpPrice) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 	@RequestMapping(value="/tests.do")
 	@ResponseBody
 	public MemberVO selectOne(Locale locale, Model model,HttpSession session) throws Exception{

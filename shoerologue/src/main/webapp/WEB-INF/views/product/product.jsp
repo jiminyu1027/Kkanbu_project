@@ -95,7 +95,7 @@
 					alert("사이즈를 선택해 주세요.");
 					return false;
 				}else {
-					fm.action="/shoerologue/order/orderpayment.do?shoes=<%=pvo.getPidx()%>";
+					fm.action="/shoerologue/order/orderpayment.do";
 					fm.method="post";
 					fm.submit();
 					return;

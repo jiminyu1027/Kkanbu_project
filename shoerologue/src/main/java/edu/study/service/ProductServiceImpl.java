@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import edu.study.dao.ProductDAO;
 import edu.study.domain.Criteria;
 import edu.study.domain.Criteria2;
+import edu.study.vo.CartVO;
 import edu.study.vo.ProductVO;
 
 @Service
@@ -61,6 +62,11 @@ public class ProductServiceImpl implements ProductService{
 	@Override 
 	public void productModify(ProductVO pvo) throws Exception {
 		ProductDao.productModify(pvo); 
+	}
+
+	@Override
+	public ProductVO order(CartVO cvo) throws Exception {
+		return ProductDao.order(cvo);
 	}
 
 

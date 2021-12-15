@@ -3,6 +3,7 @@ package edu.study.service;
 import java.util.List;
 
 import edu.study.domain.Criteria2;
+import edu.study.vo.CartVO;
 import edu.study.vo.ProductVO;
 
 
@@ -17,5 +18,5 @@ public interface ProductService {
 	public void delProduct(ProductVO pvo) throws Exception;
 	ProductVO detail2(int pidx) throws Exception;
 	public void productModify(ProductVO pvo) throws Exception;
-	
+	ProductVO order(CartVO cvo) throws Exception;
 }

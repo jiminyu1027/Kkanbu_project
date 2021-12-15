@@ -20,7 +20,7 @@ public class ProductVO {
 	private String pFile5;
 	private String pWrite;
 	private String pDelYn;
-	private String amount = "1";
+	private int cnt = 1;
 	private int midx;
 	private int ctidx;
 	private int ctsize;
@@ -38,13 +38,13 @@ public class ProductVO {
 	public void setCtsize(int ctsize) {
 		this.ctsize = ctsize;
 	}
-	public String getAmount() {
-		return amount;
-	}
-	public void setAmount(String amount) {
-		this.amount = amount;
-	}
 	
+	public int getCnt() {
+		return cnt;
+	}
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
 	public int getMidx() {
 		return midx;
 	}

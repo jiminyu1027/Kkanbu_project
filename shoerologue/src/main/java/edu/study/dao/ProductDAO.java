@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import edu.study.domain.Criteria;
 import edu.study.domain.Criteria2;
+import edu.study.vo.CartVO;
 import edu.study.vo.ProductVO;
 
 @Repository
@@ -59,5 +60,8 @@ public class ProductDAO {
 		
 		public void productModify(ProductVO pvo) throws Exception{
 			sqlSession.update(Namespace+".productModify", pvo);
+		}
+		public ProductVO order(CartVO cvo) throws Exception{
+			return sqlSession.selectOne(Namespace+".order", cvo);
 		}
 }

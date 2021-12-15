@@ -55,7 +55,7 @@
 		    	,sysdate
 		    	,#{pidx}		
 		    	,#{midx}
-		    	,#{amount}
+		    	,#{cnt}
 		    	,#{ctsize}
 		    	,#{delyn}
 		    )
@@ -136,5 +136,16 @@
     	WHERE pidx = #{pidx}
    	</update>
    	
+   	<select id="order" resultType="ProductVO" parameterType="ProductVO">
+		SELECT  
+            pidx, 
+   		 	pPrice,  
+  		 	pBrandeng,
+  		 	pBrandkr, 
+   		 	pNamekr, 
+   		 	pColor, 
+  		 	pFile1
+    		FROM product  WHERE pidx = #{pidx}
+	</select>
 
 </mapper>
