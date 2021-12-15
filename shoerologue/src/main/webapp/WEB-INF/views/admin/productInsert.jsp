@@ -41,7 +41,7 @@
 			$(".prev").click(function(){
 				alert("이전 페이지로 돌아갑니다");
 				history.back();
-			return redirect;
+			return;
 			});
 		});
 		

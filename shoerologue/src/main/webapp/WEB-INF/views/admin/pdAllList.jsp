@@ -279,13 +279,13 @@
 				</c:if>
 					<ul>
 						<c:if test="${pageMaker2.prev}">
-							<li><a class="pm" href="/shoerologue/product/pdAllList.do${pageMaker2.makeQuery(pageMaker2.startPage - 1)}">이전</a></li>
+							<li><a class="pm" href="/shoerologue/admin/pdAllList.do${pageMaker2.makeQuery(pageMaker2.startPage - 1)}">이전</a></li>
 						</c:if> 
 						<c:forEach begin="${pageMaker2.startPage}" end="${pageMaker2.endPage}" var="idx">
-							<li><a class="pm" href="/shoerologue/product/pdAllList.do${pageMaker2.makeQuery(idx)}">${idx}</a></li>
+							<li><a class="pm" href="/shoerologue/admin/pdAllList.do${pageMaker2.makeQuery(idx)}">${idx}</a></li>
 						</c:forEach>
 						<c:if test="${pageMaker2.next && pageMaker2.endPage > 0}">
-							<li><a class="pm" href="/shoerologue/product/pdAllList.do${pageMaker2.makeQuery(pageMaker2.endPage + 1)}">다음</a></li>
+							<li><a class="pm" href="/shoerologue/admin/pdAllList.do${pageMaker2.makeQuery(pageMaker2.endPage + 1)}">다음</a></li>
 						</c:if> 
 					</ul>
 				</div>
@@ -362,44 +362,6 @@
 	  </footer>
 	 </div>
 	</div>
-	<script type="text/javascript">
-	//<![CDATA[
-	(function($, undefined){
-		$.fn.multiOpenMenu = function(options) {
-			// 메뉴가 될 엘리먼트가 없는지 체크합니다.
-			if(this.length === 0) {
-				return this;
-			}
-			// 기본값 설정 : active는 처음에 열려 있을 메뉴 입니다.
-			var settings = $.extend({
-				active: 0
-			}, options);
-			// 초기 메뉴를 생성합니다.
-			var headers = this.find(">h6");
-			$.each(headers, function(i, opt) {
-				if(i != settings.active) {
-					$(this).next().hide();
-				}
-			});
-			// 메뉴를 클릭했을때 서브 메뉴를 보여주는 이벤트를 만듭니다.
-			headers.on('click', function() {
-				var menuArea = $(this).next();
-				var isOpen = menuArea.is(":visible");
-				// 열린 상태에 따라 이벤트를 반전해서 발생시킨다.
-				menuArea[isOpen ? 'slideUp' : 'slideDown']().trigger(isOpen ? 'hide' : 'show');
-				// 이벤트 버블링을 멈춘다.
-				return false;
-			});
-			return this;
-		};
-	}(jQuery));
-	// 메뉴를 생성합니다.
-	$(function(){
-		$("#menu").multiOpenMenu();
-	});
-	//]]>
-	</script>
-
 	
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	
