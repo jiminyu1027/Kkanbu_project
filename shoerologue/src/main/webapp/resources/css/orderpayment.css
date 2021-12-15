@@ -16,7 +16,9 @@ section{
 	width: 1200px;
   	margin: 0 auto;
 }
-
+.payTxt{
+	float:right;
+}
 .textHead{
 	margin-top:40px;
 	font-weight:600;
@@ -110,27 +112,13 @@ section{
 	border-bottom:1px solid #D5D5D5;
 	padding-bottom:10px;	
 }
-.pOptionInfo{
-	padding:0px 5px 0 130px;
-	width:300px;
-}
-.pAmount{
-	padding:0 5px 0 268px;
-}
-.pPrice{
-	padding:0 3px 0 148px;
-}
-.pTotal{
-	padding:0 5px 0 110px;
-}
-.pDeli{
-	padding:0 5px 0 100px;
-}
 .colorRed{color:red;}
 ::placeholder{font-size:10pt;}
-
+.pOptionInfo{
+	text-align:center;
+}
 .bullet-right{
-	text-align: right;
+	padding-left:65%;
 	margin-top:9px;
 	letter-spacing: -.325px;
 	color:#8C8C8C;
@@ -172,7 +160,7 @@ select {
 	padding: 5px 10px;
 	border: 1px solid #999;
 	font-family: inherit;
-	background: url('/resources/image/symbol/arrow.svg') no-repeat 95% 50%;
+	background: url('/shoerologue/resources/image/symbol/arrow.svg') no-repeat 95% 50%;
 	border-radius: 0px;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -281,13 +269,11 @@ select::-ms-expand {
 	color:#111;
 }
 .payment-sum{
-	float:right;
 	font-size:12pt;
 	color:#111;
 	font-weight:700;
 }
 .payment-sum2{
-	float:right;
 	font-size:26px;
 	color:#ee1c25;
 	font-weight:700;
@@ -550,4 +536,8 @@ input[readonly] {
 	font-size:10pt;
 	color:#ED0000;
 	letter-spacing: -.325px;
+}
+.trBorder{
+	border-bottom: 1px solid #e1e1e1;
+}
 }

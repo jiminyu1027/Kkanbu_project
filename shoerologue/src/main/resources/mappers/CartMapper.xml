@@ -19,7 +19,7 @@
    		 	c.ctsize,
   		 	p.pFile1 
    		 	FROM cart c, product p, member m 
-  		 	WHERE c.pidx=p.pidx AND m.midx = c.midx AND c.midx=#{c.midx} AND c.delYn = 'N'
+  		 	WHERE c.pidx=p.pidx AND m.midx = c.midx AND c.midx=#{c.midx} AND c.delYn = 'N' AND c.cartYn = 'Y'
 	 	ORDER BY ctidx 
   	</select> 
   
@@ -69,8 +69,11 @@
   		 	m.mEmail,
   		 	m.mPhone,
             (p.pprice*c.cnt) as total
-    		FROM cart c, product p, member m WHERE c.pidx = p.pidx AND c.midx = m.midx AND c.ctidx IN
-    		<foreach collection="shoes" index="index" item="ctidx" open="(" separator="," close=")">#{ctidx}</foreach>
+    		FROM cart c, product p, member m WHERE c.pidx = p.pidx AND c.midx = m.midx AND c.pidx IN
+    		<foreach collection="shoes" index="index" item="pidx" open="(" separator="," close=")">#{pidx}</foreach>
 	</select>
 	
+	<insert id="">
+	
+	</insert>
 </mapper>

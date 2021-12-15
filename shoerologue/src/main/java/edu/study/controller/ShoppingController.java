@@ -18,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import edu.study.service.CartService;
 import edu.study.service.MemberService;
+import edu.study.vo.CartVO;
 import edu.study.vo.MemberVO;
 import edu.study.vo.QaVO;
 
@@ -30,13 +32,18 @@ public class ShoppingController {
 	MemberService MemberService;
 	
 	@Autowired
+	CartService CartService;
+	
+	@Autowired
 	edu.study.service.QaService QaService;
 	
 	@RequestMapping(value="/wishlist.do")
 	public String wishlist(Locale locale, Model model, HttpSession session)throws Exception{
 		MemberVO member = (MemberVO)session.getAttribute("member");
-	
+		
 		if(member != null) {
+			List<CartVO> list=CartService.list(member.getMidx());
+			model.addAttribute("list",list);
 			
 		return "/mypage/shopping/wishlist";
 		}else {

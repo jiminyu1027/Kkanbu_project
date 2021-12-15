@@ -294,7 +294,7 @@
 						<tr>
 							<td class="check" id="<%=list.get(i).getPidx()%>">
 								<input type="hidden" name="ctidx" value="<%=list.get(i).getCtidx()%>">
-								<input type="checkbox" name="shoes" class="chkBox" id="checks<%=list.get(i).getPidx()%>" value="<%=list.get(i).getCtidx()%>" onclick="autoCalc();" checked>
+								<input type="checkbox" name="shoes" class="chkBox" id="checks<%=list.get(i).getPidx()%>" value="<%=list.get(i).getPidx()%>" onclick="autoCalc();" checked>
 								<label for="checks<%=list.get(i).getPidx()%>"></label>
 							</td>
 							<td class="imgSize" >
@@ -343,7 +343,7 @@
 							</td>
 							<td>
 							<div>
-								<button type="button" name="rightOrder"  id="rightOrder" class="orderbtn" onclick="location.href='/shoerologue/order/orderpayment.do?shoes=<%=list.get(i).getCtidx()%>'">바로 구매</button>
+								<button type="button" name="rightOrder"  id="rightOrder" class="orderbtn" onclick="location.href='/shoerologue/order/orderpayment.do?shoes=<%=list.get(i).getPidx()%>'">바로 구매</button>
 							</div>
 							<div>
 								<button type="button" id="delbtn" class="delbtn" onclick="location.href='/shoerologue/cart/del.do?ctidx=<%=list.get(i).getCtidx()%>'">삭제</button>
@@ -588,7 +588,7 @@
 		 str = String(str);
 		 str = str.replace(/[^\d]+/g, ''); // 숫자만 남김 
 			return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'); 
-		 }
+	}
 	
 	
 	</script>	

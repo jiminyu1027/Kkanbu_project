@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.study.service.CartService;
+import edu.study.service.MemberService;
 import edu.study.vo.CartVO;
 import edu.study.vo.MemberVO;
 import edu.study.vo.OrderVO;
@@ -33,26 +34,28 @@ public class CartController {
 	
 	@Autowired
 	CartService CartService;
+	
 
 	@RequestMapping(value="/cart.do", method = RequestMethod.GET)
-	public String list(@ModelAttribute CartVO cvo, HttpSession session,Model model,Locale locale)throws Exception{
+	public String list(CartVO cvo, HttpSession session,Model model,Locale locale)throws Exception{
 		//System.out.println("cart test");
 		MemberVO member=(MemberVO)session.getAttribute("member");
 		
 		if(member != null){
+			int midx = member.getMidx();
 			// 장바구니테이블에 있는 로그인 유저의 선택상품 전체 목록
-			List<CartVO> list=CartService.list(member.getMidx());
+			List<CartVO> list=CartService.list(midx);
 			//System.out.println("LIST"+list);
 			
 			//장바구니 테이블에 있는 로그인 유저의 전체 금액
-			int totalPrice = CartService.sum(member.getMidx());
+			int totalPrice = CartService.sum(midx);
 			//System.out.println("total sum"+totalPrice);
 			
 			//배송비
 			int fee = totalPrice >= 50000 ? 0 : 3000;
 			 
 			//총금액
-			int allSum = CartService.sumMoney(member.getMidx());
+			int allSum = CartService.sumMoney(midx);
 			
 			model.addAttribute("list",list);
 			model.addAttribute("totalPrice",totalPrice);

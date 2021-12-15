@@ -7,6 +7,9 @@
 <%
 	List<CartVO> list = (List<CartVO>)request.getAttribute("list");
 %>
+<%
+	MemberVO mInfo = (MemberVO)request.getAttribute("mInfo");
+%>   
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,6 +38,52 @@
 	</style>
 	<script src="/js/jquery-3.6.0.min.js"></script>
 	<script>
+	function testbtn2(){
+		
+		var name = document.frm.name.value;
+		var number = document.frm.number.value;
+		var email = document.frm.email.value;
+		var rname = document.frm.rname.value;
+		var rnumber = document.frm.rnumber.value;
+		var addr1 = document.frm.addr1.value;
+		var addr2 = document.frm.addr2.value;
+		
+		if(!name){
+			alert('이름을 입력해주세요');
+			document.getElementById("name").focus();
+			return false;
+		}else if (!number){
+			alert('휴대폰 번호를 입력해주세요');
+			document.getElementById("number").focus();
+			return false;
+		}else if (!email){
+			alert('이메일을 입력해주세요');
+			document.getElementById("email").focus();
+			return false;
+		}else if (!rname){
+			alert('받으실 분을 입력해주세요');
+			document.getElementById("rname").focus();
+			return false;
+		}else if (!rnumber){
+			alert('받으실 분의 휴대폰 번호를 입력해주세요');
+			document.getElementById("rnumber").focus();
+			return false;
+		}else if (!addr1){
+			alert('주소를 입력해주세요');
+			document.getElementById("zip").focus();
+			return false;
+		}else if (!addr2){
+			alert('상세주소를 입력해주세요');
+			document.getElementById("addr2").focus();
+			return false;
+		}else if(frm.checkEssen.checked!==true){
+			alert("필수항목에 체크해주세요");
+			document.getElementById("checkEssen").focus();
+			return false;
+		}else{
+			goOrderbtn2();
+		}
+	}
 	function goOrderbtn(){
 		//console.log("check!!");
 		var name = document.frm.name.value;
@@ -326,41 +375,36 @@
 
 <!-- 주문/결제 section -->
 <div class="sectionBox">
-	<form name="frm" action="#" method="POST" autocomplete="off">
+	<form name="frm" action="#" method="POST" autocomplete="off" onsubmit="return false;">
 		<div class="subsectionBox">
 			<span class="orderHead">주문 / 결제</span>
 			<div class="textHead">주문리스트</div>
 		<!--주문/결제 content -->
-			<div class="cartBox1 my-3">
-				<div class="cartBox2 d-flex align-items-center">
-					<div class="d-flex align-items-center justify-content-center">
-					<span class="pOptionInfo">상품옵션정보</span>
-					</div>
-					<div class="d-flex align-items-center justify-content-center">
-					<span class="pAmount">수량</span>
-					</div>
-					<div class="d-flex align-items-center justify-content-center">
-					<span class="pPrice">상품금액</span>
-					</div>
-					<div class="d-flex align-items-center justify-content-center">
-					<span class="pTotal">합계금액</span>
-					</div>
-					<div class="d-flex align-items-center justify-content-center">
-					<span class="pDeli">배송비</span>
-					</div>
-				</div>
-			</div>
+		<table class="productTbl">
+			<thead>
+			<tr class="cartBox1 my-3">
+					<th style="width:50%" class="pOptionInfo" colspan="4">
+					<span>상품옵션정보</span>
+					</th>
+					<th class="pOptionInfo">
+					<span>수량</span>
+					</th>
+					<th class="pOptionInfo">
+					<span>상품금액</span>
+					</th>
+			</tr>
+			</thead>
 		<!-- 상품정보 -->
 		<div class="infoBox">
-				<table class="productTbl">
+					<tbody>
 					<%
 						for(int i=0; i<list.size(); i++){
 					%>
-						<tr>
+						<tr class="trBorder">
 							<td class="imgSize">
-									<img src="/shoerologue/resources/image/productdetail/<%=list.get(i).getpFile1()%>" width="110px">
+									<img src="/shoerologue/resources/image/productdetail/<%=list.get(i).getpFile1()%>" width="120px">
 							</td>
-							<td class="prodIntro">
+							<td class="prodIntro" colspan="3">
 								<span class="pBrand"><%=list.get(i).getpBrandeng()%></span>
 								<div class="pTitle"><%=list.get(i).getpNamekr()%></div>
 								<div>
@@ -368,34 +412,25 @@
 								</div>	
 								<span class="pSize"><%=list.get(i).getCtsize()%></span>
 							</td>
-							<td class="textBox">
+							<td class="textBox pOptionInfo">
 							  	<span class="pAmountOp"><%=list.get(i).getCnt()%></span>
 							</td>
-							<td class="textBox2">
-								<div class="textBox3">
-								<span class="pPriceVal1"><fmt:formatNumber><%=list.get(i).getTotal()%></fmt:formatNumber></span>
+							<td class="textBox2 pOptionInfo">
+								<span class="pPriceVal1" name="priceTotal"><fmt:formatNumber><%=list.get(i).getTotal()%></fmt:formatNumber></span>
 								<span class="won1">원</span>
-								</div>
-							</td>
-							<td class="textBox2">
-								<div class="textBox3">
-								<span class="pPriceVal2"></span>
-								<span class="won2">원</span>
-								</div>
-							</td>
-							<td class="textBox2">
-								<div class="textBox3">
-								<span class="pPriceVal3"></span>
-								<span class="won1">원</span>
-								</div>
 							</td>
 						</tr>
-					<%} %>
+						<%} %>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td class="bullet-right" colspan="6">
+								<span class="bullet-text">ㆍ 상품수량 및 옵션변경은 상품상세 또는 장바구니에서 가능합니다.</span>
+							</td>
+						</tr>
+					</tfoot>
 				</table>
-			</div>
-			<div class="bullet-right">
-				<span class="bullet-text">ㆍ 상품수량 및 옵션변경은 상품상세 또는 장바구니에서 가능합니다.</span>
-			</div>
+		
 			<!-- 주문자 정보 -->
 	<div class="contentBox-wrap">
 		<div class="contentBox">
@@ -413,7 +448,7 @@
 						<th>이름<span class="colorRed">*</span></th>
 						<td>
 								<div class="input-wrap name" style="width:350px;">
-									<input type="text" class="name" id="name" name="name" onblur="checkFn('name')" >
+									<input type="text" class="name" id="name" name="name" onblur="checkFn('name')" value="${member.mName}">
 									<span class="checkSpan"></span>
 								</div>
 						</td>
@@ -422,7 +457,7 @@
 						<th>휴대폰번호<span class="colorRed">*</span></th>
 						<td>
 							<div class="input-wrap number" style="width:350px;">
-								<input type="text" id="number" name="number" onblur="checkFn('number')" maxlength="11" >
+								<input type="text" id="number" name="number" value="${mInfo.mPhone}" onblur="checkFn('number')" maxlength="11" >
 								<span class="checkSpan"></span>
 							</div>
 						</td>
@@ -431,7 +466,7 @@
 						<th>이메일<span class="colorRed">*</span></th>
 						<td>
 							<div class="input-wrap email" style="width:350px;">
-								<input type="text" id="email" name="email" onblur="checkFn('email')" >
+								<input type="text" id="email" name="email" onblur="checkFn('email')" value="${mInfo.mEmail} ">
 								<span class="checkSpan"></span>
 							</div>
 						</td>
@@ -454,10 +489,10 @@
 						<th>배송지 선택</th>
 						<td>
 							<div class="radio-wrap">
-								<input type="radio" id="check-radio-input1" name="location" value="location1">
+								<input type="radio" id="check-radio-input1" name="location" value="location1" onclick="test(${mInfo.midx});">
 								<label for="check-radio-input1">
 								<span class="ordererAddr">주문자와 동일</span></label>
-								<input type="radio" id="check-radio-input2" name="location" value="location2" checked>
+								<input type="radio" id="check-radio-input2" name="location" value="location2" onclick="reset();" checked>
 								<label for="check-radio-input2">
 								<span class="newAddr">신규입력</span></label>
 							</div>
@@ -513,14 +548,31 @@
 			</table>
 			</div>
 			</div>
+		
+			<script type="text/javascript">
 				
+			function test(midx){
+				$.ajax({
+		    		url:"/shoerologue/order/tests.do",
+		    		type:"POST",
+		    		data:"midx="+midx,
+		    		success:function(data){
+		    			//alert("ejejeje");
+		    			$("#rname").val(data.mName);
+		    			$("#rnumber").val(data.mPhone);
+		    		}
+		    	});
+			}
+			
+			
+			</script>
 			<!-- 결제수단 선택-->
 			<div>
 				<div class="ordererHead pt-4">결제수단선택</div>
 			</div>
 			<div class="orderBox mt-2 py-3">
-				<label class="box-radio-input"><input type="radio" name="payment" value="" checked><span>신용/체크카드</span></label>
-				<label class="box-radio-input"><input type="radio" name="payment" value=""><span>무통장입금</span></label>
+				<label class="box-radio-input"><input type="radio" name="payment" value="" checked><span>무통장입금</span></label>
+				<label class="box-radio-input"><input type="radio" name="payment" value=""><span>신용/체크카드</span></label>
 				<label class="box-radio-input"><input type="radio" name="payment" value=""><span>계좌이체</span></label>
 				<label class="box-radio-input"><input type="radio" name="payment" value=""><span>휴대폰결제</span></label>
 					
@@ -563,7 +615,7 @@
 			</div>
 			<div class="bottom-button-wrap">
 				<input type="button" id="gotomain" name="gotomain" class="gotomain" value="돌아가기">
-				<input type="button" id="goOrder2" name="goOrderbt2" class="orderb2" onclick="goOrderbtn2(); return false;" value="주문하기">
+				<input type="button" id="goOrder2" name="goOrderbt2" class="orderb2" onclick="testbtn2();" value="주문하기">
 			</div>
 		</div>
 		<script type="text/javascript">
@@ -574,7 +626,6 @@
 				  $(this).next(".anw").siblings(".anw").slideUp(300); // 1개씩 펼치기
 				});
 		
-			<!--돌아가기 버튼-->
 			$(document).ready(function(){
 				$('#gotomain').click(function(){
 					var result = confirm('메인페이지로 이동하시겠습니까?');
@@ -594,44 +645,55 @@
 						<li>
 							<div class="payment-text">
 								<span class="txt">총 정상가</span>
+								<span class="payTxt">
 								<span class="payment-sum" id="paymentsum"></span>
 								<span class="won">원</span>
+								</span>
 							</div>
 						</li>
 						<li>
 							<div class="payment-text">
 								<span class="txt">총 배송비</span>
-								<span class="payment-sum" id="deliverysum">
-								<span class="won">원</span></span>
+								<span class="payTxt">
+								<span class="payment-sum" id="deliverysum">0</span>
+								<span class="won">원</span>
+								</span>
 							</div>
 						</li>
 						<li>
 							<div class="payment-text">
 								<span class="txt">총 할인금액</span>
-								<span class="payment-sum" id="discountsum">0
-								<span class="won">원</span></span>
+								<span class="payTxt">
+								<span class="payment-sum" id="discountsum">0</span>
+								<span class="won">원</span>
+								</span>
 							</div>
 						</li>
 						<li>
 							<div class="payment-text">
 								<span class="txt">포인트사용</span>
-								<span class="payment-sum" id="usePoint">0
-								<span class="won">P</span></span>
+								<span class="payTxt">
+								<span class="payment-sum" id="usePoint">0</span>
+								<span class="won">P</span>
+								</span>
 							</div>
 						</li>
 					</ul>
 					<div>
 						<span class="totalSum">총 결제예정금액</span>
-						<span class="payment-sum2" id="totalPaymentPrice">
-						<span class="won">원</span></span>
+						<span class="payTxt">
+						<span class="payment-sum2" id="totalPaymentPrice"></span>
+						<span class="won">원</span>
+						</span>
 					</div>
 					<div class="btnBox">
-						<input type="button" name="orderbt1" id="orderb1" class="orderbtn1" onclick="goOrderbtn(); return false;" value="결제하기">
+						<input type="button" name="orderbt1" id="orderb1" class="orderbtn1" onclick="testbtn2();" value="결제하기">
 					</div>
 				</div>
 			</div>
+		</form>
 		</div>
-	</form>
+	
 	<!-- 우측하단 TOP 이동 배너 -->
 	<a href="#top">
 	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill top fixed" viewBox="0 0 16 16">
@@ -641,30 +703,32 @@
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
 	$(document).ready(function(){
-		$(".productTbl tbody tr").each(function(){
-			var pp = parseInt($(this).find(".pPriceVal1").text().replaceAll(",",""));
-			//alert(pp);
-			if(pp >= 50000){
-				$(".pPriceVal3").text(0);
+		let sum = 0;
+		var pp = parseInt($(".pPriceVal1").text().replaceAll(",",""));
+		var priceVal1 = $(".pPriceVal1").length;
+		
+		$(".productTbl tbody tr").find(".pPriceVal1").each(function(i, e){
+			//console.log($(this).text());
+				sum += parseInt($(this).text().replaceAll(",",""));
+		});
+		//console.log(sum);
+			//총 정상가
+		$("#paymentsum").text(comma(sum));
+			
+		<!--배송비-->	
+		var fee = parseInt(sum);
+		//console.log(payment);
+			if(fee >= 50000){
+				$("#deliverysum").text(0);
 			}else{
-				$(".pPriceVal3").text(comma(3000));
+				$("#deliverysum").text(comma(3000));
 			}
 			
-			var productPay = parseInt($(this).find(".pPriceVal1").text().replaceAll(",",""));
-			//alert(a);
-			var fee = parseInt($(this).find(".pPriceVal3").text().replaceAll(",",""));
-			//alert(productPay + fee);
-			
-			$(".pPriceVal2").text(comma(productPay+fee));
-			
-			var pv1 = parseInt($(this).find(".pPriceVal1").text().replaceAll(",",""));
-			var pv2 = parseInt($(this).find(".pPriceVal2").text().replaceAll(",",""));
-			var pv3 = parseInt($(this).find(".pPriceVal3").text().replaceAll(",",""));
-			//alert(pv);
-			$("#paymentsum").text(comma(pv1));
-			$("#totalPaymentPrice").text(comma(pv2));
-			$("#deliverysum").text(comma(pv3));
-		});
+		//총 결제금액
+		var deliSum = parseInt($("#deliverysum").text().replaceAll(",",""));
+		var paySum = parseInt($("#paymentsum").text().replaceAll(",",""));
+		//console.log(deliSum+paySum);
+		$(this).find("#totalPaymentPrice").text(comma(deliSum+paySum));
 	});	
 	
 	function zipbtn(){
@@ -733,6 +797,7 @@
 	      //결제가 정상적으로 완료되면 수행됩니다
 	      //비즈니스 로직을 수행하기 전에 결제 유효성 검증을 하시길 추천합니다.
 	      console.log(data);
+	      
 	  });
 	}
 	
