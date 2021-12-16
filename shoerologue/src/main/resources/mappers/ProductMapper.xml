@@ -19,14 +19,16 @@
 	 		,pFile3
 	 		,pFile4
 	 		,pFile5
-	 		,pWrite, 
-   		DECODE(pGender,'M','MEN','W','WOMEN','K','KIDS','MEN') as pGender
+	 		,pWrite
+	 		,case pGender when 'M' then 'MEN' when 'W' then 'WOMEN' when 'K' then 'KIDS' else 'MEN' end as pGender
    		FROM product
    		WHERE 1=1 
+   		<!-- select case pGender when 'M' then 'MEN' when 'W' then 'WOMEN' when 'K' then 'KIDS' else 'MEN' end as pGender from product -->
    </select>
 
 	<select id="detail" resultType="ProductVO" parameterType="int">
-		SELECT pidx
+		SELECT 
+			PIDX
 		    ,pSaleYn
 			,pNameKr
 			,pNameEng
@@ -41,9 +43,7 @@
 			,pFile3
 			,pFile4
 			,pFile5
-			,pWrite
-			,pDelYn,
-		DECODE(pGender,'M','MEN','W','WOMEN','K','KIDS','MEN') as pGender
+		,case pGender when 'M' then 'MEN' when 'W' then 'WOMEN' when 'K' then 'KIDS' else 'MEN' end as pGender
    		FROM product
         WHERE pidx = #{pidx}
 	</select>
@@ -51,8 +51,8 @@
 	 <insert id="insert" parameterType="productVO">
     <![CDATA[		
 		    INSERT INTO cart VALUES(
-		    	 ctidx_seq.nextval
-		    	,sysdate
+		    	 ctidx
+		    	,NOW()
 		    	,#{pidx}		
 		    	,#{midx}
 		    	,#{cnt}
@@ -67,9 +67,9 @@
     
      <insert id="productInsert" parameterType="productVO">
 		<![CDATA[		
-		    INSERT INTO product(PIDX,PNAMEKR,PNAMEENG,PBRANDKR,PBRANDENG,PSIZE,PCOLOR,PGENDER,PTYPE,PFILE1,PFILE2,PFILE3,PFILE4,PFILE5,PPRICE)
+		    INSERT INTO product(PIDX,PNAMEKR,PNAMEENG,PBRANDKR,PBRANDENG,PSIZE,PCOLOR,PGENDER,PTYPE,PFILE1,PFILE2,PFILE3,PFILE4,PFILE5,pWrite,PPRICE)
 			VALUES(
-		    	 pidx_seq.nextval
+		    	 pidx
 		    	,#{pNameKr}
 		    	,#{pNameEng}		
 		    	,#{pBrandKr}
@@ -83,6 +83,7 @@
 		    	,#{pFile3}
 		    	,#{pFile4}
 		    	,#{pFile5}
+		    	,now()
 		    	,#{pPrice}
 		    )
 		]]>
@@ -95,6 +96,8 @@
    </delete>    
   
    <select id="pdAllList" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+ 	 select * from product order by pidx desc limit #{rowStart}, #{rowEnd}
+   		 <!-- 
    		SELECT * 
 		FROM (
 			SELECT ROWNUM RN, A.* 
@@ -105,6 +108,7 @@
 						) A
 				)
 		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+		-->
 	</select>
    
    <select id="countAllList" resultType="int">
