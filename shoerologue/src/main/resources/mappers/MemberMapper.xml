@@ -6,6 +6,17 @@
 <mapper namespace="edu.study.mapper.MemberMapper">
 
      <select id="list" resultType="MemberVO">
+     	select midx
+	        	 , mName
+	        	 , mId
+	        	 , mPwd
+	        	 , mEmail
+	        	 , mPhone
+	        	 , mAddr
+	        	 , mJoindate
+	        	 , mDelYn
+	        	 , master  from member order by midx DESC limit #{rowStart}, #{rowEnd}
+        <!--
         SELECT * 
 		FROM (
 			SELECT ROWNUM RN, A.* 
@@ -25,6 +36,7 @@
 						) A
 				)
 		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+		-->
     </select>
     
     <!-- 총 멤버수 출력 -->
