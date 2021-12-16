@@ -6,10 +6,11 @@ font-family: 'Montserrat', "Noto Sans KR", sans-serif;
 	width:1200px;
 }
 .memberListBox{
-	padding:121px;
+	padding-top:121px;
+	padding-left:121px;
 }
 .memberSmBox{
-	width:950px;
+	width:1050px;
 	margin-left:100px;
 }
 .myPageTitle{
@@ -69,3 +70,4 @@ tr:first-child{
 	display:inline;
 	margin-right:5px;
 }
+.memberSmBox>

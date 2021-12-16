@@ -224,16 +224,16 @@
 			<div class="memberSmBox">
 				<h3>회원 목록(<%=pageMaker.getTotalCount()%>)</h3>
 				<br>
-				<table>
+				<table style="width:1000px;">
 					<tr>
-						<th height=60>회원 번호</th>
-						<th width=90>회원 이름</th>
-						<th width=120>회원 아이디</th>
-						<th width=120>회원 비밀번호</th>
-						<th width=170>회원 이메일</th>
+						<th width=70 height=60>회원 번호</th>
+						<th width=100>회원 이름</th>
+						<th width=130>회원 아이디</th>
+						<th width=130>회원 비밀번호</th>
+						<th width=180>회원 이메일</th>
 						<th width=130>회원 전화번호</th>
 						<th width=80>가입 날짜</th>
-						<th width=40>탈퇴</th>
+						<th width=60>탈퇴</th>
 					</tr>
 					<%
 					     if(list.size() != 0){
