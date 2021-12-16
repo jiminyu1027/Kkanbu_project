@@ -1,9 +1,10 @@
 package edu.study.controller;
 
+import java.io.File;
 import java.util.List;
 import java.util.Locale;
 
-
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -16,13 +17,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.study.service.CartService;
 import edu.study.service.MemberService;
 import edu.study.vo.CartVO;
 import edu.study.vo.MemberVO;
+import edu.study.vo.ProductVO;
 import edu.study.vo.QaVO;
+import edu.study.vo.ReviewVO;
+import utils.UploadFileUtils;
 
 @RequestMapping(value="/mypage/shopping")
 @Controller
@@ -36,6 +41,12 @@ public class ShoppingController {
 	
 	@Autowired
 	edu.study.service.QaService QaService;
+	
+	@Autowired
+	edu.study.service.ReviewService ReviewService;
+	
+	@Resource(name="uploadPath")
+	private String uploadPath;
 	
 	@RequestMapping(value="/wishlist.do")
 	public String wishlist(Locale locale, Model model, HttpSession session)throws Exception{
@@ -95,10 +106,54 @@ public class ShoppingController {
 	}
 	
 	@RequestMapping(value="/myReview.do")
-	public String myReview(Locale locale,Model model)throws Exception{
+	public String myReview(Locale locale,Model model,HttpSession httr)throws Exception{
+		
+		MemberVO member = (MemberVO)httr.getAttribute("member");
+		
+		int midx = member.getMidx();
+		
+		List<ReviewVO> mylist = ReviewService.mylist(midx);
+		
+		model.addAttribute("mylist",mylist);
 		
 		return "/mypage/shopping/myReview";
 	}
-}
-
 	
+	@RequestMapping(value="/myReviewAction.do" , method=RequestMethod.POST)
+	public String myReview(Locale locale,Model model,ReviewVO vo,HttpSession httr,int pidx,String pNameKr,String pBrandKr,MultipartFile rvtFile) throws Exception{
+		
+		String imgUploadPath = uploadPath + File.separator + "reviewFolder";
+		String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
+		String fileName = null;
+
+		if(rvtFile != null && rvtFile.getSize()>0) {
+		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, rvtFile.getOriginalFilename(), rvtFile.getBytes(), ymdPath); 
+		 vo.setRvFile(File.separator + "reviewFolder" + ymdPath + File.separator + fileName);
+		} else {
+		 vo.setRvFile("");
+		}
+		
+		MemberVO member = (MemberVO)httr.getAttribute("member");
+		
+		int midx = member.getMidx();
+		
+	
+		vo.setpNameKr(pNameKr);
+		vo.setpBrandKr(pBrandKr);
+		vo.setRvWriter(member.getmName());
+		vo.setMidx(midx);
+		vo.setPidx(pidx);
+		
+		
+		ReviewService.insert(vo);
+		
+		return "redirect:/mypage/shopping/myReview.do";
+	}
+	@RequestMapping(value="/reviewDel.do")
+	public String updateDel(Locale locale,Model model,int rvidx) throws Exception{
+		
+		ReviewService.updateDel(rvidx);
+		
+		return "redirect:/mypage/shopping/myReview.do";
+	}
+}

@@ -1,6 +1,11 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="edu.study.vo.*" %>
+<%
+	List<ReviewVO> mylist = (List<ReviewVO>)request.getAttribute("mylist");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -93,16 +98,13 @@
 			color:gray;
 		}
 		.inquiry-number{
-			text-align:left;
-			padding-left:30px;
+			text-align:center;
 		}
 		.inquiry-subject{
 			text-align:center;
 		}
 		.inquiry-writeday{
-			position:absolute;
-			text-align:right;
-			padding-left:320px;
+			text-align:center;
 		}
 		.inquiry-writer{
 			text-align:right;
@@ -112,8 +114,7 @@
 			border-bottom:1px solid gray;
 		}
 		.inquiry-number-detail{
-			text-align:left;
-			padding-left:35px;
+			text-align:center;
 			font-size:20px;
 			height:50px;
 		}
@@ -124,13 +125,12 @@
 			white-space: nowrap;
 			width:350px;
 			height:35px;
-			text-align:left;
-			padding-left:40px;
+			text-align:center;
 			padding-top:13px;
 			font-size:15px;
 		}
-		.inquiry-writeday-detail{	
-			padding-left:290px;
+		.inquiry-writeday-detail{
+			text-align:center;
 			font-size:20px;
 		}
 		.inquiry-btn-detail{
@@ -265,105 +265,181 @@
 	</div>
 <!-- body  -->
 
-	<div class="body-box">
-	<div style=" float: left; width: 0%;">&nbsp;</div>
-	<div style=" float: left; width: 99%;" class="mt-3">
-		<span style="color:#757575; font-size:1em">
-			<a href="/shoerologue" style="color:#757575; font-size:1.1em">
-			<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-house-fill mb-1" viewBox="0 0 16 16">
-			  <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-			  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
-			</svg>
-			HOME</a> 
-		> 마이페이지 > 나의 활동 > 1:1문의
-		</span>
-	</div>		
-	<!-- 좌측 마이페이지 메뉴-->
+	<div class="body-box">		
+		<!-- 좌측 마이페이지 메뉴-->
+		<c:if test="${master ne 'master'}">
+			<div style=" float: left; width: 0%;">&nbsp;</div>
+			<div style=" float: left; width: 99%;" class="mt-3">
+				<span style="color:#757575; font-size:1em">
+					<a href="/shoerologue" style="color:#757575; font-size:1.1em">
+						 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-house-fill mb-1" viewBox="0 0 16 16">
+				 			 <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+				 			 <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+						</svg>
+				HOME</a> 
+				> 마이페이지 > 나의 활동 > 나의 리뷰
+			</span>
+			</div>
+			<div style=" float: left; width: 20%;">
+			<div class="myPageMenu">
+				<div class="myPageTitle">
+					마이페이지
+				</div>
+				<div class="myPageMenu2">
+					<span style="font-size:1.3em; font-weight: bold;"><a href="#">나의 주문관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+					  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+					</svg></span>
+					<div class="myPageMenu3">
+						<a href="/shoerologue/mypage/claim/myPage.do" class="gray">주문/배송 조회</a><br>
+						<a href="/shoerologue/mypage/claim/orderCancel.do" class="gray">취소/교환/반품</a><br>
+						<a href="/shoerologue/mypage/claim/insertCard.do" class="gray">카드 등록 관리</a>
+					</div><br>
+				</div>
+				<div class="myPageMenu2">
+					<span style="font-size:1.3em; font-weight: bold;"><a href="#">나의 활동</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+					  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+					</svg></span>
+					<div class="myPageMenu3">
+						<a href="/shoerologue/cart/cart.do" class="gray">장바구니</a><br>
+						<a href="/shoerologue/mypage/shopping/wishlist.do" class="gray">찜리스트</a><br>
+						<a href="/shoerologue/mypage/shopping/qaList.do" class="gray">상품 Q&A</a><br>
+						<a href="/shoerologue/mypage/memberCounsel/inquiry.do" class="gray">1:1 문의</a><br>
+						<a href="/shoerologue/mypage/shopping/myReview.do" class="red">나의 리뷰*</a>
+					</div><br>
+				</div>
+				<div class="myPageMenu2">
+					<span style="font-size:1.3em; font-weight: bold;"><a href="#">내 정보 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+					  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+					</svg></span>
+					<div class="myPageMenu3">
+						<a href="/shoerologue/mypage/deliveryAddr/receiveAddr.do" class="gray">배송지 관리</a><br>
+						<a href="/shoerologue/mypage/privateInfo/myInfoPwd.do" class="gray">개인 정보 수정</a><br>
+						<a href="/shoerologue/member/leave.do" class="gray">회원 탈퇴</a>
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="empty-box"></div>
+			<div class="empty-box"></div>
+			<div class="mainTitle">나의 리뷰</div>	
+		</c:if>
+	<!-- 여기는 관리자가 보이는 화면 -->
+	<c:if test="${master eq 'master'}">
+		<!-- 페이지 이동경로 -->
+		<div style=" float: left; width: 0%;">&nbsp;</div>
+		<div style=" float: left; width: 99%;" class="mt-3">
+			<span style="color:#757575; font-size:1em">
+				<a href="/shoerologue" style="color:#757575; font-size:1.1em">
+				<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-house-fill mb-1" viewBox="0 0 16 16">
+				  <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+				  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+				</svg>
+				HOME</a> 
+			> 관리자 페이지 > 게시판 관리 > 리뷰 목록
+			</span>
+		</div>
+		
+		<!-- 좌측 마이페이지 메뉴-->
 		<div style=" float: left; width: 20%;">
 		<div class="myPageMenu">
 			<div class="myPageTitle">
-				마이페이지
+				관리자 페이지
 			</div>
 			<div class="myPageMenu2">
-				<span style="font-size:1.3em; font-weight: bold;"><a href="#">나의 주문관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">주문/배송 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="/shoerologue/mypage/claim/myPage.do" class="gray">주문/배송 조회</a><br>
-					<a href="/shoerologue/mypage/claim/orderCancel.do" class="gray">취소/교환/반품</a><br>
-					<a href="/shoerologue/mypage/claim/insertCard.do" class="gray">카드 등록 관리</a>
+					<a href="/shoerologue/mypage/claim/myPage.do" class="gray">주문 내역</a><br>
+					<a href="#" class="gray">배송 현황</a>
 				</div><br>
 			</div>
 			<div class="myPageMenu2">
-				<span style="font-size:1.3em; font-weight: bold;"><a href="#">나의 활동</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">게시판 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="/shoerologue/cart/cart.do" class="gray">장바구니</a><br>
-					<a href="/shoerologue/mypage/shopping/wishlist.do" class="gray">찜리스트</a><br>
-					<a href="/shoerologue/mypage/shopping/qaList.do" class="gray">상품 Q&A</a><br>
-					<a href="/shoerologue/mypage/memberCounsel/inquiry.do" class="gray">1:1 문의</a><br>
-					<a href="/shoerologue/mypage/shopping/myReview.do" class="red">나의 리뷰*</a>
-				</div><br>
-			</div>
-			<div class="myPageMenu2">
-				<span style="font-size:1.3em; font-weight: bold;"><a href="#">내 정보 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-				</svg></span>
-				<div class="myPageMenu3">
-					<a href="/shoerologue/mypage/deliveryAddr/receiveAddr.do" class="gray">배송지 관리</a><br>
-					<a href="/shoerologue/mypage/privateInfo/myInfoPwd.do" class="gray">개인 정보 수정</a><br>
-					<a href="/shoerologue/member/leave.do" class="gray">회원 탈퇴</a>
+					<a href="/shoerologue/customerService/notice.do" class="gray">공지 사항</a><br>
+					<a href="/shoerologue/customerService/cs.do" class="gray">FAQs</a><br>
+					<a href="/shoerologue/mypage/memberCounsel/inquiry.do" class="gray">1:1 문의 목록</a><br>
+					<a href="/shoerologue/mypage/shopping/qaList.do" class="gray">QNA 목록</a><br>
+					<a href="/shoerologue/mypage/shopping/myReview.do" class="red">리뷰 목록*</a>
 				</div>
 			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="/shoerologue/product/pdAllList.do">상품 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="/shoerologue/admin/pdAllList.do" class="gray">상품 목록</a><br>
+					<a href="/shoerologue/admin/productInsert.do" class="gray">상품 등록</a>
+				</div>
+			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">회원 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="/shoerologue/admin/memberList.do" class="gray">회원 목록</a>
+				</div>
+			</div>
+			
 		</div>
 		</div>
 		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
 		<div class="empty-box"></div>
 		<div class="empty-box"></div>
-		<div class="mainTitle">나의 리뷰</div>	
+		<div class="mainTitle">리뷰 목록</div>	
+		
+	</c:if>	
+		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
 		<br>
 		<br>	
-		<table class="inquiry-box">
-			<thead class="inquiry-title">
-				<tr>
-					<th class="inquiry-number" id="inquiry-number" name="inquiry-number">상품</th>
-					<th class="inquiry-subject" id="inquiry-subject" name="inquiry-subject">내용</th>
-					<th class="inquiry-writeday" id="inquiry-writeday" name="inquiry-writeday">작성일</th>
-					<th class="inquiry-writer" id="inquiry-writeday" name="inquiry-writeday">기타</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class="inquiry-contents-box">
-					<td class="inquiry-number-detail">1</td>
-					<td class="inquiry-subject-detail"><a href="#">아주 좋아요 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</a></td>
-					<td class="inquiry-writeday-detail">2021-11-02</td>
-					<td class="inquiry-btn-detail">
-						<input type="button" value="수정" onclick="location.href='/shoerologue/customerService/writeReview.do'">
-						<input type="button" value="삭제">
-					</td>
-				</tr>
-				<tr class="inquiry-contents-box">
-					<td class="inquiry-number-detail">2</td>
-					<td class="inquiry-subject-detail"><a href="#">ㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗㅗ</a></td>
-					<td class="inquiry-writeday-detail">2020-10-12</td>
-					<td class="inquiry-btn-detail">
-						<input type="button" value="수정" onclick="location.href='/shoerologue/customerService/writeReview.do'">
-						<input type="button" value="삭제">
-					</td>
-				</tr>
-				<tr class="inquiry-contents-box">
-					<td class="inquiry-number-detail">3</td>
-					<td class="inquiry-subject-detail"><a href="#">ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</a></td>
-					<td class="inquiry-writeday-detail">2017-11-08</td>
-					<td class="inquiry-btn-detail">
-						<input type="button" value="수정" onclick="location.href='/shoerologue/customerService/writeReview.do'">
-						<input type="button" value="삭제">
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		
+		<%if(mylist.size() > 0){ %>
+			<form action="/shoerologue/mypage/shopping/reviewDel.do" method="post">
+				<table class="inquiry-box">
+					<colgroup>
+						<col width=35% />
+						<col width=25% />
+						<col width=30% />
+						<col width=10% />
+					</colgroup>
+					<thead class="inquiry-title">
+						<tr>
+							<th class="inquiry-number" id="inquiry-number" name="inquiry-number">상품</th>
+							<th class="inquiry-subject" id="inquiry-subject" name="inquiry-subject">내용</th>
+							<th class="inquiry-writeday" id="inquiry-writeday" name="inquiry-writeday">작성일</th>
+							<th class="inquiry-writer" id="inquiry-writeday" name="inquiry-writeday">기타</th>
+						</tr>
+			<%for(int i=0; i<mylist.size();	 i++){ %>
+			<input type="hidden" name="rvidx" value="<%=mylist.get(i).getRvidx()%>">
+					</thead>
+					<tbody>
+						<tr class="inquiry-contents-box">
+							<td class="inquiry-number-detail"><%=mylist.get(i).getpBrandKr() %>-<%=mylist.get(i).getpNameKr() %></td>
+							<td class="inquiry-subject-detail"><%=mylist.get(i).getRvContents() %></td>
+							<td class="inquiry-writeday-detail"><%=mylist.get(i).getRvWriteday().substring(0,10) %></td>
+							<td class="inquiry-btn-detail">
+								<input type="submit" value="삭제">
+							</td>
+			<%} %>
+					</tr>
+					</tbody>
+				</table>
+			</form>	
+		<%}else{ %>
+			<table class="inquiry-box" style="border-top:1px solid gray;;">
+				<tbody>
+					<tr>
+						<td colspan="4" style="height:150px; text-align:center;">
+							<i class="bi bi-exclamation-circle exclamation"></i>
+							<br>
+							등록된 리뷰가 없습니다.
+						</td>
+					</tr>
+		<%} %>
+				</tbody>
+			</table>			
 	</div>	
 	<div class="empty-box"></div>
 	<div class="empty-box"></div>

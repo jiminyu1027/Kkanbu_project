@@ -1,6 +1,11 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="edu.study.vo.*" %>
+<%
+	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +18,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 
+		<script src="/shoerologue/js/jquery-3.6.0.min.js"></script>
 		<!-- Bootstrap Font Icon CSS 아이콘 -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"> -->
@@ -20,6 +26,43 @@
 		<link rel="stylesheet" href="/shoerologue/resources/css/headerFooter.css">
 		<link rel="stylesheet" href="/shoerologue/resources/css/mypage.css">
 		
+		<script>
+			$(document).ready(function(){
+				$("#file").on('change',function(){
+				  var fileName = $("#file").val();
+				  $(".upload-name").val(fileName);
+				});
+			});
+			const drawStar = (target) => {
+		    	document.querySelector(`.star span`).style.width = (target.value * 10)+`%`;
+		  	}
+			function  subFn(){
+				var title = document.frm.rvTitle;
+				var contents = document.frm.contents;
+				var sstar = document.frm.check.value;
+				if(sstar == 0){
+					alert("별점을 주세요!");
+					return false;
+				}else if(!title.value){
+					alert("한 줄 평가를 남겨주세요!")	
+					title.focus();
+					return false;
+				}else if(!contents.value){
+					alert("의견을 남겨주세요!");
+					contents.focus();
+					
+					return false;
+				}
+				var star = sstar/2; 
+				
+				alert(star);
+				 
+				$("#sstar").val(star);
+				//console.log($("#sstar"));
+				return true; 
+			}
+			
+		</script>
 		<style>
       @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
       *{
@@ -338,7 +381,11 @@
 		</div>
 		</div>
 		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
-		<form action="/shoerologue/mypage/shopping/myReview.do" method="post" class="frm" id="frm" name="frm">
+		<form action="/shoerologue/mypage/shopping/myReviewAction.do" method="post" class="frm" id="frm" name="frm" enctype="multipart/form-data" onsubmit="return subFn()">
+			<input type="hidden" name="rvStar" id="sstar">
+			<input type="hidden" name="pidx" value="<%=pvo.getPidx() %>">
+			<input type="hidden" name="pBrandKr" value="<%=pvo.getpBrandKr() %>">
+			<input type="hidden" name="pNameKr" value="<%=pvo.getpNameKr() %>">
 			<table class="inquiry-box">
 				<colgroup>
 					<col width="150px">
@@ -347,12 +394,12 @@
 				<tr class="head-box">
 					<td class="image-detail">
 						<div class="image-box">
-				  			<img src="../resources/image/hot1.jpg" class="card-img-top" alt="...">
+				  			<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>" class="card-img-top" alt="...">
 				  		</div>
 					</td>
 					<td colspan="2">
-						<h6>컨버스</h6>
-						<label>척 70 하이</label>
+						<h6><%=pvo.getpBrandKr() %></h6>
+						<label><%=pvo.getpNameKr() %></label>
 					</td>
 				</tr>
 				<tr>
@@ -361,39 +408,40 @@
 					</td>
 				</tr>
 				<tr class="trs-line">
-					<td colspan="2">
-						<center>
+					<td colspan="2" style="text-align:center;">						
 							<span class="star" id="star">
 								  ★★★★★
-		  						<span>★★★★★</span>
+		  						<span class="rvStar">★★★★★</span>
 		  						<input type="range" name="check" id="check" oninput="drawStar(this)" value="0" step="1" min="0" max="10">
-							</span>
-						</center>
+							</span>						
 					</td>   
 				</tr>
 				</table>
 				<table class="inquiry-box">
 				<tr>
 				<br>
-					<td colspan="2">
-						<center><h5>상품에 대한 고객님의 의견을 남겨주세요!</h5></center>
+					<td colspan="2" style="text-align:center;">
+						<h5>상품에 대한 고객님의 의견을 남겨주세요!</h5>
 					</td>
 				</tr>
 				<tr>
+					<td><input type="text" placeholder="한 줄 평가를 남겨주세요!" style="width:100%; height:40px;" id="rvTitle" name="rvTitle"></td>
+				</tr>
+				<tr>
 					<td style="height:190px;">
-						<textarea placeholder="의견을 남겨주세요!" id="contents"></textarea>
+						<textarea placeholder="의견을 남겨주세요!" id="contents" name="rvContents"></textarea>
 					</td>
 				</tr>
 				<tr>
 					<td class="filebox">
 						<input class="upload-name" value="첨부파일" placeholder="첨부파일">
 					    <label for="file">파일찾기</label> 
-					    <input type="file" id="file">
+					    <input type="file" id="file" name="rvtFile">
 					</td>
 				</tr>
 				<tr>
 					<td>
-						<input type="submit" value="수정" class="subFn" onclick="return subFn()">
+						<input type="submit" value="작성" class="subFn">
 					</td>
 				</tr>
 				<tr>
@@ -403,29 +451,6 @@
 				</tr>
 			</table>
 		</form>
-		<script src="/js/jquery-3.6.0.min.js"></script>
-		<script>
-			const drawStar = (target) => {
-		    	document.querySelector(`.star span`).style.width = (target.value * 10)+`%`;
-		  	}
-			function  subFn(){
-				var contents = document.frm.contents;
-				var star = document.frm.check.value;
-				if(star == 0){
-					alert("별점을 주세요!");
-					return false;
-				}else if(!contents.value){
-					alert("의견을 남겨주세요!");
-					contents.focus();
-					return false;
-				}
-				return true;
-			}
-			$("#file").on('change',function(){
-			  var fileName = $("#file").val();
-			  $(".upload-name").val(fileName);
-			});
-		</script>
 	</div>	
 	<div class="empty-box"></div>
 	<div class="empty-box"></div>

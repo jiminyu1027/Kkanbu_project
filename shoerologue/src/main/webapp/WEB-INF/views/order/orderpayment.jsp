@@ -34,7 +34,7 @@
 			font-family: 'Montserrat', "Noto Sans KR", sans-serif;
 		}
 	</style>
-	<script src="/js/jquery-3.6.0.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
 	function testbtn2(){
 		
@@ -433,9 +433,7 @@
 				$(document).ready(function(){
 					$("table tbody tr").each(function(){
 						var priceT = parseInt($(this).find("#hiddenPrice").val().replaceAll(",",""));
-						//alert(priceT);
 						var cnts = $(this).find(".pAmountOp").html();
-						//alert(cnts);
 						
 						$(this).find("#pPriceVal1").text(comma(priceT*cnts));
 					});

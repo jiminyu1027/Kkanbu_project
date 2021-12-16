@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="edu.study.mapper.ReviewMapper">
+	
+	<insert id="insert" parameterType="edu.study.vo.ReviewVO">
+		<![CDATA[
+			INSERT INTO REVIEW(
+				RVIDX,RVTITLE
+				,RVCONTENTS,RVFILE
+				,RVSTAR,MIDX,PIDX,RVWRITER
+				,PBRANDKR,PNAMEKR)
+				VALUES(
+				RVIDX_SEQ.nextval
+				,#{rvTitle}
+				,#{rvContents}
+				,#{rvFile}
+				,#{rvStar}
+				,#{midx}
+				,#{pidx}
+				,#{rvWriter}
+				,#{pBrandKr}
+				,#{pNameKr}
+				)
+		]]>
+	</insert>
+
+	<select id="prvlist" resultType="edu.study.vo.ReviewVO">
+		SELECT * FROM REVIEW WHERE 1=1 AND PIDX = #{pidx} AND RVDELYN = 'N' ORDER BY RVIDX DESC
+	</select>
+	
+	<select id="mylist" resultType="edu.study.vo.ReviewVO">
+		SELECT * FROM REVIEW WHERE 1=1 AND MIDX = #{midx} AND RVDELYN = 'N' ORDER BY RVIDX DESC
+	</select>
+	
+	<update id="updateDel" parameterType="int">
+		UPDATE REVIEW SET RVDELYN = 'Y' WHERE RVIDX = #{rvidx}
+	</update>
+</mapper>  
