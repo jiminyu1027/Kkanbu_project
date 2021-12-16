@@ -359,10 +359,12 @@
 									<td class="inquiry-writeday-detail"><%=qlist.get(i).getqWriteday().substring(0,10) %></td>
 									<td class="inquiry-writer-detail"><%=qlist.get(i).getqReason() %></td>
 								</tr>
+							</tbody>
+					</table>	
 							<%} %>		
 					
 				<%}else{ %>	
-					<table class="inquiry-box" style="border-top:1px solid gray;;">
+					<table class="inquiry-box" style="border-top:1px solid gray; border-bottom:1px solid gray; height:500px;">
 						<tbody>
 							<tr>
 								<td colspan="4" style="height:150px; text-align:center;">
@@ -371,9 +373,10 @@
 									등록된 문의가 없습니다.
 								</td>
 							</tr>
-				<%} %>
 						</tbody>
 					</table>	
+				<%} %>
+							
 			</c:if>
 			<c:if test="${master eq 'master'}">
 				<%if(masterList.size()>0){ %>	
@@ -406,7 +409,7 @@
 						</tbody>
 					</table>
 				<%}else{ %>	
-					<table class="inquiry-box" style="border-top:1px solid gray;;">
+					<table class="inquiry-box" style="border-top:1px solid gray;  border-bottom:1px solid gray; height:500px;">
 						<tbody>
 							<tr>
 								<td colspan="4" style="height:150px; text-align:center;">

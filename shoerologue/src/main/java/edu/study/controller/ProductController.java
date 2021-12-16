@@ -53,7 +53,6 @@ public class ProductController {
 	public String product(Locale locale, Model model,int pidx,HttpSession session)throws Exception {
 		MemberVO member=(MemberVO)session.getAttribute("member");
 		
-		if(member != null){
 			ProductVO pvo = productService.detail(pidx);
 			model.addAttribute("pvo", pvo);
 				
@@ -65,9 +64,6 @@ public class ProductController {
 			
 		return "/product/product";
 		
-		}else {
-			return "redirect:/login.do";
-		}
 	}	
 	
 	

@@ -452,12 +452,10 @@
 								<div class="btnBox">
 									<c:if test="${master eq 'master'}">
 										<button type=button class="delBtn" onclick="location.href='/shoerologue/admin/delProduct.do?pidx=<%=pvo.getPidx()%>'">삭제</button>
+										<button type=button class="modifyBtn" onclick="location.href='/shoerologue/admin/productModify.do?pidx=<%=pvo.getPidx()%>'">수정</button>
 									</c:if>
 								</div>
 							</form>
-							<c:if test="${master eq 'master'}">
-								<button type=button class="modifyBtn" onclick="location.href='/shoerologue/admin/productModify.do?pidx=<%=pvo.getPidx()%>'">수정</button>
-							</c:if>
 						</div>
 					</div>
 				</div>
@@ -643,13 +641,12 @@
 						<%}else{ %>	
 						<hr>
 						<!-- 리뷰가 없을때 -->
-						<hr>
 							<div class="noReview">
-								<div><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+								<div><svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
 								  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 								  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-								</svg></div>
-								<div>등록된 리뷰가 없습니다.</div>
+								</svg></div><br>
+								<div class="rvQnaText">등록된 리뷰가 없습니다.</div>
 							</div>
 						<hr>
 						<%} %>
@@ -815,11 +812,11 @@
 						<!-- 상품 Q&A가 없을때 -->
 						<hr>
 						<div class="noQNA">
-							<div><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+							<div><svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
 								<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 								<path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-							</svg></div>
-							<div>등록된 상품 Q&amp;A가 없습니다.</div>
+							</svg></div><br>
+							<div class="rvQnaText">등록된 상품 Q&amp;A가 없습니다.</div>
 						</div>	
 						<hr>
 					<%} %>

@@ -361,6 +361,7 @@
 						</tr>
 					<%} %>
 				<%}else if(loginU.getMaster().equals("master")){ %>	
+					<%if(masterList.size() >0){ %>
 					<thead class="inquiry-title">
 						<tr>
 							<th class="inquiry-number" id="inquiry-number" name="inquiry-number">번호</th>
@@ -382,9 +383,18 @@
 							<td class="inquiry-writer-detail"><%=masterList.get(j).getPqWriter() %></td>	
 						</tr>
 					<%} %>
+					<%}else %>
+					<tr>
+						<td colspan="4" style="height:500px; text-align:center;">
+							<i class="bi bi-exclamation-circle exclamation"></i>
+							<br>
+							등록된 Q&amp;A가 없습니다.
+						</td>
+					</tr>
+					
 				<%}else{ %>
 					<tr>
-						<td colspan="4" style="height:150px; text-align:center;">
+						<td colspan="4" style="height:500px; text-align:center;">
 							<i class="bi bi-exclamation-circle exclamation"></i>
 							<br>
 							등록된 Q&amp;A가 없습니다.
