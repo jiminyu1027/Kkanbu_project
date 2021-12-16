@@ -12,7 +12,7 @@
 				,PQCONTENTS,PQWRITER
 				,PQOPEN,MIDX,PIDX)
 				VALUES(
-				PQIDX_SEQ.nextval
+				PQIDX
 				,#{pqSubject}
 				,#{pqContents}
 				,#{pqWriter}

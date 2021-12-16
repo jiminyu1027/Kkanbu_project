@@ -10,7 +10,7 @@
 		INSERT INTO NOTICE(
 			NIDX,NTITLE,NCONTENTS,NFILE)
 			VALUES(
-			NIDX_SEQ.nextval
+			NIDX
 	        ,#{nTitle}
 			,#{nContents}
 	        ,#{nFile}
@@ -19,8 +19,8 @@
 	</insert>
 	
 	<select id="nlist" resultType="edu.study.vo.NoticeVO">
+		SELECT * FROM notice WHERE 1=1 AND nidx=#{nidx} ORDER BY nidx desc
 		
-		select rownum , a.* from notice a
 	</select>
 	
 	<select id="detail" resultType="edu.study.vo.NoticeVO" parameterType="int">

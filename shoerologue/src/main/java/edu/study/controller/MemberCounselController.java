@@ -81,7 +81,6 @@ public class MemberCounselController {
 		String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
 		String fileName = null;
 
-//		if(qqFile.getOriginalFilename() != null && qqFile.getOriginalFilename() != "") {
 		if(qqFile != null && qqFile.getSize()>0) {
 		 fileName =  UploadFileUtils.fileUpload(imgUploadPath, qqFile.getOriginalFilename(), qqFile.getBytes(), ymdPath); 
 		 vo.setqFile(File.separator + "imgUpload" + ymdPath + File.separator + fileName);

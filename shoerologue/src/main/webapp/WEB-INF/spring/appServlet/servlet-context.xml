@@ -22,11 +22,11 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	
 	<context:component-scan base-package="edu.study.controller" />
 	<context:component-scan base-package="edu.study.service" />
 	<context:component-scan base-package="edu.study.dao" />
 	<context:component-scan base-package="edu.study.utils" />
+	<context:component-scan base-package="edu.study.domain" />
 	
 	<context:annotation-config />
 	<!-- 업로드 패스 설정 --> 

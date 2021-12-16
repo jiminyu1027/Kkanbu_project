@@ -243,7 +243,7 @@ th{
 	color:#747774;
 	padding-top:30px;
 }
-.ReviewBtn>button{
+.ReviewBtn{
 	width:150px;
 	height:50px;
 	background-color:black;
@@ -330,7 +330,6 @@ table{
 }
 .reviewImg{
 	margin-top:10px;
-	margin:auto;
 	width:100px;
 	height:100px;
 }
@@ -340,7 +339,8 @@ table{
 	width:1050px;
 	height:100px;
 }
-.reviewHelpBtn>button{
+.reviewHelpBtn{
+	width:95px;
 	background-color:white;
 	border:1px solid lightgray;
 	border-radius: 30px;

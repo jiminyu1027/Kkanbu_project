@@ -24,7 +24,7 @@
     <insert id="insert" parameterType="AddressVO">
 	<![CDATA[
 		INSERT INTO Address(adidx, adrec, adphone, addr1,addr3, midx) VALUES(
-			adidx_seq.nextval
+			adidx
 			,#{adRec}
 			,#{adPhone}
 			,#{addr1}

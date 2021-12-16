@@ -319,7 +319,7 @@
 			</span>
 			<span class="resultText">
 				<span class="totalText">총</span>
-				<span class="eaText">1</span>
+				<span class="eaText"><%=list.size()%></span>
 				<span class="haveText">개의 상품이 있습니다.</span>
 			</span>
 		</div>

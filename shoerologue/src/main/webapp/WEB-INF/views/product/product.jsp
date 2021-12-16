@@ -9,6 +9,8 @@
 	List<QaVO> qalist = (List<QaVO>)request.getAttribute("qalist");
 	
 	MemberVO loginU = (MemberVO)session.getAttribute("member");
+	
+	List<ReviewVO> prvlist = (List<ReviewVO>)request.getAttribute("prvlist");
 %>
 <!DOCTYPE html>
 <html>
@@ -32,8 +34,39 @@
 	   
  	 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		
+		<script>
+	   		const drawStar = (target) => {
+	    	document.querySelector(`.star span`).style.width = (target.value * 10)+`%`;
+	  		}
+	   	</script>
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+			.jumpLine{
+				border:1px solid #BDBDBD;
+				margin-top:15px;
+				margin-bottom:10px;
+			}	
+			.star {
+				width:10%;
+			  	position: relative;
+			  	font-size: 1.2rem;
+			  	color: #ddd;
+			}
+			.star input {
+				  width: 100%;
+				  height: 100%;
+				  position: absolute;
+				  left: 0;
+				  opacity: 0;
+			}		
+			.star span {
+				  width: 0;
+				  position: absolute; 
+				  left: 0;
+				  color: black;
+				  overflow: hidden;
+				  pointer-events: none;
+			}
 		</style>
 		<!-- 상품 이미지 페이지 클릭시 사진 변화 -->
 		<script>
@@ -250,11 +283,11 @@
 					<!-- 상품 이미지 -->
 					<div class="productImgBox">
 						<div>
-						 	<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>" class="pdImage" alt="...">
+						 	<img src="/shoerologue/resources<%=pvo.getpFile1()%>" class="pdImage" alt="...">
 						</div>
 						<div class="pdSmImgeBox">
-							<a href="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>">
-								<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>" class="pdSmImge" alt="...">
+							<a href="/shoerologue/resources<%=pvo.getpFile1()%>">
+								<img src="/shoerologue/resources<%=pvo.getpFile1()%>" class="pdSmImge" alt="...">
 							</a>
 							<%
 							     if(pvo.getpFile2() != null){    
@@ -561,65 +594,54 @@
 				
 				<div class="pdReviewBox2">
 					<div class="gap100"></div>
-						<span>총 <span class="redBold">0</span>개의 리뷰가 있습니다.</span>
-					<div class="pdReviewList">
+						<span>총 <span class="redBold"><%=prvlist.size() %></span>개의 리뷰가 있습니다.</span>
+					<div class="pdReviewList" style="border-top:1px solid black; padding-top:10px;">
 						 
 						<!-- 리뷰가 있을때 -->
-						<!-- 
+						<%if(prvlist.size()>0){ %>
+							<%for(int i=0; i<prvlist.size(); i++){ %>
+								<div style="margin-left:20px;">
+									<div>
+										<span width=30 height=30></span>
+										<span width=120>
+											<div colspan="2" style="text-align:left;">						
+												<span class="star" id="star">
+													  ★★★★★
+		  											<span class="rvStar" style="width:<%=Double.parseDouble(prvlist.get(i).getRvStar())*20 %>%;" readonly>★★★★★</span>
+		  											<input type="range" name="check" id="check" oninput="drawStar(this)" value="<%=prvlist.get(i).getRvStar()%>" step="1" min="0" max="0">
+												</span>						
+											</div>
+										</span>
+									</div>
+									<div style="margin-top:10px;"><%=prvlist.get(i).getRvWriter().substring(0,1) %>*<%if(prvlist.get(i).getRvWriter().length() == 3){%><%=prvlist.get(i).getRvWriter().substring(2,3) %>
+																<%}else if(prvlist.get(i).getRvWriter().length() == 4){%><%=prvlist.get(i).getRvWriter().substring(2,4) %>
+																<%}else{} %>
+									</div>		
+									<div style="margin-top:10px;">
+										<span height=120></span>
+										
+											<div class="reviewImg">
+												<%if(prvlist.get(i).getRvFile() != null){ %>
+												<img src="/shoerologue/resources<%=prvlist.get(i).getRvFile()%>" style="width:200px; height:200px;">
+											</div>
+											<span colspan="4">
+												<div class="reviewContents"></div>
+											</span>
+												<%}else{} %>
+									</div>
+									<div style="margin-top:10px;">
+										<span height=30 colspan="4" style="font-size:20px; font-weight:bold;"><%=prvlist.get(i).getRvTitle() %></span><br>
+										<span height=30 colspan="4"><%=prvlist.get(i).getRvContents() %></span>
+											<div class="reviewHelpBtn" style="margin-top:10px;"><span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16">
+												<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+												<path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
+											</svg>&nbsp;&nbsp;도움돼요 0 </span></div>
+									</div>
+								</div>	
+								<div class="jumpLine"></div>
+							<%} %>
+						<%}else{ %>	
 						<hr>
-							<table>
-								<tr>
-									<td width=30 height=30></td>
-									<td width=120>
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-										  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-										</svg>
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-										  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-										</svg>
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-										  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-										</svg>
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-										  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-										</svg>
-										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
-										  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
-										</svg>
-									</td>
-									<td width=150>상품색깔/사이즈</td>
-									<td width=550></td>
-									<td width=200>유저 아이디</td>
-									<td width=150>리뷰 올린 날짜</td>
-								</tr>
-								<tr>
-									<td height=120></td>
-									<td>
-										<div class="reviewImg">
-											<img src="#">
-										</div>
-									</td>
-									<td colspan="4">
-										<div class="reviewContents">내용</div>
-									</td>
-								</tr>
-								<tr>
-									<td height=30></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td></td>
-									<td>
-										<div class="reviewHelpBtn"><button><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16">
-											<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-											<path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
-										</svg>&nbsp;&nbsp;도움돼요 0 </button></div>
-									</td>
-								</tr>
-							</table>
-						<hr>
-						 -->
-						
 						<!-- 리뷰가 없을때 -->
 						<hr>
 							<div class="noReview">
@@ -630,12 +652,14 @@
 								<div>등록된 리뷰가 없습니다.</div>
 							</div>
 						<hr>
+						<%} %>
 						<!-- 
 						<center>페이징 처리</center>
 						 -->
-						<div class="ReviewBtn">
-							<button onclick="location.href='/shoerologue/customerService/writeReview.do'"> 상품 후기 작성</button>
-						</div>
+						<form action="/shoerologue/customerService/writeReview.do" method="get">
+							<input type="hidden" name="pidx" value="<%=pvo.getPidx() %>">
+							<input type="submit" class="ReviewBtn"value="상품 후기 작성">
+						</form>
 					</div>
 				</div>
 			</div>
@@ -690,6 +714,11 @@
 											<td width=150 height=60 style="text-align:center;">
 												<%=qalist.get(i).getPqWriteday().substring(0,10) %>
 											</td>
+											<%if(qalist.get(i).getAnswer() != null){ %>
+												<td width=200 style="text-align:center; color:red;">답변완료</td>
+											<%}else{ %>
+												<td width=200 style="text-align:center; color:black;">답변 대기 중</td>
+											<%} %>
 									</tr>
 										<%}else if(loginU.getMidx() == qalist.get(i).getMidx()){ %>
 											<input type="hidden" name="pqidx" value="<%=qalist.get(i).getPqidx() %>">
@@ -701,9 +730,7 @@
 															<%=qalist.get(i).getAnswer() %>
 														</div>
 													<%}else{ %>
-														<div class="explText">
-															
-														</div>
+														<div class="explText"></div>
 													<%} %>	
 											</div>
 											<td width=200 height=60 style="text-align:center;">
@@ -712,6 +739,11 @@
 											<td width=150 height=60 style="text-align:center;">
 												<%=qalist.get(i).getPqWriteday().substring(0,10) %>
 											</td>
+											<%if(qalist.get(i).getAnswer() != null){ %>
+												<td width=200 style="text-align:center; color:red;">답변완료</td>
+											<%}else{ %>
+												<td width=200 style="text-align:center; color:black;">답변 대기 중</td>
+											<%} %>
 										</tr>
 										<%} %>	
 									<%}else{ %>
@@ -722,6 +754,11 @@
 										<td width=150 height=60 style="text-align:center;">
 											<%=qalist.get(i).getPqWriteday().substring(0,10) %>
 										</td>
+										<%if(qalist.get(i).getAnswer() != null){ %>
+											<td width=200 style="text-align:center; color:red;">답변완료</td>
+										<%}else{ %>
+											<td width=200 style="text-align:center; color:black;">답변 대기 중</td>
+										<%} %>
 									</tr>
 									<%} %>
 								<%}else if(qalist.get(i).getPqOpen().equals("Y") ){ %>
@@ -730,9 +767,13 @@
 										<div class="que" style="border:none;">&nbsp;&nbsp;&nbsp;&nbsp;<%=qalist.get(i).getPqSubject() %></div>
 										<div class="anw" style="border:none;">
 											<%=qalist.get(i).getPqContents() %>
-												<div class="explText">
- 													<%=qalist.get(i).getAnswer() %>
-												</div>
+													<%if(qalist.get(i).getAnswer() != null){ %>
+														<div class="explText">
+															<%=qalist.get(i).getAnswer() %>
+														</div>
+													<%}else{ %>
+														<div class="explText"></div>
+													<%} %>
 										</div>
 									</td>
 									<td width=200 height=60 style="text-align:center;">
@@ -741,6 +782,11 @@
 									<td width=150 height=60 style="text-align:center;">
 										<%=qalist.get(i).getPqWriteday().substring(0,10) %>
 									</td>
+									<%if(qalist.get(i).getAnswer() != null){ %>
+										<td width=200 style="text-align:center; color:red;">답변완료</td>
+									<%}else{ %>
+										<td width=200 style="text-align:center; color:black;">답변 대기 중</td>
+									<%} %>		
 								</tr>
 								<%}else{ %>
 										<td width=600 height=60>
@@ -754,9 +800,14 @@
 										<td width=150 height=60 style="text-align:center;">
 											<%=qalist.get(i).getPqWriteday().substring(0,10) %>
 										</td>
+										<%if(qalist.get(i).getAnswer() != null){ %>
+											<td width=200 style="text-align:center; color:red;">답변완료</td>
+										<%}else{ %>
+											<td width=200 style="text-align:center; color:black;">답변 대기 중</td>
+										<%} %>
 									</tr>
 								<%} %>
-							<%} %>
+							<%} %>	
 						<%} %>	
 						</table>
 					<hr>

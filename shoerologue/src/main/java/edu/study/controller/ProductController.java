@@ -26,6 +26,7 @@ import edu.study.vo.InquiryVO;
 import edu.study.vo.MemberVO;
 import edu.study.vo.ProductVO;
 import edu.study.vo.QaVO;
+import edu.study.vo.ReviewVO;
 import utils.UploadFileUtils;
 
 @RequestMapping(value="/")
@@ -41,6 +42,9 @@ public class ProductController {
 	@Autowired
 	edu.study.service.QaService QaService;
 	
+	@Autowired
+	edu.study.service.ReviewService ReviewService;
+	
 	
 	@Resource(name="uploadPath")
 	private String uploadPath;
@@ -54,7 +58,10 @@ public class ProductController {
 			model.addAttribute("pvo", pvo);
 				
 			List<QaVO> qalist = QaService.productList(pidx);
-			model.addAttribute("qalist",qalist);	
+			model.addAttribute("qalist",qalist);
+			
+			List<ReviewVO> prvlist = ReviewService.prvlist(pidx);
+			model.addAttribute("prvlist",prvlist);
 			
 		return "/product/product";
 		
@@ -63,12 +70,6 @@ public class ProductController {
 		}
 	}	
 	
-	@RequestMapping(value="/cart/cart.do",method=RequestMethod.GET)
-	public String insert(Model model, ProductVO pvo,HttpSession session)throws Exception {
-		MemberVO member = (MemberVO)session.getAttribute("member");
-		
-		return "/shoerologue/cart/cart";
-	}
 	
 	@RequestMapping(value="/cart/cart.do",method=RequestMethod.POST)
 	public String insert(Locale locale, Model model, ProductVO pvo,HttpSession session)throws Exception {

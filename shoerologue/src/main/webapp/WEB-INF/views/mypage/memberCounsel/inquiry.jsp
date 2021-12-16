@@ -368,7 +368,7 @@
 								<td colspan="4" style="height:150px; text-align:center;">
 									<i class="bi bi-exclamation-circle exclamation"></i>
 									<br>
-									등록된 Q&amp;A가 없습니다.
+									등록된 문의가 없습니다.
 								</td>
 							</tr>
 				<%} %>
@@ -376,34 +376,48 @@
 					</table>	
 			</c:if>
 			<c:if test="${master eq 'master'}">
-				<table class="inquiry-box table table-hover">
-					<colgroup>
-						<col width="10%">
-						<col width="60%">
-						<col width="20%">
-						<col width="10%">
-					</colgroup>
-					<thead class="inquiry-title">
-						<tr>
-							<th class="inquiry-number" id="inquiry-number" name="inquiry-number">번호</th>
-							<th class="inquiry-subject" id="inquiry-subject" name="inquiry-subject">제목</th>
-							<th class="inquiry-writeday" id="inquiry-writeday" name="inquiry-writeday">작성일</th>
-							<th class="inquiry-writer" id="inquiry-writeday" name="inquiry-writeday">문의유형</th>
-						</tr>
-					</thead>
-					<tbody>	
-						<%
-							for(int j=0; j<masterList.size(); j++){
-						%>
-							<tr class="inquiry-contents-box">
-								<td class="inquiry-number-detail"><%=j+1 %></td>
-								<td class="inquiry-subject-detail" onclick="location.href='/shoerologue/mypage/claim/inquiryContents.do?qidx=<%=masterList.get(j).getQidx()%>'"><%=masterList.get(j).getqTitle() %></td>
-								<td class="inquiry-writeday-detail"><%=masterList.get(j).getqWriteday().substring(0,10) %></td>
-								<td class="inquiry-writer-detail"><%=masterList.get(j).getqReason() %></td>
+				<%if(masterList.size()>0){ %>	
+					<table class="inquiry-box table table-hover">
+						<colgroup>
+							<col width="10%">
+							<col width="60%">
+							<col width="20%">
+							<col width="10%">
+						</colgroup>
+						<thead class="inquiry-title">
+							<tr>
+								<th class="inquiry-number" id="inquiry-number" name="inquiry-number">번호</th>
+								<th class="inquiry-subject" id="inquiry-subject" name="inquiry-subject">제목</th>
+								<th class="inquiry-writeday" id="inquiry-writeday" name="inquiry-writeday">작성일</th>
+								<th class="inquiry-writer" id="inquiry-writeday" name="inquiry-writeday">문의유형</th>
 							</tr>
-						<%} %>		
-					</tbody>
-				</table>
+						</thead>
+						<tbody>	
+							<%
+								for(int j=0; j<masterList.size(); j++){
+							%>
+								<tr class="inquiry-contents-box">
+									<td class="inquiry-number-detail"><%=j+1 %></td>
+									<td class="inquiry-subject-detail" onclick="location.href='/shoerologue/mypage/claim/inquiryContents.do?qidx=<%=masterList.get(j).getQidx()%>'"><%=masterList.get(j).getqTitle() %></td>
+									<td class="inquiry-writeday-detail"><%=masterList.get(j).getqWriteday().substring(0,10) %></td>
+									<td class="inquiry-writer-detail"><%=masterList.get(j).getqReason() %></td>
+								</tr>
+							<%} %>		
+						</tbody>
+					</table>
+				<%}else{ %>	
+					<table class="inquiry-box" style="border-top:1px solid gray;;">
+						<tbody>
+							<tr>
+								<td colspan="4" style="height:150px; text-align:center;">
+									<i class="bi bi-exclamation-circle exclamation"></i>
+									<br>
+									등록된 문의가 없습니다.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				<%} %>			
 			</c:if>
  								
 	</div>	

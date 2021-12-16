@@ -398,7 +398,7 @@
 					<a href="/shoerologue/customerService/cs.do" class="gray">FAQs</a><br>
 					<a href="/shoerologue/mypage/memberCounsel/inquiry.do" class="gray">1:1 문의 목록</a><br>
 					<a href="/shoerologue/mypage/shopping/qaList.do" class="gray">QNA 목록</a><br>
-					<a href="#" class="gray">리뷰 목록</a>
+					<a href="/shoerologue/mypage/shopping/myReview.do" class="gray">리뷰 목록</a>
 				</div>
 			</div>
 			<div class="myPageMenu2">

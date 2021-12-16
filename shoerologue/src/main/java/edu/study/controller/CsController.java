@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import edu.study.vo.MemberVO;
 import edu.study.vo.NoticeVO;
+import edu.study.vo.ProductVO;
 import edu.study.vo.QaVO;
 import utils.UploadFileUtils;
 
@@ -26,8 +27,13 @@ public class CsController {
 	
 	@Autowired
 	edu.study.service.NoticeService NoticeService;
+	
 	@Autowired
 	edu.study.service.QaService QaService;
+	
+	@Autowired
+	edu.study.service.ProductService ProductService;
+	
 	@Resource(name="uploadPath")
 	private String uploadPath;
 	
@@ -75,7 +81,11 @@ public class CsController {
 	}
 	
 	@RequestMapping(value="/writeReview.do")
-	public String writeReview(Locale locale,Model model)throws Exception{
+	public String writeReview(Locale locale,Model model,int pidx)throws Exception{
+		
+		ProductVO pvo = ProductService.detail(pidx);
+		
+		model.addAttribute("pvo",pvo);
 		
 		return "/customerService/writeReview";
 	}
