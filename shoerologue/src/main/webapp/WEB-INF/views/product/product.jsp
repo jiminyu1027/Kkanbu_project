@@ -283,11 +283,11 @@
 					<!-- 상품 이미지 -->
 					<div class="productImgBox">
 						<div>
-						 	<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>" class="pdImage" alt="...">
+						 	<img src="/shoerologue/resources<%=pvo.getpFile1()%>" class="pdImage" alt="...">
 						</div>
 						<div class="pdSmImgeBox">
-							<a href="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>">
-								<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>" class="pdSmImge" alt="...">
+							<a href="/shoerologue/resources<%=pvo.getpFile1()%>">
+								<img src="/shoerologue/resources<%=pvo.getpFile1()%>" class="pdSmImge" alt="...">
 							</a>
 							<%
 							     if(pvo.getpFile2() != null){    

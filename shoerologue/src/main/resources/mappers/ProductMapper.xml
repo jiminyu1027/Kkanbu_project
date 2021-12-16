@@ -26,7 +26,8 @@
    </select>
 
 	<select id="detail" resultType="ProductVO" parameterType="int">
-		SELECT pidx
+		SELECT 
+			PIDX
 		    ,pSaleYn
 			,pNameKr
 			,pNameEng
@@ -41,8 +42,6 @@
 			,pFile3
 			,pFile4
 			,pFile5
-			,pWrite
-			,pDelYn
 		,case pGender when 'M' then 'MEN' when 'W' then 'WOMEN' when 'K' then 'KIDS' else 'MEN' end as pGender
    		FROM product
         WHERE pidx = #{pidx}
@@ -83,8 +82,8 @@
 		    	,#{pFile3}
 		    	,#{pFile4}
 		    	,#{pFile5}
-		    	,#{pPrice}
 		    	,now()
+		    	,#{pPrice}
 		    )
 		]]>
     </insert>
@@ -96,6 +95,8 @@
    </delete>    
   
    <select id="pdAllList" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
+ 	 select * from product order by pidx desc limit #{rowStart}, #{rowEnd}
+   		 <!-- 
    		SELECT * 
 		FROM (
 			SELECT ROWNUM RN, A.* 
@@ -106,6 +107,7 @@
 						) A
 				)
 		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
+		-->
 	</select>
    
    <select id="countAllList" resultType="int">

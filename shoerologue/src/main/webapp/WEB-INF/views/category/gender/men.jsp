@@ -301,7 +301,7 @@
 			    	 %>
 					<div class="brandPd">
 						<a href="/shoerologue/product/product.do?pidx=<%=menlist.get(i).getPidx()%>">
-							<img src="/shoerologue/resources/image/productdetail/<%=menlist.get(i).getpFile1()%>">
+							<img src="/shoerologue/resources/<%=menlist.get(i).getpFile1()%>">
 							<div class="shoesBrand" id="pBrandKr"><%=menlist.get(i).getpBrandKr()%></div>
 							<div class="shoesName" id="pNameKr"><%=menlist.get(i).getpNameKr()%></div>
 							<div class="shoesPriceBox">

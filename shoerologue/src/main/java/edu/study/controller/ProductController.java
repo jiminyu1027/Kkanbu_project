@@ -70,12 +70,6 @@ public class ProductController {
 		}
 	}	
 	
-	@RequestMapping(value="/cart/cart.do",method=RequestMethod.GET)
-	public String insert(Model model, ProductVO pvo,HttpSession session)throws Exception {
-		MemberVO member = (MemberVO)session.getAttribute("member");
-		
-		return "/shoerologue/cart/cart";
-	}
 	
 	@RequestMapping(value="/cart/cart.do",method=RequestMethod.POST)
 	public String insert(Locale locale, Model model, ProductVO pvo,HttpSession session)throws Exception {
