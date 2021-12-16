@@ -20,7 +20,7 @@
 	 		,pFile4
 	 		,pFile5
 	 		,pWrite
-	 		,pGender
+	 		,case pGender when 'M' then 'MEN' when 'W' then 'WOMEN' when 'K' then 'KIDS' else 'MEN' end as pGender
    		FROM product
    		WHERE 1=1 
    </select>
@@ -42,8 +42,8 @@
 			,pFile4
 			,pFile5
 			,pWrite
-			,pDelYn,
-		DECODE(pGender,'M','MEN','W','WOMEN','K','KIDS','MEN') as pGender
+			,pDelYn
+		,case pGender when 'M' then 'MEN' when 'W' then 'WOMEN' when 'K' then 'KIDS' else 'MEN' end as pGender
    		FROM product
         WHERE pidx = #{pidx}
 	</select>
