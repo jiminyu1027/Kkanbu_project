@@ -292,8 +292,8 @@
 							<%
 							     if(pvo.getpFile2() != null){    
 					    	 %>
-							<a href="/shoerologue/resources/image/productdetail/<%=pvo.getpFile2()%>">
-								<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile2()%>" class="pdSmImge" alt="...">
+							<a href="/shoerologue/resources<%=pvo.getpFile2()%>">
+								<img src="/shoerologue/resources<%=pvo.getpFile2()%>" class="pdSmImge" alt="...">
 							</a>
 							<%
 							    }else{
@@ -305,8 +305,8 @@
 							<%
 							     if(pvo.getpFile3() != null){    
 					    	 %>
-							<a href="/shoerologue/resources/image/productdetail/<%=pvo.getpFile3()%>">
-								<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile3()%>" class="pdSmImge" alt="...">
+							<a href="/shoerologue/resources<%=pvo.getpFile3()%>">
+								<img src="/shoerologue/resources<%=pvo.getpFile3()%>" class="pdSmImge" alt="...">
 							</a>
 							<%
 							    }else{
@@ -318,8 +318,8 @@
 							<%
 							     if(pvo.getpFile4() != null){    
 					    	 %>
-							<a href="/shoerologue/resources/image/productdetail/<%=pvo.getpFile4()%>">
-								<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile4()%>" class="pdSmImge" alt="...">
+							<a href="/shoerologue/resources<%=pvo.getpFile4()%>">
+								<img src="/shoerologue/resources<%=pvo.getpFile4()%>" class="pdSmImge" alt="...">
 							</a>
 							<%
 							    }else{
@@ -331,8 +331,8 @@
 							<%
 							     if(pvo.getpFile5() != null){    
 					    	 %>
-							<a href="/shoerologue/resources/image/productdetail/<%=pvo.getpFile5()%>">
-								<img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile5()%>" class="pdSmImge" alt="...">
+							<a href="/shoerologue/resources<%=pvo.getpFile5()%>">
+								<img src="/shoerologue/resources<%=pvo.getpFile5()%>" class="pdSmImge" alt="...">
 							</a>
 							<%
 							    }else{
@@ -476,11 +476,11 @@
 				<div class="gap50"></div>
 				<div class="gap50"></div>
 				<div class="productDetailImg">
-					<div><img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>" class="pdSmImge" alt="..."></div>
+					<div><img src="/shoerologue/resources/<%=pvo.getpFile1()%>" class="pdSmImge" alt="..."></div>
 					<%
 					     if(pvo.getpFile2() != null){    
 			    	 %>
-					<div><img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile2()%>" class="pdSmImge" alt="..."></div>
+					<div><img src="/shoerologue/resources/<%=pvo.getpFile2()%>" class="pdSmImge" alt="..."></div>
 					<%
 					    }else{
 					%>
@@ -491,7 +491,7 @@
 			    	 <%
 					     if(pvo.getpFile3() != null){    
 			    	 %>
-					<div><img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile3()%>" class="pdSmImge" alt="..."></div>
+					<div><img src="/shoerologue/resources/<%=pvo.getpFile3()%>" class="pdSmImge" alt="..."></div>
 					<%
 					    }else{
 					%>
@@ -502,7 +502,7 @@
 			    	 <%
 					     if(pvo.getpFile4() != null){    
 			    	 %>
-					<div><img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile4()%>" class="pdSmImge" alt="..."></div>
+					<div><img src="/shoerologue/resources/<%=pvo.getpFile4()%>%>" class="pdSmImge" alt="..."></div>
 					<%
 					    }else{
 					%>
@@ -513,7 +513,7 @@
 					<%
 					     if(pvo.getpFile5() != null){    
 			    	 %>
-					<div><img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile5()%>" class="pdSmImge" alt="..."></div>
+					<div><img src="/shoerologue/resources/<%=pvo.getpFile5()%>" class="pdSmImge" alt="..."></div>
 					<%
 					    }else{
 					%>

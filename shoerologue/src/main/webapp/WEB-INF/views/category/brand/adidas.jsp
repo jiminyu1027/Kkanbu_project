@@ -192,7 +192,7 @@
 				<div class="bestPd">
 					<div class="ranking1">1</div>
 					<a href="/shoerologue/product/product.do?pidx=<%=adidaslist.get(15).getPidx()%>">
-						<img src="/shoerologue/resources/image/productdetail/<%=adidaslist.get(15).getpFile1()%>">
+						<img src="/shoerologue/resources/<%=adidaslist.get(15).getpFile1()%>">
 						<div class="shoesBrand"><%=adidaslist.get(15).getpBrandKr()%></div>
 						<div class="shoesName"><%=adidaslist.get(15).getpNameKr()%></div>
 						<div class="shoesPriceBox">
@@ -210,7 +210,7 @@
 				<div class="bestPd">
 					<div class="ranking">2</div>
 					<a href="/shoerologue/product/product.do?pidx=<%=adidaslist.get(12).getPidx()%>">
-						<img src="/shoerologue/resources/image/productdetail/<%=adidaslist.get(12).getpFile1()%>">
+						<img src="/shoerologue/resources/<%=adidaslist.get(12).getpFile1()%>">
 						<div class="shoesBrand"><%=adidaslist.get(12).getpBrandKr()%></div>
 						<div class="shoesName"><%=adidaslist.get(12).getpNameKr()%></div>
 						<div class="shoesPriceBox">
@@ -228,7 +228,7 @@
 				<div class="bestPd">
 					<div class="ranking">3</div>
 					<a href="/shoerologue/product/product.do?pidx=<%=adidaslist.get(14).getPidx()%>">
-						<img src="/shoerologue/resources/image/productdetail/<%=adidaslist.get(14).getpFile1()%>">
+						<img src="/shoerologue/resources/<%=adidaslist.get(14).getpFile1()%>">
 						<div class="shoesBrand"><%=adidaslist.get(14).getpBrandKr()%></div>
 						<div class="shoesName"><%=adidaslist.get(14).getpNameKr()%></div>
 						<div class="shoesPriceBox">
@@ -246,7 +246,7 @@
 				<div class="bestPd">
 					<div class="ranking">4</div>
 					<a href="/shoerologue/product/product.do?pidx=<%=adidaslist.get(7).getPidx()%>">
-						<img src="/shoerologue/resources/image/productdetail/<%=adidaslist.get(7).getpFile1()%>">
+						<img src="/shoerologue/resources/<%=adidaslist.get(7).getpFile1()%>">
 						<div class="shoesBrand"><%=adidaslist.get(7).getpBrandKr()%></div>
 						<div class="shoesName"><%=adidaslist.get(7).getpNameKr()%></div>
 						<div class="shoesPriceBox">
@@ -264,7 +264,7 @@
 				<div class="bestPd">
 					<div class="ranking">5</div>
 					<a href="/shoerologue/product/product.do?pidx=<%=adidaslist.get(13).getPidx()%>">
-						<img src="/shoerologue/resources/image/productdetail/<%=adidaslist.get(13).getpFile1()%>">
+						<img src="/shoerologue/resources/<%=adidaslist.get(13).getpFile1()%>">
 						<div class="shoesBrand"><%=adidaslist.get(13).getpBrandKr()%></div>
 						<div class="shoesName"><%=adidaslist.get(13).getpNameKr()%></div>
 						<div class="shoesPriceBox">
@@ -293,6 +293,14 @@
 				</div>
 				<h6><a>사이즈</a></h6>
 				<div class="filterSize">
+					<input type="checkbox" id="size100"><label for="size100">100</label>
+					<input type="checkbox" id="size110"><label for="size110">110</label>
+					<input type="checkbox" id="size120"><label for="size120">120</label>
+					<input type="checkbox" id="size130"><label for="size130">130</label>
+					<input type="checkbox" id="size140"><label for="size140">140</label>
+					<input type="checkbox" id="size150"><label for="size150">150</label>
+					<input type="checkbox" id="size160"><label for="size160">160</label>
+					<input type="checkbox" id="size170"><label for="size170">170</label>
 					<input type="checkbox" id="size180"><label for="size180">180</label>
 					<input type="checkbox" id="size190"><label for="size190">190</label>
 					<input type="checkbox" id="size200"><label for="size200">200</label>
@@ -306,6 +314,7 @@
 					<input type="checkbox" id="size280"><label for="size280">280</label>
 					<input type="checkbox" id="size290"><label for="size290">290</label>
 					<input type="checkbox" id="size300"><label for="size300">300</label>
+					<input type="checkbox" id="size310"><label for="size310">310</label>
 				</div>
 				<h6><a>색상</a></h6>
 				<div class="filterColor">
@@ -356,7 +365,7 @@
 			    	 %>
 					<div class="brandPd">
 						<a href="/shoerologue/product/product.do?pidx=<%=adidaslist.get(i).getPidx()%>">
-							<img src="/shoerologue/resources/image/productdetail/<%=adidaslist.get(i).getpFile1()%>">
+							<img src="/shoerologue/resources/<%=adidaslist.get(i).getpFile1()%>">
 							<div class="shoesBrand" id="pBrandKr"><%=adidaslist.get(i).getpBrandKr()%></div>
 							<div class="shoesName" id="pNameKr"><%=adidaslist.get(i).getpNameKr()%></div>
 							<div class="shoesPriceBox">
