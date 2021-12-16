@@ -314,7 +314,7 @@
 	    <div class="col-6 col-md-3 cardhover">
 	    	<a href="/shoerologue/product/product.do?pidx=<%=plist.get(i).getPidx()%>">
 		     <div class="card w-20">
-			  <img src="/shoerologue/resources/image/productdetail/<%=plist.get(i).getpFile1()%>" class="card-img-top" alt="best20상품">
+			  <img src="/shoerologue/resources/<%=plist.get(i).getpFile1()%>" class="card-img-top" alt="best20상품">
 			  <div class="card-body">
 			    <h5 class="card-title brandtitle"><%=plist.get(i).getpBrandKr() %></h5>
 			    <p class="card-text"><%=plist.get(i).getpNameKr() %></p>
