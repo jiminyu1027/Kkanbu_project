@@ -7,20 +7,11 @@
 
 	
 	<select id="nikelist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pBrandKr='나이키'  order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
-   		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pBrandKr='나이키' 
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+	SELECT * 
+		FROM product 
+			WHERE pBrandKr='나이키' 
+			ORDER BY pidx DESC 
+			LIMIT #{rowStart}, #{rowEnd}
 	</select>
 	
 	<select id="countnike" resultType="int">
@@ -30,20 +21,11 @@
 	</select>
 	
 	<select id="adidaslist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pBrandKr='아디다스' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
-   		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pBrandKr='아디다스' 
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+	SELECT * 
+		FROM product 
+			WHERE pBrandKr='아디다스' 
+			ORDER BY pidx DESC 
+			LIMIT #{rowStart}, #{rowEnd}
 	</select>
 	
 	<select id="countadidas" resultType="int">
@@ -53,20 +35,11 @@
 	</select>
 	
 	<select id="newbalancelist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pBrandKr='뉴발란스' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
-   		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pBrandKr='뉴발란스' 
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+	SELECT * 
+		FROM product 
+			WHERE pBrandKr='뉴발란스' 
+			ORDER BY pidx DESC 
+			LIMIT #{rowStart}, #{rowEnd}
 	</select>
 	
 	<select id="countnewbalance" resultType="int">
@@ -76,20 +49,11 @@
 	</select>
 	
 	<select id="converselist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-		select * from product WHERE pBrandKr='컨버스' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
-   		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pBrandKr='컨버스' 
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+		FROM product 
+			WHERE pBrandKr='컨버스' 
+			ORDER BY pidx DESC 
+			LIMIT #{rowStart}, #{rowEnd}
 	</select>
 	
 	<select id="countconverse" resultType="int">
@@ -99,20 +63,11 @@
 	</select>
 	
 	<select id="vanslist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pBrandKr='반스' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
-   		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pBrandKr='반스' 
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+		FROM product 
+			WHERE pBrandKr='반스' 
+			ORDER BY pidx DESC 
+			LIMIT #{rowStart}, #{rowEnd}
 	</select>
 	
 	<select id="countvans" resultType="int">
@@ -122,20 +77,11 @@
 	</select>
 	
 	<select id="reeboklist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pBrandKr='리복' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
-   		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pBrandKr='리복' 
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+		FROM product 
+			WHERE pBrandKr='리복' 
+			ORDER BY pidx DESC 
+			LIMIT #{rowStart}, #{rowEnd}
 	</select>
 	
 	<select id="countreebok" resultType="int">
@@ -145,20 +91,11 @@
 	</select>
 	
 	<select id="nuovolist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pBrandKr='누오보' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
-   		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pBrandKr='누오보' 
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+		FROM product 
+			WHERE pBrandKr='누오보' 
+			ORDER BY pidx DESC 
+			LIMIT #{rowStart}, #{rowEnd}
 	</select>
 	
 	<select id="countnuovo" resultType="int">
@@ -168,20 +105,11 @@
 	</select>
 	
 	<select id="jordanlist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pBrandKr='조던' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
-   		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pBrandKr='조던' 
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+		FROM product 
+			WHERE pBrandKr='조던' 
+			ORDER BY pidx DESC 
+			LIMIT #{rowStart}, #{rowEnd}
 	</select>
 	
 	<select id="countjordan" resultType="int">
@@ -191,20 +119,11 @@
 	</select>
 	
 	<select id="pumalist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pBrandKr='푸마' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
-   		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pBrandKr='푸마' 
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+		FROM product 
+			WHERE pBrandKr='푸마' 
+			ORDER BY pidx DESC 
+			LIMIT #{rowStart}, #{rowEnd}
 	</select>
 	
 	<select id="countpuma" resultType="int">
@@ -214,20 +133,11 @@
 	</select>
 	
 	<select id="hawkinslist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pBrandKr='호킨스' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
-   		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pBrandKr='호킨스' 
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+			FROM product 
+				WHERE pBrandKr='호킨스' 
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart}, #{rowEnd}
 	</select>
 	
 	<select id="counthawkins" resultType="int">
@@ -237,20 +147,11 @@
 	</select>
 	
 	<select id="ggomoosinlist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pBrandKr='꼬무신' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
-   		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pBrandKr='꼬무신' 
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+		FROM product 
+			WHERE pBrandKr='꼬무신' 
+			ORDER BY pidx DESC 
+			LIMIT #{rowStart}, #{rowEnd}
 	</select>
 	
 	<select id="countggomoosin" resultType="int">
@@ -260,20 +161,11 @@
 	</select>
 	
 	<select id="raragolist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pBrandKr='라라고' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
-   		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pBrandKr='라라고' 
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+		FROM product 
+			WHERE pBrandKr='라라고' 
+			ORDER BY pidx DESC 
+			LIMIT #{rowStart}, #{rowEnd}
 	</select>
 	
 	<select id="countrarago" resultType="int">
@@ -283,20 +175,11 @@
 	</select>
 	
 	<select id="bearpawlist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pBrandKr='베어파우' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
-   		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pBrandKr='베어파우' 
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+		FROM product 
+			WHERE pBrandKr='베어파우' 
+			ORDER BY pidx DESC 
+			LIMIT #{rowStart}, #{rowEnd}
 	</select>
 	
 	<select id="countbearpaw" resultType="int">

@@ -23,6 +23,7 @@
 	 		,case pGender when 'M' then 'MEN' when 'W' then 'WOMEN' when 'K' then 'KIDS' else 'MEN' end as pGender
    		FROM product
    		WHERE 1=1 
+   		<!-- select case pGender when 'M' then 'MEN' when 'W' then 'WOMEN' when 'K' then 'KIDS' else 'MEN' end as pGender from product -->
    </select>
 
 	<select id="detail" resultType="ProductVO" parameterType="int">
@@ -95,19 +96,10 @@
    </delete>    
   
    <select id="pdAllList" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
- 	 select * from product order by pidx desc limit #{rowStart}, #{rowEnd}
-   		 <!-- 
-   		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+ 	 SELECT * 
+ 	 	FROM product 
+	 	 ORDER BY pidx DESC 
+	 	 LIMIT #{rowStart}, #{rowEnd}
 	</select>
    
    <select id="countAllList" resultType="int">
