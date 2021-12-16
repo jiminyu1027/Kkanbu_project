@@ -11,7 +11,7 @@
 		FROM product 
 			WHERE pBrandKr='나이키' 
 			ORDER BY pidx DESC 
-			LIMIT #{rowStart}, #{rowEnd}
+			LIMIT #{rowStart},15
 	</select>
 	
 	<select id="countnike" resultType="int">
@@ -25,7 +25,7 @@
 		FROM product 
 			WHERE pBrandKr='아디다스' 
 			ORDER BY pidx DESC 
-			LIMIT #{rowStart}, #{rowEnd}
+			LIMIT #{rowStart},15
 	</select>
 	
 	<select id="countadidas" resultType="int">
@@ -39,7 +39,7 @@
 		FROM product 
 			WHERE pBrandKr='뉴발란스' 
 			ORDER BY pidx DESC 
-			LIMIT #{rowStart}, #{rowEnd}
+			LIMIT #{rowStart},15
 	</select>
 	
 	<select id="countnewbalance" resultType="int">
@@ -53,7 +53,7 @@
 		FROM product 
 			WHERE pBrandKr='컨버스' 
 			ORDER BY pidx DESC 
-			LIMIT #{rowStart}, #{rowEnd}
+			LIMIT #{rowStart},15
 	</select>
 	
 	<select id="countconverse" resultType="int">
@@ -67,7 +67,7 @@
 		FROM product 
 			WHERE pBrandKr='반스' 
 			ORDER BY pidx DESC 
-			LIMIT #{rowStart}, #{rowEnd}
+			LIMIT #{rowStart},15
 	</select>
 	
 	<select id="countvans" resultType="int">
@@ -81,7 +81,7 @@
 		FROM product 
 			WHERE pBrandKr='리복' 
 			ORDER BY pidx DESC 
-			LIMIT #{rowStart}, #{rowEnd}
+			LIMIT #{rowStart},15
 	</select>
 	
 	<select id="countreebok" resultType="int">
@@ -95,7 +95,7 @@
 		FROM product 
 			WHERE pBrandKr='누오보' 
 			ORDER BY pidx DESC 
-			LIMIT #{rowStart}, #{rowEnd}
+			LIMIT #{rowStart},15
 	</select>
 	
 	<select id="countnuovo" resultType="int">
@@ -109,7 +109,7 @@
 		FROM product 
 			WHERE pBrandKr='조던' 
 			ORDER BY pidx DESC 
-			LIMIT #{rowStart}, #{rowEnd}
+			LIMIT #{rowStart},15
 	</select>
 	
 	<select id="countjordan" resultType="int">
@@ -123,7 +123,7 @@
 		FROM product 
 			WHERE pBrandKr='푸마' 
 			ORDER BY pidx DESC 
-			LIMIT #{rowStart}, #{rowEnd}
+			LIMIT #{rowStart},15
 	</select>
 	
 	<select id="countpuma" resultType="int">
@@ -137,7 +137,7 @@
 			FROM product 
 				WHERE pBrandKr='호킨스' 
 				ORDER BY pidx DESC 
-				LIMIT #{rowStart}, #{rowEnd}
+				LIMIT #{rowStart},15
 	</select>
 	
 	<select id="counthawkins" resultType="int">
@@ -151,7 +151,7 @@
 		FROM product 
 			WHERE pBrandKr='꼬무신' 
 			ORDER BY pidx DESC 
-			LIMIT #{rowStart}, #{rowEnd}
+			LIMIT #{rowStart},15
 	</select>
 	
 	<select id="countggomoosin" resultType="int">
@@ -165,7 +165,7 @@
 		FROM product 
 			WHERE pBrandKr='라라고' 
 			ORDER BY pidx DESC 
-			LIMIT #{rowStart}, #{rowEnd}
+			LIMIT #{rowStart},15
 	</select>
 	
 	<select id="countrarago" resultType="int">
@@ -179,7 +179,7 @@
 		FROM product 
 			WHERE pBrandKr='베어파우' 
 			ORDER BY pidx DESC 
-			LIMIT #{rowStart}, #{rowEnd}
+			LIMIT #{rowStart},15
 	</select>
 	
 	<select id="countbearpaw" resultType="int">

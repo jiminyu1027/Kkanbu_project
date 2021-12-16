@@ -7,7 +7,11 @@
 	
 	<!-- 페이징 처리 후 게시글 조회 -->
 	<select id="menlist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-		select * from product WHERE pGender='M' OR pGender='U' order by pidx desc limit #{rowStart}, #{rowEnd}
+		SELECT * 
+			FROM product 
+				WHERE pGender='M' OR pGender='U' 
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -18,21 +22,11 @@
 	</select>
 
 	<select id="menlistboots" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-		select *
-		 from product WHERE pGender='M' AND pType='부츠' OR pGender='U' AND pType='부츠' order by pidx desc limit #{rowStart}, #{rowEnd}
-		 
-		<!-- SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pGender='M' AND pType='부츠' OR pGender='U' AND pType='부츠'
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		 -->
+		SELECT * 
+			FROM product 
+				WHERE pGender='M' AND pType='부츠' OR pGender='U' AND pType='부츠' 
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -44,21 +38,11 @@
 	
 	
 	<select id="menlistcasual" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-		select * from product WHERE pGender='M' AND pType='캐주얼' OR pGender='U' AND pType='캐주얼' order by pidx desc limit #{rowStart}, #{rowEnd}
-	
-	<!-- 
 		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pGender='M' AND pType='캐주얼' OR pGender='U' AND pType='캐주얼'
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+			FROM product 
+				WHERE pGender='M' AND pType='캐주얼' OR pGender='U' AND pType='캐주얼' 
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -69,20 +53,11 @@
 	</select>
 	
 	<select id="menlistdressshoes" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-		select * from product WHERE pGender='M' AND pType='구두' OR pGender='U' AND pType='구두' order by pidx desc limit #{rowStart}, #{rowEnd}
-	
-		<!-- SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pGender='M' AND pType='구두' OR pGender='U' AND pType='구두'
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+				FROM product 
+					WHERE pGender='M' AND pType='구두' OR pGender='U' AND pType='구두' 
+					ORDER BY pidx DESC 
+					LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -93,20 +68,11 @@
 	</select>
 	
 	<select id="menlistsandle" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pGender='M' AND pType='샌들' OR pGender='U' AND pType='샌들' order by pidx desc limit #{rowStart}, #{rowEnd}
-		<!-- 
 		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pGender='M' AND pType='샌들' OR pGender='U' AND pType='샌들'
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+			FROM product 
+				WHERE pGender='M' AND pType='샌들' OR pGender='U' AND pType='샌들'
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -117,20 +83,11 @@
 	</select>
 	
 	<select id="menlistsneakers" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-		select * from product WHERE pGender='M' AND pType='운동화' OR pGender='U' AND pType='운동화' order by pidx desc limit #{rowStart}, #{rowEnd}
-		<!-- 
 		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pGender='M' AND pType='운동화' OR pGender='U' AND pType='운동화'
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+			FROM product 
+				WHERE pGender='M' AND pType='운동화' OR pGender='U' AND pType='운동화'
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -141,21 +98,11 @@
 	</select>
 	
 	<select id="menlistsports" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	
-		select * from product WHERE pGender='M' AND pType='스포츠' OR pGender='U' AND pType='스포츠' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
 		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pGender='M' AND pType='스포츠' OR pGender='U' AND pType='스포츠'
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+			FROM product 
+				WHERE pGender='M' AND pType='스포츠' OR pGender='U' AND pType='스포츠'
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -166,20 +113,11 @@
 	</select>
 	
 	<select id="womenlist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-		select * from product WHERE pGender='W' OR pGender='U' order by pidx desc limit #{rowStart}, #{rowEnd}
-		
-   		<!-- SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pGender='W' OR pGender='U' 
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+			FROM product 
+				WHERE pGender='W' OR pGender='U'
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -190,20 +128,11 @@
 	</select>
 	
 	<select id="womenlistboots" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pGender='W' AND pType='부츠' OR pGender='U' AND pType='부츠' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
 		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pGender='W' AND pType='부츠' OR pGender='U' AND pType='부츠'
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+			FROM product 
+				WHERE pGender='W' AND pType='부츠' OR pGender='U' AND pType='부츠'
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -214,19 +143,11 @@
 	</select>
 	
 	<select id="womenlistcasual" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pGender='W' AND pType='캐주얼' OR pGender='U' AND pType='캐주얼' order by pidx desc limit #{rowStart}, #{rowEnd}
-		<!-- SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pGender='W' AND pType='캐주얼' OR pGender='U' AND pType='캐주얼'
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+			FROM product 
+				WHERE pGender='W' AND pType='캐주얼' OR pGender='U' AND pType='캐주얼'
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -237,19 +158,11 @@
 	</select>
 	
 	<select id="womenlistdressshoes" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pGender='W' AND pType='구두' OR pGender='U' AND pType='구두' order by pidx desc limit #{rowStart}, #{rowEnd}
-		<!-- SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pGender='W' AND pType='구두' OR pGender='U' AND pType='구두'
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+			FROM product 
+				WHERE pGender='W' AND pType='구두' OR pGender='U' AND pType='구두'
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -260,20 +173,11 @@
 	</select>
 	
 	<select id="womenlistsandle" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pGender='W' AND pType='샌들' OR pGender='U' AND pType='샌들' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
 		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pGender='W' AND pType='샌들' OR pGender='U' AND pType='샌들'
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+			FROM product 
+				WHERE pGender='W' AND pType='샌들' OR pGender='U' AND pType='샌들'
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -284,20 +188,11 @@
 	</select>
 	
 	<select id="womenlistsneakers" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pGender='W' AND pType='운동화' OR pGender='U' AND pType='운동화' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
 		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pGender='W' AND pType='운동화' OR pGender='U' AND pType='운동화'
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+			FROM product 
+				WHERE pGender='W' AND pType='운동화' OR pGender='U' AND pType='운동화'
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -308,19 +203,11 @@
 	</select>
 	
 	<select id="womenlistsports" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-		select * from product WHERE pGender='W' AND pType='스포츠' OR pGender='U' AND pType='스포츠' order by pidx desc limit #{rowStart}, #{rowEnd}
-		<!-- SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product 
-						WHERE pGender='W' AND pType='스포츠' OR pGender='U' AND pType='스포츠'
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+			FROM product 
+				WHERE pGender='W' AND pType='스포츠' OR pGender='U' AND pType='스포츠'
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -378,20 +265,11 @@
 	</select>
 	
 	<select id="kidslistcasual" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-		select * from product WHERE pGender='K'	AND pType='캐주얼' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!--
-   		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product WHERE pGender='K'
-						AND pType='캐주얼'
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+			FROM product 
+				WHERE pGender='K' AND pType='캐주얼'
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -402,20 +280,11 @@
 	</select>
 	
 	<select id="kidslistdressshoes" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-		select * from product WHERE pGender='K'	AND pType='구두' order by pidx desc limit #{rowStart}, #{rowEnd}
-		<!-- 
-   		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product WHERE pGender='K'
-						AND pType='구두'
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+			FROM product 
+				WHERE pGender='K' AND pType='구두'
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -426,20 +295,11 @@
 	</select>
 	
 	<select id="kidslistsandle" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-		select * from product WHERE pGender='K'	AND pType='샌들' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
-   		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product WHERE pGender='K'
-						AND pType='샌들'
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+			FROM product 
+				WHERE pGender='K' AND pType='샌들'
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -450,20 +310,11 @@
 	</select>	
 	
 	<select id="kidslistsneakers" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-		select * from product WHERE pGender='K'	AND pType='운동화' order by pidx desc limit #{rowStart}, #{rowEnd}
-		<!-- 
 		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product WHERE pGender='K'
-						AND pType='운동화'
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+			FROM product 
+				WHERE pGender='K' AND pType='운동화'
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -474,19 +325,11 @@
 	</select>
 	
 	<select id="kidslistsports" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pGender='K'	AND pType='스포츠' order by pidx desc limit #{rowStart}, #{rowEnd}
-   		<!-- SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product WHERE pGender='K'
-						AND pType='스포츠'
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+		SELECT * 
+			FROM product 
+				WHERE pGender='K' AND pType='스포츠'
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 
    <!-- 총 게시글 갯수 출력 -->

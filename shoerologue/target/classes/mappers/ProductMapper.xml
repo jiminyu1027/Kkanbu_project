@@ -99,7 +99,7 @@
  	 SELECT * 
  	 	FROM product 
 	 	 ORDER BY pidx DESC 
-	 	 LIMIT #{rowStart}, #{rowEnd}
+	 	 LIMIT #{rowStart},15
 	</select>
    
    <select id="countAllList" resultType="int">
