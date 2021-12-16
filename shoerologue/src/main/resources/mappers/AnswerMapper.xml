@@ -12,12 +12,14 @@
 				,MIDX
 				,QIDX
 				,MNAME
+				,AWRITEDAY
 				)VALUES(
-				AIDX_SEQ.nextval
+				AIDX
 				,#{aContents}
 				,#{midx}
 				,#{qidx}
 				,#{mName}
+				,NOW()
 				)
 		]]>		
 	</insert>

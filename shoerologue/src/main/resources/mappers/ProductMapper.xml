@@ -19,8 +19,8 @@
 	 		,pFile3
 	 		,pFile4
 	 		,pFile5
-	 		,pWrite, 
-   		DECODE(pGender,'M','MEN','W','WOMEN','K','KIDS','MEN') as pGender
+	 		,pWrite
+	 		,pGender
    		FROM product
    		WHERE 1=1 
    </select>
@@ -51,8 +51,8 @@
 	 <insert id="insert" parameterType="productVO">
     <![CDATA[		
 		    INSERT INTO cart VALUES(
-		    	 ctidx_seq.nextval
-		    	,sysdate
+		    	 ctidx
+		    	,NOW()
 		    	,#{pidx}		
 		    	,#{midx}
 		    	,#{cnt}
@@ -67,9 +67,9 @@
     
      <insert id="productInsert" parameterType="productVO">
 		<![CDATA[		
-		    INSERT INTO product(PIDX,PNAMEKR,PNAMEENG,PBRANDKR,PBRANDENG,PSIZE,PCOLOR,PGENDER,PTYPE,PFILE1,PFILE2,PFILE3,PFILE4,PFILE5,PPRICE)
+		    INSERT INTO product(PIDX,PNAMEKR,PNAMEENG,PBRANDKR,PBRANDENG,PSIZE,PCOLOR,PGENDER,PTYPE,PFILE1,PFILE2,PFILE3,PFILE4,PFILE5,pWrite,PPRICE)
 			VALUES(
-		    	 pidx_seq.nextval
+		    	 pidx
 		    	,#{pNameKr}
 		    	,#{pNameEng}		
 		    	,#{pBrandKr}
@@ -84,6 +84,7 @@
 		    	,#{pFile4}
 		    	,#{pFile5}
 		    	,#{pPrice}
+		    	,now()
 		    )
 		]]>
     </insert>

@@ -34,13 +34,14 @@
 
     <insert id="insert" parameterType="MemberVO">
     		<![CDATA[
-		 	 INSERT INTO member(MIDX,MNAME,MID,MPWD,MPHONE,MEMAIL) VALUES(
-		 	 MIDX_SEQ.nextval
+		 	 INSERT INTO member(MIDX,MNAME,MID,MPWD,MPHONE,MEMAIL,MJOINDATE) VALUES(
+		 	 MIDX
 		 	,#{mName}
 		    ,#{mId}
 		    ,#{mPwd}
 		    ,#{mPhone}
 		    ,#{mEmail}	
+		    ,NOW()
 		    )
 		    ]]>
     </insert>

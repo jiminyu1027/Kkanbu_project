@@ -10,7 +10,7 @@
 		INSERT INTO NOTICE(
 			NIDX,NTITLE,NCONTENTS,NFILE)
 			VALUES(
-			NIDX_SEQ.nextval
+			NIDX
 	        ,#{nTitle}
 			,#{nContents}
 	        ,#{nFile}

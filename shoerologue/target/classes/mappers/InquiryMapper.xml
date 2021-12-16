@@ -9,7 +9,7 @@
 			INSERT INTO QUESTION(
 				QIDX,QTITLE,QCONTENTS,QFILE,QREASON,MIDX)
 				VALUES(
-				QIDX_SEQ.nextval
+				QIDX
 				,#{qTitle}
 				,#{qContents}
 				,#{qFile}
