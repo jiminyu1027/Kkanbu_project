@@ -1,10 +1,12 @@
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>    
 <%@ page import="edu.study.vo.*" %>      
 <%
 	List<CartVO> list = (List<CartVO>)request.getAttribute("list");
+	List<WishListVO> wlist = (List<WishListVO>)request.getAttribute("wlist");
 %>
 <!DOCTYPE html>
 <html>
@@ -35,19 +37,32 @@
 	</style>
 	<script src="/js/jquery-3.6.0.min.js"></script>
 	<script>
-		$(document).ready(function(){
-			$("#wishCheckAll").click(function(){
-				if($("#wishCheckAll").is(":checked")) $("input[name=chk]").prop("checked", true);
-				else  $("input[name=chk]").prop("checked", false);
-			});				
-			$("input[name=chk]").click(function(){
-				var total = $("input[name=chk]").length;
-				var checked = $("input[name=chk]:checked").length;
-				
-				if(total != checked) $("#wishCheckAll").prop("checked", false);
-				else $("#wishCheckAll").prop("checked", true);
-			});
-		});
+	$(document).ready(function() {
+        // 전체선택 클릭 시
+        $("input:checkbox[name='allCheck']").click(function() {
+            if($("input:checkbox[name='allCheck']").is(":checked") == true) {
+                $("input:checkbox[name='wishchk']").prop("checked", true);
+            } else {
+                $("input:checkbox[name='wishchk']").prop("checked", false);
+            }
+        });
+
+        // 체크박스 클릭 시
+        $("input:checkbox[name='wishchk']").click(function() {
+            var allCnt = $("input:checkbox[name='wishchk']").length;         // 전체갯수
+            var selCnt =  0 ; // 선택갯수
+            $("input:checkbox[name='wishchk']").each(function(){
+            	if($(this).is(":checked")){
+            		selCnt++;
+            	}
+            });
+            if(allCnt != selCnt) {
+                $("input:checkbox[name='allCheck']").prop("checked", false);
+            }else if(allCnt == selCnt){ 
+            	 $("input:checkbox[name='allCheck']").prop("checked", true);
+            }
+        });
+    });
 	</script>
 	</head>
 	<body>
@@ -239,6 +254,7 @@
 	</section>
 	
 	<!-- 마이페이지 메인박스 -->
+	<div>
 	<div class="myPageMainBox">
 		<!-- 페이지 이동경로 -->
 		<div style=" float: left; width: 0%;">&nbsp;</div>
@@ -299,8 +315,71 @@
 		<!-- 찜리스트 메인 -->
 		<div style="float: left; width: 80%;" class="header-margin">
 			<span class="wishHeader">찜리스트</span>
+		<!-- 찜한 상품이 있는 경우 -->
+		<% if ( wlist.size() != 0) { %>
+		<div>
+		<div class="checkLine">
+			<span class="allCheck">
+				<input type="checkbox" id="wishCheckAll" name="allCheck" checked>
+				<label for="wishCheckAll"></label>
+			</span>
+			<span class="resultText">
+				<span class="totalText">총</span>
+				<span class="eaText"><%=wlist.size()%></span>
+				<span class="haveText">개의 상품이 있습니다.</span>
+			</span>
+		</div>
+		<!-- 우측 삭제, 장바구니 버튼-->
+		<div class="btn-wrap">
+			<input type="submit" value="삭제" id="del" class="delbtn" onclick="del();">
+			<input type="submit" value="장바구니" id="cart" class="cartbtn" onclick="location.href='<%=request.getContextPath() %>'">
+			<i class="bi bi-cart4"></i>
+		</div>
+		<!-- 찜리스트 목록 CONTENT -->
+
+		<div class="border-line-box">
+			<div class="container">
+				<div class="row">
+				<%
+					for(int i = 0; i<wlist.size(); i++){
+				%>
+				    <div class="col-6 col-md-3 cardhover">
+				    	<a href="<%=request.getContextPath() %>/product/product.do?pidx=<%=wlist.get(i).getPidx()%>">
+					     <div class="card w-20">
+						  <img src="<%=request.getContextPath() %>/resources/<%=wlist.get(i).getpFile1() %>" class="card-img-top" alt="...">
+						  <div class="card-body">
+						    <h5 class="card-title brandtitle"><%=wlist.get(i).getpBrandeng() %></h5>
+						    <p class="card-text"><%=wlist.get(i).getpNamekr()%></p>
+						    <span class="card-text normalPrice"><fmt:formatNumber><%=wlist.get(i).getpPrice() %></fmt:formatNumber>원</span>&nbsp;
+						    <span class="wishCheckBox">
+							    <input type="checkbox" id="wishCheck<%=wlist.get(i).getPidx()%>" name="wishchk" checked>
+							    <label for="wishCheck<%=wlist.get(i).getPidx()%>"></label>
+						    </span>
+						  </div>
+						</div>
+					  </a>
+				    </div>
+				   <%} %>
+		<!-- 찜한상품 페이징 -->
+<!-- 			<div class="pagingBox"> -->
+<!-- 				<div> -->
+<!-- 					<nav aria-label="Page navigation example"> -->
+<!-- 					  <ul class="pagination"> -->
+<!-- 					    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">1</a></li> -->
+<!-- 					    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">2</a></li> -->
+<!-- 					    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">3</a></li> -->
+<!-- 					    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">4</a></li> -->
+<!-- 					    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">5</a></li> -->
+<!-- 					  </ul> -->
+<!-- 					</nav> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+			</div>
+			</div>
+		</div>
+	</div>
 		<!-- 찜한 상품이 없는 경우 -->
-		<c:if test="${ empty wishlist.size }">
+		<%} else {%>
 			<div class="wishNoItem">
 				<div class="flex-box">
 					<div class="wishNoItem2">
@@ -308,68 +387,37 @@
 					 찜한 상품이 없습니다</div>
 				</div>
 			</div>
-		</c:if>
-		<!-- 찜한 상품이 있는 경우 -->
-		<c:if test="${not empty wishlist.size }">
-		<div>
-		<div class="checkLine">
-			<span class="allCheck">
-				<input type="checkbox" id="wishCheckAll" checked>
-				<label for="wishCheckAll"></label>
-			</span>
-			<span class="resultText">
-				<span class="totalText">총</span>
-				<span class="eaText"><%=list.size()%></span>
-				<span class="haveText">개의 상품이 있습니다.</span>
-			</span>
+			<%} %>
 		</div>
-		<!-- 우측 삭제, 장바구니 버튼-->
-		<div class="btn-wrap">
-			<input type="submit" value="삭제" id="del" class="delbtn" onclick="">
-			<a href="/shoerologue/cart/cart.do"><input type="submit" value="장바구니" id="cart" class="cartbtn" onclick="">
-			<i class="bi bi-cart4"></i>
-		</div>
-		<!-- 찜리스트 목록 CONTENT -->
-		<div class="border-line-box">
-			<div class="container">
-				<div class="row">
-				    <div class="col-6 col-md-3 cardhover">
-				    	<a href="/shoerologue/shopping/wishList.do">
-					     <div class="card w-20">
-						  <img src="/shoerologue/resources/image/vans.jpg" class="card-img-top" alt="...">
-						  <div class="card-body">
-						    <h5 class="card-title brandtitle">NIKE</h5>
-						    <p class="card-text">NIKE BURROW</p>
-						    <span class="card-text normalPrice">69,000원</span>&nbsp;
-						    <span class="wishCheckBox">
-							    <input type="checkbox" id="wishCheck" name="chk" checked>
-							    <label for="wishCheck"></label>
-						    </span>
-						  </div>
-						</div>
-					  </a>
-				    </div>
-				</div>
-			</div>
-		</div>
-		<!-- 찜한상품 페이징 -->
-			<div class="pagingBox">
-				<div>
-					<nav aria-label="Page navigation example">
-					  <ul class="pagination">
-					    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">1</a></li>
-					    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">2</a></li>
-					    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">3</a></li>
-					    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">4</a></li>
-					    <li class="page-item"><a class="page-link" href="/shoerologue/shopping/wishList.do">5</a></li>
-					  </ul>
-					</nav>
-				</div>
-			</div>
-			</div>
-			</c:if>
 	</div>
 </div>
+
+<script>
+$("#del").click(function () {
+    var confirm_val = confirm("정말 삭제하시겠습니까?");
+
+    if (confirm_val) {
+        var checkArr = new Array();
+
+        $("input[class='chkbox']:checked").each(function () {
+            checkArr.push($(this).attr("data-cartNum"));
+        });
+
+        $.ajax({
+            url: "/shop/deleteCart",
+            type: "post",
+            data: { chbox: checkArr },
+            beforeSend: function (xhr) {   /*데이터를 전송하기 전에 헤더에 csrf값을 설정한다 (spring boot security 설정부분)*/
+                xhr.setRequestHeader("${_csrf.headerName}", "${_csrf.token}");
+            },
+            success: function () {
+                location.href = "/shop/cartList";
+            }
+        });
+    }
+});
+
+</script>
 	
 	<!-- 우측하단 TOP 이동 배너 -->
 		<a href="/shoerologue/shopping/wishList.do">
@@ -439,6 +487,14 @@
 		  </footer>
 		 </div>
 		</div>
+		<script>
+		//콤마 정규식
+		function comma(str) { 
+			 str = String(str);
+			 str = str.replace(/[^\d]+/g, ''); // 숫자만 남김 
+				return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,'); 
+		}
+		</script>
 	<!-- bootstrap js -->
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>

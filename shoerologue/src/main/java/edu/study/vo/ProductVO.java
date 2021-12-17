@@ -20,12 +20,27 @@ public class ProductVO {
 	private String pFile5;
 	private String pWrite;
 	private String pDelYn;
+	private int widx;
 	private int cnt = 1;
 	private int midx;
 	private int ctidx;
 	private int ctsize;
 	private String delyn = "N";
+	private String heart = "Y";
 	
+	
+	public String getHeart() {
+		return heart;
+	}
+	public void setHeart(String heart) {
+		this.heart = heart;
+	}
+	public int getWidx() {
+		return widx;
+	}
+	public void setWidx(int widx) {
+		this.widx = widx;
+	}
 	public String getDelyn() {
 		return delyn;
 	}

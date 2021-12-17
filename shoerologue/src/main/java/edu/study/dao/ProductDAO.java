@@ -38,6 +38,10 @@ public class ProductDAO {
 			sqlSession.insert(Namespace+".insert", pvo);
 		}
 		
+		public void wishInsert (ProductVO pvo) throws Exception{
+			sqlSession.insert(Namespace+".wishInsert", pvo);
+		}
+		
 		public void productInsert(ProductVO pvo) throws Exception{
 			sqlSession.insert(Namespace+".productInsert", pvo);
 		}

@@ -69,6 +69,12 @@ public class ProductServiceImpl implements ProductService{
 		return ProductDao.order(cvo);
 	}
 
+	@Override
+	public void wishInsert(ProductVO pvo) throws Exception {
+		ProductDao.wishInsert(pvo);
+		
+	}
+
 
 	
 }

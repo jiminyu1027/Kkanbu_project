@@ -1,11 +1,13 @@
 package edu.study.controller;
 
 import java.io.File;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Locale;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
@@ -22,11 +24,14 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.study.service.CartService;
 import edu.study.service.MemberService;
+import edu.study.service.ProductService;
+import edu.study.service.WishService;
 import edu.study.vo.CartVO;
 import edu.study.vo.MemberVO;
 import edu.study.vo.ProductVO;
 import edu.study.vo.QaVO;
 import edu.study.vo.ReviewVO;
+import edu.study.vo.WishListVO;
 import utils.UploadFileUtils;
 
 @RequestMapping(value="/mypage/shopping")
@@ -40,6 +45,12 @@ public class ShoppingController {
 	CartService CartService;
 	
 	@Autowired
+	ProductService productService;
+	
+	@Autowired
+	WishService wishService;
+	
+	@Autowired
 	edu.study.service.QaService QaService;
 	
 	@Autowired
@@ -48,18 +59,40 @@ public class ShoppingController {
 	@Resource(name="uploadPath")
 	private String uploadPath;
 	
+
 	@RequestMapping(value="/wishlist.do")
 	public String wishlist(Locale locale, Model model, HttpSession session)throws Exception{
 		MemberVO member = (MemberVO)session.getAttribute("member");
 		
 		if(member != null) {
 			List<CartVO> list=CartService.list(member.getMidx());
+			List<WishListVO> wlist = wishService.wlist(member.getMidx());
+			
 			model.addAttribute("list",list);
+			model.addAttribute("wlist", wlist);
 			
 		return "/mypage/shopping/wishlist";
 		}else {
 			return "redirect:/login.do";
 		}
+		
+	}
+	
+	@RequestMapping(value="/wishInsert.do")
+	public String wishInsert(Locale locale, Model model,HttpServletResponse response,ProductVO pvo, HttpSession session)throws Exception{
+		MemberVO member = (MemberVO)session.getAttribute("member");
+		pvo.setMidx(member.getMidx());
+		
+		productService.wishInsert(pvo);	
+		
+		return "redirect:/mypage/shopping/wishlist.do";
+	}
+	
+	@RequestMapping(value="/wishdel.do")
+	public void del(Locale locale, Model model, HttpSession session, ProductVO pvo, int widx) throws Exception{
+		MemberVO member = (MemberVO)session.getAttribute("member");
+		
+			wishService.del(widx);
 		
 	}
 	

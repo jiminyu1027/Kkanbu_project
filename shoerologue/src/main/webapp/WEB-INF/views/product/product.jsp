@@ -11,6 +11,8 @@
 	MemberVO loginU = (MemberVO)session.getAttribute("member");
 	
 	List<ReviewVO> prvlist = (List<ReviewVO>)request.getAttribute("prvlist");
+	
+	List<WishListVO> wlist = (List<WishListVO>)request.getAttribute("wishlist");
 %>
 <!DOCTYPE html>
 <html>
@@ -66,6 +68,9 @@
 				  color: black;
 				  overflow: hidden;
 				  pointer-events: none;
+			}
+			.bi-heart-fill{
+				color:#DB0000;
 			}
 		</style>
 		<!-- 상품 이미지 페이지 클릭시 사진 변화 -->
@@ -147,15 +152,26 @@
 				}
 			} */
 			$(document).ready(function() {
+				var fm = document.frm;
 				var fillHeart = 
 				
 			    $(".wishHeart").on("click", function() {
-			    	alert("찜리스트에 담겼습니다.");
+				    if(${member == null}){	
+				    	alert("로그인을 해주세요.");
+				    	location.href="<%=request.getContextPath()%>/login.do";
+				    }else if(sizeSelectYN == false){
+							alert("사이즈를 선택해 주세요.");
+							return false;
+					}else{
 			       // $("#wishHeart").off("click");
-			       
+			       		alert("찜리스트에 담겼습니다.");
+			       	fm.action="/shoerologue/mypage/shopping/wishInsert.do";
+					fm.method="post";
+					fm.submit();
+					
 			       $(".wishHeart").change()
 			       
-			       
+					}
 			    });
 			});
         </script>
@@ -373,9 +389,28 @@
 						<form id="frm" name="frm" action="/shoerologue/cart/cart.do" method="POST">
 							<input type="hidden" name="ctsize">
 							<div class="wishShareBtn">
+							<%
+				             boolean flag = false;
+							
+								for(int i = 0; i<wlist.size(); i++){
+								
+								 	if(wlist.get(i).getPidx() == pvo.getPidx()){
+									 
+										 flag = true;
+										 break;
+									} 
+								 } %>
+							<%if(flag){ %>
+							<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+							 <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+							</svg>
+							<%}else{%>
 								<button type="button" onclick="wishHeart()" class="wishHeart"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
 									<path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
 								</svg></button>&nbsp;
+								<%} %>
+							
+							
 								<a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
 									<path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
 								</svg></a>

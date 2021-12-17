@@ -22,11 +22,13 @@ import edu.study.domain.PageMaker;
 import edu.study.domain.PageMaker2;
 import edu.study.service.MemberService;
 import edu.study.service.ProductService;
+import edu.study.service.WishService;
 import edu.study.vo.InquiryVO;
 import edu.study.vo.MemberVO;
 import edu.study.vo.ProductVO;
 import edu.study.vo.QaVO;
 import edu.study.vo.ReviewVO;
+import edu.study.vo.WishListVO;
 import utils.UploadFileUtils;
 
 @RequestMapping(value="/")
@@ -38,6 +40,9 @@ public class ProductController {
 	
 	@Autowired
 	MemberService MemberService;
+	
+	@Autowired
+	WishService wishService;
 	
 	@Autowired
 	edu.study.service.QaService QaService;
@@ -62,11 +67,12 @@ public class ProductController {
 			List<ReviewVO> prvlist = ReviewService.prvlist(pidx);
 			model.addAttribute("prvlist",prvlist);
 			
+			List<WishListVO> wlist = wishService.wishlist(member.getMidx());
+			model.addAttribute("wishlist", wlist);
+			
 		return "/product/product";
 		
 	}	
-	
-	
 	@RequestMapping(value="/cart/cart.do",method=RequestMethod.POST)
 	public String insert(Locale locale, Model model, ProductVO pvo,HttpSession session)throws Exception {
 			 

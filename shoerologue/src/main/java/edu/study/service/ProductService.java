@@ -12,6 +12,7 @@ public interface ProductService {
 	List<ProductVO> list() throws Exception;
 	ProductVO detail(int pidx) throws Exception;
 	public void insert(ProductVO pvo) throws Exception;
+	public void wishInsert(ProductVO pvo) throws Exception;
 	public void productInsert(ProductVO pvo) throws Exception;
 	List<ProductVO> pdAllList(ProductVO pvo,Criteria2 cri) throws Exception;
 	public int countAllList()throws Exception;

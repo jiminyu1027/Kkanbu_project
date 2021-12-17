@@ -1,18 +1,66 @@
 package edu.study.vo;
 
 public class WishListVO {
-	
-	private int ctidx;
+
+	private int widx;
 	private int pidx;
 	private int midx;
+	private String pBrandeng;
+	private String pNameEng;
+	private String pNamekr;
+	private String pPrice;
+	private String pFile1;
 	private int ctcnt;
-	private String ctwriteday;
-	
-	public int getCtidx() {
-		return ctidx;
+	private String ctsize;
+	private String heart;
+
+	public String getHeart() {
+		return heart;
 	}
-	public void setCtidx(int ctidx) {
-		this.ctidx = ctidx;
+	public void setHeart(String heart) {
+		this.heart = heart;
+	}
+	public String getCtsize() {
+		return ctsize;
+	}
+	public void setCtsize(String ctsize) {
+		this.ctsize = ctsize;
+	}
+	public String getpNamekr() {
+		return pNamekr;
+	}
+	public void setpNamekr(String pNamekr) {
+		this.pNamekr = pNamekr;
+	}
+	public String getpFile1() {
+		return pFile1;
+	}
+	public void setpFile1(String pFile1) {
+		this.pFile1 = pFile1;
+	}
+	public String getpPrice() {
+		return pPrice;
+	}
+	public void setpPrice(String pPrice) {
+		this.pPrice = pPrice;
+	}
+	public String getpNameEng() {
+		return pNameEng;
+	}
+	public void setpNameEng(String pNameEng) {
+		this.pNameEng = pNameEng;
+	}
+	public String getpBrandeng() {
+		return pBrandeng;
+	}
+	public void setpBrandeng(String pBrandeng) {
+		this.pBrandeng = pBrandeng;
+	}
+	public int getWidx() {
+		return widx;
+	}
+	public void setWidx(int widx) {
+		this.widx = widx;
 	}
 	public int getPidx() {
 		return pidx;
@@ -32,13 +80,4 @@ public class WishListVO {
 	public void setCtcnt(int ctcnt) {
 		this.ctcnt = ctcnt;
 	}
-	public String getCtwriteday() {
-		return ctwriteday;
-	}
-	public void setCtwriteday(String ctwriteday) {
-		this.ctwriteday = ctwriteday;
-	}
-	
-	
-	
 }
