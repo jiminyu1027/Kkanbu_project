@@ -93,6 +93,7 @@
 		}
 		.inquiry-box{
 			margin-top:15px;
+			margin-left:250px;
 			width:73%;
 		}
 		.inquiry-title{
@@ -141,6 +142,10 @@
  			position:relative; 
 			padding-right:12px;
 			padding-top:3px;
+		}
+		.noTextSize{
+			font-size:20px;
+			margin-top:150px;
 		}
 		</style>
 </head>
@@ -323,9 +328,7 @@
 				</div>
 			</div>
 			</div>
-			<div class="empty-box"></div>
-			<div class="empty-box"></div>
-			<div class="mainTitle">나의 리뷰</div>	
+				
 		</c:if>
 	<!-- 여기는 관리자가 보이는 화면 -->
 	<c:if test="${master eq 'master'}">
@@ -364,7 +367,6 @@
 				</svg></span>
 				<div class="myPageMenu3">
 					<a href="/shoerologue/customerService/notice.do" class="gray">공지 사항</a><br>
-					<a href="/shoerologue/customerService/cs.do" class="gray">FAQs</a><br>
 					<a href="/shoerologue/mypage/memberCounsel/inquiry.do" class="gray">1:1 문의 목록</a><br>
 					<a href="/shoerologue/mypage/shopping/qaList.do" class="gray">QNA 목록</a><br>
 					<a href="/shoerologue/mypage/shopping/myReview.do" class="red">리뷰 목록*</a>
@@ -390,13 +392,11 @@
 			
 		</div>
 		</div>
+		</c:if>	
 		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
 		<div class="empty-box"></div>
 		<div class="empty-box"></div>
 		<div class="mainTitle">리뷰 목록</div>	
-		
-	</c:if>	
-		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
 		<br>
 		<br>	
 		<form action="/shoerologue/mypage/shopping/reviewDel.do" method="post">
@@ -432,17 +432,13 @@
 					</table>	
 					<%} %>	
 				<%}else if(mylist.size() == 0){ %>	
-					<table class="inquiry-box" style="border-top:1px solid gray;  border-bottom:1px solid gray; height:500px;">
-						<tbody>
-							<tr>
-								<td colspan="4" style="height:150px; text-align:center;">
-									<i class="bi bi-exclamation-circle exclamation"></i>
-									<br>
-									등록된 리뷰가 없습니다.
-								</td>
-							</tr>
-						</tbody>
-					</table>
+					<div class="inquiry-box" style="border-top:1px solid gray;  border-bottom:1px solid gray; height:500px;">
+						<div style="height:150px; text-align:center;" class="noTextSize">
+							<i class="bi bi-exclamation-circle exclamation"></i>
+							<br>
+							등록된 리뷰가 없습니다.
+						</div>
+					</div>
 				<%} %>
 			<%}else if(loginU.getMaster().equals("master")){ %>
 				<%if(masterlist.size() > 0){ %>
@@ -476,17 +472,13 @@
 					</table>	
 					<%} %>	
 				<%}else if(masterlist.size() == 0){ %>	
-					<table class="inquiry-box" style="border-top:1px solid gray;  border-bottom:1px solid gray; height:500px;">
-						<tbody>
-							<tr>
-								<td colspan="4" style="height:150px; text-align:center;">
-									<i class="bi bi-exclamation-circle exclamation"></i>
-									<br>
-									등록된 리뷰가 없습니다.
-								</td>
-							</tr>
-						</tbody>
-					</table>
+					<div class="inquiry-box" style="border-top:1px solid gray; width:80%; border-bottom:1px solid gray; height:500px;">
+						<div style="height:150px; text-align:center;" class="noTextSize">
+							<i class="bi bi-exclamation-circle exclamation"></i>
+							<br>
+							등록된 리뷰가 없습니다.
+						</div>
+					</div>
 				<%} %>
 			<%} %>			
 		</form>					

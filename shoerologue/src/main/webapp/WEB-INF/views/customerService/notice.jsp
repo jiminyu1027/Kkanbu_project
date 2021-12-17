@@ -23,114 +23,119 @@
     	<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"> -->
 	 	<link rel="stylesheet" href="/shoerologue/resources/css/style.css">
 		<link rel="stylesheet" href="/shoerologue/resources/css/headerFooter.css">
+		<link rel="stylesheet" href="/shoerologue/resources/css/mypage.css">
 		
 		<style>
-      @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-      *{
-         font-family: 'Montserrat', "Noto Sans KR", sans-serif;
-      }
-		.empty-box{
-			width:100%;
-			height:50px;
-		}
-		.filter-box{
-			width:150px;
-			height:600px;
-			margin-right:180px;
-			border:1px solid black;
-			border-radius:10px;
-			float:left;
-		}
-		.filter-title{
-			height:40px;
-			background-color:black;
-			border-radius:8px;
-		}
-		#filter-title{
-			color:white;
-			font-size:20px;
-			font-style:bold;
-		}
-		.comNum{
-			color:red;
-			font-size:25px;
-		}
-		.main{
-			color:red;
-			text-decoration: underline;
-			font-size:20px;
-		}
-		.other{
-			font-size:20px;
-		}
-		.other:hover{
-			color:red;
-			text-decoration: underline;
-		}
-		.smft{
-			color:gray;
-		}
-		.tsft{
-			color:black;
-			text-decoration: underline;
-		}
-		.cl-left{
-			clear:left;
-		}
-		.body-box{
-			width:1400px;
-			margin:auto;
-		}
-		.mainTitle{
-			font-size:30px;
-			font-style:strong;
-			margin-left:30px;
-		}
-		.notice-box{
-			width:70%;
-			margin-top:15px;
-		}
-		.notice-title{
-			border-top:3px solid black;
-			border-bottom:2px solid gray;
-			font-size:15px;
-			color:gray;
-		}
-		.notice-number{
-			text-align:center;
-		}
-		.notice-subject{
-			text-align:left;
-		}
-		.notice-writeday{
-			text-align:center;
-		}
-		.notice-contents-box{
-			border-bottom:1px solid gray;
-		}
-		.notice-number-detail{
-			text-align:center;
-			font-size:20px;
-			height:50px;
-		}
-		.notice-subject-detail{
-			text-align:left;
-			font-size:20px;
-			
-		}
-		.notice-writeday-detail{
-			text-align:center;
-			font-size:20px;
-		}
-		.goWrite{
-			margin-left:716px;
-			width:120px;
-			height:50px;
-			background-color:purple;
-			color:white;
-			font-size:15px;
-			border-radius:10px;
-		}
+			@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+			*{
+			   font-family: 'Montserrat', "Noto Sans KR", sans-serif;
+			}
+			.empty-box{
+				width:100%;
+				height:50px;
+			}
+			.filter-box{
+				width:150px;
+				height:600px;
+				margin-right:180px;
+				border:1px solid black;
+				border-radius:10px;
+				float:left;
+			}
+			.filter-title{
+				height:40px;
+				background-color:black;
+				border-radius:8px;
+			}
+			#filter-title{
+				color:white;
+				font-size:20px;
+				font-style:bold;
+			}
+			.comNum{
+				color:red;
+				font-size:25px;
+			}
+			.main{
+				color:red;
+				text-decoration: underline;
+				font-size:20px;
+			}
+			.other{
+				font-size:20px;
+			}
+			.other:hover{
+				color:red;
+				text-decoration: underline;
+			}
+			.smft{
+				color:gray;
+			}
+			.tsft{
+				color:black;
+				text-decoration: underline;
+			}
+			.cl-left{
+				clear:left;
+			}
+			.body-box{
+				width:1400px;
+				margin:auto;
+			}
+			.mainTitle{
+				font-size:30px;
+				font-style:strong;
+				margin-left:30px;
+			}
+			.notice-box{
+				width:70%;
+				margin-top:15px;
+			}
+			.notice-title{
+				border-top:3px solid black;
+				border-bottom:2px solid gray;
+				font-size:15px;
+				color:gray;
+			}
+			.notice-number{
+				text-align:center;
+			}
+			.notice-subject{
+				text-align:left;
+			}
+			.notice-writeday{
+				text-align:center;
+			}
+			.notice-contents-box{
+				border-bottom:1px solid gray;
+			}
+			.notice-number-detail{
+				text-align:center;
+				font-size:20px;
+				height:50px;
+			}
+			.notice-subject-detail{
+				text-align:left;
+				font-size:20px;
+				
+			}
+			.notice-writeday-detail{
+				text-align:center;
+				font-size:20px;
+			}
+			.goWrite{
+				margin-left:716px;
+				width:120px;
+				height:50px;
+				background-color:purple;
+				color:white;
+				font-size:15px;
+				border-radius:10px;
+			}
+			.noTextSize{
+				font-size:20px;
+				margin-top:150px;
+			}
 		</style>
 </head>
 <body>
@@ -255,10 +260,9 @@
 		</nav>
 	</div>
 <!-- body  -->
-
-	<div class="empty-box"></div>
+	
 	<div class="body-box">
-		
+		<c:if test="${master ne 'master'}">
 		<div class="filter-box">
 			<div class="filter-title"><span id="filter-title"><center>고객센터</center></span></div>
 			<center><p><a href="/shoerologue/customerService/cs.do" class="other">FAQ</a></p></center>
@@ -278,9 +282,77 @@
 			<center><div class="smft">신한 101-010-1010</div></center>
 			<center><div class="smft">농협 210-120-2151</div></center>
 			<center><div class="tsft">예금주:㈜깐부 글로벌</div></center>
+		</div>
+		</c:if>
+		
+		<!-- 여기는 관리자가 보이는 화면 -->
+	<c:if test="${master eq 'master'}">
+		<!-- 페이지 이동경로 -->
+		<div style=" float: left; width: 0%;">&nbsp;</div>
+		<div style=" float: left; width: 99%;" class="mt-3">
+			<span style="color:#757575; font-size:1em">
+				<a href="/shoerologue" style="color:#757575; font-size:1.1em">
+				<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-house-fill mb-1" viewBox="0 0 16 16">
+				  <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+				  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+				</svg>
+				HOME</a> 
+			> 관리자 페이지 > 게시판 관리 > 공지 사항
+			</span>
+		</div>
+		
+		<!-- 좌측 관리자 페이지 메뉴-->
+		<div style=" float: left; width: 20%;">
+		<div class="myPageMenu">
+			<div class="myPageTitle">
+				관리자 페이지
+			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">주문/배송 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="/shoerologue/mypage/claim/myPage.do" class="gray">주문 내역</a><br>
+					<a href="#" class="gray">배송 현황</a>
+				</div><br>
+			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">게시판 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="/shoerologue/customerService/notice.do" class="red">공지 사항*</a><br>
+					<a href="/shoerologue/mypage/memberCounsel/inquiry.do" class="gray">1:1 문의 목록</a><br>
+					<a href="/shoerologue/mypage/shopping/qaList.do" class="gray">QNA 목록</a><br>
+					<a href="/shoerologue/mypage/shopping/myReview.do" class="gray">리뷰 목록</a>
+				</div>
+			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="/shoerologue/product/pdAllList.do">상품 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="/shoerologue/admin/pdAllList.do" class="gray">상품 목록</a><br>
+					<a href="/shoerologue/admin/productInsert.do" class="gray">상품 등록</a>
+				</div>
+			</div>
+			<div class="myPageMenu2">
+				<span style="font-size:1.3em; font-weight: bold;"><a href="#">회원 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+				</svg></span>
+				<div class="myPageMenu3">
+					<a href="/shoerologue/admin/memberList.do" class="gray">회원 목록</a>
+				</div>
+			</div>
 			
 		</div>
-		<span class="mainTitle">공지사항</span>
+		</div>
+		</c:if>	
+		<!-- 좌측 관리자 페이지 메뉴 여기서 끝 -->
+		
+		<div class="empty-box"></div>
+		<div class="empty-box"></div>
+		<span class="mainTitle mt-5">공지사항</span>
 		<c:if test="${master eq 'master'}">
 			<input type="button" value="공지 작성" onclick="location.href='/shoerologue/admin/noticeWrite.do'" class="goWrite">	
 		</c:if>

@@ -395,7 +395,6 @@
 				</svg></span>
 				<div class="myPageMenu3">
 					<a href="/shoerologue/customerService/notice.do" class="gray">공지 사항</a><br>
-					<a href="/shoerologue/customerService/cs.do" class="gray">FAQs</a><br>
 					<a href="/shoerologue/mypage/memberCounsel/inquiry.do" class="gray">1:1 문의 목록</a><br>
 					<a href="/shoerologue/mypage/shopping/qaList.do" class="gray">QNA 목록</a><br>
 					<a href="/shoerologue/mypage/shopping/myReview.do" class="gray">리뷰 목록</a>
@@ -441,11 +440,6 @@
 		</div>
 		</div>
 	</div><br>
-		
-		
-		
-		
-		
 	</c:if>
 	
 <!-- 우측하단 TOP 이동 배너 -->
