@@ -187,16 +187,16 @@
 			<div>
 				<div class="bestPd">
 					<div class="ranking1">1</div>
-					<a href="/shoerologue/product/product.do?pidx=<%=raragolist.get(6).getPidx()%>">
-						<img src="/shoerologue/resources/<%=raragolist.get(6).getpFile1()%>">
-						<div class="shoesBrand"><%=raragolist.get(6).getpBrandKr()%></div>
-						<div class="shoesName"><%=raragolist.get(6).getpNameKr()%></div>
+					<a href="/shoerologue/product/product.do?pidx=<%=raragolist.get(0).getPidx()%>">
+						<img src="/shoerologue/resources/<%=raragolist.get(0).getpFile1()%>">
+						<div class="shoesBrand"><%=raragolist.get(0).getpBrandKr()%></div>
+						<div class="shoesName"><%=raragolist.get(0).getpNameKr()%></div>
 						<div class="shoesPriceBox">
 							<span class="shoesPrice">
-								<% if(raragolist.get(6).getpPrice().length() <6) {%>
-									<%=raragolist.get(6).getpPrice().substring(raragolist.get(6).getpPrice().length()-5,raragolist.get(6).getpPrice().length()-3) %>,<%=raragolist.get(6).getpPrice().substring(raragolist.get(6).getpPrice().length()-3,raragolist.get(6).getpPrice().length()) %>
+								<% if(raragolist.get(0).getpPrice().length() <6) {%>
+									<%=raragolist.get(0).getpPrice().substring(raragolist.get(0).getpPrice().length()-5,raragolist.get(0).getpPrice().length()-3) %>,<%=raragolist.get(0).getpPrice().substring(raragolist.get(0).getpPrice().length()-3,raragolist.get(0).getpPrice().length()) %>
 								<%}else{ %>
-									<%=raragolist.get(6).getpPrice().substring(raragolist.get(6).getpPrice().length()-6,raragolist.get(6).getpPrice().length()-3) %>,<%=raragolist.get(6).getpPrice().substring(raragolist.get(6).getpPrice().length()-3,raragolist.get(6).getpPrice().length()) %>
+									<%=raragolist.get(0).getpPrice().substring(raragolist.get(0).getpPrice().length()-6,raragolist.get(0).getpPrice().length()-3) %>,<%=raragolist.get(0).getpPrice().substring(raragolist.get(0).getpPrice().length()-3,raragolist.get(0).getpPrice().length()) %>
 								<% } %>
 							</span>
 							<span class="won">원</span>
@@ -383,10 +383,10 @@
 					} else{
 					%>
 					<div class="emptyProductBox">
-						<div class="exclamation"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+						<div class="exclamation"><svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
 						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-						</svg></div>
+						</svg></div><br>
 					등록된 상품이 없습니다.
 					</div>
 					<%

@@ -205,16 +205,16 @@
 				</div>
 				<div class="bestPd">
 					<div class="ranking">2</div>
-					<a href="/shoerologue/product/product.do?pidx=<%=pumalist.get(12).getPidx()%>">
-						<img src="/shoerologue/resources/<%=pumalist.get(12).getpFile1()%>">
-						<div class="shoesBrand"><%=pumalist.get(12).getpBrandKr()%></div>
-						<div class="shoesName"><%=pumalist.get(12).getpNameKr()%></div>
+					<a href="/shoerologue/product/product.do?pidx=<%=pumalist.get(0).getPidx()%>">
+						<img src="/shoerologue/resources/<%=pumalist.get(0).getpFile1()%>">
+						<div class="shoesBrand"><%=pumalist.get(0).getpBrandKr()%></div>
+						<div class="shoesName"><%=pumalist.get(0).getpNameKr()%></div>
 						<div class="shoesPriceBox">
 							<span class="shoesPrice">
-								<% if(pumalist.get(12).getpPrice().length() <6) {%>
-									<%=pumalist.get(12).getpPrice().substring(pumalist.get(12).getpPrice().length()-5,pumalist.get(12).getpPrice().length()-3) %>,<%=pumalist.get(12).getpPrice().substring(pumalist.get(12).getpPrice().length()-3,pumalist.get(12).getpPrice().length()) %>
+								<% if(pumalist.get(0).getpPrice().length() <6) {%>
+									<%=pumalist.get(0).getpPrice().substring(pumalist.get(0).getpPrice().length()-5,pumalist.get(0).getpPrice().length()-3) %>,<%=pumalist.get(0).getpPrice().substring(pumalist.get(0).getpPrice().length()-3,pumalist.get(0).getpPrice().length()) %>
 								<%}else{ %>
-									<%=pumalist.get(12).getpPrice().substring(pumalist.get(12).getpPrice().length()-6,pumalist.get(12).getpPrice().length()-3) %>,<%=pumalist.get(12).getpPrice().substring(pumalist.get(12).getpPrice().length()-3,pumalist.get(12).getpPrice().length()) %>
+									<%=pumalist.get(0).getpPrice().substring(pumalist.get(0).getpPrice().length()-6,pumalist.get(0).getpPrice().length()-3) %>,<%=pumalist.get(0).getpPrice().substring(pumalist.get(0).getpPrice().length()-3,pumalist.get(0).getpPrice().length()) %>
 								<% } %>
 							</span>
 							<span class="won">원</span>
@@ -383,10 +383,10 @@
 					} else{
 					%>
 					<div class="emptyProductBox">
-						<div class="exclamation"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+						<div class="exclamation"><svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
 						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-						</svg></div>
+						</svg></div><br>
 					등록된 상품이 없습니다.
 					</div>
 					<%
