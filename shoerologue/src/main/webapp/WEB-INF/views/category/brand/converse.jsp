@@ -188,7 +188,7 @@
 				<div class="bestPd">
 					<div class="ranking1">1</div>
 					<a href="/shoerologue/product/product.do?pidx=<%=converselist.get(7).getPidx()%>">
-						<img src="/shoerologue/resources/image/productdetail/<%=converselist.get(7).getpFile1()%>">
+						<img src="/shoerologue/resources/<%=converselist.get(7).getpFile1()%>">
 						<div class="shoesBrand"><%=converselist.get(7).getpBrandKr()%></div>
 						<div class="shoesName"><%=converselist.get(7).getpNameKr()%></div>
 						<div class="shoesPriceBox">
@@ -206,7 +206,7 @@
 				<div class="bestPd">
 					<div class="ranking">2</div>
 					<a href="/shoerologue/product/product.do?pidx=<%=converselist.get(8).getPidx()%>">
-						<img src="/shoerologue/resources/image/productdetail/<%=converselist.get(8).getpFile1()%>">
+						<img src="/shoerologue/resources/<%=converselist.get(8).getpFile1()%>">
 						<div class="shoesBrand"><%=converselist.get(8).getpBrandKr()%></div>
 						<div class="shoesName"><%=converselist.get(8).getpNameKr()%></div>
 						<div class="shoesPriceBox">
@@ -224,7 +224,7 @@
 				<div class="bestPd">
 					<div class="ranking">3</div>
 					<a href="/shoerologue/product/product.do?pidx=<%=converselist.get(6).getPidx()%>">
-						<img src="/shoerologue/resources/image/productdetail/<%=converselist.get(6).getpFile1()%>">
+						<img src="/shoerologue/resources/<%=converselist.get(6).getpFile1()%>">
 						<div class="shoesBrand"><%=converselist.get(6).getpBrandKr()%></div>
 						<div class="shoesName"><%=converselist.get(6).getpNameKr()%></div>
 						<div class="shoesPriceBox">
@@ -242,7 +242,7 @@
 				<div class="bestPd">
 					<div class="ranking">4</div>
 					<a href="/shoerologue/product/product.do?pidx=<%=converselist.get(3).getPidx()%>">
-						<img src="/shoerologue/resources/image/productdetail/<%=converselist.get(3).getpFile1()%>">
+						<img src="/shoerologue/resources/<%=converselist.get(3).getpFile1()%>">
 						<div class="shoesBrand"><%=converselist.get(3).getpBrandKr()%></div>
 						<div class="shoesName"><%=converselist.get(3).getpNameKr()%></div>
 						<div class="shoesPriceBox">
@@ -260,7 +260,7 @@
 				<div class="bestPd">
 					<div class="ranking">5</div>
 					<a href="/shoerologue/product/product.do?pidx=<%=converselist.get(2).getPidx()%>">
-						<img src="/shoerologue/resources/image/productdetail/<%=converselist.get(2).getpFile1()%>">
+						<img src="/shoerologue/resources/<%=converselist.get(2).getpFile1()%>">
 						<div class="shoesBrand"><%=converselist.get(2).getpBrandKr()%></div>
 						<div class="shoesName"><%=converselist.get(2).getpNameKr()%></div>
 						<div class="shoesPriceBox">

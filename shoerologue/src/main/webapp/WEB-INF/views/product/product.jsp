@@ -134,6 +134,30 @@
 					return;
 				}
 			}
+			
+			/* function wishHeart(){
+				if( == null){
+					alert("로그인이 필요한 서비스 입니다.");
+					return "redirect:/login.do";
+				}else{
+					alert("찜리스트에 담겼습니다.");
+					
+					return false;
+					
+				}
+			} */
+			$(document).ready(function() {
+				var fillHeart = 
+				
+			    $(".wishHeart").on("click", function() {
+			    	alert("찜리스트에 담겼습니다.");
+			       // $("#wishHeart").off("click");
+			       
+			       $(".wishHeart").change()
+			       
+			       
+			    });
+			});
         </script>
 	</head>
 		<body>
@@ -349,9 +373,9 @@
 						<form id="frm" name="frm" action="/shoerologue/cart/cart.do" method="POST">
 							<input type="hidden" name="ctsize">
 							<div class="wishShareBtn">
-								<a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+								<button type="button" onclick="wishHeart()" class="wishHeart"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
 									<path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
-								</svg></a>&nbsp;&nbsp;&nbsp;
+								</svg></button>&nbsp;
 								<a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
 									<path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5zm-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/>
 								</svg></a>
