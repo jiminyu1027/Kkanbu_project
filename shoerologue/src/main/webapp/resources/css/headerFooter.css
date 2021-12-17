@@ -197,3 +197,16 @@
 	.dropdown-item:focus{
 		background-color:black;
 		color:white;
+	}.hotDealRedBox{
+		width:60px;
+		height:60px;
+		background-color:#EE1C25;
+		color:white;
+		font-weight:700;
+		font-size:15pt;
+		text-align:center;
+		padding-top:15px;
+		position:absolute;
+	}.hotLfThanSmall{
+		font-size:12pt;
+	}

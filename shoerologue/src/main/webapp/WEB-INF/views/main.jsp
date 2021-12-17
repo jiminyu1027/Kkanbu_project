@@ -38,7 +38,6 @@
 		*{
 		font-family: 'Montserrat', "Noto Sans KR", sans-serif;
 		}
-		
 		.img-fluid{
 			width:100%;
 		}
@@ -46,7 +45,6 @@
 			overflow-x:hidden;
 		}
 		</style>
-	
 	</head>
 	<body>
 		<!-- 로그인 회원가입 -->
@@ -238,6 +236,7 @@
 	     <div class="col-6 col-sm-6 col-md-3 col-lg-3 cardhover">
 			<a href="/shoerologue/product/product.do?pidx=<%=hlist.get(i).getPidx()%>">
 		     <div class="card w-20">
+		     <div class="hotDealRedBox"><%=hlist.get(i).getHsaleper()%><sapn class="hotLfThanSmall">%</sapn></div>
 			 <img src="/shoerologue/resources/image/productdetail/<%=hlist.get(i).gethFile1()%>" class="card-img-top" alt="핫딜상품">
 			  <div class="card-body">
 			  	<h5 class="card-title brandtitle"><%=hlist.get(i).gethBrandKr()%></h5>
