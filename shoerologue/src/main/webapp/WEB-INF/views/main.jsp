@@ -26,11 +26,11 @@
 		<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 		
 		<!-- 아이콘 크기 -->
-		<link rel="stylesheet" href="/shoerologue/resources/css/style.css">
+		<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/style.css">
 		<!-- Bootstrap Font Icon CSS -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-    	<link rel="stylesheet" href="/shoerologue/resources/css/headerFooter.css">
+    	<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/headerFooter.css">
 		
 		<style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
@@ -55,10 +55,10 @@
 			      <!-- 로그인 안했을때 -->
 			      <c:if test="${member == null}">
 						  <li class="nav-item">
-						    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
+						    <a class="nav-link text-black-50 fw-bolder" href="<%=request.getContextPath() %>/login.do">로그인</a>
 						  </li>
 						  <li class="nav-item">
-						    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/member/join.do">회원가입</a>
+						    <a class="nav-link text-black-50 fw-bolder" href="<%=request.getContextPath() %>/member/join.do">회원가입</a>
 						  </li>
 					</c:if>
 					<!-- 로그인 했을때 -->
@@ -67,7 +67,7 @@
 						    <a class="nav-link text-black-50 fw-bolder">${member.mName}님 환영합니다</a>
 						  </li>
 						  <li class="nav-item">
-						    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/logout.do">로그아웃</a>
+						    <a class="nav-link text-black-50 fw-bolder" href="<%=request.getContextPath() %>/logout.do">로그아웃</a>
 						  </li>
 					</c:if>
 					</ul>
@@ -79,7 +79,7 @@
 	  <div class="row">
 	  	  <!-- 로고 -->
 	      <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-              <a href="/shoerologue"><img class="banner-D" src="/shoerologue/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+              <a href="<%=request.getContextPath() %>"><img class="banner-D" src="<%=request.getContextPath() %>/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
               <div class="logo-scroll3"></div>
            </div>
         <!-- 검색창 -->   
@@ -94,15 +94,15 @@
 	     <!-- 마이페이지, 찜목록, 장바구니 -->
 	     <div class="col-0 col-sm-0 col-md-2 col-lg-3 d-flex justify-content-center align-items-center">
 			<ul class="iconul d-flex align-items-center icon-absolute">
-				<li class="iconli"><a href="/shoerologue/mypage/claim/myPage.do">
+				<li class="iconli"><a href="<%=request.getContextPath() %>/mypage/claim/myPage.do">
 					<i class="bi bi-person icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="/shoerologue/mypage/shopping/wishlist.do">
+				<li class="iconli"><a href="<%=request.getContextPath() %>/mypage/shopping/wishlist.do">
 					<i class="bi bi-heart icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="/shoerologue/cart/cart.do">
+				<li class="iconli"><a href="<%=request.getContextPath() %>/cart/cart.do">
 					<i class="bi bi-bag icon"></i>
 					</a>
 				</li>
@@ -120,45 +120,45 @@
 		 <div class="col-10 col-sm-8 col-md-6 col-lg-5">
 			 <ul class="nav navMenu">
 			 	<li class="nav-item">
-				<a class="nav-link fw-bolder text-white nav-fs" href="/shoerologue/category/brand.do">BRAND</a>
+				<a class="nav-link fw-bolder text-white nav-fs" href="<%=request.getContextPath() %>/category/brand.do">BRAND</a>
 				</li>
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/men.do" role="button" aria-expanded="false">MEN</a>
+				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="<%=request.getContextPath() %>/category/gender/men.do" role="button" aria-expanded="false">MEN</a>
 				    <ul class="dropdown-menu bg-white dropDownMenu">
-				    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/men.do">MEN</a></li>
+				    	<li><a class="dropdown-item fw-bolder" href="<%=request.getContextPath() %>/category/gender/men.do">MEN</a></li>
 				   		<li><hr class="dropdown-divider "></li>
-					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/men/sneakers.do">운동화</a></li>
-					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/men/sports.do">스포츠</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/dressShoes.do">구두</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/sandle.do">샌들</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/casual.do">캐주얼</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/boots.do">부츠</a></li>
+					 	<li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/men/sneakers.do">운동화</a></li>
+					 	<li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/men/sports.do">스포츠</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/men/dressShoes.do">구두</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/men/sandle.do">샌들</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/men/casual.do">캐주얼</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/men/boots.do">부츠</a></li>
 				    </ul>
 				</li>
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/women.do" role="button" aria-expanded="false">WOMEN</a>
+				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="<%=request.getContextPath() %>/category/gender/women.do" role="button" aria-expanded="false">WOMEN</a>
 				    <ul class="dropdown-menu bg-white dropDownMenu">
-				    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/women.do">WOMEN</a></li>
+				    	<li><a class="dropdown-item fw-bolder" href="<%=request.getContextPath() %>/category/gender/women.do">WOMEN</a></li>
 				   		<li><hr class="dropdown-divider"></li>
-					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/women/sneakers.do">운동화</a></li>
-					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/women/sports.do">스포츠</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/dressShoes.do">구두</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/sandle.do">샌들</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/casual.do">캐주얼</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/boots.do">부츠</a></li>
+					 	<li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/women/sneakers.do">운동화</a></li>
+					 	<li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/women/sports.do">스포츠</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/women/dressShoes.do">구두</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/women/sandle.do">샌들</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/women/casual.do">캐주얼</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/women/boots.do">부츠</a></li>
 				    </ul>
 				</li>
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/kids.do" role="button" aria-expanded="false">KIDS</a>
+				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="<%=request.getContextPath() %>/category/gender/kids.do" role="button" aria-expanded="false">KIDS</a>
 				    <ul class="dropdown-menu bg-white dropDownMenu ">
-				    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/kids.do">KIDS</a></li>
+				    	<li><a class="dropdown-item fw-bolder" href="<%=request.getContextPath() %>/category/gender/kids.do">KIDS</a></li>
 				   		<li><hr class="dropdown-divider"></li>
-					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/kids/sneakers.do">운동화</a></li>
-					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/kids/sports.do">스포츠</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/dressShoes.do">구두</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/sandle.do">샌들</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/casual.do">캐주얼</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/boots.do">부츠</a></li>
+					 	<li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/kids/sneakers.do">운동화</a></li>
+					 	<li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/kids/sports.do">스포츠</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/kids/dressShoes.do">구두</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/kids/sandle.do">샌들</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/kids/casual.do">캐주얼</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/kids/boots.do">부츠</a></li>
 				    </ul>
 				</li>
 			</ul>
@@ -194,13 +194,13 @@
 	  <!-- 배너이미지 3장 -->
 	  <div class="carousel-inner">
 	    <div class="carousel-item active"  data-bs-interval="4000">
-	      <img src="/shoerologue/resources/image/mainbanner/001.png" class="d-block w-100" alt="45%할인 이벤트">
+	      <img src="<%=request.getContextPath() %>/resources/image/mainbanner/001.png" class="d-block w-100" alt="45%할인 이벤트">
 	    </div>
 	    <div class="carousel-item"  data-bs-interval="4500">
-	      <img src="/shoerologue/resources/image/mainbanner/KAKAO.png" class="d-block w-100" alt="카카오페이 결제시 3천원 할인 이벤트">
+	      <img src="<%=request.getContextPath() %>/resources/image/mainbanner/KAKAO.png" class="d-block w-100" alt="카카오페이 결제시 3천원 할인 이벤트">
 	    </div>
 	    <div class="carousel-item"  data-bs-interval="4500">
-	      <img src="/shoerologue/resources/image/mainbanner/ilnam.png" class="d-block w-100" alt="45%할인 이벤트">
+	      <img src="<%=request.getContextPath() %>/resources/image/mainbanner/ilnam.png" class="d-block w-100" alt="45%할인 이벤트">
 	    </div>
 	  </div>
 	  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -218,26 +218,31 @@
 	
 	<!-- 핫딜 -->
 	<div class="container">
-	  <div class="row">
+	  <div class="row pdRowBox">
 	    <div class="col-6 col-sm-6 col-md-3 col-lg-3">
 	     <div class="card w-20">
 		  <div class="card-body">
-		    <h1 class="card-title hotdeal-txt" id="hotdeal">HOT DEAL</h1><br>
+		    <div class="card-title hotdeal-txt" id="hotdeal">
+		    	<svg xmlns="http://www.w3.org/2000/svg" width="31" height="31" fill="currentColor" class="bi bi-clock mb-2" viewBox="0 0 16 16">
+				  <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+				  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+				</svg>&nbsp;HOT DEAL</div><br>
 		    <h5 class="card-subtitle mb-2 text-muted">Super Sale Event</h5>
-		    <p class="card-text more-text"><a href="#">MORE &gt;</a></p>
+		    <p class="card-text more-text"><a href="#">MORE &gt;</a></p><br>
 		  </div>
 		</div>
 	    </div>
 	     <!-- 핫딜 상품 --> 
 	     <%
 			     if(hlist.size()>=3){
-			     for(int i=0; i<3;i++) {	    
+			     for(int i=0; i<3;i++) {  
 	    	 %>
 	     <div class="col-6 col-sm-6 col-md-3 col-lg-3 cardhover">
-			<a href="/shoerologue/product/product.do?pidx=<%=hlist.get(i).getPidx()%>">
-		     <div class="card w-20">
+			<a href="<%=request.getContextPath() %>/product/product.do?pidx=<%=hlist.get(i).getPidx()%>">
+		     <div class="card">
 		     <div class="hotDealRedBox"><%=hlist.get(i).getHsaleper()%><sapn class="hotLfThanSmall">%</sapn></div>
-			 <img src="/shoerologue/resources/image/productdetail/<%=hlist.get(i).gethFile1()%>" class="card-img-top" alt="핫딜상품">
+			 <img src="<%=request.getContextPath() %>/resources/image/productdetail/<%=hlist.get(i).gethFile1()%>" class="card-img-top" alt="핫딜상품">
+			 <div id="count" class="hotTimer count"></div>
 			  <div class="card-body">
 			  	<h5 class="card-title brandtitle"><%=hlist.get(i).gethBrandKr()%></h5>
 			    <p class="card-text"><%=hlist.get(i).gethNameKr()%></p>
@@ -311,9 +316,9 @@
 			     for(int i=0; i<20;i++) {	    
 	    	 %>
 	    <div class="col-6 col-md-3 cardhover">
-	    	<a href="/shoerologue/product/product.do?pidx=<%=plist.get(i).getPidx()%>">
+	    	<a href="<%=request.getContextPath() %>/product/product.do?pidx=<%=plist.get(i).getPidx()%>">
 		     <div class="card w-20">
-			  <img src="/shoerologue/resources/<%=plist.get(i).getpFile1()%>" class="card-img-top" alt="best20상품">
+			  <img src="<%=request.getContextPath() %>/resources/<%=plist.get(i).getpFile1()%>" class="card-img-top" alt="best20상품">
 			  <div class="card-body">
 			    <h5 class="card-title brandtitle"><%=plist.get(i).getpBrandKr() %></h5>
 			    <p class="card-text"><%=plist.get(i).getpNameKr() %></p>
@@ -330,253 +335,6 @@
 	    </div>
 	     <% } 
 		} %>
-		<!-- 
-	      <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/conv2.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">컨버스</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	     <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/newbal2.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">뉴발란스</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	     <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/adidas2.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">아디다스</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	  </div>
-	  
-	  <br>
-	  
-	  <div class="row">
-	    <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/crocs.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">크록스</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	     <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/fila.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">휠라</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	     <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/conv.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">컨버스</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	     <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/adidas.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">아디다스</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	  </div>
-	  <br>
-	  
-      <div class="row">
-	    <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/vans2.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">반스</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	     <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/newbal.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">뉴발란스</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	     <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/nike.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">나이키</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	     <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/nike2.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">나이키</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	  </div>
-	  <br>
-	  
-	  <div class="row">
-	    <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/dr_martin.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">닥터마틴</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	     <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/adidas3.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">아디다스</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	     <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/vans3.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">반스</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	     <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/tim.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">팀버랜드</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	  </div>
-	  <br>
-	  
-	  <div class="row">
-	    <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/dr_martin2.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">닥터마틴</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	     <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/fila2.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">NIKE</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	     <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/danner.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">NIKE</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	     <div class="col-6 col-md-3 cardhover">
-	    	<a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/ugg.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">NIKE</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text normalPrice">69,000원</span>&nbsp;
-			  </div>
-			  </div>
-		    </a>
-	     </div>
-	      -->
 	  </div>
 	  <br>
 	</div>
@@ -653,7 +411,7 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="<%=request.getContextPath() %>/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
 	        </ul>
@@ -733,6 +491,24 @@
             },
            }     
       });
+      
+      
+	    var dday = new Date("December 27, 2021, 0:00:00").getTime();
+
+	      setInterval(function() {
+	        var today = new Date().getTime();
+	        var gap = dday - today;
+	        var day = Math.ceil(gap / (1000 * 60 * 60 * 24));
+	        var hour = Math.ceil((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	        var min = Math.ceil((gap % (1000 * 60 * 60)) / (1000 * 60));
+	        var sec = Math.ceil((gap % (1000 * 60)) / 1000);
+
+	       // document.getElementById("count").innerHTML = day + " DAY " + " " + hour + " : " + min + " : " + sec;
+	       var counts = document.getElementsByClassName("count");
+	       for(var i=0; i<counts.length; i++){
+	    	   counts[i].innerHTML = day + " DAY " + " " + hour + " : " + min + " : " + sec;
+	       }
+	      }, 1000);
     </script>
  	<!-- swiper js -->
 	<script src="path/to/swiper.min.js"></script>

@@ -1,70 +1,44 @@
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.*" %>
-<%@ page import="edu.study.vo.*" %>
-<%@ page import="edu.study.domain.*" %>
-<%
-	List<ProductVO> pdAllList = (List<ProductVO>)request.getAttribute("pdAllList");
-	ProductVO pvo = (ProductVO)request.getAttribute("pvo");
-	PageMaker2 pageMaker2 = (PageMaker2)request.getAttribute("pageMaker2");
-%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>상품 리스트 | 슈롤로그</title>
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
-		
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<title> | 슈롤로그</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-		
-		<!-- Bootstrap Font Icon CSS 아이콘 -->
-    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-		<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/style.css">
-		<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/pdAllList.css">
-		<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/headerFooter.css">
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<!-- 아이콘 크기 -->
+		<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/style.css">
 		
+		<!-- Bootstrap Font Icon CSS -->
+    	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    	 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+		 <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/css/headerFooter.css">
+				
 	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-	</style>
-	<!-- <script>
-		function selChange() {
-			var sel = document.getElementById('perPageNum').value;
-			location.href="<%=request.getContextPath() %>/category/gender/men.do?nowPage=${paging.nowPage}&perPageNum="+sel;
+		
+		*{
+		font-family: 'Montserrat', "Noto Sans KR", sans-serif;
 		}
-	</script> -->
+	</style> 
+		 
+		 
 </head>
 <body>
 	<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-light topNav">
 			      <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
 			      <ul class="nav justify-content-end"> 
-			      <!-- 로그인 안했을때 -->
-			      <c:if test="${member == null}">
-						  <li class="nav-item">
-						    <a class="nav-link text-black-50 fw-bolder" href="<%=request.getContextPath() %>/login.do">로그인</a>
-						  </li>
-						  <li class="nav-item">
-						    <a class="nav-link text-black-50 fw-bolder" href="<%=request.getContextPath() %>/member/join.do">회원가입</a>
-						  </li>
-					</c:if>
-					<!-- 로그인 했을때 -->
-					<c:if test="${member != null}">
-						  <li class="nav-item">
-						    <a class="nav-link text-black-50 fw-bolder">${member.mName}님 환영합니다</a>
-						  </li>
-						  <li class="nav-item">
-						    <a class="nav-link text-black-50 fw-bolder" href="<%=request.getContextPath() %>/logout.do">로그아웃</a>
-						  </li>
-					</c:if>
+					  <li class="nav-item">
+					    <a class="nav-link text-black-50 fw-bolder" href="<%=request.getContextPath() %>/login.do">로그인</a>
+					  </li>
+					  <li class="nav-item">
+					    <a class="nav-link text-black-50 fw-bolder" href="<%=request.getContextPath() %>/join.do">회원가입</a>
+					  </li>
 					</ul>
 				</nav>
 			</div>
@@ -74,7 +48,7 @@
 	  <div class="row">
 	  	  <!-- 로고 -->
 	      <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-              <a href="<%=request.getContextPath() %>"><img class="banner-D" src="<%=request.getContextPath() %>/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+              <a href="/main.do"><img class="banner-D" src="<%=request.getContextPath() %>/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
               <div class="logo-scroll3"></div>
            </div>
         <!-- 검색창 -->   
@@ -102,7 +76,7 @@
 					</a>
 				</li>
 			</ul>
-		</div>
+	    </div>
 	  </div>
 	</div>
 	<br>
@@ -118,7 +92,7 @@
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="<%=request.getContextPath() %>/category/gender/men.do" role="button" aria-expanded="false">MEN</a>
-				    <ul class="dropdown-menu bg-white dropDownMenu">
+				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
 				    	<li><a class="dropdown-item fw-bolder" href="<%=request.getContextPath() %>/category/gender/men.do">MEN</a></li>
 				   		<li><hr class="dropdown-divider "></li>
 					 	<li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/men/sneakers.do">운동화</a></li>
@@ -131,7 +105,7 @@
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="<%=request.getContextPath() %>/category/gender/women.do" role="button" aria-expanded="false">WOMEN</a>
-				    <ul class="dropdown-menu bg-white dropDownMenu">
+				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
 				    	<li><a class="dropdown-item fw-bolder" href="<%=request.getContextPath() %>/category/gender/women.do">WOMEN</a></li>
 				   		<li><hr class="dropdown-divider"></li>
 					 	<li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/women/sneakers.do">운동화</a></li>
@@ -144,7 +118,7 @@
 				</li>
 				<li class="nav-item dropdown">
 				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="<%=request.getContextPath() %>/category/gender/kids.do" role="button" aria-expanded="false">KIDS</a>
-				    <ul class="dropdown-menu bg-white dropDownMenu">
+				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
 				    	<li><a class="dropdown-item fw-bolder" href="<%=request.getContextPath() %>/category/gender/kids.do">KIDS</a></li>
 				   		<li><hr class="dropdown-divider"></li>
 					 	<li><a class="dropdown-item" href="<%=request.getContextPath() %>/category/gender/kids/sneakers.do">운동화</a></li>
@@ -157,141 +131,27 @@
 				</li>
 			</ul>
 		</div>
-	    <div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
-	      <ul class="navbar-nav me-auto mb-6 mb-lg-0">
-	      </ul>
-		</div>
+		 <div class="col-1 col-sm-3 col-md-6 col-lg-3 d-sm-none d-md-block d-none">
+		    </div>
 		    <div class="col-0 col-sm-0 col-md-0 col-lg-2"></div>
 		</nav>
 	</div>
 <!-- body  -->
 
-	<div class="bigBox">
-		<div style=" float: left; width: 99%;" class="mt-3">
-			<span style="color:#757575; font-size:1em">
-				<a href="<%=request.getContextPath() %>" style="color:#757575; font-size:1.1em">
-				<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-house-fill mb-1" viewBox="0 0 16 16">
-				  <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
-				  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
-				</svg>
-				HOME</a> 
-			> 관리자 페이지 > 상품 관리 > 상품 목록
-			</span>
-		</div>
-		<!-- 좌측 마이페이지 메뉴-->
-		<div style=" float: left; width: 20%;">
-		<div class="myPageMenu">
-			<div class="myPageTitle">
-				관리자 페이지
-			</div>
-			<div class="myPageMenu2">
-				<span style="font-size:1.3em; font-weight: bold;"><a href="<%=request.getContextPath() %>/mypage/claim/myPage.do">주문/배송 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-				</svg></span>
-				<div class="myPageMenu3">
-					<a href="<%=request.getContextPath() %>/mypage/claim/myPage.do" class="gray">주문 내역</a><br>
-					<a href="#" class="gray">배송 현황</a>
-				</div><br>
-			</div>
-			<div class="myPageMenu2">
-				<span style="font-size:1.3em; font-weight: bold;"><a href="#">게시판 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-				</svg></span>
-				<div class="myPageMenu3">
-					<a href="<%=request.getContextPath() %>/customerService/notice.do" class="gray">공지 사항</a><br>
-					<a href="<%=request.getContextPath() %>/customerService/cs.do" class="gray">FAQs</a><br>
-					<a href="<%=request.getContextPath() %>/mypage/memberCounsel/inquiry.do" class="gray">1:1 문의 목록</a><br>
-					<a href="<%=request.getContextPath() %>/mypage/shopping/qaList.do" class="gray">QNA 목록</a><br>
-					<a href="#" class="gray">리뷰 목록</a>
-				</div>
-			</div>
-			<div class="myPageMenu2">
-				<span style="font-size:1.3em; font-weight: bold;"><a href="<%=request.getContextPath() %>/product/pdAllList.do">상품 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-				</svg></span>
-				<div class="myPageMenu3">
-					<a href="<%=request.getContextPath() %>/admin/pdAllList.do" class="red">상품 목록*</a><br>
-					<a href="<%=request.getContextPath() %>/admin/productInsert.do" class="gray">상품 등록</a>
-				</div>
-			</div>
-			<div class="myPageMenu2">
-				<span style="font-size:1.3em; font-weight: bold;"><a href="#">회원 관리</a>&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
-				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
-				</svg></span>
-				<div class="myPageMenu3">
-					<a href="<%=request.getContextPath() %>/admin/memberList.do" class="gray">회원 목록</a>
-				</div>
-			</div>			
-		</div>
-		</div>
-		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
-		<div class="totalPd">
-			<span>총 <span class="redBold"><%=pageMaker2.getTotalCount()%></span>개의 상품이 있습니다.</span>
-		</div>
-		<div class="brandBox">
-			<div class="totalPdSel">
-				<div class="hr1"></div>
-			</div>
-			<!-- 상품 -->
-			<div class="brandPdBox">
-				<div class="brandPdSmBox">
-					<%
-					     if(pdAllList.size() != 0){
-					     for(int i=0; i<pdAllList.size();i++) {	    
-			    	 %>
-					<div class="brandPd">
-						<a href="<%=request.getContextPath() %>/product/product.do?pidx=<%=pdAllList.get(i).getPidx()%>">
-							<img src="<%=request.getContextPath() %>/resources/<%=pdAllList.get(i).getpFile1()%>">
-							<div class="shoesBrand" id="pBrandKr"><%=pdAllList.get(i).getpBrandKr()%></div>
-							<div class="shoesName" id="pNameKr"><%=pdAllList.get(i).getpNameKr()%></div>
-							<div class="shoesPriceBox">
-								<span class="shoesPrice" id="pPrice">
-									<span class="pPrice" id="pPrice" name="pPrice">
-										<% if(pdAllList.get(i).getpPrice().length() <6) {%>
-											<%=pdAllList.get(i).getpPrice().substring(pdAllList.get(i).getpPrice().length()-5,pdAllList.get(i).getpPrice().length()-3) %>,<%=pdAllList.get(i).getpPrice().substring(pdAllList.get(i).getpPrice().length()-3,pdAllList.get(i).getpPrice().length()) %>
-										<%}else{ %>
-											<%=pdAllList.get(i).getpPrice().substring(pdAllList.get(i).getpPrice().length()-6,pdAllList.get(i).getpPrice().length()-3) %>,<%=pdAllList.get(i).getpPrice().substring(pdAllList.get(i).getpPrice().length()-3,pdAllList.get(i).getpPrice().length()) %>
-										<% } %>
-									</span>
-								</span>
-								<span class="won">원</span>
-							</div>
-						</a>
-					</div>
-					<% } 
-					} else{
-					%>
-					<div class="emptyProductBox">
-						<div class="exclamation"><svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
-						  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-						  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
-						</svg></div>
-					등록된 상품이 없습니다.
-					</div>
-					<%
-					}%>
-				</div>
-				<div class=""></div>
-				<div class="page">
-				<div class="hr2"></div>
-				<c:if test="${master eq 'master'}">
-					<a href="<%=request.getContextPath() %>/admin/productInsert.do"><div class="pdInsertBtn">상품 등록</div></a>
-				</c:if>
-					<ul>
-						<c:if test="${pageMaker2.prev}">
-							<li><a class="pm" href="<%=request.getContextPath() %>/admin/pdAllList.do${pageMaker2.makeQuery(pageMaker2.startPage - 1)}">이전</a></li>
-						</c:if> 
-						<c:forEach begin="${pageMaker2.startPage}" end="${pageMaker2.endPage}" var="idx">
-							<li><a class="pm" href="<%=request.getContextPath() %>/admin/pdAllList.do${pageMaker2.makeQuery(idx)}">${idx}</a></li>
-						</c:forEach>
-						<c:if test="${pageMaker2.next && pageMaker2.endPage > 0}">
-							<li><a class="pm" href="<%=request.getContextPath() %>/admin/pdAllList.do${pageMaker2.makeQuery(pageMaker2.endPage + 1)}">다음</a></li>
-						</c:if> 
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- 우측하단 TOP 이동 배너 -->
 	<a href="#top">
@@ -323,7 +183,7 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="<%=request.getContextPath() %>/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
 	        </ul>
@@ -362,8 +222,9 @@
 	  </footer>
 	 </div>
 	</div>
-	
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	
+
+
 </body>
 </html>

@@ -1,0 +1,9 @@
+*{
+font-family: 'Montserrat', "Noto Sans KR", sans-serif;
+}
+.bigBox{
+	margin:auto;
+	width:1200px;
+	border:1px solid blue;
+}
+

@@ -12,7 +12,16 @@ public class PageMaker2 {
 	private boolean next;
 	private int displayPageNum = 10;
 	private Criteria2 cri;
+	private SearchCriteria scri;
 	
+	public SearchCriteria getScri() {
+		return scri;
+	}
+
+	public void setScri(SearchCriteria scri) {
+		this.scri = scri;
+	}
+
 	public void setCri(Criteria2 cri) {
 		this.cri = cri;
 	}

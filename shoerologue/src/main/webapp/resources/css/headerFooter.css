@@ -1,212 +1,237 @@
 .searchStyle {
-		  display: block;
-		  width:67%;
-		  height: 34px;
-		  padding: 6px 12px;
-		  font-size: 14px;
-		  line-height: 1.42857143;
-		  color: black !important;
-		  background-color: #fff;
-		  background-image: none;
-		  border: 3px solid;
-		  border-radius: 0px !important;
-		  margin:auto;
-		}
-		.searchStyle:focus {
-		  border-color: black !important;
-		  outline: 0;
-		  -webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,.075), 0 0 0px rgba(102, 175, 233, .6);
-		  box-shadow: inset 0 0px 0px rgba(0,0,0,.075), 0 0 0px rgba(102, 175, 233, .6);
-		}
+	display: block;
+	width:67%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: black !important;
+	background-color: #fff;
+	background-image: none;
+	border: 3px solid;
+	border-radius: 0px !important;
+	margin:auto;
+}
+.searchStyle:focus {
+	border-color: black !important;
+	outline: 0;
+	-webkit-box-shadow: inset 0 0px 0px rgba(0,0,0,.075), 0 0 0px rgba(102, 175, 233, .6);
+	box-shadow: inset 0 0px 0px rgba(0,0,0,.075), 0 0 0px rgba(102, 175, 233, .6);
+}
+a { 
+	text-decoration:none; 
+	color:black;
+} 
+a:hover{
+	color:black;
+}
+.cardhover:hover{
+	border:2px solid black;
+	border-radius: 0px;
+}
+input:focus {
+	outline:none !important;
+	outline:2px solid black !important;
+	border-radius: 5px;
+}
 
-		a { 
-			text-decoration:none; 
-			color:black;
-		} 
-		a:hover{
-			color:black;
-		}
-		.cardhover:hover{
-			border:2px solid black;
-			border-radius: 0px;
-		}
-		input:focus {
-			outline:none !important;
-			outline:2px solid black !important;
-			border-radius: 5px;
-		}
-		
-		input.searchStyle{
-			border-left:0;
-			border-right:0;
-			border-top:0;
-			border-bottom:3;
-			border-color:black;
-		}
-		.topNav{
-			height:30px;
-			font-size:13px;
-		}
-		.jumping{
-			height:100px;
-		}
-		.menu{
-			background-color:#E20505;
-		}
-		.codi{
-			height:100px;
-		}
-		html{
-	  	position: relative;
-        height: 100%;
-        }
-        body {
-        position: relative;
-        color: #000;
-        font-size:14px;
-        margin: 0;
-        padding: 0;
-        }
-        .swiper {
-        width: 100%;
-        height: 100%;
-        }
-        .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-        }
-        .swiper-slide img {
-        display: block;
-        width: 500px;
-        height: 500px;
-        object-fit: cover;
-        }
-        .imageSize{
-	  	height:300px;
-	  	border:0px;
-	  	margin:auto;
-	  	overflow:hidden;
-	  	}
-	  	.hotdeal-txt{
-	  	font-size:32pt;
-	  	font-weight:700;
-	  	}
-	  	.slideSize{
-	  	width:100%;
-	  	height:100%;
-	  	}
-	  	.more-text{
-	  	font-size:13pt;
-	  	font-weight:600;
-	  	}
-	  	.image{
-	  	width:100%;
-	  	height:100%;
-	  	object-fit:cover;
-	  	}
-	  .slideH{
-	  	height:375px;
-	  }
-	  .h{
-	  	height:350px;
-	  }
-	  .card{
-	  	border:none;
-	  }
-	  .footLine{
-	  	height:50px;
-	  	font-size:15px;
-	  	color:white;
-	  	background-color: gray;
-	  	text-align:center;
-	  }
-	  .marginAuto{
-	  	margin:auto;
-	  }
-	  .HotPrice{
-	  	font-size:25px;
-	  	color:#EE1C25;
-	  	font-weight: bold;
-	  }
-	  .HotPer{
-	  	font-size:15px;
-	  	color:red;
-	  }
-	  .exitPrice{
-	  	color:gray;
-	  	font-size:12pt;
-	  }
-	  .brandtitle ,.normalPrice{
-	  	font-weight: bold;
-	  	font-size:14pt;
-	  }
-	  .iconul{
-	  	list-style:none;
-	  	padding:auto;
-	  	margin:auto;
-	  }
-	  .iconli{
-	  	margin:7px;
-	  	float:left;
-	  }
-	  .nav-fs{
-	  	font-size:0.9rem;
-	  }
-	 .top{
-	 	width:50px;
-		height:50px;
-		z-index:1;
-		opacity:0.5;
-	 }
-	 .fixed{
-		position:fixed;
-		right:30px;
-		bottom:3.5vh;
-	 }
-	.dropDownMenu{
-		border:3px solid #111;
-	}
-	.dropdown-divider{
-		color:white !important;
-	}
-	.dropdown-item:hover{
-		background-color:black;
-		color:white !important;
-	}
-	.swiper-button-next,.swiper-button-prev{
-		color:white !important;
-	}
-	.dropdown:hover .dropdown-menu {
-    	display: block;
-	}
-	.dropdown-item:focus{
-		background-color:black;
-		color:white;
-	}.hotDealRedBox{
-		width:60px;
-		height:60px;
-		background-color:#EE1C25;
-		color:white;
-		font-weight:700;
-		font-size:15pt;
-		text-align:center;
-		padding-top:15px;
-		position:absolute;
-	}.hotLfThanSmall{
-		font-size:12pt;
-	}
+input.searchStyle{
+	border-left:0;
+	border-right:0;
+	border-top:0;
+	border-bottom:3;
+	border-color:black;
+}
+.topNav{
+	height:30px;
+	font-size:13px;
+}
+.jumping{
+	height:100px;
+}
+.menu{
+	background-color:#E20505;
+}
+.codi{
+	height:100px;
+}
+html{
+	position: relative;
+	height: 100%;
+}
+body {
+	position: relative;
+	color: #000;
+	font-size:14px;
+	margin: 0;
+	padding: 0;
+}
+.swiper {
+	width: 100%;
+	height: 100%;
+}
+.swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+	
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+.swiper-slide img {
+	display: block;
+	width: 500px;
+	height: 500px;
+	object-fit: cover;
+}
+.imageSize{
+	height:300px;
+	border:0px;
+	margin:auto;
+	overflow:hidden;
+}
+.hotdeal-txt{
+	font-size:30pt;
+	font-weight:700;
+}
+.slideSize{
+	width:100%;
+	height:100%;
+}
+.more-text{
+	font-size:13pt;
+	font-weight:600;
+}
+.image{
+	width:100%;
+	height:100%;
+	object-fit:cover;
+}
+.slideH{
+	height:375px;
+ }
+ .h{
+ 	height:350px;
+ }
+ .card{
+ 	border:none;
+ }
+ .footLine{
+ 	height:50px;
+ 	font-size:15px;
+ 	color:white;
+ 	background-color: gray;
+ 	text-align:center;
+ }
+ .marginAuto{
+ 	margin:auto;
+ }
+ .HotPrice{
+ 	font-size:25px;
+ 	color:#EE1C25;
+ 	font-weight: bold;
+ }
+ .HotPer{
+ 	font-size:15px;
+ 	color:red;
+ }
+ .exitPrice{
+ 	color:gray;
+ 	font-size:12pt;
+ }
+ .brandtitle ,.normalPrice{
+ 	font-weight: bold;
+ 	font-size:14pt;
+ }
+ .iconul{
+ 	list-style:none;
+ 	padding:auto;
+ 	margin:auto;
+ }
+ .iconli{
+ 	margin:7px;
+ 	float:left;
+ }
+ .nav-fs{
+ 	font-size:0.9rem;
+ }
+.top{
+	width:50px;
+	height:50px;
+	z-index:1;
+	opacity:0.5;
+}
+.fixed{
+	position:fixed;
+	right:30px;
+	bottom:3.5vh;
+}
+.dropDownMenu{
+	border:3px solid #111;
+}
+.dropdown-divider{
+	color:white !important;
+}
+.dropdown-item:hover{
+	background-color:black;
+	color:white !important;
+}
+.swiper-button-next,.swiper-button-prev{
+	color:white !important;
+}
+.dropdown:hover .dropdown-menu {
+   	display: block;
+}
+.dropdown-item:focus{
+	background-color:black;
+	color:white;
+}
+.hotDealRedBox{
+	width:60px;
+	height:60px;
+	background-color:#EE1C25;
+	color:white;
+	font-weight:700;
+	font-size:15pt;
+	text-align:center;
+	padding-top:15px;
+	position:absolute;
+}.hotLfThanSmall{
+	font-size:12pt;
+}
+.hotTimer{
+	background-color:#313131;
+	color:white;
+	width:300px;
+	height:60px;
+	font-size:26px;
+	font-weight:600;
+	text-align:center;
+	padding-top:10px;
+}
+.cardhover{
+	padding:0 !important;
+	width:304px;
+	margin:7px;
+	
+}
+.card-img-top{
+	width:300px;
+}
+.bi-clock{
+	font-weight:500;
+}
+.pdRowBox{
+	height:515px;
+}
