@@ -30,6 +30,11 @@ public class ReviewDAO {
 		return sqlSession.selectList(Namespace+".mylist",midx);
 	}
 	
+	public List<ReviewVO> masterList() throws Exception{
+		
+		return sqlSession.selectList(Namespace+".masterList");
+	}
+	
 	public void updateDel(int rvidx) throws Exception{
 		
 		sqlSession.update(Namespace+".updateDel",rvidx);

@@ -331,78 +331,97 @@
 		<div class="mainTitle">상품 Q&amp;A</div>
 		<br>
 		<br>	
-			<table class="inquiry-box table table-hover">
-				<colgroup>
-					<col width="10%">
-					<col width="60%">
-					<col width="20%">
-					<col width="10%">
-				</colgroup>
+			<%if(!loginU.getMaster().equals("master")){ %>
 				<%if(pqlist.size()>0){ %>
-					<thead class="inquiry-title">
-						<tr>
-							<th class="inquiry-number" id="inquiry-number" name="inquiry-number">번호</th>
-							<th class="inquiry-subject" id="inquiry-subject" name="inquiry-subject">제목</th>
-							<th class="inquiry-writeday" id="inquiry-writeday" name="inquiry-writeday">작성일</th>
-							<th class="inquiry-writer" id="inquiry-writeday" name="inquiry-writeday">작성자</th>
-						</tr>
-					</thead>
-					<tbody>
+					<table class="inquiry-box table table-hover">
+						<colgroup>
+							<col width="10%">
+							<col width="60%">
+							<col width="20%">
+							<col width="10%">
+						</colgroup>
+						<thead class="inquiry-title">
+							<tr>
+								<th class="inquiry-number" id="inquiry-number" name="inquiry-number">번호</th>
+								<th class="inquiry-subject" id="inquiry-subject" name="inquiry-subject">제목</th>
+								<th class="inquiry-writeday" id="inquiry-writeday" name="inquiry-writeday">작성일</th>
+								<th class="inquiry-writer" id="inquiry-writeday" name="inquiry-writeday">작성자</th>
+							</tr>
+						</thead>
+						<tbody>
 					<%
 						for(int i=0; i<pqlist.size(); i++){
 					%>
-						<tr class="inquiry-contents-box">
-							<td class="inquiry-number-detail"><%=i+1 %></td>
-							<td class="inquiry-subject-detail">
-								<a href="/shoerologue/customerService/qaDetail.do?pqidx=<%=pqlist.get(i).getPqidx()%>"><%=pqlist.get(i).getPqSubject() %></a>
-							</td>
-							<td class="inquiry-writeday-detail"><%=pqlist.get(i).getPqWriteday().substring(0,10) %></td>
-							<td class="inquiry-writer-detail"><%=pqlist.get(i).getPqWriter() %></td>
-						</tr>
-					<%} %>
-				<%}else if(loginU.getMaster().equals("master")){ %>	
+							<tr class="inquiry-contents-box">
+								<td class="inquiry-number-detail"><%=i+1 %></td>
+								<td class="inquiry-subject-detail">
+									<a href="/shoerologue/customerService/qaDetail.do?pqidx=<%=pqlist.get(i).getPqidx()%>"><%=pqlist.get(i).getPqSubject() %></a>
+								</td>
+								<td class="inquiry-writeday-detail"><%=pqlist.get(i).getPqWriteday().substring(0,10) %></td>
+								<td class="inquiry-writer-detail"><%=pqlist.get(i).getPqWriter() %></td>
+							</tr>
+						</tbody>
+					</table>	
+					<%} %>		
+				<%}else if(pqlist.size() == 0){ %>
+					<table class="inquiry-box" style="border-top:1px solid gray; border-bottom:1px solid gray; height:500px;">
+						<tbody>
+							<tr>
+								<td colspan="4" style="height:150px; text-align:center;">
+									<i class="bi bi-exclamation-circle exclamation"></i>
+									<br>
+									등록된 Q&amp;A가 없습니다.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				<%} %>		
+			<%}else if(loginU.getMaster().equals("master")){ %>	
 					<%if(masterList.size() >0){ %>
-					<thead class="inquiry-title">
-						<tr>
-							<th class="inquiry-number" id="inquiry-number" name="inquiry-number">번호</th>
-							<th class="inquiry-subject" id="inquiry-subject" name="inquiry-subject">제목</th>
-							<th class="inquiry-writeday" id="inquiry-writeday" name="inquiry-writeday">작성일</th>
-							<th class="inquiry-writer" id="inquiry-writeday" name="inquiry-writeday">작성자</th>
-						</tr>
-					</thead>
-					<tbody>
+					<table class="inquiry-box table table-hover">
+						<colgroup>
+							<col width="10%">
+							<col width="60%">
+							<col width="20%">
+							<col width="10%">
+						</colgroup>
+						<thead class="inquiry-title">
+							<tr>
+								<th class="inquiry-number" id="inquiry-number" name="inquiry-number">번호</th>
+								<th class="inquiry-subject" id="inquiry-subject" name="inquiry-subject">제목</th>
+								<th class="inquiry-writeday" id="inquiry-writeday" name="inquiry-writeday">작성일</th>
+								<th class="inquiry-writer" id="inquiry-writeday" name="inquiry-writeday">작성자</th>
+							</tr>
+						</thead>
+						<tbody>
 					<%
   						for(int j=0; j<masterList.size(); j++){
  					%>
-						<tr class="inquiry-contents-box">
-							<td class="inquiry-number-detail"><%=j+1 %></td>
-							<td class="inquiry-subject-detail">
-								<a href="/shoerologue/customerService/qaDetail.do?pqidx=<%=masterList.get(j).getPqidx()%>"><%=masterList.get(j).getPqSubject() %></a>
-							</td>
-							<td class="inquiry-writeday-detail"><%=masterList.get(j).getPqWriteday().substring(0,10) %></td>
-							<td class="inquiry-writer-detail"><%=masterList.get(j).getPqWriter() %></td>	
-						</tr>
+							<tr class="inquiry-contents-box">
+								<td class="inquiry-number-detail"><%=j+1 %></td>
+								<td class="inquiry-subject-detail">
+									<a href="/shoerologue/customerService/qaDetail.do?pqidx=<%=masterList.get(j).getPqidx()%>"><%=masterList.get(j).getPqSubject() %></a>
+								</td>
+								<td class="inquiry-writeday-detail"><%=masterList.get(j).getPqWriteday().substring(0,10) %></td>
+								<td class="inquiry-writer-detail"><%=masterList.get(j).getPqWriter() %></td>	
+							</tr>
+						</tbody>
+					</table>		
 					<%} %>
-					<%}else %>
-					<tr>
-						<td colspan="4" style="height:500px; text-align:center;">
-							<i class="bi bi-exclamation-circle exclamation"></i>
-							<br>
-							등록된 Q&amp;A가 없습니다.
-						</td>
-					</tr>
-					
-				<%}else{ %>
-					<tr>
-						<td colspan="4" style="height:500px; text-align:center;">
-							<i class="bi bi-exclamation-circle exclamation"></i>
-							<br>
-							등록된 Q&amp;A가 없습니다.
-						</td>
-					</tr>
-				<%} %>	
-			</tbody>
-		</table>
+				<%}else if(masterList.size() == 0){ %>
+					<table class="inquiry-box" style="border-top:1px solid gray; border-bottom:1px solid gray; height:500px;">
+						<tbody>
+							<tr>
+								<td colspan="4" style="height:150px; text-align:center;">
+									<i class="bi bi-exclamation-circle exclamation"></i>
+									<br>
+									등록된 Q&amp;A가 없습니다.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				<%} %>
+			<%} %>	
 		</div>
 	</div>	
 	<div class="empty-box"></div>

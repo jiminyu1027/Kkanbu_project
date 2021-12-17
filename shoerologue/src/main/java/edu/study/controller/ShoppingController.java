@@ -114,7 +114,11 @@ public class ShoppingController {
 		
 		List<ReviewVO> mylist = ReviewService.mylist(midx);
 		
+		List<ReviewVO> masterlist = ReviewService.masterList();
+		
 		model.addAttribute("mylist",mylist);
+		model.addAttribute("masterlist",masterlist);
+		
 		
 		return "/mypage/shopping/myReview";
 	}

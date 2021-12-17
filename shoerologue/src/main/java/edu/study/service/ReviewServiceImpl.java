@@ -33,6 +33,12 @@ public class ReviewServiceImpl implements ReviewService {
 	}
 	
 	@Override
+	public List<ReviewVO> masterList() throws Exception{
+		
+		return ReviewDao.masterList();
+	}
+	
+	@Override
 	public void updateDel(int rvidx) throws Exception{
 		
 		ReviewDao.updateDel(rvidx);

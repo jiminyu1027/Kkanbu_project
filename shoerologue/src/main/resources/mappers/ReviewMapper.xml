@@ -35,6 +35,10 @@
 		SELECT * FROM REVIEW WHERE 1=1 AND MIDX = #{midx} AND RVDELYN = 'N' ORDER BY RVIDX DESC
 	</select>
 	
+	<select id="masterList" resultType="edu.study.vo.ReviewVO">
+		SELECT * FROM REVIEW WHERE 1=1 AND RVDELYN = 'N' ORDER BY RVIDX DESC
+	</select>
+	
 	<update id="updateDel" parameterType="int">
 		UPDATE REVIEW SET RVDELYN = 'Y' WHERE RVIDX = #{rvidx}
 	</update>

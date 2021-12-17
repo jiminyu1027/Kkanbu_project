@@ -12,5 +12,7 @@ public interface ReviewService {
 	
 	List<ReviewVO> mylist(int midx) throws Exception;
 	
+	List<ReviewVO> masterList() throws Exception;
+	
 	void updateDel(int rvidx) throws Exception;
 }

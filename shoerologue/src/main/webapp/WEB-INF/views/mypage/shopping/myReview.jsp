@@ -5,6 +5,10 @@
 <%@ page import="edu.study.vo.*" %>
 <%
 	List<ReviewVO> mylist = (List<ReviewVO>)request.getAttribute("mylist");
+
+	List<ReviewVO> masterlist = (List<ReviewVO>)request.getAttribute("masterlist");
+	
+	MemberVO loginU = (MemberVO)session.getAttribute("member");
 %>
 <!DOCTYPE html>
 <html>
@@ -395,51 +399,97 @@
 		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
 		<br>
 		<br>	
-		<%if(mylist.size() > 0){ %>
-			<form action="/shoerologue/mypage/shopping/reviewDel.do" method="post">
-				<table class="inquiry-box">
-					<colgroup>
-						<col width=35% />
-						<col width=25% />
-						<col width=30% />
-						<col width=10% />
-					</colgroup>
-					<thead class="inquiry-title">
-						<tr>
-							<th class="inquiry-number" id="inquiry-number" name="inquiry-number">상품</th>
-							<th class="inquiry-subject" id="inquiry-subject" name="inquiry-subject">내용</th>
-							<th class="inquiry-writeday" id="inquiry-writeday" name="inquiry-writeday">작성일</th>
-							<th class="inquiry-writer" id="inquiry-writeday" name="inquiry-writeday">기타</th>
-						</tr>
-			<%for(int i=0; i<mylist.size();	 i++){ %>
-			<input type="hidden" name="rvidx" value="<%=mylist.get(i).getRvidx()%>">
-					</thead>
-					<tbody>
-						<tr class="inquiry-contents-box">
-							<td class="inquiry-number-detail"><%=mylist.get(i).getpBrandKr() %>-<%=mylist.get(i).getpNameKr() %></td>
-							<td class="inquiry-subject-detail"><%=mylist.get(i).getRvContents() %></td>
-							<td class="inquiry-writeday-detail"><%=mylist.get(i).getRvWriteday().substring(0,10) %></td>
-							<td class="inquiry-btn-detail">
-								<input type="submit" value="삭제">
-							</td>
-			<%} %>
-					</tr>
-					</tbody>
-				</table>
-			</form>	
-		<%}else{ %>
-			<table class="inquiry-box" style="border-top:1px solid gray;;">
-				<tbody>
-					<tr>
-						<td colspan="4" style="height:150px; text-align:center;">
-							<i class="bi bi-exclamation-circle exclamation"></i>
-							<br>
-							등록된 리뷰가 없습니다.
-						</td>
-					</tr>
-		<%} %>
-				</tbody>
-			</table>			
+		<form action="/shoerologue/mypage/shopping/reviewDel.do" method="post">
+			<%if(!loginU.getMaster().equals("master")){ %>
+				<%if(mylist.size() > 0){ %>
+					<table class="inquiry-box">
+						<colgroup>
+							<col width=35% />
+							<col width=25% />
+							<col width=30% />
+							<col width=10% />
+						</colgroup>
+						<thead class="inquiry-title">
+							<tr>
+								<th class="inquiry-number" id="inquiry-number" name="inquiry-number">상품</th>
+								<th class="inquiry-subject" id="inquiry-subject" name="inquiry-subject">내용</th>
+								<th class="inquiry-writeday" id="inquiry-writeday" name="inquiry-writeday">작성일</th>
+								<th class="inquiry-writer" id="inquiry-writeday" name="inquiry-writeday">기타</th>
+							</tr>
+						</thead>	
+					<%for(int i=0; i<mylist.size();	 i++){ %>
+					<input type="hidden" name="rvidx" value="<%=mylist.get(i).getRvidx()%>">
+						<tbody>
+							<tr class="inquiry-contents-box">
+								<td class="inquiry-number-detail"><%=mylist.get(i).getpBrandKr() %>-<%=mylist.get(i).getpNameKr() %></td>
+								<td class="inquiry-subject-detail"><%=mylist.get(i).getRvContents() %></td>
+								<td class="inquiry-writeday-detail"><%=mylist.get(i).getRvWriteday().substring(0,10) %></td>
+								<td class="inquiry-btn-detail">
+									<input type="submit" value="삭제">
+								</td>
+							</tr>
+						</tbody>
+					</table>	
+					<%} %>	
+				<%}else if(mylist.size() == 0){ %>	
+					<table class="inquiry-box" style="border-top:1px solid gray;  border-bottom:1px solid gray; height:500px;">
+						<tbody>
+							<tr>
+								<td colspan="4" style="height:150px; text-align:center;">
+									<i class="bi bi-exclamation-circle exclamation"></i>
+									<br>
+									등록된 리뷰가 없습니다.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				<%} %>
+			<%}else if(loginU.getMaster().equals("master")){ %>
+				<%if(masterlist.size() > 0){ %>
+					<table class="inquiry-box">
+						<colgroup>
+							<col width=35% />
+							<col width=25% />
+							<col width=30% />
+							<col width=10% />
+						</colgroup>
+						<thead class="inquiry-title">
+							<tr>
+								<th class="inquiry-number" id="inquiry-number" name="inquiry-number">상품</th>
+								<th class="inquiry-subject" id="inquiry-subject" name="inquiry-subject">내용</th>
+								<th class="inquiry-writeday" id="inquiry-writeday" name="inquiry-writeday">작성일</th>
+								<th class="inquiry-writer" id="inquiry-writeday" name="inquiry-writeday">기타</th>
+							</tr>
+						</thead>
+						<%for(int j=0; j<masterlist.size();	j++){ %>
+						<input type="hidden" name="rvidx" value="<%=masterlist.get(j).getRvidx()%>">
+						<tbody>
+							<tr class="inquiry-contents-box">
+								<td class="inquiry-number-detail"><%=masterlist.get(j).getpBrandKr() %>-<%=masterlist.get(j).getpNameKr() %></td>
+								<td class="inquiry-subject-detail"><%=masterlist.get(j).getRvContents() %></td>
+								<td class="inquiry-writeday-detail"><%=masterlist.get(j).getRvWriteday().substring(0,10) %></td>
+								<td class="inquiry-btn-detail">
+									<input type="submit" value="삭제">
+								</td>
+							</tr>
+						</tbody>
+					</table>	
+					<%} %>	
+				<%}else if(masterlist.size() == 0){ %>	
+					<table class="inquiry-box" style="border-top:1px solid gray;  border-bottom:1px solid gray; height:500px;">
+						<tbody>
+							<tr>
+								<td colspan="4" style="height:150px; text-align:center;">
+									<i class="bi bi-exclamation-circle exclamation"></i>
+									<br>
+									등록된 리뷰가 없습니다.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				<%} %>
+			<%} %>			
+		</form>					
 	</div>	
 	<div class="empty-box"></div>
 	<div class="empty-box"></div>
