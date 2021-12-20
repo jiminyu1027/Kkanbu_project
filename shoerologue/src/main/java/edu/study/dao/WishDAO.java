@@ -6,6 +6,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import edu.study.domain.Criteria3;
+import edu.study.vo.ProductVO;
 import edu.study.vo.WishListVO;
 
 @Repository
@@ -23,8 +25,13 @@ public class WishDAO {
 		sqlSession.delete(Namespace+".del", widx);
 	}
 	
-	public List<WishListVO> wishlist(int midx)throws Exception{
-		return sqlSession.selectList(Namespace+".wlist",midx);
+	public List<WishListVO> wishlist(int midx, Criteria3 cri3) throws Exception{
+		//System.out.println("CRIIIII"+wvo);
+		return sqlSession.selectList(Namespace+".wishlist",midx);
+	}
+	
+	public int countwlist() throws Exception{	
+		return sqlSession.selectOne(Namespace+".countwlist");
 	}
 	
 }

@@ -67,7 +67,7 @@ public class ProductController {
 			List<ReviewVO> prvlist = ReviewService.prvlist(pidx);
 			model.addAttribute("prvlist",prvlist);
 			
-			List<WishListVO> wlist = wishService.wishlist(member.getMidx());
+			List<WishListVO> wlist = wishService.wlist(member.getMidx());
 			model.addAttribute("wishlist", wlist);
 			
 		return "/product/product";

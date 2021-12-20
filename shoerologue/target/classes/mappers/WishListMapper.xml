@@ -6,7 +6,7 @@
 <mapper namespace="edu.study.mapper.WishListMapper">
 	
 	<!-- 찜 목록 -->
-  	<select id="wlist" resultType="WishListVO" parameterType="int">
+ 	<select id="wlist" resultType="WishListVO" parameterType="int">
    		 SELECT   
    		 	w.widx,
   		 	p.pidx,  
@@ -24,10 +24,57 @@
   		 	WHERE w.pidx=p.pidx AND w.midx = m.midx AND w.midx=#{midx}
 	 	ORDER BY widx
   	</select> 
-
+  	
+ 	<select id="wishlist" resultType="WishListVO" parameterType="edu.study.domain.Criteria3">
+		SELECT 
+			w.widx,
+  		 	p.pidx,  
+   		 	m.midx, 
+   		 	m.mName,  
+   		 	p.pPrice,  
+  		 	p.pBrandeng,
+  		 	p.pBrandkr, 
+   		 	p.pNamekr, 
+   		 	p.pNameEng, 
+   		 	p.pFile1,
+   		 	p.pColor, 
+  		 	p.pFile1
+			FROM  wish w, product p, member m 
+				WHERE w.pidx=p.pidx AND w.midx = m.midx AND w.midx=#{midx}
+				ORDER BY widx DESC 
+				LIMIT #{rowStart},8
+	</select>
+	
+	<select id="countwlist" resultType="int">
+		SELECT COUNT(*) 
+		FROM wish
+		WHERE midx=#{midx}
+	</select>
+ 
+ 
+ 
 	<!-- 상품개별삭제 -->
 	<delete id="del" parameterType="int">
-		DELETE FROM wish WHERE widx=#{widx}
+		DELETE FROM wish WHERE widx IN
+    	<foreach collection="wishchk" index="index" item="widx" open="(" separator="," close=")">#{widx}</foreach>
 	</delete>
    
+   <!-- 장바구니 넣기 -->
+	<insert id="cart" parameterType="int">
+		  INSERT INTO cart VALUES(
+		    	 ctidx
+		    	,NOW()
+		    	,#{pidx}		
+		    	,#{midx}
+		    	,#{cnt}
+		    	,#{ctsize}
+		    	,#{delyn}
+		    )
+    		FROM cart c, product p, member m, wish w WHERE c.pidx = p.pidx AND c.midx = m.midx AND w.AND c.ctidx IN
+    		<foreach collection="shoes" index="index" item="ctidx" open="(" separator="," close=")">#{ctidx}</foreach>
+	</insert>
+	
+		
+	
+
 </mapper>

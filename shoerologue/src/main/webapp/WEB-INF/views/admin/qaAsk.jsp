@@ -21,9 +21,9 @@
 		<!-- Bootstrap Font Icon CSS 아이콘 -->
     	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     	<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"> -->
-	 	<link rel="stylesheet" href="/shoerologue/resources/css/style.css">
-		<link rel="stylesheet" href="/shoerologue/resources/css/headerFooter.css">
-		<link rel="stylesheet" href="/shoerologue/resources/css/mypage.css">
+	 	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/style.css">
+		<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/headerFooter.css">
+		<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/mypage.css">
 		<!-- alert -->
 		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 		<style>
@@ -217,10 +217,10 @@
 	      <!-- 로그인 안했을때 -->
 	      <c:if test="${member == null}">
 				  <li class="nav-item">
-				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/login.do">로그인</a>
+				    <a class="nav-link text-black-50 fw-bolder" href="<%=request.getContextPath()%>/login.do">로그인</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/member/join.do">회원가입</a>
+				    <a class="nav-link text-black-50 fw-bolder" href="<%=request.getContextPath()%>/member/join.do">회원가입</a>
 				  </li>
 			</c:if>
 			<!-- 로그인 했을때 -->
@@ -229,7 +229,7 @@
 				    <a class="nav-link text-black-50 fw-bolder">${member.mName}님 환영합니다</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link text-black-50 fw-bolder" href="/shoerologue/logout.do">로그아웃</a>
+				    <a class="nav-link text-black-50 fw-bolder" href="<%=request.getContextPath()%>/logout.do">로그아웃</a>
 				  </li>
 			</c:if>
 			</ul>
@@ -240,7 +240,7 @@
 	  <div class="row">
 	  	  <!-- 로고 -->
 	      <div class="col-5 col-sm-5 col-md-4 col-lg-3 text-center d-flex px-1 logo-scroll mt-4">
-              <a href="/shoerologue"><img class="banner-D" src="/shoerologue/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
+              <a href="<%=request.getContextPath()%>"><img class="banner-D" src="<%=request.getContextPath()%>/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고" width="85%"></a>
               <div class="logo-scroll3"></div>
            </div>
         <!-- 검색창 -->   
@@ -255,15 +255,15 @@
 	     <!-- 마이페이지 찜목록 장바구니 -->
 	     <div class="col-0 col-sm-0 col-md-2 col-lg-3 d-flex justify-content-center align-items-center">
 			<ul class="iconul d-flex align-items-center icon-absolute">
-				<li class="iconli"><a href="/shoerologue/mypage/claim/myPage.do">
+				<li class="iconli"><a href="<%=request.getContextPath()%>/mypage/claim/myPage.do">
 					<i class="bi bi-person icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="/shoerologue/mypage/shopping/wishlist.do">
+				<li class="iconli"><a href="<%=request.getContextPath()%>/mypage/shopping/wishlist.do">
 					<i class="bi bi-heart icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="/shoerologue/cart/cart.do">
+				<li class="iconli"><a href="<%=request.getContextPath()%>/cart/cart.do">
 					<i class="bi bi-bag icon"></i>
 					</a>
 				</li>
@@ -280,45 +280,45 @@
 		 <div class="col-10 col-sm-8 col-md-6 col-lg-5">
 			 <ul class="nav navMenu">
 			 	<li class="nav-item">
-				<a class="nav-link fw-bolder text-white nav-fs" href="/shoerologue/category/brand.do">BRAND</a>
+				<a class="nav-link fw-bolder text-white nav-fs" href="<%=request.getContextPath()%>/category/brand.do">BRAND</a>
 				</li>
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/men.do" role="button" aria-expanded="false">MEN</a>
+				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="<%=request.getContextPath()%>/category/gender/men.do" role="button" aria-expanded="false">MEN</a>
 				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
-				    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/men.do">MEN</a></li>
+				    	<li><a class="dropdown-item fw-bolder" href="<%=request.getContextPath()%>/category/gender/men.do">MEN</a></li>
 				   		<li><hr class="dropdown-divider "></li>
-					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/men/sneakers.do">운동화</a></li>
-					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/men/sports.do">스포츠</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/dressShoes.do">구두</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/sandle.do">샌들</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/casual.do">캐주얼</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/men/boots.do">부츠</a></li>
+					 	<li><a class="dropdown-item" href="<%=request.getContextPath()%>/category/gender/men/sneakers.do">운동화</a></li>
+					 	<li><a class="dropdown-item" href="<%=request.getContextPath()%>/category/gender/men/sports.do">스포츠</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath()%>/category/gender/men/dressShoes.do">구두</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath()%>/category/gender/men/sandle.do">샌들</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath()%>/category/gender/men/casual.do">캐주얼</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath()%>/category/gender/men/boots.do">부츠</a></li>
 				    </ul>
 				</li>
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/women.do" role="button" aria-expanded="false">WOMEN</a>
+				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="<%=request.getContextPath()%>/category/gender/women.do" role="button" aria-expanded="false">WOMEN</a>
 				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
-				    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/women.do">WOMEN</a></li>
+				    	<li><a class="dropdown-item fw-bolder" href="<%=request.getContextPath()%>/category/gender/women.do">WOMEN</a></li>
 				   		<li><hr class="dropdown-divider"></li>
-					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/women/sneakers.do">운동화</a></li>
-					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/women/sports.do">스포츠</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/dressShoes.do">구두</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/sandle.do">샌들</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/casual.do">캐주얼</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/women/boots.do">부츠</a></li>
+					 	<li><a class="dropdown-item" href="<%=request.getContextPath()%>/category/gender/women/sneakers.do">운동화</a></li>
+					 	<li><a class="dropdown-item" href="<%=request.getContextPath()%>/category/gender/women/sports.do">스포츠</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath()%>/category/gender/women/dressShoes.do">구두</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath()%>/category/gender/women/sandle.do">샌들</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath()%>/category/gender/women/casual.do">캐주얼</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath()%>/category/gender/women/boots.do">부츠</a></li>
 				    </ul>
 				</li>
 				<li class="nav-item dropdown">
-				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="/shoerologue/category/gender/kids.do" role="button" aria-expanded="false">KIDS</a>
+				    <a class="nav-link dropdown-toggle fw-bolder text-white" data-bs-toggle="dropdown" href="<%=request.getContextPath()%>/category/gender/kids.do" role="button" aria-expanded="false">KIDS</a>
 				    <ul class="dropdown-menu bg-white dropDownMenu mt-2">
-				    	<li><a class="dropdown-item fw-bolder" href="/shoerologue/category/gender/kids.do">KIDS</a></li>
+				    	<li><a class="dropdown-item fw-bolder" href="<%=request.getContextPath()%>/category/gender/kids.do">KIDS</a></li>
 				   		<li><hr class="dropdown-divider"></li>
-					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/kids/sneakers.do">운동화</a></li>
-					 	<li><a class="dropdown-item" href="/shoerologue/category/gender/kids/sports.do">스포츠</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/dressShoes.do">구두</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/sandle.do">샌들</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/casual.do">캐주얼</a></li>
-					    <li><a class="dropdown-item" href="/shoerologue/category/gender/kids/boots.do">부츠</a></li>
+					 	<li><a class="dropdown-item" href="<%=request.getContextPath()%>/category/gender/kids/sneakers.do">운동화</a></li>
+					 	<li><a class="dropdown-item" href="<%=request.getContextPath()%>/category/gender/kids/sports.do">스포츠</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath()%>/category/gender/kids/dressShoes.do">구두</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath()%>/category/gender/kids/sandle.do">샌들</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath()%>/category/gender/kids/casual.do">캐주얼</a></li>
+					    <li><a class="dropdown-item" href="<%=request.getContextPath()%>/category/gender/kids/boots.do">부츠</a></li>
 				    </ul>
 				</li>
 			</ul>
@@ -335,7 +335,7 @@
 	<div style=" float: left; width: 0%;">&nbsp;</div>
 		<div style=" float: left; width: 99%;" class="mt-3">
 			<span style="color:#757575; font-size:1em">
-				<a href="/shoerologue" style="color:#757575; font-size:1.1em">
+				<a href="<%=request.getContextPath()%>" style="color:#757575; font-size:1.1em">
 				<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-house-fill mb-1" viewBox="0 0 16 16">
 				  <path fill-rule="evenodd" d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
 				  <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
@@ -365,11 +365,11 @@
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="/shoerologue/cart/cart.do" class="gray">장바구니</a><br>
-					<a href="/shoerologue/mypage/shopping/wishlist.do" class="gray">찜리스트</a><br>
-					<a href="/shoerologue/mypage/shopping/qaList.do" class="red">상품 Q&A*</a><br>
-					<a href="/shoerologue/mypage/memberCounsel/inquiry.do" class="gray">1:1 문의</a><br>
-					<a href="/shoerologue/mypage/shopping/myReview.do" class="gray">나의 리뷰</a>
+					<a href="<%=request.getContextPath()%>/cart/cart.do" class="gray">장바구니</a><br>
+					<a href="<%=request.getContextPath()%>/mypage/shopping/wishlist.do" class="gray">찜리스트</a><br>
+					<a href="<%=request.getContextPath()%>/mypage/shopping/qaList.do" class="red">상품 Q&A*</a><br>
+					<a href="<%=request.getContextPath()%>/mypage/memberCounsel/inquiry.do" class="gray">1:1 문의</a><br>
+					<a href="<%=request.getContextPath()%>/mypage/shopping/myReview.do" class="gray">나의 리뷰</a>
 				</div><br>
 			</div>
 			<div class="myPageMenu2">
@@ -377,9 +377,9 @@
 				  <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
 				</svg></span>
 				<div class="myPageMenu3">
-					<a href="/shoerologue/mypage/deliveryAddr/receiveAddr.do" class="gray">배송지 관리</a><br>
-					<a href="/shoerologue/mypage/privateInfo/myInfoPwd.do" class="gray">개인 정보 수정</a><br>
-					<a href="/shoerologue/member/leave.do" class="gray">회원 탈퇴</a>
+					<a href="<%=request.getContextPath()%>/mypage/deliveryAddr/receiveAddr.do" class="gray">배송지 관리</a><br>
+					<a href="<%=request.getContextPath()%>/mypage/privateInfo/myInfoPwd.do" class="gray">개인 정보 수정</a><br>
+					<a href="<%=request.getContextPath()%>/member/leave.do" class="gray">회원 탈퇴</a>
 				</div>
 			</div>
 		</div>
@@ -388,7 +388,7 @@
 		<div class="empty-box"></div>
 		<div class="empty-box"></div>
 		<div><span class="mainTitle">상품 문의하기</span></div>
-		<form action="/shoerologue/mypage/shopping/qaList.do" method="post" class="frm" id="frm" name="frm">
+		<form action="<%=request.getContextPath()%>/mypage/shopping/qaList.do" method="post" class="frm" id="frm" name="frm">
 			<input type="hidden" name="pidx" value="<%=pvo.getPidx() %>">
 			<input type="text" value="${member.mName}" name="pqWriter" class="writer" readOnly >
 			<table class="pBox">
@@ -397,7 +397,7 @@
 				<col width="70%">
 			</colgroup>
 				<tr>
-					<td><img src="/shoerologue/resources/image/productdetail/<%=pvo.getpFile1()%>" class="smImge"></td>
+					<td><img src="<%=request.getContextPath()%>/resources/image/productdetail/<%=pvo.getpFile1()%>" class="smImge"></td>
 					<td><h6><%=pvo.getpBrandKr() %></h6><%=pvo.getpNameKr() %></td>
 				</tr>
 			</table>
@@ -437,7 +437,7 @@
 			</table>
 			<input type="submit" value="QA하기" class="submit-button" onclick="return btnFn();">
 		</form>
-		<a href="/shoerologue/mypage/shopping/qaList.do" class="cancel"><input type="button" value="QA취소" class="cancel-button"></a>
+		<a href="<%=request.getContextPath()%>/mypage/shopping/qaList.do" class="cancel"><input type="button" value="QA취소" class="cancel-button"></a>
 	</div>
 	<div class="empty-box"></div>
 	<div class="empty-box"></div>
@@ -462,7 +462,7 @@
 	  <footer class="py-4">
 	    <div class="row">
 		  <div class="col-12 col-sm-12 col-md-4">
-		     <img class="banner-D" src="/shoerologue/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고"  width="45%">
+		     <img class="banner-D" src="<%=request.getContextPath()%>/resources/image/mainLogo/mainlogo.png" alt="슈롤로그 로고"  width="45%">
 		     <div class="d-flex w-100 gap-2"><br>
 			          ㈜ 슈롤로그 대표: 성기훈 | 주소 : 전라북도 전주시 덕진구 쌍문동 <br>
 				사업자 등록번호: 001-0456-000456 <br>통신판매업 신고: 제 2021-서울중구-1456호<br>
@@ -473,7 +473,7 @@
 	      <div class="col-4 col-sm-4 col-md-2">
 	        <h5><b>HELP</b></h5>
 	        <ul class="nav flex-column">
-	          <li class="nav-item mb-2"><a href="/shoerologue/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
+	          <li class="nav-item mb-2"><a href="<%=request.getContextPath()%>/customerService/cs.do" class="nav-link p-0 text-muted">고객센터</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">입점문의</a></li>
 	          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">기프트카드 안내</a></li>
 	        </ul>

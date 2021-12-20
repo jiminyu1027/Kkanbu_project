@@ -18,10 +18,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import edu.study.domain.Criteria3;
+import edu.study.domain.PageMaker3;
 import edu.study.service.CartService;
 import edu.study.service.MemberService;
 import edu.study.service.ProductService;
@@ -61,15 +64,26 @@ public class ShoppingController {
 	
 
 	@RequestMapping(value="/wishlist.do")
-	public String wishlist(Locale locale, Model model, HttpSession session)throws Exception{
+	public String wishlist(Locale locale, Model model, HttpSession session,Criteria3 cri3, WishListVO wvo)throws Exception{
 		MemberVO member = (MemberVO)session.getAttribute("member");
 		
 		if(member != null) {
+			int midx = member.getMidx();
 			List<CartVO> list=CartService.list(member.getMidx());
-			List<WishListVO> wlist = wishService.wlist(member.getMidx());
+			//List<WishListVO> wlist = wishService.wlist(member.getMidx());
+			
+			List<WishListVO> wishlist = wishService.wishlist(midx, cri3);
+			System.out.println("sizeeeeee"+wishlist.size());
+			
+			PageMaker3 pageMaker3 = new PageMaker3();
+			pageMaker3.setCri3(cri3);
+			pageMaker3.setTotalCount(wishService.countwlist());
+			
+			model.addAttribute("pageMaker3", pageMaker3);
 			
 			model.addAttribute("list",list);
-			model.addAttribute("wlist", wlist);
+			//model.addAttribute("wlist", wlist);
+			model.addAttribute("wishlist",wishlist);
 			
 		return "/mypage/shopping/wishlist";
 		}else {
@@ -88,12 +102,12 @@ public class ShoppingController {
 		return "redirect:/mypage/shopping/wishlist.do";
 	}
 	
+	@ResponseBody
 	@RequestMapping(value="/wishdel.do")
 	public void del(Locale locale, Model model, HttpSession session, ProductVO pvo, int widx) throws Exception{
 		MemberVO member = (MemberVO)session.getAttribute("member");
 		
 			wishService.del(widx);
-		
 	}
 	
 	@RequestMapping(value="/qaList.do")

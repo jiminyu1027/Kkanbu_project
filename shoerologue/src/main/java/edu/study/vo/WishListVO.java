@@ -12,13 +12,14 @@ public class WishListVO {
 	private String pFile1;
 	private int ctcnt;
 	private String ctsize;
-	private String heart;
-
-	public String getHeart() {
-		return heart;
+	private int[] wishchk;
+	
+	
+	public int[] getWishchk() {
+		return wishchk;
 	}
-	public void setHeart(String heart) {
-		this.heart = heart;
+	public void setWishchk(int[] wishchk) {
+		this.wishchk = wishchk;
 	}
 	public String getCtsize() {
 		return ctsize;

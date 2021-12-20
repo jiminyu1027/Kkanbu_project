@@ -1,6 +1,6 @@
 package edu.study.domain;
 
-public class Criteria {
+public class Criteria3 {
 	
 	private int page;
 	private int perPageNum;
@@ -18,9 +18,9 @@ public class Criteria {
 		this.midx = midx;
 	}
 
-	public Criteria() {
+	public Criteria3() {
 		this.page = 1;
-		this.perPageNum = 15;
+		this.perPageNum = 8;
 	}
 	
 	public void setPage(int page) {

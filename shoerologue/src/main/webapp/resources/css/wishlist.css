@@ -318,3 +318,13 @@ section{
      letter-spacing: -1px;
      font-weight:500;
 }
+.wlistImg{
+	width:260px;
+}
+.cardhover{
+	width:264px !important;
+	height:454px !important;
+}
+.card{
+	height:450px !important;
+}

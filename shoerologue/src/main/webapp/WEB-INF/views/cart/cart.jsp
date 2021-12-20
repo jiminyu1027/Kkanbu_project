@@ -385,7 +385,7 @@
 						<input type="button" value="계속 쇼핑하기" class="keepShop" >
 					</label>
 					<label>
-						<input type="submit" value="전체 상품 주문하기" id="orderbtn" name="gotoOrder" class="orderShop">
+						<input type="submit" value="선택 상품 주문하기" id="orderbtn" name="gotoOrder" class="orderShop">
 					</label>
 				</div>
 			</form>

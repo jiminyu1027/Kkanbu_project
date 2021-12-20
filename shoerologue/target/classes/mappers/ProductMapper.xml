@@ -78,25 +78,6 @@
 		    </selectKey>
     </insert>
     
-    <select id="wlist" resultType="WishListVO" parameterType="int">
-   		 SELECT   
-   		 	w.widx,
-  		 	p.pidx,  
-   		 	m.midx, 
-   		 	m.mName,  
-   		 	p.pPrice,  
-  		 	p.pBrandeng,
-  		 	p.pBrandkr, 
-   		 	p.pNamekr, 
-   		 	p.pNameEng, 
-   		 	p.pFile1,
-   		 	p.pColor, 
-  		 	p.pFile1		 	
-   		 	FROM wish w, product p, member m 
-  		 	WHERE w.pidx=p.pidx AND w.midx = m.midx AND w.midx=#{midx}
-	 	ORDER BY widx
-  	</select> 
-    
      <insert id="productInsert" parameterType="productVO">
 		<![CDATA[		
 		    INSERT INTO product(PIDX,PNAMEKR,PNAMEENG,PBRANDKR,PBRANDENG,PSIZE,PCOLOR,PGENDER,PTYPE,PFILE1,PFILE2,PFILE3,PFILE4,PFILE5,pWrite,PPRICE)
