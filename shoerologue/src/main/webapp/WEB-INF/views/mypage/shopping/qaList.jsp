@@ -143,6 +143,11 @@
 		.QABoxSize{
 			height:600px;
 		}
+		.noTextSize{
+			margin-top:150px;
+			font-size:20px;
+		
+		}
 		</style>
 </head>
 <body>

@@ -91,6 +91,7 @@
       }
       .inquiry-box{
          width:70%;
+         margin-left:270px;
       }
       .inquiry-title{
          border-top:3px solid black;
