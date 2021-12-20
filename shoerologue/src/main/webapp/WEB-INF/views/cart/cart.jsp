@@ -38,10 +38,13 @@
 			$("table tbody tr").each(function(){
 				var s = $(this).find("#amount").val();
 				var c = $(this).find("#cnt").val();
-				//alert(c);
+				//alert(s);
 				//alert(s*c);
 			$(this).find("#pPrice").text(comma(s*c));
 			});
+			var total = parseInt($(this).find("#totalPay").html().replaceAll(",",""));
+			console.log(total);
+			
 			var t =parseInt($(this).find("#totalPay").html().replaceAll(",",""));
 			var f =parseInt($(this).find("#fee").html().replaceAll(",",""));
 			//alert(t - f);
@@ -258,7 +261,6 @@
 					<label for="allThing" ></label>
 					<span class="checkText">전체선택</span>
 				<div class="right-text">
-					<button type="button" class="zzim" ><i class="bi bi-heart bicon" style="color:#FF0000"></i>선택 찜하기</button>
 					<button type="button" class="Del_btn" id="Del_btn" onclick="location.href='<%=request.getContextPath() %>/cart/cartdelAll.do'"><i class="bi bi-trash bicon"></i>전체 삭제</button>
 				</div>
 			</div>

@@ -5,7 +5,7 @@ section{
 }
 .myPageMainBox{
 	width:1500px;
-	height:1500px;
+	height:1300px;
 	padding-left:50px;
 	padding-right:50px;
 	margin:auto;
@@ -323,8 +323,26 @@ section{
 }
 .cardhover{
 	width:264px !important;
-	height:454px !important;
+	height:384px !important;
 }
 .card{
-	height:450px !important;
+	height:380px !important;
+}
+.page{
+	text-align:center;
+	margin-top:40px;
+	height:150px;
+	clear:left;
+}
+.hr1{
+	border:1px solid black;
+}
+.page>ul>li{
+	list-style:none;
+	display:inline;
+	margin-right:5px;
+}
+.pmw{
+	margin-top:30px;
+	font-size:14pt;
 }

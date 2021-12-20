@@ -11,7 +11,7 @@ public class PageMaker3 {
 	private boolean prev;
 	private boolean next;
 	private int displayPageNum = 10;
-	private Criteria3 cri3;
+	private Criteria3 cri;
 	private SearchCriteria scri;
 	
 	public SearchCriteria getScri() {
@@ -22,8 +22,8 @@ public class PageMaker3 {
 		this.scri = scri;
 	}
 
-	public void setCri3(Criteria3 cri3) {
-		this.cri3 = cri3;
+	public void setCri(Criteria3 cri) {
+		this.cri = cri;
 	}
 	
 	public void setTotalCount(int totalCount) {
@@ -55,27 +55,27 @@ public class PageMaker3 {
 		return displayPageNum;
 	}
 	
-	public Criteria3 getCri3() {
-		return cri3;
+	public Criteria3 getCri() {
+		return cri;
 	}
 	 
 	private void calcData() {
-		endPage = (int) (Math.ceil(cri3.getPage() / (double)displayPageNum) * displayPageNum);
+		endPage = (int) (Math.ceil(cri.getPage() / (double)displayPageNum) * displayPageNum);
 		startPage = (endPage - displayPageNum) + 1;
 	  
-		int tempEndPage = (int) (Math.ceil(totalCount / (double)cri3.getPerPageNum()));
+		int tempEndPage = (int) (Math.ceil(totalCount / (double)cri.getPerPageNum()));
 		if (endPage > tempEndPage) {
 			endPage = tempEndPage;
 		}
 		prev = startPage == 1 ? false : true;
-		next = endPage * cri3.getPerPageNum() >= totalCount ? false : true;
+		next = endPage * cri.getPerPageNum() >= totalCount ? false : true;
 	}
 	
 	public String makeQuery(int page) {
 		UriComponents uriComponents =
 		UriComponentsBuilder.newInstance()
 						    .queryParam("page", page)
-							.queryParam("perPageNum", cri3.getPerPageNum())
+							.queryParam("perPageNum", cri.getPerPageNum())
 							.build();
 		   
 		return uriComponents.toUriString();

@@ -6,6 +6,7 @@ public class Criteria2 {
 	private int perPageNum;
 	private int rowStart;
 	private int rowEnd;
+	private int midx;
 	
 	public Criteria2() {
 		this.page = 1;
@@ -54,6 +55,14 @@ public class Criteria2 {
 	public String toString() {
 		return "Criteria [page=" + page + ", perPageNum=" + perPageNum + ", rowStart=" + rowStart + ", rowEnd=" + rowEnd
 				+ "]";
+	}
+
+	public int getMidx() {
+		return midx;
+	}
+
+	public void setMidx(int midx) {
+		this.midx = midx;
 	}
 	
 	

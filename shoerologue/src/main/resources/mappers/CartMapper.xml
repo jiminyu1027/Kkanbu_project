@@ -19,7 +19,7 @@
    		 	c.ctsize,
   		 	p.pFile1 
    		 	FROM cart c, product p, member m 
-  		 	WHERE c.pidx=p.pidx AND m.midx = c.midx AND c.midx=#{c.midx} AND c.delYn = 'N'
+  		 	WHERE c.pidx=p.pidx AND m.midx = c.midx AND c.midx=#{c.midx}
 	 	ORDER BY ctidx 
   	</select> 
   

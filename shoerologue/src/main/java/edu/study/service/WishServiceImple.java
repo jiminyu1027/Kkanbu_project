@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.study.dao.WishDAO;
+import edu.study.domain.Criteria2;
 import edu.study.domain.Criteria3;
 import edu.study.vo.WishListVO;
 
@@ -28,13 +29,13 @@ public class WishServiceImple implements WishService{
 	}
 
 	@Override
-	public List<WishListVO> wishlist(int midx, Criteria3 cri3) throws Exception {
-		return wishDao.wishlist(midx, cri3);
+	public List<WishListVO> wishlist(int midx, Criteria3 cri) throws Exception {
+		return wishDao.wishlist(midx, cri);
 	}
 
 	@Override
-	public int countwlist() throws Exception {
-		return wishDao.countwlist();
+	public int countwlist(int midx) throws Exception {
+		return wishDao.countwlist(midx);
 	}
 
 }

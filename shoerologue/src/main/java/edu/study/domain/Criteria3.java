@@ -7,8 +7,6 @@ public class Criteria3 {
 	private int rowStart;
 	private int rowEnd;
 	private int midx;
-	private int widx;
-	
 	
 	public int getMidx() {
 		return midx;
@@ -65,14 +63,6 @@ public class Criteria3 {
 	public String toString() {
 		return "Criteria [page=" + page + ", perPageNum=" + perPageNum + ", rowStart=" + rowStart + ", rowEnd=" + rowEnd
 				+ "]";
-	}
-
-	public int getWidx() {
-		return widx;
-	}
-
-	public void setWidx(int widx) {
-		this.widx = widx;
 	}
 	
 	

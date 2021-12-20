@@ -239,7 +239,7 @@
 			  <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"></path>
 			</svg><br>
 	       	<span class="ft-weight">
-	       		<%=wishlist.size() %>
+	       		<%=pageMaker3.getTotalCount()%>
 	       	</span>개
 	       </div>
 	      <div class="myPageBoxs">
@@ -315,7 +315,7 @@
 		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
 		
 		<!-- 찜리스트 메인 -->
-		<form name="frm" id="frm" method="post">
+		<form name="frm" id="frm" action="<%=request.getContextPath() %>/cart/cart.do" method="post">
 		<div style="float: left; width: 80%;" class="header-margin">
 			<span class="wishHeader">찜리스트</span>
 		<!-- 찜한 상품이 있는 경우 -->
@@ -328,14 +328,14 @@
 			</span>
 			<span class="resultText">
 				<span class="totalText">총</span>
-				<span class="eaText"><%=wishlist.size()%></span>
+				<span class="eaText"><%=pageMaker3.getTotalCount()%></span>
 				<span class="haveText">개의 상품이 있습니다.</span>
 			</span>
 		</div>
 		<!-- 우측 삭제, 장바구니 버튼-->
 		<div class="btn-wrap">
-			<input type="submit" value="삭제" id="del" class="delbtn" onclick="delbtn();">
-			<input type="submit" value="장바구니" id="cart" class="cartbtn" onclick="location.href='<%=request.getContextPath() %>'">
+			<input type="button" value="삭제" id="del" class="delbtn">
+			<input type="submit" value="장바구니" id="cart" class="cartbtn">
 			<i class="bi bi-cart4"></i>
 		</div>
 		<!-- 찜리스트 목록 CONTENT -->
@@ -350,13 +350,12 @@
 					     <div class="card">
 						  <img src="<%=request.getContextPath() %>/resources/<%=wishlist.get(i).getpFile1() %>" class="wlistImg" alt="...">
 						  <div class="card-body">
-						    <h5 class="card-title brandtitle"><%=wishlist.get(i).getpBrandeng() %></h5>
+						    <h5 class="card-title brandtitle"><%=wishlist.get(i).getpBrandeng()%></h5>
 						    <p class="card-text"><%=wishlist.get(i).getpNamekr()%></p>
-						    <p class="card-text"><%=wishlist.get(i).getCtsize()%> </p>
 						    <span class="card-text normalPrice"><fmt:formatNumber><%=wishlist.get(i).getpPrice() %></fmt:formatNumber>원</span>&nbsp;
 						    <span class="wishCheckBox">
 						    	<input type="hidden" name="widx" id="widx" value="<%=wishlist.get(i).getWidx()%>">
-							    <input type="checkbox" id="wishCheck<%=wishlist.get(i).getWidx()%>" name="wishchk" value="<%=wishlist.get(i).getWidx()%>" checked>
+							    <input type="checkbox" class="wishchk" id="wishCheck<%=wishlist.get(i).getWidx()%>" name="wishchk" value="<%=wishlist.get(i).getWidx()%>" checked>
 							    <label for="wishCheck<%=wishlist.get(i).getWidx()%>"></label>
 						    </span>
 						  </div>
@@ -370,19 +369,19 @@
 				
 		<!-- 찜한상품 페이징 -->
 		<div class="page">
-				<div class="hr1"></div>
-					<ul>
-						<c:if test="${pageMaker3.prev}">
-							<li><a class="pm" href="<%=request.getContextPath() %>/mypage/shopping/wishlist.do${pageMaker3.makeQuery(pageMaker3.startPage - 1)}">이전</a></li>
-						</c:if> 
-						<c:forEach begin="${pageMaker3.startPage}" end="${pageMaker3.endPage}" var="idx">
-							<li><a class="pm" href="<%=request.getContextPath() %>/mypage/shopping/wishlist.do${pageMaker3.makeQuery(idx)}">${idx}</a></li>
-						</c:forEach>
-						<c:if test="${pageMaker3.next && pageMaker3.endPage > 0}">
-							<li><a class="pm" href="<%=request.getContextPath() %>/mypage/shopping/wishlist.do${pageMaker3.makeQuery(pageMaker3.endPage + 1)}">다음</a></li>
-						</c:if> 
-					</ul>
-				</div>
+			<div class="hr1"></div>
+			<ul class="mt-4">
+				<c:if test="${pageMaker3.prev}">
+					<li class="mx-2"><a class="pmw" href="<%=request.getContextPath() %>/mypage/shopping/wishlist.do${pageMaker3.makeQuery(pageMaker3.startPage - 1)}">이전</a></li>
+				</c:if> 
+				<c:forEach begin="${pageMaker3.startPage}" end="${pageMaker3.endPage}" var="idx">
+					<li class="mx-2"><a class="pmw" href="<%=request.getContextPath() %>/mypage/shopping/wishlist.do${pageMaker3.makeQuery(idx)}">${idx}</a></li>
+				</c:forEach>
+				<c:if test="${pageMaker3.next && pageMaker3.endPage > 0}">
+					<li class="mx-2"><a class="pmw" href="<%=request.getContextPath() %>/mypage/shopping/wishlist.do${pageMaker3.makeQuery(pageMaker3.endPage + 1)}">다음</a></li>
+				</c:if> 
+			</ul>
+		</div>
 		
 <!-- 			<div class="pagingBox"> -->
 <!-- 				<div> -->
@@ -413,23 +412,26 @@
 	</div>
 	</div>
 <script>
-	function delbtn(){
-		//alert("del");
- 		if(!confirm("삭제하시겠습니까?")) {
- 			alert("취소되었습니다");
- 		}else{
- 			
- 			$.ajax({
- 				url:'wishdel.do',
- 				traditional:true,
- 				data:'widx='+widx,
- 				success:function(data){
- 					alert("수량이 변경되었습니다.");
- 				}
- 			});
- 			return ;
-		}
-	}
+
+	 $(".delbtn").click(function(){
+		  var confirm_val = confirm("정말 삭제하시겠습니까?");
+			 
+		  if(confirm_val) {
+			  
+			   $.ajax({
+			    url : "wishdel.do",
+			    type : "post",
+			    data : $("form").serialize(),
+			    success : function(data){
+			    	//alert("del");
+					$(".wishchk:checked").each(function(){
+							$(this).parent().parent().parent().parent().parent().remove();
+					});    	
+			    }
+		   });
+		 } 
+	 });
+
 </script>
 	
 	<!-- 우측하단 TOP 이동 배너 -->

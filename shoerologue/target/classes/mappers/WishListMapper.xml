@@ -46,17 +46,16 @@
 	</select>
 	
 	<select id="countwlist" resultType="int">
-		SELECT COUNT(*) 
-		FROM wish
-		WHERE midx=#{midx}
+		 SELECT COUNT(*) 
+		FROM wish w, member m
+		WHERE w.midx = m.midx AND w.midx=#{midx}
 	</select>
  
  
  
 	<!-- 상품개별삭제 -->
 	<delete id="del" parameterType="int">
-		DELETE FROM wish WHERE widx IN
-    	<foreach collection="wishchk" index="index" item="widx" open="(" separator="," close=")">#{widx}</foreach>
+		DELETE FROM wish WHERE widx =#{widx}
 	</delete>
    
    <!-- 장바구니 넣기 -->

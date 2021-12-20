@@ -11,7 +11,6 @@ public class WishListVO {
 	private String pPrice;
 	private String pFile1;
 	private int ctcnt;
-	private String ctsize;
 	private int[] wishchk;
 	
 	
@@ -20,12 +19,6 @@ public class WishListVO {
 	}
 	public void setWishchk(int[] wishchk) {
 		this.wishchk = wishchk;
-	}
-	public String getCtsize() {
-		return ctsize;
-	}
-	public void setCtsize(String ctsize) {
-		this.ctsize = ctsize;
 	}
 	public String getpNamekr() {
 		return pNamekr;

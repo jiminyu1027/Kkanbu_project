@@ -1,11 +1,13 @@
 package edu.study.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import edu.study.domain.Criteria2;
 import edu.study.domain.Criteria3;
 import edu.study.vo.ProductVO;
 import edu.study.vo.WishListVO;
@@ -25,13 +27,14 @@ public class WishDAO {
 		sqlSession.delete(Namespace+".del", widx);
 	}
 	
-	public List<WishListVO> wishlist(int midx, Criteria3 cri3) throws Exception{
+	public List<WishListVO> wishlist(int midx, Criteria3 cri) throws Exception{
 		//System.out.println("CRIIIII"+wvo);
-		return sqlSession.selectList(Namespace+".wishlist",midx);
+		cri.setMidx(midx);
+		return sqlSession.selectList(Namespace+".wishlist",cri);
 	}
 	
-	public int countwlist() throws Exception{	
-		return sqlSession.selectOne(Namespace+".countwlist");
+	public int countwlist(int midx) throws Exception{	
+		return sqlSession.selectOne(Namespace+".countwlist",midx);
 	}
 	
 }
