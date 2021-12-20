@@ -271,37 +271,9 @@
 	    <% } 
 		} %>
 	    
-	  <!--   <div class="col-6 col-sm-6 col-md-3 col-lg-3 cardhover">
-	     <a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/hot2.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">나이키</h5>
-			    <p class="card-text">나이키 코트 레거시 캔버스</p>
-			    <span class="card-text exitPrice"><del>69,000원</del></span>&nbsp;
-			    <span class="card-text HotPrice">29,000</span>
-			    <span class="card-text HotPer">원 [62%]</span>
-			  </div>
-			</div>  
-		  </a>
-	    </div>
-	      <div class="col-6 col-sm-6 col-md-3 col-lg-3 cardhover">
-	     <a href="#">
-		     <div class="card w-20">
-			  <img src="resources/image/hot3.jpg" class="card-img-top" alt="...">
-			  <div class="card-body">
-			    <h5 class="card-title brandtitle">아디다스</h5>
-			    <p class="card-text">클라이마웜 바운스</p>
-			    <span class="card-text exitPrice"><del>119,000원</del></span>&nbsp;
-			    <span class="card-text HotPrice">39,000</span>
-			    <span class="card-text HotPer">원 [67%]</span>
-			  </div>
-			</div>
-		  </a>
-	    </div> -->
+	  
 	</div>
 	</div>
-	
 	<!-- 이벤트 광고 베너 -->
 	<div class="jumping"></div>
 		<img src="resources/image/mainbanner/005.png" class="img-fluid" alt="이젠카드 결제시 20% 할인 이벤트">

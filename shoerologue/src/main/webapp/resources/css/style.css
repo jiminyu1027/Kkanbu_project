@@ -6,6 +6,10 @@
 	 .iconul{
 	 	padding-top:20px;
 	 }
+	 .hotTimer{
+		 font-size:25px;
+		 height:60px;
+	 } 
 }
 @media only screen and (max-width: 2000px) {
 	 .search{padding-top:70px;}
@@ -15,6 +19,10 @@
 	  .iconul{
 	 	padding-top:20px;
 	 }
+	 .hotTimer{
+	 	font-size:25px;
+	 	height:60px;
+	 } 
 }
 
 @media only screen and (max-width: 1800px) {
@@ -25,6 +33,10 @@
 	 .iconul{
 	 	padding-top:20px;
 	 }
+	 .hotTimer{
+	 	font-size:25px;
+	 	height:60px;
+	 } 
 }
 
 @media only screen and (max-width: 1399px) {
@@ -34,6 +46,10 @@
      .iconul{
 	 	padding-top:21px;
 	 }
+	 .hotTimer{
+	 	font-size:22px;
+	 	height:55px;
+	 } 
 }
 
 @media only screen and (max-width: 1200px) {
@@ -48,12 +64,10 @@
 	 .iconul{
 	 	padding-top:20px;
 	 }
-}
-@media only screen and (max-width: 1100px) {
-	.search{padding-top:46px;}
-	 .iconul{
-	 	padding-top:20px;
-	 }
+	 .hotTimer{
+		 font-size:20px;
+		 height:50px;
+	 } 
 }
 
 @media only screen and (max-width: 991px) {
@@ -69,6 +83,20 @@
 	 .iconul{
 	 	padding-top:20px;
 	 }
+	.hotTimer{
+		font-size:15px;
+		height:40px;
+	} 
+}
+@media only screen and (max-width: 975px) {
+	.search{padding-top:46px;}
+	 .iconul{
+	 	padding-top:20px;
+	 }
+	 .hotTimer{
+	 	font-size:20px;
+	 	height:40px;
+	 } 
 }
 
 @media only screen and (max-width: 767px) {
@@ -89,6 +117,10 @@
 	 .iconul{
 	 	padding-top:0px;
 	 }
+	 .hotTimer{
+		 font-size:21px;
+		 height:50px;
+	 } 
 }
 
 @media only screen and (max-width: 575px) {
