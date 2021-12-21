@@ -343,58 +343,37 @@
 		<script>
 			function checkFn(type){
 				if(type == 'id'){
-				
 					var checkId = /^[A-za-z0-9]{4,20}/g;
 					var value = document.frm.id.value;
-					
 					var div = document.getElementsByClassName("id")[0].getElementsByTagName("div")[0];
 					var result = checkId.test(value);
-					
-					
-					
 					if(value == ""){
-					
 						div.textContent = "아이디를 입력해주세요.";
 						div.style.color = "red";
 						div.style.display = "inline";
-						
 					}else if(!result){
-					
 						div.textContent = "아이디 형식 오류입니다.";
 						div.style.color = "red";
 						div.style.display = "inline";
-						
 					}else{
-					
 						div.textContent = "";
 						div.style.display = "none";
-						
 					}
-
-					
 				}else if(type == 'pass'){
-				
 					var checkId = /^.*(?=^.{4,20}$)(?=.*\d)(?=.*[a-zA-Z]).*$/;
-					
 					var value = document.frm.password.value;
 					var span = document.getElementsByClassName("password")[0].getElementsByTagName("span")[0];
 					if(value == ""){
-					
 						span.textContent = "비밀번호를 입력해주세요.";
 						span.style.color = "red";
 						span.style.display = "inline";
-						
 					}else if(!checkId.test(value)){
-					
 						span.textContent = "비밀번호 형식 오류입니다.";
 						span.style.color = "red";
 						span.style.display = "inline";
-						
 					}else{
-					
 						span.textContent = "";
 						span.style.display = "none";
-						
 					}
 				}
 			}

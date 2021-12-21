@@ -345,15 +345,15 @@
 					</label><br>
 					<div class="agreebox2">
 						<label for="agree">
-						  <input type="checkbox" name="agree" value="1" class="agreelabel" onclick="agreeChkE01()" onchange="agreeChkReset1()">
+						  <input type="checkbox" name="agree" value="1" class="agreelabel"  onchange="agreeChkReset1(this)">
 						  <span>이용약관 동의<strong class="red">[필수]</strong></span>
 						</label><br>
 						<label for="agree">
-						  <input type="checkbox" name="agree" value="2" class="agreelabel" onclick="agreeChkE02()" onchange="agreeChkReset2()">
+						  <input type="checkbox" name="agree" value="2" class="agreelabel" onchange="agreeChkReset2(this)">
 						  <span>개인정보 수집, 이용 동의<strong class="red">[필수]</strong></span>
 						</label><br>
 						<label for="agree">
-						  <input type="checkbox" name="agree" value="3" class="agreelabel" onclick="agreeChkE03()" onchange="agreeChkReset3()">
+						  <input type="checkbox" name="agree" value="3" class="agreelabel" onchange="agreeChkReset3(this)">
 						  <span>개인정보 이용 동의<strong class="red">[필수]</strong></span>
 						</label><br>
 						<label for="agree">
@@ -449,10 +449,6 @@
 	var agrChk1 = false;
 	var agrChk2 = false;
 	var agrChk3 = false;
-
-	
-	
-	
 	
 	// 동의 모두선택 / 해제
 	$(document).ready(function() {
@@ -467,7 +463,6 @@
                 $("input:checkbox[name='agree']").prop("checked", false);
             }
         });
-
         // 체크박스 클릭 시
         $("input:checkbox[name='agree']").click(function() {
             var allCnt = $("input:checkbox[name='agree']").length;  // 전체갯수
@@ -477,7 +472,6 @@
             		selCnt++;
             	}
             });
-			
       		//숫자 비교
             if(allCnt != selCnt) {
                 $("input:checkbox[name='agree_all']").prop("checked", false);
@@ -487,27 +481,31 @@
         });
     });
 	
-	// 이용약관 동의 체크해제 시 다시 막기
-	function agreeChkReset1(){
-		agrChk1 = false;
-	}
-	function agreeChkReset2(){
-		agrChk2 = false;
-	}	
-	function agreeChkReset3(){
-		agrChk3 = false;
+	// 온체인지 버튼으로 체크되어있나 확인
+	function agreeChkReset1(obj){
+		if($(obj).is(":checked")){
+			agrChk1 = true;	
+		}else{
+			agrChk1 = false;
+		}
 	}
 	
-	//각각 클릭시 열어주기
-	function agreeChkE01(){
-		agrChk1 = true;
+	function agreeChkReset2(obj){
+		if($(obj).is(":checked")){
+			agrChk2 = true;	
+		}else{
+			agrChk2 = false;
+		}
 	}
-	function agreeChkE02(){
-		agrChk2 = true;
+	
+	function agreeChkReset3(obj){
+		if($(obj).is(":checked")){
+			agrChk3 = true;	
+		}else{
+			agrChk3 = false;
+		}
 	}
-	function agreeChkE03(){
-		agrChk3 = true;
-	}
+	
 	
 	// 아이디 중복체크
 	function idCheck(){
@@ -776,10 +774,7 @@
  		}
 		//조건 여기까지
 	}
-
 	</script>
-	
-
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
   	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script> 	
 		

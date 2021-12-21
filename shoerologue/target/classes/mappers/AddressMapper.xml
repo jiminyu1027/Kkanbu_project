@@ -36,22 +36,7 @@
 			SELECT MAX(adidx) FROM Address
 		</selectKey>
 	</insert>
-    
-<!-- 	<select id="detail" resultType="AddressVO" parameterType="int"> -->
-<!--         SELECT  -->
-<!--         	adidx, -->
-<!--         	adName, -->
-<!--         	adRec, -->
-<!--         	adSend, -->
-<!--         	addr1, -->
-<!--         	addr2, -->
-<!--         	addr3, -->
-<!--         	adPhone, -->
-<!--         	midx -->
-<!--         FROM Address  -->
-<!--        WHERE 1=1 -->
-<!--          AND midx = #{mIdx} -->
-<!-- 	</select> -->
+	
 	
 	<update id="update" parameterType="AddressVO">
 		UPDATE 
