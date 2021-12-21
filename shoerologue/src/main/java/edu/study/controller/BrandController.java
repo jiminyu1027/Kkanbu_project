@@ -27,12 +27,6 @@ public class BrandController {
 		return "/category/brand";
 	}
 	
-	@RequestMapping(value="/test.do")
-	public String test(Locale locale, Model model)throws Exception {
-		
-		return "/category/test";
-	}
-	
 	@RequestMapping(value="brand/nike.do")
 	public String nike(Locale locale, Model model,ProductVO pvo, Criteria cri)throws Exception {
 		

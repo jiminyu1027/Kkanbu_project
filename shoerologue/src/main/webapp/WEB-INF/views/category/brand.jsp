@@ -82,7 +82,6 @@
 			margin-bottom:45px;
 		}
 		
-		
 		.hr1{
 			border:1px solid black;
 		}
@@ -141,12 +140,9 @@
 			color:white;
 		}
 		
-		
 		.brandList{
 			margin:20px 0;
 		}
-		
-		
 	</style>
 </head>
 <body>
