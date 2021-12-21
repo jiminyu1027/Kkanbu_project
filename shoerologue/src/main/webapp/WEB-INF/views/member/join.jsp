@@ -345,15 +345,15 @@
 					</label><br>
 					<div class="agreebox2">
 						<label for="agree">
-						  <input type="checkbox" name="agree" value="1" class="agreelabel" onchange="agreeChkReset1()">
+						  <input type="checkbox" name="agree" value="1" class="agreelabel" onclick="agreeChkE01()" onchange="agreeChkReset1()">
 						  <span>이용약관 동의<strong class="red">[필수]</strong></span>
 						</label><br>
 						<label for="agree">
-						  <input type="checkbox" name="agree" value="2" class="agreelabel" onchange="agreeChkReset2()">
+						  <input type="checkbox" name="agree" value="2" class="agreelabel" onclick="agreeChkE02()" onchange="agreeChkReset2()">
 						  <span>개인정보 수집, 이용 동의<strong class="red">[필수]</strong></span>
 						</label><br>
 						<label for="agree">
-						  <input type="checkbox" name="agree" value="3" class="agreelabel" onchange="agreeChkReset3()">
+						  <input type="checkbox" name="agree" value="3" class="agreelabel" onclick="agreeChkE03()" onchange="agreeChkReset3()">
 						  <span>개인정보 이용 동의<strong class="red">[필수]</strong></span>
 						</label><br>
 						<label for="agree">
@@ -450,6 +450,10 @@
 	var agrChk2 = false;
 	var agrChk3 = false;
 
+	
+	
+	
+	
 	// 동의 모두선택 / 해제
 	$(document).ready(function() {
         // 전체선택 클릭 시
@@ -492,6 +496,17 @@
 	}	
 	function agreeChkReset3(){
 		agrChk3 = false;
+	}
+	
+	//각각 클릭시 열어주기
+	function agreeChkE01(){
+		agrChk1 = true;
+	}
+	function agreeChkE02(){
+		agrChk2 = true;
+	}
+	function agreeChkE03(){
+		agrChk3 = true;
 	}
 	
 	// 아이디 중복체크

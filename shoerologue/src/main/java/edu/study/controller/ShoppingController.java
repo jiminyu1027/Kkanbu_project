@@ -75,7 +75,7 @@ public class ShoppingController {
 			//List<WishListVO> wlist = wishService.wlist(member.getMidx());
 			
 			List<WishListVO> wishlist = wishService.wishlist(midx, cri);
-			System.out.println("sizeeeeee"+wishlist.size());
+			//System.out.println("sizeeeeee"+wishlist.size());
 			
 			PageMaker3 pageMaker3 = new PageMaker3();
 			pageMaker3.setCri(cri);
@@ -137,10 +137,7 @@ public class ShoppingController {
 	public String insert(Locale locale,Model model,QaVO vo,@RequestParam("pidx") int pidx,HttpSession httr) throws Exception{
 		
 			MemberVO member = (MemberVO)httr.getAttribute("member");
-			
 			int midx = member.getMidx();
-					
-			
 			
 			vo.setMidx(midx);
 			vo.setPidx(pidx);   
@@ -201,6 +198,7 @@ public class ShoppingController {
 		vo.setMidx(midx);
 		vo.setPidx(pidx);
 		
+		System.out.println("name==="+member.getmName());
 		
 		ReviewService.insert(vo);
 		

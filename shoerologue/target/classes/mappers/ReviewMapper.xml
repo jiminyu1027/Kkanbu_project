@@ -9,13 +9,14 @@
 		<![CDATA[
 			INSERT INTO REVIEW(
 				RVIDX,RVTITLE
-				,RVCONTENTS,RVFILE
+				,RVCONTENTS,rvWriteday,RVFILE
 				,RVSTAR,MIDX,PIDX,RVWRITER
 				,PBRANDKR,PNAMEKR)
 				VALUES(
-				RVIDX_SEQ.nextval
+				RVIDX
 				,#{rvTitle}
 				,#{rvContents}
+				,NOW()
 				,#{rvFile}
 				,#{rvStar}
 				,#{midx}

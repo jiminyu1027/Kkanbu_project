@@ -5,6 +5,7 @@ import java.util.List;
 import edu.study.vo.CartVO;
 import edu.study.vo.MemberVO;
 import edu.study.vo.ProductVO;
+import edu.study.vo.WishListVO;
 
 
 public interface CartService {
@@ -17,4 +18,5 @@ public interface CartService {
 	public int sum(int midx) throws Exception;
 	public int sumMoney(int midx)throws Exception;
 	List<CartVO> order(CartVO cvo) throws Exception;
+	public void cartInsert(WishListVO wvo) throws Exception;
 }

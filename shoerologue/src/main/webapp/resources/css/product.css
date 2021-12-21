@@ -339,8 +339,8 @@ table{
 	width:1050px;
 	height:100px;
 }
-.reviewHelpBtn{
-	width:95px;
+.reviewHelpBtn>button{
+	width:100px;
 	background-color:white;
 	border:1px solid lightgray;
 	border-radius: 30px;

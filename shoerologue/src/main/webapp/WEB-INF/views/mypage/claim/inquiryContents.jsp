@@ -352,7 +352,7 @@
 			<tr style="border-bottom:1px solid gray; height:45px; font-size:18px;">
 				<td style="border-right:1px solid gray;"><%=alist.get(i).getmName() %></td>
 				<td style="word-break:break-all; border-right:1px solid gray;"><%=alist.get(i).getaContents() %></td>
-				<td><%=alist.get(i).getaWriteday() %></td>
+				<td><%=alist.get(i).getaWriteday().substring(0,10) %></td>
 			</tr>
 		<%
 			}

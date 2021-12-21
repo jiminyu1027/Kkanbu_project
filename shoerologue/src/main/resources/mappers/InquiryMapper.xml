@@ -7,11 +7,12 @@
 	<insert id="insert" parameterType="edu.study.vo.InquiryVO">
 		<![CDATA[
 			INSERT INTO QUESTION(
-				QIDX,QTITLE,QCONTENTS,QFILE,QREASON,MIDX)
+				QIDX,QTITLE,QCONTENTS,qWriteday,QFILE,QREASON,MIDX)
 				VALUES(
 				QIDX
 				,#{qTitle}
 				,#{qContents}
+				,NOW()
 				,#{qFile}
 				,#{qReason}
 				,#{midx}

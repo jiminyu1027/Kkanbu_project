@@ -334,18 +334,17 @@
 		</div>
 		<!-- 우측 삭제, 장바구니 버튼-->
 		<div class="btn-wrap">
-			<input type="button" value="삭제" id="del" class="delbtn">
-			<input type="submit" value="장바구니" id="cart" class="cartbtn">
+			<input type="button" value="선택삭제" id="del" class="delbtn">
+			<input type="button" value="장바구니" id="cart" class="cartbtn">
 			<i class="bi bi-cart4"></i>
 		</div>
 		<!-- 찜리스트 목록 CONTENT -->
 		<div class="border-line-box">
-			<div class="container">
-				<div class="row">
+			<div class="imgInfo row">
 				<%
 					for(int i = 0; i<wishlist.size(); i++){
 				%>
-				    <div class="col-6 col-md-3 cardhover">
+				    <div class="cardhover">
 				    	<a href="<%=request.getContextPath() %>/product/product.do?pidx=<%=wishlist.get(i).getPidx()%>">
 					     <div class="card">
 						  <img src="<%=request.getContextPath() %>/resources/<%=wishlist.get(i).getpFile1() %>" class="wlistImg" alt="...">
@@ -365,7 +364,6 @@
 				   <%} %>
 				 	</div>
 				 </div>
-				 </div>
 				
 		<!-- 찜한상품 페이징 -->
 		<div class="page">
@@ -382,23 +380,9 @@
 				</c:if> 
 			</ul>
 		</div>
-		
-<!-- 			<div class="pagingBox"> -->
-<!-- 				<div> -->
-<!-- 					<nav aria-label="Page navigation example"> -->
-<!-- 					  <ul class="pagination"> -->
-<!-- 					    <li class="page-item"><a class="page-link" href="<%=request.getContextPath()%>/shopping/wishList.do">1</a></li> -->
-<!-- 					    <li class="page-item"><a class="page-link" href="<%=request.getContextPath()%>/shopping/wishList.do">2</a></li> -->
-<!-- 					    <li class="page-item"><a class="page-link" href="<%=request.getContextPath()%>/shopping/wishList.do">3</a></li> -->
-<!-- 					    <li class="page-item"><a class="page-link" href="<%=request.getContextPath()%>/shopping/wishList.do">4</a></li> -->
-<!-- 					    <li class="page-item"><a class="page-link" href="<%=request.getContextPath()%>/shopping/wishList.do">5</a></li> -->
-<!-- 					  </ul> -->
-<!-- 					</nav> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
-			</div>
-			</div>
-		</form>
+		</div>
+	</div>
+</form>
 		<!-- 찜한 상품이 없는 경우 -->
 		<%} else {%>
 			<div class="wishNoItem">
@@ -424,6 +408,26 @@
 			    data : $("form").serialize(),
 			    success : function(data){
 			    	//alert("del");
+					$(".wishchk:checked").each(function(){
+							$(this).parent().parent().parent().parent().parent().remove();
+					});    	
+			    }
+		   });
+		 } 
+	 });
+	 
+	 
+	 $(".cartbtn").click(function(){
+		  var confirm_val = confirm("장바구니로 이동하시겠습니까?");
+			 
+		  if(confirm_val) {
+			  
+			   $.ajax({
+			    url : "<%=request.getContextPath()%>/cart/cartInsert.do",
+			    type : "post",
+			    data : $("form").serialize(),
+			    success : function(data){
+			    	alert("장바구니 이동성공!");
 					$(".wishchk:checked").each(function(){
 							$(this).parent().parent().parent().parent().parent().remove();
 					});    	

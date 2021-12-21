@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import edu.study.vo.WishListVO;
 import edu.study.vo.CartVO;
 import edu.study.vo.MemberVO;
 import edu.study.vo.ProductVO;
@@ -50,5 +51,9 @@ public class CartDAO {
 	
 	public int sumMoney(int midx)throws Exception{
 		return sqlSession.selectOne(Namespace+".sumMoney",midx);
+	}
+	
+	public void cartInsert(WishListVO wvo) throws Exception{
+		sqlSession.insert(Namespace+".cartInsert", wvo);
 	}
 }

@@ -396,13 +396,13 @@
 				<div class="hr1"></div>
 					<ul>
 						<c:if test="${pageMaker.prev}">
-							<li><a class="pm" href="<%=request.getContextPath() %>/category/brand/adidas.do${pageMaker.makeQuery(pageMaker.startPage - 1)}">이전</a></li>
+							<li><a class="pm" href="<%=request.getContextPath() %>/category/brand/nuovo.do${pageMaker.makeQuery(pageMaker.startPage - 1)}">이전</a></li>
 						</c:if> 
 						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
-							<li><a class="pm" href="<%=request.getContextPath() %>/category/brand/adidas.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
+							<li><a class="pm" href="<%=request.getContextPath() %>/category/brand/nuovo.do${pageMaker.makeQuery(idx)}">${idx}</a></li>
 						</c:forEach>
 						<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-							<li><a class="pm" href="<%=request.getContextPath() %>/category/brand/adidas.do${pageMaker.makeQuery(pageMaker.endPage + 1)}">다음</a></li>
+							<li><a class="pm" href="<%=request.getContextPath() %>/category/brand/nuovo.do${pageMaker.makeQuery(pageMaker.endPage + 1)}">다음</a></li>
 						</c:if> 
 					</ul>
 				</div>

@@ -111,8 +111,10 @@
 			}
 			
 			function gotoCart(){
-				
-				if(sizeSelectYN == false){
+				if( ${ member == null } ){
+					alert("로그인 후 이용 가능합니다.");
+					location.href="<%=request.getContextPath()%>/login.do";
+				}else if(sizeSelectYN == false){
 					alert("사이즈를 선택해 주세요.");
 					return false;
 				}else {
@@ -129,7 +131,10 @@
 			
 			function gotoOrder(){
 				var fm = document.frm;
-				if(sizeSelectYN == false){
+				if( ${ member == null } ){
+					alert("로그인 후 이용 가능합니다.");
+					location.href="<%=request.getContextPath()%>/login.do";
+				}else if(sizeSelectYN == false){
 					alert("사이즈를 선택해 주세요.");
 					return false;
 				}else {
@@ -158,7 +163,10 @@
 				    if( ${member == null} ){	
 				    	alert("로그인을 해주세요.");
 				    	location.href="<%=request.getContextPath()%>/login.do";
-				    }else{
+				    }else if(sizeSelectYN == false){
+						alert("사이즈를 선택해 주세요.");
+						return false;
+					}else{	
 			       // $("#wishHeart").off("click");
 			       		alert("찜리스트에 담겼습니다.");
 			       	fm.action="<%=request.getContextPath()%>/mypage/shopping/wishInsert.do";
@@ -650,51 +658,63 @@
 						<span>총 <span class="redBold"><%=prvlist.size() %></span>개의 리뷰가 있습니다.</span>
 					<div class="pdReviewList" style="border-top:1px solid black; padding-top:10px;">
 						 
+						 
 						<!-- 리뷰가 있을때 -->
-						<%if(prvlist.size()>0){ %>
+						 	<%if(prvlist.size()>0){ %>
 							<%for(int i=0; i<prvlist.size(); i++){ %>
-								<div style="margin-left:20px;">
-									<div>
-										<span width=30 height=30></span>
-										<span width=120>
-											<div colspan="2" style="text-align:left;">						
-												<span class="star" id="star">
-													  ★★★★★
-		  											<span class="rvStar" style="width:<%=Double.parseDouble(prvlist.get(i).getRvStar())*20 %>%;" readonly>★★★★★</span>
-		  											<input type="range" name="check" id="check" oninput="drawStar(this)" value="<%=prvlist.get(i).getRvStar()%>" step="1" min="0" max="0">
-												</span>						
-											</div>
+							<table>
+								<tr>
+									<td width=30 height=30></td>
+									<td width=120>
+										<span class="star" id="star">
+											  ★★★★★
+  											<span class="rvStar" style="width:<%=Double.parseDouble(prvlist.get(i).getRvStar())*20 %>%;" readonly>★★★★★</span>
+  											<input type="range" name="check" id="check" oninput="drawStar(this)" value="<%=prvlist.get(i).getRvStar()%>" step="1" min="0" max="0">
 										</span>
-									</div>
-									<div style="margin-top:10px;"><%=prvlist.get(i).getRvWriter().substring(0,1) %>*<%if(prvlist.get(i).getRvWriter().length() == 3){%><%=prvlist.get(i).getRvWriter().substring(2,3) %>
+									</td>
+									<td width=150><%=prvlist.get(i).getpNameKr()%></td>
+									<td width=550></td>
+									<td width=200>
+											<%=prvlist.get(i).getRvWriter().substring(0,1) %>*<%if(prvlist.get(i).getRvWriter().length() == 3){%><%=prvlist.get(i).getRvWriter().substring(2,3) %>
 																<%}else if(prvlist.get(i).getRvWriter().length() == 4){%><%=prvlist.get(i).getRvWriter().substring(2,4) %>
 																<%}else{} %>
-									</div>		
-									<div style="margin-top:10px;">
-										<span height=120></span>
-										
+									</td>
+									<td width=150><%=prvlist.get(i).getRvWriteday().substring(0,10)%></td>
+								</tr>
+								<tr>
+									<td height=120></td>
+									<td>
 											<div class="reviewImg">
 												<%if(prvlist.get(i).getRvFile() != null){ %>
-												<img src="<%=request.getContextPath()%>/resources<%=prvlist.get(i).getRvFile()%>" style="width:200px; height:200px;">
+												<img src="<%=request.getContextPath()%>/resources<%=prvlist.get(i).getRvFile()%>" style="width:100px; height:100px;">
+												<%}else if(prvlist.get(i).getRvFile() == null){%>
+											<div></div>
+												<%	
+												} %>
 											</div>
-											<span colspan="4">
-												<div class="reviewContents"></div>
-											</span>
-												<%}else{} %>
-									</div>
-									<div style="margin-top:10px;">
-										<span height=30 colspan="4" style="font-size:20px; font-weight:bold;"><%=prvlist.get(i).getRvTitle() %></span><br>
-										<span height=30 colspan="4"><%=prvlist.get(i).getRvContents() %></span>
-											<div class="reviewHelpBtn" style="margin-top:10px;"><span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16">
-												<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-												<path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
-											</svg>&nbsp;&nbsp;도움돼요 0 </span></div>
-									</div>
-								</div>	
-								<div class="jumpLine"></div>
-							<%} %>
+									</td>
+									<td colspan="4">
+										<div class="reviewContents"><%=prvlist.get(i).getRvContents() %></div>
+									</td>
+								</tr>
+								<tr>
+									<td height=30></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td>
+										<div class="reviewHelpBtn"><button><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16">
+											<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+											<path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
+										</svg>&nbsp;&nbsp;도움돼요 0 </button></div>
+									</td>
+								</tr>
+							</table>
+							<hr>
+						 <%} %>
 						<%}else{ %>	
-						<hr>
+					
 						<!-- 리뷰가 없을때 -->
 							<div class="noReview">
 								<div><svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
@@ -705,9 +725,6 @@
 							</div>
 						<hr>
 						<%} %>
-						<!-- 
-						<center>페이징 처리</center>
-						 -->
 						<form action="<%=request.getContextPath()%>/customerService/writeReview.do" method="get">
 							<input type="hidden" name="pidx" value="<%=pvo.getPidx() %>">
 							<input type="submit" class="ReviewBtn"value="상품 후기 작성">

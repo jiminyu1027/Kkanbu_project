@@ -278,12 +278,6 @@
 		</div>
 	</div>
 
-
-
-
-
-
-
 <!-- 우측하단 TOP 이동 배너 -->
 	<a href="#top">
 	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up-circle-fill top fixed" viewBox="0 0 16 16">

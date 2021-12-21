@@ -27,6 +27,7 @@ import edu.study.vo.CartVO;
 import edu.study.vo.MemberVO;
 import edu.study.vo.OrderVO;
 import edu.study.vo.ProductVO;
+import edu.study.vo.WishListVO;
 
 @RequestMapping(value="/cart")
 @Controller
@@ -94,6 +95,17 @@ public class CartController {
 			return"redirect:/cart/cart.do";
 	}
 	
+	@ResponseBody
+	@RequestMapping(value="/cartInsert.do")
+	public String winsert(WishListVO wvo) throws Exception{
+		
+		for(int i=0; i< wvo.getWishchk().length; i++) {
+			int widx = wvo.getWishchk()[i];
+			CartService.cartInsert(wvo);
+		}
+		
+		return  "";
+	}
 	
 	
 }

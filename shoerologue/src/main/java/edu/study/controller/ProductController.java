@@ -91,8 +91,12 @@ public class ProductController {
 	public String insert(Locale locale, Model model, ProductVO pvo,HttpSession session)throws Exception {
 			 
 		MemberVO member = (MemberVO)session.getAttribute("member");
-		pvo.setMidx(member.getMidx());
+		if(member == null) {
+			member = new MemberVO();
+		}
 		
+		pvo.setMidx(member.getMidx());
+
 			productService.insert(pvo);
 			//System.out.println("PIDX::"+pvo.getPidx());
 			

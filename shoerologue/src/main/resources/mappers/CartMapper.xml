@@ -73,4 +73,19 @@
     		<foreach collection="shoes" index="index" item="ctidx" open="(" separator="," close=")">#{ctidx}</foreach>
 	</select>
 	
+	<insert id="cartInsert" parameterType="WishListVO">
+		    INSERT INTO cart VALUES
+		    <foreach collection="shoes" index="index" item="ctidx" open="(" separator="," close=")">
+		    (
+		    	 ctidx
+		    	,NOW()
+		    	,#{pidx}		
+		    	,#{midx}
+		    	,#{cnt}
+		    	,#{ctsize}
+		    	,#{delyn}
+		    )
+			</foreach>
+    </insert>
+	
 </mapper>

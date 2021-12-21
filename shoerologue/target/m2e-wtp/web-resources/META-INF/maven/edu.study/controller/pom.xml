@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>edu.study</groupId>
 	<artifactId>controller</artifactId>
-	<name>ShoeRologue</name>
+	<name>shoerologue</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>

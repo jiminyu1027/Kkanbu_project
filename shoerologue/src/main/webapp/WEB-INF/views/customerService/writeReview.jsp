@@ -54,9 +54,7 @@
 					return false;
 				}
 				var star = sstar/2; 
-				
-				alert(star);
-				 
+								 
 				$("#sstar").val(star);
 				//console.log($("#sstar"));
 				return true; 

@@ -11,6 +11,7 @@ import edu.study.dao.CartDAO;
 import edu.study.vo.CartVO;
 import edu.study.vo.MemberVO;
 import edu.study.vo.ProductVO;
+import edu.study.vo.WishListVO;
 
 
 @Service
@@ -61,6 +62,11 @@ public class CartServiceImple implements CartService{
 	@Override
 	public List<CartVO> order(CartVO cvo) throws Exception {
 		return CartDao.order(cvo);
+	}
+
+	@Override
+	public void cartInsert(WishListVO wvo) throws Exception {
+		CartDao.cartInsert(wvo);
 	}
 
 }

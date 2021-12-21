@@ -372,7 +372,7 @@
 						<span class="won" id="won2">원</span>
 					</span>
 				</div>
-				<img src="/shoerologue/resources/image/symbol/equal.png" class="equalIcon">
+				<img src="<%=request.getContextPath() %>/resources/image/symbol/equal.png" class="equalIcon">
 				<div  class="paymentBox2">
 					<span class="paymentValue">결제금액</span>
 					<span class="price" id="total">

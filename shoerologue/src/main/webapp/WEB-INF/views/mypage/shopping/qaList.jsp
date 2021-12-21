@@ -442,7 +442,7 @@
 						<div style="height:150px; text-align:center;" class="noTextSize">
 							<i class="bi bi-exclamation-circle exclamation"></i>
 							<br>
-							등록된 리뷰가 없습니다.
+							등록된 Q &amp; A가 없습니다.
 						</div>
 					</div>
 				<%} %>		

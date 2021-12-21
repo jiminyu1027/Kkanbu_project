@@ -68,26 +68,34 @@ public class CsController {
 		String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
 		String fileName = null;
 		
+		
 		if(qqFile != null && qqFile.getSize()>0) {
 			 fileName =  UploadFileUtils.fileUpload(imgUploadPath, qqFile.getOriginalFilename(), qqFile.getBytes(), ymdPath); 
 			 vo.setnFile(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
 			} else {
 			 vo.setnFile("");
 			}
-		
 		NoticeService.insert(vo);
 		
 		return "redirect:/customerService/notice.do";
 	}
 	
 	@RequestMapping(value="/writeReview.do")
-	public String writeReview(Locale locale,Model model,int pidx)throws Exception{
+	public String writeReview(Locale locale,Model model,int pidx,HttpSession session)throws Exception{
+		MemberVO member=(MemberVO)session.getAttribute("member");
+		
+		if(member != null) {
 		
 		ProductVO pvo = ProductService.detail(pidx);
 		
 		model.addAttribute("pvo",pvo);
 		
+		
 		return "/customerService/writeReview";
+		}	else {
+		
+		return "redirect:/login.do";
+		}
 	}
 	
 	@RequestMapping(value="/event.do")

@@ -319,11 +319,12 @@ section{
      font-weight:500;
 }
 .wlistImg{
-	width:260px;
+	width:254px;
 }
 .cardhover{
 	width:264px !important;
 	height:384px !important;
+	padding:0px;
 }
 .card{
 	height:380px !important;
@@ -345,4 +346,9 @@ section{
 .pmw{
 	margin-top:30px;
 	font-size:14pt;
+}
+
+.imgInfo{
+	margin:0 auto;
+	padding: 0 32px;
 }

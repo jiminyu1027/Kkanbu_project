@@ -43,8 +43,13 @@ public class OrderController{
 	@RequestMapping(value="/orderpayment.do")
 	public String insert (Model model, Locale locale, CartVO cvo,MemberVO mvo,HttpSession session)throws Exception{
 		MemberVO member=(MemberVO)session.getAttribute("member");
-		int midx = member.getMidx();
-		MemberVO mInfo = MemberService.member(midx);
+		
+		if(member == null) {
+			member = new MemberVO();
+			return "redirect:/login.do";
+		}
+		else {
+		MemberVO mInfo = MemberService.member(member.getMidx());
 		
 		List<CartVO> list = new ArrayList<CartVO>();
 		
@@ -67,6 +72,7 @@ public class OrderController{
 		model.addAttribute("list", list);
 		model.addAttribute("mInfo", mInfo);
 		return "/order/orderpayment";
+		}
 	}
 	
 	private int Number(String getpPrice) {
