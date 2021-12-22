@@ -427,10 +427,10 @@
 								<td class="inquiry-btn-detail">
 									<input type="submit" value="삭제">
 								</td>
-							</tr>
+							</tr>	
+					<%} %>
 						</tbody>
-					</table>	
-					<%} %>	
+					</table>
 				<%}else if(mylist.size() == 0){ %>	
 					<div class="inquiry-box" style="border-top:1px solid gray;  border-bottom:1px solid gray; height:500px;">
 						<div style="height:150px; text-align:center;" class="noTextSize">
@@ -467,10 +467,10 @@
 								<td class="inquiry-btn-detail">
 									<input type="submit" value="삭제">
 								</td>
-							</tr>
+							</tr>	
+						<%} %>	
 						</tbody>
-					</table>	
-					<%} %>	
+					</table>
 				<%}else if(masterlist.size() == 0){ %>	
 					<div class="inquiry-box" style="border-top:1px solid gray; width:80%; border-bottom:1px solid gray; height:500px;">
 						<div style="height:150px; text-align:center;" class="noTextSize">

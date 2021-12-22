@@ -29,7 +29,7 @@
 	</insert>
 
 	<select id="prvlist" resultType="edu.study.vo.ReviewVO">
-		SELECT * FROM REVIEW WHERE 1=1 AND PIDX = #{pidx} AND RVDELYN = 'N' ORDER BY RVIDX DESC
+		SELECT * FROM REVIEW WHERE 1=1 AND PIDX = #{pidx} AND rvDelYn = 'N' ORDER BY RVIDX DESC
 	</select>
 	
 	<select id="mylist" resultType="edu.study.vo.ReviewVO">

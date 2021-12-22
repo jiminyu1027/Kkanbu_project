@@ -54,13 +54,17 @@ public class MemberCounselController {
 		
 		MemberVO member = (MemberVO)httr.getAttribute("member");
 		
-		List<InquiryVO> qlist = InquiryService.qlist(member.getMidx());
+		int midx = member.getMidx();
+		
+		List<InquiryVO> qlist = InquiryService.qlist(midx);
 		
 		List<InquiryVO> masterList = InquiryService.masterList();
 		
 		model.addAttribute("masterList",masterList);
 		
 		model.addAttribute("qlist",qlist);
+		
+		System.out.println("size == "+qlist);
 		
 		return "/mypage/memberCounsel/inquiry";
 	}

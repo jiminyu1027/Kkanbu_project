@@ -433,10 +433,10 @@
 								</td>
 								<td class="inquiry-writeday-detail"><%=pqlist.get(i).getPqWriteday().substring(0,10) %></td>
 								<td class="inquiry-writer-detail"><%=pqlist.get(i).getPqWriter() %></td>
-							</tr>
+							</tr>	
+					<%} %>
 						</tbody>
-					</table>	
-					<%} %>		
+					</table>		
 				<%}else if(pqlist.size() == 0){ %>
 					<div class="inquiry-box" style="border-top:1px solid gray;  border-bottom:1px solid gray; height:500px;">
 						<div style="height:150px; text-align:center;" class="noTextSize">
@@ -474,10 +474,10 @@
 								</td>
 								<td class="inquiry-writeday-detail"><%=masterList.get(j).getPqWriteday().substring(0,10) %></td>
 								<td class="inquiry-writer-detail"><%=masterList.get(j).getPqWriter() %></td>	
-							</tr>
-						</tbody>
-					</table>		
+							</tr>	
 					<%} %>
+						</tbody>
+					</table>	
 				<%}else if(masterList.size() == 0){ %>
 					<div class="inquiry-box" style="border-top:1px solid gray;  border-bottom:1px solid gray; height:500px;">
 						<div style="height:150px; text-align:center;" class="noTextSize">

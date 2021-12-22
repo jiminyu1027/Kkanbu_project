@@ -356,32 +356,36 @@
 		<c:if test="${master eq 'master'}">
 			<input type="button" value="공지 작성" onclick="location.href='<%=request.getContextPath()%>/admin/noticeWrite.do'" class="goWrite">	
 		</c:if>
-		<table class="notice-box table table-hover">
-			<colgroup>
-				<col width="10%">
-				<col width="75%">
-				<col width="15%">
-			</colgroup>
-			<thead class="notice-title">
-				<tr>
-					<th class="notice-number">번호</th>
-					<th class="notice-subject">제목</th>
-					<th class="notice-writeday">작성일</th>
-				</tr>	
-			</thead>
-			<tbody>
-				<%
-					for(int i=0; i<nlist.size(); i++){
-				%>
-				<tr class="notice-contents-box">
-					<td class="notice-number-detail"><%=i+1 %></td>
-					<td class="notice-subject-detail"><a href="<%=request.getContextPath()%>/customerService/event.do?nidx=<%=nlist.get(i).getNidx()%>"><%=nlist.get(i).getnTitle() %></a></td>
-					<td class="notice-writeday-detail"><%=nlist.get(i).getnWriteday().substring(0,10)%></td>
-					
-				</tr>
-				<%} %>
-			</tbody>
-		</table>
+		<%if (nlist.size() != 0){ %>
+			<table class="notice-box table table-hover">
+				<colgroup>
+					<col width="10%">
+					<col width="75%">
+					<col width="15%">
+				</colgroup>
+				<thead class="notice-title">
+					<tr>
+						<th class="notice-number">번호</th>
+						<th class="notice-subject">제목</th>
+						<th class="notice-writeday">작성일</th>
+					</tr>	
+				</thead>
+				<tbody>
+					<%
+						for(int i=0; i<nlist.size(); i++){
+					%>
+					<tr class="notice-contents-box">
+						<td class="notice-number-detail"><%=i+1 %></td>
+						<td class="notice-subject-detail"><a href="<%=request.getContextPath()%>/customerService/event.do?nidx=<%=nlist.get(i).getNidx()%>"><%=nlist.get(i).getnTitle() %></a></td>
+						<td class="notice-writeday-detail"><%=nlist.get(i).getnWriteday().substring(0,10)%></td>
+						
+					</tr>
+					<%} %>
+				</tbody>
+			</table>
+		<%}else{ %>
+			0
+		<%}%>
 	</div>	
 	<div class="empty-box"></div>
 	<div class="empty-box"></div>

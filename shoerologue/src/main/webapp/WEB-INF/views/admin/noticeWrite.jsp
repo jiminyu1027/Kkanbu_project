@@ -170,7 +170,7 @@
  					$('#subject').focus();
  					return false;
  				}else if(!contents){
- 					alert("문의 내용을 작성해 주세요");
+ 					alert("내용을 작성해 주세요");
  					$('#contents').focus();
  					return false;
  				}

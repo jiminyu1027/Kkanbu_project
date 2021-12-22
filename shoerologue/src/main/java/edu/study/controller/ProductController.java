@@ -56,7 +56,14 @@ public class ProductController {
 	
 	@RequestMapping(value="/product/product.do")
 	public String product(Locale locale, Model model,int pidx,HttpSession session)throws Exception {
-		
+			
+			MemberVO member=(MemberVO)session.getAttribute("member");
+			if(member == null) {
+				member = new MemberVO();
+			}
+			List<WishListVO> wlist = wishService.wlist(member.getMidx());
+			model.addAttribute("wishlist", wlist);
+			
 			ProductVO pvo = productService.detail(pidx);
 			model.addAttribute("pvo", pvo);
 				
@@ -66,12 +73,7 @@ public class ProductController {
 			List<ReviewVO> prvlist = ReviewService.prvlist(pidx);
 			model.addAttribute("prvlist",prvlist);
 			
-			MemberVO member=(MemberVO)session.getAttribute("member");
-			if(member == null) {
-				member = new MemberVO();
-			}
-			List<WishListVO> wlist = wishService.wlist(member.getMidx());
-			model.addAttribute("wishlist", wlist);
+			System.out.println("qa size == "+qalist.size());
 			
 		return "/product/product";
 			

@@ -144,18 +144,9 @@
 					return;
 				}
 			}
-			
-			/* function wishHeart(){
-				if( == null){
-					alert("로그인이 필요한 서비스 입니다.");
-					return "redirect:/login.do";
-				}else{
-					alert("찜리스트에 담겼습니다.");
-					
-					return false;
-					
-				}
-			} */
+			function niceFn(){
+				alert("개발 중입니다.")
+			}
 			$(document).ready(function() {
 				var fm = document.frm;
 				
@@ -575,9 +566,7 @@
 				<div class="pdReviewBox2">
 					<div class="gap100"></div>
 						<span>총 <span class="redBold"><%=prvlist.size() %></span>개의 리뷰가 있습니다.</span>
-					<div class="pdReviewList" style="border-top:1px solid black; padding-top:10px;">
-						 
-						 
+					<div class="pdReviewList" style="border-top:1px solid black; padding-top:10px;">	 
 						<!-- 리뷰가 있을때 -->
 						 	<%if(prvlist.size()>0){ %>
 							<%for(int i=0; i<prvlist.size(); i++){ %>
@@ -594,9 +583,11 @@
 									<td width=150><%=prvlist.get(i).getpNameKr()%></td>
 									<td width=550></td>
 									<td width=200>
-											<%=prvlist.get(i).getRvWriter().substring(0,1) %>*<%if(prvlist.get(i).getRvWriter().length() == 3){%><%=prvlist.get(i).getRvWriter().substring(2,3) %>
-																<%}else if(prvlist.get(i).getRvWriter().length() == 4){%><%=prvlist.get(i).getRvWriter().substring(2,4) %>
-																<%}else{} %>
+											<%if(prvlist.get(i).getRvWriter().length() >= 3){%>
+												<%=prvlist.get(i).getRvWriter().substring(0,1) %>*<%=prvlist.get(i).getRvWriter().substring(2,3) %>
+											<%}else{ %>
+												<%=prvlist.get(i).getRvWriter().substring(0,1) %>*
+											<%} %> 
 									</td>
 									<td width=150><%=prvlist.get(i).getRvWriteday().substring(0,10)%></td>
 								</tr>
@@ -604,12 +595,11 @@
 									<td height=120></td>
 									<td>
 											<div class="reviewImg">
-												<%if(prvlist.get(i).getRvFile() != null){ %>
-												<img src="<%=request.getContextPath()%>/resources<%=prvlist.get(i).getRvFile()%>" style="width:100px; height:100px;">
-												<%}else if(prvlist.get(i).getRvFile() == null){%>
-											<div></div>
-												<%	
-												} %>
+												<%if(prvlist.get(i).getRvFile() != null && !prvlist.get(i).getRvFile().equals("")){ %>
+													<img src="<%=request.getContextPath()%>/resources<%=prvlist.get(i).getRvFile()%>" style="width:100px; height:100px;">
+												<%}else{%>
+													
+												<%}%>
 											</div>
 									</td>
 									<td colspan="4">
@@ -623,7 +613,7 @@
 									<td></td>
 									<td></td>
 									<td>
-										<div class="reviewHelpBtn"><button><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16">
+										<div class="reviewHelpBtn"><button onclick="niceFn()"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" class="bi bi-emoji-smile" viewBox="0 0 16 16">
 											<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 											<path d="M4.285 9.567a.5.5 0 0 1 .683.183A3.498 3.498 0 0 0 8 11.5a3.498 3.498 0 0 0 3.032-1.75.5.5 0 1 1 .866.5A4.498 4.498 0 0 1 8 12.5a4.498 4.498 0 0 1-3.898-2.25.5.5 0 0 1 .183-.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
 										</svg>&nbsp;&nbsp;도움돼요 0 </button></div>
@@ -690,14 +680,18 @@
 								%>
 									<td width=600 height=60>
 										<%
-											if(loginU.getMidx() == qalist.get(i).getMidx() || loginU.getMaster().equals("master")){ 
+											if(loginU !=null && loginU.getMidx() == qalist.get(i).getMidx() || loginU !=null && loginU.getMaster().equals("master")){ 
 										%>
-										<%if(loginU.getMaster().equals("master")){ %>
+										<%if(loginU !=null && loginU.getMaster().equals("master")){ %>
 											<a href="<%=request.getContextPath()%>/customerService/qaDetail.do?pqidx=<%=qalist.get(i).getPqidx()%>">
 												&nbsp;&nbsp;&nbsp;&nbsp;<%=qalist.get(i).getPqSubject() %>
 											</a>
 											<td width=200 height=60 style="text-align:center;">
-												<%=qalist.get(i).getPqWriter().substring(0,1) %>*<%=qalist.get(i).getPqWriter().substring(2,3) %>
+												<%if(qalist.get(i).getPqWriter().length() >= 3){%>
+													<%=qalist.get(i).getPqWriter().substring(0,1) %>*<%=qalist.get(i).getPqWriter().substring(2,3) %>
+												<%}else{ %>
+													<%=qalist.get(i).getPqWriter().substring(0,1) %>*
+												<%} %>
 											</td>
 											<td width=150 height=60 style="text-align:center;">
 												<%=qalist.get(i).getPqWriteday().substring(0,10) %>
@@ -708,7 +702,7 @@
 												<td width=200 style="text-align:center; color:black;">답변 대기 중</td>
 											<%} %>
 									</tr>
-										<%}else if(loginU.getMidx() == qalist.get(i).getMidx()){ %>
+										<%}else if(loginU !=null && loginU.getMidx() == qalist.get(i).getMidx()){ %>
 											<input type="hidden" name="pqidx" value="<%=qalist.get(i).getPqidx() %>">
 											<div class="que" style="border:none;">&nbsp;&nbsp;&nbsp;&nbsp;<%=qalist.get(i).getPqSubject() %></div>
 											<div class="anw" style="border:none;">
@@ -722,7 +716,11 @@
 													<%} %>	
 											</div>
 											<td width=200 height=60 style="text-align:center;">
-												<%=qalist.get(i).getPqWriter().substring(0,1) %>*<%=qalist.get(i).getPqWriter().substring(2,3) %>
+												<%if(qalist.get(i).getPqWriter().length() >= 3){%>
+													<%=qalist.get(i).getPqWriter().substring(0,1) %>*<%=qalist.get(i).getPqWriter().substring(2,3) %>
+												<%}else{ %>
+													<%=qalist.get(i).getPqWriter().substring(0,1) %>*
+												<%} %>
 											</td>
 											<td width=150 height=60 style="text-align:center;">
 												<%=qalist.get(i).getPqWriteday().substring(0,10) %>
@@ -737,7 +735,11 @@
 									<%}else{ %>
 										&nbsp;&nbsp;&nbsp;&nbsp;<i class="bi bi-lock-fill"></i>[비공개글은 작성자와 관리자만 볼 수 있습니다.]
 										<td width=200 height=60 style="text-align:center;">
-											<%=qalist.get(i).getPqWriter().substring(0,1) %>*<%=qalist.get(i).getPqWriter().substring(2,3) %>
+											<%if(qalist.get(i).getPqWriter().length() >= 3){%>
+													<%=qalist.get(i).getPqWriter().substring(0,1) %>*<%=qalist.get(i).getPqWriter().substring(2,3) %>
+												<%}else{ %>
+													<%=qalist.get(i).getPqWriter().substring(0,1) %>*
+												<%} %>
 										</td>
 										<td width=150 height=60 style="text-align:center;">
 											<%=qalist.get(i).getPqWriteday().substring(0,10) %>
@@ -750,7 +752,7 @@
 									</tr>
 									<%} %>
 								<%}else if(qalist.get(i).getPqOpen().equals("Y") ){ %>
-									<%if(!loginU.getMaster().equals("master")){ %>
+									<%if(loginU !=null && !loginU.getMaster().equals("master")){ %>
 									<td>
 										<div class="que" style="border:none;">&nbsp;&nbsp;&nbsp;&nbsp;<%=qalist.get(i).getPqSubject() %></div>
 										<div class="anw" style="border:none;">
@@ -765,7 +767,11 @@
 										</div>
 									</td>
 									<td width=200 height=60 style="text-align:center;">
-										<%=qalist.get(i).getPqWriter().substring(0,1) %>*<%=qalist.get(i).getPqWriter().substring(2,3) %>
+										<%if(qalist.get(i).getPqWriter().length() >= 3){%>
+											<%=qalist.get(i).getPqWriter().substring(0,1) %>*<%=qalist.get(i).getPqWriter().substring(2,3) %>
+										<%}else{ %>
+											<%=qalist.get(i).getPqWriter().substring(0,1) %>*
+										<%} %>
 									</td>
 									<td width=150 height=60 style="text-align:center;">
 										<%=qalist.get(i).getPqWriteday().substring(0,10) %>
@@ -777,13 +783,33 @@
 									<%} %>		
 								</tr>
 								<%}else{ %>
+									<%if(loginU !=null && loginU.getMaster().equals("master")){ %>	
 										<td width=600 height=60>
 											<a href="<%=request.getContextPath()%>/customerService/qaDetail.do?pqidx=<%=qalist.get(i).getPqidx()%>">
 												&nbsp;&nbsp;&nbsp;&nbsp;<%=qalist.get(i).getPqSubject() %>
 											</a>
 										</td>
+									<%}else{ %>
+										<td>
+											<div class="que" style="border:none;">&nbsp;&nbsp;&nbsp;&nbsp;<%=qalist.get(i).getPqSubject() %></div>
+											<div class="anw" style="border:none;">
+												<%=qalist.get(i).getPqContents() %>
+													<%if(qalist.get(i).getAnswer() != null){ %>
+														<div class="explText">
+															<%=qalist.get(i).getAnswer() %>
+														</div>
+													<%}else{ %>
+														<div class="explText"></div>
+													<%} %>	
+											</div>
+										</td>
+									<%} %>	
 										<td width=200 height=60 style="text-align:center;">
-											<%=qalist.get(i).getPqWriter().substring(0,1) %>*<%=qalist.get(i).getPqWriter().substring(2,3) %>
+											<%if(qalist.get(i).getPqWriter().length() >= 3){%>
+												<%=qalist.get(i).getPqWriter().substring(0,1) %>*<%=qalist.get(i).getPqWriter().substring(2,3) %>
+											<%}else{ %>
+												<%=qalist.get(i).getPqWriter().substring(0,1) %>*
+											<%} %>
 										</td>
 										<td width=150 height=60 style="text-align:center;">
 											<%=qalist.get(i).getPqWriteday().substring(0,10) %>

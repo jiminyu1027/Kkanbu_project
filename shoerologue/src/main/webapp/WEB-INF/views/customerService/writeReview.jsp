@@ -392,7 +392,7 @@
 				<tr class="head-box">
 					<td class="image-detail">
 						<div class="image-box">
-				  			<img src="<%=request.getContextPath()%>/resources/image/productdetail/<%=pvo.getpFile1()%>" class="card-img-top" alt="...">
+				  			<img src="<%=request.getContextPath()%>/resources/<%=pvo.getpFile1() %>" class="card-img-top" alt="...">
 				  		</div>
 					</td>
 					<td colspan="2">

@@ -320,7 +320,7 @@
 					<tr>
 						<td colspan="3">
 						 	<%=ivo.getqContents() %>
-						 	<% if(ivo.getqFile() != null){ %>
+						 	<% if(ivo.getqFile() != null && !ivo.getqFile().equals("")){ %>
 						 		<img src="<%=request.getContextPath()%><%=ivo.getqFile() %>" class="d-block w-100" alt="카카오페이 결제시 3천원 할인 이벤트" style="width:100%; height:500px;">
 							<% }else{ %>
 								<div style="width:100%; height:500px;"></div>

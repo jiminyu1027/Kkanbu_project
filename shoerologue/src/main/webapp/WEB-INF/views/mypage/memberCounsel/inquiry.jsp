@@ -433,9 +433,9 @@
 									<td class="inquiry-writeday-detail"><%=qlist.get(i).getqWriteday().substring(0,10) %></td>
 									<td class="inquiry-writer-detail"><%=qlist.get(i).getqReason() %></td>
 								</tr>
-							</tbody>
-					</table>	
-							<%} %>		
+							<%} %>	
+						</tbody>
+					</table>		
 					
 				<%}else{ %>	
 					<div class="inquiry-box" style="border-top:1px solid gray;  border-bottom:1px solid gray; height:500px;">

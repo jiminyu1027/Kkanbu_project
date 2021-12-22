@@ -3,6 +3,8 @@ package edu.study.controller;
 import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,14 +40,17 @@ public class AdminController {
 	}
 	
 	@RequestMapping(value="/qaAsk.do")
-	public String qaAsk(Locale locale, Model model,int pidx)throws Exception{
-		
-		ProductVO pvo = ProductService.detail(pidx);
-		
-		model.addAttribute("pvo",pvo);
-		
+	public String qaAsk(Locale locale, Model model,int pidx,HttpSession session)throws Exception{
+		MemberVO member=(MemberVO)session.getAttribute("member");
+		if(member != null) {
+			
+			ProductVO pvo = ProductService.detail(pidx);
+			model.addAttribute("pvo",pvo);
 		return "/admin/qaAsk";
-	}
+		}else {
+		return "redirect:/login.do";
+		}
+	}	
 	
 	@RequestMapping(value="/memberList.do")
 	public String memberList(Locale locale, Model model,MemberVO mvo,Criteria cri)throws Exception {

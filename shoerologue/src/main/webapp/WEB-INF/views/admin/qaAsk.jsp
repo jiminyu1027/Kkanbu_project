@@ -397,7 +397,7 @@
 				<col width="70%">
 			</colgroup>
 				<tr>
-					<td><img src="<%=request.getContextPath()%>/resources/image/productdetail/<%=pvo.getpFile1()%>" class="smImge"></td>
+					<td><img src="<%=request.getContextPath()%>/resources/<%=pvo.getpFile1()%>" class="smImge"></td>
 					<td><h6><%=pvo.getpBrandKr() %></h6><%=pvo.getpNameKr() %></td>
 				</tr>
 			</table>

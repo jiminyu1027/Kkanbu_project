@@ -8,18 +8,19 @@
 	<insert id="insert" parameterType="edu.study.vo.NoticeVO">
 		<![CDATA[
 		INSERT INTO NOTICE(
-			NIDX,NTITLE,NCONTENTS,NFILE)
+			NIDX,NTITLE,NCONTENTS,NWRITEDAY,NFILE)
 			VALUES(
 			NIDX
 	        ,#{nTitle}
 			,#{nContents}
+			,NOW()
 	        ,#{nFile}
 			)
 		]]>	
 	</insert>
 	
 	<select id="nlist" resultType="edu.study.vo.NoticeVO">
-		SELECT * FROM notice WHERE 1=1 AND nidx=#{nidx} ORDER BY nidx desc
+		SELECT * FROM notice WHERE 1=1 ORDER BY nidx desc
 		
 	</select>
 	
