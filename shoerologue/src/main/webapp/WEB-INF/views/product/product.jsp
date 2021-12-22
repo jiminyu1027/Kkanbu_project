@@ -327,64 +327,24 @@
 					<!-- 상품 이미지 -->
 					<div class="productImgBox">
 						<div>
-						 	<img src="<%=request.getContextPath()%>/resources<%=pvo.getpFile1()%>" class="pdImage" alt="...">
+						 	<img src="<%=request.getContextPath()%>/resources<%=pvo.getpFile1()%>" class="pdImage" alt="..." onerror="this.style.display='none'">
 						</div>
 						<div class="pdSmImgeBox">
 							<a href="<%=request.getContextPath()%>/resources<%=pvo.getpFile1()%>">
-								<img src="<%=request.getContextPath()%>/resources<%=pvo.getpFile1()%>" class="pdSmImge" alt="...">
+								<img src="<%=request.getContextPath()%>/resources<%=pvo.getpFile1()%>" class="pdSmImge" alt="..." onerror="this.style.display='none'">
 							</a>
-							<%
-							     if(pvo.getpFile2() != null){    
-					    	 %>
 							<a href="<%=request.getContextPath()%>/resources<%=pvo.getpFile2()%>">
-								<img src="<%=request.getContextPath()%>/resources<%=pvo.getpFile2()%>" class="pdSmImge" alt="...">
+								<img src="<%=request.getContextPath()%>/resources<%=pvo.getpFile2()%>" class="pdSmImge" alt="..." onerror="this.style.display='none'">
 							</a>
-							<%
-							    }else{
-							%>
-							<a href="#"></a>
-							<%
-							    }
-					    	 %>
-							<%
-							     if(pvo.getpFile3() != null){    
-					    	 %>
 							<a href="<%=request.getContextPath()%>/resources<%=pvo.getpFile3()%>">
-								<img src="<%=request.getContextPath()%>/resources<%=pvo.getpFile3()%>" class="pdSmImge" alt="...">
+								<img src="<%=request.getContextPath()%>/resources<%=pvo.getpFile3()%>" class="pdSmImge" alt="..." onerror="this.style.display='none'">
 							</a>
-							<%
-							    }else{
-							%>
-							<a href="#"></a>
-							<%
-							    }
-					    	 %>
-							<%
-							     if(pvo.getpFile4() != null){    
-					    	 %>
 							<a href="<%=request.getContextPath()%>/resources<%=pvo.getpFile4()%>">
-								<img src="<%=request.getContextPath()%>/resources<%=pvo.getpFile4()%>" class="pdSmImge" alt="...">
+								<img src="<%=request.getContextPath()%>/resources<%=pvo.getpFile4()%>" class="pdSmImge" alt="..." onerror="this.style.display='none'">
 							</a>
-							<%
-							    }else{
-							%>
-							<a href="#"></a>
-							<%
-							    }
-					    	 %>
-							<%
-							     if(pvo.getpFile5() != null){    
-					    	 %>
 							<a href="<%=request.getContextPath()%>/resources<%=pvo.getpFile5()%>">
-								<img src="<%=request.getContextPath()%>/resources<%=pvo.getpFile5()%>" class="pdSmImge" alt="...">
+								<img src="<%=request.getContextPath()%>/resources<%=pvo.getpFile5()%>" class="pdSmImge" alt="..." onerror="this.style.display='none'">
 							</a>
-							<%
-							    }else{
-							%>
-							<a href="#"></a>
-							<%
-							    }
-					    	 %>
 						</div>
 					</div>
 					<!-- 상품 내용  -->
@@ -537,54 +497,13 @@
 				<div class="gap50"></div>
 				<div class="gap50"></div>
 				<div class="productDetailImg">
-					<div><img src="<%=request.getContextPath()%>/resources/<%=pvo.getpFile1()%>" class="pdSmImge" alt="..."></div>
-					<%
-					     if(pvo.getpFile2() != null){    
-			    	 %>
-					<div><img src="<%=request.getContextPath()%>/resources/<%=pvo.getpFile2()%>" class="pdSmImge" alt="..."></div>
-					<%
-					    }else{
-					%>
-					<div></div>
-					<%
-					    }
-			    	 %>
-			    	 <%
-					     if(pvo.getpFile3() != null){    
-			    	 %>
-					<div><img src="<%=request.getContextPath()%>/resources/<%=pvo.getpFile3()%>" class="pdSmImge" alt="..."></div>
-					<%
-					    }else{
-					%>
-					<div></div>
-					<%
-					    }
-			    	 %>
-			    	 <%
-					     if(pvo.getpFile4() != null){    
-			    	 %>
-					<div><img src="<%=request.getContextPath()%>/resources/<%=pvo.getpFile4()%>%>" class="pdSmImge" alt="..."></div>
-					<%
-					    }else{
-					%>
-					<div></div>
-					<%
-					    }
-			    	 %>
-					<%
-					     if(pvo.getpFile5() != null){    
-			    	 %>
-					<div><img src="<%=request.getContextPath()%>/resources/<%=pvo.getpFile5()%>" class="pdSmImge" alt="..."></div>
-					<%
-					    }else{
-					%>
-					<div></div>
-					<%
-					    }
-			    	 %>
+					<div><img src="<%=request.getContextPath()%>/resources/<%=pvo.getpFile1()%>" class="pdSmImge" alt="..." onerror="this.style.display='none'"></div>
+					<div><img src="<%=request.getContextPath()%>/resources/<%=pvo.getpFile2()%>" class="pdSmImge" alt="..." onerror="this.style.display='none'"></div>
+					<div><img src="<%=request.getContextPath()%>/resources/<%=pvo.getpFile3()%>" class="pdSmImge" alt="..." onerror="this.style.display='none'"></div>
+					<div><img src="<%=request.getContextPath()%>/resources/<%=pvo.getpFile4()%>" class="pdSmImge" alt="..." onerror="this.style.display='none'"></div>
+					<div><img src="<%=request.getContextPath()%>/resources/<%=pvo.getpFile5()%>" class="pdSmImge" alt="..." onerror="this.style.display='none'"></div>
 				</div>
 			</div>
-			
 			<div class="gap100"></div>
 			
 			<div id="productReview">
