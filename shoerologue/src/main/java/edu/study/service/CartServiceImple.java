@@ -2,6 +2,7 @@ package edu.study.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,6 +73,12 @@ public class CartServiceImple implements CartService{
 	@Override
 	public WishListVO wish(int widx) throws Exception {
 		return CartDao.wish(widx);
+	}
+
+	@Override
+	public int check(int pidx,int midx) throws Exception {
+		
+		return CartDao.check(pidx, midx);
 	}
 
 }

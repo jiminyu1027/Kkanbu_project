@@ -10,12 +10,19 @@ public class WishListVO {
 	private String pNamekr;
 	private String pPrice;
 	private String pFile1;
+	private String pColor;
 	private int cnt = 1;
 	private int ctsize;
 	private String delyn;
 	private int[] wishchk;
 	
 	
+	public String getpColor() {
+		return pColor;
+	}
+	public void setpColor(String pColor) {
+		this.pColor = pColor;
+	}
 	public int getCtsize() {
 		return ctsize;
 	}

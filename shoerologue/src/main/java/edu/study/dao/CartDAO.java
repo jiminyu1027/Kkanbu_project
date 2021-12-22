@@ -1,7 +1,9 @@
 package edu.study.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,4 +62,11 @@ public class CartDAO {
 	public WishListVO wish(int widx) throws Exception{
 		return sqlSession.selectOne(Namespace+".wish", widx);
 	}
+	public int check(int pidx, int midx)throws Exception{
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("pidx", pidx);
+		map.put("midx",midx);
+		return sqlSession.selectOne(Namespace+".check",map);
+	}
+	
 }

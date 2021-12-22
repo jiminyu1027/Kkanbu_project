@@ -22,7 +22,14 @@
   		 	WHERE c.pidx=p.pidx AND m.midx = c.midx AND c.midx=#{c.midx}
 	 	ORDER BY ctidx 
   	</select> 
-  
+  	
+  	<!-- 중복 확인 -->
+  	 <select id="check" resultType="int" parameterType="CartVO">
+  	 	SELECT 
+  	 		count(*) 
+  	 	FROM cart WHERE pidx=#{pidx} AND midx=#{midx}
+  	 	</select>
+  	 	
 	<!-- 합계  -->
 	  	<select id="sum" resultType="int">
 		  	SELECT  case count(c.midx) when 0 then 0 else sum(replace(p.pprice,',',''))  end  as total
@@ -74,7 +81,16 @@
 	</select>
 	
 	<select id="wish" resultType="WishListVO" parameterType="WishListVO">
-	 	select p.* from wish w, product p where w.pidx=p.pidx and w.widx = #{widx};
+	 	SELECT p.pbrandeng,
+	 	p.pnamekr,
+	 	p.pprice,
+	 	p.pcolor,
+	 	p.pidx,
+	 	w.widx,
+	 	w.midx,
+	 	w.ctsize,
+	 	p.pfile1 
+	 	FROM wish w, product p where w.pidx=p.pidx AND w.widx = #{widx};
 	</select>
 	
 	<insert id="cartInsert" parameterType="WishListVO">
@@ -85,7 +101,6 @@
 			,cnt
 			,ctsize
 		    ) VALUES
-		    <foreach collection="wishchk" index="index" item="widx" separator=",">
 		    (
 		    	NOW()
 		    	,#{pidx}		
@@ -93,7 +108,6 @@
 		    	,#{cnt}
 		    	,#{ctsize}
 		    	)
-			</foreach>
     </insert>
 	
 </mapper>

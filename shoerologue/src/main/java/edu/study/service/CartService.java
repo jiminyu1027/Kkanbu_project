@@ -20,4 +20,5 @@ public interface CartService {
 	List<CartVO> order(CartVO cvo) throws Exception;
 	public void cartInsert(WishListVO wvo) throws Exception;
 	public WishListVO wish(int widx) throws Exception;
+	public int check(int pidx, int midx)throws Exception;
 }

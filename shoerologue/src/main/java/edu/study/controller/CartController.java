@@ -1,10 +1,12 @@
 package edu.study.controller;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
@@ -96,35 +98,31 @@ public class CartController {
 			return"redirect:/cart/cart.do";
 	}
 	
+	@ResponseBody
 	@RequestMapping(value="/cartInsert.do")
-	public String winsert(WishListVO wvo) throws Exception{
+	public String winsert(WishListVO wvo,HttpSession session) throws Exception{
+	
+			for(int i=0; i< wvo.getWishchk().length; i++) {
+				//System.out.println(wvo.getWishchk().length);
+				int widx = wvo.getWishchk()[i];
+				//System.out.println("wishchk++++"+widx);
+				
+				WishListVO vo = CartService.wish(widx);
+				wvo.setpBrandeng(vo.getpBrandeng());
+				wvo.setPidx(vo.getPidx());
+				wvo.setpNamekr(vo.getpNamekr());
+				wvo.setpPrice(vo.getpPrice());
+				wvo.setCnt(vo.getCnt());
+				wvo.setCtsize(vo.getCtsize());
+				wvo.setMidx(vo.getMidx());
+				wvo.setpFile1(vo.getpFile1());
+				wvo.setpColor(vo.getpColor());
+				
+				CartService.cartInsert(vo);
 			
-		//1.wishidxs for문을 이용
-		//2.for 문 안에서는 wishidx 한건 씩 꺼내오기 
-		//3.wishidx 에 해당하는 상품 조회
-		//4.조회해온 정보를 이용하여 vo 생성(cart에 담길 vo)
-		//5. insert
-			
-		for(int i=0; i< wvo.getWishchk().length; i++) {
-			//System.out.println(wvo.getWishchk().length);
-			int widx = wvo.getWishchk()[i];
-			//System.out.println(wvo.getWishchk()[i]);
-			
-			WishListVO vo = CartService.wish(widx);
-			wvo.setWishchk(vo.getWishchk());
-			wvo.setpBrandeng(vo.getpBrandeng());
-			wvo.setPidx(vo.getPidx());
-			wvo.setpNamekr(vo.getpNamekr());
-			wvo.setpPrice(vo.getpPrice());
-			wvo.setCnt(vo.getCnt());
-			wvo.setCtsize(vo.getCtsize());
-			//System.out.println("widx++++"+wvo.getCtsize());
-			//System.out.println("name++++"+wvo.getpNamekr());
-			
-			CartService.cartInsert(vo);
-
 		}
-		return  "/cart/cart";
+	
+		return  "";
 	}	
 }	
 

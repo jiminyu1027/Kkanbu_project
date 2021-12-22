@@ -7,7 +7,7 @@ import java.util.Locale;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
-
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,9 +22,11 @@ import edu.study.domain.PageMaker;
 import edu.study.domain.PageMaker2;
 import edu.study.service.MemberService;
 import edu.study.service.ProductService;
+import edu.study.service.CartService;
 import edu.study.service.WishService;
 import edu.study.vo.InquiryVO;
 import edu.study.vo.MemberVO;
+import edu.study.vo.CartVO;
 import edu.study.vo.ProductVO;
 import edu.study.vo.QaVO;
 import edu.study.vo.ReviewVO;
@@ -50,6 +52,9 @@ public class ProductController {
 	@Autowired
 	edu.study.service.ReviewService ReviewService;
 	
+	@Autowired
+	CartService cartService;
+	
 	
 	@Resource(name="uploadPath")
 	private String uploadPath;
@@ -73,7 +78,6 @@ public class ProductController {
 			List<ReviewVO> prvlist = ReviewService.prvlist(pidx);
 			model.addAttribute("prvlist",prvlist);
 			
-			System.out.println("qa size == "+qalist.size());
 			
 		return "/product/product";
 			
@@ -89,19 +93,23 @@ public class ProductController {
 //		return "/product/product";
 //	}
 	
-	@RequestMapping(value="/cart/cart.do",method=RequestMethod.POST)
-	public String insert(Locale locale, Model model, ProductVO pvo,HttpSession session)throws Exception {
+
+@RequestMapping(value="/cart/cart.do",method=RequestMethod.POST)
+	public String insert(Locale locale, Model model, ProductVO pvo,HttpSession session, HttpServletResponse response, CartVO cvo, int pidx)throws Exception {
 			 
 		MemberVO member = (MemberVO)session.getAttribute("member");
+		pvo.setMidx(member.getMidx());
 		if(member == null) {
 			member = new MemberVO();
 		}
 		
-		pvo.setMidx(member.getMidx());
-
+		int count = cartService.check(pidx, member.getMidx());
+		
+		if(count ==  0 ) {
 			productService.insert(pvo);
-			//System.out.println("PIDX::"+pvo.getPidx());
+		}else {
 			
+		}
 		
 		return "redirect:/cart/cart.do";
 	}

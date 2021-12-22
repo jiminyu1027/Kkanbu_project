@@ -335,7 +335,7 @@
 		<!-- 우측 삭제, 장바구니 버튼-->
 		<div class="btn-wrap">
 			<input type="button" value="선택삭제" id="del" class="delbtn">
-			<input type="submit" value="장바구니" id="cart" class="cartbtn">
+			<input type="button" value="장바구니" id="cart" class="cartbtn">
 			<i class="bi bi-cart4"></i>
 		</div>
 		<!-- 찜리스트 목록 CONTENT -->
@@ -350,8 +350,8 @@
 						  <img src="<%=request.getContextPath() %>/resources/<%=wishlist.get(i).getpFile1() %>" class="wlistImg" alt="...">
 						  <div class="card-body">
 						    <h5 class="card-title brandtitle"><%=wishlist.get(i).getpBrandeng()%></h5>
-						    <p class="card-text"><%=wishlist.get(i).getpNamekr()%></p>
-						     <p class="card-text"><%=wishlist.get(i).getCtsize()%></p>
+						    <div class="card-text"><%=wishlist.get(i).getpNamekr()%></div>
+						    <div class="card-text"><%=wishlist.get(i).getCtsize()%></div>
 						    <span class="card-text normalPrice"><fmt:formatNumber><%=wishlist.get(i).getpPrice() %></fmt:formatNumber>원</span>&nbsp;
 						    <span class="wishCheckBox">
 						    	<input type="hidden" name="widx" id="widx" value="<%=wishlist.get(i).getWidx()%>">
@@ -398,6 +398,7 @@
 	</div>
 <script>
 
+	//선택 상품 삭제
 	 $(".delbtn").click(function(){
 		  var confirm_val = confirm("정말 삭제하시겠습니까?");
 			 
@@ -410,8 +411,26 @@
 			    success : function(data){
 			    	alert("삭제되었습니다.");
 					$(".wishchk:checked").each(function(){
-							$(this).parent().parent().parent().parent().parent().remove();
-					});    	
+						location.reload();
+					});   	
+			    }
+		   });
+		 } 
+	 });
+	 
+	 //선택 상품 장바구니 이동
+	 $(".cartbtn").click(function(){
+		  var confirm_val = confirm("선택하신 상품을 장바구니로 이동하시겠습니까?");
+			 
+		  if(confirm_val) {
+			  
+			   $.ajax({
+			    url : "<%=request.getContextPath()%>/cart/cartInsert.do",
+			    type : "post",
+			    data : $("form").serialize(),
+			    success : function(data){
+			    	alert("장바구니에 담겼습니다.");
+			    	location.reload();
 			    }
 		   });
 		 } 

@@ -147,6 +147,19 @@
 			function niceFn(){
 				alert("개발 중입니다.")
 			}
+
+			$(function(){
+							$(".delBtn").click(function(){
+								if(!confirm("삭제하시겠습니까?")){
+									alert("취소되었습니다.");
+									return false;
+								}else{
+									location.href='<%=request.getContextPath()%>/admin/delProduct.do?pidx=<%=pvo.getPidx()%>'
+								}
+							});
+						});
+			
+			
 			$(document).ready(function() {
 				var fm = document.frm;
 				
@@ -464,8 +477,11 @@
 								</div>
 								<div class="btnBox">
 									<c:if test="${master eq 'master'}">
-										<button type=button class="delBtn" onclick="location.href='<%=request.getContextPath()%>/admin/delProduct.do?pidx=<%=pvo.getPidx()%>'">삭제</button>
+										<button type=button class="delBtn" onclick="location.href='<%=request.getContextPath()%>/admin/delProduct.do?pidx=<%=pvo.getPidx()%>' return false;" >삭제</button>
 										<button type=button class="modifyBtn" onclick="location.href='<%=request.getContextPath()%>/admin/productModify.do?pidx=<%=pvo.getPidx()%>'">수정</button>
+									</c:if>
+									<c:if test="${master ne 'master' }">
+											hh
 									</c:if>
 								</div>
 							</form>
