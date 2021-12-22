@@ -16,27 +16,6 @@
 	        	 , mJoindate
 	        	 , mDelYn
 	        	 , master  from member order by midx DESC limit #{rowStart}, #{rowEnd}
-        <!--
-        SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT midx
-				        	 , mName
-				        	 , mId
-				        	 , mPwd
-				        	 , mEmail
-				        	 , mPhone
-				        	 , mAddr
-				        	 , mJoindate
-				        	 , mDelYn
-				        	 , master 
-						FROM member
-						ORDER BY midx DESC
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
     </select>
     
     <!-- 총 멤버수 출력 -->
