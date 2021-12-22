@@ -94,15 +94,15 @@
 	     <!-- 마이페이지, 찜목록, 장바구니 -->
 	     <div class="col-0 col-sm-0 col-md-2 col-lg-3 d-flex justify-content-center align-items-center">
 			<ul class="iconul d-flex align-items-center icon-absolute">
-				<li class="iconli"><a href="<%=request.getContextPath() %>/mypage/claim/myPage.do">
+				<li class="iconli"><a href="<%=request.getContextPath() %>/mypage/claim/myPage.do" alt="마이페이지">
 					<i class="bi bi-person icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="<%=request.getContextPath() %>/mypage/shopping/wishlist.do">
+				<li class="iconli"><a href="<%=request.getContextPath() %>/mypage/shopping/wishlist.do" alt="찜리스트">
 					<i class="bi bi-heart icon"></i>
 					</a>
 				</li>
-				<li class="iconli"><a href="<%=request.getContextPath() %>/cart/cart.do">
+				<li class="iconli"><a href="<%=request.getContextPath() %>/cart/cart.do" alt="장바구니">
 					<i class="bi bi-bag icon"></i>
 					</a>
 				</li>
