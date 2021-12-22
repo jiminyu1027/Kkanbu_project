@@ -481,7 +481,6 @@
 										<button type=button class="modifyBtn" onclick="location.href='<%=request.getContextPath()%>/admin/productModify.do?pidx=<%=pvo.getPidx()%>'">수정</button>
 									</c:if>
 									<c:if test="${master ne 'master' }">
-											hh
 									</c:if>
 								</div>
 							</form>

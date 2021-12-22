@@ -218,19 +218,11 @@
 	</select>
 	
 	<select id="kidslist" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-		select * from product WHERE pGender='K'  order by pidx desc limit #{rowStart}, #{rowEnd}
-		<!-- 
 		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product WHERE pGender='K' 
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+			FROM product 
+				WHERE pGender='K' 
+				ORDER BY pidx DESC
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->
@@ -241,20 +233,11 @@
 	</select>
 	
 	<select id="kidslistboots" resultType="ProductVO" parameterType="edu.study.domain.Criteria">
-	select * from product WHERE pGender='K'	AND pType='부츠' order by pidx desc limit #{rowStart}, #{rowEnd}
-	<!-- 
 		SELECT * 
-		FROM (
-			SELECT ROWNUM RN, A.* 
-				FROM (
-						SELECT * 
-						FROM product WHERE pGender='K'
-						AND pType='부츠'
-						ORDER BY pidx DESC 
-						) A
-				)
-		WHERE RN BETWEEN #{rowStart} AND #{rowEnd}
-		-->
+			FROM product 
+				WHERE pGender='K' AND pType='부츠' 
+				ORDER BY pidx DESC 
+				LIMIT #{rowStart},15
 	</select>
 	
 	<!-- 총 게시글 갯수 출력 -->

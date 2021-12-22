@@ -131,6 +131,10 @@ public class GenderDAO {
 		}
 		
 		public List<ProductVO> kidslist(ProductVO pvo, Criteria cri) throws Exception{	
+			
+			System.out.println(cri.getRowStart());
+			System.out.println(cri.getRowEnd());
+			
 			return sqlSession.selectList(Namespace+".kidslist",cri);
 		}
 		
