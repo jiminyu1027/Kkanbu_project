@@ -1,5 +1,6 @@
 package edu.study.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -95,20 +96,38 @@ public class CartController {
 			return"redirect:/cart/cart.do";
 	}
 	
-	@ResponseBody
 	@RequestMapping(value="/cartInsert.do")
 	public String winsert(WishListVO wvo) throws Exception{
-		
+			
+		//1.wishidxs for문을 이용
+		//2.for 문 안에서는 wishidx 한건 씩 꺼내오기 
+		//3.wishidx 에 해당하는 상품 조회
+		//4.조회해온 정보를 이용하여 vo 생성(cart에 담길 vo)
+		//5. insert
+			
 		for(int i=0; i< wvo.getWishchk().length; i++) {
+			//System.out.println(wvo.getWishchk().length);
 			int widx = wvo.getWishchk()[i];
-			CartService.cartInsert(wvo);
+			//System.out.println(wvo.getWishchk()[i]);
+			
+			WishListVO vo = CartService.wish(widx);
+			wvo.setWishchk(vo.getWishchk());
+			wvo.setpBrandeng(vo.getpBrandeng());
+			wvo.setPidx(vo.getPidx());
+			wvo.setpNamekr(vo.getpNamekr());
+			wvo.setpPrice(vo.getpPrice());
+			wvo.setCnt(vo.getCnt());
+			wvo.setCtsize(vo.getCtsize());
+			//System.out.println("widx++++"+wvo.getCtsize());
+			//System.out.println("name++++"+wvo.getpNamekr());
+			
+			CartService.cartInsert(vo);
+
 		}
-		
-		return  "";
-	}
-	
-	
-}
+		return  "/cart/cart";
+	}	
+}	
+
 
 
 	

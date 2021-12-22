@@ -69,6 +69,11 @@ public class CartServiceImple implements CartService{
 		CartDao.cartInsert(wvo);
 	}
 
+	@Override
+	public WishListVO wish(int widx) throws Exception {
+		return CartDao.wish(widx);
+	}
+
 }
 
 	

@@ -56,4 +56,8 @@ public class CartDAO {
 	public void cartInsert(WishListVO wvo) throws Exception{
 		sqlSession.insert(Namespace+".cartInsert", wvo);
 	}
+	
+	public WishListVO wish(int widx) throws Exception{
+		return sqlSession.selectOne(Namespace+".wish", widx);
+	}
 }

@@ -44,7 +44,7 @@
 	
 	<!-- 상품전체삭제 -->
 	<update id="delAll" parameterType="int">
-		UPDATE cart SET delyn = 'Y' WHERE midx=#{midx}
+		DELETE FROM cart WHERE midx=#{midx}
 	</update>
 	
 	<!-- 수량 업데이트 -->
@@ -73,18 +73,26 @@
     		<foreach collection="shoes" index="index" item="ctidx" open="(" separator="," close=")">#{ctidx}</foreach>
 	</select>
 	
+	<select id="wish" resultType="WishListVO" parameterType="WishListVO">
+	 	select p.* from wish w, product p where w.pidx=p.pidx and w.widx = #{widx};
+	</select>
+	
 	<insert id="cartInsert" parameterType="WishListVO">
-		    INSERT INTO cart VALUES
-		    <foreach collection="shoes" index="index" item="ctidx" open="(" separator="," close=")">
+		    INSERT INTO cart (
+			ctwriteday
+			,pidx
+			,midx
+			,cnt
+			,ctsize
+		    ) VALUES
+		    <foreach collection="wishchk" index="index" item="widx" separator=",">
 		    (
-		    	 ctidx
-		    	,NOW()
+		    	NOW()
 		    	,#{pidx}		
 		    	,#{midx}
 		    	,#{cnt}
 		    	,#{ctsize}
-		    	,#{delyn}
-		    )
+		    	)
 			</foreach>
     </insert>
 	

@@ -37,7 +37,7 @@
 			font-family: 'Montserrat', "Noto Sans KR", sans-serif;
 		}
 	</style>
-	<script src="/js/jquery-3.6.0.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script>
 	$(document).ready(function() {
         // 전체선택 클릭 시
@@ -315,7 +315,7 @@
 		<!-- 좌측 마이페이지 메뉴 여기서 끝 -->
 		
 		<!-- 찜리스트 메인 -->
-		<form name="frm" id="frm" action="<%=request.getContextPath() %>/cart/cart.do" method="post">
+		<form name="frm" id="frm" action="<%=request.getContextPath() %>/cart/cartInsert.do" method="post">
 		<div style="float: left; width: 80%;" class="header-margin">
 			<span class="wishHeader">찜리스트</span>
 		<!-- 찜한 상품이 있는 경우 -->
@@ -335,7 +335,7 @@
 		<!-- 우측 삭제, 장바구니 버튼-->
 		<div class="btn-wrap">
 			<input type="button" value="선택삭제" id="del" class="delbtn">
-			<input type="button" value="장바구니" id="cart" class="cartbtn">
+			<input type="submit" value="장바구니" id="cart" class="cartbtn">
 			<i class="bi bi-cart4"></i>
 		</div>
 		<!-- 찜리스트 목록 CONTENT -->
@@ -351,6 +351,7 @@
 						  <div class="card-body">
 						    <h5 class="card-title brandtitle"><%=wishlist.get(i).getpBrandeng()%></h5>
 						    <p class="card-text"><%=wishlist.get(i).getpNamekr()%></p>
+						     <p class="card-text"><%=wishlist.get(i).getCtsize()%></p>
 						    <span class="card-text normalPrice"><fmt:formatNumber><%=wishlist.get(i).getpPrice() %></fmt:formatNumber>원</span>&nbsp;
 						    <span class="wishCheckBox">
 						    	<input type="hidden" name="widx" id="widx" value="<%=wishlist.get(i).getWidx()%>">
@@ -407,7 +408,7 @@
 			    type : "post",
 			    data : $("form").serialize(),
 			    success : function(data){
-			    	//alert("del");
+			    	alert("삭제되었습니다.");
 					$(".wishchk:checked").each(function(){
 							$(this).parent().parent().parent().parent().parent().remove();
 					});    	
@@ -416,26 +417,6 @@
 		 } 
 	 });
 	 
-	 
-	 $(".cartbtn").click(function(){
-		  var confirm_val = confirm("장바구니로 이동하시겠습니까?");
-			 
-		  if(confirm_val) {
-			  
-			   $.ajax({
-			    url : "<%=request.getContextPath()%>/cart/cartInsert.do",
-			    type : "post",
-			    data : $("form").serialize(),
-			    success : function(data){
-			    	alert("장바구니 이동성공!");
-					$(".wishchk:checked").each(function(){
-							$(this).parent().parent().parent().parent().parent().remove();
-					});    	
-			    }
-		   });
-		 } 
-	 });
-
 </script>
 	
 	<!-- 우측하단 TOP 이동 배너 -->

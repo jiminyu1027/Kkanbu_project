@@ -10,10 +10,24 @@ public class WishListVO {
 	private String pNamekr;
 	private String pPrice;
 	private String pFile1;
-	private int ctcnt;
+	private int cnt = 1;
+	private int ctsize;
+	private String delyn;
 	private int[] wishchk;
 	
 	
+	public int getCtsize() {
+		return ctsize;
+	}
+	public void setCtsize(int ctsize) {
+		this.ctsize = ctsize;
+	}
+	public String getDelyn() {
+		return delyn;
+	}
+	public void setDelyn(String delyn) {
+		this.delyn = delyn;
+	}
 	public int[] getWishchk() {
 		return wishchk;
 	}
@@ -68,10 +82,11 @@ public class WishListVO {
 	public void setMidx(int midx) {
 		this.midx = midx;
 	}
-	public int getCtcnt() {
-		return ctcnt;
+	public int getCnt() {
+		return cnt;
 	}
-	public void setCtcnt(int ctcnt) {
-		this.ctcnt = ctcnt;
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
 	}
+	
 }

@@ -327,9 +327,9 @@
 							  <div class="d-flex justify-content-center mt-2">
 							  	<input type="hidden" id="amount" name="amount" value="<%=list.get(i).getpPrice() %>">
 							  	<input type="hidden" name="ctidx" value="<%=list.get(i).getCtidx() %>">
-								<div class="each_input_sub1 text1 bt_down" onclick='minus(document.getElementsByName("cnt")[<%=i %>].value,document.getElementsByName("amount")[<%=i %>].value,<%=i %>,<%=list.get(i).getCtidx()%>)'>-</div>
+									<div class="each_input_sub1 text1 bt_down" onclick='minus(document.getElementsByName("cnt")[<%=i %>].value,document.getElementsByName("amount")[<%=i %>].value,<%=i %>,<%=list.get(i).getCtidx()%>)'>-</div>
 		                     	<input type="number" class="each_input num" id="cnt" name="cnt" value="<%=list.get(i).getCnt()%>" >
-		                       	<div class="each_input_sub2 text1 bt_up" onclick='plus(document.getElementsByName("cnt")[<%=i %>].value,document.getElementsByName("amount")[<%=i %>].value,<%=i %>,<%=list.get(i).getCtidx()%>)'>+</div>
+		                       		<div class="each_input_sub2 text1 bt_up" onclick='plus(document.getElementsByName("cnt")[<%=i %>].value,document.getElementsByName("amount")[<%=i %>].value,<%=i %>,<%=list.get(i).getCtidx()%>)'>+</div>
 		                      </div>
 							</td>
 							<td>
@@ -458,15 +458,7 @@
 		document.getElementsByName('pPrice')[i].innerHTML= comma(total_amount);	
 		document.getElementsByName('cnt')[i].value=cnt;
 		
-//   		var sums = document.getElementById('totalPrice').val();
-//   		if(sums < 50000){
-//   			document.getElementById('fee').innerText = comma(3000);	
-//   		}else{
-//   			document.getElementById('fee').innerText = comma(0);
-//   		}
-		
 		autoCalc();
-		
 		
 		$.ajax({
 			url:'update.do',
