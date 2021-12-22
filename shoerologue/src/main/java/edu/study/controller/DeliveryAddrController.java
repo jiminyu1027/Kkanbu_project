@@ -20,7 +20,10 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.study.service.MemberService;
+import edu.study.service.WishService;
 import edu.study.vo.MemberVO;
+import edu.study.domain.Criteria3;
+import edu.study.domain.PageMaker3;
 import edu.study.service.AddressService;
 import edu.study.service.CartService;
 import edu.study.vo.AddressVO;
@@ -39,18 +42,29 @@ public class DeliveryAddrController {
 	@Autowired
 	CartService CartService;
 	
+	@Autowired
+	WishService wishService;
+	
 	@RequestMapping(value="/receiveAddr.do")
-	public String receiveAddr(@ModelAttribute CartVO cvo,Locale locale, Model model, HttpSession session)throws Exception {
+	public String receiveAddr(@ModelAttribute CartVO cvo,Locale locale, Model model, HttpSession session,Criteria3 cri)throws Exception {
 		
 		MemberVO member = (MemberVO)session.getAttribute("member");
 		
 		if(member != null){
+			
+			int midx = member.getMidx();
 		
 			List<AddressVO> list = AddressService.list(member.getMidx());
 			model.addAttribute("list",list);
 			
 			List<CartVO> clist=CartService.list(member.getMidx());
 			model.addAttribute("clist",clist);
+			
+			PageMaker3 pageMaker3 = new PageMaker3();
+			pageMaker3.setCri(cri);
+			pageMaker3.setTotalCount(wishService.countwlist(midx));
+			
+			model.addAttribute("pageMaker3", pageMaker3);
 		
 			return "/mypage/deliveryAddr/receiveAddr";
 		}else {

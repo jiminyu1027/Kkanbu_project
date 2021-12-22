@@ -24,8 +24,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import edu.study.domain.Criteria3;
+import edu.study.domain.PageMaker3;
 import edu.study.service.CartService;
 import edu.study.service.MemberService;
+import edu.study.service.WishService;
 import edu.study.vo.CartVO;
 import edu.study.vo.MemberVO;
 
@@ -38,6 +41,9 @@ public class MemberController {
 	
 	@Autowired
 	CartService CartService;
+	
+	@Autowired
+	WishService wishService;
 	
 	@RequestMapping(value="/join.do")
 	public String join(Locale locale, Model model,MemberVO vo)throws Exception {
@@ -111,14 +117,22 @@ public class MemberController {
 	
 	// È¸¿ø Å»Åð get
 	@RequestMapping(value="/leave.do", method = RequestMethod.GET)
-	public String leave(@ModelAttribute CartVO cvo,Locale locale, Model model, HttpSession session) throws Exception{
+	public String leave(@ModelAttribute CartVO cvo,Locale locale, Model model, HttpSession session,Criteria3 cri) throws Exception{
 		
 		MemberVO member=(MemberVO)session.getAttribute("member");
 		
 		if(member != null){
-		
+			
+			int midx = member.getMidx();
+			
 			List<CartVO> list=CartService.list(member.getMidx());
 			model.addAttribute("list",list);
+			
+			PageMaker3 pageMaker3 = new PageMaker3();
+			pageMaker3.setCri(cri);
+			pageMaker3.setTotalCount(wishService.countwlist(midx));
+			
+			model.addAttribute("pageMaker3", pageMaker3);
 			
 			return "/member/leave";
 		}else {

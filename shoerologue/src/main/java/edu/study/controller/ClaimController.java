@@ -19,9 +19,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import edu.study.domain.Criteria3;
+import edu.study.domain.PageMaker3;
 import edu.study.service.AnswerService;
 import edu.study.service.CartService;
 import edu.study.service.MemberService;
+import edu.study.service.WishService;
 import edu.study.vo.AnswerVO;
 import edu.study.vo.CartVO;
 import edu.study.vo.InquiryVO;
@@ -43,16 +46,28 @@ public class ClaimController {
 	@Autowired
 	CartService CartService;
 	
+	@Autowired
+	WishService wishService;
+	
 	//마이페이지
 	@RequestMapping(value="/myPage.do")
-	public String myPage(@ModelAttribute CartVO cvo,Locale locale, Model model, HttpSession session)throws Exception {
+	public String myPage(@ModelAttribute CartVO cvo,Locale locale, Model model, HttpSession session,Criteria3 cri)throws Exception {
 		MemberVO member=(MemberVO)session.getAttribute("member");
 		
 
 		if(member != null){
 			
+			int midx = member.getMidx();
+			
 			List<CartVO> list=CartService.list(member.getMidx());
 			model.addAttribute("list",list);
+			
+			PageMaker3 pageMaker3 = new PageMaker3();
+			pageMaker3.setCri(cri);
+			pageMaker3.setTotalCount(wishService.countwlist(midx));
+			
+			model.addAttribute("pageMaker3", pageMaker3);
+			
 			
 			return "/mypage/claim/myPage";
 		}else {
@@ -62,12 +77,21 @@ public class ClaimController {
 	}
 	
 	@RequestMapping(value="/insertCard.do")
-	public String insertCard(@ModelAttribute CartVO cvo,Locale locale, Model model, HttpSession session)throws Exception {
+	public String insertCard(@ModelAttribute CartVO cvo,Locale locale, Model model, HttpSession session,Criteria3 cri)throws Exception {
 		MemberVO member=(MemberVO)session.getAttribute("member");
 		
 		if(member != null){
+			
+			int midx = member.getMidx();
+			
 			List<CartVO> list=CartService.list(member.getMidx());
 			model.addAttribute("list",list);
+			
+			PageMaker3 pageMaker3 = new PageMaker3();
+			pageMaker3.setCri(cri);
+			pageMaker3.setTotalCount(wishService.countwlist(midx));
+			
+			model.addAttribute("pageMaker3", pageMaker3);
 			
 			return "/mypage/claim/insertCard";
 		}else {
@@ -75,13 +99,22 @@ public class ClaimController {
 		}
 	}
 	@RequestMapping(value="/refund.do")
-	public String refund(@ModelAttribute CartVO cvo,Locale locale, Model model, HttpSession session)throws Exception {
+	public String refund(@ModelAttribute CartVO cvo,Locale locale, Model model, HttpSession session,Criteria3 cri)throws Exception {
 		
 		MemberVO member=(MemberVO)session.getAttribute("member");
 		
 		if(member != null){
+			
+			int midx = member.getMidx();
+			
 			List<CartVO> list=CartService.list(member.getMidx());
 			model.addAttribute("list",list);
+			
+			PageMaker3 pageMaker3 = new PageMaker3();
+			pageMaker3.setCri(cri);
+			pageMaker3.setTotalCount(wishService.countwlist(midx));
+			
+			model.addAttribute("pageMaker3", pageMaker3);
 			
 			return "/mypage/claim/refund";
 		}else {
@@ -91,13 +124,22 @@ public class ClaimController {
 		
 	}
 	@RequestMapping(value="/orderCancel.do")
-	public String orderCancel(@ModelAttribute CartVO cvo,Locale locale, Model model, HttpSession session)throws Exception {
+	public String orderCancel(@ModelAttribute CartVO cvo,Locale locale, Model model, HttpSession session,Criteria3 cri)throws Exception {
 		
 		MemberVO member=(MemberVO)session.getAttribute("member");
 		
 		if(member != null){
+			
+			int midx = member.getMidx();
+			
 			List<CartVO> list=CartService.list(member.getMidx());
 			model.addAttribute("list",list);
+			
+			PageMaker3 pageMaker3 = new PageMaker3();
+			pageMaker3.setCri(cri);
+			pageMaker3.setTotalCount(wishService.countwlist(midx));
+			
+			model.addAttribute("pageMaker3", pageMaker3);
 			
 			return "/mypage/claim/orderCancel";
 		}else {

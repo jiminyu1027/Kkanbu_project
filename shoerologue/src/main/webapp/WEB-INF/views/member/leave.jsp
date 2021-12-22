@@ -2,12 +2,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
-<%@ page import="edu.study.vo.*" %>    
+<%@ page import="edu.study.vo.*" %>
+<%@ page import="edu.study.domain.*" %>     
 <%
 	MemberVO vo = (MemberVO)request.getAttribute("vo");
-%>   
-<%
 	List<CartVO> list = (List<CartVO>)request.getAttribute("list");
+	PageMaker3 pageMaker3 = (PageMaker3)request.getAttribute("pageMaker3");
 %>
 <!DOCTYPE html> 
 <html>
@@ -409,13 +409,13 @@
         	</span>개
         </div>
         <div class="myPageBoxs">
-        	찜한상품
-        	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
-			  <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
+	       	<a href="<%=request.getContextPath()%>/mypage/shopping/wishlist.do">찜한상품</a>
+	       	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
+			  <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"></path>
 			</svg><br>
-        	<span class="ft-weight">
-        		0
-        	</span>개
+	       	<a class="ft-weight" href="<%=request.getContextPath()%>/mypage/shopping/wishlist.do">
+	       		<%=pageMaker3.getTotalCount()%>
+	       	</a>개
         </div>
         <div class="myPageBoxs">
         	<a href="<%=request.getContextPath()%>/cart/cart.do">장바구니</a>
