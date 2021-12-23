@@ -881,8 +881,8 @@
 								<div class="explText">
 									<ul>
 										<li class="blackBold">배송비</li>
-										<li>·&nbsp;2만 원 미만 구매 시 <span class="red">2,500원</span></li>
-										<li>·&nbsp;2만 원 이상 구매 시 <span class="red">전액 무료</span>(제주도 및 기타 도선료 추가 지역 포함)</li>
+										<li>·&nbsp;5만 원 미만 구매 시 <span class="red">3,000원</span></li>
+										<li>·&nbsp;5만 원 이상 구매 시 <span class="red">전액 무료</span>(제주도 및 기타 도선료 추가 지역 포함)</li>
 									</ul>
 								</div>
 								<div class="explText">

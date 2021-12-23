@@ -15,7 +15,7 @@
 	        	 , mAddr
 	        	 , mJoindate
 	        	 , mDelYn
-	        	 , master  from member order by midx DESC limit #{rowStart}, #{rowEnd}
+	        	 , master  from member order by midx DESC limit #{rowStart}, 15
     </select>
     
     <!-- 총 멤버수 출력 -->
